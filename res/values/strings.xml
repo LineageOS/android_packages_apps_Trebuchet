@@ -337,6 +337,10 @@ s -->
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Icons</string>
+    <string name="preferences_interface_homescreen_general_default_grid_row_title">Number of rows</string>
+    <string name="preferences_interface_homescreen_general_default_grid_row_summary">Choose number of rows for homescreen</string>
+    <string name="preferences_interface_homescreen_general_default_grid_column_title">Number of columns</string>
+    <string name="preferences_interface_homescreen_general_default_grid_column_summary">Choose number of columns for homescreens</string>
 
     <!-- General -->
     <string name="preferences_interface_general_title">General</string>
