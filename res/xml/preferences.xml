@@ -54,9 +54,6 @@
                 <CheckBoxPreference android:key="ui_homescreen_general_resize_any_widget"
                     android:title="@string/preferences_interface_homescreen_general_resize_any_widget_title"
                     android:summary="@string/preferences_interface_homescreen_general_resize_any_widget_summary" />
-                <CheckBoxPreference android:key="ui_homescreen_general_hide_icon_labels"
-                    android:title="@string/preferences_interface_homescreen_general_hide_icon_labels_title"
-                    android:summary="@string/preferences_interface_homescreen_general_hide_icon_labels_summary" />
             </PreferenceCategory>
             <PreferenceCategory android:title="@string/preferences_interface_homescreen_scrolling_category">
                 <ListPreference android:key="ui_homescreen_scrolling_transition_effect"
@@ -84,10 +81,6 @@
                     android:summary="@string/preferences_interface_homescreen_indicator_fade_summary"
                     android:defaultValue="true"
                     android:dependency="ui_homescreen_indicator_enable" />
-                <CheckBoxPreference android:key="ui_homescreen_indicator_background"
-                    android:title="@string/preferences_interface_homescreen_indicator_background_title"
-                    android:summary="@string/preferences_interface_homescreen_indicator_background_summary"
-                    android:defaultValue="true" />
             </PreferenceCategory>
         </PreferenceScreen>
 
@@ -127,13 +120,34 @@
         <!-- Dock -->
         <PreferenceScreen android:key="ui_dock"
             android:title="@string/preferences_interface_dock_title">
-
+            <!-- <PreferenceCategory> -->
+                <CheckBoxPreference android:key="ui_homescreen_indicator_background"
+                    android:title="@string/preferences_interface_homescreen_indicator_background_title"
+                    android:summary="@string/preferences_interface_homescreen_indicator_background_summary"
+                    android:defaultValue="true" />
+            <!-- </PreferenceCategory> -->
         </PreferenceScreen>
 
         <!-- Icons -->
         <PreferenceScreen android:key="ui_icons"
             android:title="@string/preferences_interface_icons_title">
-
+            <!-- <PreferenceCategory> -->
+                <CheckBoxPreference android:key="ui_homescreen_general_hide_icon_labels"
+                    android:title="@string/preferences_interface_homescreen_general_hide_icon_labels_title"
+                    android:summary="@string/preferences_interface_homescreen_general_hide_icon_labels_summary" />
+                <com.cyanogenmod.trebuchet.preference.NumberPickerPreference android:key="ui_homescreen_general_grid_row_count"
+                    android:title="@string/preferences_interface_homescreen_general_default_grid_row_title"
+                    android:summary="@string/preferences_interface_homescreen_general_default_grid_row_summary"
+                    android:defaultValue="4"
+                    launcher:max="8"
+                    launcher:min="2" />
+                <com.cyanogenmod.trebuchet.preference.NumberPickerPreference android:key="ui_homescreen_general_grid_column_count"
+                    android:title="@string/preferences_interface_homescreen_general_default_grid_column_title"
+                    android:summary="@string/preferences_interface_homescreen_general_default_grid_column_summary"
+                    android:defaultValue="4"
+                    launcher:max="8"
+                    launcher:min="2" />
+            <!-- </PreferenceCategory> -->
         </PreferenceScreen>
 
         <!-- General -->

@@ -60,7 +60,13 @@
         android:id="@+id/hotseat"
         android:layout_width="@dimen/button_bar_height_plus_padding"
         android:layout_height="match_parent"
-        android:layout_gravity="right" />
+        android:layout_gravity="right"
+        android:paddingLeft="@dimen/qsb_bar_height"
+        android:paddingRight="@dimen/button_bar_height"
+        launcher:pageSpacing="@dimen/workspace_page_spacing"
+        launcher:scrollIndicatorPaddingLeft="@dimen/qsb_bar_height"
+        launcher:scrollIndicatorPaddingRight="@dimen/button_bar_height" />
+
     <include
         android:id="@+id/qsb_bar"
         layout="@layout/qsb_bar" />
