@@ -36,7 +36,7 @@ public abstract class SmoothPagedView extends PagedView {
     private Interpolator mScrollInterpolator;
 
     private static class WorkspaceOvershootInterpolator implements Interpolator {
-        private static final float DEFAULT_TENSION = 1.3f;
+        private static final float DEFAULT_TENSION = 0.3f;
         private float mTension;
 
         public WorkspaceOvershootInterpolator() {
