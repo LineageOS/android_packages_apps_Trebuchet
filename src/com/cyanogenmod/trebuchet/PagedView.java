@@ -74,7 +74,7 @@ public abstract class PagedView extends ViewGroup {
     private static final float SIGNIFICANT_MOVE_THRESHOLD = 0.4f;
 
     // the velocity at which a fling gesture will cause us to snap to the next page
-    protected int mSnapVelocity = 500;
+    protected int mSnapVelocity = 100;
 
     protected float mDensity;
     protected float mSmoothingTime;
