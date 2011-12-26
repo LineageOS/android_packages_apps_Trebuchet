@@ -24,11 +24,13 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -39,7 +41,7 @@ import com.cyanogenmod.trebuchet.preference.PreferencesProvider;
 import java.util.ArrayList;
 
 public class AppsCustomizeTabHost extends TabHost implements LauncherTransitionable,
-        TabHost.OnTabChangeListener  {
+        TabHost.OnTabChangeListener, PopupMenu.OnMenuItemClickListener {
     static final String LOG_TAG = "AppsCustomizeTabHost";
 
     private static final String APPS_TAB_TAG = "APPS";
@@ -53,6 +55,8 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
     private FrameLayout mAnimationBuffer;
     private LinearLayout mContent;
 
+    private Launcher mLauncher;
+
     private boolean mInTransition;
     private boolean mResetAfterTransition;
     private Animator mLauncherTransition;
@@ -64,6 +68,8 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
     public AppsCustomizeTabHost(Context context, AttributeSet attrs) {
         super(context, attrs);
         mLayoutInflater = LayoutInflater.from(context);
+
+        mLauncher = (Launcher) context;
 
         // Preferences
         mJoinWidgetsApps = PreferencesProvider.Interface.Drawer.getJoinWidgetsApps(context);
@@ -125,6 +131,12 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
         tabView = (TextView) mLayoutInflater.inflate(R.layout.tab_widget_indicator, tabs, false);
         tabView.setText(label);
         tabView.setContentDescription(label);
+        tabView.setOnLongClickListener(new View.OnLongClickListener() {
+                public boolean onLongClick(View v) {
+                    mLauncher.onLongClickAppsTab(v);
+                    return true;
+                }
+        });
         addTab(newTabSpec(APPS_TAB_TAG).setIndicator(tabView).setContent(contentFactory));
         label = mContext.getString(R.string.widgets_tab_label);
         tabView = (TextView) mLayoutInflater.inflate(R.layout.tab_widget_indicator, tabs, false);
@@ -146,6 +158,18 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
 
         // Hide the tab bar until we measure
         mTabsContainer.setAlpha(0f);
+    }
+
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.apps_sort_title:
+                mAppsCustomizePane.setSortMode(AppsCustomizePagedView.SortMode.Title);
+                break;
+            case R.id.apps_sort_install_date:
+                mAppsCustomizePane.setSortMode(AppsCustomizePagedView.SortMode.InstallDate);
+                break;
+        }
+        return true;
     }
 
     @Override

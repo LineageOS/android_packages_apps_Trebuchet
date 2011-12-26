@@ -1780,6 +1780,13 @@ public final class Launcher extends Activity
         popupMenu.show();
     }
 
+    public void onLongClickAppsTab(View v) {
+        final PopupMenu popupMenu = new PopupMenu(this, v);
+        final Menu menu = popupMenu.getMenu();
+        popupMenu.inflate(R.menu.apps_tab);
+        popupMenu.setOnMenuItemClickListener(mAppsCustomizeTabHost);
+        popupMenu.show();
+    }
 
     void startApplicationDetailsActivity(ComponentName componentName) {
         String packageName = componentName.getPackageName();
