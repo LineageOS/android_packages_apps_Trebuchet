@@ -19,6 +19,48 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Trebuchet Specific Strings-->
+
+    <string name="menu_preferences">Ρυθμίσεις Trebuchet</string>
+    <string name="preferences_title">Ρυθμίσεις</string>
+    <string name="preferences_interface_title">Διεπαφή</string>
+    <string name="preferences_application_title">Εφαρμογή</string>
+    <string name="preferences_interface_homescreen_title">Αρχική Οθόνη</string>
+    <string name="preferences_interface_homescreen_general_category">Γενικά</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Αρχικές Οθόνες</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Αριθμός αρχικών οθόνων</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Προεπιλεγμένη οθόνη</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Προεπιλεγμένη αρχική οθόνη</string>
+    <string name="preferences_interface_homescreen_general_search_title">Μπάρα Αναζήτησης</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Ενεργοποίηση επίμονης μπάρας αναζήτησης</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Αλλαγή μεγέθους widget</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Επιτρέπει την αλλαγή μεγέθους σε widget που δεν έχουν αυτήν τη δυνατότητα</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Κύλιση</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Κύλιση Ταπετσαρίας</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Κύλιση ταπετσαρίας κατά τη μετακίνηση στις αρχικές οθόνες</string>
+    <string name="preferences_interface_homescreen_indicator_category">Ένδειξη</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Εμφάνιση Ένδειξης Σελίδας</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Εμφάνιση ένδειξης τρέχουσας σελίδας στο κάτω μέρος της οθόνης</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Αυτόματη Απόκρυψη Ένδειξης</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Αυτόματη απόκρυψη της ένδειξης μετά την αλλαγή σελίδας</string>
+    <string name="preferences_interface_drawer_title">Συρτάρι</string>
+    <string name="preferences_interface_drawer_widgets_category">Widgets</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Σύνδεση με Εφαρμογές</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Κύλιση από συρτάρι εφαρμογών σε συρτάρι widgets χωρίς εναλλαγή καρτέλας</string>
+    <string name="preferences_interface_drawer_indicator_category">Ένδειξη</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Εμφάνιση Ένδειξης Σελίδας</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Εμφάνιση ένδειξης τρέχουσας σελίδας στο κάτω μέρος της οθόνης</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Αυτόματη Απόκρυψη Ένδειξης</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Αυτόματη απόκρυψη της ένδειξης μετά την αλλαγή σελίδας</string>
+    <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_icons_title">Εικονίδια</string>
+    <string name="preferences_interface_general_title">Γενικά</string>
+    <string name="preferences_interface_general_orientation_title">Αυτόματη περιστροφή οθόνης</string>
+    <string name="menu_apps_sort_title">Όνομα</string>
+    <string name="menu_apps_sort_install_date">Ημερομηνία Εγκατάστασης</string>
+    <!-- End of Trebuchet Specific Strings-->
+    
     <string name="uid_name" msgid="3371120195364560632">"Βασικές εφαρμογές Android"</string>
     <string name="folder_name" msgid="8551881338202938211"></string>
     <string name="chooser_wallpaper" msgid="6063168087625352235">"Επιλογή ταπετσαρίας από"</string>
