@@ -192,6 +192,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
 
     // Cling
     private boolean mHasShownAllAppsCling;
+    private boolean mHasShownAllAppsSortCling;
     private int mClingFocusedX;
     private int mClingFocusedY;
 
@@ -481,6 +482,10 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
                     offset[0];
             pos[1] += offset[1];
             mLauncher.showFirstRunAllAppsCling(pos);
+        } else if (!mHasShownAllAppsSortCling && isDataReady() && testDataReady() &&
+                ((Cling) getTabHost().findViewById(R.id.all_apps_cling)).isDismissed()) {
+            mHasShownAllAppsSortCling = true;
+            mLauncher.showFirstRunAllAppsSortCling();
         }
     }
 
