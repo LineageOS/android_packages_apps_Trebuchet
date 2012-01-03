@@ -60,11 +60,16 @@
     <string name="delete_zone_label_all_apps_system_app" msgid="3683920959591819044">"卸载更新"</string>
     <string name="menu_add" msgid="3065046628354640854">"添加"</string>
     <string name="menu_manage_apps" msgid="2308685199463588895">"管理应用程序"</string>
+    <!-- Menu item used to open the default market -->
+    <string name="menu_market">电子市场</string>
     <string name="menu_wallpaper" msgid="5837429080911269832">"壁纸"</string>
     <string name="menu_search" msgid="4826514464423239041">"搜索"</string>
     <string name="menu_notifications" msgid="6424587053194766192">"通知"</string>
     <string name="menu_settings" msgid="3946232973327980394">"系统设置"</string>
+    <string name="menu_preferences">首选项</string>
     <string name="menu_help" msgid="4901160661634590633">"帮助"</string>
+    <string name="menu_apps_sort_title">名称</string>
+    <string name="menu_apps_sort_install_date">安装日期</string>
     <string name="cab_menu_delete_app" msgid="4089398025537640349">"卸载该应用程序"</string>
     <string name="cab_menu_app_info" msgid="914548323652698884">"应用程序详情"</string>
     <string name="cab_app_selection_text" msgid="6378522164293415735">"选中了 1 个应用程序"</string>
@@ -81,7 +86,7 @@
     <string name="permdesc_write_settings" msgid="6763846563231494591">"允许应用程序更改主屏幕中的设置和快捷方式。"</string>
     <string name="gadget_error_text" msgid="8359351016167075858">"载入窗口小部件时出现问题"</string>
     <string name="uninstall_system_app_text" msgid="6429814133777046491">"这是系统应用程序，无法卸载。"</string>
-    <string name="dream_name" msgid="2847171357608437154">"Rocket Launcher"</string>
+    <string name="dream_name" msgid="2847171357608437154">"火箭发射器"</string>
     <string name="folder_hint_text" msgid="8633351560105748141">"未命名文件夹"</string>
     <string name="default_scroll_format" msgid="4057140866420001240">"第 %1$d 页，共 %2$d 页"</string>
     <string name="workspace_scroll_format" msgid="7911126267695001437">"工作区：第 %1$d 页，共 %2$d 页"</string>
@@ -92,6 +97,8 @@
     <string name="workspace_cling_open_all_apps" msgid="2459977609848572588">"要查看您的所有应用程序，请触摸该圆圈。"</string>
     <string name="all_apps_cling_title" msgid="2559734712581447107">"选择一些应用程序"</string>
     <string name="all_apps_cling_add_item" msgid="5665035103260318891">"要将某个应用程序添加到主屏幕，请触摸并按住该应用程序。"</string>
+    <string name="all_apps_sort_cling_title">为你的应用排序</string>
+    <string name="all_apps_sort_cling_add_item">触摸并按住应用标签来选择排序模式</string>
     <string name="folder_cling_title" msgid="4308949882377840953">"使用文件夹整理应用程序"</string>
     <string name="folder_cling_move_item" msgid="270598675060435169">"要移动应用程序，请触摸并按住该应用程序。"</string>
     <string name="folder_cling_create_folder" msgid="8352867485656129478">"要在主屏幕上创建新文件夹，请将一个应用程序叠放到另一个上。"</string>
@@ -102,4 +109,65 @@
     <string name="folder_closed" msgid="3130534551370511932">"文件夹已关闭"</string>
     <string name="folder_renamed" msgid="781234745487414781">"已将文件夹重命名为“%1$s”"</string>
     <string name="folder_name_format" msgid="4513766553514769310">"文件夹：%1$s"</string>
+
+    <skip />
+    <!--             -->
+    <!-- Preferences -->
+    <!--             -->
+    <string name="preferences_title">首选项</string>
+    <!-- UI -->
+    <string name="preferences_interface_title">界面</string>
+    <!-- Application -->
+    <string name="preferences_application_title">应用程序</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">主界面</string>
+    <string name="preferences_interface_homescreen_general_category">常规</string>
+    <string name="preferences_interface_homescreen_general_screens_title">主界面</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">主界面中屏幕数</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">默认屏幕</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">选择默认屏幕</string>
+    <string name="preferences_interface_homescreen_general_search_title">搜索条</string>
+    <string name="preferences_interface_homescreen_general_search_summary">开启持续的搜索条</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">调整所有小部件的大小</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">允许调整正常情况下不可调整的小部件的大小</string>
+    <string name="preferences_interface_homescreen_scrolling_category">滚动</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">过渡效果</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">主界面滚动效果</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">隐藏边缘页面</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">滚动主界面时隐藏边缘页面</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">滚动壁纸</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">当滚动主界面时滚动壁纸</string>
+    <string name="preferences_interface_homescreen_indicator_category">指示器</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">显示页面指示器</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">在屏幕底部显示当前页面的指示器</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">隐藏指示器</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">当主界面变化后隐藏指示器</string>
+    <string name="preferences_interface_drawer_title">抽屉</string>
+    <string name="preferences_interface_drawer_widgets_category">小部件</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">加入应用程序</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">不改变标签从应用程序抽屉点击切换到小部件抽屉</string>
+    <string name="preferences_interface_drawer_scrolling_category">滚动</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">过渡效果</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">界面滚动效果</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">隐藏边缘页面</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">隐藏界面时隐藏边缘页面</string>
+    <string name="preferences_interface_drawer_indicator_category">指示器</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">显示页面指示器</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">在屏幕底部显示当前页面的指示器</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">隐藏指示器</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">当主界面变化后隐藏指示器</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">显示底座分隔器</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">在指示器后显示背景</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_dock_title">底座</string>
+
+    <!-- Icons -->
+    <string name="preferences_interface_icons_title">图标</string>
+
+    <!-- General -->
+    <string name="preferences_interface_general_title">常规</string>
+    <string name="preferences_interface_general_orientation_title">自动旋转屏幕</string>
 </resources>
