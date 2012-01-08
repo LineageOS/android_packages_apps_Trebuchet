@@ -63,6 +63,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -239,6 +240,20 @@ public class Workspace extends PagedView
     private float[] mNewRotationYs;
     private float mTransitionProgress;
 
+    public enum TransitionEffect {
+        Standard,
+        Tablet;
+
+        public static TransitionEffect fromInt(int i) {
+            switch (i) {
+                case 1:
+                    return Tablet;
+                default:
+                    return Standard;
+            }
+        }
+    }
+
     // Preferences
     private int mNumberHomescreens;
     private int mDefaultHomescreen;
@@ -247,6 +262,7 @@ public class Workspace extends PagedView
     private boolean mScrollWallpaper;
     private boolean mShowScrollingIndicator;
     private boolean mFadeScrollingIndicator;
+    private TransitionEffect mTransitionEffect;
 
     /**
      * Used to inflate the Workspace from XML.
@@ -272,8 +288,7 @@ public class Workspace extends PagedView
         // With workspace, data is available straight from the get-go
         setDataIsReady();
 
-        mFadeInAdjacentScreens =
-            getResources().getBoolean(R.bool.config_workspaceFadeAdjacentScreens);
+        mFadeInAdjacentScreens = false;
         mWallpaperManager = WallpaperManager.getInstance(context);
 
         int cellCountX = DEFAULT_CELL_COUNT_X;
@@ -328,6 +343,8 @@ public class Workspace extends PagedView
         mShowSearchBar = PreferencesProvider.Interface.Homescreen.getShowSearchBar(context);
         mResizeAnyWidget = PreferencesProvider.Interface.Homescreen.getResizeAnyWidget(context);
         mScrollWallpaper = PreferencesProvider.Interface.Homescreen.Scrolling.getScrollWallpaper(context);
+        mTransitionEffect = PreferencesProvider.Interface.Homescreen.Scrolling.getTransitionEffect(context,
+                res.getInteger(R.integer.config_workspaceDefaultTransitionEffect));
         mShowScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getShowScrollingIndicator(context);
         mFadeScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getFadeScrollingIndicator(context);
 
@@ -733,7 +750,7 @@ public class Workspace extends PagedView
         }
 
         // Only show page outlines as we pan if we are on large screen
-        if (LauncherApplication.isScreenLarge()) {
+        if (mTransitionEffect == TransitionEffect.Tablet && LauncherApplication.isScreenLarge()) {
             showOutlines();
         }
     }
@@ -752,7 +769,7 @@ public class Workspace extends PagedView
         // Hide the outlines, as long as we're not dragging
         if (!mDragController.dragging()) {
             // Only hide page outlines as we pan if we are on large screen
-            if (LauncherApplication.isScreenLarge()) {
+            if (mTransitionEffect == TransitionEffect.Tablet && LauncherApplication.isScreenLarge()) {
                 hideOutlines();
             }
         }
@@ -1201,7 +1218,7 @@ public class Workspace extends PagedView
         return Math.min(r / threshold, 1.0f);
     }
 
-    private void screenScrolledLargeUI(int screenScroll) {
+    private void screenScrolledTablet(int screenScroll) {
         if (isSwitchingState()) return;
         boolean isInOverscroll = false;
         for (int i = 0; i < getChildCount(); i++) {
@@ -1213,7 +1230,7 @@ public class Workspace extends PagedView
 
                 // If the current page (i) is being over scrolled, we use a different
                 // set of rules for setting the background alpha multiplier.
-                if (!isSmall()) {
+                if (!isSmall() && LauncherApplication.isScreenLarge()) {
                     if ((mOverScrollX < 0 && i == 0) || (mOverScrollX > mMaxScrollX &&
                             i == getChildCount() -1)) {
                         isInOverscroll = true;
@@ -1221,6 +1238,7 @@ public class Workspace extends PagedView
                         cl.setBackgroundAlphaMultiplier(
                                 overScrollBackgroundAlphaInterpolator(Math.abs(scrollProgress)));
                         mOverScrollPageIndex = i;
+                        cl.setCameraDistance(mDensity * CAMERA_DISTANCE);
                         cl.setOverScrollAmount(Math.abs(scrollProgress), i == 0);
                         cl.setPivotX(cl.getMeasuredWidth() * (i == 0 ? 0.75f : 0.25f));
                         cl.setPivotY(cl.getMeasuredHeight() * 0.5f);
@@ -1232,22 +1250,22 @@ public class Workspace extends PagedView
                 }
                 cl.setFastTranslationX(translationX);
                 cl.setFastRotationY(rotation);
-                if (mFadeInAdjacentScreens && !isSmall()) {
+                if (!isSmall() && !isInOverscroll) {
                     float alpha = 1 - Math.abs(scrollProgress);
                     cl.setFastAlpha(alpha);
                 }
                 cl.fastInvalidate();
             }
         }
-        if (!isSwitchingState() && !isInOverscroll) {
-            ((CellLayout) getChildAt(0)).resetOverscrollTransforms();
-            ((CellLayout) getChildAt(getChildCount() - 1)).resetOverscrollTransforms();
-        }
         invalidate();
     }
 
-    private void screenScrolledStandardUI(int screenScroll) {
-        if (mOverScrollX < 0 || mOverScrollX > mMaxScrollX) {
+    @Override
+    protected void screenScrolled(int screenScroll) {
+        super.screenScrolled(screenScroll);
+
+        if ((mOverScrollX < 0 || mOverScrollX > mMaxScrollX) &&
+                (!LauncherApplication.isScreenLarge() || mTransitionEffect != TransitionEffect.Tablet)) {
             int index = mOverScrollX < 0 ? 0 : getChildCount() - 1;
             CellLayout cl = (CellLayout) getChildAt(index);
             if (getChildCount() > 1) {
@@ -1265,23 +1283,16 @@ public class Workspace extends PagedView
             if (mOverscrollFade != 0) {
                 setFadeForOverScroll(0);
             }
-            // We don't want to mess with the translations during transitions
+            // Reset transforms when we aren't in overscroll
             if (!isSwitchingState()) {
                 ((CellLayout) getChildAt(0)).resetOverscrollTransforms();
                 ((CellLayout) getChildAt(getChildCount() - 1)).resetOverscrollTransforms();
             }
-        }
-    }
-
-    @Override
-    protected void screenScrolled(int screenScroll) {
-        if (LauncherApplication.isScreenLarge()) {
-            // We don't call super.screenScrolled() here because we handle the adjacent pages alpha
-            // ourselves (for efficiency), and there are no scrolling indicators to update.
-            screenScrolledLargeUI(screenScroll);
-        } else {
-            super.screenScrolled(screenScroll);
-            screenScrolledStandardUI(screenScroll);
+            switch (mTransitionEffect) {
+                case Tablet:
+                    screenScrolledTablet(screenScroll);
+                    break;
+            }
         }
     }
 
@@ -1697,7 +1708,7 @@ public class Workspace extends PagedView
             float rotation = 0f;
             float initialAlpha = cl.getAlpha();
             float finalAlphaMultiplierValue = 1f;
-            float finalAlpha = (!mFadeInAdjacentScreens || stateIsSpringLoaded ||
+            float finalAlpha = (mTransitionEffect != TransitionEffect.Tablet || stateIsSpringLoaded ||
                     (i == mCurrentPage)) ? 1f : 0f;
 
             // Determine the pages alpha during the state transition
@@ -1714,8 +1725,8 @@ public class Workspace extends PagedView
                 }
             }
 
-            // Update the rotation of the screen (don't apply rotation on Phone UI)
-            if (LauncherApplication.isScreenLarge()) {
+            // Update the rotation of the screen (only on Tablet transition effect)
+            if (mTransitionEffect == TransitionEffect.Tablet) {
                 if (i < mCurrentPage) {
                     rotation = WORKSPACE_ROTATION;
                 } else if (i > mCurrentPage) {
@@ -1723,10 +1734,9 @@ public class Workspace extends PagedView
                 }
             }
 
-            // If the screen is not xlarge, then don't rotate the CellLayouts
             // NOTE: If we don't update the side pages alpha, then we should not hide the side
             //       pages. see unshrink().
-            if (LauncherApplication.isScreenLarge()) {
+            if (mTransitionEffect == TransitionEffect.Tablet) {
                 translationX = getOffsetXForRotation(rotation, cl.getWidth(), cl.getHeight());
             }
 
@@ -1776,7 +1786,7 @@ public class Workspace extends PagedView
                     // the current page is visible during (and subsequently, after) the transition
                     // animation.  If fade adjacent pages is disabled, then re-enable the page
                     // visibility after the transition animation.
-                    if (!mFadeInAdjacentScreens && stateIsNormal && oldStateIsSmall) {
+                    if (mTransitionEffect != TransitionEffect.Tablet && stateIsNormal && oldStateIsSmall) {
                         for (int i = 0; i < getChildCount(); i++) {
                             final CellLayout cl = (CellLayout) getChildAt(i);
                             cl.setAlpha(1f);
@@ -2421,7 +2431,7 @@ public class Workspace extends PagedView
 
         // Because we don't have space in the Phone UI (the CellLayouts run to the edge) we
         // don't need to show the outlines
-        if (LauncherApplication.isScreenLarge()) {
+        if (mTransitionEffect == TransitionEffect.Tablet && LauncherApplication.isScreenLarge()) {
             showOutlines();
         }
     }
