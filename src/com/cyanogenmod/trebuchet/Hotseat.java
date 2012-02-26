@@ -24,11 +24,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 
-import com.cyanogenmod.trebuchet.R;
+import com.cyanogenmod.trebuchet.preference.PreferencesProvider;
 
-public class Hotseat extends FrameLayout {
+public class Hotseat extends PagedView {
     private Launcher mLauncher;
     private CellLayout mContent;
 
@@ -53,16 +52,45 @@ public class Hotseat extends FrameLayout {
     public Hotseat(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
+        mFadeInAdjacentScreens = false;
+        mHandleScrollIndicator = true;
+
+        int hotseatPages = PreferencesProvider.Interface.Dock.getNumberPages();
+        int defaultPage = PreferencesProvider.Interface.Dock.getDefaultPage(hotseatPages / 2);
+
+
+        mCurrentPage = defaultPage;
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.Hotseat, defStyle, 0);
-        Resources r = context.getResources();
-        mCellCountX = a.getInt(R.styleable.Hotseat_cellCountX, -1);
-        mCellCountY = a.getInt(R.styleable.Hotseat_cellCountY, -1);
-        mAllAppsButtonRank = r.getInteger(R.integer.hotseat_all_apps_index);
-        mTransposeLayoutWithOrientation = 
-                r.getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
+        mTransposeLayoutWithOrientation =
+                context.getResources().getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
         mIsLandscape = context.getResources().getConfiguration().orientation ==
             Configuration.ORIENTATION_LANDSCAPE;
+        mCellCountX = a.getInt(R.styleable.Hotseat_cellCountX, !mIsLandscape ? DEFAULT_CELL_COUNT_X : DEFAULT_CELL_COUNT_Y);
+        mCellCountY = a.getInt(R.styleable.Hotseat_cellCountY, !mIsLandscape ? DEFAULT_CELL_COUNT_Y : DEFAULT_CELL_COUNT_X);
+        int cellCount = PreferencesProvider.Interface.Dock.getNumberIcons(0);
+        if (cellCount > 0) {
+            if (!mIsLandscape) {
+                mCellCountX = cellCount;
+            } else {
+                mCellCountY = cellCount;
+            }
+        }
+
+        mVertical = mIsLandscape;
+
+        LayoutInflater inflater =
+                (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        for (int i = 0; i < hotseatPages; i++) {
+            CellLayout cl = (CellLayout) inflater.inflate(R.layout.hotseat_page, null);
+            cl.setGridSize(mCellCountX, mCellCountY);
+            cl.setIsHotseat(true);
+            addView(cl);
+        }
+
+        // No data needed
+        setDataIsReady();
     }
 
     public void setup(Launcher launcher) {
@@ -71,7 +99,16 @@ public class Hotseat extends FrameLayout {
     }
 
     CellLayout getLayout() {
-        return mContent;
+        return (CellLayout) getPageAt(mCurrentPage);
+    }
+
+    public boolean hasPage(View view) {
+        for (int i = 0; i < getChildCount(); i++) {
+            if (view == getChildAt(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean hasVerticalHotseat() {
@@ -80,29 +117,41 @@ public class Hotseat extends FrameLayout {
 
     /* Get the orientation invariant order of the item in the hotseat for persistence. */
     int getOrderInHotseat(int x, int y) {
-        return hasVerticalHotseat() ? (mContent.getCountY() - y - 1) : x;
+        return hasVerticalHotseat() ? (mCellCountY - y - 1) : x;
     }
     /* Get the orientation specific coordinates given an invariant order in the hotseat. */
     int getCellXFromOrder(int rank) {
         return hasVerticalHotseat() ? 0 : rank;
     }
     int getCellYFromOrder(int rank) {
-        return hasVerticalHotseat() ? (mContent.getCountY() - (rank + 1)) : 0;
+        return hasVerticalHotseat() ? rank : 0;
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        if (mCellCountX < 0) mCellCountX = DEFAULT_CELL_COUNT_X;
-        if (mCellCountY < 0) mCellCountY = DEFAULT_CELL_COUNT_Y;
-        mContent = (CellLayout) findViewById(R.id.layout);
-        mContent.setGridSize(mCellCountX, mCellCountY);
-        mContent.setIsHotseat(true);
-
         resetLayout();
     }
 
     void resetLayout() {
-        mContent.removeAllViewsInLayout();
+        for (int i = 0; i < getChildCount(); i++) {
+            CellLayout cl = (CellLayout) getPageAt(i);
+            cl.removeAllViewsInLayout();
+        }
+    }
+
+    @Override
+    public void syncPages() {
+    }
+
+    @Override
+    public void syncPageItems(int page, boolean immediate) {
+    }
+
+    @Override
+    protected void loadAssociatedPages(int page) {
+    }
+    @Override
+    protected void loadAssociatedPages(int page, boolean immediateAndOnly) {
     }
 }
