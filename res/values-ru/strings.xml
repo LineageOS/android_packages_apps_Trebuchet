@@ -102,4 +102,49 @@
     <string name="folder_closed" msgid="3130534551370511932">"Папка закрыта"</string>
     <string name="folder_renamed" msgid="781234745487414781">"Новое название папки: %1$s"</string>
     <string name="folder_name_format" msgid="4513766553514769310">"Папка: %1$s"</string>
+    <string name="preferences_title">Установки</string>
+    <string name="preferences_interface_title">Оформление</string>
+    <string name="preferences_application_title">Приложения</string>
+    <string name="preferences_interface_homescreen_title">Рабочий стол</string>
+    <string name="preferences_interface_homescreen_general_category">Общие</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Рабочий стол</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Количество экранов на рабочем столе</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Главный экран</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Выбор экрана по умолчанию</string>
+    <string name="preferences_interface_homescreen_general_search_title">Панель поиска</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Включить панель поиска</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Изменение размера виджетов</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Разрешить изменение размера виджетов, которые изначально являются не изменяемыми</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Прокрутка</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Эфекты переходов</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Эфекты перехода экранов рабочего стола</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Затухание страницы</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Разрешить затухание при прокрутке страниц рабочего стола</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Прокрутка обоев рабочего стола</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Прокручивать обои при переходе по страницам рабочего стола</string>
+    <string name="preferences_interface_homescreen_indicator_category">Индикатор</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Индикатор страниц</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Показывать индикатор текущей страницы в нижней части экрана</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Скрывать индикатор</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Скрытие индикатора после изменения экрана или страницы</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Показывать границу нижней панели</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">показать фоном индикатор</string>
+    <string name="preferences_interface_drawer_title">Эффекты</string>
+    <string name="preferences_interface_drawer_widgets_category">Виджеты</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Объединить с приложениями</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Переход из вкладки Приложения во вкладку Виджеты при прокрутке</string>
+    <string name="preferences_interface_drawer_scrolling_category">Прокрутка</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Эфекты переходов</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Эфекты прокрутки экрана приложений</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Затухание при прокрутке страницы</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Разрешить затухание при прокрутке страниц экрана приложений</string>
+    <string name="preferences_interface_drawer_indicator_category">Индикатор</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Индикатор страниц</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Показывать индикатор текущей страницы в нижней части экрана</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Скрывать индикатор</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Скрывать индикатор после выбора страницы</string>
+    <string name="preferences_interface_dock_title">Нижняя панель</string>
+    <string name="preferences_interface_icons_title">Иконки</string>
+    <string name="preferences_interface_general_title">Общие</string>
+    <string name="preferences_interface_general_orientation_title">Автоповорот экрана</string>
 </resources>
