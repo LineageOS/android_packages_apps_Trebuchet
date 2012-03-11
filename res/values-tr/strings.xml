@@ -27,7 +27,8 @@
     <string name="activity_not_found" msgid="217823393239365967">"Uygulama yüklü değil."</string>
     <string name="widgets_tab_label" msgid="9145860100000983599">"Widget\'lar"</string>
     <string name="long_press_widget_to_add" msgid="7395697462851217506">"Widget seçmek için dokunun ve basılı tutun."</string>
-    <string name="market" msgid="2652226429823445833">"Alışveriş"</string>
+    <string name="market">Google Play</string>
+    <string name="menu">Menü</string>
     <string name="external_drop_widget_error" msgid="127440783198670829">"Öğe bu Ana Ekrana bırakılamadı."</string>
     <string name="external_drop_widget_pick_title" msgid="7040647073452295370">"Oluşturmak için widget seçin"</string>
     <string name="rename_folder_label" msgid="5646236631298452787">"Klasör adı"</string>
@@ -60,11 +61,15 @@
     <string name="delete_zone_label_all_apps_system_app" msgid="3683920959591819044">"Güncelleme kaldırılsın mı?"</string>
     <string name="menu_add" msgid="3065046628354640854">"Ekle"</string>
     <string name="menu_manage_apps" msgid="2308685199463588895">"Uyglm yönet"</string>
+    <string name="menu_market">Google Play</string>
     <string name="menu_wallpaper" msgid="5837429080911269832">"Duvar Kağıdı"</string>
     <string name="menu_search" msgid="4826514464423239041">"Ara"</string>
     <string name="menu_notifications" msgid="6424587053194766192">"Bildirimler"</string>
     <string name="menu_settings" msgid="3946232973327980394">"Sistem ayarları"</string>
+    <string name="menu_preferences">Trebuchet ayarları</string>
     <string name="menu_help" msgid="4901160661634590633">"Yardım"</string>
+    <string name="menu_apps_sort_title">Ad</string>
+    <string name="menu_apps_sort_install_date">Kurulum Tarihi</string>
     <string name="cab_menu_delete_app" msgid="4089398025537640349">"Uygulamayı kaldır"</string>
     <string name="cab_menu_app_info" msgid="914548323652698884">"Uygulama ayrıntıları"</string>
     <string name="cab_app_selection_text" msgid="6378522164293415735">"1 uygulama seçildi"</string>
@@ -87,19 +92,67 @@
     <string name="workspace_scroll_format" msgid="7911126267695001437">"Çalışma alanı %1$d / %2$d"</string>
     <string name="apps_customize_apps_scroll_format" msgid="5494241912377704885">"Uygulama sayfası %1$d / %2$d"</string>
     <string name="apps_customize_widgets_scroll_format" msgid="5383009742241717437">"Widget sayfası %1$d / %2$d"</string>
-    <string name="workspace_cling_title" msgid="738396473989890567">"Kendinizi evinizde hissedin"</string>
-    <string name="workspace_cling_move_item" msgid="791013895761065070">"Farvori uygulamalarınızı buraya koyabilirsiniz."</string>
+    <string name="workspace_cling_title">Masaüstünü özelleştir</string>
+    <string name="workspace_cling_move_item">Favori uygulamalarınızı buraya sürükleyin.</string>
     <string name="workspace_cling_open_all_apps" msgid="2459977609848572588">"Tüm uygulamalarınızı görmek için çembere dokunun."</string>
     <string name="all_apps_cling_title" msgid="2559734712581447107">"Bazı uygulamalar seçin"</string>
     <string name="all_apps_cling_add_item" msgid="5665035103260318891">"Ana Ekranınıza bir uygulama eklemek için, ilgili uygulamaya dokunup basılı tutun."</string>
+    <string name="all_apps_sort_cling_title">Uygulamaları sırala</string>
+    <string name="all_apps_sort_cling_add_item">Sıralama modunu seçmek için uygulamalara dokunun ve basılı tutun</string>
     <string name="folder_cling_title" msgid="4308949882377840953">"Uygulamalarınızı klasörlerle düzenleyin"</string>
     <string name="folder_cling_move_item" msgid="270598675060435169">"Bir uygulamayı taşımak için, uygulamaya dokunun ve basılı tutun."</string>
     <string name="folder_cling_create_folder" msgid="8352867485656129478">"Ana Ekranınızda yeni bir klasör oluşturmak için, bir uygulamayı diğerinin üzerine getirin."</string>
     <string name="cling_dismiss" msgid="2780907108735868381">"Tamam"</string>
     <string name="folder_opened" msgid="4129072635480822768">"Klasör açıldı, boyutları %1$d ve %2$d"</string>
     <string name="folder_tap_to_close" msgid="4076794242530255812">"Klasörü kapatmak için hafifçe dokunun"</string>
-    <string name="folder_tap_to_rename" msgid="2125528923948315223">"Yeniden adlandırmayı uygulamak için hafifçe dokunun"</string>
+    <string name="folder_tap_to_rename">"Yeniden adlandırmak için hafifçe dokunun"</string>
     <string name="folder_closed" msgid="3130534551370511932">"Klasör kapatıldı"</string>
     <string name="folder_renamed" msgid="781234745487414781">"Klasör %1$s olarak yeniden adlandırıldı"</string>
     <string name="folder_name_format" msgid="4513766553514769310">"Klasör: %1$s"</string>
+    <skip />
+    <string name="preferences_title">Tercihler</string>
+    <string name="preferences_interface_title">Arayüz</string>
+    <string name="preferences_application_title">Uygulama</string>
+    <string name="preferences_interface_homescreen_title">Ana ekran</string>
+    <string name="preferences_interface_homescreen_general_category">Genel</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Ana ekranlar</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Ana ekran sayısı</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Varsayılan Ekran</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Varsayılan ekranı seçin</string>
+    <string name="preferences_interface_homescreen_general_search_title">Arama Çubuğu</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Arama çubuğunu sürekli göster</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Bütün widget\'ları boyutlandır</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Boyutlandırmayı desteklemese bile yine de boyutlandır</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Kaydırma</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Geçiş Efekti</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Ekranları kaydırırken efekt uygula</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Yan Sayfaları Soldur</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Ekranları kaydırırken yan sayfaları soldur</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Duvar Kağıdı Kaydır</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Ana ekranları duvar kağıdı ile birlikte kaydır</string>
+    <string name="preferences_interface_homescreen_indicator_category">Gösterge</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Sayfa Göstergesi</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Hangi sayfada olduğunuzu gösterir</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Göstergeyi Soldur</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Ekran değiştikten sonra göstergeyi soldur</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Ayırıcıyı Göster</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Gösterge arkasındaki arkaplanı göster</string>
+    <string name="preferences_interface_drawer_title">Uygulamalar</string>
+    <string name="preferences_interface_drawer_widgets_category">Widget\'lar</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Uygulamalarla Birleştir</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Sekme değiştirmeden Uygulama ekranından Widget ekranına geç</string>
+    <string name="preferences_interface_drawer_scrolling_category">Kaydırma</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Geçiş Efekti</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Ekranları kaydırırken efekt uygula</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Yan Sayfaları Soldur</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Ekranları kaydırırken yan sayfaları soldur</string>
+    <string name="preferences_interface_drawer_indicator_category">Gösterge</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Sayfa Göstergesi</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Hangi sayfada olduğunuzu gösterir</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Göstergeyi Soldur</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Ekran değiştikten sonra göstergeyi soldur</string>
+    <string name="preferences_interface_dock_title">Sabit Çubuk</string>
+    <string name="preferences_interface_icons_title">Simgeler</string>
+    <string name="preferences_interface_general_title">Genel</string>
+    <string name="preferences_interface_general_orientation_title">Ekranı otomatik döndür</string>
 </resources>
