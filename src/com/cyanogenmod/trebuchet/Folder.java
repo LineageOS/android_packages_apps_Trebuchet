@@ -250,7 +250,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         // Convert to a string here to ensure that no other state associated with the text field
         // gets saved.
         String newTitle = mFolderName.getText().toString();
-        mInfo.setTitle(newTitle);
+        if(mLauncher.getShowIconLabels()) mInfo.setTitle(newTitle);
         LauncherModel.updateItemInDatabase(mLauncher, mInfo);
 
         if (commit) {
