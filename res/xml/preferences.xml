@@ -73,6 +73,10 @@
                     android:title="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_title"
                     android:summary="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_summary"
                     android:defaultValue="true" />
+		<CheckBoxPreference android:key="ui_homescreen_scrolling_loop_pages"
+		    android:title="@string/preferences_interface_homescreen_scrolling_loop_pages_title"
+		    android:summary="@string/preferences_interface_homescreen_scrolling_loop_pages_summary"
+		    android:defaultValue="false" />
             </PreferenceCategory>
             <PreferenceCategory android:title="@string/preferences_interface_homescreen_indicator_category">
                 <CheckBoxPreference android:key="ui_homescreen_indicator_enable"
