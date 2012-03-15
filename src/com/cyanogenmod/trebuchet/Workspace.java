@@ -267,6 +267,7 @@ public class Workspace extends PagedView
     private boolean mShowScrollingIndicator;
     private boolean mFadeScrollingIndicator;
     private boolean mShowDockDivider;
+    private boolean mLoopPages;
     private TransitionEffect mTransitionEffect;
 
     /**
@@ -360,6 +361,9 @@ public class Workspace extends PagedView
         mShowScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getShowScrollingIndicator(context);
         mFadeScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getFadeScrollingIndicator(context);
         mShowDockDivider = PreferencesProvider.Interface.Homescreen.Indicator.getShowDockDivider(context);
+        mLoopPages = PreferencesProvider.Interface.Homescreen.Scrolling.getLoopPages(context);
+
+        if(mLoopPages) super.disableOverScroll();
 
         mLauncher = (Launcher) context;
         initWorkspace();
@@ -975,9 +979,32 @@ public class Workspace extends PagedView
 
     @Override
     protected void snapToPage(int whichPage) {
-        super.snapToPage(whichPage);
+        snapToPage(whichPage, PAGE_SNAP_ANIMATION_DURATION);
         if (mScrollWallpaper) {
             computeWallpaperScrollRatio(whichPage);
+        }
+    }
+
+    @Override
+    protected void snapToPage(int whichPage, int duration) {
+        final int sX = super.mUnboundedScrollX;
+        int newX = getChildOffset(whichPage) - getRelativeChildOffset(whichPage);
+        int delta = newX - sX;
+
+        if(!mLoopPages) {
+            whichPage = Math.max(0, Math.min(whichPage, getPageCount() - 1));
+            super.snapToPage(whichPage, delta, duration);
+        } else {
+            if(mCurrentPage == whichPage && mCurrentPage == 0) {
+                whichPage = getChildCount() - 1;
+                super.scrollToNewPageWithoutMovingPages(whichPage);
+            } else if(mCurrentPage == whichPage && mCurrentPage == getChildCount() -1) {
+                whichPage = 0;
+                super.scrollToNewPageWithoutMovingPages(whichPage);
+            } else {
+                whichPage = Math.max(0, Math.min(whichPage, getChildCount() -1 ));
+                super.snapToPage(whichPage, delta, duration);
+            }
         }
     }
 
