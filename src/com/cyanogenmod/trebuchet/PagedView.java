@@ -60,7 +60,7 @@ public abstract class PagedView extends ViewGroup {
     // the min drag distance for a fling to register, to prevent random page shifts
     private static final int MIN_LENGTH_FOR_FLING = 25;
 
-    private static final int PAGE_SNAP_ANIMATION_DURATION = 550;
+    protected static final int PAGE_SNAP_ANIMATION_DURATION = 550;
 
     private static final float OVERSCROLL_ACCELERATE_FACTOR = 2;
     private static final float OVERSCROLL_DAMP_FACTOR = 0.14f;
@@ -1404,6 +1404,7 @@ public abstract class PagedView extends ViewGroup {
 
     protected void snapToPageWithVelocity(int whichPage, int velocity) {
         whichPage = Math.max(0, Math.min(whichPage, getChildCount() - 1));
+
         int halfScreenSize = getMeasuredWidth() / 2;
 
         if (DEBUG) Log.d(TAG, "snapToPage.getChildOffset(): " + getChildOffset(whichPage));
@@ -1832,6 +1833,10 @@ public abstract class PagedView extends ViewGroup {
         }
         mHasScrollIndicator = false;
         mScrollIndicator = null;
+    }
+
+    protected void disableOverScroll() {
+        mAllowOverScroll = false;
     }
 
     /**
