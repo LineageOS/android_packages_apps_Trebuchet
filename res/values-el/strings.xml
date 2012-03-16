@@ -35,9 +35,9 @@
     <string name="rename_action" msgid="6016003384693240896">"OK"</string>
     <string name="cancel_action" msgid="3811860427489435048">"Ακύρωση"</string>
     <string name="menu_item_add_item" msgid="6233177331075781114">"Προσθήκη στην αρχική οθόνη"</string>
-    <string name="group_applications" msgid="2103752818818161976">"Εφαρμογές"</string>
+    <string name="group_applications">Εφαρμογες</string>
     <string name="group_shortcuts" msgid="9133529424900391877">"Συντομεύσεις"</string>
-    <string name="group_widgets" msgid="6704978494073105844">"Γραφικά στοιχεία"</string>
+    <string name="group_widgets">Γραφικα στοιχεια</string>
     <string name="group_wallpapers" msgid="1568191644272224858">"Ταπετσαρίες"</string>
     <string name="out_of_space" msgid="8365249326091984698">"Δεν υπάρχει χώρος σε αυτήν την αρχική οθόνη."</string>
     <string name="invalid_hotseat_item" msgid="6545340627805449250">"Αυτό το γραφικό στοιχείο είναι πολύ μεγάλο για το hotseat."</string>
@@ -133,6 +133,10 @@
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Αλλαγή μεγέθους widget</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Επιτρέπει την αλλαγή μεγέθους σε widget που δεν έχουν αυτήν τη δυνατότητα</string>
     <string name="preferences_interface_homescreen_scrolling_category">Κυλιση</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Εφέ Μετάβασης</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Εφέ μετάβασης κατά την κύλιση αρχικών οθόνων</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Ξεθώριασμα Πλαϊνών Σελίδων</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Ξεθώριασμα πλαϊνών σελίδων κατά την κύλιση αρχικών οθόνων</string>
     <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Κύλιση Ταπετσαρίας</string>
     <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Κύλιση ταπετσαρίας κατά τη μετακίνηση στις αρχικές οθόνες</string>
     <string name="preferences_interface_homescreen_indicator_category">Ενδειξη</string>
@@ -140,12 +144,19 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">Εμφάνιση ένδειξης τρέχουσας σελίδας στο κάτω μέρος της οθόνης</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">Αυτόματη Απόκρυψη Ένδειξης</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Αυτόματη απόκρυψη της ένδειξης μετά την αλλαγή σελίδας</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Εμφάνιση Διαχωριστικού Dock</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Εμφάνιση διαχωριστικού μεταξύ της αρχικής οθόνης και του dock</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Συρτάρι</string>
     <string name="preferences_interface_drawer_widgets_category">Widgets</string>
     <string name="preferences_interface_drawer_widgets_join_apps_title">Σύνδεση με Εφαρμογές</string>
     <string name="preferences_interface_drawer_widgets_join_apps_summary">Κύλιση από συρτάρι εφαρμογών σε συρτάρι widgets χωρίς εναλλαγή καρτέλας</string>
+    <string name="preferences_interface_drawer_scrolling_category">Κυλιση</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Εφέ Μετάβασης</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Εφέ μετάβασης κατά την κύλιση</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Ξεθώριασμα Πλαϊνών Σελίδων</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Ξεθώριασμα πλαϊνών σελίδων κατά την κύλιση</string>
     <string name="preferences_interface_drawer_indicator_category">Ενδειξη</string>
     <string name="preferences_interface_drawer_indicator_enable_title">Εμφάνιση Ένδειξης Σελίδας</string>
     <string name="preferences_interface_drawer_indicator_enable_summary">Εμφάνιση ένδειξης τρέχουσας σελίδας στο κάτω μέρος της οθόνης</string>
