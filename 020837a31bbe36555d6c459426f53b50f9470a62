@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX///U4\u003d",
+        "filename": "res/xml/preferences.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2395
+      },
+      "writtenOn": "2012-03-18T21:08:59Z",
+      "side": 1,
+      "message": "Should be com.cyanogenmod.trebuchet.preference.NumberPickerPreference",
+      "revId": "020837a31bbe36555d6c459426f53b50f9470a62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX///U8\u003d",
+        "filename": "res/xml/preferences.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2395
+      },
+      "writtenOn": "2012-03-18T21:08:59Z",
+      "side": 1,
+      "message": "Here also",
+      "revId": "020837a31bbe36555d6c459426f53b50f9470a62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
