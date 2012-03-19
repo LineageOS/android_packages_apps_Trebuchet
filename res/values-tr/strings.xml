@@ -50,6 +50,7 @@
     <string name="delete_zone_label_workspace" msgid="7153615831493049150">"Kaldır"</string>
     <string name="delete_zone_label_all_apps" msgid="6664588234817475108">"Yüklemeyi Kaldır"</string>
     <string name="delete_target_label" msgid="665300185123139530">"Kaldır"</string>
+    <string name="cancel_target_label">İptal</string>
     <string name="delete_target_uninstall_label" msgid="748894921183769150">"Yüklemeyi kaldır"</string>
     <string name="info_target_label" msgid="4019495079517426980">"Uygulama bilgileri"</string>
     <string name="accessibility_search_button" msgid="816822994629942611">"Ara"</string>
@@ -115,41 +116,47 @@
     <string name="preferences_interface_homescreen_general_category">Genel</string>
     <string name="preferences_interface_homescreen_general_screens_title">Ana ekranlar</string>
     <string name="preferences_interface_homescreen_general_screens_summary">Ana ekran sayısı</string>
-    <string name="preferences_interface_homescreen_general_default_screen_title">Varsayılan Ekran</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Varsayılan ekran</string>
     <string name="preferences_interface_homescreen_general_default_screen_summary">Varsayılan ekranı seçin</string>
-    <string name="preferences_interface_homescreen_general_search_title">Arama Çubuğu</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Dikey aralık</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Ana ekrandaki ek dikey boşluk</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Yatay aralık</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Ana ekrandaki ek yatay boşluk</string>
+    <string name="preferences_interface_homescreen_general_search_title">Arama çubuğu</string>
     <string name="preferences_interface_homescreen_general_search_summary">Arama çubuğunu sürekli göster</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Bütün araçları boyutlandır</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Boyutlandırmayı desteklemese bile araçları yine de boyutlandır</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Simge etiketlerini gizle</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Ana ekrandaki simge etiketlerini gizle</string>
     <string name="preferences_interface_homescreen_scrolling_category">Kaydırma</string>
-    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Geçiş Efekti</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Geçiş efekti</string>
     <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Ekranları kaydırırken efekt uygula</string>
-    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Yan Sayfaları Soldur</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Yan sayfaları soldur</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Ekranları kaydırırken yan sayfaları soldur</string>
-    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Duvar Kağıdı Kaydır</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Duvar kağıdını kaydır</string>
     <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Ana ekranları duvar kağıdı ile birlikte kaydır</string>
     <string name="preferences_interface_homescreen_indicator_category">Gösterge</string>
-    <string name="preferences_interface_homescreen_indicator_enable_title">Sayfa Göstergesi</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Sayfa göstergesi</string>
     <string name="preferences_interface_homescreen_indicator_enable_summary">Hangi sayfada olduğunuzu gösterir</string>
-    <string name="preferences_interface_homescreen_indicator_fade_title">Göstergeyi Soldur</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Göstergeyi soldur</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Ekran değiştikten sonra göstergeyi soldur</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Ayırıcıyı Göster</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Ayırıcıyı göster</string>
     <string name="preferences_interface_homescreen_indicator_background_summary">Gösterge arkasındaki arkaplanı göster</string>
     <string name="preferences_interface_drawer_title">Uygulamalar</string>
     <string name="preferences_interface_drawer_widgets_category">Araçlar</string>
-    <string name="preferences_interface_drawer_widgets_join_apps_title">Uygulamalarla Birleştir</string>
-    <string name="preferences_interface_drawer_widgets_join_apps_summary">Sekme değiştirmeden Uygulama ekranından Araçlar ekranına geç</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Uygulamalarla birleştir</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Sekmelere dokunmadan Uygulamalar/Araçlar arası geçiş yap</string>
     <string name="preferences_interface_drawer_scrolling_category">Kaydırma</string>
-    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Geçiş Efekti</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Geçiş efekti</string>
     <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Ekranları kaydırırken efekt uygula</string>
-    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Yan Sayfaları Soldur</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Yan sayfaları soldur</string>
     <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Ekranları kaydırırken yan sayfaları soldur</string>
     <string name="preferences_interface_drawer_indicator_category">Gösterge</string>
-    <string name="preferences_interface_drawer_indicator_enable_title">Sayfa Göstergesi</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Sayfa göstergesi</string>
     <string name="preferences_interface_drawer_indicator_enable_summary">Hangi sayfada olduğunuzu gösterir</string>
-    <string name="preferences_interface_drawer_indicator_fade_title">Göstergeyi Soldur</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Göstergeyi soldur</string>
     <string name="preferences_interface_drawer_indicator_fade_summary">Ekran değiştikten sonra göstergeyi soldur</string>
-    <string name="preferences_interface_dock_title">Sabit Programlar</string>
+    <string name="preferences_interface_dock_title">Sabit programlar</string>
     <string name="preferences_interface_icons_title">Simgeler</string>
     <string name="preferences_interface_general_title">Genel</string>
     <string name="preferences_interface_general_orientation_title">Ekranı otomatik döndür</string>
