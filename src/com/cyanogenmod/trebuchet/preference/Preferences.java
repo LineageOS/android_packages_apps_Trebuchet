@@ -39,6 +39,6 @@ public class Preferences extends PreferenceActivity {
                 editor.commit();
 
         Preference version = findPreference("application_version");
-        version.setTitle(getString(R.string.application_name) + " " + getString(R.string.application_version));
+        version.setTitle(getString(R.string.application_name);// + " " + getString(R.string.application_version));
     }
 }
