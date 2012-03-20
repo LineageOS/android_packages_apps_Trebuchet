@@ -16,6 +16,24 @@
       "revId": "3b500febcdd685a668180d1df6ed7441f6377083",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX///Fk\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/preference/Preferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1039
+      },
+      "writtenOn": "2012-03-20T10:26:18Z",
+      "side": 1,
+      "message": "right, missing \")\" ... sorry i fix that...",
+      "parentUuid": "AAAARX///F0\u003d",
+      "revId": "3b500febcdd685a668180d1df6ed7441f6377083",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
