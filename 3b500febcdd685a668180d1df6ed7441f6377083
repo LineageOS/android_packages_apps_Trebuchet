@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX///F0\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/preference/Preferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1579
+      },
+      "writtenOn": "2012-03-20T09:55:51Z",
+      "side": 1,
+      "message": "comment out failed.causing compile error",
+      "revId": "3b500febcdd685a668180d1df6ed7441f6377083",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
