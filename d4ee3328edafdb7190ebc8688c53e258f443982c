@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Y8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "Irgendwie klingt Bildschirm nicht gut *gg*\n\nVielleicht: \"Anzeigefläche\" / \"Arbeitsfläche\" / \"Anzeige\"  / \"Bildfläche\" \n\nahhh... ich liebe DEUTSCH!!!\n\nwobei \"Anzeige\" mein fav ist...",
+      "parentUuid": "AAAARX//+a8\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+a4\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -121,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Y4\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "\"Vertikaler Abstand\" würde mir besser gefallen.",
+      "parentUuid": "AAAARX//+ao\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+ak\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -138,6 +174,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+YI\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "würde ich so lassen wie es ist...",
+      "parentUuid": "AAAARX//+ak\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+ag\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -149,6 +203,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Suchleiste\"\n(lässt sich doch prima übersetzen :)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Y0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "Naja Suchleiste klingt aber nicht wirklich falsch oder? (Meine Freundin weiß was gemeint ist *gg*)",
+      "parentUuid": "AAAARX//+ag\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -206,6 +278,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Yw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "YES!",
+      "parentUuid": "AAAARX//+aU\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+aM\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -217,6 +307,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Animation bei ... Bildschirms\" usw...",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+YQ\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "Irgendwie würde mir \"Anzeige\" wieder besser passen.",
+      "parentUuid": "AAAARX//+aM\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -251,6 +359,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "ui, ein langes Wort, besser:\n\"Bildschirm-Indikator\" (wie bei ADW)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Ys\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "\"Anzeige-Indikator\" klingt da z.b. irgendwie besser oder?",
+      "parentUuid": "AAAARX//+aI\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -308,6 +434,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Yo\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAARX//+Z4\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Z0\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -319,6 +463,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Beschriftungen ausblenden\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Yg\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAARX//+Z0\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -342,6 +504,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+YY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "\"Beschriftung der Apps und Widgets ausblenden\"\n\n?",
+      "parentUuid": "AAAARX//+Zw\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Zs\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -353,6 +533,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Reihen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+YU\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-23T22:34:35Z",
+      "side": 1,
+      "message": "YES",
+      "parentUuid": "AAAARX//+Zs\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
