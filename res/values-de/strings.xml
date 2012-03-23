@@ -102,4 +102,67 @@
     <string name="folder_closed" msgid="3130534551370511932">"Ordner wurde geschlossen"</string>
     <string name="folder_renamed" msgid="781234745487414781">"Ordner umbenannt in %1$s"</string>
     <string name="folder_name_format" msgid="4513766553514769310">"Ordner: %1$s"</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">Startbildschirm</string>
+    <string name="preferences_interface_homescreen_general_category">Allgemein</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Startbildschirme</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Anzahl der Startbildschirme</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Anfänglicher Startbildschirm</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Startbildschirm nach Neustart des Geräts</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Vertikaler Rand</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Einige Pixel Rand oben und unten zusätzlich freilassen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Horizontaler Rand</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Einige Pixel Rand rechts und links zusätzlich freilassen</string>
+    <string name="preferences_interface_homescreen_general_search_title">Suchleiste</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Dauerhafte Anzeige der Suchleiste</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Größe aller Widgets anpassen</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Größe statischer Widgets änderbar machen</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Scrollen</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Übergangseffekt</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Animation bei Wechsel des Startbildschirms</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Nachbarn ausblenden</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Ausblenden der Nachbarbildschirme bei Wechsel des Startbildschirms</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Hintergrundbild scrollen</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Hintergrundbild scrollen bei Wechsel des Startbildschirms</string>
+    <string name="preferences_interface_homescreen_indicator_category">Startbildschirm-Indikator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Anzeigen</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Indikator des aktuellen Startbildschirms anzeigen</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Automatisch ausblenden</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Indikator ausblenden, nachdem der Startbildschirm gewechselt wurde</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_drawer_title">Anwendungsliste</string>
+    <string name="preferences_interface_drawer_widgets_category">Widgets</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Mit Anwendungsliste verbinden</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Durch Wischgeste zwischen Anwendungsseiten und Widgets wechseln</string>
+    <string name="preferences_interface_drawer_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Übergangseffekt</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Animation bei Wechsel der Anwendungsseite</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Nachbarn ausblenden</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Ausblenden der Nachbarseiten beim Wechsel zwischen Anwendungsseiten</string>
+    <string name="preferences_interface_drawer_indicator_category">Bildschirm-Indikator</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Anzeigen</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Indikator der aktuellen Anwendungsseite anzeigen</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Automatisch ausblenden</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Indikator ausblenden, nachdem die Anwendungsseite gewechselt wurde</string>
+
+    <!-- Dock -->
+    <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Dock-Abtrennung anzeigen</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Linie zwischen Dock und Hauptbereich zeichnen</string>
+
+    <!-- Icons -->
+    <string name="preferences_interface_icons_title">Icons</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Beschriftung nicht anzeigen</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Beschriftung unterhalb der Icons nicht anzeigen</string>
+    <string name="preferences_interface_homescreen_general_default_grid_row_title">Reihen</string>
+    <string name="preferences_interface_homescreen_general_default_grid_row_summary">Anzahl der für Icons verfügbaren Reihen auf dem Startbildschirm</string>
+    <string name="preferences_interface_homescreen_general_default_grid_column_title">Spaltenzahl</string>
+    <string name="preferences_interface_homescreen_general_default_grid_column_summary">Anzahl der für Icons verfügbaren Spalten auf dem Startbildschirm</string>
+
+    <!-- General -->
+    <string name="preferences_interface_general_title">Allgemein</string>
+    <string name="preferences_interface_general_orientation_title">Automatische Bildschirmausrichtung</string>
 </resources>
