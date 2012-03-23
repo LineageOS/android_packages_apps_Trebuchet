@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//+aQ\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "Folgend ein paar Vorschläge. Wie gesagt, es ist eben häufig Geschmacksfrage. (ADW Übersetzung: http://goo.gl/C3NJp)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+a8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Bildschirm\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+a4\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Bildschirme\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+a0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Anzahl der Bildschirme\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Standardbildschirm\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+as\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Standardbildschirm nach Neustart\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+ao\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Vertikaler Rand\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+ak\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Pixel breiten Rand oben und unten freilassen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+ag\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Suchleiste\"\n(lässt sich doch prima übersetzen :)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+ac\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Dauerhafte Anzeige der Suchleiste\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Größe statischer Widgets änderbar machen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aU\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Scrollen\"\n(so war es im ADW Launcher und m.M.n. verständlich)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aM\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Animation bei ... Bildschirms\" usw...",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aE\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "s.o.",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aI\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "ui, ein langes Wort, besser:\n\"Bildschirm-Indikator\" (wie bei ADW)",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Z8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Automatisch ausblenden\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+aA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "Indikator autom. ausblenden",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Z4\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"zeichnen\" statt \"anzeigen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Z0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Beschriftungen ausblenden\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Zw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Beschriftungen unterhalb Apps und Widgets nicht anzeigen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Zs\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Reihen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Zo\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T21:52:58Z",
+      "side": 1,
+      "message": "\"Anzahl der Reihen auf dem Bildschirm festlegen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
