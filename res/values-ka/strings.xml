@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General -->
+    <skip />
+    <!-- Application name -->
+    <string name="application_name" translateable="false">Trebuchet</string>
+    <!-- Application copyright -->
+    <string name="application_copyright">Copyright \u00A9 CyanogenMod 2012</string>
+    <!-- Application version -->
+    <string name="application_version">0.1</string>
+
+    <!-- Name for all applications running as this uid. -->
+    <string name="uid_name">ანდროიდის ბირთვის აპლიკაციები</string>
+    <!-- Default folder name -->
+    <string name="folder_name"></string>
+    <!-- Title of dialog that appears after user selects Wallpaper from menu -->
+    <string name="chooser_wallpaper">შპალერის არჩევა</string>
+    <!-- Button label on Wallpaper Gallery screen; user selects this button to set a specific wallpaper -->
+    <string name="wallpaper_instructions">შპალერის დაყენება</string>
+    <!-- Option in "Select wallpaper from" dialog box -->
+    <string name="pick_wallpaper">შპალერები</string>
+    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
+    <string name="activity_not_found">აპლიკაცია არ მოიძებნა.</string>
+    <!--  Labels for the tabs in the customize drawer -->
+    <string name="widgets_tab_label">Widgets</string>
+
+    <!-- AppsCustomize pane -->
+    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
+    <string name="long_press_widget_to_add">Touch &amp; hold to pick up a widget.</string>
+    <!-- Market button text.  The market button text is removed in Launcher.java
+         in the Phone UI. [CHAR LIMIT=32] -->
+    <string name="market">მარკეტი</string>
+    <!-- Menu button text. -->
+    <string name="menu">მენიუ</string>
+    <!-- The format string for the dimensions of a widget in the drawer -->
+    <string name="widget_dims_format" translatable="false">%1$d x %2$d</string>
+
+    <!-- External-drop widget pick label format string [CHAR_LIMIT=25] -->
+    <string name="external_drop_widget_pick_format" translatable="false">%1$s (%2$d x %3$d)</string>
+    <!-- External-drop widget error string.  This is the error that is shown
+         when you drag and item into the homescreen and it is unable to fit,
+         or an error is encountered. [CHAR_LIMIT=50] -->
+    <string name="external_drop_widget_error">Couldn\'t drop item onto this Home screen.</string>
+    <!-- External-drop widget pick title.  This is shown as the title of the
+         dialog which allows you to pick which widgets to handle a particular
+         drop if there are multiple choices. [CHAR_LIMIT=35] -->
+    <string name="external_drop_widget_pick_title">Choose widget to create</string>
+
+    <!-- Folders -->
+    <skip />
+    <!-- Label of Folder name field in Rename folder dialog box -->
+    <string name="rename_folder_label">საქაღალდის სახელი</string>
+    <!-- Title of dialog box -->
+    <string name="rename_folder_title">სახელის შეცვლა</string>
+    <!-- Buttons in Rename folder dialog box -->
+    <string name="rename_action">ოკ</string>
+    <!-- Buttons in Rename folder dialog box -->
+    <string name="cancel_action">გაუქმება</string>
+
+    <!-- Shortcuts -->
+    <skip />
+    <!-- Title of dialog box -->
+    <string name="menu_item_add_item">ეკრანზე დამატება</string>
+    <!-- Options in "Add to Home" dialog box; Title of the group containing the list of all apps -->
+    <string name="group_applications">აპლიკაციები</string>
+    <!-- Options in "Add to Home" dialog box; Title of the group containing the list of all shortcut
+s -->
+    <string name="group_shortcuts">Shortcuts</string>
+    <!-- Options in "Add to Home" dialog box; Title of the group containing the list of all widgets/gadgets -->
+    <string name="group_widgets">Widgets</string>
+    <!-- Options in "Add to Home" dialog box; Title of the group containing the list of apps that can set the wallpaper-->
+    <string name="group_wallpapers">შპალერები</string>
+    <!-- Error message when user has filled a home screen, possibly not used -->
+    <string name="out_of_space">ეკრანზე ადგილი არ არის.</string>
+    <!-- Error message when user tries to drop an invalid item on the hotseat -->
+    <string name="invalid_hotseat_item">This widget is too large for the hotseat.</string>
+    <!-- Message displayed when a shortcut is created by an external application -->
+    <string name="shortcut_installed">Shortcut \"<xliff:g id="name" example="Browser">%s</xliff:g>\" created.</string>
+    <!-- Message displayed when a shortcut is uninstalled by an external application -->
+    <string name="shortcut_uninstalled">Shortcut \"<xliff:g id="name" example="Browser">%s</xliff:g>\" was removed.</string>
+    <!-- Message displayed when an external application attemps to create a shortcut that already exists -->
+    <string name="shortcut_duplicate">Shortcut \"<xliff:g id="name" example="Browser">%s</xliff:g>\" already exists.</string>
+
+    <!-- Title of dialog when user is selecting shortcut to add to homescreen -->
+    <string name="title_select_shortcut">Select shortcut</string>
+    <!-- Title of dialog when user is selecting an application to add to homescreen -->
+    <string name="title_select_application">აპლიკაციის არჩევა</string>
+
+    <!-- All applications label -->
+    <string name="all_apps_button_label">აპლიკაციები</string>
+    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
+         for accessibilty (spoken when the button gets focus). -->
+    <string name="all_apps_home_button_label">სახლი</string>
+    <!-- Label for trash icon on workspace. Meant to communicate the idea of removing the
+         icon/widget from the home screen, but not permanently. [CHAR_LIMIT=30] -->
+    <string name="delete_zone_label_workspace">დამალვა</string>
+    <!-- Label for trash icon in All Apps. The icon/widget will become completely unavailable on the
+         device. [CHAR_LIMIT=30]-->
+    <string name="delete_zone_label_all_apps">წაშლა</string>
+
+    <!-- Label for delete drop target. [CHAR_LIMIT=30] -->
+    <string name="delete_target_label">დამალვა</string>
+    <!-- Label for cancel drop target. [CHAR_LIMIT=30] -->
+    <string name="cancel_target_label">გაუქმება</string>
+    <!-- Label for uninstall drop target. [CHAR_LIMIT=30]-->
+    <string name="delete_target_uninstall_label">წაშლა</string>
+    <!-- Label for the info icon. [CHAR_LIMIT=30] -->
+    <string name="info_target_label">ინფორმაცია</string>
+
+    <!-- Accessibility: Search button -->
+    <string name="accessibility_search_button">ძებნა</string>
+    <!-- Accessibility: Voice Search button -->
+    <string name="accessibility_voice_search_button">ხმით ძებნა</string>
+    <!-- Accessibility: AllApps button -->
+    <string name="accessibility_all_apps_button">აპლიკაციები</string>
+    <!-- Accessibility: Delete button -->
+    <string name="accessibility_delete_button">წაშლა</string>
+
+    <!-- Label for trash icon in All Apps, when an updated system app is selected. The update will
+         be uninstalled. [CHAR_LIMIT=30] -->
+    <string name="delete_zone_label_all_apps_system_app">განახლების წაშლა</string>
+
+    <!-- Menus items: -->
+    <skip />
+    <!-- Verb, menu item used to add an item on the desktop -->
+    <string name="menu_add">დამატება</string>
+    <!-- Menu item used to manage installed applications -->
+    <string name="menu_manage_apps">აპლიკაციების მართვა</string>
+    <!-- Menu item used to open the default market -->
+    <string name="menu_market">მარკეტი</string>
+    <!-- Noun, menu item used to set the desktop's wallpaper -->
+    <string name="menu_wallpaper">შპალერი</string>
+    <!-- Verb, menu item used to initiate global search -->
+    <string name="menu_search">ძებნა</string>
+    <!-- Noun, menu item used to bring down the notifications shade -->
+    <string name="menu_notifications">Notifications</string>
+    <!-- Noun, menu item used to show the system settings -->
+    <string name="menu_settings">სისტემის პარამეტრები</string>
+    <!-- Noun, menu item used to show the launcher preferences -->
+    <string name="menu_preferences">Trebuchet პარამეტრები</string>
+    <!-- Noun, menu item used to show help. [CHAR_LIMIT=none] -->
+    <string name="menu_help">დახმარება</string>
+
+    <!-- Noun, menu item used to sort apps by name -->
+    <string name="menu_apps_sort_title">სახელი</string>
+    <!-- Noun, menu item used to sort apps by install date -->
+    <string name="menu_apps_sort_install_date">ინსტ. თარიღი</string>
+
+    <!-- URL pointing to help text. If empty, no link to help will be created [DO NOT TRANSLATE] -->
+    <string name="help_url" translatable="false"></string>
+
+    <!--  Strings for the contextual action bar (CAB) in All Apps -->
+    <skip />
+    <!-- Describes the button for uninstalling the currently selected application.
+         Text is not displayed, but provided for accessibility. [CHAR_LIMIT=none] -->
+    <string name="cab_menu_delete_app">აპლიკაციის წაშლა</string>
+    <!-- Describes the button for getting details/info about currently selected application.
+         Text is not displayed, but provided for accessibility. [CHAR_LIMIT=none] -->
+    <string name="cab_menu_app_info">აპლიკაციის დეტალები</string>
+    <!-- Appears in the CAB when an app is selected in All Apps or Customize mode. [CHAR_LIMIT=50] -->
+    <string name="cab_app_selection_text">არჩეულია 1 აპლიკაცია</string>
+    <!-- Appears in the CAB when a widget is selected in Customize mode. [CHAR_LIMIT=50] -->
+    <string name="cab_widget_selection_text">1 widget selected</string>
+    <!-- Appears in the CAB when a folder is selected in Customize mode. [CHAR_LIMIT=50] -->
+    <string name="cab_folder_selection_text">არჩეულია 1 საქაღალდე</string>
+    <!-- Appears in the CAB when a shortcut is selected in Customize mode. [CHAR_LIMIT=50] -->
+    <string name="cab_shortcut_selection_text">1 shortcut selected</string>
+
+    <!-- Permissions: -->
+    <skip />
+    <!-- Permission short label -->
+    <string name="permlab_install_shortcut">install shortcuts</string>
+    <!-- Permission description -->
+    <string name="permdesc_install_shortcut">Allows an app to add
+        shortcuts without user intervention.</string>
+    <!-- Permission short label -->
+    <string name="permlab_uninstall_shortcut">uninstall shortcuts</string>
+    <!-- Permission description -->
+    <string name="permdesc_uninstall_shortcut">Allows an app to remove
+        shortcuts without user intervention.</string>
+    <!-- Permission short label -->
+    <string name="permlab_read_settings">read Home settings and shortcuts</string>
+    <!-- Permission description -->
+    <string name="permdesc_read_settings">Allows an app to read the settings and
+        shortcuts in Home.</string>
+    <!-- Permission short label -->
+    <string name="permlab_write_settings">write Home settings and shortcuts</string>
+    <!-- Permission description -->
+    <string name="permdesc_write_settings">Allows an app to change the settings and
+        shortcuts in Home.</string>
+
+    <!-- Widgets: -->
+    <skip />
+
+    <!-- Text to show user in place of a gadget when we can't display it properly -->
+    <string name="gadget_error_text">Problem loading widget</string>
+
+    <!-- Text to inform the user that they can't uninstall a system application -->
+    <string name="uninstall_system_app_text">სისტემური აპლიკაციის წაშლა შეუძლებელია.</string>
+
+    <!-- Title of the Android Dreams (screensaver) module -->
+    <string name="dream_name">Rocket Launcher</string>
+
+    <!-- Default folder title -->
+    <string name="folder_hint_text">ახალი საქაღალდე</string>
+
+    <!-- Accessibility -->
+    <skip />
+
+    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
+    <string name="default_scroll_format">გვერდი %1$d %2$d დან</string>
+    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
+    <string name="workspace_scroll_format">Workspace %1$d of %2$d</string>
+    <!-- The format string for AppsCustomize Apps page scroll text [CHAR_LIMIT=none] -->
+    <string name="apps_customize_apps_scroll_format">Apps page %1$d of %2$d</string>
+    <!-- The format string for AppsCustomize Apps page scroll text [CHAR_LIMIT=none] -->
+    <string name="apps_customize_widgets_scroll_format">Widgets page %1$d of %2$d</string>
+
+    <!-- Clings -->
+    <!-- The title text for the workspace cling [CHAR_LIMIT=none] -->
+    <string name="workspace_cling_title">იგრძენით თავი სახლში</string>
+    <!-- The description of how to use the workspace [CHAR_LIMIT=none] -->
+    <string name="workspace_cling_move_item">აქ შეგიძლიათ განათავსოთ სასურველი აპლიკაციები.</string>
+    <!-- The description of how to open all apps from the workspace [CHAR_LIMIT=none] -->
+    <string name="workspace_cling_open_all_apps">ყველა აპლიკაციის სანახავად შეეხეთ წრეს.</string>
+    <!-- The title text for the All Apps cling [CHAR_LIMIT=none] -->
+    <string name="all_apps_cling_title">აირჩიეთ რამდენიმე აპლიკცაია</string>
+    <!-- The description of how to pick up and add an item to the workspace [CHAR_LIMIT=none] -->
+    <string name="all_apps_cling_add_item">To add an app to your Home screen, touch &amp; hold it.</string>
+    <!-- The title text for the All Apps Sort cling [CHAR_LIMIT=none] -->
+    <string name="all_apps_sort_cling_title">Sort your apps</string>
+    <!-- The description of how to pick sort apps in the drawer [CHAR_LIMIT=none] -->
+    <string name="all_apps_sort_cling_add_item">Touch &amp; hold the Apps tab to select your sort mode</string>
+    <!-- The title text for the Folder cling [CHAR_LIMIT=none] -->
+    <string name="folder_cling_title">Organize your apps with folders</string>
+    <!-- The description of how to move an app [CHAR_LIMIT=none] -->
+    <string name="folder_cling_move_item">To move an app, touch &amp; hold it.</string>
+    <!-- The description of how to create a folder [CHAR_LIMIT=none] -->
+    <string name="folder_cling_create_folder">To make a new folder on your Home screen, stack one app on top of another.</string>
+    <!-- The text on the button to dismiss a cling [CHAR_LIMIT=none] -->
+    <string name="cling_dismiss">ოკ</string>
+    <add-resource type="string" name="default_folder_name" />
+
+    <!-- Folder accessibility -->
+    <!-- The format string for when a folder is opened, speaks the dimensions -->
+    <string name="folder_opened">Folder opened, %1$d by %2$d</string>
+    <!-- Instruction that clicking outside will close folder -->
+    <string name="folder_tap_to_close">Tap to close folder</string>
+    <!-- Instruction that clicking outside will commit folder rename -->
+    <string name="folder_tap_to_rename">Tap to commit rename</string>
+    <!-- Indication that folder closed -->
+    <string name="folder_closed">Folder closed</string>
+    <!-- Folder renamed format -->
+    <string name="folder_renamed">Folder renamed to %1$s</string>
+    <!-- Folder name format -->
+    <string name="folder_name_format">საქაღალდე: %1$s</string>
+
+    <skip />
+    <!--             -->
+    <!-- Preferences -->
+    <!--             -->
+    <string name="preferences_title">უპირატესობები</string>
+    <!-- UI -->
+    <string name="preferences_interface_title">ინტერფეისი</string>
+    <!-- Application -->
+    <string name="preferences_application_title">აპლიკაცია</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">Homescreen</string>
+    <string name="preferences_interface_homescreen_general_category">General</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Homescreens</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Number of screens on the homescreen</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Default screen</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Choose the default homescreen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Vertical Padding</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Extra vertical spacing on the homescreen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Horizontal Padding</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Extra horizontal spacing on the homescreen</string>
+    <string name="preferences_interface_homescreen_general_search_title">Search bar</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Enable persistent search bar</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Resize any widget</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Allow resizing of widgets that normally aren\'t resizeable</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Hide icon labels</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Hide homescreen icon labels</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Transition effect</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Scrolling effect when scrolling homescreens</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Fade side pages</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Fade the side pages when scrolling homescreens</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Scroll wallpaper</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Scroll wallpaper when scrolling homescreens</string>
+    <string name="preferences_interface_homescreen_indicator_category">Indicator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Show page indicator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Show current page indicator at the bottom of the screen</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Fade indicator</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Fade the indicator after the homescreen has changed</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Show dock divider</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Show the background behind the indicator</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_drawer_title">Drawer</string>
+    <string name="preferences_interface_drawer_widgets_category">Widgets</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Join with apps</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Swipe from apps drawer to widgets drawer without changing tabs</string>
+    <string name="preferences_interface_drawer_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Transition effect</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Scrolling effect when scrolling screens</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Fade side pages</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Fade the side pages when scrolling screens</string>
+    <string name="preferences_interface_drawer_indicator_category">Indicator</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Show page indicator</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Show current page indicator at the bottom of the screen</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Fade indicator</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Fade the indicator after the page has changed</string>
+
+    <!-- Dock -->
+    <string name="preferences_interface_dock_title">დოკი</string>
+
+    <!-- Icons -->
+    <string name="preferences_interface_icons_title">ხატულები</string>
+
+    <!-- General -->
+    <string name="preferences_interface_general_title">ძირითადი</string>
+    <string name="preferences_interface_general_orientation_title">ეკრანის ავტ. გადმობრუნება</string>
+
+</resources>
