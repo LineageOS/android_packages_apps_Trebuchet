@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//+V0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T23:34:21Z",
+      "side": 1,
+      "message": "Still not happy with \"Startbildschirme\" but majority wins :-D",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Vw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T23:34:21Z",
+      "side": 1,
+      "message": "\"Standardbildschirm\" sounds sooo nice ;-)",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Vg\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T23:34:21Z",
+      "side": 1,
+      "message": "\"Abstand zum Rand\" haha",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Vs\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T23:34:21Z",
+      "side": 1,
+      "message": "...sounds soo nice. haha",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Vk\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-23T23:34:21Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be more consistent if you call it \"Seiten-[something]\" here?",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
