@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+YM\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Already saw \"Startbildschirm\" in several places in the Trebuchet translation. I will keep it.",
+      "parentUuid": "AAAARX//+a8\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+a4\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -105,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+YE\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Becomes too long when keeping the \"Startbildschirm\" term, and to me \"Anfänglich\" has clear meaning.",
+      "parentUuid": "AAAARX//+aw\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+as\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -116,6 +152,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Standardbildschirm nach Neustart\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+YA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Will remove \"Vorgabe des\" + add \"des Geräts\" at the end to make it a bit more verbose than the title...",
+      "parentUuid": "AAAARX//+as\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -192,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Yc\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "As the setting (number) itself is not output, I\u0027ll make that\n\"Einige Pixel Rand ...\"\n\n(thanks for \"Rand\" - I was not really happy with \"Freibereich\")",
+      "parentUuid": "AAAARX//+ak\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+ag\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -220,6 +292,24 @@
       "writtenOn": "2012-03-23T22:34:35Z",
       "side": 1,
       "message": "Naja Suchleiste klingt aber nicht wirklich falsch oder? (Meine Freundin weiß was gemeint ist *gg*)",
+      "parentUuid": "AAAARX//+ag\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Xs\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAARX//+ag\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -261,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+X0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+aY\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+aU\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -296,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Xw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+aU\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+aM\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -324,6 +450,24 @@
       "writtenOn": "2012-03-23T22:34:35Z",
       "side": 1,
       "message": "Irgendwie würde mir \"Anzeige\" wieder besser passen.",
+      "parentUuid": "AAAARX//+aM\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Xo\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAARX//+aM\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -383,6 +527,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Xk\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done. Also \"Startbildschirm-Indikator\", above.",
+      "parentUuid": "AAAARX//+aI\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Z8\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -400,6 +562,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+XQ\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+Z8\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+aA\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -411,6 +591,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "Indikator autom. ausblenden",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+XI\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Changing \"Hinweis\" to \"Indicator\", keeping the part after the comma, I think it\u0027s clearer + what summaries are for.",
+      "parentUuid": "AAAARX//+aA\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -445,6 +643,24 @@
       "writtenOn": "2012-03-23T22:34:35Z",
       "side": 1,
       "message": "YES",
+      "parentUuid": "AAAARX//+Z4\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+XE\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAARX//+Z4\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -487,6 +703,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+XA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "\"Beschriftung nicht anzeigen\". It is never shown then, \"ausblenden\" implies it is shown and then fades away.",
+      "parentUuid": "AAAARX//+Z0\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Zw\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -515,6 +749,24 @@
       "writtenOn": "2012-03-23T22:34:35Z",
       "side": 1,
       "message": "\"Beschriftung der Apps und Widgets ausblenden\"\n\n?",
+      "parentUuid": "AAAARX//+Zw\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+W8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "\"Beschriftung unterhalb der Icons nicht anzeigen\". Never seen labels on widgets...",
       "parentUuid": "AAAARX//+Zw\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -557,6 +809,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+W0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+Zs\u003d",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Zo\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 1
@@ -568,6 +838,24 @@
       "writtenOn": "2012-03-23T21:52:58Z",
       "side": 1,
       "message": "\"Anzahl der Reihen auf dem Bildschirm festlegen\"",
+      "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Ww\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-23T22:47:21Z",
+      "side": 1,
+      "message": "\"Reihen\" ok, but I keep \"für Icons\", as it makes clear what scope these rows/columns have.",
+      "parentUuid": "AAAARX//+Zo\u003d",
       "revId": "d4ee3328edafdb7190ebc8688c53e258f443982c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
