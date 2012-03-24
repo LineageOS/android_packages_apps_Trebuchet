@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//+Ng\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:39:05Z",
+      "side": 1,
+      "message": "One last thing. Wordorder: Hintergrundbild bei Seitenwechsel scrollen.",
+      "revId": "cf9b72daf97bbf558cde22ed10145cfb7a5b152e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
