@@ -230,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+OM\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:10:40Z",
+      "side": 1,
+      "message": "Ohh, forget to change this. Look in my comment on the main page.",
+      "parentUuid": "AAAARX//+Oc\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Po\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
