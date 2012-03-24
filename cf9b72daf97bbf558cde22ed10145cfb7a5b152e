@@ -16,6 +16,24 @@
       "revId": "cf9b72daf97bbf558cde22ed10145cfb7a5b152e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+NY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T13:43:51Z",
+      "side": 1,
+      "message": "Okay, will do. But don\u0027t hold your breath - I\u0027ll let patch set 5 sit for a while (over the day), maybe it will attract some more comments.",
+      "parentUuid": "AAAARX//+Ng\u003d",
+      "revId": "cf9b72daf97bbf558cde22ed10145cfb7a5b152e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
