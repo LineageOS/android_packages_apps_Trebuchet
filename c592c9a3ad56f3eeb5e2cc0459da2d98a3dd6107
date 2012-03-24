@@ -16,6 +16,193 @@
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+P4\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "What about \u0027Größe aller Widgets anpassbar\u0027 because they are not all resized by activating this.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+P0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "instead of \u0027änderbar\u0027 \u0027anpassbar\u0027 to fit to my first comment.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Pw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "\u0027Seitenränder verblassen lassen\u0027 seems much better for me.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+PU\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "\u0027Übergang der Seitenränder\u0027 or \u0027Seitenränder ineinander übergehen lassen\u0027 or something like this.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Ps\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "Much shorter than the english text. Is this supposed to be?",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Po\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "I think \u0027Drawer\u0027 needs no translation, but that\u0027s my oppinion.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Pk\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "Join with apps \u003d Mit Anwendungen verbinden",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Pg\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "Anwendungen instead of Anwendungsliste",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Pc\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "\u0027Seitenränder verblassen lassen\u0027 seems much better for me.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+PY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "\u0027Übergang der Seitenränder\u0027 or \u0027Seitenränder ineinander übergehen lassen\u0027 or something like this.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+PQ\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T12:26:45Z",
+      "side": 1,
+      "message": "Much shorter than the english text. Is this supposed to be?",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
