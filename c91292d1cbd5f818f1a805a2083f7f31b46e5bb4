@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+TQ\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-24T02:10:50Z",
+      "side": 1,
+      "message": "Ohh... sorry!  Mein build ist gerade fertig geworden und nach testen der einstellung verstehe ich jetzt was es beschreiben soll!\n\nDemnach ist es so voll ok so! \n\nTut mir leid nocheinmal!",
+      "parentUuid": "AAAARX//+TY\u003d",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Vs\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 2
