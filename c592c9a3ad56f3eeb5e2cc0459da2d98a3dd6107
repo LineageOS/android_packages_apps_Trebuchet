@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+PA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+Sc\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+P4\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2012-03-24T12:26:45Z",
       "side": 1,
       "message": "What about \u0027Größe aller Widgets anpassbar\u0027 because they are not all resized by activating this.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+O8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARX//+P4\u003d",
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+O4\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "It is strange to me to have summaries say practically the same thing as their title. So I\u0027ll make this a bit more verbose:\n\"Auch Größe sonst statischer Widgets anpassbar machen\"",
+      "parentUuid": "AAAARX//+P0\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Pw\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2012-03-24T12:26:45Z",
       "side": 1,
       "message": "\u0027Seitenränder verblassen lassen\u0027 seems much better for me.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+O0\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Showing my ignorance: what exactly does that setting do? I played with it, but could not see any effect.",
+      "parentUuid": "AAAARX//+Pw\u003d",
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Ow\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Sticking to the english form would just repeat \"Seitenindikator\" which is the heading of that section and shown in the previous line on screen.\n\nIs it desirable to consistently repeat the category topic in every setting? I didn\u0027t think so.",
+      "parentUuid": "AAAARX//+Ps\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Po\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Os\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Well, coming to Android only some weeks ago, I found it confusing at first to learn what \"Drawer\" and what \"Dock\" was. Of course easily found out by experiment - but I think \"Anwendungsliste\" is immediately clear.\n\nIt _does_ stick out a bit on the initial launcher settings screen, among \"Seite\", \"Dock\", \"Icons\" - I\u0027ll shorten it to simply \"Anwendungen\"",
+      "parentUuid": "AAAARX//+Po\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Pk\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -132,6 +240,24 @@
       "writtenOn": "2012-03-24T12:26:45Z",
       "side": 1,
       "message": "Join with apps \u003d Mit Anwendungen verbinden",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+Oo\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T12:53:29Z",
+      "side": 1,
+      "message": "Already confusing to me in english, tried to make it better. The setting joins pages, not apps. \"Anwendungsseiten\" would be even clearer now. Changing that, and say \"Widgetseiten\" instead of just \"Widgets\".",
+      "parentUuid": "AAAARX//+Pk\u003d",
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
