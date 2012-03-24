@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Tk\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-24T01:37:29Z",
+      "side": 1,
+      "message": "Arbeitsfläche klingt für mich zwar viel besser als Startbildschirm, ist aber naja...  :-) Leider hab ich auch keinen besseren einfall. wobei es ja bei windoof so ist, dass man den \"desktop\" bzw die auflösung usw, unter \"anzeige-einstellungen\" ändern kann. von der seite hab ich den vorschlag \"anzeige\" gehabt\n\nVielleicht fällt mir ja über nacht noch was besseres ein?!",
+      "parentUuid": "AAAARX//+V0\u003d",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Vw\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 2
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Ts\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-24T01:37:29Z",
+      "side": 1,
+      "message": "Ich dachte, es geht um den \"Abstand\" der zwischen den icons/widgets eingehalten wird. und ein \"rand\" entsteht dabei ja eigentlich nicht oder? deshalb ist es für mich ein Abstand. Und wenn man padding in CSS verwendet spricht man auch von \"Abstand\" *gg* \n\nAlso wäre z.b.: \"Vertikaler Abstand\" + \"Anzahl von Pixel die ober und unter Objekten freigegehalten werden\" richtig(er) oder? (muss natürlich nicht so formuliert sein)",
+      "parentUuid": "AAAARX//+Vg\u003d",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Vs\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 2
@@ -81,6 +117,24 @@
       "writtenOn": "2012-03-23T23:34:21Z",
       "side": 1,
       "message": "Wouldn\u0027t it be more consistent if you call it \"Seiten-[something]\" here?",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+To\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2012-03-24T01:37:29Z",
+      "side": 1,
+      "message": "Deshalb war ich irgendwie bei Anzeige...",
+      "parentUuid": "AAAARX//+Vk\u003d",
       "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
