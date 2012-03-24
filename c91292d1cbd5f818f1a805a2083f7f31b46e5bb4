@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+TY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T01:50:33Z",
+      "side": 1,
+      "message": "Es geht um extra Freiraum um die gesamte Anzeige, warum auch immer man das haben will... Jedenfalls hatte ich so ein paar Screenshots vor ein paar Tagen verstanden, und auch der Code in src/com/cyanogenmod/trebuchet/Workspace.java Zeile 458ff, wo das Setting bei der Initialisierung der kompletten Seiten verwendet wird, sieht danach aus.",
+      "parentUuid": "AAAARX//+Ts\u003d",
+      "revId": "c91292d1cbd5f818f1a805a2083f7f31b46e5bb4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Vs\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 2
