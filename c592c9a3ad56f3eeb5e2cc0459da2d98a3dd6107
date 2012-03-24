@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+OE\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T13:23:55Z",
+      "side": 1,
+      "message": "Thanks for the explanation in your followup comment, I now see it. This setting fades in/out both the page you are coming from, and the new page. It does not fade only the margins of a page, so \"Seitenränder\" is clearly wrong. It does not fade only the neighbor (page you go to), either.\n\nHa! Avoidance strategy: will just say \"Verblassen lassen\"",
+      "parentUuid": "AAAARX//+O0\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+PU\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -171,6 +189,24 @@
       "writtenOn": "2012-03-24T12:26:45Z",
       "side": 1,
       "message": "\u0027Übergang der Seitenränder\u0027 or \u0027Seitenränder ineinander übergehen lassen\u0027 or something like this.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+OA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2783
+      },
+      "writtenOn": "2012-03-24T13:23:55Z",
+      "side": 1,
+      "message": "\"Seiten bei Seitenwechsel verblassen lassen\"",
+      "parentUuid": "AAAARX//+PU\u003d",
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
