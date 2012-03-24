@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARX//+Sc\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 70
+      },
+      "writtenOn": "2012-03-24T04:02:38Z",
+      "side": 1,
+      "message": "\"Interface\" has already been translated to \"Oberfläche\" in Settings.apk. I think this applies here very well too.",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
