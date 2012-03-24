@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Og\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:09:43Z",
+      "side": 1,
+      "message": "Sounds good",
+      "parentUuid": "AAAARX//+O4\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Pw\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -194,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+Oc\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:09:43Z",
+      "side": 1,
+      "message": "It\u0027s ok. I only want to know a reason for this.",
+      "parentUuid": "AAAARX//+Ow\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Po\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -229,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARX//+OY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:09:43Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAARX//+Os\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARX//+Pk\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 4
@@ -258,6 +312,24 @@
       "side": 1,
       "message": "Already confusing to me in english, tried to make it better. The setting joins pages, not apps. \"Anwendungsseiten\" would be even clearer now. Changing that, and say \"Widgetseiten\" instead of just \"Widgets\".",
       "parentUuid": "AAAARX//+Pk\u003d",
+      "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARX//+OU\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1309
+      },
+      "writtenOn": "2012-03-24T13:09:43Z",
+      "side": 1,
+      "message": "with \u0027Widgetseiten\u0027 it is ok.",
+      "parentUuid": "AAAARX//+Oo\u003d",
       "revId": "c592c9a3ad56f3eeb5e2cc0459da2d98a3dd6107",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
