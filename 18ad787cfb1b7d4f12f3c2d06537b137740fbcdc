@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAARn//+ls\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "I\u0027m not really sure if this makes sense. It does translate the English correctly, though. I\u0027d say: \"Aantal startschermen\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lo\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "This should be: \"Kies het standaard startscherm\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lk\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "\"normaalgesproken\" should be \"normaal gesproken\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lg\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "\"Achtergrond mee scrollen bij het scrollen door startschermen\" makes more sense to me",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lc\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "\"Vervaagde\" should be \"Vervaag de\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lY\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "\"Automatisch overgaan\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lU\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "\"Automatisch overgaan van apps naar widgets zonder van tabblad te wisselen\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lQ\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-03T22:59:32Z",
+      "side": 1,
+      "message": "Again, \"Vervaag de\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
