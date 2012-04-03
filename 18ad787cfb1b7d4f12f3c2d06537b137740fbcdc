@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//+kk\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+ls\u003d",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//+lo\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-04-03T22:59:32Z",
       "side": 1,
       "message": "This should be: \"Kies het standaard startscherm\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+lA\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+lo\u003d",
       "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//+k8\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+lk\u003d",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//+lg\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2012-04-03T22:59:32Z",
       "side": 1,
       "message": "\"Achtergrond mee scrollen bij het scrollen door startschermen\" makes more sense to me",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+k4\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "\u0027scrolt mee\u0027?\n\nVerder, done.",
+      "parentUuid": "AAAARn//+lg\u003d",
       "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//+k0\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+lc\u003d",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//+lY\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2012-04-03T22:59:32Z",
       "side": 1,
       "message": "\"Automatisch overgaan\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+kw\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Iets te letterlijk, inderdaad. Done.",
+      "parentUuid": "AAAARn//+lY\u003d",
       "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAARn//+ks\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+lU\u003d",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAARn//+lQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -132,6 +258,24 @@
       "writtenOn": "2012-04-03T22:59:32Z",
       "side": 1,
       "message": "Again, \"Vervaag de\"",
+      "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAARn//+ko\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-04-03T23:04:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAARn//+lQ\u003d",
       "revId": "18ad787cfb1b7d4f12f3c2d06537b137740fbcdc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
