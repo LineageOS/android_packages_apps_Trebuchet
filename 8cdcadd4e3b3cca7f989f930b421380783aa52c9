@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAR3///u0\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-04T21:51:47Z",
+      "side": 1,
+      "message": "Scrolleffect met dubbel L",
+      "revId": "8cdcadd4e3b3cca7f989f930b421380783aa52c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAR3///uw\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 3094
+      },
+      "writtenOn": "2012-04-04T21:51:47Z",
+      "side": 1,
+      "message": "Aanhalingstekens weghalen",
+      "revId": "8cdcadd4e3b3cca7f989f930b421380783aa52c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
