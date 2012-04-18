@@ -120,6 +120,7 @@ public class AppWidgetResizeFrame extends FrameLayout {
 
         Rect p = AppWidgetHostView.getDefaultPaddingForWidget(context,
                 widgetView.getAppWidgetInfo().provider, null);
+
         mWidgetPaddingLeft = p.left;
         mWidgetPaddingTop = p.top;
         mWidgetPaddingRight = p.right;
