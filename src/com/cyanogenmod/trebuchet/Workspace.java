@@ -1428,35 +1428,6 @@ public class Workspace extends PagedView
                     cl.fastInvalidate();
                 }
             }
-        } else if (mOverScrollX < 0 || mOverScrollX > mMaxScrollX) {
-            int index = mOverScrollX < 0 ? 0 : getChildCount() - 1;
-            CellLayout cl = (CellLayout) getPageAt(index);
-            if (!LauncherApplication.isScreenLarge()) {
-                if (cl != null) {
-                    float scrollProgress = getScrollProgress(screenScroll, cl, index);
-                    cl.setOverScrollAmount(Math.abs(scrollProgress), index == 0);
-                    float rotation = - WORKSPACE_OVERSCROLL_ROTATION * scrollProgress;
-                    cl.setCameraDistance(mDensity * CAMERA_DISTANCE);
-                    cl.setPivotX(cl.getMeasuredWidth() * (index == 0 ? 0.75f : 0.25f));
-                    cl.setPivotY(cl.getMeasuredHeight() * 0.5f);
-                    cl.setRotationY(rotation);
-                    cl.setTranslationX(0.0f);
-                    cl.setOverscrollTransformsDirty(true);
-                    setFadeForOverScroll(Math.abs(scrollProgress));
-                }
-            } else {
-                if (cl != null) {
-                    float scrollProgress = getScrollProgress(screenScroll, cl, index);
-                    cl.setOverScrollAmount(Math.abs(scrollProgress), index == 0);
-                    float rotation = - WORKSPACE_ROTATION * scrollProgress;
-                    cl.setBackgroundAlphaMultiplier(
-                            overScrollBackgroundAlphaInterpolator(Math.abs(scrollProgress)));
-                    mOverScrollPageIndex = index;
-                    cl.setPivotX(cl.getMeasuredWidth() * (index == 0 ? 0.75f : 0.25f));
-                    cl.setPivotY(cl.getMeasuredHeight() * 0.5f);
-                    cl.setOverscrollTransformsDirty(true);
-                }
-            }
         } else {
             if (LauncherApplication.isScreenLarge()) {
                 for (int i = 0; i < getChildCount(); i++) {

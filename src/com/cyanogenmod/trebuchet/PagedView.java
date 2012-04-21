@@ -371,22 +371,8 @@ public abstract class PagedView extends ViewGroup {
     @Override
     public void scrollTo(int x, int y) {
         mUnboundedScrollX = x;
-
-        if (x < 0) {
-            super.scrollTo(0, y);
-            if (mAllowOverScroll) {
-                overScroll(x);
-            }
-        } else if (x > mMaxScrollX) {
-            super.scrollTo(mMaxScrollX, y);
-            if (mAllowOverScroll) {
-                overScroll(x - mMaxScrollX);
-            }
-        } else {
-            mOverScrollX = x;
-            super.scrollTo(x, y);
-        }
-
+        mOverScrollX = x;
+        super.scrollTo(x, y);
         mTouchX = x;
     }
 

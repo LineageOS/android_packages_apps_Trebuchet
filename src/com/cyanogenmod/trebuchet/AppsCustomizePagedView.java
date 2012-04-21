@@ -1711,66 +1711,34 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     @Override
     protected void screenScrolled(int screenScroll) {
         super.screenScrolled(screenScroll);
-
-        if (mOverScrollX < 0 || mOverScrollX > mMaxScrollX) {
-            int index = mOverScrollX < 0 ? 0 : getChildCount() - 1;
-            View v = getPageAt(index);
-            if (v != null) {
-                float scrollProgress = getScrollProgress(screenScroll, v, index);
-                float rotation = - TRANSITION_MAX_ROTATION * scrollProgress;
-                v.setCameraDistance(mDensity * CAMERA_DISTANCE);
-                v.setPivotX(v.getMeasuredWidth() * (index == 0 ? TRANSITION_PIVOT : 1 - TRANSITION_PIVOT));
-                v.setPivotY(v.getMeasuredHeight() * 0.5f);
-                v.setRotationY(rotation);
-                v.setTranslationX(0.0f);
-                mOverscrollTransformsDirty = true;
-            }
-        } else {
-            // Reset transforms when we aren't in overscroll
-            if (mOverscrollTransformsDirty) {
-                mOverscrollTransformsDirty = false;
-                View v0 = getPageAt(0);
-                View v1 = getPageAt(getChildCount() - 1);
-                v0.setTranslationX(0);
-                v1.setTranslationX(0);
-                v0.setRotationY(0);
-                v1.setRotationY(0);
-                v0.setCameraDistance(mDensity * 1280);
-                v1.setCameraDistance(mDensity * 1280);
-                v0.setPivotX(v0.getMeasuredWidth() / 2);
-                v1.setPivotX(v1.getMeasuredWidth() / 2);
-                v0.setPivotY(v0.getMeasuredHeight() / 2);
-                v1.setPivotY(v1.getMeasuredHeight() / 2);
-            }
-            switch (mTransitionEffect) {
-                case Standard:
-                    screenScrolledStandard(screenScroll);
-                    break;
-                case Tablet:
-                    screenScrolledTablet(screenScroll);
-                    break;
-                case ZoomIn:
-                    screenScrolledZoom(screenScroll, true);
-                    break;
-                case ZoomOut:
-                    screenScrolledZoom(screenScroll, false);
-                    break;
-                case RotateUp:
-                    screenScrolledRotate(screenScroll, true);
-                    break;
-                case RotateDown:
-                    screenScrolledRotate(screenScroll, false);
-                    break;
-                case CubeIn:
-                    screenScrolledCube(screenScroll, true);
-                    break;
-                case CubeOut:
-                    screenScrolledCube(screenScroll, false);
-                    break;
-                case Stack:
-                    screenScrolledStack(screenScroll);
-                    break;
-            }
+        switch (mTransitionEffect) {
+            case Standard:
+                screenScrolledStandard(screenScroll);
+                break;
+            case Tablet:
+                screenScrolledTablet(screenScroll);
+                break;
+            case ZoomIn:
+                screenScrolledZoom(screenScroll, true);
+                break;
+            case ZoomOut:
+                screenScrolledZoom(screenScroll, false);
+                break;
+            case RotateUp:
+                screenScrolledRotate(screenScroll, true);
+                break;
+            case RotateDown:
+                screenScrolledRotate(screenScroll, false);
+                break;
+            case CubeIn:
+                screenScrolledCube(screenScroll, true);
+                break;
+            case CubeOut:
+                screenScrolledCube(screenScroll, false);
+                break;
+            case Stack:
+                screenScrolledStack(screenScroll);
+                break;
         }
     }
 
