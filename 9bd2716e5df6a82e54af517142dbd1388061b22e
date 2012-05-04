@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//850\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-05-04T17:12:30Z",
+      "side": 1,
+      "message": "Ez itt a Google Play ? Ha igen, akkor Play áruházra írd át, úgy szerepel máshol is. Legyen konzisztens",
+      "revId": "9bd2716e5df6a82e54af517142dbd1388061b22e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85o\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-05-04T17:12:30Z",
+      "side": 1,
+      "message": "A/Az/Egy nem használunk sehol. Mondjuk így? Háttér felosztásának megjelenítése",
+      "revId": "9bd2716e5df6a82e54af517142dbd1388061b22e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85s\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-05-04T17:12:30Z",
+      "side": 1,
+      "message": "Szebb: Alkalmazások és modulok között folyamatos lapozással való váltás",
+      "revId": "9bd2716e5df6a82e54af517142dbd1388061b22e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85w\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-05-04T17:12:30Z",
+      "side": 1,
+      "message": "Szebb: Váltáskor elhalványulnak az egymás melletti alkalmazás képerny?k",
+      "revId": "9bd2716e5df6a82e54af517142dbd1388061b22e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
