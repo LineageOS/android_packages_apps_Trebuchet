@@ -597,6 +597,16 @@ public class Workspace extends PagedView
             layout = mLauncher.getHotseat().getLayout();
             child.setOnKeyListener(null);
 
+            //Hotseat Icon Text Label is not visible anyway and drawing the FadingEdge for the
+            //Text label takes a heavy toll on GPU during hw accelerated rendering
+            //So disable FadingEdge for text Label if the Icon is in Hotseat
+            if (child instanceof TextView) {
+                TextView hotseatIcon = (TextView)child;
+                if(hotseatIcon.isHorizontalFadingEdgeEnabled()) {
+                    hotseatIcon.setHorizontalFadingEdgeEnabled(false);
+                }
+            }
+
             if (!mHideIconLabels) {
                 // Hide titles in the hotseat
                 if (child instanceof FolderIcon) {
