@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//8f4\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-05-06T01:00:32Z",
+      "side": 1,
+      "message": "Ez nem egyértelmü... Szerintem legyen maga a homescreen kezdöképernyö, de annak az oldalai egyszerüen oldalak. Sokat javítana az érthetöségen.",
+      "revId": "e51e617ad38842c084f98261537d4875ef1079f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8f0\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-05-06T01:00:32Z",
+      "side": 1,
+      "message": "A fenti kommenttel együtt: ... görgetése oldalak közti lapozás során",
+      "revId": "e51e617ad38842c084f98261537d4875ef1079f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8fw\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-05-06T01:00:32Z",
+      "side": 1,
+      "message": "Ez a stringpár arra akar vonatkozni, hogy az oldaljelzö kis pöckök eltünnek egy idö után, a forditás nem erre utal.",
+      "revId": "e51e617ad38842c084f98261537d4875ef1079f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8fo\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-05-06T01:00:32Z",
+      "side": 1,
+      "message": "öö... Tálca? :) A dokkolo egy külön egység, amibe az eszközt lehet tenni, az tölti és esetleg hangszoroként viselkedik... Szerintem nem jó forditás a dock-ra",
+      "revId": "e51e617ad38842c084f98261537d4875ef1079f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
