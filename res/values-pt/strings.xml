@@ -149,4 +149,31 @@
     <!-- General -->
     <string name="preferences_interface_general_title">Geral</string>
     <string name="preferences_interface_general_orientation_title">Auto Rotacionar Tela</string>
+    <string name="cancel_target_label">Cancelar</string>
+    <string name="menu_preferences">Preferências Trebuchet</string>
+    <string name="menu_apps_sort_title">Nome</string>
+    <string name="menu_apps_sort_install_date">Dia de instalação</string>
+    <string name="all_apps_sort_cling_title">Ordenar seus aplicativos</string>
+    <string name="all_apps_sort_cling_add_item">Toque & segure a aba Aplicativos para selecionar o modo de ordenação</string>
+    <string name="preferences_interface_homescreen_general_grid_title">Tamanho da Grade</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Escolha o número de linhas/colunas na tela inicial</string>
+    <string name="preferences_interface_homescreen_general_grid_rows_title">Linhas</string>
+    <string name="preferences_interface_homescreen_general_grid_columns_title">Colunas</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Enchimento vertical</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Espaço vertical extra na tela inicial</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Enchimento horizontal</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Espaço horizonal extra na tela inicial</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Esconder rótulos dos ícones</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Esconder rótulos de ícones na tela inicial</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Efeito de transição</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Efeito de transição na mudança de tela inicial</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Esmacear páginas laterais</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Esmaecer as páginas laterais na transição de telas iniciais</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Mostrar divisor de dock</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Mostrar o plano de fundo atrás do indicador</string>
+    <string name="preferences_interface_drawer_scrolling_category">Rolagem</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Efeito de transição</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Efeito de transição na transição de telas</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Esmaecer páginas laterais</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Esmaecer páginas laterais na transição de telas</string>
 </resources>
