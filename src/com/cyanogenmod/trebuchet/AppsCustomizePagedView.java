@@ -580,14 +580,21 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
                 mLauncher.getWorkspace().isSwitchingState()) return;
 
         if (v instanceof PagedViewIcon) {
-            // Animate some feedback to the click
             final ApplicationInfo appInfo = (ApplicationInfo) v.getTag();
-            animateClickFeedback(v, new Runnable() {
-                @Override
-                public void run() {
-                    mLauncher.startActivitySafely(appInfo.intent, appInfo);
-                }
-            });
+
+            if (!PagedViewIcon.POST_CLICK_ANIMATE) {
+                // Display some feedback to the click
+                displayClickFeedback(v);
+                mLauncher.startActivitySafely(appInfo.intent, appInfo);
+            } else {
+                // Animate some feedback to the click
+                animateClickFeedback(v, new Runnable() {
+                      @Override
+                      public void run() {
+                          mLauncher.startActivitySafely(appInfo.intent, appInfo);
+                     }
+                });
+            }
         } else if (v instanceof PagedViewWidget) {
             // Let the user know that they have to long press to add a widget
             Toast.makeText(getContext(), R.string.long_press_widget_to_add,

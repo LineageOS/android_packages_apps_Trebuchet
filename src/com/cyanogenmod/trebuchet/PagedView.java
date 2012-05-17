@@ -974,6 +974,18 @@ public abstract class PagedView extends ViewGroup {
         return mTouchState != TOUCH_STATE_REST;
     }
 
+    class AlphaResetRunnable implements Runnable {
+        View mView;
+
+        AlphaResetRunnable(View v) {
+            mView = v;
+        }
+
+        public void run() {
+            mView.setAlpha(1.0f);
+        }
+    }
+
     protected void animateClickFeedback(View v, final Runnable r) {
         // animate the view slightly to show click feedback running some logic after it is "pressed"
         ObjectAnimator anim = (ObjectAnimator) AnimatorInflater.
@@ -985,6 +997,11 @@ public abstract class PagedView extends ViewGroup {
             }
         });
         anim.start();
+    }
+
+    protected void displayClickFeedback(View v) {
+        v.setAlpha(0.5f);
+        v.postDelayed((Runnable)(new AlphaResetRunnable(v)), 350);
     }
 
     protected void determineScrollingStart(MotionEvent ev) {

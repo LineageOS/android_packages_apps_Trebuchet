@@ -26,12 +26,22 @@ import android.util.AttributeSet;
 import android.widget.Checkable;
 import android.widget.TextView;
 
+import android.view.MotionEvent;
+import android.view.View;
+
 
 /**
  * An icon on a PagedView, specifically for items in the launcher's paged view (with compound
  * drawables on the top).
  */
 public class PagedViewIcon extends TextView implements Checkable {
+
+    // POST_CLICK_ANIMATE determines whether the fading of the icon is animated after the click.
+    // If set to false the icon will not be animated and instead will be faded when the user
+    // touches the icon.  The benefit of not fading the icon after the click is that the app
+    // can immediately be launched when the click happens and therefore reduce the app
+    // launch latency.
+    static public final boolean POST_CLICK_ANIMATE = false;
     private static final String TAG = "PagedViewIcon";
 
     // holographic outline
@@ -143,6 +153,26 @@ public class PagedViewIcon extends TextView implements Checkable {
                     mPaddingTop,
                     mPaint);
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        boolean result = super.onTouchEvent(event);
+
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                if (!POST_CLICK_ANIMATE) {
+                    setAlpha(0.5f);
+                }
+                break;
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP:
+                if (!POST_CLICK_ANIMATE) {
+                    setAlpha(1.0f);
+                }
+                break;
+        }
+        return result;
     }
 
     @Override
