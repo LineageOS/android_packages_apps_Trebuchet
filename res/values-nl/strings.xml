@@ -111,7 +111,7 @@
     <string name="preferences_interface_homescreen_general_default_screen_title">Standaardscherm</string>
     <string name="preferences_interface_homescreen_general_default_screen_summary">Kies het standaard startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_title">Roostergrootte</string>
-    <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal kolommen/rijen op het startscherm</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal rijen/kolommen op het startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rijen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolommen</string>
     <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Verticale opvulling</string>
@@ -123,7 +123,7 @@
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Verander grootte van elke widget</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Staat toe om de grootte van alle widgets te veranderen</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Verberg labels</string>
-    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Verberg de labels onder icoonen</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Verberg de labels onder iconen</string>
     <string name="preferences_interface_homescreen_scrolling_category">Scrollen</string>
     <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Overgangseffect</string>
     <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Scrolleffect bij het scrollen door startschermen</string>
@@ -161,5 +161,14 @@
 
     <string name="preferences_interface_general_title">Algemeen</string>
     <string name="preferences_interface_general_orientation_title">Automatische schermoriëntatie</string>
+
+    <string name="cancel_target_label">Annuleren</string>
+    <string name="menu_preferences">Trebuchet instellingen</string>
+    <string name="menu_apps_sort_title">Naam</string>
+    <string name="menu_apps_sort_install_date">Geïnstalleerd op</string>
+    <string name="all_apps_sort_cling_title">Apps sorteren</string>
+    <string name="all_apps_sort_cling_add_item">Raak je apps aan &amp; hou in om de sorteermode te kiezen</string>
+    <string name="preferences_interface_homescreen_scrolling_loop_pages_title">Herhaal homescherm</string>
+    <string name="preferences_interface_homescreen_scrolling_loop_pages_summary">Herhaal het homescherm aan het eind</string>
 
 </resources>
