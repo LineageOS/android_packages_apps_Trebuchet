@@ -111,7 +111,7 @@
     <string name="preferences_interface_homescreen_general_default_screen_title">Standaardscherm</string>
     <string name="preferences_interface_homescreen_general_default_screen_summary">Kies het standaard startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_title">Roostergrootte</string>
-    <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal kolommen/rijen op het startscherm</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal rijen/kolommen op het startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rijen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolommen</string>
     <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Verticale opvulling</string>
