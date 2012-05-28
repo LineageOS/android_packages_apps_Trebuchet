@@ -111,7 +111,11 @@
     <string name="preferences_interface_homescreen_general_default_screen_title">Standaardscherm</string>
     <string name="preferences_interface_homescreen_general_default_screen_summary">Kies het standaard startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_title">Roostergrootte</string>
+<<<<<<< HEAD
     <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal rijen/kolommen op het startscherm</string>
+=======
+    <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal kolommen/rijen op het startscherm</string>
+>>>>>>> 98fef66... Added Dutch translation for Trebuchet
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rijen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolommen</string>
     <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Verticale opvulling</string>
@@ -123,7 +127,11 @@
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Verander grootte van elke widget</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Staat toe om de grootte van alle widgets te veranderen</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Verberg labels</string>
+<<<<<<< HEAD
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Verberg de labels onder iconen</string>
+=======
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Verberg de labels onder icoonen</string>
+>>>>>>> 98fef66... Added Dutch translation for Trebuchet
     <string name="preferences_interface_homescreen_scrolling_category">Scrollen</string>
     <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Overgangseffect</string>
     <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Scrolleffect bij het scrollen door startschermen</string>
