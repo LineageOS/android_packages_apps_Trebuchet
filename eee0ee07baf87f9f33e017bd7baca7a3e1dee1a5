@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAT3//+jI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-06-04T23:48:36Z",
+      "side": 1,
+      "message": "Datum van installeren? Installeerdatum? In elk geval niet 2x hoofdletter.",
+      "revId": "eee0ee07baf87f9f33e017bd7baca7a3e1dee1a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//+jE\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-06-04T23:48:36Z",
+      "side": 1,
+      "message": "apps (zonder hoofdletter)",
+      "revId": "eee0ee07baf87f9f33e017bd7baca7a3e1dee1a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
