@@ -16,6 +16,24 @@
       "revId": "919543bc1ed14c51d14ea55ad3b6039f9e05bc74",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAT3//9z8\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-06-07T21:27:01Z",
+      "side": 1,
+      "message": "apps-tab of toch appstab?",
+      "parentUuid": "AAAAT3//90M\u003d",
+      "revId": "919543bc1ed14c51d14ea55ad3b6039f9e05bc74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
