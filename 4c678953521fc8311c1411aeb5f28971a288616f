@@ -16,6 +16,24 @@
       "revId": "4c678953521fc8311c1411aeb5f28971a288616f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH///Ms\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-06-13T13:22:48Z",
+      "side": 1,
+      "message": "+1 für Kim",
+      "parentUuid": "AAAAUH///TY\u003d",
+      "revId": "4c678953521fc8311c1411aeb5f28971a288616f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
