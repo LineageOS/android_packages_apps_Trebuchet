@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH///TY\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2012-06-13T01:23:44Z",
+      "side": 1,
+      "message": "Vorschlag: App-Tab gedrückt halten, um die Art der Sortierung zu wählen.\n\nPasst dann auch besser zu der Formulierung in deinem anderen Commit.\nhttp://review.cyanogenmod.com/#/c/16953/4/res/values-de/strings.xml",
+      "revId": "4c678953521fc8311c1411aeb5f28971a288616f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
