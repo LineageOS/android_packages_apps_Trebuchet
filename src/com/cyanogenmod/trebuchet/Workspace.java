@@ -318,10 +318,8 @@ public class Workspace extends PagedView
         a.recycle();
 
         // if there is a value set it the preferences, use that instead
-        if (!LauncherApplication.isScreenLarge()) {
-            cellCountX = PreferencesProvider.Interface.Homescreen.getCellCountX(context, cellCountX);
-            cellCountY = PreferencesProvider.Interface.Homescreen.getCellCountY(context, cellCountY);
-        }
+        cellCountX = PreferencesProvider.Interface.Homescreen.getCellCountX(context, cellCountX);
+        cellCountY = PreferencesProvider.Interface.Homescreen.getCellCountY(context, cellCountY);
 
         LauncherModel.updateWorkspaceLayoutCells(cellCountX, cellCountY);
         setHapticFeedbackEnabled(false);
