@@ -1,0 +1,9 @@
+Change-Id: I9fa64fbfd306850015078752be502dee238f3e73
+Code-Review+2: Steve Kondik <shade@chemlab.org>
+Verified+1: Steve Kondik <shade@chemlab.org>
+Code-Review+1: Dmitriy Chermenev <chdiman86@gmail.com>
+Submitted-by: Steve Kondik <shade@chemlab.org>
+Submitted-at: Sun, 24 Jun 2012 00:52:00 +0400
+Reviewed-on: http://review.cyanogenmod.com/18071
+Project: CyanogenMod/android_packages_apps_Trebuchet
+Branch: refs/heads/ics
