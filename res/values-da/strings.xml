@@ -19,6 +19,14 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <skip />
+    <!-- Application name -->
+    <string name="application_name" translatable="false">Trebuchet</string>
+    <!-- Application copyright -->
+    <string name="application_copyright">Copyright \u00A9 CyanogenMod 2012</string>
+    <!-- Application version -->
+    <string name="application_version">0.1</string>
+
     <string name="uid_name" msgid="3371120195364560632">"Android-kerneprogrammer"</string>
     <string name="folder_name" msgid="8551881338202938211"></string>
     <string name="chooser_wallpaper" msgid="6063168087625352235">"Vælg baggrund fra"</string>
@@ -102,4 +110,78 @@
     <string name="folder_closed" msgid="3130534551370511932">"Mappen er lukket"</string>
     <string name="folder_renamed" msgid="781234745487414781">"Mappen blev omdøbt til %1$s"</string>
     <string name="folder_name_format" msgid="4513766553514769310">"Mappe: %1$s"</string>
+    
+    <skip />
+    <!-- -->
+    <!-- Preferences -->
+    <!-- -->
+    <string name="preferences_title">Præferencer</string>
+    <!-- UI -->
+    <string name="preferences_interface_title">Brugerflade</string>
+    <!-- Application -->
+    <string name="preferences_application_title">Applikation</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">Hjemmeskærm</string>
+    <string name="preferences_interface_homescreen_general_category">Generelt</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Hjemmeskærme</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Antal skærme på denne hjemmeskærm</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Standardskærm</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Vælg standard-hjemmeskærm</string>
+    <string name="preferences_interface_homescreen_general_grid_title">Gitterstørrelse</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Vælg antallet af rækker/kolonner på hjemmeskærmen</string>
+    <string name="preferences_interface_homescreen_general_grid_rows_title">Rækker</string>
+    <string name="preferences_interface_homescreen_general_grid_columns_title">Kolonner</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Vertikal margen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Ekstra vertikal afstand på hjemmeskærmen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Horisontal margen</string>
+    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Ekstra horisontal afstand på hjemmeskærmen</string>
+    <string name="preferences_interface_homescreen_general_search_title">Søgelinje</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Slå persistent søgelinje til</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_title">Ændr størrelsen på enhver widget</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Tillad ændring af størrelsen på widgets, hvor dette normalt er umuligt</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skjul ikon-etiketter<string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skjul hjemmeskærmens ikon-etiketter</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Overgangseffekt</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Scrollingseffekt, når der scrolles mellem hjemmeskærme</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Fade sidenumre</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Fade sidenumre, når der scrolles mellem hjemmeskærme</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Rul tapet</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Rul tapet, når der scrolles mellem hjemmeskærme</string>
+    <string name="preferences_interface_homescreen_indicator_category">Indikator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Vis sideindikator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Vis nuværende sideindikator i bunden af skærmen</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Fade indikator</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Fade indikatoren, efter hjemmeskærmen er skiftet</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Vis dok-deler</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Vis baggrunden bag indikatoren</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_drawer_title">Skuffe</string>
+    <string name="preferences_interface_drawer_widgets_category">Widgets</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Integrér med apps</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Svirp fra apps-skuffe til widgets-skuffe uden at skifte tabs</string>
+    <string name="preferences_interface_drawer_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Overgangseffekt</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Scrollingseffekt, når der scrolles mellem skærme</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Fade sidenumre</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Fade sidenumre, når der scrolles mellem skærme</string>
+    <string name="preferences_interface_drawer_indicator_category">Indikator</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Vis sideindikator</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Vis nuværende sideindikator i bunden af skærmen</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Fade indikator</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Fade indikatoren, efter siden er skiftet</string>
+
+    <!-- Dock -->
+    <string name="preferences_interface_dock_title">Dok</string>
+
+    <!-- Icons -->
+    <string name="preferences_interface_icons_title">Ikoner</string>
+
+    <!-- General -->
+    <string name="preferences_interface_general_title">Generelt</string>
+    <string name="preferences_interface_general_orientation_title">Auto-rotér skærmen</string>
+	
 </resources>
