@@ -52,6 +52,7 @@ public class Preferences extends PreferenceActivity {
 
             PreferenceGroup drawer = (PreferenceGroup) findPreference("ui_drawer");
             drawer.removePreference(findPreference("ui_drawer_indicator"));
+            drawer.removePreference(findPreference("ui_drawer_grid"));
         }
 
         Preference version = findPreference("application_version");

@@ -135,6 +135,37 @@
                     android:defaultValue="true"
                     android:dependency="ui_drawer_indicator_enable" />
             </PreferenceCategory>
+            <PreferenceCategory android:key="ui_drawer_grid"
+                android:title="@string/preferences_interface_homescreen_general_grid_title">
+                <CheckBoxPreference android:key="ui_drawer_grid_enable"
+                    android:title="@string/preferences_interface_drawer_grid_enable_title"
+                    android:summary="@string/preferences_interface_drawer_grid_enable_summary"
+                    android:defaultValue="false" />
+                <com.cyanogenmod.trebuchet.preference.DoubleNumberPickerPreference android:key="ui_drawer_grid_portrait"
+                    android:title="@string/preferences_interface_drawer_grid_portrait_title"
+                    android:summary="@string/preferences_interface_drawer_grid_portrait_summary"
+                    launcher:pickerTitle1="@string/preferences_interface_homescreen_general_grid_rows_title"
+                    launcher:pickerTitle2="@string/preferences_interface_homescreen_general_grid_columns_title"
+                    launcher:defaultValue1="@integer/config_drawerRowsPort"
+                    launcher:defaultValue2="@integer/config_drawerColumnsPort"
+                    launcher:max1="7"
+                    launcher:min1="3"
+                    launcher:max2="7"
+                    launcher:min2="3"
+                    android:dependency="ui_drawer_grid_enable" />
+                <com.cyanogenmod.trebuchet.preference.DoubleNumberPickerPreference android:key="ui_drawer_grid_landscape"
+                    android:title="@string/preferences_interface_drawer_grid_landscape_title"
+                    android:summary="@string/preferences_interface_drawer_grid_landscape_summary"
+                    launcher:pickerTitle1="@string/preferences_interface_homescreen_general_grid_rows_title"
+                    launcher:pickerTitle2="@string/preferences_interface_homescreen_general_grid_columns_title"
+                    launcher:defaultValue1="@integer/config_drawerRowsLand"
+                    launcher:defaultValue2="@integer/config_drawerColumnsLand"
+                    launcher:max1="5"
+                    launcher:min1="3"
+                    launcher:max2="9"
+                    launcher:min2="3"
+                    android:dependency="ui_drawer_grid_enable" />
+            </PreferenceCategory>
         </PreferenceScreen>
 
         <!-- Dock -->

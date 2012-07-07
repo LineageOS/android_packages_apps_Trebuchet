@@ -135,6 +135,48 @@ public final class PreferencesProvider {
                     return preferences.getBoolean("ui_drawer_indicator_fade", true);
                 }
             }
+            public static class Grid {
+                public static boolean getDrawerCustomGrid(Context context) {
+                   final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    return preferences.getBoolean("ui_drawer_grid_enable", false);
+                }
+                public static int getPortCellCountX(Context context, int def) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    String[] values = preferences.getString("ui_drawer_grid_portrait", "0|" + def).split("\\|");
+                    try {
+                        return Integer.parseInt(values[1]);
+                    } catch (NumberFormatException e) {
+                        return def;
+                    }
+                }
+                public static int getPortCellCountY(Context context, int def) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    String[] values = preferences.getString("ui_drawer_grid_portrait", def + "|0").split("\\|");;
+                    try {
+                        return Integer.parseInt(values[0]);
+                    } catch (NumberFormatException e) {
+                        return def;
+                    }
+                }
+                public static int getLandCellCountX(Context context, int def) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    String[] values = preferences.getString("ui_drawer_grid_landscape", "0|" + def).split("\\|");
+                    try {
+                        return Integer.parseInt(values[1]);
+                    } catch (NumberFormatException e) {
+                        return def;
+                    }
+                }
+                public static int getLandCellCountY(Context context, int def) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    String[] values = preferences.getString("ui_drawer_grid_landscape", def + "|0").split("\\|");;
+                    try {
+                        return Integer.parseInt(values[0]);
+                    } catch (NumberFormatException e) {
+                        return def;
+                    }
+                }
+            }
         }
 
         public static class Dock {

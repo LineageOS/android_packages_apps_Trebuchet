@@ -251,6 +251,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     private boolean mJoinWidgetsApps;
     private boolean mShowScrollingIndicator;
     private boolean mFadeScrollingIndicator;
+    private boolean mDrawerCustomGrid;
 
     public AppsCustomizePagedView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -297,10 +298,12 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
         mJoinWidgetsApps = PreferencesProvider.Interface.Drawer.getJoinWidgetsApps(context);
         mTransitionEffect = PreferencesProvider.Interface.Drawer.Scrolling.getTransitionEffect(context,
                 resources.getString(R.string.config_drawerDefaultTransitionEffect));
+        
         mFadeInAdjacentScreens = PreferencesProvider.Interface.Drawer.Scrolling.getFadeInAdjacentScreens(context);
         mShowScrollingIndicator = PreferencesProvider.Interface.Drawer.Indicator.getShowScrollingIndicator(context);
         mFadeScrollingIndicator = PreferencesProvider.Interface.Drawer.Indicator.getFadeScrollingIndicator(context);
-
+        mDrawerCustomGrid = PreferencesProvider.Interface.Drawer.Grid.getDrawerCustomGrid(context);
+        
         if (!mShowScrollingIndicator) {
             disableScrollingIndicator();
         }
@@ -461,9 +464,20 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
         mWidgetSpacingLayout.setGap(mPageLayoutWidthGap, mPageLayoutHeightGap);
         mWidgetSpacingLayout.setPadding(mPageLayoutPaddingLeft, mPageLayoutPaddingTop,
                 mPageLayoutPaddingRight, mPageLayoutPaddingBottom);
-        mWidgetSpacingLayout.calculateCellCount(width, height, maxCellCountX, maxCellCountY);
-        mCellCountX = mWidgetSpacingLayout.getCellCountX();
-        mCellCountY = mWidgetSpacingLayout.getCellCountY();
+        if(!LauncherApplication.isScreenLarge() && mDrawerCustomGrid) {
+            if(isLandscape) {
+                mCellCountX = PreferencesProvider.Interface.Drawer.Grid.getLandCellCountX(getContext(), 6);
+                mCellCountY = PreferencesProvider.Interface.Drawer.Grid.getLandCellCountY(getContext(), 3);
+            } else {
+                mCellCountX = PreferencesProvider.Interface.Drawer.Grid.getPortCellCountX(getContext(), 4);
+                mCellCountY = PreferencesProvider.Interface.Drawer.Grid.getPortCellCountY(getContext(), 5);
+            }
+        } else {
+            // Use the calculated sizes
+            mWidgetSpacingLayout.calculateCellCount(width, height, maxCellCountX, maxCellCountY);
+            mCellCountX = mWidgetSpacingLayout.getCellCountX();
+            mCellCountY = mWidgetSpacingLayout.getCellCountY();
+        }
         updatePageCounts();
 
         // Force a measure to update recalculate the gaps
