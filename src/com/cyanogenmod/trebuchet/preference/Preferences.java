@@ -19,11 +19,11 @@ package com.cyanogenmod.trebuchet.preference;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 
 import com.cyanogenmod.trebuchet.R;
 
-public class Preferences extends PreferenceActivity {
+public class Preferences extends PreferenceFragment {
 
     private static final String TAG = "Launcher.Preferences";
 
