@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//9Nw\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-07T13:30:09Z",
+      "side": 1,
+      "message": "\"sor, illetve oszlop\", csúnya az a per :)",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9Ns\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-07T13:30:09Z",
+      "side": 1,
+      "message": "Minden modul átméretezésének engedélyezése.",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9N4\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-07T13:30:09Z",
+      "side": 1,
+      "message": "Lehet érdemes lenne átnevezni Alkalmazásfiókra, valahogy nem érzem elég kifejezönek így. Többiek?",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//9N0\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-07T13:30:09Z",
+      "side": 1,
+      "message": "Képernyö elforgatása. Szerintem nem jó az automatikus, az valahol a beállítások -\u003e megjelenítés alatt van. Ez az opció csak engedélyezi, hogy egyáltalán foroghasson a képernyö.",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
