@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//82Q\u003d",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 3835
+      },
+      "writtenOn": "2012-08-09T16:05:00Z",
+      "side": 1,
+      "message": "\"Glavnii ekran\" as it is translated above.",
+      "revId": "04458da0bfce787022b8dd9a569c31d6b67addcb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
