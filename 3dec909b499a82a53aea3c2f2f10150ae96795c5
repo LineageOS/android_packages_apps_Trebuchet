@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//7/A\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-08-12T16:44:53Z",
+      "side": 1,
+      "message": "Szerintem: A kezd?képerny?n megjelen? sorok és oszlopok számának kiválasztása",
+      "parentUuid": "AAAAVn//9Nw\u003d",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9Ns\u003d",
         "filename": "res/values-hu/strings.xml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//7+8\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-08-12T16:44:53Z",
+      "side": 1,
+      "message": "Szerintem jó az eredeti, konzisztens.",
+      "parentUuid": "AAAAVn//9Ns\u003d",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//9N4\u003d",
         "filename": "res/values-hu/strings.xml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-08-07T13:30:09Z",
       "side": 1,
       "message": "Lehet érdemes lenne átnevezni Alkalmazásfiókra, valahogy nem érzem elég kifejezönek így. Többiek?",
+      "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//7+4\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 3178
+      },
+      "writtenOn": "2012-08-12T16:44:53Z",
+      "side": 1,
+      "message": "nekem jó az eredeti",
+      "parentUuid": "AAAAVn//9N4\u003d",
       "revId": "3dec909b499a82a53aea3c2f2f10150ae96795c5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
