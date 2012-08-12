@@ -22,6 +22,19 @@
         <PreferenceScreen android:key="ui_homescreen"
             android:title="@string/preferences_interface_homescreen_title">
             <PreferenceCategory android:title="@string/preferences_interface_homescreen_general_category">
+                <com.cyanogenmod.trebuchet.preference.NumberPickerPreference android:key="ui_homescreen_screens"
+                    android:title="@string/preferences_interface_homescreen_general_screens_title"
+                    android:summary="@string/preferences_interface_homescreen_general_screens_summary"
+                    android:defaultValue="5"
+                    launcher:max="7"
+                    launcher:min="1" />
+                <com.cyanogenmod.trebuchet.preference.NumberPickerPreference android:key="ui_homescreen_default_screen"
+                    android:title="@string/preferences_interface_homescreen_general_default_screen_title"
+                    android:summary="@string/preferences_interface_homescreen_general_default_screen_summary"
+                    android:defaultValue="3"
+                    launcher:maxExternal="ui_homescreen_screens"
+                    launcher:max="7"
+                    launcher:min="1" />
                 <com.cyanogenmod.trebuchet.preference.DoubleNumberPickerPreference android:key="ui_homescreen_grid"
                     android:title="@string/preferences_interface_homescreen_general_grid_title"
                     android:summary="@string/preferences_interface_homescreen_general_grid_summary"
@@ -40,6 +53,12 @@
                 <CheckBoxPreference android:key="ui_homescreen_general_resize_any_widget"
                     android:title="@string/preferences_interface_homescreen_general_resize_any_widget_title"
                     android:summary="@string/preferences_interface_homescreen_general_resize_any_widget_summary" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/preferences_interface_homescreen_scrolling_category">
+                <CheckBoxPreference android:key="ui_homescreen_scrolling_scroll_wallpaper"
+                    android:title="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_title"
+                    android:summary="@string/preferences_interface_homescreen_scrolling_scroll_wallpaper_summary"
+                    android:defaultValue="true" />
             </PreferenceCategory>
         </PreferenceScreen>
 
