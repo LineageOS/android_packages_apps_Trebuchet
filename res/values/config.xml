@@ -2,7 +2,7 @@
     <bool name="config_hardwareAccelerated">true</bool>
     <bool name="config_largeHeap">false</bool>
     <bool name="is_large_screen">false</bool>
-    <bool name="allow_rotation">false</bool>
+    <bool name="config_defaultAutoRotate">false</bool>
 
 <!-- DragController -->
     <integer name="config_flingToDeleteMinVelocity">-1500</integer>
