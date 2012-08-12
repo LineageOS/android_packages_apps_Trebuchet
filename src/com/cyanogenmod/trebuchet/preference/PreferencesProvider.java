@@ -43,6 +43,14 @@ public final class PreferencesProvider {
                     return def;
                 }
             }
+            public static int getNumberHomescreens(Context context) {
+                final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                return preferences.getInt("ui_homescreen_screens", 5);
+            }
+            public static int getDefaultHomescreen(Context context, int def) {
+                final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                return preferences.getInt("ui_homescreen_default_screen", def + 1) - 1;
+            }
             public static boolean getShowSearchBar(Context context) {
                 final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
                 return preferences.getBoolean("ui_homescreen_general_search", true);
@@ -50,6 +58,18 @@ public final class PreferencesProvider {
             public static boolean getResizeAnyWidget(Context context) {
                 final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
                 return preferences.getBoolean("ui_homescreen_general_resize_any_widget", false);
+            }
+            public static class Scrolling {
+                public static boolean getScrollWallpaper(Context context) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    return preferences.getBoolean("ui_homescreen_scrolling_scroll_wallpaper", true);
+                }
+            }
+            public static class Indicator {
+                public static boolean getShowDockDivider(Context context) {
+                    final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                    return preferences.getBoolean("ui_homescreen_indicator_background", true);
+                }
             }
         }
 
