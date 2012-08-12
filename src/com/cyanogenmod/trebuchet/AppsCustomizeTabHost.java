@@ -23,7 +23,6 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +34,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.cyanogenmod.trebuchet.R;
+import com.cyanogenmod.trebuchet.preference.PreferencesProvider;
 
 import java.util.ArrayList;
 
@@ -60,6 +60,9 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
 
     private Launcher mLauncher;
 
+    // Preferences
+    private boolean mFadeScrollingIndicator;
+
     public AppsCustomizeTabHost(Context context, AttributeSet attrs) {
         super(context, attrs);
         mLayoutInflater = LayoutInflater.from(context);
@@ -69,6 +72,9 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
                     mTabsContainer.setAlpha(1f);
                 }
             };
+
+        // Preferences
+        mFadeScrollingIndicator = PreferencesProvider.Interface.Drawer.Indicator.getFadeScrollingIndicator(context);
     }
 
     public void setup(Launcher launcher) {
@@ -437,7 +443,7 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
             // prevent slowing down the animation)
             mAppsCustomizePane.loadAssociatedPages(mAppsCustomizePane.getCurrentPage());
 
-            if (!LauncherApplication.isScreenLarge()) {
+            if (!LauncherApplication.isScreenLarge() && mFadeScrollingIndicator) {
                 mAppsCustomizePane.hideScrollingIndicator(false);
             }
         }
