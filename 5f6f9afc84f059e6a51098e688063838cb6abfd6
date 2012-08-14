@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAV3///iM\u003d",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 3077
+      },
+      "writtenOn": "2012-08-14T23:59:29Z",
+      "side": 1,
+      "message": "Zafiksirovat\u0027 stroku poiska Google",
+      "revId": "5f6f9afc84f059e6a51098e688063838cb6abfd6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAV3///iI\u003d",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 3077
+      },
+      "writtenOn": "2012-08-14T23:59:29Z",
+      "side": 1,
+      "message": "Pozvolyaet proizvol\u0027no izmenyat\u0027 razmeri lubih vidgetov.",
+      "revId": "5f6f9afc84f059e6a51098e688063838cb6abfd6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
