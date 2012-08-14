@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAV3///2c\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-14T01:38:13Z",
+      "side": 1,
+      "message": "Ok, gyöztetek. :)",
+      "revId": "40f28c19d2c19227647614a8b9263e879a211ea6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAV3///2Y\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-08-14T01:38:13Z",
+      "side": 1,
+      "message": "Értesítés? Én Jelzésnek fordítottam volna mindkét helyen.",
+      "revId": "40f28c19d2c19227647614a8b9263e879a211ea6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
