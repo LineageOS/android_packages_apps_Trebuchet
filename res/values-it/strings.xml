@@ -98,7 +98,7 @@
     <string name="all_apps_cling_title" msgid="2559734712581447107">"Scegli alcune applicazioni"</string>
     <string name="all_apps_cling_add_item" msgid="5665035103260318891">"Per aggiungere un\'applicazione alla schermata Home, tocca e tieni premuto."</string>
     <string name="all_apps_sort_cling_title">Ordina applicazioni</string>
-    <string name="all_apps_sort_cling_add_item">Tocca e tieni premuta la scheda delle applicazioni per selezionare come ordinare le applicazioni</string>
+    <string name="all_apps_sort_cling_add_item">Tocca e tieni premuta la scheda delle applicazioni per scegliere in che ordine visualizzarle</string>
     <string name="folder_cling_title" msgid="4308949882377840953">"Organizza le tue applicazioni in cartelle"</string>
     <string name="folder_cling_move_item" msgid="270598675060435169">"Per spostare un\'applicazione, tocca e tieni premuto."</string>
     <string name="folder_cling_create_folder" msgid="8352867485656129478">"Per creare una nuova cartella sulla schermata Home, impila un\'applicazione su un\'altra."</string>
@@ -112,7 +112,7 @@
     <string name="preferences_title">Preferenze</string>
     <string name="preferences_interface_title">Interfaccia</string>
     <string name="preferences_application_title">Applicazione</string>
-    <string name="preferences_interface_homescreen_title">Schermata Home</string>
+    <string name="preferences_interface_homescreen_title">Schermata home</string>
     <string name="preferences_interface_homescreen_general_category">Generale</string>
     <string name="preferences_interface_homescreen_general_screens_title">Schermate Home</string>
     <string name="preferences_interface_homescreen_general_screens_summary">Numero di schermate nella Home</string>
@@ -129,7 +129,7 @@
     <string name="preferences_interface_homescreen_general_search_title">Barra di ricerca</string>
     <string name="preferences_interface_homescreen_general_search_summary">Abilita la barra di ricerca persistente</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Ridimensiona tutti i widget</string>
-    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Permette di ridimensionare i widget che normalmente non lo sarebbero</string>
+    <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Permette di ridimensionare i widget ai quali normalmente non è consentito</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Nascondi etichette</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Nascondi le etichette delle icone nella Home</string>
     <string name="preferences_interface_homescreen_scrolling_category">Scorrimento</string>
