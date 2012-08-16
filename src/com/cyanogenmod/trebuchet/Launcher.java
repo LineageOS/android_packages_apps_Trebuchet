@@ -3159,7 +3159,7 @@ public final class Launcher extends Activity
             int coi = getCurrentOrientationIndexForGlobalIcons();
             mAppMarketIntent = intent;
             sAppMarketIcon[coi] = updateTextButtonWithIconFromExternalActivity(
-                    R.id.market_button, activityName, R.drawable.ic_launcher_market_holo,
+                    R.id.market_button, activityName, R.drawable.ic_menu_shop_holo_dark,
                     TOOLBAR_ICON_METADATA_NAME);
             marketButton.setVisibility(View.VISIBLE);
         } else {
