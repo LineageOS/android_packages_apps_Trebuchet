@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH///Pw\u003d",
+        "filename": "res/values-it/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3916
+      },
+      "writtenOn": "2012-08-17T00:14:08Z",
+      "side": 1,
+      "message": "I suggest: Tocca e tieni premuta la scheda delle applicazioni per scegliere in che ordine visualizzarle",
+      "revId": "2b329295a296a954cd45e0574a5f15b8357ba6b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
