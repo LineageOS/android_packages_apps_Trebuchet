@@ -1,0 +1,10 @@
+Change-Id: I04458da0bfce787022b8dd9a569c31d6b67addcb
+Code-Review+2: Daniel Hillenbrand <codeworkx@cyanogenmod.com>
+Verified+1: Daniel Hillenbrand <codeworkx@cyanogenmod.com>
+Code-Review+1: Dmitriy Chermenev <chdiman86@gmail.com>
+Code-Review+1: Alexey Alexeevich <madzerling@gmail.com>
+Submitted-by: Daniel Hillenbrand <codeworkx@cyanogenmod.com>
+Submitted-at: Sat, 18 Aug 2012 14:46:32 +0400
+Reviewed-on: http://review.cyanogenmod.com/20898
+Project: CyanogenMod/android_packages_apps_Trebuchet
+Branch: refs/heads/jellybean
