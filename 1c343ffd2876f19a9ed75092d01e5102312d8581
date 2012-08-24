@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///FM\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-08-24T17:56:51Z",
+      "side": 1,
+      "message": "Voor mij is dock niet hetzelfde als startscherm, dock is alleen het stukje onderaan met de 5 snelkoppelingen...",
+      "parentUuid": "AAAAWn///HE\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HU\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -53,6 +71,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///FI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-08-24T17:56:51Z",
+      "side": 1,
+      "message": "Eens",
+      "parentUuid": "AAAAWn///HQ\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///GU\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-08-24T17:56:51Z",
+      "side": 1,
+      "message": "Zin loopt niet lekker.\nToestaan grootte van alle widgets te veranderen?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HM\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -81,6 +134,23 @@
       "writtenOn": "2012-08-24T17:37:33Z",
       "side": 1,
       "message": "Indicator laten vervagen na het wisselen van startscherm?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///GI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-08-24T17:56:51Z",
+      "side": 1,
+      "message": "Ik vind een dockverdeleren een onduidelijk woord, ik zou niet weten wat het is?",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
