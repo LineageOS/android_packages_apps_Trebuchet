@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///Ao\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Ook in het Engels is dit hotseat.\nIk wil dit liever niet gaan veranderen.",
+      "parentUuid": "AAAAWn///CQ\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///EQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///Ak\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Hoewel het nuttig is om onnodige \u0027vertalingen\u0027 te verwijderen, heb ik wel van Sam een script gekregen die controleert welke strings niet vertaald zijn. Als ik deze strings weghaal, komen ze elke keer terug in de uitvoer van dat script.\nVoor mij/andere vertalers is het dan ook handiger dit niet (meer) te doen.",
+      "parentUuid": "AAAAWn///HU\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -152,6 +188,24 @@
       "writtenOn": "2012-08-24T17:56:51Z",
       "side": 1,
       "message": "Eens",
+      "parentUuid": "AAAAWn///HQ\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///Ag\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAWn///HQ\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -194,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///Ac\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///GU\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HM\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -229,6 +301,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///AY\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Ik doe de oude vertaling wel (weet die niet uit mijn hoofd)",
+      "parentUuid": "AAAAWn///CA\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HI\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -257,6 +347,24 @@
       "writtenOn": "2012-08-24T20:58:47Z",
       "side": 1,
       "message": "Ik zou laten weglaten",
+      "parentUuid": "AAAAWn///HI\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///AU\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "AAAAWn///HI\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
@@ -317,6 +425,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///AQ\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "- Scheiding dock tonen?",
+      "parentUuid": "AAAAWn///B4\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///B0\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -334,6 +460,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///AM\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Show the background behind the indicator",
+      "parentUuid": "AAAAWn///B0\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///G8\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -345,6 +489,24 @@
       "writtenOn": "2012-08-24T17:37:33Z",
       "side": 1,
       "message": "App-overzicht?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///AI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///G8\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -404,6 +566,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///AA\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///Bs\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///Gs\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -415,6 +595,24 @@
       "writtenOn": "2012-08-24T17:37:33Z",
       "side": 1,
       "message": "Consequent met regel 170",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///AE\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-24T21:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///Gs\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
