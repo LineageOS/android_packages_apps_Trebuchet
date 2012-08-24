@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//++M\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T22:10:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///Ao\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///EQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -443,6 +461,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//++I\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T22:10:58Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAWn///AQ\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///B0\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -472,6 +508,24 @@
       "side": 1,
       "message": "Show the background behind the indicator",
       "parentUuid": "AAAAWn///B0\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//++U\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T22:10:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///AM\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -666,6 +720,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAWn///Bo\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//++Q\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T22:10:58Z",
+      "side": 1,
+      "message": "Past dan toch niet? Voluit zijn het 26 char.",
+      "parentUuid": "AAAAWn///BE\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
