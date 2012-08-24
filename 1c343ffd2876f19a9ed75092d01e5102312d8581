@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///CQ\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "Hotseat is hier echt wel een rare benaming voor. Is het engels hier Dock? Wsl was het AOSP hotseat en is het in het Engels al veranderd naar dock.\n\nHet is wel degelijk het dock. Deze string krijg je als je een item op het dock plaatst vanuit de appdrawer.",
+      "parentUuid": "AAAAWn///EU\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///EQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -193,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///CA\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "Dan is het sowieso al \u0027de startschermen\u0027. Ik zie liever scrollen dan schuiven:\n\n\"Achtergrond mee laten scrollen met de startschermen\"?",
+      "parentUuid": "AAAAWn///HM\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HI\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -204,6 +240,24 @@
       "writtenOn": "2012-08-24T17:37:33Z",
       "side": 1,
       "message": "Indicator laten vervagen na het wisselen van startscherm?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///B8\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "Ik zou laten weglaten",
+      "parentUuid": "AAAAWn///HI\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -245,6 +299,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///B4\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "- \"Toon scheidingslijn dock\" (past juist)\n- Toon scheidingslijn (is wel duidelijn met de sumary)",
+      "parentUuid": "AAAAWn///EI\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///B0\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "\"Toon een lijn achter de indicator boven het dock\"?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///G8\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -279,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///Bs\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "Dan scroll je juist niet. \"Van apps- naar widgetoverzicht(geen koppelteken of koppel -s nodig) overgaan zonder van tabblad te wisselen\"?",
+      "parentUuid": "AAAAWn///Gw\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///Gs\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -307,6 +414,24 @@
       "writtenOn": "2012-08-24T17:37:33Z",
       "side": 1,
       "message": "Past niet voluit?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///Bo\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-24T20:58:47Z",
+      "side": 1,
+      "message": "26 char \u003e 24 char",
+      "parentUuid": "AAAAWn///Gk\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
