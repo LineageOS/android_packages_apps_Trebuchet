@@ -37,6 +37,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///EY\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-24T18:07:41Z",
+      "side": 1,
+      "message": "Dit staat weer een regel te hoog. Het hoort bij regel 42 en 43.",
+      "parentUuid": "AAAAWn///FM\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///EU\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-24T18:07:41Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///EQ\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-24T18:07:41Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HU\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -106,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///EM\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-24T18:07:41Z",
+      "side": 1,
+      "message": "Mee eens",
+      "parentUuid": "AAAAWn///GU\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HM\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -151,6 +221,24 @@
       "writtenOn": "2012-08-24T17:56:51Z",
       "side": 1,
       "message": "Ik vind een dockverdeleren een onduidelijk woord, ik zou niet weten wat het is?",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///EI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-24T18:07:41Z",
+      "side": 1,
+      "message": "Scheidingslijn (tussen dock en startscherm) tonen? Of scheidingslijn boven dock tonen?",
+      "parentUuid": "AAAAWn///GI\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
