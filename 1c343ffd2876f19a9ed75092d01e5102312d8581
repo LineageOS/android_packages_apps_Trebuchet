@@ -443,6 +443,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+tE\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-25T13:43:08Z",
+      "side": 1,
+      "message": "Dat is het beginscherm (?)\nAOSP gebruikt ook vaak \u0027dit\u0027 startscherm. Anders zou het \u0027het\u0027 startscherm moeten zijn.",
+      "parentUuid": "AAAAWn//+8c\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///GI\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
