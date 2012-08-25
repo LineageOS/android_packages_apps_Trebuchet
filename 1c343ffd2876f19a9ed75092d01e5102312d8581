@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+8g\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "Nog noooooooit gehoord van hotseat :-0",
+      "parentUuid": "AAAAWn///Ao\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///EQ\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -337,6 +355,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+70\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "* Indicator voor huidig scherm onderaan tonen",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HI\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -384,6 +419,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAWn///HI\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+8c\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "Er is toch maar 1 startscherm?\n\nDus dan zou je moeten zeggen\n\n* Indicator vervagen na wisselen van scherm?",
+      "parentUuid": "AAAAWn///AU\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -473,6 +526,24 @@
       "side": 1,
       "message": "ok",
       "parentUuid": "AAAAWn///AQ\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+8Y\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "Nee, je scheidt het dock niet, je scheidt het dock en het scherm.\n\n* Scheidingslijn dock tonen",
+      "parentUuid": "AAAAWn//++I\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -673,6 +744,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+7s\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "Maar dan wel met mijn wijziging :)",
+      "parentUuid": "AAAAWn///AE\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///Gk\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -738,6 +827,24 @@
       "side": 1,
       "message": "Past dan toch niet? Voluit zijn het 26 char.",
       "parentUuid": "AAAAWn///BE\u003d",
+      "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+7k\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-25T00:29:30Z",
+      "side": 1,
+      "message": "Bart bedoelt met \"done\" dat hij het met je een is :)",
+      "parentUuid": "AAAAWn//++Q\u003d",
       "revId": "1c343ffd2876f19a9ed75092d01e5102312d8581",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
