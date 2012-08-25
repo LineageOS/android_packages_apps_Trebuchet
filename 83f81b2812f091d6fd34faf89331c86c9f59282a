@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWn//+os\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-25T15:39:00Z",
+      "side": 1,
+      "message": "\\\u0027 hoort daar toch niet? Of er moet pagina\u0027s staan, maar ik vind wisselen van pagina beter klinken.",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+oU\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 4297
+      },
+      "writtenOn": "2012-08-25T15:39:00Z",
+      "side": 1,
+      "message": "Dit kan ook \"Startscherm meedraaien\" worden. Dan lijkt het verschil me duidelijker tussen de launcher draaien en de algemene automatisch draaien functie.",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
