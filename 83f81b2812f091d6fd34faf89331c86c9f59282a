@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+jo\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-25T18:47:04Z",
+      "side": 1,
+      "message": "- Pagina\\\u0027s (mv)\n- In r. 170 is wel het meervoud gebruikt.",
+      "parentUuid": "AAAAWn//+os\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//+oU\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2012-08-25T15:39:00Z",
       "side": 1,
       "message": "Dit kan ook \"Startscherm meedraaien\" worden. Dan lijkt het verschil me duidelijker tussen de launcher draaien en de algemene automatisch draaien functie.",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+jg\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2012-08-25T18:47:04Z",
+      "side": 1,
+      "message": "Het gaat ook om de launcher, niet alleen de startschermen.",
+      "parentUuid": "AAAAWn//+oU\u003d",
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
