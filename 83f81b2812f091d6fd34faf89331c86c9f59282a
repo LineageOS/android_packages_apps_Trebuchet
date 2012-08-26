@@ -123,6 +123,24 @@
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3///8E\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2248
+      },
+      "writtenOn": "2012-08-26T12:31:58Z",
+      "side": 1,
+      "message": "Mij ook",
+      "parentUuid": "AAAAWn//+bs\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
