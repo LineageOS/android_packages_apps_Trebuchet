@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//+bw\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-26T01:39:37Z",
+      "side": 1,
+      "message": "Dan moet er nog wel een s achter :D",
+      "parentUuid": "AAAAWn//+jo\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//+oU\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Ja, weet ik, maar het lijkt zo een beetje alsof het de algemene automatisch draaien functie is. Het lijkt me beter om het duidelijker te maken dat dit alleen voor de launcher geldt",
       "parentUuid": "AAAAWn//+jg\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//+bs\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2049
+      },
+      "writtenOn": "2012-08-26T01:39:37Z",
+      "side": 1,
+      "message": "Lijkt me duidelijk genoeg.",
+      "parentUuid": "AAAAWn//+ec\u003d",
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
