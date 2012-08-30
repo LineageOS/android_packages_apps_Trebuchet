@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH///3w\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-30T04:33:12Z",
+      "side": 1,
+      "message": "Ik vind dit geen mooie vertaling, 2x scrollen. (ook al heeft het Engels dit ook)\n\n* Achtergrond meebewegen bij het scrollen door startschermen",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///3I\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-30T04:33:12Z",
+      "side": 1,
+      "message": "* Indicator vervagen na het wisselen van scherm\n\nIk blijf er bij, er is maar 1 startscherm.\n\nTrebuchet heeft het ook over \"number of screens on the Homescreen\". Dus je wisselt niet van startscherm, maar je wisselt van scherm.\n\nEngels is ook enkelvoud \"after the homescreen has changed\"\n(dus met \"startscherm\" kan ik ook nog wel leven, maar dan wel enkelvoud)",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn//+os\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -49,6 +83,24 @@
       "side": 1,
       "message": "Dan moet er nog wel een s achter :D",
       "parentUuid": "AAAAWn//+jo\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///3A\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-30T04:33:12Z",
+      "side": 1,
+      "message": "In overeenstemming met r.170\n\n* Indicator vervagen na het wisselen van pagina\n\nJe wisselt 1 pagina per keer, dus dan is enkelvoud voldoende toch? \n\nEngels \"after the page has changed\"",
+      "parentUuid": "AAAAWn//+bw\u003d",
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -156,6 +208,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "AAAAW3///8E\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///24\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-08-30T04:33:12Z",
+      "side": 1,
+      "message": "Dit zijn al de Trebuchet settings he Bart, dus je weet al dat je de instellingen van de Launcher aan het aanpassen bent :)",
+      "parentUuid": "AAAAW3///UM\u003d",
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
