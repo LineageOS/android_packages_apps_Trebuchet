@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH///T8\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-09-01T02:09:32Z",
+      "side": 1,
+      "message": "Achtergrond schuiven",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH///3w\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -37,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH///T4\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-09-01T02:09:32Z",
+      "side": 1,
+      "message": "- Achtergrond schuiven bij scrollen door startschermen\n\n(dan ook optie hierboven mee veranderen)",
+      "parentUuid": "AAAAXH///Y8\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH///3I\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 2
@@ -66,6 +101,24 @@
       "side": 1,
       "message": "En toch heb je hierboven erkend dat er meerdere startschermen zijn.\n\nIk denk dat wat jij bedoelt de startpagina is. In de AOSP-vertalingen staat ook vaker \u0027dit\u0027 startscherm. Dat impliceert dat er meerdere zijn.",
       "parentUuid": "AAAAXH///3I\u003d",
+      "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///UA\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-09-01T02:09:32Z",
+      "side": 1,
+      "message": "You got me there.... :-)",
+      "parentUuid": "AAAAXH///Y4\u003d",
       "revId": "83f81b2812f091d6fd34faf89331c86c9f59282a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
