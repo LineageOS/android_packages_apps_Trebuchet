@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//+jo\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-09-03T03:53:07Z",
+      "side": 1,
+      "message": "I prefer \"Mantener pulsación sobre la pestaña Aplicaciones para elegir el método de ordenación\". Up to you",
+      "revId": "7cd37fdc4902d9438385a022d2ba5d2d96442d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//+jY\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-09-03T03:53:07Z",
+      "side": 1,
+      "message": "Escoge la pantalla...",
+      "revId": "7cd37fdc4902d9438385a022d2ba5d2d96442d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//+jk\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-09-03T03:53:07Z",
+      "side": 1,
+      "message": "Habilitar la barra de búsqueda permanentemente",
+      "revId": "7cd37fdc4902d9438385a022d2ba5d2d96442d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//+jg\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-09-03T03:53:07Z",
+      "side": 1,
+      "message": "\"Ocultar etiquetas de iconos\" or \"Ocultar etiquetas\"",
+      "revId": "7cd37fdc4902d9438385a022d2ba5d2d96442d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//+jc\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-09-03T03:53:07Z",
+      "side": 1,
+      "message": "Pasar de pestañas de aplicaciones a pestañas de widgets sin..",
+      "revId": "7cd37fdc4902d9438385a022d2ba5d2d96442d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
