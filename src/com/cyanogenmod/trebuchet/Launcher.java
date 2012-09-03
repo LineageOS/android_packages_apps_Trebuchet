@@ -2335,7 +2335,7 @@ public final class Launcher extends Activity
     }
 
     public boolean isAllAppsButtonRank(int rank) {
-        return mHotseat.isAllAppsButtonRank(rank);
+        return (null == mHotseat) ? false : mHotseat.isAllAppsButtonRank(rank);
     }
 
     // AllAppsView.Watcher
