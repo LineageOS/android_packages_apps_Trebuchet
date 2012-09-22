@@ -3422,7 +3422,7 @@ public final class Launcher extends Activity
             };
 
             boolean willSnapPage = mNewShortcutAnimatePage > -1 &&
-                    mNewShortcutAnimatePage != mWorkspace.getCurrentPage();
+                    mNewShortcutAnimatePage -1 != mWorkspace.getCurrentPage();
             if (canRunNewAppsAnimation()) {
                 // If the user has not interacted recently, then either snap to the new page to show
                 // the new-apps animation or just run them if they are to appear on the current page
