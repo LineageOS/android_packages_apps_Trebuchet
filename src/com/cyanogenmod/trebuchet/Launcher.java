@@ -3420,9 +3420,10 @@ public final class Launcher extends Activity
                     runNewAppsAnimation(false);
                 }
             };
-
+	final int screenCount = PreferencesProvider.Interface.Homescreen.getNumberHomescreens(this);
             boolean willSnapPage = mNewShortcutAnimatePage > -1 &&
-                    mNewShortcutAnimatePage != mWorkspace.getCurrentPage();
+                    mNewShortcutAnimatePage != mWorkspace.getCurrentPage() &&
+                    		screenCount > mNewShortcutAnimatePage;
             if (canRunNewAppsAnimation()) {
                 // If the user has not interacted recently, then either snap to the new page to show
                 // the new-apps animation or just run them if they are to appear on the current page
