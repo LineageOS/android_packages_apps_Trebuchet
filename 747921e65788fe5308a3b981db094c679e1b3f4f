@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAY3///jw\u003d",
+        "filename": "res/values-cs/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4632
+      },
+      "writtenOn": "2012-10-07T22:11:11Z",
+      "side": 1,
+      "message": "P?idrž prst na kart? aplikací pro výb?r režimu ?azení",
+      "revId": "747921e65788fe5308a3b981db094c679e1b3f4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAY3///j4\u003d",
+        "filename": "res/values-cs/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 4632
+      },
+      "writtenOn": "2012-10-07T22:11:11Z",
+      "side": 1,
+      "message": "Slábnutí indikátoru",
+      "revId": "747921e65788fe5308a3b981db094c679e1b3f4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
