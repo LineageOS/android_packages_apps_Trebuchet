@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.cyanogenmod.trebuchet.LauncherApplication;
+import com.cyanogenmod.trebuchet.R;
 import com.cyanogenmod.trebuchet.Workspace;
 import com.cyanogenmod.trebuchet.AppsCustomizePagedView;
 
@@ -64,6 +65,14 @@ public final class PreferencesProvider {
                 final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
                 return (int)((float) preferences.getInt("ui_homescreen_screen_padding_horizontal", 0) * 3.0f *
                         LauncherApplication.getScreenDensity());
+            }
+            public static int getNumberHotseatIcons(Context context) {
+                final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                return preferences.getInt("ui_homescreen_general_hotseat_size", context.getResources().getInteger(R.integer.hotseat_cell_count));
+            }
+            public static int getDefaultHotseatIcon(Context context, int def) {
+                final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);
+                return preferences.getInt("ui_homescreen_general_hotseat_apps_index", def) - 1;
             }
             public static boolean getShowSearchBar(Context context) {
                 final SharedPreferences preferences = context.getSharedPreferences(PREFERENCES_KEY, 0);

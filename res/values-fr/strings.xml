@@ -137,6 +137,10 @@
     <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Espacement supplémentaire vertical sur l\'écran d\'accueil</string>
     <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Padding horizontal</string>
     <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Espacement supplémentaire horizontal</string>
+    <string name="preferences_interface_homescreen_general_hotseat_size_title">Icônes du lanceur</string>
+    <string name="preferences_interface_homescreen_general_hotseat_size_summary">Définir le nombre d\'icône de la barre de lancement rapide</string>
+    <string name="preferences_interface_homescreen_general_hotseat_apps_index_title">Bouton applications</string>
+    <string name="preferences_interface_homescreen_general_hotseat_apps_index_summary">Définir l\'emplacement du bouton de lancement de la grille d\'application</string>
     <string name="preferences_interface_homescreen_general_search_summary">Activer la barre de recherche persistante</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Redimensionner tout les widgets</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Permet de redimensionner les widgets qui normalement n\'en sont pas capables</string>
