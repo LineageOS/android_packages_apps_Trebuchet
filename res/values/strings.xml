@@ -317,6 +317,10 @@ s -->
     <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Extra vertical spacing on the homescreen</string>
     <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Horizontal padding</string>
     <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Extra horizontal spacing on the homescreen</string>
+    <string name="preferences_interface_homescreen_general_hotseat_size_title">Launcher icons</string>
+    <string name="preferences_interface_homescreen_general_hotseat_size_summary">Choose the number of icons on the launcher</string>
+    <string name="preferences_interface_homescreen_general_hotseat_apps_index_title">Applications button</string>
+    <string name="preferences_interface_homescreen_general_hotseat_apps_index_summary">Choose the place of the applications button</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Resize any widget</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Allow resizing of widgets that normally aren\'t resizeable</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Hide icon labels</string>
