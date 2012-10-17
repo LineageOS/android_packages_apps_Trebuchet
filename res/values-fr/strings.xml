@@ -166,6 +166,8 @@
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Barre de Dock</string>
+    <string name="preferences_interface_dock_size_title">Icônes du lanceur</string>
+    <string name="preferences_interface_dock_size_summary">Définir le nombre d\'icône de la barre de lancement rapide</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Icônes</string>
