@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAaH///LI\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Hotseat.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2012-10-19T14:53:17Z",
+      "side": 1,
+      "message": "its } else {\n\ni also always get nagged with code guidelines (: you get used to it (:",
+      "revId": "eb58215e9c80a585f266775b9718eeaeff119b9f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
