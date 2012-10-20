@@ -30,9 +30,10 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.support.v13.dreams.BasicDream;
+import android.service.dreams.Dream;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ import com.cyanogenmod.trebuchet.R;
 import java.util.HashMap;
 import java.util.Random;
 
-public class RocketLauncher extends BasicDream {
+public class RocketLauncher extends Dream {
     public static final boolean ROCKET_LAUNCHER = true;
 
     public static class Board extends FrameLayout
@@ -162,6 +163,7 @@ public class RocketLauncher extends BasicDream {
                             s.setDuration((int)(LAUNCH_ZOOM_TIME * 1.25));
                             s.setInterpolator(new android.view.animation.AccelerateInterpolator(3));
                             s.start();
+                            ((RocketLauncher)getContext()).finish();
                         }
                         break;
                 }
@@ -394,9 +396,8 @@ public class RocketLauncher extends BasicDream {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-
+    public void onAttachedToWindow() {
+        setInteractive(ROCKET_LAUNCHER);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         final int longside = metrics.widthPixels > metrics.heightPixels 
@@ -406,12 +407,12 @@ public class RocketLauncher extends BasicDream {
         setContentView(b, new ViewGroup.LayoutParams(longside, longside));
         b.setX((metrics.widthPixels - longside) / 2);
         b.setY((metrics.heightPixels - longside) / 2);
+        super.onAttachedToWindow();
     }
 
     @Override
-    public void onUserInteraction() {
-        if (!ROCKET_LAUNCHER) {
-            finish();
-        }
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        setInteractive(false);
+        return super.dispatchKeyEvent(event);
     }
 }
