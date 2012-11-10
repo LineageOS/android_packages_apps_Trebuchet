@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAa3//99o\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2012-11-10T00:21:42Z",
+      "side": 1,
+      "message": "\u003cstring name\u003d\"preferences_interface_homescreen_general_resize_any_widget_title\"\u003eRedimensionner tous les widgets\u003c/string\u003e",
+      "revId": "17854dbb9cb6507e6797357fb65ae9e43db02142",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
