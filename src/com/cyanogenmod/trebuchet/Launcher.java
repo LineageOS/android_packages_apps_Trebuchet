@@ -930,6 +930,8 @@ public final class Launcher extends Activity
 
         mDragLayer = (DragLayer) findViewById(R.id.drag_layer);
         mWorkspace = (Workspace) mDragLayer.findViewById(R.id.workspace);
+        // mQsbDivider && mDockDivider are not present in sw720dp devices.
+        // This vars need to be protected from NPE
         mQsbDivider = (ImageView) findViewById(R.id.qsb_divider);
         mDockDivider = (ImageView) findViewById(R.id.dock_divider);
 
@@ -952,12 +954,13 @@ public final class Launcher extends Activity
         mSearchDropTargetBar = (SearchDropTargetBar) mDragLayer.findViewById(R.id.qsb_bar);
 
         // Hide the search divider if we are hiding search bar
-        if (!mShowSearchBar && getCurrentOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
-            ((View) findViewById(R.id.qsb_divider)).setVisibility(View.GONE);
+        if (mQsbDivider != null &&
+            !mShowSearchBar && getCurrentOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
+            mQsbDivider.setVisibility(View.GONE);
         }
 
-        if (!mShowDockDivider) {
-            ((View) findViewById(R.id.dock_divider)).setVisibility(View.GONE);
+        if (mDockDivider != null && !mShowDockDivider) {
+            mDockDivider.setVisibility(View.GONE);
         }
 
         // Setup AppsCustomize
