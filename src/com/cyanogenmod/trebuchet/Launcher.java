@@ -970,12 +970,12 @@ public final class Launcher extends Activity
         mSearchDropTargetBar = (SearchDropTargetBar) mDragLayer.findViewById(R.id.qsb_bar);
 
         // Hide the search divider if we are hiding search bar
-        if (!mShowSearchBar && getCurrentOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
-            ((View) findViewById(R.id.qsb_divider)).setVisibility(View.GONE);
+        if (!mShowSearchBar && mQsbDivider != null && getCurrentOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
+            ((View)mQsbDivider).setVisibility(View.GONE);
         }
 
-        if (!mShowDockDivider) {
-            ((View) findViewById(R.id.dock_divider)).setVisibility(View.GONE);
+        if (!mShowDockDivider && mDockDivider != null) {
+            ((View)mDockDivider).setVisibility(View.GONE);
         }
 
         // Setup AppsCustomize
@@ -984,7 +984,7 @@ public final class Launcher extends Activity
         mAppsCustomizeContent = (AppsCustomizePagedView)
                 mAppsCustomizeTabHost.findViewById(R.id.apps_customize_pane_content);
         mAppsCustomizeContent.setup(this, dragController);
-        
+
         // Setup the drag controller (drop targets have to be added in reverse order in priority)
         dragController.setDragScoller(mWorkspace);
         dragController.setScrollView(mDragLayer);
