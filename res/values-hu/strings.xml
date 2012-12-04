@@ -177,6 +177,8 @@
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Tálca</string>
+    <string name="preferences_interface_dock_size_title">Tálca ikonok</string>
+    <string name="preferences_interface_dock_size_summary">Válassza ki hány darab ikon legyen a tálcán</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Ikonok</string>
