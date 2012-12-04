@@ -63,6 +63,9 @@ public class CellLayout extends ViewGroup {
     private Launcher mLauncher;
     private int mCellWidth;
     private int mCellHeight;
+    // Save values before applying grid-size related changes. We may need to reset it.
+    private int mOriginalCellWidth;
+    private int mOriginalCellHeight;
 
     private int mCountX;
     private int mCountY;
@@ -184,8 +187,8 @@ public class CellLayout extends ViewGroup {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CellLayout, defStyle, 0);
 
-        mCellWidth = a.getDimensionPixelSize(R.styleable.CellLayout_cellWidth, 10);
-        mCellHeight = a.getDimensionPixelSize(R.styleable.CellLayout_cellHeight, 10);
+        mCellWidth = mOriginalCellWidth = a.getDimensionPixelSize(R.styleable.CellLayout_cellWidth, 10);
+        mCellHeight = mOriginalCellHeight = a.getDimensionPixelSize(R.styleable.CellLayout_cellHeight, 10);
         mWidthGap = mOriginalWidthGap = a.getDimensionPixelSize(R.styleable.CellLayout_widthGap, 0);
         mHeightGap = mOriginalHeightGap = a.getDimensionPixelSize(R.styleable.CellLayout_heightGap, 0);
         mMaxGap = a.getDimensionPixelSize(R.styleable.CellLayout_maxGap, 0);
@@ -281,6 +284,17 @@ public class CellLayout extends ViewGroup {
         mForegroundRect = new Rect();
 
         mShortcutsAndWidgets = new ShortcutAndWidgetContainer(context);
+
+        if (!LauncherApplication.isScreenLarge()){
+            mCellWidth = (mCellWidth * 4) / mCountX;
+            mCellHeight = (mCellHeight * 4) / mCountY;
+        } else {
+            int[] cellCount = mLauncher.getWorkspace().getCellCountsForLarge(context);
+            mCellWidth = (mCellWidth * cellCount[0]) / mCountX;
+            mCellHeight = (mCellHeight * cellCount[1]) / mCountY;
+        }
+
+        mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
         addView(mShortcutsAndWidgets);
     }
 
@@ -598,6 +612,12 @@ public class CellLayout extends ViewGroup {
 
     public void setIsHotseat(boolean isHotseat) {
         mIsHotseat = isHotseat;
+        // Reset scaling for the hotseat
+        if (mIsHotseat) {
+            mCellWidth = mOriginalCellWidth;
+            mCellHeight = mOriginalCellHeight;
+            mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
+        }
     }
 
     public boolean addViewToCellLayout(View child, int index, int childId, LayoutParams params,
@@ -975,12 +995,6 @@ public class CellLayout extends ViewGroup {
         int numWidthGaps = mCountX - 1;
         int numHeightGaps = mCountY - 1;
 
-        if (!LauncherApplication.isScreenLarge()){
-            Resources res = getResources();
-            mCellWidth = widthSpecSize / mCountX;
-            mCellHeight = heightSpecSize / mCountY;
-        }
-
         if (mOriginalWidthGap < 0 || mOriginalHeightGap < 0) {
             int hSpace = widthSpecSize - getPaddingLeft() - getPaddingRight();
             int vSpace = heightSpecSize - getPaddingTop() - getPaddingBottom();
@@ -988,12 +1002,12 @@ public class CellLayout extends ViewGroup {
             int vFreeSpace = vSpace - (mCountY * mCellHeight);
             mWidthGap = Math.min(mMaxGap, numWidthGaps > 0 ? (hFreeSpace / numWidthGaps) : 0);
             mHeightGap = Math.min(mMaxGap,numHeightGaps > 0 ? (vFreeSpace / numHeightGaps) : 0);
+            mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
         } else {
             mWidthGap = mOriginalWidthGap;
             mHeightGap = mOriginalHeightGap;
         }
 
-        mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap);
 
         // Initial values correspond to widthSpecMode == MeasureSpec.EXACTLY
         int newWidth = widthSpecSize;
