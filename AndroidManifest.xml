@@ -99,14 +99,15 @@
                 android:resource="@xml/wallpaper_picker_preview" />
         </activity>
 
-        <activity android:name="com.cyanogenmod.trebuchet.RocketLauncher"
+        <service android:name="com.cyanogenmod.trebuchet.RocketLauncher"
             android:label="@string/dream_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            android:exported="true"
+            android:icon="@drawable/ic_launcher_home" >
             <intent-filter>
                 <action android:name="android.service.dreams.DreamService" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </service>
 
         <!-- Intent received used to prepopulate the default workspace. -->
         <receiver
