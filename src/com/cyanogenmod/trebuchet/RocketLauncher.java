@@ -1,5 +1,6 @@
 /*);
  * Copyright (C) 2011 The Android Open Source Project
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +22,7 @@
 package com.cyanogenmod.trebuchet;
 
 import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.TimeAnimator;
 import android.content.ComponentName;
 import android.content.Context;
@@ -29,7 +31,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.support.v13.dreams.BasicDream;
+import android.service.dreams.DreamService;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -43,7 +45,7 @@ import com.cyanogenmod.trebuchet.R;
 import java.util.HashMap;
 import java.util.Random;
 
-public class RocketLauncher extends BasicDream {
+public class RocketLauncher extends DreamService {
     public static final boolean ROCKET_LAUNCHER = true;
 
     public static class Board extends FrameLayout
@@ -57,6 +59,8 @@ public class RocketLauncher extends BasicDream {
         private float mSpeedScale = 1.0f;
 
         public static final int LAUNCH_ZOOM_TIME = 400; // ms
+
+        public RocketLauncher mRL;
 
         HashMap<ComponentName, Bitmap> mIcons;
         ComponentName[] mComponentNames;
@@ -100,7 +104,9 @@ public class RocketLauncher extends BasicDream {
 
             public ComponentName component;
 
-            public FlyingIcon(Context context, AttributeSet as) {
+            public Board board;
+
+            public FlyingIcon(Context context, AttributeSet as, Board b) {
                 super(context, as);
                 setLayerType(View.LAYER_TYPE_HARDWARE, null);
 
@@ -108,6 +114,8 @@ public class RocketLauncher extends BasicDream {
                 //android.util.Log.d("RocketLauncher", "ctor: " + this);
                 hsv[1] = 1f;
                 hsv[2] = 1f;
+
+                board = b;
             }
 
             @Override
@@ -149,11 +157,11 @@ public class RocketLauncher extends BasicDream {
                                 }
                             }, LAUNCH_ZOOM_TIME);
                             endscale = 0;
-                            AnimatorSet s = LauncherAnimUtils.createAnimatorSet();
+                            AnimatorSet s = new AnimatorSet();
                             s.playTogether(
-                                LauncherAnimUtils.ofFloat(this, "scaleX", 15f),
-                                LauncherAnimUtils.ofFloat(this, "scaleY", 15f),
-                                LauncherAnimUtils.ofFloat(this, "alpha", 0f)
+                                ObjectAnimator.ofFloat(this, "scaleX", 15f),
+                                ObjectAnimator.ofFloat(this, "scaleY", 15f),
+                                ObjectAnimator.ofFloat(this, "alpha", 0f)
                             );
 
                             // make sure things are still moving until the very last instant the
@@ -161,6 +169,7 @@ public class RocketLauncher extends BasicDream {
                             s.setDuration((int)(LAUNCH_ZOOM_TIME * 1.25));
                             s.setInterpolator(new android.view.animation.AccelerateInterpolator(3));
                             s.start();
+                            board.notifyFinish();
                         }
                         break;
                 }
@@ -224,7 +233,7 @@ public class RocketLauncher extends BasicDream {
 
         public class FlyingStar extends FlyingIcon {
             public FlyingStar(Context context, AttributeSet as) {
-                super(context, as);
+                super(context, as, null);
             }
             public void randomizeIcon() {
                 setImageResource(R.drawable.widget_resize_handle_bottom);
@@ -238,7 +247,7 @@ public class RocketLauncher extends BasicDream {
 
         TimeAnimator mAnim;
 
-        public Board(Context context, AttributeSet as) {
+        public Board(Context context, AttributeSet as, RocketLauncher rl) {
             super(context, as);
 
             setBackgroundColor(0xFF000000);
@@ -247,6 +256,7 @@ public class RocketLauncher extends BasicDream {
             mIcons = app.getIconCache().getAllIcons();
             mComponentNames = new ComponentName[mIcons.size()];
             mComponentNames = mIcons.keySet().toArray(mComponentNames);
+            mRL = rl;
         }
 
         private void reset() {
@@ -273,7 +283,7 @@ public class RocketLauncher extends BasicDream {
             for(int i=0; i<NUM_ICONS*2; i++) {
                 FlyingIcon nv = (FLYING_STARS && (i < NUM_ICONS))
                     ? new FlyingStar(getContext(), null)
-                    : new FlyingIcon(getContext(), null);
+                    : new FlyingIcon(getContext(), null, this);
                 addView(nv, wrap);
                 nv.reset();
             }
@@ -374,6 +384,19 @@ public class RocketLauncher extends BasicDream {
             h.postDelayed(mEngageWarp, 5000);
         }
 
+        final Runnable mFinish = new Runnable() {
+            @Override
+            public void run() {
+                mRL.finish();
+            }
+        };
+
+        public void notifyFinish() {
+            final Handler h = getHandler();
+            h.removeCallbacks(mFinish);
+            h.postDelayed(mFinish, LAUNCH_ZOOM_TIME);
+        }
+
         @Override
         public boolean onTouchEvent(MotionEvent event) {
             if (!ROCKET_LAUNCHER) {
@@ -393,24 +416,20 @@ public class RocketLauncher extends BasicDream {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+        setInteractive(true);
 
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         final int longside = metrics.widthPixels > metrics.heightPixels 
             ? metrics.widthPixels : metrics.heightPixels;
 
-        Board b = new Board(this, null);
+        Board b = new Board(this, null, this);
         setContentView(b, new ViewGroup.LayoutParams(longside, longside));
         b.setX((metrics.widthPixels - longside) / 2);
         b.setY((metrics.heightPixels - longside) / 2);
     }
 
-    @Override
-    public void onUserInteraction() {
-        if (!ROCKET_LAUNCHER) {
-            finish();
-        }
-    }
 }
