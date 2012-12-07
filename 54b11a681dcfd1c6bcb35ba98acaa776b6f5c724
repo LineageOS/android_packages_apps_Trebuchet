@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAa3//3jM\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-12-07T16:17:04Z",
+      "side": 1,
+      "message": "The orientation check seems unneeded here.",
+      "revId": "54b11a681dcfd1c6bcb35ba98acaa776b6f5c724",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
