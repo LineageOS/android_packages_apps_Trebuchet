@@ -1161,6 +1161,11 @@ public class Workspace extends SmoothPagedView
         snapToPage(getPageIndexForScreenId(screenId), r);
     }
 
+    @Override
+    protected Interpolator getScrollInterpolator() {
+        return new PagedView.QuadInterpolator();
+    }
+
     class WallpaperOffsetInterpolator implements Choreographer.FrameCallback {
         float mFinalOffset = 0.0f;
         float mCurrentOffset = 0.5f; // to force an initial update
