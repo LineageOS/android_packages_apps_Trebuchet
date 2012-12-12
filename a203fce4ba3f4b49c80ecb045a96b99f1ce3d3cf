@@ -16,6 +16,24 @@
       "revId": "a203fce4ba3f4b49c80ecb045a96b99f1ce3d3cf",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH///sw\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1450,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2012-12-12T04:52:29Z",
+      "side": 1,
+      "message": "Yeah, but using Math.pow is rather inefficient.",
+      "parentUuid": "AAAAbH///s4\u003d",
+      "revId": "a203fce4ba3f4b49c80ecb045a96b99f1ce3d3cf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
