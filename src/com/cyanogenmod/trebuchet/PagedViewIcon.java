@@ -20,6 +20,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.widget.TextView;
+import android.view.MotionEvent;
 
 /**
  * An icon on a PagedView, specifically for items in the launcher's paged view (with compound
@@ -73,6 +74,14 @@ public class PagedViewIcon extends TextView {
                 refreshDrawableState();
             }
         });
+    }
+
+    public boolean onTouchEvent(MotionEvent ev) {
+        boolean result = super.onTouchEvent(ev);
+        if(ev.getAction() == MotionEvent.ACTION_DOWN) {
+            setPressed(true);
+        }
+        return result;
     }
 
     protected void drawableStateChanged() {
