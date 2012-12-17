@@ -1,0 +1,10 @@
+Change-Id: Iee1d489eff284b35151586c214fb5ae0953b8a34
+Code-Review+2: David van Tonder <david.vantonder@gmail.com>
+Verified+1: David van Tonder <david.vantonder@gmail.com>
+Code-Review+1: Igor Sokolov <wildfatduck@gmail.com>
+Code-Review+1: Vsevolod Zoubarev <yandexx@gmail.com>
+Submitted-by: David van Tonder <david.vantonder@gmail.com>
+Submitted-at: Mon, 17 Dec 2012 03:57:53 -0800
+Reviewed-on: http://review.cyanogenmod.org/28514
+Project: CyanogenMod/android_packages_apps_Trebuchet
+Branch: refs/heads/cm-10.1
