@@ -16,6 +16,24 @@
       "revId": "461439a24ea2bb9c87136f55a0a2e6662b4cc483",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//+MA\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2012-12-17T14:44:16Z",
+      "side": 1,
+      "message": "Mit Seiten sind die Homescreens gemeint.\r\nEs gibt keine einstellbaren Ränder mehr, daher gibt es auch keine Verwechslungsgefahr.",
+      "parentUuid": "AAAAbH//+MU\u003d",
+      "revId": "461439a24ea2bb9c87136f55a0a2e6662b4cc483",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
