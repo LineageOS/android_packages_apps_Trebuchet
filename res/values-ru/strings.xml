@@ -126,6 +126,7 @@
     <!-- UI -->
     <!-- Homescreen -->
     <string name="preferences_interface_homescreen_title">Главный экран</string>
+    <string name="preferences_interface_homescreen_summary">Настройка экранов и обоев</string>
     <string name="preferences_interface_homescreen_general_category">ОСНОВНЫЕ</string>
     <string name="preferences_interface_homescreen_general_screens_title">Рабочие столы</string>
     <string name="preferences_interface_homescreen_general_screens_summary">Количество рабочих столов на главном экране</string>
@@ -150,13 +151,16 @@
     <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Прокручивать обои при прокрутке рабочих столов</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_title">Быстрая отрисовка обоев</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_summary">Используйте эту настройку для увеличения гладкости статических обоев</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Размер обоев</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Какого размера должны быть обои</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Затемнять края экранов</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Затемнять края рабочих столов при перелистывании</string>
     <string name="preferences_interface_homescreen_scrolling_show_outlines_title">Показывать границы</string>
     <string name="preferences_interface_homescreen_scrolling_show_outlines_summary">Показывать границы рабочих столов при перелистывании</string>
-
     <string name="preferences_interface_homescreen_indicator_fade_title">Скрывать индикатор</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Скрывать индикатор страниц после смены страницы</string>
+    <string name="preferences_interface_homescreen_indicator_position_title">Положение индикатора</string>
+    <string name="preferences_interface_homescreen_indicator_position_summary">Выбор расположения индикатора</string>
     <string name="preferences_interface_homescreen_indicator_background_title">Отображать разделитель</string>
     <string name="preferences_interface_homescreen_indicator_background_summary">Отображать разделитель за индикатором страниц</string>
     <string name="preferences_interface_homescreen_indicator_category">ИНДИКАТОР</string>
@@ -165,6 +169,7 @@
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Главное меню</string>
+    <string name="preferences_interface_drawer_summary">Настройки главного меню и виджетов</string>
     <string name="preferences_interface_drawer_orientation_title">Ориентация</string>
     <string name="preferences_interface_drawer_orientation_summary">Выбор типа прокрутки главного меню</string>
     <string name="preferences_interface_drawer_widgets_category">ВИДЖЕТЫ</string>
@@ -180,9 +185,13 @@
     <string name="preferences_interface_drawer_indicator_enable_summary">Отображать индикатор выбранной страницы внизу экрана</string>
     <string name="preferences_interface_drawer_indicator_fade_title">Скрывать индикатор</string>
     <string name="preferences_interface_drawer_indicator_fade_summary">Скрывать индикатор страниц после смены страницы</string>
+    <string name="preferences_interface_drawer_indicator_position_title">Положение индикатора</string>
+    <string name="preferences_interface_drawer_indicator_position_summary">Выбор расположения индикатора</string>
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Нижняя панель</string>
+    <string name="preferences_interface_dock_divider_title">Показывать разделитель</string>
+    <string name="preferences_interface_dock_divider_summary">Отображать разделитель между рабочим столом и нижней панелью</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Иконки</string>
