@@ -150,6 +150,8 @@
     <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Прокручивать обои при прокрутке рабочих столов</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_title">Быстрая отрисовка обоев</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_summary">Используйте эту настройку для увеличения гладкости статических обоев</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Размер обоев</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Какого размера должны быть обои</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Затемнять края экранов</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Затемнять края рабочих столов при перелистывании</string>
     <string name="preferences_interface_homescreen_scrolling_show_outlines_title">Показывать границы</string>
