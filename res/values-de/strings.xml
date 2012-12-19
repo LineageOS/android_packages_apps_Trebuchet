@@ -169,6 +169,7 @@
     <!-- UI -->
     <!-- Homescreen -->
     <string name="preferences_interface_homescreen_title">Seiten</string>
+    <string name="preferences_interface_homescreen_summary">Seiten und Hintergrundbild</string>
     <string name="preferences_interface_homescreen_general_category">Allgemein</string>
     <string name="preferences_interface_homescreen_general_screens_title">Seitenzahl</string>
     <string name="preferences_interface_homescreen_general_screens_summary">Anzahl der verwendbaren und wechselbaren Seiten für Icons und Widgets</string>
@@ -202,9 +203,12 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">Seitenindikator anzeigen</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">Automatisch ausblenden</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Indikator nach Seitenwechsel ausblenden</string>
+    <string name="preferences_interface_homescreen_indicator_position_title">Indikator-Position</string>
+    <string name="preferences_interface_homescreen_indicator_position_summary">Anzeigeposition des Indikators auswählen</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Apps</string>
+    <string name="preferences_interface_drawer_summary">Apps und Widgets</string>
     <string name="preferences_interface_drawer_orientation_title">Ausrichtung</string>
     <string name="preferences_interface_drawer_orientation_summary">Scrollrichtung der App-Seiten auswählen</string>
     <string name="preferences_interface_drawer_widgets_category">Widget-Seiten</string>
@@ -220,11 +224,11 @@
     <string name="preferences_interface_drawer_indicator_enable_summary">Seitenindikator anzeigen</string>
     <string name="preferences_interface_drawer_indicator_fade_title">Automatisch ausblenden</string>
     <string name="preferences_interface_drawer_indicator_fade_summary">Indikator nach Seitenwechsel ausblenden</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Dock-Abtrennung anzeigen</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">Linie als Indikator-Hintergrund anzeigen</string>
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_homescreen_indicator_background_title">Dock-Abtrennung anzeigen</string>
+    <string name="preferences_interface_homescreen_indicator_background_summary">Linie als Indikator-Hintergrund anzeigen</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Icons</string>
@@ -232,4 +236,6 @@
     <!-- General -->
     <string name="preferences_interface_general_title">Allgemein</string>
     <string name="preferences_interface_general_orientation_title">Automatische Seitenausrichtung</string>
+    <string name="preferences_interface_general_fullscreen_title">Vollbildmodus</string>
+    <string name="preferences_interface_general_fullscreen_summary">Statusleiste für Vollbildansicht ausblenden</string>
 </resources>
