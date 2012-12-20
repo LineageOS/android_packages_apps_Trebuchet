@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAbH//9J8\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2012-12-20T15:18:52Z",
+      "side": 1,
+      "message": "Guter Hinweis! Ich werde wohl auch den Titel anpassen.\r\n\r\nSorry übrigens, dass ich dich nie als Reviewer hinzufüge, aber irgendwas stimmt mit deinem Account nicht...dich gibt es doppelt.",
+      "parentUuid": "AAAAbH//9KQ\u003d",
+      "revId": "4fdba97ed4ba8e124ca053f6338e684aa8869c79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAbH//9Kw\u003d",
         "filename": "res/values-de/strings.xml",
         "patchSetId": 2
