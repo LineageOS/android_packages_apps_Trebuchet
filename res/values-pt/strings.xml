@@ -179,4 +179,14 @@
     <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Efeito de rolagem na transição de telas</string>
     <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Esmaece lateral das páginas</string>
     <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Esmaece lateral das páginas na transição de telas</string>
+    <string name="preferences_interface_homescreen_summary">Telas e papéis de parede</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Tamanho do papel de parede</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Quantidade de telas que o papel de parede deve ocupar</string>
+    <string name="preferences_interface_homescreen_indicator_position_title">Indicador de posição</string>
+    <string name="preferences_interface_homescreen_indicator_position_summary">Escolha onde mostrar na tela o indicador</string>
+    <string name="preferences_interface_drawer_summary">Gaveta de aplicativos e widgets</string>
+    <string name="preferences_interface_dock_divider_title">Exibir divisor do dock</string>
+    <string name="preferences_interface_dock_divider_summary">Exibir divisor entre telas iniciais e dock</string>
+    <string name="preferences_interface_general_fullscreen_title">Modo tela cheia</string>
+    <string name="preferences_interface_general_fullscreen_summary">Esconder a barra de status para extender a tela inicial</string>
 </resources>
