@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbH//9Kw\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2012-12-20T14:06:41Z",
+      "side": 1,
+      "message": "derpedi derp derp derp!\r\nWill fix that with the next pach set",
+      "revId": "4fdba97ed4ba8e124ca053f6338e684aa8869c79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
