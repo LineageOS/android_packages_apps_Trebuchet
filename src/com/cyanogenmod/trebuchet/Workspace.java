@@ -385,7 +385,7 @@ public class Workspace extends SmoothPagedView
         setOnHierarchyChangeListener(this);
 
         // if there is a value set it the preferences, use that instead
-        if (!LauncherApplication.isScreenLarge()) {
+        if ((!LauncherApplication.isScreenLarge()) || (getResources().getBoolean(R.bool.config_workspaceTabletGrid) == true)) {
             cellCountX = PreferencesProvider.Interface.Homescreen.getCellCountX(cellCountX);
             cellCountY = PreferencesProvider.Interface.Homescreen.getCellCountY(cellCountY);
         }
