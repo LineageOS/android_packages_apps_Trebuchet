@@ -16,6 +16,24 @@
       "revId": "73b588d7edb4061a30a001c357ab1c64d2836186",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//8co\u003d",
+        "filename": "res/values-de/arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2012-12-22T20:10:19Z",
+      "side": 1,
+      "message": "Du hast recht, ich glaube \"überhalb\" ist nur Umgangssprache.\nLiegt wohl daran, dass ich Schwabe bin. :-)",
+      "parentUuid": "AAAAbH//8c0\u003d",
+      "revId": "73b588d7edb4061a30a001c357ab1c64d2836186",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
