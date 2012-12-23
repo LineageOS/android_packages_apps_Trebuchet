@@ -144,10 +144,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">A kezdőképernyőn megjelenő sorok és oszlopok számának kiválasztása</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Sor</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Oszlop</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Függőleges kitöltés</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Extra függőleges helykitöltés a kezdőképernyőn</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Vízszintes kitöltés</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Extra vízszintes helykitöltés a kezdőképernyőn</string>
     <string name="preferences_interface_homescreen_general_search_summary">Állandó keresősáv engedélyezése</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Átméretezhető modulok</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Modulok átméretezésének engedélyezése a kezdőképernyőn</string>
@@ -161,8 +157,6 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">Aktuális képernyő jelzése a oldal alján</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">Képernyőjelölő</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Csak képernyőváltáskor látszik</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Tálca elválasztó</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">Tálca és a képernyő közti elválasztó vonal</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Alkalmazás képernyők</string>
@@ -177,6 +171,8 @@
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Tálca</string>
+    <string name="preferences_interface_dock_divider_title">Tálca elválasztó</string>
+    <string name="preferences_interface_dock_divider_summary">Tálca és a képernyő közti elválasztó vonal</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Ikonok</string>

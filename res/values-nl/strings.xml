@@ -150,10 +150,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal rijen/kolommen op het startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rijen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolommen</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Verticale opvulling</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Extra verticale opvulling op het startscherm</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Horizontale opvulling</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Extra horizontale opvulling op het startscherm</string>
     <string name="preferences_interface_homescreen_general_search_title">Permanente zoekbalk</string>
     <string name="preferences_interface_homescreen_general_search_summary">Zoekbalk permanent tonen</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">Widgetgrootte altijd wijzigen</string>
@@ -168,8 +164,6 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">Indicator voor huidig startscherm onderaan tonen</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">Indicator vervagen</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Indicator vervagen na het wisselen van startscherm</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Scheidingslijn dock tonen</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">Achtergrond tonen achter indicator</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">App- en widgetoverzicht</string>
@@ -184,6 +178,8 @@
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_dock_divider_title">Scheidingslijn dock tonen</string>
+    <string name="preferences_interface_dock_divider_summary">Achtergrond tonen achter indicator</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Iconen</string>

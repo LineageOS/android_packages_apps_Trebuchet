@@ -157,8 +157,6 @@
 
     <string name="preferences_interface_homescreen_indicator_fade_title">Скрывать индикатор</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Скрывать индикатор страниц после смены страницы</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Отображать разделитель</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">Отображать разделитель за индикатором страниц</string>
     <string name="preferences_interface_homescreen_indicator_category">ИНДИКАТОР</string>
     <string name="preferences_interface_homescreen_indicator_enable_title">Отображать индикатор</string>
     <string name="preferences_interface_homescreen_indicator_enable_summary">Отображать индикатор выбранной страницы внизу экрана</string>
@@ -183,6 +181,8 @@
 
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Нижняя панель</string>
+    <string name="preferences_interface_dock_divider_title">Отображать разделитель</string>
+    <string name="preferences_interface_dock_divider_summary">Отображать разделитель за индикатором страниц</string>
 
     <!-- Icons -->
     <string name="preferences_interface_icons_title">Иконки</string>

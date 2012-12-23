@@ -130,10 +130,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">"Elije el número de filas/columnas a mostrar en la pantalla de inicio</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">"Filas"</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">"Columnas"</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">"Espaciado vertical"</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">"Espaciado vertical adicional en la pantalla de inicio"</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">"Espaciado horizontal"</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">"Espaciado horizontal adicional en la pantalla de inicio"</string>
     <string name="preferences_interface_homescreen_general_search_summary">"Habilitar la barra de búsqueda permanentemente"</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_title">"Redimensionar widgets"</string>
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">"Permitir redimensionar los widgets que normalmente no son redimensionables"</string>
@@ -147,8 +143,6 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">"Mostrar indicador de página actual en la parte inferior de la pantalla"</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">"Efecto fundido"</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">"Activar efecto de fundido del indicador de página después de un cambio de pantalla de inicio"</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">"Separador"</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">"Mostrar una barra de separación debajo del indicador de página"</string>
     <string name="preferences_interface_drawer_title">"Aplicaciones/Widgets"</string>
     <string name="preferences_interface_drawer_widgets_category">"Widgets"</string>
     <string name="preferences_interface_drawer_widgets_join_apps_title">"Transición pestañas"</string>
