@@ -102,6 +102,11 @@ class ItemInfo {
      */
     int[] dropPos = null;
 
+    /**
+     * The launcher action
+     */
+    LauncherAction.Action action = null;
+
     ItemInfo() {
     }
 
