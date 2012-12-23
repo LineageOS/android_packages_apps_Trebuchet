@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbH//8LE\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-12-23T20:11:40Z",
+      "side": 1,
+      "message": "Aplicaciones ocultas",
+      "revId": "5b248ba507a85d2c6dbdf3fc41abac1731d3a6ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//8LA\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-12-23T20:11:40Z",
+      "side": 1,
+      "message": "Aplicaciones ocultas",
+      "revId": "5b248ba507a85d2c6dbdf3fc41abac1731d3a6ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//8K8\u003d",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2012-12-23T20:11:40Z",
+      "side": 1,
+      "message": "Why? This is the opposite to the default translation.",
+      "revId": "5b248ba507a85d2c6dbdf3fc41abac1731d3a6ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
