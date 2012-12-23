@@ -126,13 +126,11 @@
     <string name="preferences_interface_homescreen_general_resize_any_widget_summary">Permite redimensionamento de Widgets que normalmente não são redimensionáveis</string>
     <string name="preferences_interface_drawer_title">Grade de Apps</string>
     <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_dock_divider_title">Mostrar divisor do dock</string>
+    <string name="preferences_interface_dock_divider_summary">Mostrar a linha de fundo do indicador</string>
     <string name="preferences_interface_icons_title">Ícones</string>
     <string name="preferences_interface_general_title">Geral</string>
     <string name="preferences_interface_general_orientation_title">Auto Rotacionar Tela</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_title">Espaçamento Vertical</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_vertical_summary">Espaço vertical extra na tela inicial</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_title">Espaçamento Horizontal</string>
-    <string name="preferences_interface_homescreen_general_screen_padding_horizontal_summary">Espaço horizontal extra na tela inicial</string>
     <string name="cancel_target_label">Cancelar</string>
     <string name="menu_apps_sort_title">Nome</string>
     <string name="menu_apps_sort_install_date">Dia de Instalação</string>
@@ -152,8 +150,6 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">Mostra o indicador da página atual no final da tela</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">Esmaecer Indicador</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">Esmaece o indicador após a troca da tela inicial</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">Mostrar divisor do dock</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">Mostrar a linha de fundo do indicador</string>
     <string name="preferences_interface_drawer_widgets_category">Widgets</string>
     <string name="preferences_interface_drawer_widgets_join_apps_title">Unir com Apps</string>
     <string name="preferences_interface_drawer_widgets_join_apps_summary">Deslize da Grade de Apps para os Widgets sem trocar de abas</string>
