@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbH//72Q\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:34:49Z",
+      "side": 1,
+      "message": "Moves to \"preferences_interface_dock_divider_title\"",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//72M\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:34:49Z",
+      "side": 1,
+      "message": "Moves to \"preferences_interface_dock_divider_summary\"",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
