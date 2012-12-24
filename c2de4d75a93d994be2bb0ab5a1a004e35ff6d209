@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAbH//71o\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:37:06Z",
+      "side": 1,
+      "message": "Extra-translation. Not in default.",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//71k\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:37:06Z",
+      "side": 1,
+      "message": "Extra-translation. Not in default.",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//71g\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:37:06Z",
+      "side": 1,
+      "message": "Extra-translation. Not in default.",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbH//71c\u003d",
+        "filename": "res/values-el/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2012-12-24T14:37:06Z",
+      "side": 1,
+      "message": "Extra-translation. Not in default.",
+      "revId": "c2de4d75a93d994be2bb0ab5a1a004e35ff6d209",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAbH//72Q\u003d",
         "filename": "res/values-el/strings.xml",
         "patchSetId": 2
