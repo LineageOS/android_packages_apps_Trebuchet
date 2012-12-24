@@ -150,8 +150,6 @@
     <string name="preferences_interface_homescreen_indicator_enable_summary">"Afişaţi indicatorul de pagină curentă, în partea de jos a ecranului"</string>
     <string name="preferences_interface_homescreen_indicator_fade_title">"Ascundeţi indicatorul"</string>
     <string name="preferences_interface_homescreen_indicator_fade_summary">"Ascundeţi indicatorul după ce ecranul de pornire s-a schimbat"</string>
-    <string name="preferences_interface_homescreen_indicator_background_title">"Afişaţi divizorul de andocare"</string>
-    <string name="preferences_interface_homescreen_indicator_background_summary">"Afişaţi fundalul în spatele indicatorului"</string>
     <string name="preferences_interface_drawer_title">"Meniul Principal"</string>
     <string name="preferences_interface_drawer_orientation_title">"Orientare"</string>
     <string name="preferences_interface_drawer_orientation_summary">"Alegeţi în ce direcţie defilează meniul principal"</string>
@@ -169,6 +167,8 @@
     <string name="preferences_interface_drawer_indicator_fade_title">"Ascundeţi indicatorul"</string>
     <string name="preferences_interface_drawer_indicator_fade_summary">"Ascundeţi indicator după ce pagina s-a schimbat"</string>
     <string name="preferences_interface_dock_title">"Doc"</string>
+    <string name="preferences_interface_dock_divider_title">"Afişaţi divizorul de andocare"</string>
+    <string name="preferences_interface_dock_divider_summary">"Afişaţi fundalul în spatele indicatorului"</string>
     <string name="preferences_interface_icons_title">"Pictograme"</string>
     <string name="preferences_interface_general_title">"General"</string>
     <string name="preferences_interface_general_orientation_title">"Rotire automată a ecranului"</string>
