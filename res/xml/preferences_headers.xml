@@ -34,6 +34,14 @@
             android:fragment="com.cyanogenmod.trebuchet.preference.Preferences$GeneralFragment"
             android:title="@string/preferences_interface_general_title" />
 
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+    <header android:title="@string/preferences_koush" />
+
     <header android:id="@+id/preferences_application_section"
             android:title="@string/preferences_application_title" />
 
