@@ -349,7 +349,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 final DragView dragView = (DragView) dragLayer.getAnimatedView();
-                float t = ((Float) animation.getAnimatedValue()).floatValue();
+                float t = (Float) animation.getAnimatedValue();
                 float tp = scaleAlphaInterpolator.getInterpolation(t);
                 float initialScale = dragView.getInitialScale();
                 float finalAlpha = 0.5f;
@@ -397,7 +397,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
             final DragView dragView = (DragView) mDragLayer.getAnimatedView();
-            float t = ((Float) animation.getAnimatedValue()).floatValue();
+            float t = (Float) animation.getAnimatedValue();
             long curTime = AnimationUtils.currentAnimationTimeMillis();
 
             if (!mHasOffsetForScale) {
@@ -421,7 +421,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
             mVelocity.y *= mFriction;
             mPrevTime = curTime;
         }
-    };
+    }
     private AnimatorUpdateListener createFlingAlongVectorAnimatorListener(final DragLayer dragLayer,
             DragObject d, PointF vel, final long startTime, final int duration,
             ViewConfiguration config) {

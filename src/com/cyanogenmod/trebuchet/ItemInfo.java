@@ -24,6 +24,7 @@ import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Represents an item in the launcher.
@@ -190,6 +191,6 @@ class ItemInfo {
     public String toString() {
         return "Item(id=" + this.id + " type=" + this.itemType + " container=" + this.container
             + " screen=" + screen + " cellX=" + cellX + " cellY=" + cellY + " spanX=" + spanX
-            + " spanY=" + spanY + " dropPos=" + dropPos + ")";
+            + " spanY=" + spanY + " dropPos=" + Arrays.toString(dropPos) + ")";
     }
 }

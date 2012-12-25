@@ -52,6 +52,7 @@ public class UserInitializeReceiver extends BroadcastReceiver {
                 try {
                     wpm.setResource(resid);
                 } catch (IOException e) {
+                    // Ignore
                 }
                 return;
             }
