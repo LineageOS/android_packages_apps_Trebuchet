@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn///6I\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "Müveletek? :)",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///5w\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "kiterjesztése, vagy kötöjel közéjük",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///6A\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "vesszö",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///58\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "legyünk magyarok, gyors kirajzolás",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///54\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "vesszö",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///50\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "megjelenitése, vagy kötöjel közéjük",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///5s\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "képernyö-jelölö",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///5o\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "Ezt is lehetne egybe írni :)",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///5k\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "vesszö",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///5g\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-25T23:18:51Z",
+      "side": 1,
+      "message": "Állapotsor, állapotsáv, valami jobbat kitaláltunk erre anno.",
+      "revId": "634b4574a1847defe9f322545d175ba19a5ab8df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
