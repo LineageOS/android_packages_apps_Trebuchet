@@ -55,6 +55,10 @@
         <item>Stivă</item>
         <item>Acordeon</item>
     </string-array>
+    <string-array name="preferences_interface_drawer_indicator_position_entries">
+        <item>Sus/Stânga</item>
+        <item>Jos/Dreapta</item>
+    </string-array>
     <string-array name="preferences_interface_drawer_orientation_entries">
         <item>Orizontal</item>
         <item>Vertical</item>
