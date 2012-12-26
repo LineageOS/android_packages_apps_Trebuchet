@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn///3A\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "- Schermen uitrekken",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///28\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "uitbreiden -\u003e uitrekken",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///24\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "- Bladereffect bij het bladeren door startschermen",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///20\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "scrollen \u003d\u003e bladeren",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2w\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "scrollen \u003d\u003e bladeren",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2s\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "scrollen \u003d\u003e bladeren",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2o\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "scrolt \u003d\u003e bladert",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2k\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "- Bladeren",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2g\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "- Bladereffect bij het bladeren door startschermen",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///2c\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2012-12-26T02:28:49Z",
+      "side": 1,
+      "message": "scrollen \u003d\u003e bladeren",
+      "revId": "b5256e7dc6d364256e01bc952685258570d2fff0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
