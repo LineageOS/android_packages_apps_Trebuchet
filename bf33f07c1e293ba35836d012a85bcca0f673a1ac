@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn///1Q\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-26T04:40:03Z",
+      "side": 1,
+      "message": "Dede, köt?jeles :)",
+      "revId": "bf33f07c1e293ba35836d012a85bcca0f673a1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///1c\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-26T04:40:03Z",
+      "side": 1,
+      "message": "Hékás, itt nem volt vessz?! :)",
+      "revId": "bf33f07c1e293ba35836d012a85bcca0f673a1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///1Y\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-26T04:40:03Z",
+      "side": 1,
+      "message": "Itt kéne a vessz?",
+      "revId": "bf33f07c1e293ba35836d012a85bcca0f673a1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn///1U\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-26T04:40:03Z",
+      "side": 1,
+      "message": "Na akkor belekötök. Ez a \"valaminek valamije\" helyzet, aholis a valaminek az \"alkalmazásképerny? jelöl?\" - ha belegondolsz, egybe tartozik, viszont szótagszámban ott van, hogy köt?jellel kéne írni.",
+      "revId": "bf33f07c1e293ba35836d012a85bcca0f673a1ac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
