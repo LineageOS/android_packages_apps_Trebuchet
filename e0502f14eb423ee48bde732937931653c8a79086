@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn///04\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-26T04:51:48Z",
+      "side": 1,
+      "message": "Ja még ide annyi, hogy nem a háttérkép simasága nö meg, hanem lapozáskor fog az animáció kevésbé röcögni.",
+      "revId": "e0502f14eb423ee48bde732937931653c8a79086",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
