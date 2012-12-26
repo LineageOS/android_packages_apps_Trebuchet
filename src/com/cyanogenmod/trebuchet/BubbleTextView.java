@@ -17,6 +17,7 @@
 package com.cyanogenmod.trebuchet;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -25,6 +26,7 @@ import android.graphics.Region;
 import android.graphics.Region.Op;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.HapticFeedbackConstants;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
@@ -239,6 +241,20 @@ public class BubbleTextView extends TextView implements ShortcutInfo.ShortcutLis
                 }
 
                 mLongPressHelper.postCheckForLongPress();
+
+                // Special case: haptic feedback for "All Apps"
+                Object tag = getTag();
+                if (tag instanceof ShortcutInfo) {
+                    Intent intent = ((ShortcutInfo) tag).intent;
+                    if (Launcher.ACTION_LAUNCHER.equals(intent.getAction())) {
+                        LauncherAction.Action action = LauncherAction.Action.valueOf(
+                                intent.getStringExtra(Intent.EXTRA_TEXT));
+                        if (action == LauncherAction.Action.AllApps) {
+                            performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY,
+                                    HapticFeedbackConstants.FLAG_IGNORE_VIEW_SETTING);
+                        }
+                    }
+                }
                 break;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
