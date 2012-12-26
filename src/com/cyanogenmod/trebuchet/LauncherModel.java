@@ -346,6 +346,7 @@ public class LauncherModel extends BroadcastReceiver {
                             case LauncherSettings.Favorites.ITEM_TYPE_APPLICATION:
                             case LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT:
                             case LauncherSettings.Favorites.ITEM_TYPE_FOLDER:
+                            case LauncherSettings.Favorites.ITEM_TYPE_LAUNCHER_ACTION:
                                 if (!sBgWorkspaceItems.contains(modelItem)) {
                                     sBgWorkspaceItems.add(modelItem);
                                 }
@@ -578,6 +579,7 @@ public class LauncherModel extends BroadcastReceiver {
                             // Fall through
                         case LauncherSettings.Favorites.ITEM_TYPE_APPLICATION:
                         case LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT:
+                        case LauncherSettings.Favorites.ITEM_TYPE_LAUNCHER_ACTION:
                             if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP ||
                                     item.container == LauncherSettings.Favorites.CONTAINER_HOTSEAT) {
                                 sBgWorkspaceItems.add(item);
@@ -664,6 +666,7 @@ public class LauncherModel extends BroadcastReceiver {
                             break;
                         case LauncherSettings.Favorites.ITEM_TYPE_APPLICATION:
                         case LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT:
+                        case LauncherSettings.Favorites.ITEM_TYPE_LAUNCHER_ACTION:
                             sBgWorkspaceItems.remove(item);
                             break;
                         case LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET:
@@ -1247,6 +1250,8 @@ public class LauncherModel extends BroadcastReceiver {
                             (LauncherSettings.Favorites.SPANX);
                     final int spanYIndex = c.getColumnIndexOrThrow(
                             LauncherSettings.Favorites.SPANY);
+                    final int actionIndex = c.getColumnIndexOrThrow(
+                            LauncherSettings.Favorites.LAUNCHER_ACTION);
                     //final int uriIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.URI);
                     //final int displayModeIndex = c.getColumnIndexOrThrow(
                     //        LauncherSettings.Favorites.DISPLAY_MODE);
@@ -1256,7 +1261,7 @@ public class LauncherModel extends BroadcastReceiver {
                     LauncherAppWidgetInfo appWidgetInfo;
                     int container;
                     long id;
-                    Intent intent;
+                    Intent intent = null;
 
                     while (!mStopped && c.moveToNext()) {
                         try {
@@ -1272,10 +1277,12 @@ public class LauncherModel extends BroadcastReceiver {
                                     continue;
                                 }
 
+                            case LauncherSettings.Favorites.ITEM_TYPE_LAUNCHER_ACTION:
+
                                 if (itemType == LauncherSettings.Favorites.ITEM_TYPE_APPLICATION) {
                                     info = getShortcutInfo(manager, intent, context, c, iconIndex,
                                             titleIndex, mLabelCache);
-                                } else {
+                                } else if (itemType == LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT) {
                                     info = getShortcutInfo(c, context, iconTypeIndex,
                                             iconPackageIndex, iconResourceIndex, iconIndex,
                                             titleIndex);
@@ -1291,6 +1298,10 @@ public class LauncherModel extends BroadcastReceiver {
                                             Intent.FLAG_ACTIVITY_NEW_TASK |
                                             Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
                                     }
+                                } else {
+                                    info = getLauncherActionInfo(c, context, iconTypeIndex,
+                                            iconPackageIndex, iconResourceIndex, iconIndex,
+                                            titleIndex, actionIndex);
                                 }
 
                                 if (info != null) {
@@ -2190,6 +2201,67 @@ public class LauncherModel extends BroadcastReceiver {
         return info;
     }
 
+    /**
+     * Make an ShortcutInfo object for a shortcut that isn't an application.
+     */
+    private LauncherActionInfo getLauncherActionInfo(Cursor c, Context context,
+            int iconTypeIndex, int iconPackageIndex, int iconResourceIndex, int iconIndex,
+            int titleIndex, int actionIndex) {
+
+        Bitmap icon = null;
+        final LauncherActionInfo info = new LauncherActionInfo();
+
+        info.title = c.getString(titleIndex);
+        info.action = LauncherAction.Action.valueOf(c.getString(actionIndex));
+
+        int iconType = c.getInt(iconTypeIndex);
+        switch (iconType) {
+            case LauncherSettings.Favorites.ICON_TYPE_RESOURCE:
+                String packageName = c.getString(iconPackageIndex);
+                String resourceName = c.getString(iconResourceIndex);
+                PackageManager packageManager = context.getPackageManager();
+                info.customIcon = false;
+                // the resource
+                try {
+                    Resources resources = packageManager.getResourcesForApplication(packageName);
+                    if (resources != null) {
+                        final int id = resources.getIdentifier(resourceName, null, null);
+                        icon = Utilities.createIconBitmap(
+                                mIconCache.getFullResIcon(resources, id), context);
+                    }
+                } catch (Exception e) {
+                    // drop this.  we have other places to look for icons
+                }
+                // the db
+                if (icon == null) {
+                    icon = getIconFromCursor(c, iconIndex, context);
+                }
+                // the fallback icon
+                if (icon == null) {
+                    icon = getFallbackIcon();
+                    info.usingFallbackIcon = true;
+                }
+                break;
+            case LauncherSettings.Favorites.ICON_TYPE_BITMAP:
+                icon = getIconFromCursor(c, iconIndex, context);
+                if (icon == null) {
+                    icon = getFallbackIcon();
+                    info.customIcon = false;
+                    info.usingFallbackIcon = true;
+                } else {
+                    info.customIcon = true;
+                }
+                break;
+            default:
+                icon = getFallbackIcon();
+                info.usingFallbackIcon = true;
+                info.customIcon = false;
+                break;
+        }
+        info.setIcon(icon);
+        return info;
+    }
+
     Bitmap getIconFromCursor(Cursor c, int iconIndex, Context context) {
         @SuppressWarnings("all") // suppress dead code warning
         final boolean debug = false;
@@ -2398,15 +2470,17 @@ public class LauncherModel extends BroadcastReceiver {
     }
     public static class WidgetAndShortcutNameComparator implements Comparator<Object> {
         private Collator mCollator;
+        private Context mContext;
         private PackageManager mPackageManager;
         private HashMap<Object, String> mLabelCache;
-        WidgetAndShortcutNameComparator(PackageManager pm) {
+        WidgetAndShortcutNameComparator(Context context, PackageManager pm) {
+            mContext = context;
             mPackageManager = pm;
             mLabelCache = new HashMap<Object, String>();
             mCollator = Collator.getInstance();
         }
         public final int compare(Object a, Object b) {
-            String labelA, labelB;
+            String labelA = "", labelB = "";
             if (mLabelCache.containsKey(a)) {
                 labelA = mLabelCache.get(a);
             } else {
@@ -2414,8 +2488,8 @@ public class LauncherModel extends BroadcastReceiver {
                     labelA = ((AppWidgetProviderInfo) a).label;
                 } else if (a instanceof ResolveInfo) {
                     labelA = ((ResolveInfo) a).loadLabel(mPackageManager).toString();
-                } else {
-                    labelA = ((LauncherActionInfo) a).title;
+                } else if (a instanceof LauncherAction.Action) {
+                    labelA = mContext.getResources().getString(((LauncherAction.Action) a).getString());
                 }
                 mLabelCache.put(a, labelA);
             }
@@ -2426,8 +2500,8 @@ public class LauncherModel extends BroadcastReceiver {
                     labelB = ((AppWidgetProviderInfo) b).label;
                 } else if (b instanceof ResolveInfo) {
                     labelB = ((ResolveInfo) b).loadLabel(mPackageManager).toString();
-                } else {
-                    labelB = ((LauncherActionInfo) b).title;
+                } else if (b instanceof LauncherAction.Action) {
+                    labelB = mContext.getResources().getString(((LauncherAction.Action) b).getString());
                 }
                 mLabelCache.put(b, labelB);
             }
