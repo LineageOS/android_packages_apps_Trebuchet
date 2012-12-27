@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn///dg\u003d",
+        "filename": "res/values-pt/arrays.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2012-12-27T19:25:22Z",
+      "side": 1,
+      "message": "Please remove those \\r.",
+      "revId": "9989fb6050665bf93ac2b13289285c779fd07c58",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
