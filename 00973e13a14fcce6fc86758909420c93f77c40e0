@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAbn//+K8\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2012-12-31T21:55:13Z",
+      "side": 1,
+      "message": "alján?",
+      "revId": "00973e13a14fcce6fc86758909420c93f77c40e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
