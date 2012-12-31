@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAbn//+HA\u003d",
+        "filename": "res/values-zh-rCN/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 3589
+      },
+      "writtenOn": "2012-12-31T22:54:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAbn//+II\u003d",
+      "revId": "59d2ef1636edf7d6f7e2396075f1baf79ef87c3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAbn//+IY\u003d",
         "filename": "res/values-zh-rCN/strings.xml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAbn//+G8\u003d",
+        "filename": "res/values-zh-rCN/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 3589
+      },
+      "writtenOn": "2012-12-31T22:54:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAbn//+IY\u003d",
+      "revId": "59d2ef1636edf7d6f7e2396075f1baf79ef87c3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAbn//+IU\u003d",
         "filename": "res/values-zh-rCN/strings.xml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2012-12-31T22:31:28Z",
       "side": 1,
       "message": "http://paste.ubuntu.com/1482630/",
+      "revId": "59d2ef1636edf7d6f7e2396075f1baf79ef87c3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAbn//+G4\u003d",
+        "filename": "res/values-zh-rCN/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 3589
+      },
+      "writtenOn": "2012-12-31T22:54:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAbn//+IU\u003d",
       "revId": "59d2ef1636edf7d6f7e2396075f1baf79ef87c3f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
