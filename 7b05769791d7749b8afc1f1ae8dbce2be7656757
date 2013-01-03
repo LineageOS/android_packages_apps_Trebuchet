@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH///qg\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2013-01-03T14:36:52Z",
+      "side": 1,
+      "message": "l\u0027élément",
+      "revId": "7b05769791d7749b8afc1f1ae8dbce2be7656757",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///qc\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2013-01-03T14:36:52Z",
+      "side": 1,
+      "message": "cachées",
+      "revId": "7b05769791d7749b8afc1f1ae8dbce2be7656757",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///qY\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2013-01-03T14:36:52Z",
+      "side": 1,
+      "message": "les adoucissements",
+      "revId": "7b05769791d7749b8afc1f1ae8dbce2be7656757",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
