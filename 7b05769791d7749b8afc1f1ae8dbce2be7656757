@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAcH///oY\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-03T17:15:33Z",
+      "side": 1,
+      "message": "\u0027Applications masquées\u0027 isn\u0027t better ?",
+      "parentUuid": "AAAAcH///qc\u003d",
+      "revId": "7b05769791d7749b8afc1f1ae8dbce2be7656757",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcH///qY\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 3
