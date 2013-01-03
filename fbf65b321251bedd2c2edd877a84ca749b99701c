@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH///60\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-01-03T03:08:38Z",
+      "side": 1,
+      "message": "packages/apps/Trebuchet/res/values-fr/strings.xml:177: error: Apostrophe not preceded by \\ (in Choisir la position de l\\\u0027indicateur sur l\u0027\\écran)",
+      "revId": "fbf65b321251bedd2c2edd877a84ca749b99701c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
