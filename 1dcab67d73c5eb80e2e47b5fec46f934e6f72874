@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH///Ok\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2013-01-04T16:39:41Z",
+      "side": 1,
+      "message": "pages ?\nvu que l\u0027on met Nombre d \u0027icônes/colonnes au pluriel en dessous",
+      "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
