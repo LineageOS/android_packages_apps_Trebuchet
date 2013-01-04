@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH///bY\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-01-04T17:37:17Z",
+      "side": 1,
+      "message": "Anno, amikor még fiatalkoromban elkezdtük a KDE 1.0 és a GNOME 1.0 honosítását, megegyeztünk hogy az ilyen fordításmódot kerüljük, hogy \"A(z)...\". A helyesnek ítélt megoldás ez volt:\n\nA következ? parancsikon eltávolításra került: \\\"\u003cxliff:g id\u003d\"NAME\"\u003e%s\u003c/xliff:g\u003e\\\"\n\nHa javasolhatom (és nem mind ilyen msgid-vel rendelkez?), javítsuk ezeket majd.",
+      "revId": "1686aff5cccc44650b3ba08479b8679f77fb9897",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///bM\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-01-04T17:37:17Z",
+      "side": 1,
+      "message": "effektel -\u003e effekttel",
+      "revId": "1686aff5cccc44650b3ba08479b8679f77fb9897",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///bE\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-01-04T17:37:17Z",
+      "side": 1,
+      "message": "a oldal alján -\u003e az oldal",
+      "revId": "1686aff5cccc44650b3ba08479b8679f77fb9897",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///bI\u003d",
+        "filename": "res/values-hu/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-01-04T17:37:17Z",
+      "side": 1,
+      "message": "effektel -\u003e effekttel",
+      "revId": "1686aff5cccc44650b3ba08479b8679f77fb9897",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
