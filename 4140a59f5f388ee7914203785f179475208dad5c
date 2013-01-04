@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH///ck\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-04T02:12:10Z",
+      "side": 1,
+      "message": "il n\u0027y a pas de \"e\" (plein écran)",
+      "revId": "4140a59f5f388ee7914203785f179475208dad5c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
