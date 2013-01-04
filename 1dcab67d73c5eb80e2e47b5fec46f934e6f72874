@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAcH///Eo\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-04T21:33:51Z",
+      "side": 1,
+      "message": "Il faut que je refasse une passe complète pour ajouter les accents sur les majuscules \u0027Étendre\u0027",
+      "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcH///Ok\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 6
@@ -13,6 +30,24 @@
       "writtenOn": "2013-01-04T16:39:41Z",
       "side": 1,
       "message": "pages ?\nvu que l\u0027on met Nombre d \u0027icônes/colonnes au pluriel en dessous",
+      "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///Ek\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-04T21:33:51Z",
+      "side": 1,
+      "message": "Pour moi ici, on parle bien de la page par défaut, il ne peut y en avoir qu\u0027une seule.",
+      "parentUuid": "AAAAcH///Ok\u003d",
       "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
