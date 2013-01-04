@@ -51,6 +51,24 @@
       "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH///Bo\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2990
+      },
+      "writtenOn": "2013-01-04T21:47:46Z",
+      "side": 1,
+      "message": "Mince c\u0027était pour la ligne 210 :\n\u003cstring name\u003d\"preferences_interface_dock_pages_summary\"\u003eNombre de page dans le dock\u003c/string\u003e   comparé aux accords de la ligne 214\n\u003cstring name\u003d\"preferences_interface_dock_icons_summary\"\u003eNombre d\\\u0027icônes/colonnes dans le dock\u003c/\nstring\u003e",
+      "parentUuid": "AAAAcH///Ek\u003d",
+      "revId": "1dcab67d73c5eb80e2e47b5fec46f934e6f72874",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
