@@ -89,12 +89,10 @@ public class DeleteDropTarget extends ButtonDropTarget {
         mRemoveActiveDrawable = r.getDrawable(R.drawable.ic_launcher_clear_active_holo);
         mRemoveNormalDrawable = r.getDrawable(R.drawable.ic_launcher_clear_normal_holo);
 
-        // Remove the text in the Phone UI in landscape
+        // Remove the text in landscape
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            if (!LauncherApplication.isScreenLarge()) {
-                setText("");
-            }
+            setText("");
         }
     }
 
