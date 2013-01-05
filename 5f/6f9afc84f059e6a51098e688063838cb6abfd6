@@ -1,0 +1,11 @@
+Change-Id: I5f6f9afc84f059e6a51098e688063838cb6abfd6
+Code-Review+2: Marco Brohet <therbom@gmail.com>
+Verified+1: Marco Brohet <therbom@gmail.com>
+Code-Review+1: AxiS Terentyev <terentyev.axis@gmail.com>
+Code-Review+1: Dmitriy Chermenev <chdiman86@gmail.com>
+Code-Review+1: Alexey Alexeevich <madzerling@gmail.com>
+Submitted-by: Marco Brohet <therbom@gmail.com>
+Submitted-at: Sat, 05 Jan 2013 09:14:05 -0800
+Reviewed-on: http://review.cyanogenmod.org/21240
+Project: CyanogenMod/android_packages_apps_Trebuchet
+Branch: refs/heads/ics
