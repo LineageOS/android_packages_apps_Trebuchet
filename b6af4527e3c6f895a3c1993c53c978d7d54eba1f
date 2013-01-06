@@ -16,6 +16,58 @@
       "revId": "b6af4527e3c6f895a3c1993c53c978d7d54eba1f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH//+o0\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-06T03:29:20Z",
+      "side": 1,
+      "message": "effectivement ;)",
+      "parentUuid": "AAAAcH//+pE\u003d",
+      "revId": "b6af4527e3c6f895a3c1993c53c978d7d54eba1f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH//+o4\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-06T03:29:20Z",
+      "side": 1,
+      "message": "il n\u0027y a pas de \"e\" à correct :)",
+      "revId": "b6af4527e3c6f895a3c1993c53c978d7d54eba1f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH//+o8\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-06T03:29:20Z",
+      "side": 1,
+      "message": "il n\u0027y a qu\u0027un r \"préfèrerai\"",
+      "revId": "b6af4527e3c6f895a3c1993c53c978d7d54eba1f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
