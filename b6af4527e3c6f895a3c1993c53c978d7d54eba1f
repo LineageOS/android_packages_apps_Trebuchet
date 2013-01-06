@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH//+pE\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 3589
+      },
+      "writtenOn": "2013-01-06T03:25:19Z",
+      "side": 1,
+      "message": "Mon français n\u0027est pas très bon, mais peut-être \u0027Koush vole des yachts\u0027?",
+      "revId": "b6af4527e3c6f895a3c1993c53c978d7d54eba1f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
