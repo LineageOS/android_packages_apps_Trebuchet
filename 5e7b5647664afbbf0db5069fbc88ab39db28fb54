@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAcH//+nc\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-06T04:02:34Z",
+      "side": 1,
+      "message": "Pour être cohérent avec la ligne 210, je devrai mettre \"Nombre d\\\u0027icônes/colonnes dans le dock\"",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcH//+n0\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 9
@@ -54,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAcH//+ns\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-06T04:02:34Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAcH//+n0\u003d",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcH//+oE\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 9
@@ -65,6 +100,24 @@
       "writtenOn": "2013-01-06T03:53:20Z",
       "side": 1,
       "message": "manque un petit espace à \"parce que\" :)",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH//+no\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-01-06T04:02:34Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "AAAAcH//+oE\u003d",
       "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
