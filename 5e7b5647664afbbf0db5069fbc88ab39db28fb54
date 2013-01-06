@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcH//+oA\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-06T03:53:20Z",
+      "side": 1,
+      "message": "je ne suis pas sûr de moi, mais ça ne serait pas \"nombre de pages\" ?",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcH//+oE\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-01-06T03:53:20Z",
+      "side": 1,
+      "message": "manque un petit espace à \"parce que\" :)",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
