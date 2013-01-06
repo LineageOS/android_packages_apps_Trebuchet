@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAcH//+n0\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 3589
+      },
+      "writtenOn": "2013-01-06T03:58:14Z",
+      "side": 1,
+      "message": "Supprimez cette linge svp, ce n\u0027est plus necessaire.",
+      "revId": "5e7b5647664afbbf0db5069fbc88ab39db28fb54",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcH//+oE\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 9
