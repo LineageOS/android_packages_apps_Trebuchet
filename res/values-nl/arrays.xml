@@ -26,8 +26,8 @@
         <item>Tablet</item>
         <item>Inzoomen</item>
         <item>Uitzoomen</item>
-        <item>Naar boven draaien</item>
-        <item>Naar beneden draaien</item>
+        <item>Draaien naar boven</item>
+        <item>Draaien naar beneden</item>
         <item>Cylinder-in</item>
         <item>Cylinder-uit</item>
         <item>Kubus-in</item>
@@ -52,6 +52,10 @@
         <item>Spiegelen</item>
         <item>Stapel</item>
         <item>Accordeon</item>
+    </string-array>
+    <string-array name="preferences_interface_drawer_indicator_position_entries">
+        <item>Boven/links</item>
+        <item>Beneden/rechts</item>
     </string-array>
     <string-array name="preferences_interface_drawer_orientation_entries">
         <item>Horizontaal</item>
