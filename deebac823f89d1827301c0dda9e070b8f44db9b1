@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAcn//7ug\u003d",
+        "filename": "res/values-nl/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-01-19T18:31:32Z",
+      "side": 1,
+      "message": "AOSP gebruikt eerst het werkwoord en daarna de bijwoordelijke bepalingen (ook voor hieronder)",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7uc\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-01-19T18:31:32Z",
+      "side": 1,
+      "message": "Ik heb geen idee wat dit moet zijn. Engelse tekst:\n- Error: custom workspace layout passed in but custom cling was not overwritten",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
