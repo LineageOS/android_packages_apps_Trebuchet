@@ -19,6 +19,92 @@
     },
     {
       "key": {
+        "uuid": "AAAAcn//7ro\u003d",
+        "filename": "res/values-nl/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "Ik dacht dat we juist overal het werkwoord als laatste deden....\nIk vind dit er echt niet uitzien.",
+      "parentUuid": "AAAAcn//7ug\u003d",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7rk\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "- Plaats indicator\n\nzie r.180",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7rg\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "- Kies waar de indicator getoond moet worden\n\nzie r.181\n\nOf de nieuwe vertaling, maar dan op beide plekken",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7rM\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "onderin of onderaan?\n\nzie r.177 en 200",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7rc\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "De pagina?",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAcn//7uc\u003d",
         "filename": "res/values-nl/strings.xml",
         "patchSetId": 1
@@ -30,6 +116,24 @@
       "writtenOn": "2013-01-19T18:31:32Z",
       "side": 1,
       "message": "Ik heb geen idee wat dit moet zijn. Engelse tekst:\n- Error: custom workspace layout passed in but custom cling was not overwritten",
+      "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAcn//7qg\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-01-19T20:16:33Z",
+      "side": 1,
+      "message": "er staat ook bij \u003c!-- Error message on dummy custom cling layout [DO NOT TRANSLATE] --\u003e\n\nMoeten we dit wel vertalen dan?",
+      "parentUuid": "AAAAcn//7uc\u003d",
       "revId": "deebac823f89d1827301c0dda9e070b8f44db9b1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
