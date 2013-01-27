@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAc3//96w\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/ShortcutInfo.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 27
+      },
+      "writtenOn": "2013-01-27T00:36:09Z",
+      "side": 1,
+      "message": "l2spell.",
+      "revId": "eece34ea416210253e6339827c0bd463f399d9d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
