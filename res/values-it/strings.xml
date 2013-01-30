@@ -150,7 +150,7 @@
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_title">Rendering rapido dello sfondo</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_summary">Usa un hack per incrementare la fluidità delle immagini statiche di sfondo</string>
     <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Dimensione sfondo</string>
-    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Quante schermate in larghezza dev\'essere lo sfondo</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Numero di schermate totali presenti nello sfondo</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Dissolvenza pagine laterali</string>
     <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Dissolvi le pagine laterali quando scorri nella Home</string>
     <string name="preferences_interface_homescreen_scrolling_show_outlines_title">Mostra delineatori</string>
