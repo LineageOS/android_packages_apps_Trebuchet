@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAc3//79I\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Zoom in",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//79E\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Zoom uit",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//780\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Op, Af , In en Uit moet nie hoofletters wees nie.  Net die eerste woord het \u0027n hoofletter tensy die woord \u0027n naam is.",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//79A\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Zoom",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//788\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Zoom",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//784\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Konsertina",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAc3//79M\u003d",
+        "filename": "res/values-af/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1576
+      },
+      "writtenOn": "2013-02-01T21:41:44Z",
+      "side": 1,
+      "message": "Horisontaal",
+      "revId": "50518794f88941756dcbc0be6724454c2b601f11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
