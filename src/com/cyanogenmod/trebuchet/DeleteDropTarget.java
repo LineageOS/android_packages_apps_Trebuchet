@@ -52,11 +52,13 @@ public class DeleteDropTarget extends ButtonDropTarget {
     private int mMode = MODE_DELETE;
 
     private ColorStateList mOriginalTextColor;
+    private Drawable mUninstallNormalDrawable;
     private Drawable mUninstallActiveDrawable;
     private Drawable mRemoveActiveDrawable;
     private Drawable mRemoveNormalDrawable;
     private Drawable mCurrentDrawable;
     private boolean mUninstall;
+    private boolean mUninstallDefault;
 
     private final Handler mHandler = new Handler();
 
@@ -70,8 +72,10 @@ public class DeleteDropTarget extends ButtonDropTarget {
 
     private final Runnable mShowUninstaller = new Runnable() {
         public void run() {
-            performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-            switchToUninstallTarget();
+            if (!mUninstallDefault) {
+                performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                switchToUninstallTarget();
+            }
         }
     };
 
@@ -85,6 +89,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
         // Get the hover color
         Resources r = getResources();
         mHoverColor = r.getColor(R.color.delete_target_hover_tint);
+        mUninstallNormalDrawable = r.getDrawable(R.drawable.ic_launcher_trashcan_normal_holo);
         mUninstallActiveDrawable = r.getDrawable(R.drawable.ic_launcher_trashcan_active_holo);
         mRemoveActiveDrawable = r.getDrawable(R.drawable.ic_launcher_clear_active_holo);
         mRemoveNormalDrawable = r.getDrawable(R.drawable.ic_launcher_clear_normal_holo);
@@ -154,6 +159,7 @@ public class DeleteDropTarget extends ButtonDropTarget {
     public void onDragStart(DragSource source, Object info, int dragAction) {
         boolean isUninstall = false;
         boolean isVisible = true;
+        boolean fromDrawer = isAllAppsItem(source, info);
 
         // If we are dragging an application from AppsCustomize, only show the uninstall control if we
         // can delete the app (it was downloaded)
@@ -176,18 +182,22 @@ public class DeleteDropTarget extends ButtonDropTarget {
             }
         }
 
-        setCompoundDrawablesWithIntrinsicBounds(mRemoveNormalDrawable, null, null, null);
-        mCurrentDrawable = getCompoundDrawables()[0];
-
         mUninstall = isUninstall;
         mActive = isVisible;
-        mMode = MODE_DELETE;
+
+        // Determine the initial/default mode: uninstall if dragging an app from the drawer, remove otherwise
+        mUninstallDefault = fromDrawer && isUninstall;
+        mMode = mUninstallDefault ? MODE_UNINSTALL : MODE_DELETE;
+        mCurrentDrawable = mUninstallDefault ? mUninstallNormalDrawable : mRemoveNormalDrawable;
+        setCompoundDrawablesWithIntrinsicBounds(mCurrentDrawable, null, null, null);
 
         setTextColor(mOriginalTextColor);
         resetHoverColor();
         ((ViewGroup) getParent()).setVisibility(isVisible ? View.VISIBLE : View.GONE);
         if (getText().length() > 0) {
-            if (isAllAppsItem(source, info)) {
+            if (mUninstallDefault) {
+                setText(R.string.delete_target_uninstall_label);
+            } else if (fromDrawer) {
                 setText(R.string.cancel_target_label);
             } else {
                 setText(R.string.delete_target_label);
@@ -225,8 +235,8 @@ public class DeleteDropTarget extends ButtonDropTarget {
             mHandler.postDelayed(mShowUninstaller, 1000);
         }
 
-        setCompoundDrawablesWithIntrinsicBounds(mRemoveActiveDrawable, null, null, null);
-        mCurrentDrawable = getCompoundDrawables()[0];
+        mCurrentDrawable = !mUninstallDefault ? mRemoveActiveDrawable : mUninstallActiveDrawable;
+        setCompoundDrawablesWithIntrinsicBounds(mCurrentDrawable, null, null, null);
 
         setHoverColor();
     }
@@ -237,18 +247,20 @@ public class DeleteDropTarget extends ButtonDropTarget {
         mHandler.removeCallbacks(mShowUninstaller);
 
         if (!d.dragComplete) {
-            mMode = MODE_DELETE;
+            if (!mUninstallDefault) {
+                mMode = MODE_DELETE;
 
-            if (getText().length() > 0) {
-                if (isAllAppsItem(d.dragSource, d.dragInfo)) {
-                    setText(R.string.cancel_target_label);
-                } else {
-                    setText(R.string.delete_target_label);
+                if (getText().length() > 0) {
+                    if (isAllAppsItem(d.dragSource, d.dragInfo)) {
+                        setText(R.string.cancel_target_label);
+                    } else {
+                        setText(R.string.delete_target_label);
+                    }
                 }
             }
 
-            setCompoundDrawablesWithIntrinsicBounds(mRemoveNormalDrawable, null, null, null);
-            mCurrentDrawable = getCompoundDrawables()[0];
+            mCurrentDrawable = !mUninstallDefault ? mRemoveNormalDrawable : mUninstallNormalDrawable;
+            setCompoundDrawablesWithIntrinsicBounds(mCurrentDrawable, null, null, null);
             resetHoverColor();
         } else {
             // Restore the hover color if we are deleting
