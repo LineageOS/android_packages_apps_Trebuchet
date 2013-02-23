@@ -25,7 +25,7 @@
     <!-- Application copyright -->
     <string name="application_copyright">Copyright \u00A9 CyanogenMod 2013</string>
     <!-- Application version -->
-    <string name="application_version">1.0</string>
+    <string name="application_version" translatable="false">1.0</string>
     <!-- Accessibility-facing application name -->
     <string name="home">Home</string>
     <!-- Name for all applications running as this uid. -->
@@ -273,7 +273,7 @@ s -->
     <!-- The text on the button to dismiss a cling [CHAR_LIMIT=none] -->
     <string name="cling_dismiss">OK</string>
     <!-- Error message on dummy custom cling layout [DO NOT TRANSLATE] -->
-    <string name="dummy_custom_cling_error_message">Error: custom workspace layout passed in but custom cling was not overwritten</string>
+    <string name="dummy_custom_cling_error_message" translatable="false">Error: custom workspace layout passed in but custom cling was not overwritten</string>
     <add-resource type="string" name="default_folder_name" />
 
     <!-- Folder accessibility -->

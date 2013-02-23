@@ -8,7 +8,7 @@
 
 <!-- AllApps/Customize/AppsCustomize -->
     <!-- Which default transition effect to use on the AppsCustomize -->
-    <string name="config_drawerDefaultTransitionEffect">Stack</string>
+    <string name="config_drawerDefaultTransitionEffect" translatable="false">Stack</string>
     <!-- The alpha of the AppsCustomize bg in spring loaded mode -->
     <integer name="config_appsCustomizeSpringLoadedBgAlpha">45</integer>
     <integer name="config_workspaceUnshrinkTime">300</integer>
@@ -37,7 +37,7 @@
     <!-- Whether or not the drop targets drop down as opposed to fade in -->
     <bool name="config_useDropTargetDownTransition">true</bool>
     <!-- Which default transition effect to use on the workspace -->
-    <string name="config_workspaceDefaultTransitionEffect">ZoomIn</string>
+    <string name="config_workspaceDefaultTransitionEffect" translatable="false">ZoomIn</string>
     <!-- Whether or not to fade the side pages -->
     <bool name="config_workspaceDefualtFadeInAdjacentScreens">false</bool>
     <!-- Whether to show outlines on the screens when scrolling -->

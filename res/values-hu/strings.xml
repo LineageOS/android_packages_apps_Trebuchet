@@ -122,7 +122,6 @@
     <string name="folder_cling_move_item" msgid="270598675060435169">"Ha egy alkalmazást át szeretne helyezni, érintse meg, és tartsa lenyomva."</string>
     <string name="folder_cling_create_folder" msgid="8352867485656129478">"Ha egy új mappát szeretne létrehozni a kezdőképernyőn, helyezzen egymásra két alkalmazást."</string>
     <string name="cling_dismiss" msgid="2780907108735868381">"OK"</string>
-    <string name="dummy_custom_cling_error_message">Hiba: Egyéni munkaterület elrendezés, de nincs felülírva</string>
     <string name="folder_opened" msgid="1262064100943801533">"Mappa megnyitva -- szélesség: <xliff:g id="WIDTH">%1$d</xliff:g>; magasság: <xliff:g id="HEIGHT">%2$d</xliff:g>"</string>
     <string name="folder_tap_to_close" msgid="1335478160661137579">"Érintse meg a mappa bezárásához"</string>
     <string name="folder_tap_to_rename" msgid="5201612989905472442">"Érintse meg az átnevezés mentéséhez"</string>
