@@ -1660,7 +1660,7 @@ public final class Launcher extends Activity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (isWorkspaceLocked()) {
+        if (!isAllAppsVisible() && isWorkspaceLocked()) {
             return false;
         }
 
@@ -1722,8 +1722,8 @@ public final class Launcher extends Activity
         ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
         // Hide preferences if not on CyanogenMod or not default launcher
         // (in which case preferences don't get shown in system settings)
-        boolean preferencesVisible = !getPackageManager().hasSystemFeature("com.cyanogenmod.android") ||
-                !defaultLauncher.packageName.equals(getClass().getPackage().getName());
+        boolean preferencesVisible = getPackageManager().hasSystemFeature("com.cyanogenmod.android") &&
+                defaultLauncher.packageName.equals(getClass().getPackage().getName());
         menu.findItem(MENU_PREFERENCES).setVisible(preferencesVisible);
         return true;
     }
@@ -3319,12 +3319,7 @@ public final class Launcher extends Activity
         Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
         launcherIntent.addCategory(Intent.CATEGORY_HOME);
         launcherIntent.addCategory(Intent.CATEGORY_DEFAULT);
-        ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
-        // Hide preferences if not on CyanogenMod or not default launcher
-        // (in which case preferences don't get shown in system settings)
-        boolean preferencesVisible = !getPackageManager().hasSystemFeature("com.cyanogenmod.android") ||
-                !defaultLauncher.packageName.equals(getClass().getPackage().getName());
-        if (activityName != null && (ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible)) {
+        if (activityName != null) {
             int coi = getCurrentOrientationIndexForGlobalIcons();
             mAppMarketIntent = intent;
             sAppMarketIcon[coi] = updateTextButtonWithIconFromExternalActivity(
@@ -3372,14 +3367,11 @@ public final class Launcher extends Activity
         ActivityInfo defaultLauncher = getPackageManager().resolveActivity(launcherIntent, PackageManager.MATCH_DEFAULT_ONLY).activityInfo;
         // Hide preferences if not on CyanogenMod or not default launcher
         // (in which case preferences don't get shown in system settings)
-        boolean preferencesVisible = !getPackageManager().hasSystemFeature("com.cyanogenmod.android") ||
-                !defaultLauncher.packageName.equals(getClass().getPackage().getName());
-        if (ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible) {
-            overflowMenuButton.setVisibility(View.GONE);
-            overflowMenuButton.setEnabled(false);
-        } else {
-            overflowMenuButton.setVisibility(View.VISIBLE);
-        }
+        boolean preferencesVisible = getPackageManager().hasSystemFeature("com.cyanogenmod.android") &&
+                defaultLauncher.packageName.equals(getClass().getPackage().getName());
+        boolean disabled = ViewConfiguration.get(this).hasPermanentMenuKey() || !preferencesVisible;
+        overflowMenuButton.setVisibility(disabled ? View.GONE : View.VISIBLE);
+        overflowMenuButton.setEnabled(!disabled);
     }
 
     /**
@@ -3703,9 +3695,6 @@ public final class Launcher extends Activity
                             .commit();
             }
         }.start();
-
-        // Hide overflow menu on devices with a hardkey
-        updateOverflowMenuButton();
     }
 
     @Override
@@ -3747,6 +3736,9 @@ public final class Launcher extends Activity
             // list of applications without waiting for any progress bars views to be hidden.
             setAllAppsRunnable.run();
         }
+
+        // Hide overflow menu on devices with a hardkey
+        updateOverflowMenuButton();
     }
 
     /**
