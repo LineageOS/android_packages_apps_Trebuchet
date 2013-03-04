@@ -74,6 +74,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.HapticFeedbackConstants;
 import android.view.KeyEvent;
@@ -98,6 +99,7 @@ import android.widget.Advanceable;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TabWidget;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -133,8 +135,10 @@ public final class Launcher extends Activity
     static final boolean DEBUG_STRICT_MODE = false;
 
     private static final int MENU_GROUP_WALLPAPER = 1;
+    private static final int MENU_GROUP_MARKET = 2;
     private static final int MENU_WALLPAPER_SETTINGS = Menu.FIRST + 1;
-    private static final int MENU_MANAGE_APPS = MENU_WALLPAPER_SETTINGS + 1;
+    private static final int MENU_MARKET = MENU_WALLPAPER_SETTINGS + 1;
+    private static final int MENU_MANAGE_APPS = MENU_MARKET + 1;
     private static final int MENU_PREFERENCES = MENU_MANAGE_APPS + 1;
     private static final int MENU_SYSTEM_SETTINGS = MENU_PREFERENCES + 1;
     private static final int MENU_HELP = MENU_SYSTEM_SETTINGS + 1;
@@ -268,6 +272,7 @@ public final class Launcher extends Activity
     private static HashMap<Long, FolderInfo> sFolders = new HashMap<Long, FolderInfo>();
 
     private Intent mAppMarketIntent = null;
+    public String mAppMarketTitle = null;
 
     // Related to the auto-advancing of widgets
     private final int ADVANCE_MSG = 1;
@@ -318,6 +323,7 @@ public final class Launcher extends Activity
     private boolean mHideIconLabels;
     private boolean mAutoRotate;
     private boolean mFullscreenMode;
+    private boolean mMarketOverflowing = false;
 
     private boolean mWallpaperVisible;
 
@@ -976,6 +982,12 @@ public final class Launcher extends Activity
 
         // Setup AppsCustomize
         mAppsCustomizeTabHost = (AppsCustomizeTabHost) findViewById(R.id.apps_customize_pane);
+        mAppsCustomizeTabHost.getTabWidget().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                updateAppMarketIconVisibility();
+            }
+        });
         mAppsCustomizeContent = (AppsCustomizePagedView)
                 mAppsCustomizeTabHost.findViewById(R.id.apps_customize_pane_content);
         mAppsCustomizeContent.setup(this, dragController);
@@ -1767,6 +1779,10 @@ public final class Launcher extends Activity
         menu.add(MENU_GROUP_WALLPAPER, MENU_WALLPAPER_SETTINGS, 0, R.string.menu_wallpaper)
             .setIcon(android.R.drawable.ic_menu_gallery)
             .setAlphabeticShortcut('W');
+
+        menu.add(MENU_GROUP_MARKET, MENU_MARKET, 0, R.string.market)
+            .setAlphabeticShortcut('M');
+
         menu.add(0, MENU_MANAGE_APPS, 0, R.string.menu_manage_apps)
             .setIcon(android.R.drawable.ic_menu_manage)
             .setIntent(manageApps)
@@ -1799,6 +1815,10 @@ public final class Launcher extends Activity
         }
         boolean allAppsVisible = (mAppsCustomizeTabHost.getVisibility() == View.VISIBLE);
         menu.setGroupVisible(MENU_GROUP_WALLPAPER, !allAppsVisible);
+
+        menu.setGroupVisible(MENU_GROUP_MARKET, mMarketOverflowing && mAppMarketIntent != null);
+        menu.findItem(MENU_MARKET).setIntent(mAppMarketIntent)
+                .setTitle(mAppMarketTitle);
 
         Intent launcherIntent = new Intent(Intent.ACTION_MAIN);
         launcherIntent.addCategory(Intent.CATEGORY_HOME);
@@ -3404,13 +3424,25 @@ public final class Launcher extends Activity
      */
     private void updateAppMarketIcon() {
         final View marketButton = findViewById(R.id.market_button);
+        PackageManager packageManager = getPackageManager();
         Intent intent = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_APP_MARKET);
         // Find the app market activity by resolving an intent.
         // (If multiple app markets are installed, it will return the ResolverActivity.)
-        ComponentName activityName = intent.resolveActivity(getPackageManager());
+        ComponentName activityName = intent.resolveActivity(packageManager);
         if (activityName != null) {
             int coi = getCurrentOrientationIndexForGlobalIcons();
             mAppMarketIntent = intent;
+
+            mAppMarketTitle = getResources().getString(R.string.market);
+            int markets = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).size();
+            if (markets == 1) {
+                try {
+                    mAppMarketTitle = packageManager.getApplicationInfo(activityName.getPackageName(), 0)
+                            .loadLabel(packageManager).toString();
+                } catch (NameNotFoundException e) {
+                    // Ignore
+                }
+            }
             sAppMarketIcon[coi] = updateTextButtonWithIconFromExternalActivity(
                     R.id.market_button, activityName, R.drawable.ic_launcher_market_holo,
                     TOOLBAR_ICON_METADATA_NAME);
@@ -3432,6 +3464,23 @@ public final class Launcher extends Activity
         marketIconDrawable.setBounds(0, 0, w, h);
 
         updateTextButtonWithDrawable(R.id.market_button, marketIconDrawable);
+    }
+
+    private void updateAppMarketIconVisibility() {
+        final View marketButton = findViewById(R.id.market_button);
+
+        // Check if the market icon fits on-screen
+        if (!ViewConfiguration.get(this).hasPermanentMenuKey() && marketButton.getVisibility() == View.VISIBLE) {
+            int screenWidth = getResources().getDisplayMetrics().widthPixels;
+            TabWidget tabs = (TabWidget) findViewById(android.R.id.tabs);
+            int tabsWidth = tabs.getChildTabViewAt(0).getWidth() + tabs.getChildTabViewAt(1).getWidth();
+            int buttonsWidth = 2 * (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 48,
+                getResources().getDisplayMetrics());
+            mMarketOverflowing = (tabsWidth + buttonsWidth >= screenWidth);
+
+            marketButton.setVisibility(mMarketOverflowing ? View.GONE : View.VISIBLE);
+            marketButton.setEnabled(!mMarketOverflowing);
+        }
     }
 
     @Override
