@@ -149,6 +149,8 @@ s -->
     <skip />
     <!-- Verb, menu item used to add an item on the desktop -->
     <string name="menu_add">Add</string>
+    <!-- Menu item used to access the user's app market -->
+    <string name="menu_download_apps">Download apps</string>
     <!-- Menu item used to manage installed applications -->
     <string name="menu_manage_apps">Manage apps</string>
     <!-- Noun, menu item used to set the desktop's wallpaper -->
