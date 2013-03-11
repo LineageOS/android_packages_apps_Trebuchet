@@ -51,7 +51,7 @@
     <string name="delete_zone_label_workspace" msgid="7153615831493049150">"Verwijderen"</string>
     <string name="delete_zone_label_all_apps" msgid="6664588234817475108">"Verwijderen"</string>
     <string name="delete_target_label" msgid="665300185123139530">"Verwijderen"</string>
-    <string name="delete_target_uninstall_label" msgid="748894921183769150">"Installatie ongedaan maken"</string>
+    <string name="delete_target_uninstall_label" msgid="748894921183769150">"Deïnstalleren"</string>
     <string name="info_target_label" msgid="4019495079517426980">"App-info"</string>
     <string name="accessibility_search_button" msgid="816822994629942611">"Zoeken"</string>
     <string name="accessibility_voice_search_button" msgid="3938249215065842475">"Gesproken zoekopdrachten"</string>
