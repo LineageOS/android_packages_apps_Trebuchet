@@ -207,6 +207,9 @@ public final class PreferencesProvider {
             public static boolean getFullscreenMode() {
                 return getBoolean("ui_general_fullscreen", false);
             }
+            public static boolean getLoopingMode() {
+                return getBoolean("ui_general_looping", false);
+            }
         }
     }
 

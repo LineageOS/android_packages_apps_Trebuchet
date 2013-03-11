@@ -43,6 +43,7 @@ import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
 import com.cyanogenmod.trebuchet.R;
+import com.cyanogenmod.trebuchet.preference.PreferencesProvider;
 
 import java.util.ArrayList;
 
@@ -108,6 +109,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
     protected float mTotalMotionX;
     protected float mTotalMotionY;
     private int mLastScreenScroll = -1;
+    private boolean mLoopingScroll = false;
     private int[] mChildOffsets;
     private int[] mChildRelativeOffsets;
     private int[] mChildOffsetsWithLayoutScale;
@@ -269,6 +271,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         mMinFlingVelocity = (int) (MIN_FLING_VELOCITY * mDensity);
         mMinSnapVelocity = (int) (MIN_SNAP_VELOCITY * mDensity);
         setOnHierarchyChangeListener(this);
+        mLoopingScroll = PreferencesProvider.Interface.General.getLoopingMode();
     }
 
     public void setPageSwitchListener(PageSwitchListener pageSwitchListener) {
@@ -1470,26 +1473,24 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
                 // test for a large move if a fling has been registered. That is, a large
                 // move to the left and fling to the right will register as a fling to the right.
                 if (!mVertical) {
-                    if (((isSignificantMove && deltaX > 0 && !isFling) ||
-                            (isFling && velocityX > 0)) && mCurrentPage > 0) {
+                    if ((isSignificantMove && deltaX > 0 && !isFling) ||
+                            (isFling && velocityX > 0)) {
                         finalPage = returnToOriginalPage ? mCurrentPage : mCurrentPage - 1;
                         snapToPageWithVelocity(finalPage, velocityX);
-                    } else if (((isSignificantMove && deltaX < 0 && !isFling) ||
-                            (isFling && velocityX < 0)) &&
-                            mCurrentPage < getChildCount() - 1) {
+                    } else if ((isSignificantMove && deltaX < 0 && !isFling) ||
+                            (isFling && velocityX < 0)) {
                         finalPage = returnToOriginalPage ? mCurrentPage : mCurrentPage + 1;
                         snapToPageWithVelocity(finalPage, velocityX);
                     } else {
                         snapToDestination();
                     }
                 } else {
-                    if (((isSignificantMove && deltaY > 0 && !isFling) ||
-                            (isFling && velocityY > 0)) && mCurrentPage > 0) {
+                    if ((isSignificantMove && deltaY > 0 && !isFling) ||
+                            (isFling && velocityY > 0)) {
                         finalPage = returnToOriginalPage ? mCurrentPage : mCurrentPage - 1;
                         snapToPageWithVelocity(finalPage, velocityY);
-                    } else if (((isSignificantMove && deltaY < 0 && !isFling) ||
-                            (isFling && velocityY < 0)) &&
-                            mCurrentPage < getChildCount() - 1) {
+                    } else if ((isSignificantMove && deltaY < 0 && !isFling) ||
+                            (isFling && velocityY < 0)) {
                         finalPage = returnToOriginalPage ? mCurrentPage : mCurrentPage + 1;
                         snapToPageWithVelocity(finalPage, velocityY);
                     } else {
@@ -1735,7 +1736,19 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
     }
 
     protected void snapToPageWithVelocity(int whichPage, int velocity) {
-        whichPage = Math.max(0, Math.min(whichPage, getChildCount() - 1));
+        if (whichPage < 0) {
+            if (mLoopingScroll) {
+                whichPage = getChildCount() - 1;
+            } else {
+                whichPage = 0;
+            }
+        } else if (whichPage > getChildCount() - 1) {
+            if (mLoopingScroll) {
+                whichPage = 0;
+            } else {
+                whichPage = getChildCount() - 1;
+            }
+        }
         int halfScreenSize = (!mVertical ? getMeasuredWidth() : getMeasuredHeight()) / 2;
 
         if (DEBUG) Log.d(TAG, "snapToPage.getChildOffset(): " + getChildOffset(whichPage));
