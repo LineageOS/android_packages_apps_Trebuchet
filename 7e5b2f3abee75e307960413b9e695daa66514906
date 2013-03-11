@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAeX//9SQ\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-03-11T17:39:40Z",
+      "side": 1,
+      "message": "Deze tekst is veeeel te lang, ik zie alleen maar \"Installa...\" (op 480x800) en daar kan je niet uit halen dat dit de app verwijderd, ipv alleen het icoon.\n\nMoet een zo kort mogelijke beschrijving zijn.\n\nWat mij betreft \"Deïnstalleren\", al is dit misschien geen goed Nederlands....",
+      "revId": "7e5b2f3abee75e307960413b9e695daa66514906",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
