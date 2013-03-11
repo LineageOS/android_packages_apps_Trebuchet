@@ -401,4 +401,6 @@ s -->
     <string name="preferences_interface_general_orientation_title">Auto-rotate screen</string>
     <string name="preferences_interface_general_fullscreen_title">Fullscreen mode</string>
     <string name="preferences_interface_general_fullscreen_summary">Hide the status bar to extend the homescreen</string>
+    <string name="preferences_interface_general_looping_title">Screen loop</string>
+    <string name="preferences_interface_general_looping_summary">Allow workspace to loop</string>
 </resources>
