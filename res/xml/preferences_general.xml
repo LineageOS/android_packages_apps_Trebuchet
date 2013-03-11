@@ -23,4 +23,7 @@
     <CheckBoxPreference android:key="ui_general_fullscreen"
         android:title="@string/preferences_interface_general_fullscreen_title"
         android:summary="@string/preferences_interface_general_fullscreen_summary" />
+    <CheckBoxPreference android:key="ui_general_looping"
+        android:title="@string/preferences_interface_general_looping_title"
+        android:summary="@string/preferences_interface_general_looping_summary" />
 </PreferenceScreen>
