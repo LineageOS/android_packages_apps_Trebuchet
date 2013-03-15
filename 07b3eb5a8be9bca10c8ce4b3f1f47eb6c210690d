@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAeX//7eo\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-03-15T23:45:12Z",
+      "side": 1,
+      "message": "- Screen loop",
+      "revId": "07b3eb5a8be9bca10c8ce4b3f1f47eb6c210690d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//7ek\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-03-15T23:45:12Z",
+      "side": 1,
+      "message": "- Allow workspace to loop (?)",
+      "revId": "07b3eb5a8be9bca10c8ce4b3f1f47eb6c210690d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
