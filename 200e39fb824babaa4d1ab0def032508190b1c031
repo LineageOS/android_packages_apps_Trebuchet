@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAeX//7e0\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-03-15T23:33:35Z",
+      "side": 1,
+      "message": "So, I have a problem here, the term \"bureau\" is used, but in the rest of the document it\u0027s \"écran\". And I have already said to me that is not better translation and I think \"bureau\" is better translate. Maybe is occasion to change in the file.\nWhat do you think ?",
+      "revId": "200e39fb824babaa4d1ab0def032508190b1c031",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
