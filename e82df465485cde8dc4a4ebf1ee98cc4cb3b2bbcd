@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAeX//7iM\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1579
+      },
+      "writtenOn": "2013-03-15T17:29:10Z",
+      "side": 1,
+      "message": "\u0027Make able to have workspace loop\u0027 sounds more suitable to me",
+      "revId": "e82df465485cde8dc4a4ebf1ee98cc4cb3b2bbcd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
