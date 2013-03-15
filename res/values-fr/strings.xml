@@ -223,4 +223,6 @@
     <string name="preferences_interface_general_orientation_title">Rotation auto. de l\'écran</string>
     <string name="preferences_interface_general_fullscreen_title">Plein écran</string>
     <string name="preferences_interface_general_fullscreen_summary">Cacher la barre d\'état pour étendre l\'écran d\'accueil</string>
+    <string name="preferences_interface_general_looping_title">Défilement en boucle</string>
+    <string name="preferences_interface_general_looping_summary">Autoriser le défilement entre le premier et le dernier écran d\'accueil</string>
 </resources>
