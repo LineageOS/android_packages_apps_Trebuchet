@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAeX//7ZQ\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-03-16T03:37:41Z",
+      "side": 1,
+      "message": "Je suis désolé d\u0027être pointilleux mais si on prend la ligne 150 (Nombre de pages sur l\\\u0027écran d\\\u0027accueil), on devrait traduire \"Autoriser le défilement entre la première et la dernière page de l\\\u0027écran d\\\u0027accueil\"",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
