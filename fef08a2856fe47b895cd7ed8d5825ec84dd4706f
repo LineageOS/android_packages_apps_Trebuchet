@@ -16,6 +16,24 @@
       "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//7ZA\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-03-16T03:42:30Z",
+      "side": 1,
+      "message": "C\u0027est ce que je me suis dit mais non. D\u0027après les textes officiels il y a plusieurs écrans d\u0027accueil. Chaque page est un écran d\u0027accueil.",
+      "parentUuid": "AAAAeX//7ZQ\u003d",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
