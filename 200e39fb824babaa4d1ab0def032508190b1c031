@@ -16,6 +16,24 @@
       "revId": "200e39fb824babaa4d1ab0def032508190b1c031",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//7cY\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-03-16T01:42:11Z",
+      "side": 1,
+      "message": "According to official android support website we should use \"Écran d\u0027accueil\". Then this should be translated to \"Autoriser le défilement entre me premier et le dernier écran d\\\u0027accueil\"",
+      "parentUuid": "AAAAeX//7e0\u003d",
+      "revId": "200e39fb824babaa4d1ab0def032508190b1c031",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
