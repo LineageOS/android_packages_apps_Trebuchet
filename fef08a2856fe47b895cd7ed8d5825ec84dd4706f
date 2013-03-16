@@ -52,6 +52,24 @@
       "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//7Yo\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-03-16T04:21:46Z",
+      "side": 1,
+      "message": "\"Nombre d\\\u0027écrans d\\\u0027accueil\" par exemple ? Ou alors faire comme tu as dit en incluant page ici.",
+      "parentUuid": "AAAAeX//7Y0\u003d",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
