@@ -34,6 +34,24 @@
       "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//7Y0\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-03-16T03:48:55Z",
+      "side": 1,
+      "message": "Du coup c\u0027est la ligne 150 qui est fausse (et d\u0027autre certainement)",
+      "parentUuid": "AAAAeX//7ZA\u003d",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
