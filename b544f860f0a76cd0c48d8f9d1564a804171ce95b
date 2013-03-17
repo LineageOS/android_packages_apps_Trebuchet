@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAeX//6yo\u003d",
+        "filename": "res/values-pl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 3784
+      },
+      "writtenOn": "2013-03-17T23:53:53Z",
+      "side": 1,
+      "message": "Maybe \"Rozszerza ekrany by dopasowac je do...\"?",
+      "revId": "b544f860f0a76cd0c48d8f9d1564a804171ce95b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAeX//61E\u003d",
         "filename": "res/values-pl/strings.xml",
         "patchSetId": 2
