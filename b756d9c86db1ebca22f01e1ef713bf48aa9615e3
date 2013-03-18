@@ -52,6 +52,24 @@
       "revId": "b756d9c86db1ebca22f01e1ef713bf48aa9615e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//6c0\u003d",
+        "filename": "res/values-pl/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4449
+      },
+      "writtenOn": "2013-03-18T18:28:45Z",
+      "side": 1,
+      "message": "\"Szuflada\" is just silly...\n\nI\u0027d go for \"Lista aplikacji\"",
+      "parentUuid": "AAAAeX//6jU\u003d",
+      "revId": "b756d9c86db1ebca22f01e1ef713bf48aa9615e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
