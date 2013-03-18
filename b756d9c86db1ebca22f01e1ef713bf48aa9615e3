@@ -34,6 +34,24 @@
       "revId": "b756d9c86db1ebca22f01e1ef713bf48aa9615e3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAeX//6jU\u003d",
+        "filename": "res/values-pl/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5174
+      },
+      "writtenOn": "2013-03-18T13:39:21Z",
+      "side": 1,
+      "message": "form \"Szuflada\" is better",
+      "parentUuid": "AAAAeX//6k4\u003d",
+      "revId": "b756d9c86db1ebca22f01e1ef713bf48aa9615e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
