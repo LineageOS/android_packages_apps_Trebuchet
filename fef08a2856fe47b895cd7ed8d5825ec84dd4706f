@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAen//9iE\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Remplacer par \u003c!-- CYANOGENMOD ADDITIONS --\u003e",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9iQ\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Enlever tous les commentaires et les lignes vides dans la sections \u003c!-- CYANOGENMOD ADDITIONS --\u003e\n\nToutes les strings jusqu\u0027en bas doivent se suivre sans ligne vide ni commentaires",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9iU\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Correction : \"Définir le nombre d\\\u0027écran d\\\u0027accueil\"",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9h4\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Correction : \"Afficher les bordures de l\\\u0027écran lorsque celui-ci défile\"",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9h0\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Correction \"Indicateur d\\\u0027écran\"",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9hw\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "\"Afficher l\\\u0027indicateur d\\\u0027écran\" \u003c\u003d Il ne faut préciser sa position elle peut varier voir ligne 177 en dessous.",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAeX//7ZQ\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 2
@@ -67,6 +169,24 @@
       "side": 1,
       "message": "\"Nombre d\\\u0027écrans d\\\u0027accueil\" par exemple ? Ou alors faire comme tu as dit en incluant page ici.",
       "parentUuid": "AAAAeX//7Y0\u003d",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9hs\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-04-07T21:09:39Z",
+      "side": 1,
+      "message": "Ici je laisserai comme c\u0027est.",
+      "parentUuid": "AAAAeX//7Yo\u003d",
       "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
