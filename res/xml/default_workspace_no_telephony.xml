@@ -34,7 +34,7 @@
         launcher:screen="2"
         launcher:x="0"
         launcher:y="0"
-        launcher:spanX="3"
+        launcher:spanX="4"
         launcher:spanY="2" />
     <favorite
         launcher:packageName="com.android.camera"
