@@ -53,6 +53,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAen//9BE\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-04-09T19:53:24Z",
+      "side": 1,
+      "message": "d\\\u0027écrans (et c\u0027est pour la ligne 150 pas celle-ci)",
+      "parentUuid": "AAAAen//9iU\u003d",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9BA\u003d",
+        "filename": "res/values-fr/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5596
+      },
+      "writtenOn": "2013-04-09T19:53:24Z",
+      "side": 1,
+      "message": "Correction : \"Définir le nombre d\\\u0027écrans d\\\u0027accueil\"",
+      "revId": "fef08a2856fe47b895cd7ed8d5825ec84dd4706f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAen//9h4\u003d",
         "filename": "res/values-fr/strings.xml",
         "patchSetId": 2
