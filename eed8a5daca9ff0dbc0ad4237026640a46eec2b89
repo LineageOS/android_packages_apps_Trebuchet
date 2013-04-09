@@ -50,6 +50,24 @@
       "revId": "eed8a5daca9ff0dbc0ad4237026640a46eec2b89",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//89s\u003d",
+        "filename": "res/xml/default_workspace.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-09T22:12:29Z",
+      "side": 1,
+      "message": "Yes. It\u0027s the right one (untoched).\n\naosp: https://android.googlesource.com/platform/packages/apps/Launcher2/+/android-4.2.2_r1/res/xml/default_workspace.xml",
+      "parentUuid": "AAAAen//8+c\u003d",
+      "revId": "eed8a5daca9ff0dbc0ad4237026640a46eec2b89",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
