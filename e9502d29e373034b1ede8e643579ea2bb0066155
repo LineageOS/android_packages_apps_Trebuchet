@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//9RA\u003d",
+        "filename": "res/values-de/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Please remove German strings from this commit and submit them in a separate commit :) Apart from this the strings are fine IMHO.",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9Q8\u003d",
+        "filename": "res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Carousel left",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9Q4\u003d",
+        "filename": "res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Carousel right",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9Q0\u003d",
+        "filename": "res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Carousel left",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9Qw\u003d",
+        "filename": "res/values/arrays.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Carousel right",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9RM\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Whitespaces",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAen//9RQ\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2277,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2013-04-09T00:05:56Z",
+      "side": 1,
+      "message": "Whitespaces",
+      "revId": "e9502d29e373034b1ede8e643579ea2bb0066155",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
