@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//8ic\u003d",
+        "filename": "res/xml-sw600dp/default_workspace_no_telephony.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6090
+      },
+      "writtenOn": "2013-04-11T11:27:59Z",
+      "side": 0,
+      "message": "test",
+      "revId": "d8e1aa79e719c04d04cf75dd0a94c4b88133a491",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
