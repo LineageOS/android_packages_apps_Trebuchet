@@ -50,6 +50,10 @@
         <item>Pila</item>
         <item>Fisarmonica</item>
     </string-array>
+    <string-array name="preferences_interface_drawer_indicator_position_entries">
+        <item>Superiore/Sinistra</item>
+        <item>Inferiore/Destra</item>
+    </string-array>
     <string-array name="preferences_interface_drawer_orientation_entries">
         <item>Orizzontale</item>
         <item>Verticale</item>
