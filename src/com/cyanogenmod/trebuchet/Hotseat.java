@@ -118,8 +118,23 @@ public class Hotseat extends PagedView {
     int getCellYFromOrder(int rank) {
         return hasVerticalHotseat() ? (mCellCount - rank - 1) : 0;
     }
+    int getInverterCellXFromOrder(int rank) {
+        return hasVerticalHotseat() ? (mCellCount - rank - 1) : 0;
+    }
+    int getInverterCellYFromOrder(int rank) {
+        return hasVerticalHotseat() ? 0 : rank;
+    }
     int getScreenFromOrder(int screen) {
         return hasVerticalHotseat() ? (getChildCount() - screen - 1) : screen;
+    }
+    int[] getDatabaseCellsFromLayout(int[] lpCells) {
+        if (!hasVerticalHotseat()) {
+            return lpCells;
+        }
+        // On landscape with vertical hotseat, the items are stored in y axis and from up to down,
+        // so we need to convert to x axis and left to right prior to save to database. In screen
+        // the item has the right coordinates
+        return new int[]{mCellCount - lpCells[1] - 1, lpCells[0]};
     }
 
     /*
