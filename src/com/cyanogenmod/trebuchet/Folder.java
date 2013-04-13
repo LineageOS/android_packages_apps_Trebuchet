@@ -961,8 +961,15 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
                     ShortcutInfo finalItem = mInfo.contents.get(0);
                     child = mLauncher.createShortcut(R.layout.application, cellLayout,
                             finalItem);
+                    int x = mInfo.cellX, y = mInfo.cellY;
+                    if (mInfo.container == LauncherSettings.Favorites.CONTAINER_HOTSEAT &&
+                        mLauncher.getHotseat().hasVerticalHotseat()) {
+                        // Note: We need the correct position in order to save to db
+                        y = mLauncher.getHotseat().getCellYFromOrder(x);
+                        x = mLauncher.getHotseat().getCellXFromOrder(x);
+                    }
                     LauncherModel.addOrMoveItemInDatabase(mLauncher, finalItem, mInfo.container,
-                            mInfo.screen, mInfo.cellX, mInfo.cellY);
+                            mInfo.screen, x, y);
                 }
                 if (getItemCount() <= 1) {
                     // Remove the folder
