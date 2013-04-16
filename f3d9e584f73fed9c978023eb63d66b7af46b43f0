@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAen//6FI\u003d",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-04-16T16:01:51Z",
+      "side": 1,
+      "message": "New translations for review",
+      "revId": "f3d9e584f73fed9c978023eb63d66b7af46b43f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
