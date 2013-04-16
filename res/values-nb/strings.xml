@@ -110,4 +110,110 @@
     <string name="custom_workspace_cling_description_1" msgid="6875529190849858047"></string>
     <string name="custom_workspace_cling_title_2" msgid="5516006164661020362"></string>
     <string name="custom_workspace_cling_description_2" msgid="2758258454975288377"></string>
+
+    <!-- CYANOGENMOD ADDITIONS -->
+
+    <string name="menu_preferences">Trebuchet-innstillinger</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">Skjulte Apps</string>
+
+    <skip />
+    <!--             -->
+    <!-- Preferences -->
+    <!--             -->
+    <string name="preferences_title">Preferanser</string>
+    <!-- UI -->
+    <string name="preferences_interface_title">Grensesnitt</string>
+    <!-- Application -->
+    <string name="preferences_application_title">Applikasjon</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">Hjemmeskjerm</string>
+    <string name="preferences_interface_homescreen_summary">Skjermer og bakgrunn</string>
+    <string name="preferences_interface_homescreen_general_category">Generelt</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Hjemmeskjermer</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Antall skjermer på hjemmeskjermen</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Hovedskjerm</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Velg hovedskjermen</string>
+    <string name="preferences_interface_homescreen_general_search_title">Søkefelt</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Aktiver vedvarende søkefelt</string>
+    <string name="preferences_interface_homescreen_general_grid_title">Rutestørrelse</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Velg antall rader/kolonner på hjemmeskjermen</string>
+    <string name="preferences_interface_homescreen_general_grid_rows_title">Rader</string>
+    <string name="preferences_interface_homescreen_general_grid_columns_title">Kolonner</string>
+    <string name="preferences_interface_homescreen_general_stretch_screens_title">Strekk skjermer</string>
+    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Utvid hjemmeskjermene for å fylle størrelsen på skjermen</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skjul ikonetiketter</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skjul etikettene under ikonene på hjemmeskjermen</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Overgangseffekt</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Effekt ved scrolling mellom hjemmeskjermene</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Scroll bakgrunn</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Scroll bakgrunnen nå du scroller mellom hjemmeskjermene</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_title">\'Wallpaper quick render\'</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_summary">Bruk en hack som gjør scrolling med statiske bakgrunner jevnere</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Bakgrunnsstørrelse</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Hvor mange \'skjermer\' bred skal bakgrunnen være</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Fade sideskjermer</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Fade sideskjermene ved scrolling</string>
+    <string name="preferences_interface_homescreen_scrolling_show_outlines_title">Vis linjer</string>
+    <string name="preferences_interface_homescreen_scrolling_show_outlines_summary">Vis linjer rundt skjermene ved scrolling</string>
+    <string name="preferences_interface_homescreen_indicator_category">Indikator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Vis sideindikator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Vis en indikator på hvilken skjerm som er i fokus</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Fade indikatoren</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Fade bort indikatoren når det blir byttet hjemmeskjerm</string>
+    <string name="preferences_interface_homescreen_indicator_position_title">Indikator posisjon</string>
+    <string name="preferences_interface_homescreen_indicator_position_summary">Velg hvor på skjermen indikatoren skal være</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_drawer_title">App-skuff</string>
+    <string name="preferences_interface_drawer_summary">Skuffen med apper og moduler</string>
+    <string name="preferences_interface_drawer_orientation_title">Orientering</string>
+    <string name="preferences_interface_drawer_orientation_summary">Velg hvilken vei app-skuffen skal scrolles</string>
+    <string name="preferences_interface_drawer_hidden_apps_title">Skjulte apps</string>
+    <string name="preferences_interface_drawer_hidden_apps_summary">Skjul apps fra app-skuffen</string>
+    <string name="preferences_interface_drawer_widgets_category">Moduler</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Apps og moduler sammen</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Scroll mellom apper og moduler uten å skifte fane</string>
+    <string name="preferences_interface_drawer_scrolling_category">Scrolling</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Overgangseffekt</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Effekt ved scrolling mellom de forskjellige sidene</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Fade side</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Fade the side pages when scrolling screens</string>
+    <string name="preferences_interface_drawer_indicator_category">Indikator</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Vis sideindikator</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Vis en indikator på bunnen av skjermen som viser hvilken side som er i fokus</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Fade indikatoren</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Fade bort indikatoren når det blir byttet side</string>
+    <string name="preferences_interface_drawer_indicator_position_title">Indikator posisjon</string>
+    <string name="preferences_interface_drawer_indicator_position_summary">Velg hvor på skjermen indikatoren skal være</string>
+
+    <!-- Dock -->
+    <string name="preferences_interface_dock_title">Dock</string>
+    <string name="preferences_interface_dock_enabled_title">Vis dock</string>
+    <string name="preferences_interface_dock_enabled_summary">Vis dock\'en under hjemmeskjermen</string>
+    <string name="preferences_interface_dock_pages_title">Sider</string>
+    <string name="preferences_interface_dock_pages_summary">Antall sider i dock\'en</string>
+    <string name="preferences_interface_dock_default_page_title">Hovedside</string>
+    <string name="preferences_interface_dock_default_page_summary">Velg hovedside</string>
+    <string name="preferences_interface_dock_icons_title">Ikoner</string>
+    <string name="preferences_interface_dock_icons_summary">Antall ikoner/kolonner i dock\'en</string>
+    <string name="preferences_interface_dock_icon_scale_title">Ikon skalering</string>
+    <string name="preferences_interface_dock_icon_scale_summary">Skaleringen av ikonene i dock\'en</string>
+    <string name="preferences_interface_dock_divider_title">Vis dock deler</string>
+    <string name="preferences_interface_dock_divider_summary">Vis en deler mellom hjemmeskjermen og dock\'en</string>
+
+    <!-- Icons -->
+    <string name="preferences_interface_icons_title">Ikoner</string>
+
+    <!-- General -->
+    <string name="preferences_interface_general_title">Generelt</string>
+    <string name="preferences_interface_general_orientation_title">Auto-roter skjerm</string>
+    <string name="preferences_interface_general_fullscreen_title">Fullskjermmodus</string>
+    <string name="preferences_interface_general_fullscreen_summary">Skjul statuslinjen for å utvide hjemmeskjermen</string>
+
+    <!-- CYANOGENMOD ADDITIONS END -->
 </resources>
