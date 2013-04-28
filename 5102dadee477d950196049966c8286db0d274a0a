@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH///Jw\u003d",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-04-28T13:54:27Z",
+      "side": 1,
+      "message": "Tut mozhno perevod menyat\u0027? Esli da - sokratite do \"Svedenia\", a to seychas stroka obrezaetsya (\"Svedeni...\")",
+      "revId": "5102dadee477d950196049966c8286db0d274a0a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
