@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH///A8\u003d",
+        "filename": "res/values-nb/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2013-04-28T19:28:36Z",
+      "side": 1,
+      "message": "Nettbrett :)",
+      "revId": "4dc25d53caef3ec67b5bc11c2cc8d0f4726dc0cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
