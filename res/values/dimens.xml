@@ -171,4 +171,8 @@
 
 <!-- Preferences -->
     <dimen name="header_icon_width">28dp</dimen>
+
+<!-- Dock -->
+    <dimen name="dock_with_text_scale">0.70px</dimen> <!-- We use px to get the float value -->
+
 </resources>
