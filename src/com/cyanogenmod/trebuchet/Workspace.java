@@ -306,6 +306,7 @@ public class Workspace extends PagedView
     private boolean mShowHotseat;
     private boolean mResizeAnyWidget;
     private boolean mHideIconLabels;
+    boolean mHideDockIconLabels;
     private boolean mScrollWallpaper;
     private int mWallpaperSize;
     private boolean mShowScrollingIndicator;
@@ -393,6 +394,7 @@ public class Workspace extends PagedView
         mShowSearchBar = PreferencesProvider.Interface.Homescreen.getShowSearchBar();
         mShowHotseat = PreferencesProvider.Interface.Dock.getShowDock();
         mHideIconLabels = PreferencesProvider.Interface.Homescreen.getHideIconLabels();
+        mHideDockIconLabels = PreferencesProvider.Interface.Dock.getHideIconLabels();
         mTransitionEffect = PreferencesProvider.Interface.Homescreen.Scrolling.getTransitionEffect(
                 res.getString(R.string.config_workspaceDefaultTransitionEffect));
         mScrollWallpaper = PreferencesProvider.Interface.Homescreen.Scrolling.getScrollWallpaper();
@@ -678,24 +680,15 @@ public class Workspace extends PagedView
 
             // Hide titles in the hotseat
             if (child instanceof FolderIcon) {
-                ((FolderIcon) child).setTextVisible(false);
+                ((FolderIcon) child).setTextVisible(!mHideDockIconLabels);
             } else if (child instanceof BubbleTextView) {
-                ((BubbleTextView) child).setTextVisible(false);
+                ((BubbleTextView) child).setTextVisible(!mHideDockIconLabels);
             }
         } else {
-            if (!mHideIconLabels) {
-                // Show titles if not in the hotseat
-                if (child instanceof FolderIcon) {
-                    ((FolderIcon) child).setTextVisible(true);
-                } else if (child instanceof BubbleTextView) {
-                    ((BubbleTextView) child).setTextVisible(true);
-                }
-            } else {
-                if (child instanceof FolderIcon) {
-                    ((FolderIcon) child).setTextVisible(false);
-                } else if (child instanceof BubbleTextView) {
-                    ((BubbleTextView) child).setTextVisible(false);
-                }
+            if (child instanceof FolderIcon) {
+                ((FolderIcon) child).setTextVisible(!mHideIconLabels);
+            } else if (child instanceof BubbleTextView) {
+                ((BubbleTextView) child).setTextVisible(!mHideIconLabels);
             }
 
             layout = (CellLayout) getChildAt(screen);
@@ -3787,9 +3780,7 @@ public class Workspace extends PagedView
             case LauncherSettings.Favorites.ITEM_TYPE_FOLDER:
                 view = FolderIcon.fromXml(R.layout.folder_icon, mLauncher, cellLayout,
                         (FolderInfo) info);
-                if (mHideIconLabels) {
-                    ((FolderIcon) view).setTextVisible(false);
-                }
+                ((FolderIcon) view).setTextVisible(!mHideIconLabels);
                 break;
             default:
                 throw new IllegalStateException("Unknown item type: " + info.itemType);
