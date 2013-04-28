@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH///I0\u003d",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-04-28T14:51:28Z",
+      "side": 1,
+      "message": "U menya proshliy variant normal\u0027no otobrajalsya, k tomu je tam limit na 30 simvolov ukazan. Esli problemy est\u0027, to oni ne s perevodom svyazany i ne stoit ih reshat\u0027 podobnym obrazom.",
+      "revId": "015cb5b3aea2fd7ddec1267f5789c4a80f647b37",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
