@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH//+7Y\u003d",
+        "filename": "res/values-nb/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2013-04-28T23:31:15Z",
+      "side": 1,
+      "message": "Nedtone",
+      "revId": "622ad78eeed36437cbb5b1ed4f8bfc786a78dfb3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+7U\u003d",
+        "filename": "res/values-nb/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2013-04-28T23:31:15Z",
+      "side": 1,
+      "message": "Nedtone",
+      "revId": "622ad78eeed36437cbb5b1ed4f8bfc786a78dfb3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+7Q\u003d",
+        "filename": "res/values-nb/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2013-04-28T23:31:15Z",
+      "side": 1,
+      "message": "Nedtone indikator",
+      "revId": "622ad78eeed36437cbb5b1ed4f8bfc786a78dfb3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+7M\u003d",
+        "filename": "res/values-nb/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2013-04-28T23:31:15Z",
+      "side": 1,
+      "message": "Nedtone indikatoren",
+      "revId": "622ad78eeed36437cbb5b1ed4f8bfc786a78dfb3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
