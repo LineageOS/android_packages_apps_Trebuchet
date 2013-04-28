@@ -18,16 +18,14 @@ package com.cyanogenmod.trebuchet;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Matrix;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
 import com.cyanogenmod.trebuchet.preference.PreferencesProvider;
-
-import java.util.Arrays;
 
 public class Hotseat extends PagedView {
     private int mCellCount;
@@ -53,6 +51,8 @@ public class Hotseat extends PagedView {
     public Hotseat(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
+        final Resources res = getResources();
+
         mFadeInAdjacentScreens = false;
         mHandleScrollIndicator = true;
 
@@ -67,8 +67,8 @@ public class Hotseat extends PagedView {
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.Hotseat, defStyle, 0);
         mTransposeLayoutWithOrientation =
-                context.getResources().getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
-        mIsLandscape = context.getResources().getConfiguration().orientation ==
+                res.getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
+        mIsLandscape = res.getConfiguration().orientation ==
             Configuration.ORIENTATION_LANDSCAPE;
         mCellCount = a.getInt(R.styleable.Hotseat_cellCount, DEFAULT_CELL_COUNT);
         mCellCount = PreferencesProvider.Interface.Dock.getNumberIcons(mCellCount);
@@ -77,9 +77,15 @@ public class Hotseat extends PagedView {
 
         mVertical = hasVerticalHotseat();
 
+        boolean hideDockIconLabels = PreferencesProvider.Interface.Dock.getHideIconLabels();
+        int cellHeight = (int)res.getDimension(R.dimen.hotseat_cell_height);
+        if (!hideDockIconLabels) {
+            cellHeight = (int)res.getDimension(R.dimen.workspace_cell_height);
+        }
 
-        float childrenScale = PreferencesProvider.Interface.Dock.getIconScale(
-                getResources().getInteger(R.integer.hotseat_item_scale_percentage)) / 100f;
+        int iconScale = PreferencesProvider.Interface.Dock.getIconScale(
+                            res.getInteger(R.integer.hotseat_item_scale_percentage));
+        float childrenScale = iconScale / 100f;
 
         LayoutInflater inflater =
                 (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -87,6 +93,11 @@ public class Hotseat extends PagedView {
             CellLayout cl = (CellLayout) inflater.inflate(R.layout.hotseat_page, null);
             cl.setChildrenScale(childrenScale);
             cl.setGridSize((!hasVerticalHotseat() ? mCellCount : 1), (hasVerticalHotseat() ? mCellCount : 1));
+
+            if (!hideDockIconLabels && !hasVerticalHotseat()) {
+                cl.setCellDimensions(cl.getCellWidth(), cellHeight, cl.getWidthGap(), cl.getHeightGap());
+            }
+
             addView(cl);
         }
 
