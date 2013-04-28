@@ -60,6 +60,7 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
     // Preferences
     private boolean mJoinWidgetsApps;
     private boolean mFadeScrollingIndicator;
+    private boolean mLockWorkspace;
 
     public AppsCustomizeTabHost(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -74,6 +75,7 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
         // Preferences
         mJoinWidgetsApps = PreferencesProvider.Interface.Drawer.getJoinWidgetsApps();
         mFadeScrollingIndicator = PreferencesProvider.Interface.Drawer.Indicator.getFadeScrollingIndicator();
+        mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
     }
 
     /**
@@ -140,11 +142,15 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
             });
         }
         addTab(newTabSpec(APPS_TAB_TAG).setIndicator(tabView).setContent(contentFactory));
-        label = getContext().getString(R.string.widgets_tab_label);
-        tabView = (TextView) mLayoutInflater.inflate(R.layout.tab_widget_indicator, tabs, false);
-        tabView.setText(label);
-        tabView.setContentDescription(label);
-        addTab(newTabSpec(WIDGETS_TAB_TAG).setIndicator(tabView).setContent(contentFactory));
+        if (!mLockWorkspace) {
+            // If the workspace is locked, then the widgets tab has no sense, because they
+            // cannot be moved to homescreen and they cannot be launched
+            label = getContext().getString(R.string.widgets_tab_label);
+            tabView = (TextView) mLayoutInflater.inflate(R.layout.tab_widget_indicator, tabs, false);
+            tabView.setText(label);
+            tabView.setContentDescription(label);
+            addTab(newTabSpec(WIDGETS_TAB_TAG).setIndicator(tabView).setContent(contentFactory));
+        }
         setOnTabChangedListener(this);
 
         // Setup the key listener to jump between the last tab view and the market icon

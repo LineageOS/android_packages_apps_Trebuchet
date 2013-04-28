@@ -158,7 +158,12 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         mContent.getShortcutsAndWidgets().setMotionEventSplittingEnabled(false);
         mFolderName = (FolderEditText) findViewById(R.id.folder_name);
         mFolderName.setFolder(this);
-        mFolderName.setOnFocusChangeListener(this);
+        if (mLauncher.isLockWorkspace()) {
+            mFolderName.setKeyListener(null);
+            mFolderName.setFocusable(false);
+        } else {
+            mFolderName.setOnFocusChangeListener(this);
+        }
 
         // We find out how tall the text view wants to be (it is set to wrap_content), so that
         // we can allocate the appropriate amount of space for it.
@@ -211,6 +216,9 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     }
 
     public boolean onLongClick(View v) {
+        // Only if workspace is not locked
+        if (mLauncher.isLockWorkspace()) return false;
+
         // Return if global dragging is not enabled
         if (!mLauncher.isDraggingEnabled()) return true;
 

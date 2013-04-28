@@ -73,7 +73,10 @@ public abstract class PagedViewWithDraggableItems extends PagedView
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (mTouchState != TOUCH_STATE_SCROLLING && !mIsDragging && mIsDragEnabled) {
-                    determineDraggingStart(ev);
+                    // Only if workspace is not locked
+                    if (!mLauncher.isLockWorkspace()) {
+                        determineDraggingStart(ev);
+                    }
                 }
                 break;
         }
@@ -100,6 +103,8 @@ public abstract class PagedViewWithDraggableItems extends PagedView
 
     @Override
     public boolean onLongClick(View v) {
+        // Only if workspace is not locked
+        if (mLauncher.isLockWorkspace()) return false;
         // Return early if this is not initiated from a touch
         if (!v.isInTouchMode()) return false;
         // Return early if we are still animating the pages
