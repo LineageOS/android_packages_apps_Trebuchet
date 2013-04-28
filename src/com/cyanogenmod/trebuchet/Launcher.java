@@ -319,6 +319,7 @@ public final class Launcher extends Activity
     private boolean mShowDockDivider;
     private boolean mHideIconLabels;
     private boolean mAutoRotate;
+    private boolean mLockWorkspace;
     private boolean mFullscreenMode;
 
     private boolean mWallpaperVisible;
@@ -403,6 +404,7 @@ public final class Launcher extends Activity
         mShowDockDivider = PreferencesProvider.Interface.Dock.getShowDivider() && mShowHotseat;
         mHideIconLabels = PreferencesProvider.Interface.Homescreen.getHideIconLabels();
         mAutoRotate = PreferencesProvider.Interface.General.getAutoRotate(getResources().getBoolean(R.bool.allow_rotation));
+        mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
         mFullscreenMode = PreferencesProvider.Interface.General.getFullscreenMode();
 
         if (PROFILE_STARTUP) {
@@ -2548,7 +2550,11 @@ public final class Launcher extends Activity
                 startWallpaper();
             } else {
                 if (!(itemUnderLongClick instanceof Folder)) {
-                    // User long pressed on an item
+                    // User long pressed on an item (only if workspace is not locked)
+                    if (mLockWorkspace) {
+                        Toast.makeText(this, getString(R.string.workspace_locked), Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
                     mWorkspace.startDrag(longClickCellInfo);
                 }
             }
@@ -2565,6 +2571,10 @@ public final class Launcher extends Activity
     }
     SearchDropTargetBar getSearchBar() {
         return mSearchDropTargetBar;
+    }
+
+    boolean getLockWorkspace() {
+        return mLockWorkspace;
     }
 
     /**

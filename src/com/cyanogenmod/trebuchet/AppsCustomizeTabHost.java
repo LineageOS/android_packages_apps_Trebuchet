@@ -60,6 +60,7 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
     // Preferences
     private boolean mJoinWidgetsApps;
     private boolean mFadeScrollingIndicator;
+    private boolean mLockWorkspace;
 
     public AppsCustomizeTabHost(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -74,6 +75,7 @@ public class AppsCustomizeTabHost extends TabHost implements LauncherTransitiona
         // Preferences
         mJoinWidgetsApps = PreferencesProvider.Interface.Drawer.getJoinWidgetsApps();
         mFadeScrollingIndicator = PreferencesProvider.Interface.Drawer.Indicator.getFadeScrollingIndicator();
+        mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
     }
 
     /**
