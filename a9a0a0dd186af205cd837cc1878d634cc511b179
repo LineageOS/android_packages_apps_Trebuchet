@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfH//+Vo\u003d",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-29T22:23:36Z",
+      "side": 1,
+      "message": "This is not a summary. It\u0027s  toast. I think we can be less polish here.\n\n\"Puedes desbloquearlo\" is ok for me:\n\n\"El escritorio está bloqueado. Puedes desbloquearlo en ajustes para su reorganización.\"\nor\n\"El escritorio está bloqueado. Accede a ajustes para permitir reorganizarlo.\" (+1, shorten for a toast)",
+      "parentUuid": "AAAAfH//+Ww\u003d",
+      "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfH//+XM\u003d",
         "filename": "res/values-es/cm_strings.xml",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "All summary strings are in infinitive. I\u0027ve followed same style only.",
       "parentUuid": "AAAAfH//+XM\u003d",
+      "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+WA\u003d",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-04-29T22:23:36Z",
+      "side": 1,
+      "message": "Infinitive is well used here.",
+      "parentUuid": "AAAAfH//+W4\u003d",
       "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
