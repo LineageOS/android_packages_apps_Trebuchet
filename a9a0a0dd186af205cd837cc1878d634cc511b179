@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfH//+Ww\u003d",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-04-29T21:34:39Z",
+      "side": 1,
+      "message": "Infinitive form. See my comment below. I\u0027m open for any ideas.",
+      "parentUuid": "AAAAfH//+XQ\u003d",
+      "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfH//+XM\u003d",
         "filename": "res/values-es/cm_strings.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-29T21:17:48Z",
       "side": 1,
       "message": "Could be \"Bloquea la posición de las carpetas y los accesos\"? I think Spanish it\u0027s not so direct as English... Any Ideas?",
+      "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+W4\u003d",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-04-29T21:34:39Z",
+      "side": 1,
+      "message": "All summary strings are in infinitive. I\u0027ve followed same style only.",
+      "parentUuid": "AAAAfH//+XM\u003d",
       "revId": "a9a0a0dd186af205cd837cc1878d634cc511b179",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
