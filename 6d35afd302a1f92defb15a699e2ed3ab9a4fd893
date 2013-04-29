@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH//+cc\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-04-29T18:03:32Z",
+      "side": 1,
+      "message": "- Draaimolen\n\nOf is dat flauw?",
+      "revId": "6d35afd302a1f92defb15a699e2ed3ab9a4fd893",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+cM\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-04-29T18:03:32Z",
+      "side": 1,
+      "message": "NEEEEEEEEEEEEEE :((",
+      "revId": "6d35afd302a1f92defb15a699e2ed3ab9a4fd893",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+cI\u003d",
+        "filename": "res/values-nl/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-04-29T18:03:32Z",
+      "side": 1,
+      "message": "NEEEEE past niet :((",
+      "revId": "6d35afd302a1f92defb15a699e2ed3ab9a4fd893",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
