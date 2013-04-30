@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH//+DU\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-04-30T18:28:04Z",
+      "side": 1,
+      "message": "- Startscherm (is) vergrendeld; om te ontgrendelen, gaat u naar Instellingen(.)",
+      "revId": "d6c841322eef0c59393db9da7dc8e6112a214e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfH//+DQ\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-04-30T18:28:04Z",
+      "side": 1,
+      "message": "app* (zie r. 65)",
+      "revId": "d6c841322eef0c59393db9da7dc8e6112a214e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
