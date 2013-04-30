@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfH//+Dk\u003d",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-04-30T18:24:00Z",
+      "side": 1,
+      "message": "\u003cresources xmlns:xliff\u003d\"urn:oasis:names:tc:xliff:document:1.2\"\u003e is enough. Please remove the \u0027xmlns:android\u0027 part",
+      "revId": "25f1752db8f6a2ac3ddf55775fe942e316e7a759",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
