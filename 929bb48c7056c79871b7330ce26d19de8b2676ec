@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///28\u003d",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-05-01T15:32:42Z",
+      "side": 1,
+      "message": "Can you re-add the translatable\u003d\"false\" and rename it to Trebuchet. That was my mistake when I refactored the default translations.",
+      "revId": "929bb48c7056c79871b7330ce26d19de8b2676ec",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
