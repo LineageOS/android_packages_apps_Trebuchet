@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///10\u003d",
+        "filename": "res/values-de/strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-01T15:57:09Z",
+      "side": 1,
+      "message": "I need remove this line",
+      "revId": "85a1a4015c0b39cde1c9eb2f136774569133ac25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
