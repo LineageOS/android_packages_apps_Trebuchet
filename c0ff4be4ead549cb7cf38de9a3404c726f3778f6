@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///2Y\u003d",
+        "filename": "res/values-da/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-01T15:41:30Z",
+      "side": 1,
+      "message": "This line is translatable\u003d\"false\"",
+      "revId": "c0ff4be4ead549cb7cf38de9a3404c726f3778f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
