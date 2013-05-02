@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///gU\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-02T13:49:32Z",
+      "side": 1,
+      "message": "Trebuchet-Einstellungen",
+      "revId": "8b06a2c97132d6527178466304dae5f0a6a64568",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///gQ\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-02T13:49:32Z",
+      "side": 1,
+      "message": "\u0027Einstellungen entsperren\u0027 ist nicht gerade eine genaue Übersetzung von \u0027unlock in settings\u0027 ;)\nWie wäre es mit \u0027Startbildschirm ist gesperrt; zum Umgestalten in den Einstellungen entsperren.\u0027?",
+      "revId": "8b06a2c97132d6527178466304dae5f0a6a64568",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///gM\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-02T13:49:32Z",
+      "side": 1,
+      "message": "Die Leerzeile ist IMHO unnötig.",
+      "revId": "8b06a2c97132d6527178466304dae5f0a6a64568",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
