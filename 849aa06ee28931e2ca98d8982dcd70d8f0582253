@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfX///ZU\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-02T20:51:09Z",
+      "side": 1,
+      "message": "Predlagayu izbavit\u0027sya ot ostal\u0027nyh terminov v pol\u0027zu kakogo-to odnogo: ili \"Domashniy ekran\" i \"ekrany\", ili \"Rabochiy stol\" i \"stoly\", a to putanitsa kakaya-to.",
+      "parentUuid": "AAAAfX///ao\u003d",
+      "revId": "849aa06ee28931e2ca98d8982dcd70d8f0582253",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfX///ak\u003d",
         "filename": "res/values-ru/cm_strings.xml",
         "patchSetId": 7
