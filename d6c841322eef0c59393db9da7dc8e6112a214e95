@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfX///sM\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-05-02T00:44:08Z",
+      "side": 1,
+      "message": "Het Engels spreekt over \"rearrange\" omdat je deze melding alleen krijgt al je icoontjes wilt gaan verplaatsen. Dus ik vind dat er ook iets van \"ordenen\" bij moet.\n\n\"is\" moet er wel tussen, anders lijkt het net een toastmelding dat je op dat moment je scherm hebt vergrendeld en dat is niet zo. Dat heb je al eerder gedaan via het menu of de Instellingen.\n\n- Startscherm is vergrendeld; om te kunnen ordenen gaat u naar Instellingen om te ontgrendelen",
+      "parentUuid": "AAAAfH//+DU\u003d",
+      "revId": "d6c841322eef0c59393db9da7dc8e6112a214e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfH//+DQ\u003d",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-30T18:28:04Z",
       "side": 1,
       "message": "app* (zie r. 65)",
+      "revId": "d6c841322eef0c59393db9da7dc8e6112a214e95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///sk\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-05-02T00:44:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAfH//+DQ\u003d",
       "revId": "d6c841322eef0c59393db9da7dc8e6112a214e95",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
