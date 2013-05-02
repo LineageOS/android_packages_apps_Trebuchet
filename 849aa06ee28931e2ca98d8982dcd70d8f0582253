@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///ao\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-02T20:02:19Z",
+      "side": 1,
+      "message": "Rabochiy stol + Domashniy ekran \u003d Rabochiy ekran?",
+      "revId": "849aa06ee28931e2ca98d8982dcd70d8f0582253",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///ak\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-02T20:02:19Z",
+      "side": 1,
+      "message": "Opyat\u0027 \"rabochiy ekran\".",
+      "revId": "849aa06ee28931e2ca98d8982dcd70d8f0582253",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
