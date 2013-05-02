@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfX///gE\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-02T13:55:02Z",
+      "side": 1,
+      "message": "+1 für Dannys Vorschlag",
+      "parentUuid": "AAAAfX///gQ\u003d",
+      "revId": "8b06a2c97132d6527178466304dae5f0a6a64568",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfX///gM\u003d",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
