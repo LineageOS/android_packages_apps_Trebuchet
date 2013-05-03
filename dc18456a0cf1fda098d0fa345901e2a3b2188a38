@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///EY\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-03T18:46:50Z",
+      "side": 1,
+      "message": "Domashnie togda tozhe v Glavnye nuzhno pereimenovat\u0027.",
+      "revId": "dc18456a0cf1fda098d0fa345901e2a3b2188a38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///EU\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-03T18:46:50Z",
+      "side": 1,
+      "message": "Zdes\u0027 tozhe",
+      "revId": "dc18456a0cf1fda098d0fa345901e2a3b2188a38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
