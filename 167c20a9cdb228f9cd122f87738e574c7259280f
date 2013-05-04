@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfX///B8\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Mozhet \"Rastyagivat\u0027 ekrany\"",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///B4\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "...do razmera displeya",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+/E\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Zatuhanie ekranov",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//++8\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Zatuhanie glavnyh ekranov pri perelistyvanii",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+/c\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Skryvat\u0027 indikator posle smeny ekrana",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+/g\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "\"Otobrazhat\u0027 indikator tekuschey stranitsy na ekrane\" - \nvnizu lishnee, t.k. mozhno menyat\u0027 pozitsyu indikatora.",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX///B0\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Otobrazhat\u0027 indikator tekuschey stranitsy na ekrane",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//++k\u003d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-05-04T08:31:23Z",
+      "side": 1,
+      "message": "Skryvat\u0027 indikator posle smeny stranitsy",
+      "revId": "167c20a9cdb228f9cd122f87738e574c7259280f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
