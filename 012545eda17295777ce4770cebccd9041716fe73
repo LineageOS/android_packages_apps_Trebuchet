@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfX//+FU\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/FolderIcon.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-06T19:32:13Z",
+      "side": 1,
+      "message": "oops ..",
+      "parentUuid": "AAAAfX//+F8\u003d",
+      "revId": "012545eda17295777ce4770cebccd9041716fe73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfX//+GE\u003d",
         "filename": "src/com/cyanogenmod/trebuchet/Hotseat.java",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-06T18:43:24Z",
       "side": 1,
       "message": "As you said in comment add the check for is_large_screen here.\n\nCould also inline it to\n\n    boolean hideDockIconLabels \u003d PreferencesProvider.Interface.Dock.getHideIconLabels() ||\n            (hasVerticalHotseat() \u0026\u0026 !isLargeScreen);",
+      "revId": "012545eda17295777ce4770cebccd9041716fe73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+FY\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Hotseat.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-06T19:32:13Z",
+      "side": 1,
+      "message": "Not all device declared the isLargeScreen property (xe grouper) and setting the cell height to workspace_cell_height will displace all the items though. Let\u0027s try and see.",
+      "parentUuid": "AAAAfX//+GE\u003d",
       "revId": "012545eda17295777ce4770cebccd9041716fe73",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2013-05-06T18:43:24Z",
       "side": 1,
       "message": "Never access variables like this - especially in this case I don\u0027t see the need to update the variable in Workspace.",
+      "revId": "012545eda17295777ce4770cebccd9041716fe73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+Fk\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-06T19:32:13Z",
+      "side": 1,
+      "message": "Workspace needs update mHideDockIconLabels in the same way that Launcher does (hide labels on vertical hotseat), so it need haves access to hotseat too, but hotseat still has a null reference inside its onCreate method. This var needs to be update from here. I\u0027ll create a public method on Workspace and call it from here.",
+      "parentUuid": "AAAAfX//+GM\u003d",
       "revId": "012545eda17295777ce4770cebccd9041716fe73",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
