@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfX//+FM\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Hotseat.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-06T19:37:55Z",
+      "side": 1,
+      "message": "If that is the case then isLargeScreen probably isnt the right prop to look for. You can experiment with this, otherwise what you have above is good.",
+      "parentUuid": "AAAAfX//+FY\u003d",
+      "revId": "012545eda17295777ce4770cebccd9041716fe73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfX//+GI\u003d",
         "filename": "src/com/cyanogenmod/trebuchet/Hotseat.java",
         "patchSetId": 5
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "Workspace needs update mHideDockIconLabels in the same way that Launcher does (hide labels on vertical hotseat), so it need haves access to hotseat too, but hotseat still has a null reference inside its onCreate method. This var needs to be update from here. I\u0027ll create a public method on Workspace and call it from here.",
       "parentUuid": "AAAAfX//+GM\u003d",
+      "revId": "012545eda17295777ce4770cebccd9041716fe73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfX//+FA\u003d",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-06T19:37:55Z",
+      "side": 1,
+      "message": "Hmm...\n\nIf mHotseat \u003d\u003d null it doesnt matter whether whether they are visible or not. The other two can be detected from Workspace too. I think its better to avoid the extra method.",
+      "parentUuid": "AAAAfX//+Fk\u003d",
       "revId": "012545eda17295777ce4770cebccd9041716fe73",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
