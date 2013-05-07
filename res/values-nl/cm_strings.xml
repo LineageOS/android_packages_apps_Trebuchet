@@ -91,6 +91,8 @@
     <string name="preferences_interface_dock_default_page_summary">De standaardpagina kiezen</string>
     <string name="preferences_interface_dock_icons_title">Pictogrammen</string>
     <string name="preferences_interface_dock_icons_summary">Aantal pictogrammen/kolommen in het dock</string>
+    <string name="preferences_interface_dock_hide_icon_labels_title">Pictogramlabels verbergen</string>
+    <string name="preferences_interface_dock_hide_icon_labels_summary">Pictogramlabels in het dock verbergen</string>
     <string name="preferences_interface_dock_icon_scale_title">Pictogrammen schalen</string>
     <string name="preferences_interface_dock_icon_scale_summary">Pictogrammen schalen in het dock</string>
     <string name="preferences_interface_dock_divider_title">Scheidingslijn</string>
