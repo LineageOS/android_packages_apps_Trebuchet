@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn///No\u003d",
+        "filename": "res/values-it/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 3184
+      },
+      "writtenOn": "2013-05-08T22:01:58Z",
+      "side": 1,
+      "message": "Nascondi etichette icone?",
+      "revId": "6e42c104def3abf5eb8aba2e89048ddf642cec96",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
