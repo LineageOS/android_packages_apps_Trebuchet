@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn///Qk\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-05-08T20:10:20Z",
+      "side": 1,
+      "message": "\"Appuyer\" \u003d\u003e OK\nMais alors :\n\"sélectionner votre méthode\" \u003d\u003e \"sélectionner la méthode\"",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
