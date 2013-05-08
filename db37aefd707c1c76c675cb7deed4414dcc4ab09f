@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn///oU\u003d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-05-08T02:56:29Z",
+      "side": 1,
+      "message": "- Labels verbergen onder pictogrammen in het dock\n\nStandaard gebruikt AOSP de volgende volgorde:\n\n\u003clijdend voorwerp\u003e \u003cinfinitief\u003e \u003cbijwoordelijke bepalingen|meewerkend voorwerp\u003e",
+      "revId": "db37aefd707c1c76c675cb7deed4414dcc4ab09f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
