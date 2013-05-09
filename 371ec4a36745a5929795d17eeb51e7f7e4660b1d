@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfn///JU\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAfn///Qk\u003d",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfn///Os\u003d",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-08T21:24:58Z",
       "side": 1,
       "message": "d\u0027écrans",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn///JY\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAfn///Os\u003d",
       "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfn///Jc\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "AAAAfn///Oo\u003d",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfn///Ok\u003d",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-05-08T21:24:58Z",
       "side": 1,
       "message": "Estomper les écrans.",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn///Jw\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "Dans la partie \"preferences_interface_drawer_\" ce sont les paramètres des pages d\u0027applications et pas de l\u0027écran d\u0027accueil.",
+      "parentUuid": "AAAAfn///Ok\u003d",
       "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfn///Js\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "idem",
+      "parentUuid": "AAAAfn///Og\u003d",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfn///Oc\u003d",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2013-05-08T21:24:58Z",
       "side": 1,
       "message": "Indicateur d\\\u0027écran",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn///Jo\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "idem",
+      "parentUuid": "AAAAfn///Oc\u003d",
       "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAfn///Jk\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "idem",
+      "parentUuid": "AAAAfn///OY\u003d",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAfn///OU\u003d",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2013-05-08T21:24:58Z",
       "side": 1,
       "message": "... après le changement d\\\u0027écran",
+      "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn///Jg\u003d",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-05-09T00:50:07Z",
+      "side": 1,
+      "message": "idem",
+      "parentUuid": "AAAAfn///OU\u003d",
       "revId": "371ec4a36745a5929795d17eeb51e7f7e4660b1d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
