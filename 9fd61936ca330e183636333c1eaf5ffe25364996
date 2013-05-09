@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn//+/s\u003d",
+        "filename": "res/values-it/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3184
+      },
+      "writtenOn": "2013-05-09T14:36:19Z",
+      "side": 1,
+      "message": "Mauro dovremmo essere congruenti con queste o quelle stringhe.",
+      "revId": "9fd61936ca330e183636333c1eaf5ffe25364996",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
