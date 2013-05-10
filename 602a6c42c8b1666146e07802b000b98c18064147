@@ -70,6 +70,24 @@
       "revId": "602a6c42c8b1666146e07802b000b98c18064147",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn//+cA\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-10T13:38:41Z",
+      "side": 1,
+      "message": "Ich könnte frühestens Montag Abend einen Patch hochladen. Das ist dann aber wohl zu spät für den Release oder?",
+      "parentUuid": "AAAAfn//+ck\u003d",
+      "revId": "602a6c42c8b1666146e07802b000b98c18064147",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
