@@ -108,4 +108,15 @@
     <string name="effects_flip">Przerzucanie</string>
     <string name="effects_stack">Układanie</string>
     <string name="effects_accordion">Akordeonowo</string>
+
+    <string name="edit_target_label">Edytuj</string>
+
+    <string name="preferences_interface_dock_hide_icon_labels_title">Ukryj nazwy aplikacji w docku</string>
+    <string name="preferences_interface_dock_hide_icon_labels_summary">Ukrywa podpisy pod ikonami w docku</string>
+
+    <string name="menu_lock_workspace">Zablokuj ekran główny</string>
+    <string name="menu_unlock_workspace">Odblokuj ekran główny/string>
+    <string name="workspace_locked">Ekran główny jest zablokowany, w celu edycji odblokuj go w ustawieniach</string>
+    <string name="preferences_interface_general_lock_workspace_title">Blokada ekranu głównego</string>
+    <string name="preferences_interface_general_lock_workspace_summary">Zablokuj edycję ikon na ekranie głównym, docka oraz listy aplikacji i widżetów</string>
 </resources>
