@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn//+dg\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-10T13:11:16Z",
+      "side": 1,
+      "message": "Eigentlich haben wir bisher nie vom Startbildschirm gesprochen, sondern immer nur von Seiten bzw. Bildschirmseiten.\r\nVielleich sollten wir die ganzen Bezeichnungen nochmal durchdenken.",
+      "revId": "602a6c42c8b1666146e07802b000b98c18064147",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
