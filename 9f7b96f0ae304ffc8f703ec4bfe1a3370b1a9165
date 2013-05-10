@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn//+e8\u003d",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-05-10T12:50:21Z",
+      "side": 1,
+      "message": "Ikonfeliratok elrejtése a tálcán",
+      "revId": "9f7b96f0ae304ffc8f703ec4bfe1a3370b1a9165",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
