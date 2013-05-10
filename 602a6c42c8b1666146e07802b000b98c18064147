@@ -88,6 +88,24 @@
       "revId": "602a6c42c8b1666146e07802b000b98c18064147",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAfn//+X8\u003d",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-10T16:12:31Z",
+      "side": 1,
+      "message": "Ja, das wäre etwas spät :( In Anbetracht der Tatsache, dass Jorge den cm-10.1-Patch schon gemergt hat, sollten wir das vielleicht in einen Follow-Up-Patch verschieben?",
+      "parentUuid": "AAAAfn//+cA\u003d",
+      "revId": "602a6c42c8b1666146e07802b000b98c18064147",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
