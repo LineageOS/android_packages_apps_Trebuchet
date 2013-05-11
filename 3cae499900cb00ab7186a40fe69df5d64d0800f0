@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fyOUqjY",
+        "filename": "src/com/cyanogenmod/trebuchet/preference/Preferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1381
+      },
+      "writtenOn": "2013-05-11T17:52:07Z",
+      "side": 1,
+      "message": "\"workspaceTabletGrid \u003d\u003d false\"\n\nI believe this causes the grid settings to be removed on all phone devices, which is not what we want. Bug reported on galaxysmtd.",
+      "revId": "3cae499900cb00ab7186a40fe69df5d64d0800f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
