@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAfn//910\u003d",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5637
+      },
+      "writtenOn": "2013-05-11T07:41:22Z",
+      "side": 1,
+      "message": "IMO simply: \u0027w doku\u0027. \u0027w docku\u0027 looks strange",
+      "revId": "8ae7137388a4f55d44411406c66fbd9b45594eb6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
