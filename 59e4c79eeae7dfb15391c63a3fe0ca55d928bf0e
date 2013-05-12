@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fwyhm6k",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5868
+      },
+      "writtenOn": "2013-05-12T18:09:34Z",
+      "side": 1,
+      "message": "Ok, so what\u0027s about that?",
+      "revId": "59e4c79eeae7dfb15391c63a3fe0ca55d928bf0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f8kCFbQ",
         "filename": "res/values-pl/cm_strings.xml",
         "patchSetId": 3
