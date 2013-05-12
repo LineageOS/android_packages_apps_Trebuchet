@@ -16,6 +16,24 @@
       "revId": "59e4c79eeae7dfb15391c63a3fe0ca55d928bf0e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0ylUwM",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4566
+      },
+      "writtenOn": "2013-05-12T15:12:27Z",
+      "side": 1,
+      "message": "+1 popieram. W naszym kraju s?owo \u0027dok\u0027 bardziej pasuje :)",
+      "parentUuid": "f8kCFbQ",
+      "revId": "59e4c79eeae7dfb15391c63a3fe0ca55d928bf0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
