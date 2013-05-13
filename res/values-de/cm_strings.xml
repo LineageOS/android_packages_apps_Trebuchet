@@ -32,13 +32,13 @@
     <string name="workspace_locked">Startbildschirm ist gesperrt; zum Umgestalten in den Einstellungen entsperren</string>
     <string name="preferences_interface_title">Oberfläche</string>
     <string name="preferences_application_title">Launcher-Version</string>
-    <string name="preferences_interface_homescreen_title">Bildschirmseiten</string>
-    <string name="preferences_interface_homescreen_summary">Bildschirmseiten und Hintergrundbild</string>
+    <string name="preferences_interface_homescreen_title">Startseiten</string>
+    <string name="preferences_interface_homescreen_summary">Startseiten und Hintergrundbild</string>
     <string name="preferences_interface_homescreen_general_category">Allgemein</string>
     <string name="preferences_interface_homescreen_general_screens_title">Seitenzahl</string>
-    <string name="preferences_interface_homescreen_general_screens_summary">Anzahl der verwendbaren und wechselbaren Bildschirmseiten für Icons und Widgets</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Anzahl der verwendbaren und wechselbaren Startseiten für Icons und Widgets</string>
     <string name="preferences_interface_homescreen_general_default_screen_title">Standardseite</string>
-    <string name="preferences_interface_homescreen_general_default_screen_summary">Aktive Bildschirmseite nach Neustart des Geräts</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Aktive Startseite nach Neustart des Geräts</string>
     <string name="preferences_interface_homescreen_general_grid_title">Rastergröße</string>
     <string name="preferences_interface_homescreen_general_grid_summary">Anzahl der für Icons verfügbaren Reihen / Spalten</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Reihen</string>
