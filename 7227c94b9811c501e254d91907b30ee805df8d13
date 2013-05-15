@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "hkLldqY",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-05-15T01:40:15Z",
+      "side": 1,
+      "message": "/string\u003e \u003e\u003e \u003c/string\u003e",
+      "revId": "7227c94b9811c501e254d91907b30ee805df8d13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hiLiaqA",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-05-15T01:40:15Z",
+      "side": 1,
+      "message": "\u003cstring\u003e \u003e\u003e \u003c/string\u003e",
+      "revId": "7227c94b9811c501e254d91907b30ee805df8d13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
