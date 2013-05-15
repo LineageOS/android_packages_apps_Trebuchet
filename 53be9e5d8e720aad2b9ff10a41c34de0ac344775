@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "hkIg1vc",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-15T01:22:13Z",
+      "side": 1,
+      "message": "Klingt wirklich fies, aber vielleicht fällt uns ja noch etwas vollkommen anderes ein.",
+      "parentUuid": "hoLKXk4",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hgLdLhQ",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-05-15T01:11:17Z",
       "side": 1,
       "message": "pro Dock",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hsILxnw",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-15T01:22:13Z",
+      "side": 1,
+      "message": "Ooops ja da hast du recht. Ich habe das \"pro\" noch in letzter Minute eingefügt, und dann nicht mehr den ganzen Satz angeschaut.",
+      "parentUuid": "hgLdLhQ",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "hmIj0gY",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-15T01:22:13Z",
+      "side": 1,
+      "message": "Ich bin für \"Automatische Ausrichtung\" wenn wir das kürzen müssen.",
+      "parentUuid": "hmLOMlw",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hiLYKh0",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -82,6 +136,24 @@
       "writtenOn": "2013-05-15T01:11:17Z",
       "side": 1,
       "message": "Tablett?!",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hoIm3hQ",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2013-05-15T01:22:13Z",
+      "side": 1,
+      "message": "Hast gute Augen...das ist wohl schon seit Monaten falsch.",
+      "parentUuid": "hiLYKh0",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
