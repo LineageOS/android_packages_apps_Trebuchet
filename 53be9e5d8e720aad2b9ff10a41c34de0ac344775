@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "huW.zNM",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Hier evtl. nur Anzahl, da es eine Summary gibt.",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hqW4xOY",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Bildschirm, der nach dem Geräte-Neustart angezeigt wird",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hmXL3HM",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Raster? analog zu Apex/Nova?",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hkXI4HQ",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Reihen und Spalten",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hgW62OE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Hier evtl. nur Ausdehnen verwenden, da es eine Summary gibt.",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hoLKXk4",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -37,6 +122,176 @@
     },
     {
       "key": {
+        "uuid": "hiXF1Fo",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "mit Scrollen ist der Bildschirmwechsel gemeint? \n--\u003e Animation beim Bildschirmwechsel. :D",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "huWlrLU",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Der alte und der neue Begriff sind etwas verwirrend. Ist das die Funktion, bei der Teile des HG beim Seitenwechsel zusätzlich angezeigt werden?",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hqWvpJM",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Hier ist vermutlich der Drawer gemeint. ;) Dann sollte vielleicht auch der Begriff verwendet werden, analog zu Apex/Nova.",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hoWVyEE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Apps, die nicht im Drawer angezeigt werden.",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hkWfwF8",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Blättern \u003d Scrollen?",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hiWctGg",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Animation beim Drawer-Bildschirmwechsel",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hgWImCE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Einblenden",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "huWMjDc",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Bildschirme beim Scrollen einblenden",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hqWGhBE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Dock-Seiten",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "huWTbE4",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Symbole",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hgLdLhQ",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -66,6 +321,108 @@
       "side": 1,
       "message": "Ooops ja da hast du recht. Ich habe das \"pro\" noch in letzter Minute eingefügt, und dann nicht mehr den ganzen Satz angeschaut.",
       "parentUuid": "hgLdLhQ",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hoV8qCE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Anzahl der Symbole... analog zu Apex/Nova",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hsWYcG0",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Dock-Symbole",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hqWdZFs",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Symbolgröße oder Icon-Größe",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hkV2oD8",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Größe der Dock-Symbole festlegen",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hoWjiJ4",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "Dockabtrennung",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hiVzlE8",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "??? aus Apex/Nova \"Dockabtrennung nicht anzeigen.\"",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -119,6 +476,24 @@
       "side": 1,
       "message": "Ich bin für \"Automatische Ausrichtung\" wenn wir das kürzen müssen.",
       "parentUuid": "hmLOMlw",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hmWgfJE",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T11:17:26Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "hmIj0gY",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
