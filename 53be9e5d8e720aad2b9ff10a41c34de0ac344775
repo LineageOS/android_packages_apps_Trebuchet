@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "hoLKXk4",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T01:11:17Z",
+      "side": 1,
+      "message": "displayfüllend ist ein \"fieser\" denglish-Term. Es sollte bildschirmfüllend bleiben, auch wenn es \"komisch\" aussieht.",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hgLdLhQ",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T01:11:17Z",
+      "side": 1,
+      "message": "pro Dock",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hoLn-hE",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -13,6 +47,41 @@
       "writtenOn": "2013-05-15T00:02:34Z",
       "side": 1,
       "message": "Possible to shorten this string? Preferably less than 25 characters...",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hmLOMlw",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T01:11:17Z",
+      "side": 1,
+      "message": "Autom. (Bildschirm)ausrichtung",
+      "parentUuid": "hoLn-hE",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hiLYKh0",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4977
+      },
+      "writtenOn": "2013-05-15T01:11:17Z",
+      "side": 1,
+      "message": "Tablett?!",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
