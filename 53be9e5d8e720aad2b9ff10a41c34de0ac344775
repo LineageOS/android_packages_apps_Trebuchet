@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "hpbbvO0",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-18T14:29:01Z",
+      "side": 1,
+      "message": "Das komische Aussehen kommt IMHO daher, dass hier \u0027Bildschirm\u0027 für 2 verschiedene Dinge (die Hardware, die das Bild anzeigt und das Konzept des Homescreens) verwendet wird. Das ist im Moment auch noch das, was mich an diesem Patch etwas stört. Ich würde 3 Begriffe einführen:\n\n- \u0027Bildschirm\u0027 für die Hardware\n- \u0027Startbildschirm\u0027 für den Homescreen als Ganzes\n- \u0027Seite\u0027 oder \u0027Bildschirmseite\u0027 für einen Teil des \u0027Startbildschirms\u0027\n\nDas würde die Terminologie IMHO klarer machen: \u0027Seiten bildschirmfüllend ausdehnen\u0027 war eigentlich schon ganz gut.",
+      "parentUuid": "hoLKXk4",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "hiXF1Fo",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -275,6 +293,24 @@
     },
     {
       "key": {
+        "uuid": "hlblNKY",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-18T14:29:01Z",
+      "side": 1,
+      "message": "Sehe ich auch so (analog zu oben), dann muss man allerdings \u0027Standardseite\u0027 lassen.",
+      "parentUuid": "hqWGhBE",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "huWTbE4",
         "filename": "res/values-de/cm_strings.xml",
         "patchSetId": 1
@@ -338,6 +374,24 @@
       "writtenOn": "2013-05-15T11:17:26Z",
       "side": 1,
       "message": "Anzahl der Symbole... analog zu Apex/Nova",
+      "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "hjbiqKA",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-05-18T14:29:01Z",
+      "side": 1,
+      "message": "\u0027Anzahl der Symbol im Dock festlegen\u0027 ist IMHO noch besser.",
+      "parentUuid": "hoV8qCE",
       "revId": "53be9e5d8e720aad2b9ff10a41c34de0ac344775",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
