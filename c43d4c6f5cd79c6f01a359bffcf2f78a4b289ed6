@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iAEwiVU",
+        "filename": "src/com/cyanogenmod/trebuchet/preference/Preferences.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-25T22:12:25Z",
+      "side": 1,
+      "message": "Merge the if (general !\u003d null)",
+      "revId": "c43d4c6f5cd79c6f01a359bffcf2f78a4b289ed6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iOE0dUs",
+        "filename": "src/com/cyanogenmod/trebuchet/preference/PreferencesProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-25T22:12:25Z",
+      "side": 1,
+      "message": "Move this to Workspace/whatever.",
+      "revId": "c43d4c6f5cd79c6f01a359bffcf2f78a4b289ed6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
