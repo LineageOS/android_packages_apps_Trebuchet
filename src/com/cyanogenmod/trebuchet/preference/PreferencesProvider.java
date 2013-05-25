@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import com.cyanogenmod.trebuchet.LauncherApplication;
 import com.cyanogenmod.trebuchet.Workspace;
 import com.cyanogenmod.trebuchet.AppsCustomizePagedView;
 
@@ -86,6 +87,10 @@ public final class PreferencesProvider {
                 }
             }
             public static boolean getStretchScreens() {
+                // Large screen has calculated dimensions always
+                if (LauncherApplication.isScreenLarge()) {
+                    return false;
+                }
                 return getBoolean("ui_homescreen_stretch_screens", true);
             }
             public static boolean getShowSearchBar() {

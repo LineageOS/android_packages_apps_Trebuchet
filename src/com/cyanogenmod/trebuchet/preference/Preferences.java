@@ -133,6 +133,12 @@ public class Preferences extends PreferenceActivity
                     general.removePreference(grid);
                 }
             }
+            if (general != null && LauncherApplication.isScreenLarge()) {
+                Preference stretch = findPreference("ui_homescreen_stretch_screens");
+                if (stretch != null) {
+                    general.removePreference(stretch);
+                }
+            }
         }
     }
 
