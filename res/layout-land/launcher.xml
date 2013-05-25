@@ -41,8 +41,8 @@
             launcher:cellCountX="@integer/target_cell_count_x"
             launcher:cellCountY="@integer/target_cell_count_y"
             launcher:pageSpacing="@dimen/workspace_page_spacing"
-            launcher:scrollIndicatorPaddingLeft="@dimen/qsb_bar_height"
-            launcher:scrollIndicatorPaddingRight="@dimen/button_bar_height" />
+            launcher:scrollIndicatorPaddingTop="@dimen/workspace_divider_padding_top"
+            launcher:scrollIndicatorPaddingBottom="@dimen/workspace_divider_padding_bottom" />
     
         <include
             android:id="@+id/qsb_divider"
@@ -59,11 +59,26 @@
             android:layout_marginRight="@dimen/button_bar_height"
             android:layout_gravity="right" />
         <include
-            android:id="@+id/paged_view_indicator_horizontal"
+            android:id="@+id/paged_view_indicator_dock"
+            layout="@layout/scroll_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/button_bar_height"
+            android:layout_gravity="right" />
+
+        <include
+            android:id="@+id/paged_view_indicator_left"
             layout="@layout/scroll_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom" />
+            android:layout_gravity="left" />
+
+        <include
+            android:id="@+id/paged_view_indicator_right"
+            layout="@layout/scroll_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right" />
 
         <include layout="@layout/hotseat"
             android:id="@+id/hotseat"

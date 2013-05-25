@@ -84,6 +84,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
 
     // Vertical paged view
     protected boolean mVertical;
+    protected boolean mVerticalScrollIndicator;
 
     protected float mDensity;
     protected float mSmoothingTime;
@@ -256,7 +257,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         mDirtyPageContent.ensureCapacity(32);
         mScroller = new Scroller(getContext(), getScrollInterpolator());
         mCurrentPage = 0;
-        mVertical = false;
+        mVertical = mVerticalScrollIndicator = false;
         mCenterPages = true;
 
         final ViewConfiguration configuration = ViewConfiguration.get(getContext());
@@ -2153,15 +2154,16 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         if (mScrollIndicator == null) return;
         if (mHandleScrollIndicator) return;
         int numPages = getChildCount();
-        int pageSize = !mVertical ? getMeasuredWidth() : getMeasuredHeight();
+        int pageSize = !mVerticalScrollIndicator ? getMeasuredWidth() : getMeasuredHeight();
         int lastChildIndex = Math.max(0, getChildCount() - 1);
         int maxScroll = getChildOffset(lastChildIndex) - getRelativeChildOffset(lastChildIndex);
-        if (!mVertical) {
+        if (!mVerticalScrollIndicator) {
             int trackWidth = pageSize - mScrollIndicatorPaddingLeft - mScrollIndicatorPaddingRight;
             int indicatorWidth = mScrollIndicator.getMeasuredWidth() -
                     mScrollIndicator.getPaddingLeft() - mScrollIndicator.getPaddingRight();
 
-            float offset = Math.max(0f, Math.min(1f, (float) getScrollX() / maxScroll));
+            float scroll = mVertical ? getScrollY() : getScrollX();
+            float offset = Math.max(0f, Math.min(1f, (float) scroll / maxScroll));
             int indicatorSpace = trackWidth / numPages;
             int indicatorPos = (int) (offset * (trackWidth - indicatorSpace)) + mScrollIndicatorPaddingLeft;
             if (hasElasticScrollIndicator()) {
@@ -2179,7 +2181,8 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
             int indicatorHeight = mScrollIndicator.getMeasuredHeight() -
                     mScrollIndicator.getPaddingTop() - mScrollIndicator.getPaddingBottom();
 
-            float offset = Math.max(0f, Math.min(1f, (float) getScrollY() / maxScroll));
+            float scroll = !mVertical ? getScrollX() : getScrollY();
+            float offset = Math.max(0f, Math.min(1f, (float) scroll / maxScroll));
             int indicatorSpace = trackHeight / numPages;
             int indicatorPos = (int) (offset * (trackHeight - indicatorSpace)) + mScrollIndicatorPaddingTop;
             if (hasElasticScrollIndicator()) {

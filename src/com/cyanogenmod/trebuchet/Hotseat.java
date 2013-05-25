@@ -75,7 +75,7 @@ public class Hotseat extends PagedView {
 
         LauncherModel.updateHotseatLayoutCells(mCellCount);
 
-        mVertical = hasVerticalHotseat();
+        mVertical = mVerticalScrollIndicator = hasVerticalHotseat();
 
         boolean hideDockIconLabels = PreferencesProvider.Interface.Dock.getHideIconLabels() ||
                 (mVertical && !LauncherApplication.isScreenLarge());

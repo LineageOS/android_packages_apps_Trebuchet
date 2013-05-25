@@ -403,6 +403,7 @@ public class Workspace extends PagedView
         boolean verticalHotseat =
                 res.getBoolean(R.bool.hotseat_transpose_layout_with_orientation) &&
                 res.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        mVerticalScrollIndicator = verticalHotseat;
         mHideDockIconLabels = PreferencesProvider.Interface.Dock.getHideIconLabels() ||
                 (!showHotseat || (verticalHotseat && !LauncherApplication.isScreenLarge()));
         mTransitionEffect = PreferencesProvider.Interface.Homescreen.Scrolling.getTransitionEffect(
@@ -971,9 +972,13 @@ public class Workspace extends PagedView
     protected int getScrollingIndicatorId() {
         switch (mScrollingIndicatorPosition) {
             case SCROLLING_INDICATOR_TOP:
-                return R.id.paged_view_indicator_top;
+                return mVerticalScrollIndicator
+                        ? R.id.paged_view_indicator_left
+                        : R.id.paged_view_indicator_top;
             case SCROLLING_INDICATOR_BOTTOM:
-                return R.id.paged_view_indicator_bottom;
+                return mVerticalScrollIndicator
+                        ? R.id.paged_view_indicator_right
+                        : R.id.paged_view_indicator_bottom;
             case SCROLLING_INDICATOR_DOCK:
             default:
                 return R.id.paged_view_indicator_dock;
