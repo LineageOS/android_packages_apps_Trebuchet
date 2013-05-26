@@ -31,6 +31,8 @@ public class Hotseat extends PagedView {
     private int mCellCount;
 
     private int mDefaultPage;
+    private boolean mShowScrollingIndicator;
+    private boolean mFadeScrollingIndicator;
 
     private boolean mTransposeLayoutWithOrientation;
     private boolean mIsLandscape;
@@ -54,7 +56,8 @@ public class Hotseat extends PagedView {
         final Resources res = getResources();
 
         mFadeInAdjacentScreens = false;
-        mHandleScrollIndicator = true;
+        mShowScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getShowScrollingIndicator();
+        mFadeScrollingIndicator = PreferencesProvider.Interface.Homescreen.Indicator.getFadeScrollingIndicator();
 
         int hotseatPages = PreferencesProvider.Interface.Dock.getNumberPages();
         int defaultPage = PreferencesProvider.Interface.Dock.getDefaultPage(hotseatPages / 2);
@@ -101,10 +104,36 @@ public class Hotseat extends PagedView {
             addView(cl);
         }
 
+        initHotseat();
+
         // No data needed
         setDataIsReady();
 
         setOnKeyListener(new HotseatIconKeyEventListener());
+    }
+
+    private void initHotseat() {
+        if (!mShowScrollingIndicator) {
+            disableScrollingIndicator();
+        }
+    }
+
+    protected void onPageBeginMoving() {
+        super.onPageBeginMoving();
+
+        // Show the scroll indicator as you pan the page
+        showScrollingIndicator(false);
+    }
+
+    protected void onPageEndMoving() {
+        if (mFadeScrollingIndicator) {
+            hideScrollingIndicator(false);
+        }
+
+        // Hide the scroll indicator as you pan the page
+        if (mFadeScrollingIndicator) {
+            hideScrollingIndicator(false);
+        }
     }
 
     public boolean hasPage(View view) {
@@ -114,6 +143,11 @@ public class Hotseat extends PagedView {
             }
         }
         return false;
+    }
+
+    @Override
+    protected int getScrollingIndicatorId() {
+        return R.id.paged_view_indicator_dock;
     }
 
     boolean hasVerticalHotseat() {

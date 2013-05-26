@@ -17,4 +17,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res/com.cyanogenmod.trebuchet"
     launcher:pageSpacing="@dimen/workspace_page_spacing"
+    launcher:scrollIndicatorPaddingTop="@dimen/workspace_divider_padding_top"
+    launcher:scrollIndicatorPaddingBottom="@dimen/workspace_divider_padding_bottom"
     launcher:cellCount="@integer/hotseat_cell_count" />
