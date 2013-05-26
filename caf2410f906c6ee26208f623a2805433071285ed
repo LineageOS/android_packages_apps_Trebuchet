@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "iKTOi4E",
+        "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-26T15:16:22Z",
+      "side": 1,
+      "message": "No, It\u0027s always true for AppsCustomizePagedView and Hotseat, but not for Workspace. In Workspace:\n\nPortrait Orientation (any device):\n* Orientation: horizontal\n* Scrollbars: horizontal\n\nLandscape (mTransposeLayoutWithOrientation \u003d false)\n* Orientation: horizontal\n* Scrollbars: vertical  \u003c\u003c\u003c\u003c\u003c\u003c\u003c\u003c\n\nLandscape (mTransposeLayoutWithOrientation \u003d true)\n* Orientation: horizontal\n* Scrollbars: horizontal\n\nIn landscape mode, on normal in devices the scrollbar orientation in the Workspace doesn\u0027t fit the navigation mode. In AppsCustomizePagedView and Hotseat, they always fit.\n\nSo, the method updateScrollingIndicatorPosition should be separate from mVertical var to a new mVerticalScrollIndicator to handle these scenarios.\n\nOne more thing is the \"float scroll \u003d !mVertical ? getScrollX() : getScrollY();\"  inversion. This is needed because we have to use the real scroll position of the component of the page view, that in this case that orientation doesn\u0027t match is the inverter scroll position.\n\n\nOk. now. This line is only a default initializacion of the new variable matching the orientation.",
+      "parentUuid": "iMRc3.8",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "iKRyC3s",
         "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "iITLh3I",
+        "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-26T15:16:22Z",
+      "side": 1,
+      "message": "See explanation above. In landscape mode with mTransposeLayoutWithOrientation \u003d false, scrollbar has a vertical layout, so this line just matches this status.",
+      "parentUuid": "iKRyC3s",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "iIRvB5I",
         "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-05-26T13:54:38Z",
       "side": 1,
       "message": "Workspace indicator should always be horizontal.",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iGTIc3U",
+        "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-26T15:16:22Z",
+      "side": 1,
+      "message": "See explanation in  PagedView. The indicator is not always horizontal (not in landscape mode with mTransposeLayoutWithOrientation \u003d false)",
+      "parentUuid": "iIRvB5I",
       "revId": "caf2410f906c6ee26208f623a2805433071285ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
