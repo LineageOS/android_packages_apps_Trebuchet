@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iMRc3.8",
+        "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-26T13:54:38Z",
+      "side": 1,
+      "message": "Why do we need this? The indicator should always match the orientation.",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iKRyC3s",
+        "filename": "src/com/cyanogenmod/trebuchet/PagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2157,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-26T13:54:38Z",
+      "side": 1,
+      "message": "This should stay using mVertical if the mVerticalScrollIndicator is introduce.",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iIRvB5I",
+        "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-05-26T13:54:38Z",
+      "side": 1,
+      "message": "Workspace indicator should always be horizontal.",
+      "revId": "caf2410f906c6ee26208f623a2805433071285ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
