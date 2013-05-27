@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "iDcXT.8",
+        "filename": "src/com/cyanogenmod/trebuchet/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-05-27T13:05:28Z",
+      "side": 1,
+      "message": "Too much brackets for and operation.\n\nif (LauncherApplication.isScreenLarge() \u0026\u0026 workspaceTabletGrid \u003d\u003d false) {",
+      "revId": "55dbfcfa1d469c0e76bc1dbc8790acb7c54b726c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
