@@ -16,6 +16,24 @@
       "revId": "de7b7ac850736563c0e427e04555cf6f709d5c2f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "iNkDk7c",
+        "filename": "res/values-af/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 3269
+      },
+      "writtenOn": "2013-06-14T20:09:48Z",
+      "side": 1,
+      "message": "Oops, sorry",
+      "parentUuid": "iFlYo-o",
+      "revId": "de7b7ac850736563c0e427e04555cf6f709d5c2f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
