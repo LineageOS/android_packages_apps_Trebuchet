@@ -2229,8 +2229,16 @@ public class Workspace extends PagedView
                 if (mTransitionEffect == TransitionEffect.Stack) {
                     if (i <= mCurrentPage) {
                         cl.setVisibility(VISIBLE);
+                        cl.setAlpha(1.0f);
+                        if (mFadeInAdjacentScreens) {
+                            setCellLayoutFadeAdjacent(cl, 0.0f);
+                        }
                     } else {
                         cl.setVisibility(INVISIBLE);
+                        cl.setAlpha(0.0f);
+                        if (mFadeInAdjacentScreens) {
+                            setCellLayoutFadeAdjacent(cl, 1.0f);
+                        }
                     }
                 }
 
@@ -2292,6 +2300,14 @@ public class Workspace extends PagedView
                 cl.setPivotX(cl.getMeasuredWidth() * 0.5f);
                 cl.setPivotY(cl.getMeasuredHeight() * 0.5f);
                 cl.setVisibility(VISIBLE);
+
+                // Stack Effect
+                if (mTransitionEffect == TransitionEffect.Stack) {
+                    cl.setAlpha(1.0f);
+                    if (mFadeInAdjacentScreens) {
+                        setCellLayoutFadeAdjacent(cl, 0.0f);
+                    }
+                }
             }
 
             // Determine the pages alpha during the state transition
