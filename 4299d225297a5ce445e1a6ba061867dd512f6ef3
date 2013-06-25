@@ -16,6 +16,24 @@
       "revId": "4299d225297a5ce445e1a6ba061867dd512f6ef3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_bc810dfe",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-06-25T21:21:23Z",
+      "side": 1,
+      "message": "Yes it works exactly as you said.",
+      "parentUuid": "dac4157f_7c6815bb",
+      "revId": "4299d225297a5ce445e1a6ba061867dd512f6ef3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
