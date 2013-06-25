@@ -74,8 +74,13 @@
     <string name="preferences_interface_drawer_summary">Menu des applications et widgets</string>
     <string name="preferences_interface_drawer_orientation_title">Orientation</string>
     <string name="preferences_interface_drawer_orientation_summary">Définir le sens de défilement des applications</string>
+    <string name="preferences_interface_drawer_apps_category">Applications</string>
     <string name="preferences_interface_drawer_hidden_apps_title">Applications masquées</string>
     <string name="preferences_interface_drawer_hidden_apps_summary">Masquer les applications dans le menu</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_title">Masquer les applications (raccourci)</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_summary">Supprimer de l\'écran d\'accueil les raccourcis des applications masquées</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_title">Masquer les applications (widgets)</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_summary">Supprimer de l\'écran d\'accueil les widgets des applications masquées</string>
     <string name="preferences_interface_drawer_widgets_category">Widgets</string>
     <string name="preferences_interface_drawer_widgets_join_apps_title">Inclure dans les applications</string>
     <string name="preferences_interface_drawer_widgets_join_apps_summary">Sauter des applications aux widgets sans changer d\'onglet</string>
