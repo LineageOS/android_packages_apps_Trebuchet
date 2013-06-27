@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_625bcc55",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-06-27T14:26:50Z",
+      "side": 1,
+      "message": "Au passage, \"Téléchargées\"",
+      "revId": "c7116caab87564301b4f0ab2a3619ac164c6506f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_c23a98e7",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-06-27T14:26:50Z",
+      "side": 1,
+      "message": "Au passage, il serait mieux de faire : \n\"L\\\u0027écran d\\\u0027accueil est verrouillé.\\nPour le réorganiser, déverro\nuiller le dans les paramètres.\"",
+      "revId": "c7116caab87564301b4f0ab2a3619ac164c6506f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_0231b00b",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-06-27T14:26:50Z",
+      "side": 1,
+      "message": "Pas fan des parenthèses en fin de titre.\nPourquoi pas un simple \"Masquer les raccourcis\" ?",
+      "revId": "c7116caab87564301b4f0ab2a3619ac164c6506f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_e2359cf7",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-06-27T14:26:50Z",
+      "side": 1,
+      "message": "Pas fan des parenthèses en fin de titre.\nPourquoi pas un simple \"Masquer les widgets\" ?",
+      "revId": "c7116caab87564301b4f0ab2a3619ac164c6506f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
