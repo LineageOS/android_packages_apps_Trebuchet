@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_cd0be97c",
+        "filename": "res/values-it/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 3184
+      },
+      "writtenOn": "2013-06-27T21:50:36Z",
+      "side": 1,
+      "message": "Non ho provato la funzionalità, se non è una checkbox si potrebbe cambiare \"Rimuove\" in \"Rimuovere\". Forse anche se lo è :S\nAbbiamo usato sempre l\u0027 imperativo quindi...",
+      "revId": "546d07a932cced07aa04e5de7ba62fe29697327d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_ed16ada6",
+        "filename": "res/values-it/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 3184
+      },
+      "writtenOn": "2013-06-27T21:50:36Z",
+      "side": 1,
+      "message": "Non ho provato la funzionalità, se non è una checkbox si potrebbe cambiare \"Rimuove\" in \"Rimuovere\". Forse anche se lo è :S\nAbbiamo usato sempre l\u0027 imperativo quindi...",
+      "revId": "546d07a932cced07aa04e5de7ba62fe29697327d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
