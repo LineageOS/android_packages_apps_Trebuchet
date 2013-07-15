@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_fab88ae7",
+        "filename": "res/values-pl/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4449
+      },
+      "writtenOn": "2013-07-15T15:56:15Z",
+      "side": 1,
+      "message": "przytrzymaj ?",
+      "revId": "811142c049f24c535068d57f2bb9ca31679ca00c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
