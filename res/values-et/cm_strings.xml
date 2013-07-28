@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="application_copyright">Autoriõigus \u00A9 2013 The CyanogenMod Project</string>
+    <string name="menu">Menüü</string>
+    <string name="cancel_target_label">Tühista</string>
+    <string name="edit_target_label">Muuda</string>
+    <string name="menu_lock_workspace">Lukusta koduekraan</string>
+    <string name="menu_unlock_workspace">Eemalda koduekraani lukustus</string>
+    <string name="menu_preferences">Trebuchet seaded</string>
+    <string name="menu_apps_sort_title">Nimi</string>
+    <string name="menu_apps_sort_install_date">Paigalduse aeg</string>
+    <string name="menu_apps_filter_system">Süsteemist</string>
+    <string name="menu_apps_filter_downloaded">Allalaaditud</string>
+    <string name="menu_hidden_apps_delete">Tühjenda</string>
+    <string name="all_apps_sort_cling_title">Rakenduste sorteerimine</string>
+    <string name="all_apps_sort_cling_add_item">Sorteerimise muutmiseks puuduta pikemalt rakenduste kaardi sakki.</string>
+    <string name="hidden_apps_title">Peidetud rakendused</string>
+    <string name="workspace_locked">Koduekraan on lukustatud, elementide paigutuse muutmiseks eemalda lukustus.</string>
+    <string name="preferences_title">Seaded</string>
+    <string name="preferences_interface_title">Kasutajaliides</string>
+    <string name="preferences_application_title">Rakendus</string>
+    <string name="preferences_interface_homescreen_title">Koduekraan</string>
+    <string name="preferences_interface_homescreen_summary">Ekraanid ja taustapilt</string>
+    <string name="preferences_interface_homescreen_general_category">Üldseaded</string>
+    <string name="preferences_interface_homescreen_general_screens_title">Koduekraanid</string>
+    <string name="preferences_interface_homescreen_general_screens_summary">Lehekülgede arv koduekraanil</string>
+    <string name="preferences_interface_homescreen_general_default_screen_title">Vaikelehekülg</string>
+    <string name="preferences_interface_homescreen_general_default_screen_summary">Vaikelehekülje valimine</string>
+    <string name="preferences_interface_homescreen_general_search_title">Otsinguriba</string>
+    <string name="preferences_interface_homescreen_general_search_summary">Püsiv otsinguriba kõikidel lehekülgedel</string>
+    <string name="preferences_interface_homescreen_general_grid_title">Võrgustiku suurus</string>
+    <string name="preferences_interface_homescreen_general_grid_summary">Ridade ja tulpade arv koduekraanil</string>
+    <string name="preferences_interface_homescreen_general_grid_rows_title">Ridu</string>
+    <string name="preferences_interface_homescreen_general_grid_columns_title">Veerge</string>
+    <string name="preferences_interface_homescreen_general_stretch_screens_title">Ekraanide venitamine</string>
+    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Koduekraani venitamine Expand homescreens to fill the size of display</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Ikoonide nimede peitmine</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Ikoonide nimede peitmine koduekraanil</string>
+    <string name="preferences_interface_homescreen_scrolling_category">Kerimine</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_title">Ülemineku efekt</string>
+    <string name="preferences_interface_homescreen_scrolling_transition_effect_summary">Kerimise efekt lehekülgede kerimisel</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_title">Taustapildi kerimine</string>
+    <string name="preferences_interface_homescreen_scrolling_scroll_wallpaper_summary">Taustapildi kerimine lehekülgede kerimisel</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_title">Taustapildi kiire renderdamine</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_hack_summary">Häkk, mis muudab staatiliste taustapiltide puhul kerimise sujuvamaks</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_title">Taustapildi suurus</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_size_summary">Taustapildi laius lehekülgedes</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_title">Ekraaniservade hajumine</string>
+    <string name="preferences_interface_homescreen_scrolling_fade_adjacent_screens_summary">Ekraaniservade hajumine ekraanide kerimisel</string>
+    <string name="preferences_interface_homescreen_scrolling_show_outlines_title">Piirete näitamine</string>
+    <string name="preferences_interface_homescreen_scrolling_show_outlines_summary">Ekraanipiirete näitamine ekraanide kerimisel</string>
+    <string name="preferences_interface_homescreen_indicator_category">Indikaator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_title">Lehekülje indikaator</string>
+    <string name="preferences_interface_homescreen_indicator_enable_summary">Aktiivse lehekülje indikaatori näitamine ekraanil</string>
+    <string name="preferences_interface_homescreen_indicator_fade_title">Indikaatori hajumine</string>
+    <string name="preferences_interface_homescreen_indicator_fade_summary">Pärast lehekülje vahetust indikaator hajub</string>
+    <string name="preferences_interface_homescreen_indicator_position_title">Indikaatori asukoht</string>
+    <string name="preferences_interface_homescreen_indicator_position_summary">Indikaator paigutus ekraanil</string>
+    <string name="preferences_interface_drawer_title">Laegas</string>
+    <string name="preferences_interface_drawer_summary">Rakenduste ja vidinate laegas</string>
+    <string name="preferences_interface_drawer_orientation_title">Kerimise suund</string>
+    <string name="preferences_interface_drawer_orientation_summary">Laeka kerimise suuna valimine</string>
+    <string name="preferences_interface_drawer_apps_category">Rakendused</string>
+    <string name="preferences_interface_drawer_hidden_apps_title">Peidetud rakendused</string>
+    <string name="preferences_interface_drawer_hidden_apps_summary">Rakenduste peitmine laekast</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_title">Peidetud rakendused (viited)</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_summary">Eemaldab peidetud rakenduste viited koduekraanilt</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_title">Peidetud rakendused (vidinad)</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_summary">Eemaldab peidetud rakenduste vidinad koduekraanilt</string>
+    <string name="preferences_interface_drawer_widgets_category">Vidinad</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_title">Ühenda rakendustega</string>
+    <string name="preferences_interface_drawer_widgets_join_apps_summary">Kaarti vahetamata rakenduste laekast vidinate laekasse liikumine</string>
+    <string name="preferences_interface_drawer_scrolling_category">Kerimine</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_title">Ülemineku efekt</string>
+    <string name="preferences_interface_drawer_scrolling_transition_effect_summary">Lehekülgede vahetamise efekt kerimisel</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_title">Ekraaniservade hajumine</string>
+    <string name="preferences_interface_drawer_scrolling_fade_adjacent_screens_summary">Ekraaniservade hajumine lehekülgede kerimisel</string>
+    <string name="preferences_interface_drawer_indicator_category">Indikaator</string>
+    <string name="preferences_interface_drawer_indicator_enable_title">Lehekülje indikaator</string>
+    <string name="preferences_interface_drawer_indicator_enable_summary">Aktiivse lehekülje indikaatori näitamine ekraanil</string>
+    <string name="preferences_interface_drawer_indicator_fade_title">Indikaatori hajumine</string>
+    <string name="preferences_interface_drawer_indicator_fade_summary">Pärast lehekülje vahetust inidikaaor hajub</string>
+    <string name="preferences_interface_drawer_indicator_position_title">Indikaatori asukoht</string>
+    <string name="preferences_interface_drawer_indicator_position_summary">Indikaatori paigutus ekraanil</string>
+    <string name="preferences_interface_dock_title">Dokk</string>
+    <string name="preferences_interface_dock_enabled_title">Doki näitamine</string>
+    <string name="preferences_interface_dock_enabled_summary">Doki näitamine koduekraani allservas</string>
+    <string name="preferences_interface_dock_pages_title">Leheküljed</string>
+    <string name="preferences_interface_dock_pages_summary">Doki lehekülgede arv</string>
+    <string name="preferences_interface_dock_default_page_title">Vaikelehekülg</string>
+    <string name="preferences_interface_dock_default_page_summary">Vaikelehekülje valimine</string>
+    <string name="preferences_interface_dock_icons_title">Ikoonid</string>
+    <string name="preferences_interface_dock_icons_summary">Doki ikoonide/veergude arv</string>
+    <string name="preferences_interface_dock_hide_icon_labels_title">Ikoonide nimede peitmine</string>
+    <string name="preferences_interface_dock_hide_icon_labels_summary">Doki ikoonide nimede peitmine</string>
+    <string name="preferences_interface_dock_icon_scale_title">Ikoonide suurus</string>
+    <string name="preferences_interface_dock_icon_scale_summary">Doki ikoonide suurus</string>
+    <string name="preferences_interface_dock_divider_title">Doki eraldaja</string>
+    <string name="preferences_interface_dock_divider_summary">Koduekraani ja doki vahel eraldaja näitamine</string>
+    <string name="preferences_interface_icons_title">Ikoonid</string>
+    <string name="preferences_interface_general_title">Üldseaded</string>
+    <string name="preferences_interface_general_orientation_title">Automaatne pööramine</string>
+    <string name="preferences_interface_general_lock_workspace_title">Koduekraani lukustus</string>
+    <string name="preferences_interface_general_lock_workspace_summary">Kõigi elementide (ikoonid, kaustad, vidinad jne) asendi lukustamine koduekraanil</string>
+    <string name="preferences_interface_general_fullscreen_title">Täisekraani režiim</string>
+    <string name="preferences_interface_general_fullscreen_summary">Ekraanipinna suurendamiseks peidetakse staatuseriba</string>
+    <string name="effects_standard">Standardne</string>
+    <string name="effects_tablet">Taahvelarvuti</string>
+    <string name="effects_zoom_in">Sisse suumimine</string>
+    <string name="effects_zoom_out">Välja suumimine</string>
+    <string name="effects_rotate_up">Üles pööramine</string>
+    <string name="effects_rotate_down">Alla pööramine</string>
+    <string name="effects_cylinder_in">Silinder seest</string>
+    <string name="effects_cylinder_out">Silinder väljast</string>
+    <string name="effects_cube_in">Kuubik seest</string>
+    <string name="effects_cube_out">Kuubik väljast</string>
+    <string name="effects_spin">Spinn</string>
+    <string name="effects_flip">Ringi pööramine</string>
+    <string name="effects_stack">Kuhi</string>
+    <string name="effects_accordion">Akordion</string>
+    <string name="effects_carousel_left">Karussell vasakule</string>
+    <string name="effects_carousel_right">Karussell paremale</string>
+</resources>
