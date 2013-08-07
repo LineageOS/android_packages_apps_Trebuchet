@@ -3969,13 +3969,27 @@ public final class Launcher extends Activity
                 ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT,
                 ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE
         };
+
+        int[] oriMapReverse = {
+                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT,
+                ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE,
+                ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT,
+                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        };
+
         // Since the map starts at portrait, we need to offset if this device's natural orientation
         // is landscape.
         int indexOffset = 0;
         if (naturalOri == Configuration.ORIENTATION_LANDSCAPE) {
             indexOffset = 1;
         }
-        return oriMap[(d.getRotation() + indexOffset) % 4];
+
+        int ret;
+        if (this.getResources().getBoolean(com.android.intern al.R.bool.config_reverseDefaultRotation))
+                ret = oriMapReverse[(d.getRotation() + indexOffset) % 4];
+        else
+                ret = oriMap[(d.getRotation() + indexOffset) % 4];
+        return ret;
     }
 
     public boolean isRotationEnabled() {
