@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fae47921_8625bac3",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3987,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-08-08T11:17:34Z",
+      "side": 1,
+      "message": "No need for the extra variable just inline the return.",
+      "revId": "c41622d26a2225422c432ae524c21a94a1ca5136",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fae47921_a63f9ed5",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3988,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-08-08T11:17:34Z",
+      "side": 1,
+      "message": "No need for \"this.\"",
+      "revId": "c41622d26a2225422c432ae524c21a94a1ca5136",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fae47921_462fd2a1",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3990,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2013-08-08T11:17:34Z",
+      "side": 1,
+      "message": "Never do an if else without {} brackets. When doing an if only it must be on the same line such as:\n\nif (true) return;",
+      "revId": "c41622d26a2225422c432ae524c21a94a1ca5136",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
