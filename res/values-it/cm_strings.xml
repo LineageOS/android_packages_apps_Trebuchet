@@ -14,7 +14,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="menu">Menù</string>
+    <string name="application_copyright">Copyright \u00A9 2013 The CyanogenMod Project</string>
+    <string name="menu">Menu</string>
     <string name="cancel_target_label">Cancella</string>
     <string name="edit_target_label">Modifica</string>
     <string name="menu_lock_workspace">Blocca schermata Home</string>
