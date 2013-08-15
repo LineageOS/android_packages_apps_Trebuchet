@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae975fb_6ee506a7",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-08-15T10:34:28Z",
+      "side": 1,
+      "message": "Marked as non translatable in default (cm branch). But you can replace \u0027x\u0027 char to \\u00d7 Unicode (and \"external_drop_widget_pick_format\" too) in default string.xml.\n\nRest of Spanish translations are ok.",
+      "revId": "a9bc51724566a631814bfd051ca5f7f785665416",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
