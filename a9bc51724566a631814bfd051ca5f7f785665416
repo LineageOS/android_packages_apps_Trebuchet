@@ -16,6 +16,24 @@
       "revId": "a9bc51724566a631814bfd051ca5f7f785665416",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae975fb_44eea3ed",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-08-16T00:22:40Z",
+      "side": 1,
+      "message": "I pulled the AOSP change for strings.xml. It removes the translatable\u003d\"false\" from widget_dims_format.\n\nSince this comes from AOSP, I\u0027d prefer not to modify it and use it as-is.",
+      "parentUuid": "dae975fb_6ee506a7",
+      "revId": "a9bc51724566a631814bfd051ca5f7f785665416",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
