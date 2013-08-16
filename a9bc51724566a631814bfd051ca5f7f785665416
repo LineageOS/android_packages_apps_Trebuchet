@@ -34,6 +34,24 @@
       "revId": "a9bc51724566a631814bfd051ca5f7f785665416",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae975fb_84cecb58",
+        "filename": "res/values-es/strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2013-08-16T01:54:11Z",
+      "side": 1,
+      "message": "Then, it\u0027s fine for me too.",
+      "parentUuid": "dae975fb_44eea3ed",
+      "revId": "a9bc51724566a631814bfd051ca5f7f785665416",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
