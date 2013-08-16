@@ -118,6 +118,7 @@
     <string name="preferences_interface_general_lock_workspace_summary">Verrouiller la position des raccourcis et des dossiers sur l\'écran d\'accueil, dans le dock et dans le menu des applications et des widgets</string>
     <string name="preferences_interface_general_fullscreen_title">Plein écran</string>
     <string name="preferences_interface_general_fullscreen_summary">Cacher la barre d\'état pour étendre l\'écran d\'accueil</string>
+    <string name="folder_empty_contents_title">Aucun élément trouvé</string>
     <string name="effects_standard">Standard</string>
     <string name="effects_tablet">Tablette</string>
     <string name="effects_zoom_in">Zoom intérieur</string>
@@ -134,4 +135,6 @@
     <string name="effects_accordion">Accordéon</string>
     <string name="effects_carousel_left">Carrousel à gauche</string>
     <string name="effects_carousel_right">Carrousel à droite</string>
+    <string name="live_folder_cling_title">Dossier Live</string>
+    <string name="live_folder_cling_create_folder">Les dossiers Live autorise les developpeurs d\'application à créer des dossiers avec du contenu dynamique. Le contenu des dossiers peut être supprimé par un appui long sur une entrée seule. Contrairement aux dossiers normaux, les éléments peuvent être ajoutés seulement par l\'application qui a créé le dossier</string>
 </resources>
