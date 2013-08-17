@@ -16,6 +16,24 @@
       "revId": "376eb8098fe52f422546a193f5c428fae0ba2ff3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae975fb_25e278d6",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-08-17T10:03:29Z",
+      "side": 1,
+      "message": "c\u0027est \"le contenu\" qui peut etre \"supprim(e)\" donc (e) accent. pour \"ajout(e)s\" ok",
+      "parentUuid": "dae975fb_45b69cdd",
+      "revId": "376eb8098fe52f422546a193f5c428fae0ba2ff3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
