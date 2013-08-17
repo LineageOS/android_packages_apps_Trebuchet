@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_9013b40d",
+        "filename": "res/values-el/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-08-17T18:39:35Z",
+      "side": 1,
+      "message": "That \u0027v\u0027 needs to be removed",
+      "revId": "a541e23786fa6c1febc804d870b970f96ef27365",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
