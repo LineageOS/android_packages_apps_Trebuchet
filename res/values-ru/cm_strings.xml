@@ -133,6 +133,7 @@
     <string name="preferences_interface_general_lock_workspace_summary">Запрещать изменение ярлыков, папок, нижней панели и виджетов на главном экране</string>
     <string name="preferences_interface_general_fullscreen_title">Полноэкранный режим</string>
     <string name="preferences_interface_general_fullscreen_summary">Скрывать строку состояния для увеличения площади главных экранов</string>
+    <string name="folder_empty_contents_title">Ничего не найдено</string>
 
     <!-- Effects -->
     <string name="effects_standard">Стандартный</string>
@@ -151,4 +152,9 @@
     <string name="effects_accordion">Аккордеон</string>
     <string name="effects_carousel_left">Карусель влево</string>
     <string name="effects_carousel_right">Карусель вправо</string>
+
+    <!-- Live folder cling -->
+    <string name="live_folder_cling_title">Живые папки</string>
+    <!-- The description of how to create a folder [CHAR_LIMIT=none] -->
+    <string name="live_folder_cling_create_folder">Живые папки позволяют разработчикам приложений создавать папки с динамическим контентом. Содержимое папки можно удалить долгим нажатием на элемент. В отличии от обычных папок, элементы добавляются в живую папку только приложением, создавшим её</string>
 </resources>
