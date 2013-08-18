@@ -134,4 +134,6 @@
     <string name="workspace_locked">Startscherm is vergrendeld; om te kunnen ordenen gaat u naar Instellingen om te ontgrendelen</string>
     <string name="preferences_interface_general_lock_workspace_title">Startscherm vergrendelen</string>
     <string name="preferences_interface_general_lock_workspace_summary">Positie van snelkoppelingen en mappen vergrendelen op startscherm, in dock en in app- en widgetoverzicht</string>
+    <string name="live_folder_cling_title">Dynamische mappen</string>
+    <string name="live_folder_cling_create_folder">Met dynamische mappen kunnen app-ontwikkelaars mappen aanmaken met dynamische inhoud. De inhoud hiervan kan verwijderd worden door een item lang aan te raken. In tegenstelling tot normale mappen kunnen items alleen worden toegevoegd door de app die de map heeft aangemaakt</string>
 </resources>
