@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_36f1a0ce",
+        "filename": "res/values-es/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2013-08-18T23:48:30Z",
+      "side": 1,
+      "message": "un elemento, pero, a diferencia de las carpetas normales, los nuevos elementos solo pueden ser anadidos por la ...",
+      "revId": "de316a3ae340d389d7bc369584fd0c2a26beed13",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
