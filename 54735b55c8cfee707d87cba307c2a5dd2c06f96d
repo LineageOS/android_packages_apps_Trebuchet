@@ -69,6 +69,24 @@
       "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_3693e0fc",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-08-19T05:17:30Z",
+      "side": 1,
+      "message": "Dlya menya OK. Zhdem kommentariev Vladimira.",
+      "parentUuid": "baee8101_96a3ac4f",
+      "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
