@@ -16,6 +16,41 @@
       "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_d6993421",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-08-19T05:03:00Z",
+      "side": 1,
+      "message": "Povtoryaetsya s tem, chto v summary. Libo perevesti kak \"Vkluchit\u0027\", libo menyat\u0027 podobnim obrazom tekst v summary.",
+      "parentUuid": "baee8101_76028840",
+      "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_f69438e9",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-08-19T05:03:00Z",
+      "side": 1,
+      "message": "A mozhet eshe i tut napisat\u0027 \"Pokazivat\u0027 znachki vnizu glavnogo ekrana\"?",
+      "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
