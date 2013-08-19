@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_36dbe01d",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-08-19T02:29:26Z",
+      "side": 1,
+      "message": "\"V otlichiE ot obichnih papok, v zhivuyu papku elementi mogut dobavlyatsya tol\u0027ko prilozheniem, sozdavshim ee.\" (i eshe tochku v konce predlozheniya nado)",
+      "revId": "0b2b5ebca6ccad7280dea07e17be081db639736f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
