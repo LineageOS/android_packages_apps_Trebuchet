@@ -16,6 +16,23 @@
       "revId": "979487886003cf45e54dd92047334f127309fbee",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_f678b8fa",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5574
+      },
+      "writtenOn": "2013-08-19T03:40:57Z",
+      "side": 1,
+      "message": "Guidelines: \"Avoid repetition by choosing words that don\u0027t already appear in the label.\". Predlagayu pomenyat\u0027 na chto-to prostoe vrode \"Vkluchit\u0027 otobrazhenie\"",
+      "revId": "979487886003cf45e54dd92047334f127309fbee",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
