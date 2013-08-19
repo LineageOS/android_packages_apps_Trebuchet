@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_a472faab",
+        "filename": "src/com/cyanogenmod/trebuchet/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4747
+      },
+      "writtenOn": "2013-08-19T18:17:27Z",
+      "side": 1,
+      "message": "Looks like a merge error slipped in.",
+      "revId": "68aff9440977dbc724b8c5eb0deec902079a93d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
