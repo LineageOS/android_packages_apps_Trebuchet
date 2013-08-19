@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_76028840",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2013-08-19T04:52:07Z",
+      "side": 1,
+      "message": "Predlagau ispol\u0027zovat\u0027 odno slovo. Vyslushau vashi varianty.",
+      "revId": "54735b55c8cfee707d87cba307c2a5dd2c06f96d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
