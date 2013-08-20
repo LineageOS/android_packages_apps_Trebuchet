@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_6af61bd9",
+        "filename": "res/values-de/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2013-08-20T21:54:10Z",
+      "side": 1,
+      "message": "...App-Entwicklern, Ordner... (Komma)",
+      "revId": "5feca098546254cb70d5f88c214f23a01aeb87db",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
