@@ -134,4 +134,8 @@
     <string name="effects_accordion">Harmónika</string>
     <string name="effects_carousel_left">Körhinta balra</string>
     <string name="effects_carousel_right">Körhinta jobbra</string>
+    <string name="live_folder_cling_title">Élő könyvtárak</string>
+    <string name="live_folder_cling_create_folder">Az élő könyvtárak lehetővé teszik az alkalmazás fejlesztők számára, hogy dinamikus tartalmú könyvtárakat hozzanak létre.
+    A könyvtár tartalma eltávolítható egy hosszan megérintett elem kiválasztásával. Ellentétben a hagyományos mappákkal,
+    ezeket csak az alkamazások hozhatják létre</string>
 </resources>
