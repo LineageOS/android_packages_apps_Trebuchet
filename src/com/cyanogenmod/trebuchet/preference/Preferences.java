@@ -23,6 +23,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.LayoutInflater;
@@ -33,6 +34,7 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import com.cyanogenmod.trebuchet.IconPackHelper;
 import com.cyanogenmod.trebuchet.LauncherApplication;
 import com.cyanogenmod.trebuchet.R;
 
@@ -166,6 +168,15 @@ public class Preferences extends PreferenceActivity
             super.onCreate(savedInstanceState);
 
             addPreferencesFromResource(R.xml.preferences_general);
+        }
+
+        @Override
+        public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
+                Preference preference) {
+            if (preference.getKey().equals("ui_general_iconpack")) {
+                IconPackHelper.pickIconPack(getActivity());
+            }
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
     }
 
