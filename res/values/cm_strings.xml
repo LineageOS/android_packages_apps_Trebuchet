@@ -162,6 +162,9 @@
     <string name="preferences_interface_general_fullscreen_title">Fullscreen mode</string>
     <string name="preferences_interface_general_fullscreen_summary">Hide the status bar to extend the homescreen</string>
     <string name="folder_empty_contents_title">No items found</string>
+    <string name="preferences_interface_general_iconpack_title">Icon pack</string>
+    <string name="preferences_interface_general_iconpack_summary">Icon packs replace the default application icon</string>
+    <string name="dialog_pick_iconpack_title">Pick icon pack</string>
 
     <!-- Effects -->
     <string name="effects_standard">Standard</string>
