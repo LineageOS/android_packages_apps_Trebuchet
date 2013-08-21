@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_2a037311",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2013-08-21T02:07:09Z",
+      "side": 1,
+      "message": "ezeket nem mappanak hivjuk?",
+      "revId": "5d3e6ff1c20c1172db90e347c9bf80738428cfab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_05ff8002",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1573
+      },
+      "writtenOn": "2013-08-21T02:07:09Z",
+      "side": 1,
+      "message": "A konyvtarbol elemek hosszu erintessel tavolithatok el.",
+      "revId": "5d3e6ff1c20c1172db90e347c9bf80738428cfab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
