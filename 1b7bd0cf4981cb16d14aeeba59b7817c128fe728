@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_85c49092",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-08-21T03:07:28Z",
+      "side": 1,
+      "message": "tavolithatoAk el...\n\nalkaLmazasok hozhatjak...\n\nAnno ugy tanultam, hogy:\n\nfolder -\u003e mappa\nlibrary -\u003e konyvtar\n\nEmiatt: dinamikus tartalmu mappakat...",
+      "revId": "1b7bd0cf4981cb16d14aeeba59b7817c128fe728",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
