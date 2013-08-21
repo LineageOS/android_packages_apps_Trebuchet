@@ -16,6 +16,23 @@
       "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_973a83cc",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4617
+      },
+      "writtenOn": "2013-08-21T06:32:36Z",
+      "side": 1,
+      "message": "- Suggestion: Live \u003d\u003e Anim(e)  \n- Amelioration: autorisent \u003d\u003e permettent   \n    Le contenu de *ces* dossiers  \n    ajout(e)s \u003d\u003e ins(e)r(e)s  (plus joli non ?)\n    normaux \u003d\u003e classiques\n- Incoherence: une entree seule \u003d\u003e une seule entree/une entree seulement",
+      "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
