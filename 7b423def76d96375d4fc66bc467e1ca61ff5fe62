@@ -51,6 +51,24 @@
       "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_01e2cdd5",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-08-22T21:29:23Z",
+      "side": 1,
+      "message": "\"Dossier dynamique\" me parait bien. :)",
+      "parentUuid": "baee8101_0b178ea4",
+      "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
