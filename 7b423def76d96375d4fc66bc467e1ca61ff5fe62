@@ -33,6 +33,24 @@
       "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_0b178ea4",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-08-22T10:29:07Z",
+      "side": 1,
+      "message": "@Imfloflo, ok\n@Leo\n- Suggestion: Live \u003d\u003e Anim(e)  \u003c\u003d j\u0027avais pense a \"Dossier dynamique\" ou \"Dossier actif\"\n- Amelioration: autorisent \u003d\u003e permettent   \u003c\u003d ok\n    Le contenu de *ces* dossiers     \u003c\u003d ok\n    ajout(e)s \u003d\u003e ins(e)r(e)s  (plus joli non ?)   \u003c\u003d ok\n    normaux \u003d\u003e classiques   \u003c\u003d ok\n- Incoherence: une entree seule \u003d\u003e une seule entree/une entree seulement   \u003c\u003d ok",
+      "parentUuid": "baee8101_973a83cc",
+      "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
