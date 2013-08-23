@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baee8101_22a030f4",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-08-23T08:57:21Z",
+      "side": 1,
+      "message": "Paul Marret \u003d\u003e deverrouillez-le",
+      "revId": "7b423def76d96375d4fc66bc467e1ca61ff5fe62",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baee8101_6a65fbdf",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 3
