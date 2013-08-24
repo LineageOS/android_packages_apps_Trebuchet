@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_65bbe20f",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2013-08-24T00:32:40Z",
+      "side": 1,
+      "message": "\"hiervan\" verwijst naar...dynamische inhoud?\n\n- De inhoud van de map kan verwijderd worden...",
+      "revId": "afe28e57b0f474c2fbf201ca3d11b2142dee122a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
