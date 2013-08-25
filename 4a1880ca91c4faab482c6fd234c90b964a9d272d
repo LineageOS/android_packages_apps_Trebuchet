@@ -34,6 +34,24 @@
       "revId": "4a1880ca91c4faab482c6fd234c90b964a9d272d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_cbe73f11",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-08-25T02:12:56Z",
+      "side": 1,
+      "message": "A mon avis, c\u0027est soit \"le developpeur d\u0027application\" soit \"les developpeurs d\u0027applications\", on considere qu\u0027un developpeur travail sur une application, ou tous les developpeurs chacun sur leurs applications, mais je ne pense pas que l\u0027on considere que tous les developpeurs travaillent sur une seule et meme application.",
+      "parentUuid": "baee8101_4b2c6f4a",
+      "revId": "4a1880ca91c4faab482c6fd234c90b964a9d272d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
