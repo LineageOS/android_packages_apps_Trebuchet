@@ -52,6 +52,24 @@
       "revId": "4a1880ca91c4faab482c6fd234c90b964a9d272d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baee8101_6bc5f359",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 4045
+      },
+      "writtenOn": "2013-08-25T02:22:46Z",
+      "side": 1,
+      "message": "En effet, en y reflechissant et en regardant quelques exemples, je suis d\u0027accord avec \"les developpeurs d\u0027applications\".",
+      "parentUuid": "baee8101_cbe73f11",
+      "revId": "4a1880ca91c4faab482c6fd234c90b964a9d272d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
