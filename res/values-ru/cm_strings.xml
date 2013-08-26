@@ -137,6 +137,11 @@
     <string name="preferences_interface_general_fullscreen_title">Полноэкранный режим</string>
     <string name="preferences_interface_general_fullscreen_summary">Скрывать строку состояния для увеличения площади главных экранов</string>
     <string name="folder_empty_contents_title">Ничего не найдено</string>
+    <string name="preferences_interface_general_iconpack_title">Наборы значков</string>
+    <string name="preferences_interface_general_iconpack_summary">Заменять стандартные значки приложений на значки из наборов</string>
+    <string name="dialog_pick_iconpack_title">Выбор набора значков</string>
+    <string name="default_iconpack_title">Значки по умолчанию</string>
+    <string name="no_iconpacks_summary">Нет установленных наборов значков</string>
 
     <!-- Effects -->
     <string name="effects_standard">Стандартный</string>
