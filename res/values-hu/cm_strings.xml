@@ -119,6 +119,11 @@
     <string name="preferences_interface_general_fullscreen_title">Teljes képernyő</string>
     <string name="preferences_interface_general_fullscreen_summary">Értesítési sáv elrejtése a kezdőképernyő kiterjesztéséhez</string>
     <string name="folder_empty_contents_title">Ez a mappa üres</string>
+    <string name="preferences_interface_general_iconpack_title">Ikonok</string>
+    <string name="preferences_interface_general_iconpack_summary">Alapértelmezett ikonok lecserélése</string>
+    <string name="dialog_pick_iconpack_title">Válasszon ikonokat</string>
+    <string name="default_iconpack_title">Alapértelmezett ikonok</string>
+    <string name="no_iconpacks_summary">Nincsenek telepítve ikonok</string>
     <string name="effects_standard">Csúsztatás</string>
     <string name="effects_tablet">Táblagép</string>
     <string name="effects_zoom_in">Nagyítás befelé</string>
