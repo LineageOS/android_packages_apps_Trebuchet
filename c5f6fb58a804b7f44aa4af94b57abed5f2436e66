@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baee8101_296db004",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5393
+      },
+      "writtenOn": "2013-08-27T02:11:16Z",
+      "side": 1,
+      "message": "zarolasa\n\nha mar a 116-ban is igy van fogalmazva",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
