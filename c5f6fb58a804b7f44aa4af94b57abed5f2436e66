@@ -16,6 +16,91 @@
       "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_cf1cfd79",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 3214
+      },
+      "writtenOn": "2013-08-27T23:39:44Z",
+      "side": 1,
+      "message": "OK, a tobbivel javitom.",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_ef30e109",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 3214
+      },
+      "writtenOn": "2013-08-27T23:39:44Z",
+      "side": 1,
+      "message": "Ikoncsomag",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_af3ad9e5",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 3214
+      },
+      "writtenOn": "2013-08-27T23:39:44Z",
+      "side": 1,
+      "message": "Egyeni ikonok hasznalata",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_4f224dbb",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 3214
+      },
+      "writtenOn": "2013-08-27T23:39:44Z",
+      "side": 1,
+      "message": "Valasszon ikoncsomagot",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af37de9_0f2c45aa",
+        "filename": "res/values-hu/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3214
+      },
+      "writtenOn": "2013-08-27T23:39:44Z",
+      "side": 1,
+      "message": "Nincs telepitve ikoncsomag",
+      "revId": "c5f6fb58a804b7f44aa4af94b57abed5f2436e66",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
