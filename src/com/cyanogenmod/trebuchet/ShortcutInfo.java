@@ -35,6 +35,7 @@ class ShortcutInfo extends ItemInfo {
      */
     Intent intent;
 
+    String customIconResource;
     /**
      * Indicates whether the title comes from an application's resource (if false)
      * or from a custom title (if true.)
@@ -104,6 +105,9 @@ class ShortcutInfo extends ItemInfo {
 
     public void setIcon(Bitmap b) {
         mIcon = b;
+        if (mListener != null) {
+            mListener.onIconChanged(b);
+        }
     }
 
     public Bitmap getIcon(IconCache iconCache) {
@@ -156,6 +160,7 @@ class ShortcutInfo extends ItemInfo {
         String uri = intent != null ? intent.toUri(0) : null;
         values.put(LauncherSettings.BaseLauncherColumns.INTENT, uri);
 
+        values.put(LauncherSettings.BaseLauncherColumns.CUSTOM_ICON, customIconResource);
         if (customIcon) {
             values.put(LauncherSettings.BaseLauncherColumns.ICON_TYPE,
                     LauncherSettings.BaseLauncherColumns.ICON_TYPE_BITMAP);
@@ -194,6 +199,7 @@ class ShortcutInfo extends ItemInfo {
 
     interface ShortcutListener {
         public void onTitleChanged(CharSequence title);
+        public void onIconChanged(Bitmap icon);
     }
 }
 

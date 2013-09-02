@@ -170,6 +170,13 @@ public class BubbleTextView extends TextView implements ShortcutInfo.ShortcutLis
         }
     }
 
+    @Override
+    public void onIconChanged(Bitmap b) {
+        setCompoundDrawablesWithIntrinsicBounds(null,
+                new FastBitmapDrawable(b),
+                null, null);
+    }
+
     /**
      * Draw this BubbleTextView into the given Canvas.
      *
