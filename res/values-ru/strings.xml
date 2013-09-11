@@ -45,9 +45,9 @@
     <string name="out_of_space" msgid="8365249326091984698">"На этом экране всё занято."</string>
     <string name="hotseat_out_of_space" msgid="6304886797358479361">"Нет свободного места в слоте."</string>
     <string name="invalid_hotseat_item" msgid="6545340627805449250">"Виджет слишком велик для слота."</string>
-    <string name="shortcut_installed" msgid="7071557296331322355">"Ярлык \"<xliff:g id="NAME">%s</xliff:g>\" создан"</string>
-    <string name="shortcut_uninstalled" msgid="2129499669449749995">"Ярлык \"<xliff:g id="NAME">%s</xliff:g>\" удален."</string>
-    <string name="shortcut_duplicate" msgid="4757756326465060694">"Ярлык \"<xliff:g id="NAME">%s</xliff:g>\" уже существует."</string>
+    <string name="shortcut_installed" msgid="7071557296331322355">"Ярлык «<xliff:g id="NAME">%s</xliff:g>» создан"</string>
+    <string name="shortcut_uninstalled" msgid="2129499669449749995">"Ярлык «<xliff:g id="NAME">%s</xliff:g>» удален."</string>
+    <string name="shortcut_duplicate" msgid="4757756326465060694">"Ярлык «<xliff:g id="NAME">%s</xliff:g>» уже существует."</string>
     <string name="title_select_shortcut" msgid="1873670208166882222">"Выбор ярлыка"</string>
     <string name="title_select_application" msgid="1793455815754848652">"Выберите приложение"</string>
     <string name="all_apps_button_label" msgid="2578400570124163469">"Приложения"</string>
@@ -105,7 +105,7 @@
     <string name="folder_tap_to_close" msgid="1335478160661137579">"Нажмите, чтобы закрыть папку"</string>
     <string name="folder_tap_to_rename" msgid="5201612989905472442">"Нажмите, чтобы подтвердить переименование"</string>
     <string name="folder_closed" msgid="3130534551370511932">"Папка закрыта"</string>
-    <string name="folder_renamed" msgid="7951233572858053642">"Папка переименована в \"<xliff:g id="NAME">%1$s</xliff:g>\""</string>
+    <string name="folder_renamed" msgid="7951233572858053642">"Папка переименована в «<xliff:g id="NAME">%1$s</xliff:g>»"</string>
     <string name="folder_name_format" msgid="3051680259794759037">"Папка: <xliff:g id="NAME">%1$s</xliff:g>"</string>
     <string name="custom_workspace_cling_title_1" msgid="1433009175359948587"></string>
     <string name="custom_workspace_cling_description_1" msgid="6875529190849858047"></string>
