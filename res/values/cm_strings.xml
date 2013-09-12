@@ -167,6 +167,9 @@
     <string name="dialog_pick_iconpack_title">Pick icon pack</string>
     <string name="default_iconpack_title">Default</string>
     <string name="no_iconpacks_summary">No icon packs installed</string>
+    <string name="new_iconpack_notification_title">New icon pack installed</string>
+    <string name="new_iconpack_notification_message">A new icon pack was detected and can be applied to the launcher</string>
+    <string name="new_iconpack_notification_apply_action_title">Apply icon pack</string>
 
     <!-- Effects -->
     <string name="effects_standard">Standard</string>
