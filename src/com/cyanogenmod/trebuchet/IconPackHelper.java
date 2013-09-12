@@ -14,6 +14,8 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,6 +25,7 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.content.res.XmlResourceParser;
+import android.database.Cursor;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -275,6 +278,21 @@ public class IconPackHelper {
         return iconPackResources;
     }
 
+    private static void applyIconPack(Context context, String pkgName, boolean resetCustomIcons) {
+        // Required for preference provider (Doesn't handle null values well)
+        if (pkgName == null) {
+            pkgName = "";
+        }
+
+        PreferencesProvider.Interface.General.setIconPack(context, pkgName);
+        final ContentResolver cr = context.getContentResolver();
+        if (resetCustomIcons) {
+            ContentValues values = new ContentValues();
+            values.put(LauncherSettings.BaseLauncherColumns.CUSTOM_ICON, "");
+            cr.update(LauncherSettings.Favorites.CONTENT_URI, values, null, null);
+        }
+    }
+
     public static void pickIconPack(final Context context, final boolean pickIcon) {
         final HashMap<CharSequence, String> supportedPackages = getSupportedPackages(context);
 
@@ -290,7 +308,7 @@ public class IconPackHelper {
         dialogEntries[dialogEntries.length - 1] = defaultIcons;
         Arrays.sort(dialogEntries);
 
-        String iconPack = PreferencesProvider.Interface.General.getIconPack();
+        final String currentIconPack = PreferencesProvider.Interface.General.getIconPack();
 
         int selectedIndex = -1;
         int defaultIndex = 0;
@@ -298,7 +316,7 @@ public class IconPackHelper {
             CharSequence appLabel = dialogEntries[i];
             if (appLabel.equals(defaultIcons)) {
                 defaultIndex = i;
-            } else if (supportedPackages.get(appLabel).equals(iconPack)) {
+            } else if (supportedPackages.get(appLabel).equals(currentIconPack)) {
                 selectedIndex = i;
                 break;
             }
@@ -313,14 +331,28 @@ public class IconPackHelper {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.dialog_pick_iconpack_title);
         if (!pickIcon) {
-            builder.setSingleChoiceItems(dialogEntries, selectedIndex, new DialogInterface.OnClickListener() {
+            builder.setSingleChoiceItems(dialogEntries, selectedIndex,
+                    new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    CharSequence selectedPackage = dialogEntries[which];
-                    if (selectedPackage.equals(defaultIcons)) {
-                        PreferencesProvider.Interface.General.setIconPack(context, "");
-                    } else {
-                        PreferencesProvider.Interface.General.setIconPack(context, supportedPackages.get(selectedPackage));
-                    }
+                    CharSequence selectedEntry = dialogEntries[which];
+                    final String selectedPackage = supportedPackages.get(selectedEntry);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                    .setTitle(R.string.new_iconpack_notification_apply_action_title)
+                    .setMessage(R.string.apply_iconpack_dialog_message)
+                    .setPositiveButton(com.android.internal.R.string.gpsVerifYes,
+                            new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            applyIconPack(context, selectedPackage, false);
+                        }
+                    })
+                    .setNegativeButton(com.android.internal.R.string.gpsVerifNo,
+                            new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            applyIconPack(context, selectedPackage, true);
+                        }
+                    });
+                    builder.show();
                     dialog.dismiss();
                 }
             });
@@ -330,7 +362,8 @@ public class IconPackHelper {
                     CharSequence selectedPackage = dialogEntries[which];
                     Launcher launcherActivity = (Launcher) context;
                     if (selectedPackage.equals(defaultIcons)) {
-                        launcherActivity.onActivityResult(Launcher.REQUEST_PICK_ICON, Activity.RESULT_OK, null);
+                        launcherActivity.onActivityResult(
+                                Launcher.REQUEST_PICK_ICON, Activity.RESULT_OK, null);
                     } else {
                         Intent i = new Intent();
                         i.setClass(context, IconPickerActivity.class);

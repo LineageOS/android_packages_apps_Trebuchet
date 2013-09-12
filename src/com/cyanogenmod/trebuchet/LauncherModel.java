@@ -2110,23 +2110,27 @@ public class LauncherModel extends BroadcastReceiver {
 
     void showNotificationIfIconPack(String[] packages) {
         String iconPack = PreferencesProvider.Interface.General.getIconPack();
-        HashMap<CharSequence, String> supportedList = IconPackHelper.getSupportedPackages(mApp);
-        String notificationTitle = mApp.getResources().getString(R.string.new_iconpack_notification_title);
-        String notificationMsg = mApp.getResources().getString(R.string.new_iconpack_notification_message);
+        HashMap<CharSequence, String> supportedList =
+                IconPackHelper.getSupportedPackages(mApp);
+        String notificationTitle = mApp.getResources().getString(
+                R.string.new_iconpack_notification_title);
+        String notificationMsg = mApp.getResources().getString(
+                R.string.new_iconpack_notification_message);
 
         NotificationManager notificationManager =
                 (NotificationManager) mApp.getSystemService(Context.NOTIFICATION_SERVICE);
         for (String pkg : packages) {
             if (supportedList.containsValue(pkg)) {
                 Notification.Builder mBuilder = new Notification.Builder(mApp)
-                .setSmallIcon(R.drawable.ic_launcher_info_normal_holo)
-                .setContentTitle(notificationTitle)
-                .setContentText(notificationMsg);
+                    .setSmallIcon(R.drawable.ic_launcher_info_normal_holo)
+                    .setContentTitle(notificationTitle)
+                    .setContentText(notificationMsg);
 
                 Intent resultIntent = new Intent(mApp, ApplyIconPackReceiver.class);
                 resultIntent.putExtra(ApplyIconPackReceiver.EXTRA_ICON_PACK_NAME, pkg);
-                PendingIntent resultPendingIntent = PendingIntent.getBroadcastAsUser(mApp, pkg.hashCode(),
-                        resultIntent, PendingIntent.FLAG_CANCEL_CURRENT, UserHandle.CURRENT);
+                PendingIntent resultPendingIntent = PendingIntent.getBroadcastAsUser(mApp,
+                        pkg.hashCode(), resultIntent, PendingIntent.FLAG_CANCEL_CURRENT,
+                        UserHandle.CURRENT_OR_SELF);
                 String actionTitle = mApp.getResources().getString(
                         R.string.new_iconpack_notification_apply_action_title);
                 mBuilder.addAction(0, actionTitle, resultPendingIntent);
