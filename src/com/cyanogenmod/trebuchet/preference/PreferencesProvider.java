@@ -65,7 +65,7 @@ public final class PreferencesProvider {
         SharedPreferences preferences = ctx.getSharedPreferences(PREFERENCES_KEY, 0);
         Editor editor = preferences.edit();
         editor.putString(key, value);
-        editor.apply(); // For better performance
+        editor.commit();
         sKeyValues.put(key, value);
     }
 
