@@ -16,6 +16,9 @@
 
 package com.cyanogenmod.trebuchet;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.SearchManager;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
@@ -45,6 +48,7 @@ import android.os.Parcelable;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.SystemClock;
+import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -2104,6 +2108,34 @@ public class LauncherModel extends BroadcastReceiver {
         sWorker.post(task);
     }
 
+    void showNotificationIfIconPack(String[] packages) {
+        String iconPack = PreferencesProvider.Interface.General.getIconPack();
+        HashMap<CharSequence, String> supportedList = IconPackHelper.getSupportedPackages(mApp);
+        String notificationTitle = mApp.getResources().getString(R.string.new_iconpack_notification_title);
+        String notificationMsg = mApp.getResources().getString(R.string.new_iconpack_notification_message);
+
+        NotificationManager notificationManager =
+                (NotificationManager) mApp.getSystemService(Context.NOTIFICATION_SERVICE);
+        for (String pkg : packages) {
+            if (supportedList.containsValue(pkg)) {
+                Notification.Builder mBuilder = new Notification.Builder(mApp)
+                .setSmallIcon(R.drawable.ic_launcher_info_normal_holo)
+                .setContentTitle(notificationTitle)
+                .setContentText(notificationMsg);
+
+                Intent resultIntent = new Intent(mApp, ApplyIconPackReceiver.class);
+                resultIntent.putExtra(ApplyIconPackReceiver.EXTRA_ICON_PACK_NAME, pkg);
+                PendingIntent resultPendingIntent = PendingIntent.getBroadcastAsUser(mApp, pkg.hashCode(),
+                        resultIntent, PendingIntent.FLAG_CANCEL_CURRENT, UserHandle.CURRENT);
+                String actionTitle = mApp.getResources().getString(
+                        R.string.new_iconpack_notification_apply_action_title);
+                mBuilder.addAction(0, actionTitle, resultPendingIntent);
+
+                notificationManager.notify(pkg.hashCode(), mBuilder.build());
+            }
+        }
+    }
+
     private class PackageUpdatedTask implements Runnable {
         int mOp;
         String[] mPackages;
@@ -2131,6 +2163,7 @@ public class LauncherModel extends BroadcastReceiver {
                         if (DEBUG_LOADERS) Log.d(TAG, "mAllAppsList.addPackage " + packages[i]);
                         mBgAllAppsList.addPackage(context, packages[i]);
                     }
+                    showNotificationIfIconPack(packages);
                     break;
                 case OP_UPDATE:
                     for (int i=0; i<N; i++) {
