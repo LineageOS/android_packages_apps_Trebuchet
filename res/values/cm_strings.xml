@@ -170,6 +170,7 @@
     <string name="new_iconpack_notification_title">New icon pack installed</string>
     <string name="new_iconpack_notification_message">A new icon pack was detected and can be applied to the launcher</string>
     <string name="new_iconpack_notification_apply_action_title">Apply icon pack</string>
+    <string name="apply_iconpack_dialog_message">Would you like to keep custom icons</string>
 
     <!-- Effects -->
     <string name="effects_standard">Standard</string>
