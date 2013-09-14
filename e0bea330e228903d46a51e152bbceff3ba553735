@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a0c5dc1_9b163b54",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-09-14T20:31:50Z",
+      "side": 1,
+      "message": "I\u0027m sorry, but changing that is not allowed. It would require to many changes to AOSP source, if you\u0027d implement this.",
+      "revId": "e0bea330e228903d46a51e152bbceff3ba553735",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_3093eefc",
         "filename": "res/values-ru/strings.xml",
         "patchSetId": 1
