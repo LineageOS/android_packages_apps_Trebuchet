@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_8f5b9d2e",
+        "filename": "src/com/cyanogenmod/trebuchet/ApplyIconPackReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2013-09-14T17:37:51Z",
+      "side": 1,
+      "message": "Yea, its basically what we do for preference changes in general http://goo.gl/MosVRc so i just went and did it too.\n\nPreferably though, the changes should happen live.",
+      "parentUuid": "9a0c5dc1_5bcb2373",
+      "revId": "b11fe14b6b5688c853295b9df56c5b2ad7db4072",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_3bc86f74",
         "filename": "src/com/cyanogenmod/trebuchet/LauncherModel.java",
         "patchSetId": 2
@@ -64,6 +82,24 @@
       "writtenOn": "2013-09-12T18:33:13Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "b11fe14b6b5688c853295b9df56c5b2ad7db4072",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_7acee184",
+        "filename": "src/com/cyanogenmod/trebuchet/LauncherModel.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2013-09-14T17:37:51Z",
+      "side": 1,
+      "message": "I took care of these in the patch thats dependent on this one.\nhttp://review.cyanogenmod.org/#/c/50287/",
+      "parentUuid": "9a0c5dc1_fba097a7",
       "revId": "b11fe14b6b5688c853295b9df56c5b2ad7db4072",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
