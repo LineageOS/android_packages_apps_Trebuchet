@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_9a5e3d75",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-09-15T00:12:00Z",
+      "side": 1,
+      "message": "Using » in here is of course allowed, but remember that the use of that en double quotes would be mixed.",
+      "revId": "e0bea330e228903d46a51e152bbceff3ba553735",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a0c5dc1_9b163b54",
         "filename": "res/values-ru/strings.xml",
         "patchSetId": 1
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "Could you please explain what changes would be required? Or it\u0027d just cause merge conflicts when a new Android version will be released?",
       "parentUuid": "9a0c5dc1_9b163b54",
+      "revId": "e0bea330e228903d46a51e152bbceff3ba553735",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_ba59f990",
+        "filename": "res/values-ru/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-09-15T00:12:00Z",
+      "side": 1,
+      "message": "I\u0027m talking about the change from \" to ». It would indeed cause merge conflicts",
+      "parentUuid": "7a016987_fa5f7173",
       "revId": "e0bea330e228903d46a51e152bbceff3ba553735",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
