@@ -338,7 +338,10 @@ public final class Launcher extends Activity
     private boolean mFullscreenMode;
 
     private boolean mWallpaperVisible;
-    private ImageButton mDialogIcon;
+
+    // Shortcut edit dialog
+    private ImageView mDialogIcon;
+    private String mEditDialogIconResource;
 
     private Runnable mBuildLayersRunnable = new Runnable() {
         public void run() {
@@ -727,13 +730,12 @@ public final class Launcher extends Activity
                                     titleIndex, -1);
                         }
                         mDialogIcon.setImageBitmap(info.getIcon(null));
-                        mDialogIcon.setTag(null);
                         c.close();
                     }
                 } else {
                     // Set custom icon from icon pack
                     mDialogIcon.setImageBitmap((Bitmap) data.getParcelableExtra(IconPickerActivity.SELECTED_BITMAP_EXTRA));
-                    mDialogIcon.setTag(data.getStringExtra(IconPickerActivity.SELECTED_RESOURCE_EXTRA));
+                    mEditDialogIconResource = data.getStringExtra(IconPickerActivity.SELECTED_RESOURCE_EXTRA);
                 }
             }
             return;
@@ -1145,6 +1147,7 @@ public final class Launcher extends Activity
      * @param info The shortcut to be edited
      */
     void updateShortcut(final ShortcutInfo info) {
+        mEditDialogIconResource = info.customIconResource;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View layout = mInflater.inflate(R.layout.dialog_edit, null);
         mDialogIcon = (ImageButton) layout.findViewById(R.id.dialog_edit_icon);
@@ -1158,27 +1161,34 @@ public final class Launcher extends Activity
             }
         });
         final EditText title = (EditText) layout.findViewById(R.id.dialog_edit_text);
-        title.setText(info.title);
+        title.append(info.title);
         builder.setView(layout)
                 .setTitle(info.title)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
+                        boolean dbUpdateRequired = false;
+                        // Check if user changed the title
                         if (!info.title.equals(title.getText())) {
-                            info.setTitle(title.getText());
+                            info.setTitle(title.getText().toString());
+                            dbUpdateRequired = true;
                         }
-                        if (mDialogIcon.getTag() != null) {
-                            info.customIconResource = (String) mDialogIcon.getTag();
-                            Drawable d = mModel.getDrawableForCustomIcon(Launcher.this, info.customIconResource);
-                            if (d != null) {
-                                info.setIcon(Utilities.createIconBitmap(d, Launcher.this));
+                        // Check if user changed the icon
+                        if (!TextUtils.equals(mEditDialogIconResource, info.customIconResource)) {
+                            info.customIconResource = mEditDialogIconResource;
+                            if (mDialogIcon.getTag() != null) {
+                                Drawable d = mModel.getDrawableForCustomIcon(Launcher.this, info.customIconResource);
+                                if (d != null) {
+                                    info.setIcon(Utilities.createIconBitmap(d, Launcher.this));
+                                }
+                            } else {
+                                info.setIcon(((BitmapDrawable)mDialogIcon.getDrawable()).getBitmap());
                             }
-                        } else {
-                            info.customIconResource = null;
-                            info.setIcon(((BitmapDrawable)mDialogIcon.getDrawable()).getBitmap());
+                            dbUpdateRequired = true;
                         }
-
-                        LauncherModel.updateItemInDatabase(Launcher.this, info);
+                        if (dbUpdateRequired) {
+                            LauncherModel.updateItemInDatabase(Launcher.this, info);
+                        }
                     }
                 })
                 .setNegativeButton(android.R.string.cancel, null);

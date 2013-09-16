@@ -46,6 +46,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.IBinder;
 import android.os.Parcelable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -4529,6 +4530,9 @@ public class Workspace extends PagedView
                 Object tag = view.getTag();
                 if (tag instanceof ShortcutInfo) {
                     ShortcutInfo info = (ShortcutInfo) tag;
+                    if (!TextUtils.isEmpty(info.customIconResource)) {
+                        continue;
+                    }
                     // We need to check for ACTION_MAIN otherwise getComponent() might
                     // return null for some shortcuts (for instance, for shortcuts to
                     // web pages.)
