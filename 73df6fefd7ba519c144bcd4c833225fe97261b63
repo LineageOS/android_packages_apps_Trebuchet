@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_e55fd673",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6563
+      },
+      "writtenOn": "2013-09-20T07:33:55Z",
+      "side": 1,
+      "message": "packs \u003d\u003e pack",
+      "revId": "73df6fefd7ba519c144bcd4c833225fe97261b63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_051792ee",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
