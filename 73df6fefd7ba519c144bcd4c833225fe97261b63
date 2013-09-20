@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_855ee274",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-09-20T07:39:51Z",
+      "side": 1,
+      "message": "Je pense que l\u0027on doit utiliser le mot \"pack\", c\u0027est du langage courant et difficilement traduisible.",
+      "parentUuid": "5afe65bd_a5b31e0a",
+      "revId": "73df6fefd7ba519c144bcd4c833225fe97261b63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_e55fd673",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_65540654",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-09-20T07:39:51Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "5afe65bd_e55fd673",
+      "revId": "73df6fefd7ba519c144bcd4c833225fe97261b63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_051792ee",
         "filename": "res/values-fr/cm_strings.xml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-09-20T04:04:09Z",
       "side": 1,
       "message": "pack",
+      "revId": "73df6fefd7ba519c144bcd4c833225fe97261b63",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_45510a62",
+        "filename": "res/values-fr/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4808
+      },
+      "writtenOn": "2013-09-20T07:39:51Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "5afe65bd_051792ee",
       "revId": "73df6fefd7ba519c144bcd4c833225fe97261b63",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
