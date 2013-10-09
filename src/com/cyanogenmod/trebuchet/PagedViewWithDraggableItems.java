@@ -104,11 +104,6 @@ public abstract class PagedViewWithDraggableItems extends PagedView
 
     @Override
     public boolean onLongClick(View v) {
-        // Only if workspace is not locked
-        if (mLauncher.getLockWorkspace()) {
-            Toast.makeText(mLauncher, mLauncher.getString(R.string.workspace_locked), Toast.LENGTH_SHORT).show();
-            return false;
-        }
         // Return early if this is not initiated from a touch
         if (!v.isInTouchMode()) return false;
         // Return early if we are still animating the pages
