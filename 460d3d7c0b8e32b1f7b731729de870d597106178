@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_71961a96",
+        "filename": "res/values-hr/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-10-16T07:31:57Z",
+      "side": 0,
+      "message": "This is rather unnecessary...",
+      "revId": "460d3d7c0b8e32b1f7b731729de870d597106178",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
