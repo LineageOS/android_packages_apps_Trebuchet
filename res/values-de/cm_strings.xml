@@ -44,8 +44,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Anzahl der für Symbole verfügbaren Reihen / Spalten</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Reihen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Spalten</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Seiten ausdehnen</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Seiten bildschirmfüllend ausdehnen</string>
     <string name="preferences_interface_homescreen_general_search_title">Suchleiste</string>
     <string name="preferences_interface_homescreen_general_search_summary">Dauerhafte Anzeige der Suchleiste</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Beschriftung nicht anzeigen</string>

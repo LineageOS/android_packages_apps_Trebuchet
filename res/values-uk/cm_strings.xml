@@ -30,8 +30,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Вибір кількості рядків/стовпців на робочому столі</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Рядки</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Стовпці</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Еластичні екрани</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Розширяти домашні екрани до заповнення розміру екрана</string>
     <string name="preferences_interface_homescreen_general_search_summary">Включити прикріплений рядок пошуку Google</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Ховати підписи значків</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Ховати підписи значків на робочих столах</string>

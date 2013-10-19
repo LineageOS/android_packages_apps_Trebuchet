@@ -45,8 +45,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">A kezdőképernyőn megjelenő sorok és oszlopok számának kiválasztása</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Sor</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Oszlop</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Képernyő nyújtása</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Kezdőképernyők nyújtása a kijelző kitöltéséhez</string>
     <string name="preferences_interface_homescreen_general_search_summary">Állandó keresősáv engedélyezése</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Ikon feliratok elrejtése</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Elrejti a kezdőképernyőn lévő ikonok neveit</string>

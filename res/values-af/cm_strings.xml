@@ -47,8 +47,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Kies die aantal rye/kolomme op die Tuisskerm</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rye</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolomme</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Strek skerm</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Vergroot Tuisskerms om die hele toestel skerm te vul</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Versteek ikoon etikette</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Steek Tuisskerm ikoon etikette weg</string>
     <string name="preferences_interface_homescreen_scrolling_category">Rol</string>

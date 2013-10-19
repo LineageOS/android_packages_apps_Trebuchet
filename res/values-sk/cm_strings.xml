@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Zvolí počet riadkov/stĺpcov na domovskej obrazovke</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Riadky</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Stĺpce</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Roztiahnuť obrazovky</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Zväčší domovské obrazovky, aby vyplnili celú veľkosť displeja</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skryť menovky ikôn</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skryje menovky ikôn na domovskej obrazovke</string>
     <string name="preferences_interface_homescreen_scrolling_category">Posúvanie</string>

@@ -33,8 +33,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Wybierz liczbę wierszy/kolumn na ekranie głównym</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Wiersze</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolumny</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Rozciągnij ekrany</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Rozszerza ekrany, by dopasować je do rozmiarów wyświetlacza</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Ukryj nazwy aplikacji</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Ukrywa podpisy pod ikonami na ekranie głównym</string>
     <string name="preferences_interface_homescreen_scrolling_category">Przewijanie</string>

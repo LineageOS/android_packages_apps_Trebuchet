@@ -40,8 +40,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">ホーム画面の行やカラムの数を選択</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">行数</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">カラム数</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">画面を拡張</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">画面のサイズいっぱいにホーム画面を拡張する</string>
     <string name="preferences_interface_homescreen_general_search_title">サーチバー</string>
     <string name="preferences_interface_homescreen_general_search_summary">常設のサーチバーを有効にする</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">アイコンラベルを隠す</string>

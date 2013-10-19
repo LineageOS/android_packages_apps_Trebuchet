@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Pasirinkti eilučių ir stulpelių skaičių pagrindiniame ekrane</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Eilutės</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Stulpeliai</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Ištempti ekranus</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Plėsti pagrindinius ekranus, kad užpildytų ekrano dydį</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Slėpti piktogramų pavadinimus</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Slėpti pagrindinio ekrano piktogramų pavadinimus</string>
     <string name="preferences_interface_homescreen_scrolling_category">Slinkties juosta</string>

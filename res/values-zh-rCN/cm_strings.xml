@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">选择主屏幕上的行/列数</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">行</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">列</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">拉长屏幕</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">扩展主屏幕以填充屏幕大小</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">隐藏图标标签</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">隐藏在主屏幕上图标的标签</string>
     <string name="preferences_interface_homescreen_scrolling_category">滚动</string>

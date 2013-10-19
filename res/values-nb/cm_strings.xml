@@ -45,8 +45,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Velg antall rader/kolonner på hjemmeskjermen</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rader</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolonner</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Strekk skjermene</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Utvid hjemmeskjermen for å fylle størrelsen på displayet</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skjul etiketter</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skjul etikettene som er under ikonene</string>
     <string name="preferences_interface_homescreen_scrolling_category">Scrolling</string>

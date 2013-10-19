@@ -34,8 +34,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Valitse rivien/sarakkeiden määrä kotinäytöllä</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rivit</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Sarakkeet</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Venytä näyttöjä</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Laajentaa kotinäyttöjä täyttääkseen koko näytön</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Piilota kuvakkeiden tekstit</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Piilota kuvakkeiden tekstit kotinäytöllä</string>
     <string name="preferences_interface_homescreen_scrolling_category">Selaaminen</string>

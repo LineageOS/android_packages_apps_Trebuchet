@@ -45,8 +45,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Vælg antallet af rækker/kolonner på startskærmen</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rækker</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolonner</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Stræk skærme</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Udvid startskærme til at fylde størrelsen på skærmen</string>
     <string name="preferences_interface_homescreen_general_search_summary">Aktivér vedvarende søgefelt</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skjul ikontekst</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skjul ikontekster på startskærmene</string>

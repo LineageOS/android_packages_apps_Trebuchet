@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">باش ئېكراندىكى قۇر-رەت سانىنى تاللاڭ</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">قۇرلار</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">رەتلەر</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">ئېكراننى سوز</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">باش ئېكراننى يېيىپ ئېكران چوڭلۇقىنى تولدۇرىدۇ</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">سىنبەلگىنىڭ تېكىست بەلگىسىنى يوشۇر</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">باش ئېكراندىكى سىنبەلگىنىڭ تېكىست بەلگىسىنى يوشۇرىدۇ</string>
     <string name="preferences_interface_homescreen_scrolling_category">سىيرىش</string>
