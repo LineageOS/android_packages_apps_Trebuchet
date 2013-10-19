@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Ana ekranda gösterilecek satır/sütün sayısını seçin</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Satırlar</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Sütunlar</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Ekranları ger</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Ev ekranını ekrana sığacak şekilde genişlet</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Simge etiketlerini gizle</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Ana ekrandaki simgelerin etiketlerini gizle</string>
     <string name="preferences_interface_homescreen_scrolling_category">Kaydırma</string>

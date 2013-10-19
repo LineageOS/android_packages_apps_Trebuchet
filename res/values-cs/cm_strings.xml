@@ -46,8 +46,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Vyberte počet řádků/sloupců na ploše</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Řádky</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Sloupce</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Roztáhnout plochy</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Roztáhnout plochy, aby vyplnily obrazovku</string>
     <string name="preferences_interface_homescreen_general_search_summary">Povolit trvalou vyhledávací lištu</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Skrýt popisky ikon</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Skrýt popisky ikon na ploše</string>

@@ -32,8 +32,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Pasirinkti eilučių/stulpelių skaičių</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Eiutės</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Stulpeliai</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Ištempti langus</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Ištempti langus per visą ekraną</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Slepti pavadinimus</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Slepti užrašus po piktogramomis darbalaukyje</string>
     <string name="preferences_interface_homescreen_scrolling_category">Slinkimas</string>
