@@ -90,6 +90,7 @@
             </intent-filter>
         </activity>
 
+        <!--
         <activity
             android:name="com.cyanogenmod.trebuchet.WallpaperChooser"
             android:theme="@style/Theme.WallpaperPicker"
@@ -104,6 +105,7 @@
             <meta-data android:name="android.wallpaper.preview"
                 android:resource="@xml/wallpaper_picker_preview" />
         </activity>
+        -->
 
         <!-- Intent received used to prepopulate the default workspace. -->
         <receiver
