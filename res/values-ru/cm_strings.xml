@@ -56,8 +56,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Выбор числа строк и столбцов на главном экране</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Строки</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Столбцы</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Растягивать экраны</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Расширять главные экраны до заполнения размера дисплея</string>
     <string name="preferences_interface_homescreen_general_search_summary">Включить неисчезающую строку поиска Google</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Скрывать подписи значков</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Не отображать подписи значков на главных экранах</string>
@@ -164,6 +162,9 @@
 
     <!-- Live folder cling -->
     <string name="live_folder_cling_title">Живые папки</string>
-    <!-- The description of how to create a folder [CHAR_LIMIT=none] -->
     <string name="live_folder_cling_create_folder">Живые папки позволяют разработчикам приложений создавать папки с динамическим контентом. Содержимое папки можно удалить долгим нажатием на элемент. В отличие от обычных папок, в живую папку элементы могут добавляться только приложением, создавшим её.</string>
+
+    <!-- Folder titles -->
+    <string name="conversations_title">Диалоги</string>
+    <string name="google_title">Google</string>
 </resources>
