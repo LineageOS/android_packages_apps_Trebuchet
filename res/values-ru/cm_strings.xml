@@ -56,8 +56,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Выбор числа строк и столбцов на главном экране</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Строки</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Столбцы</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Растягивать экраны</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Расширять главные экраны до заполнения размера дисплея</string>
     <string name="preferences_interface_homescreen_general_search_summary">Включить неисчезающую строку поиска Google</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Скрывать подписи значков</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Не отображать подписи значков на главных экранах</string>
