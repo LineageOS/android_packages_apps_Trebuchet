@@ -47,8 +47,6 @@
     <string name="preferences_interface_homescreen_general_grid_summary">Kies het aantal rijen/kolommen op het startscherm</string>
     <string name="preferences_interface_homescreen_general_grid_rows_title">Rijen</string>
     <string name="preferences_interface_homescreen_general_grid_columns_title">Kolommen</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_title">Schermen uitrekken</string>
-    <string name="preferences_interface_homescreen_general_stretch_screens_summary">Startschermen uitrekken om het scherm te vullen</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Labels verbergen</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Labels verbergen onder pictogrammen op startscherm</string>
     <string name="preferences_interface_homescreen_scrolling_category">Bladeren</string>
@@ -143,4 +141,5 @@
     <string name="effects_carousel_right">Carrousel rechts</string>
     <string name="live_folder_cling_title">Dynamische mappen</string>
     <string name="live_folder_cling_create_folder">Met dynamische mappen kunnen app-ontwikkelaars mappen aanmaken met dynamische inhoud. De inhoud hiervan kan verwijderd worden door een item lang aan te raken. In tegenstelling tot normale mappen kunnen items alleen worden toegevoegd door de app die de map heeft aangemaakt</string>
+    <string name="conversations_title">Gesprekken</string>
 </resources>
