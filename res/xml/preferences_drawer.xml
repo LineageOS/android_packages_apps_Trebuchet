@@ -76,4 +76,12 @@
             android:defaultValue="0"
             android:dependency="ui_drawer_indicator_enable" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/preferences_interface_drawer_appearance_category">
+        <ListPreference android:key="ui_drawer_appearance_transparency"
+        	android:title="@string/preferences_interface_drawer_appearance_ui_transparecy_anmount_title"
+        	android:summary="@string/preferences_interface_drawer_appearance_ui_transparecy_anmount_summary"
+        	android:entries="@array/preferences_interface_drawer_appearance_ui_transparecy_anmount_entries"
+        	android:entryValues="@array/preferences_interface_drawer_appearance_ui_transparecy_anmount_values"
+        	android:defaultValue="255" />
+    </PreferenceCategory>
 </PreferenceScreen>
