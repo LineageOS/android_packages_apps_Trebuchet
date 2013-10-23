@@ -133,7 +133,9 @@
     <string name="preferences_interface_drawer_indicator_fade_summary">Fade away the indicator after the page has changed</string>
     <string name="preferences_interface_drawer_indicator_position_title">Indicator position</string>
     <string name="preferences_interface_drawer_indicator_position_summary">Choose where to show the indicator on the screen</string>
-
+    <string name="preferences_interface_drawer_appearance_category">Appearance</string>
+	 <string name="preferences_interface_drawer_appearance_ui_transparecy_anmount_title">Background transparency</string>
+	 <string name="preferences_interface_drawer_appearance_ui_transparecy_anmount_summary">How transparent should the drawer background be</string>
     <!-- Dock -->
     <string name="preferences_interface_dock_title">Dock</string>
     <string name="preferences_interface_dock_enabled_title">Show dock</string>
@@ -193,7 +195,4 @@
     Folder contents can be removed with a long press on a single entry. Unlike normal folders, items can only be added by
     the application creating the folder</string>
 
-    <!-- Folder titles -->
-    <string name="conversations_title">Conversations</string>
-    <string name="google_title">Google</string>
 </resources>

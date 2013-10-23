@@ -112,4 +112,30 @@
         <item>horizontal</item>
         <item>vertical</item>
     </string-array>
+    <string-array name="preferences_interface_drawer_appearance_ui_transparecy_anmount_entries" >
+        <item>None</item>
+    	<item>10%</item>
+    	<item>20%</item>
+    	<item>30%</item>
+    	<item>40%</item>
+    	<item>50%</item>
+        <item>60%</item>
+        <item>70%</item>
+        <item>80%</item>
+        <item>90%</item>
+    	<item>100%</item>
+    </string-array>
+    <string-array name="preferences_interface_drawer_appearance_ui_transparecy_anmount_values" translatable="false">
+ 	<item>255</item>
+        <item>229</item>
+        <item>204</item>
+        <item>178</item>
+        <item>153</item>
+ 	<item>127</item>
+ 	<item>102</item>
+        <item>76</item>
+        <item>51</item>
+        <item>25</item>
+	<item>0</item>
+     </string-array>
 </resources>

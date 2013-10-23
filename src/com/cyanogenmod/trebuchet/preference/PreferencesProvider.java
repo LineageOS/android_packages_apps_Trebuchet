@@ -23,6 +23,7 @@ import android.content.SharedPreferences.Editor;
 import com.cyanogenmod.trebuchet.Workspace;
 import com.cyanogenmod.trebuchet.AppsCustomizePagedView;
 
+import java.lang.Integer;
 import java.util.Map;
 
 public final class PreferencesProvider {
@@ -195,6 +196,11 @@ public final class PreferencesProvider {
                 public static int getScrollingIndicatorPosition() {
                     return Integer.parseInt(getString("ui_drawer_indicator_position", "0"));
                 }
+            }
+            public static class Appearance {
+            	public static int getTransparencyValue() {
+            		return Integer.parseInt(getString("ui_drawer_appearance_transparency", "255"));
+            	}
             }
         }
 

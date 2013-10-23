@@ -336,6 +336,7 @@ public final class Launcher extends Activity
     private boolean mAutoRotate;
     private boolean mLockWorkspace;
     private boolean mFullscreenMode;
+    private int mDrawerTransparencyValue;
 
     private boolean mWallpaperVisible;
 
@@ -418,6 +419,7 @@ public final class Launcher extends Activity
         mAutoRotate = PreferencesProvider.Interface.General.getAutoRotate(getResources().getBoolean(R.bool.allow_rotation));
         mLockWorkspace = PreferencesProvider.Interface.General.getLockWorkspace(getResources().getBoolean(R.bool.lock_workspace));
         mFullscreenMode = PreferencesProvider.Interface.General.getFullscreenMode();
+        mDrawerTransparencyValue = PreferencesProvider.Interface.Drawer.Appearance.getTransparencyValue();
 
         if (PROFILE_STARTUP) {
             android.os.Debug.startMethodTracing(
@@ -3001,6 +3003,7 @@ public final class Launcher extends Activity
         final AppsCustomizeTabHost toView = mAppsCustomizeTabHost;
         final int startDelay =
                 res.getInteger(R.integer.config_workspaceAppsCustomizeAnimationStagger);
+        toView.getBackground().setAlpha(mDrawerTransparencyValue);
 
         setPivotsForZoom(toView);
 
@@ -3018,7 +3021,6 @@ public final class Launcher extends Activity
                 setInterpolator(new Workspace.ZoomOutInterpolator());
 
             toView.setVisibility(View.VISIBLE);
-            toView.setAlpha(0f);
             final ObjectAnimator alphaAnim = LauncherAnimUtils
                 .ofFloat(toView, "alpha", 0f, 1f)
                 .setDuration(fadeDuration);
@@ -3062,9 +3064,6 @@ public final class Launcher extends Activity
                         // Hide the workspace scrollbar
                         mWorkspace.hideScrollingIndicator(true);
                         hideDockDivider();
-                    }
-                    if (!animationCancelled) {
-                        updateWallpaperVisibility(false);
                     }
 
                     // Hide the search bar
@@ -3171,6 +3170,7 @@ public final class Launcher extends Activity
         final View fromView = mAppsCustomizeTabHost;
         final View toView = mWorkspace;
         Animator workspaceAnim = null;
+        fromView.getBackground().setAlpha(mDrawerTransparencyValue);
 
         if (toState == State.WORKSPACE) {
             int stagger = res.getInteger(R.integer.config_appsCustomizeWorkspaceAnimationStagger);
@@ -3214,7 +3214,6 @@ public final class Launcher extends Activity
             mStateAnimation.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    updateWallpaperVisibility(true);
                     fromView.setVisibility(View.GONE);
                     dispatchOnLauncherTransitionEnd(fromView, animated, true);
                     dispatchOnLauncherTransitionEnd(toView, animated, true);
@@ -3262,18 +3261,9 @@ public final class Launcher extends Activity
             // When another window occludes launcher (like the notification shade, or recents),
             // ensure that we enable the wallpaper flag so that transitions are done correctly.
             updateWallpaperVisibility(true);
-        } else {
-            // When launcher has focus again, disable the wallpaper if we are in AllApps
-            mWorkspace.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    disableWallpaperIfInAllApps();
-                }
-            }, 500);
-
-            if (mFullscreenMode) {
-                updateFullscreenMode(true);
-            }
+        }
+        if (mFullscreenMode) {
+           updateFullscreenMode(true);
         }
     }
 
