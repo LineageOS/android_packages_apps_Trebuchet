@@ -26,7 +26,7 @@
     <dimen name="button_bar_height_bottom_padding">12dp</dimen>
     <dimen name="button_bar_width_left_padding">12dp</dimen>
     <dimen name="button_bar_width_right_padding">12dp</dimen>
-    <dimen name="button_bar_height_plus_padding">82dp</dimen>
+    <dimen name="button_bar_height_plus_padding">90dp</dimen>
     <dimen name="button_bar_height_plus_padding_with_text">@dimen/button_bar_height_plus_padding</dimen>
 
 <!-- QSB -->
