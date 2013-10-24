@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1b9fbb60",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-10-24T15:13:27Z",
+      "side": 1,
+      "message": "?? ??????? ??????????? ????? ?????? «??????» ??? «?????????»?",
+      "revId": "1b248b6e6d5b09855a97d94d26fefd4a0dd53c22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3b9cf768",
+        "filename": "res/values-ru/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5896
+      },
+      "writtenOn": "2013-10-24T15:13:27Z",
+      "side": 1,
+      "message": "????? ????? translatable\u003dfalse ? ????? ??????? ????????.",
+      "revId": "1b248b6e6d5b09855a97d94d26fefd4a0dd53c22",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
