@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4ac56b59",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-10-26T23:34:53Z",
+      "side": 0,
+      "message": "Why are these removed?",
+      "revId": "c6fcadf9210add9769e403706ab5e42a1cf2a4f2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
