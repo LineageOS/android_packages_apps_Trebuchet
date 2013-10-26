@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_24adb888",
+        "filename": "res/values-ca/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-10-26T00:59:20Z",
+      "side": 1,
+      "message": "Will be set untranslatable; please remove",
+      "revId": "b94d8490cf32a25d7202433dae3cfacb406c19f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
