@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3562c0d9",
+        "filename": "res/values-ca/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-10-27T07:42:12Z",
+      "side": 1,
+      "message": "Whitespace errors",
+      "revId": "175e9724775e582647cd1d7e4d3f9b9e0a7c51a7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_555f4c0e",
+        "filename": "res/values-ca/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2013-10-27T07:42:12Z",
+      "side": 1,
+      "message": "Estira, as above?",
+      "revId": "175e9724775e582647cd1d7e4d3f9b9e0a7c51a7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
