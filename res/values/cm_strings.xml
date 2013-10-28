@@ -195,5 +195,4 @@
 
     <!-- Folder titles -->
     <string name="conversations_title">Conversations</string>
-    <string name="google_title" translatable="false">Google</string>
 </resources>
