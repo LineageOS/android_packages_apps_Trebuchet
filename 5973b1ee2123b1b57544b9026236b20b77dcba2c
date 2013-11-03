@@ -16,6 +16,24 @@
       "revId": "5973b1ee2123b1b57544b9026236b20b77dcba2c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_3a4ba1b2",
+        "filename": "res/xml/default_workspace.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2013-11-03T19:32:53Z",
+      "side": 1,
+      "message": "Yea fallbacks seem to work well. (Tried with and without gapps).\n\nYou\u0027ll see in errors in the logs when it fallsback",
+      "parentUuid": "fa1b9901_7a511962",
+      "revId": "5973b1ee2123b1b57544b9026236b20b77dcba2c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
