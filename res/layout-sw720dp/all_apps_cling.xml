@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.launcher3.Cling
+<org.cyanogenmod.trebuchet.Cling
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
     launcher:drawIdentifier="all_apps_large">
@@ -43,4 +43,4 @@
                 android:onClick="dismissAllAppsCling" />
         </LinearLayout>
     </FrameLayout>
-</com.android.launcher3.Cling>
+</org.cyanogenmod.trebuchet.Cling>

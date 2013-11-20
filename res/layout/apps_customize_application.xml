@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<com.android.launcher3.PagedViewIcon
+<org.cyanogenmod.trebuchet.PagedViewIcon
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
 

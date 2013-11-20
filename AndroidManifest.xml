@@ -19,7 +19,9 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.launcher3">
+    package="org.cyanogenmod.trebuchet">
+
+    <uses-sdk android:targetSdkVersion="19" />
 
     <permission
         android:name="com.android.launcher3.permission.PRELOAD_WORKSPACE"
@@ -69,14 +71,14 @@
     <uses-permission android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS" />
 
     <application
-        android:name="com.android.launcher3.LauncherApplication"
+        android:name="org.cyanogenmod.trebuchet.LauncherApplication"
         android:label="@string/application_name"
         android:icon="@mipmap/ic_launcher_home"
         android:hardwareAccelerated="true"
         android:largeHeap="@bool/config_largeHeap"
         android:supportsRtl="true">
         <activity
-            android:name="com.android.launcher3.Launcher"
+            android:name="org.cyanogenmod.trebuchet.Launcher"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
@@ -92,7 +94,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.ToggleWeightWatcher"
+            android:name="org.cyanogenmod.trebuchet.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
             android:enabled="@bool/debug_memory_enabled"
             android:icon="@mipmap/ic_launcher_home">
@@ -104,7 +106,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.WallpaperPickerActivity"
+            android:name="org.cyanogenmod.trebuchet.WallpaperPickerActivity"
             android:theme="@style/Theme.WallpaperCropper"
             android:label="@string/pick_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -117,7 +119,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.WallpaperCropActivity"
+            android:name="org.cyanogenmod.trebuchet.WallpaperCropActivity"
             android:theme="@style/Theme.WallpaperCropper"
             android:label="@string/crop_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -132,7 +134,7 @@
 
         <!-- Debugging tools -->
         <activity
-            android:name="com.android.launcher3.MemoryDumpActivity"
+            android:name="org.cyanogenmod.trebuchet.MemoryDumpActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:label="@string/debug_memory_activity"
             android:enabled="@bool/debug_memory_enabled"
@@ -146,14 +148,14 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.android.launcher3.MemoryTracker"
+        <service android:name="org.cyanogenmod.trebuchet.MemoryTracker"
             android:enabled="@bool/debug_memory_enabled"
             >
         </service>
 
         <!-- Intent received used to prepopulate the default workspace. -->
         <receiver
-            android:name="com.android.launcher3.PreloadReceiver"
+            android:name="org.cyanogenmod.trebuchet.PreloadReceiver"
             android:permission="com.android.launcher3.permission.PRELOAD_WORKSPACE">
             <intent-filter>
                 <action android:name="com.android.launcher3.action.PRELOAD_WORKSPACE" />
@@ -162,7 +164,7 @@
 
         <!-- Intent received used to install shortcuts from other applications -->
         <receiver
-            android:name="com.android.launcher3.InstallShortcutReceiver"
+            android:name="org.cyanogenmod.trebuchet.InstallShortcutReceiver"
             android:permission="com.android.launcher3.permission.INSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher3.action.INSTALL_SHORTCUT" />
@@ -171,7 +173,7 @@
 
         <!-- Intent received used to uninstall shortcuts from other applications -->
         <receiver
-            android:name="com.android.launcher3.UninstallShortcutReceiver"
+            android:name="org.cyanogenmod.trebuchet.UninstallShortcutReceiver"
             android:permission="com.android.launcher3.permission.UNINSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher3.action.UNINSTALL_SHORTCUT" />
@@ -180,14 +182,14 @@
 
         <!-- New user initialization; set up initial wallpaper -->
         <receiver
-            android:name="com.android.launcher3.UserInitializeReceiver"
+            android:name="org.cyanogenmod.trebuchet.UserInitializeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.USER_INITIALIZE" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.launcher3.PackageChangedReceiver" >
+        <receiver android:name="org.cyanogenmod.trebuchet.PackageChangedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_CHANGED"/>
                 <action android:name="android.intent.action.PACKAGE_REPLACED"/>
@@ -198,8 +200,8 @@
 
         <!-- The settings provider contains Home's data, like the workspace favorites -->
         <provider
-            android:name="com.android.launcher3.LauncherProvider"
-            android:authorities="com.android.launcher3.settings"
+            android:name="org.cyanogenmod.trebuchet.LauncherProvider"
+            android:authorities="org.cyanogenmod.trebuchet.settings"
             android:exported="true"
             android:writePermission="com.android.launcher3.permission.WRITE_SETTINGS"
             android:readPermission="com.android.launcher3.permission.READ_SETTINGS" />

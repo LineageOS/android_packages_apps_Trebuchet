@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.launcher3.PagedViewWidget
+<org.cyanogenmod.trebuchet.PagedViewWidget
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
 
@@ -26,7 +26,7 @@
     android:focusable="true">
 
     <!-- The preview of the widget or shortcut. -->
-    <com.android.launcher3.PagedViewWidgetImageView
+    <org.cyanogenmod.trebuchet.PagedViewWidgetImageView
         android:id="@+id/widget_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,4 +80,4 @@
     </LinearLayout>
 
 
-</com.android.launcher3.PagedViewWidget>
+</org.cyanogenmod.trebuchet.PagedViewWidget>

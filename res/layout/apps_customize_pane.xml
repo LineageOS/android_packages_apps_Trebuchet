@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.launcher3.AppsCustomizeTabHost
+<org.cyanogenmod.trebuchet.AppsCustomizeTabHost
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
     android:background="#80FFFFFF">
@@ -32,7 +32,7 @@
             android:layout_marginTop="@dimen/apps_customize_tab_bar_margin_top"
             android:layout_gravity="center_horizontal"
             android:visibility="gone">
-            <com.android.launcher3.FocusOnlyTabWidget
+            <org.cyanogenmod.trebuchet.FocusOnlyTabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -52,7 +52,7 @@
             android:id="@android:id/tabcontent"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <com.android.launcher3.AppsCustomizePagedView
+            <org.cyanogenmod.trebuchet.AppsCustomizePagedView
                 android:id="@+id/apps_customize_pane_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -78,4 +78,4 @@
                 android:layout_marginBottom="@dimen/apps_customize_page_indicator_margin" />
         </FrameLayout>
     </LinearLayout>
-</com.android.launcher3.AppsCustomizeTabHost>
+</org.cyanogenmod.trebuchet.AppsCustomizeTabHost>

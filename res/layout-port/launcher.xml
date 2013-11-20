@@ -24,20 +24,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/workspace_bg">
 
-    <com.android.launcher3.DragLayer
+    <org.cyanogenmod.trebuchet.DragLayer
         android:id="@+id/drag_layer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <!-- The workspace contains 5 screens of cells -->
-        <com.android.launcher3.Workspace
+        <org.cyanogenmod.trebuchet.Workspace
             android:id="@+id/workspace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             launcher:defaultScreen="@integer/config_workspaceDefaultScreen"
             launcher:pageSpacing="@dimen/workspace_page_spacing"
             launcher:pageIndicator="@id/page_indicator">
-        </com.android.launcher3.Workspace>
+        </org.cyanogenmod.trebuchet.Workspace>
 
         <include layout="@layout/hotseat"
             android:id="@+id/hotseat"
@@ -64,7 +64,7 @@
         <!-- The Workspace cling must appear under the AppsCustomizePagedView below to ensure
              that it is still visible during the transition to AllApps and doesn't overlay on
              top of that view. -->
-        <com.android.launcher3.ScrimView
+        <org.cyanogenmod.trebuchet.ScrimView
             android:id="@+id/cling_scrim"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -87,7 +87,7 @@
 
         <!-- This is the search bar voice button proxy view.  It allows us to have a larger
              touch target than the microphone constrained by the search bar bounds. -->
-        <com.android.launcher3.DrawableStateProxyView
+        <org.cyanogenmod.trebuchet.DrawableStateProxyView
             android:id="@+id/voice_button_proxy"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -102,5 +102,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="invisible" />
-    </com.android.launcher3.DragLayer>
+    </org.cyanogenmod.trebuchet.DragLayer>
 </FrameLayout>

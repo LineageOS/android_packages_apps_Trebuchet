@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<com.android.launcher3.Folder
+<org.cyanogenmod.trebuchet.Folder
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
     android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-      <com.android.launcher3.CellLayout
+      <org.cyanogenmod.trebuchet.CellLayout
           android:id="@+id/folder_content"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
           android:hapticFeedbackEnabled="false" />
     </ScrollView>
 
-    <com.android.launcher3.FolderEditText
+    <org.cyanogenmod.trebuchet.FolderEditText
         android:id="@+id/folder_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,4 +51,4 @@
         android:singleLine="true"
         android:imeOptions="flagNoExtractUi"
         android:fontFamily="sans-serif-condensed"/>
-</com.android.launcher3.Folder>
+</org.cyanogenmod.trebuchet.Folder>

@@ -14,16 +14,15 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.stress;
+package org.cyanogenmod.trebuchet.stress;
 
 
-import com.android.launcher3.Launcher;
+import org.cyanogenmod.trebuchet.Launcher;
 
 import android.content.pm.ActivityInfo;
 import android.os.SystemClock;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.RepetitiveTest;
-import android.util.Log;
 
 /**
  * Run rotation stress test using Launcher2 for 50 iterations.

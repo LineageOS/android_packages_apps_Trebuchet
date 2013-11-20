@@ -1,4 +1,4 @@
--keep class com.android.launcher3.Launcher {
+-keep class org.cyanogenmod.trebuchet.Launcher {
   public void previousScreen(android.view.View);
   public void nextScreen(android.view.View);
   public void launchHotSeat(android.view.View);
@@ -12,12 +12,12 @@
   public void dismissAllAppsCling(android.view.View);
 }
 
--keep class com.android.launcher3.CellLayout {
+-keep class org.cyanogenmod.trebuchet.CellLayout {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
 }
 
--keep class com.android.launcher3.DragLayer$LayoutParams {
+-keep class org.cyanogenmod.trebuchet.DragLayer$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -28,7 +28,7 @@
   public int getY();
 }
 
--keep class com.android.launcher3.CellLayout$LayoutParams {
+-keep class org.cyanogenmod.trebuchet.CellLayout$LayoutParams {
   public void setWidth(int);
   public int getWidth();
   public void setHeight(int);
@@ -39,13 +39,13 @@
   public int getY();
 }
 
--keep class com.android.launcher3.Workspace {
+-keep class org.cyanogenmod.trebuchet.Workspace {
   public float getBackgroundAlpha();
   public void setBackgroundAlpha(float);
   public float getChildrenOutlineAlpha();
   public void setChildrenOutlineAlpha(float);
 }
 
--keep class com.android.launcher3.MemoryDumpActivity {
+-keep class org.cyanogenmod.trebuchet.MemoryDumpActivity {
   *;
 }
