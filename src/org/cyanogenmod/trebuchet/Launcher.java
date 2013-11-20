@@ -379,6 +379,9 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
+        // Load all settings
+        SettingsProvider.load(this);
+
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
 
@@ -406,9 +409,6 @@ public class Launcher extends Activity
         mIconCache.flushInvalidIcons(grid);
         mDragController = new DragController(this);
         mInflater = getLayoutInflater();
-
-        // Load all settings
-        SettingsProvider.load(this);
 
         mStats = new Stats(this);
 
@@ -838,7 +838,7 @@ public class Launcher extends Activity
         super.onResume();
 
         if (settingsChanged()) {
-            finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
         }
 
         // Restore the previous launcher state

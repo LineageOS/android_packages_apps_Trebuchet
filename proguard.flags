@@ -49,3 +49,5 @@
 -keep class org.cyanogenmod.trebuchet.MemoryDumpActivity {
   *;
 }
+
+-keep class com.cyanogenmod.trebuchet.preference.Preferences$*Fragment
