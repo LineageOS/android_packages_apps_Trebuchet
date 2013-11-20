@@ -97,6 +97,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.cyanogenmod.trebuchet.DropTarget.DragObject;
+import org.cyanogenmod.trebuchet.settings.SettingsActivity;
+import org.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -404,6 +406,9 @@ public class Launcher extends Activity
         mIconCache.flushInvalidIcons(grid);
         mDragController = new DragController(this);
         mInflater = getLayoutInflater();
+
+        // Load all settings
+        SettingsProvider.load(this);
 
         mStats = new Stats(this);
 
@@ -832,6 +837,10 @@ public class Launcher extends Activity
         }
         super.onResume();
 
+        if (settingsChanged()) {
+            finish();
+        }
+
         // Restore the previous launcher state
         if (mOnResumeState == State.WORKSPACE) {
             showWorkspace(false);
@@ -977,6 +986,13 @@ public class Launcher extends Activity
     }
 
     protected void startSettings() {
+        Intent settings = new Intent().setClass(this, SettingsActivity.class);
+        settings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        startActivity(settings);
+        if (mWorkspace.isInOverviewMode()) {
+            mWorkspace.exitOverviewMode(false);
+        }
     }
 
     public interface QSBScroller {
@@ -4377,6 +4393,22 @@ public class Launcher extends Activity
         Cling cling = (Cling) findViewById(R.id.folder_cling);
         dismissCling(cling, null, Cling.FOLDER_CLING_DISMISSED_KEY,
                 DISMISS_CLING_DURATION, true);
+    }
+
+    /**
+     * To avoid managing preference change listeners for various parts of the
+     * launcher we simply kill the process and let it reload from scratch.
+     */
+    public boolean settingsChanged() {
+        SharedPreferences prefs =
+                getSharedPreferences(SettingsProvider.SETTINGS_KEY, Context.MODE_PRIVATE);
+        boolean settingsChanged = prefs.getBoolean(SettingsProvider.SETTINGS_CHANGED, false);
+        if (settingsChanged) {
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean(SettingsProvider.SETTINGS_CHANGED, false);
+            editor.commit();
+        }
+        return settingsChanged;
     }
 
     /**

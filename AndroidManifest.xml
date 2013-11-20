@@ -19,9 +19,10 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.cyanogenmod.trebuchet">
+    package="org.cyanogenmod.trebuchet"
+    android:versionName="@string/application_version">
 
-    <uses-sdk android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="19" />
 
     <permission
         android:name="com.android.launcher3.permission.PRELOAD_WORKSPACE"
@@ -90,6 +91,14 @@
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="org.cyanogenmod.trebuchet.settings.SettingsActivity"
+                android:label="@string/preferences_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.cyanogenmod.category.LAUNCHER_PREFERENCES" />
             </intent-filter>
         </activity>
 
