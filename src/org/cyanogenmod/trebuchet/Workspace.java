@@ -32,7 +32,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -114,8 +113,7 @@ public class Workspace extends SmoothPagedView
     private final WallpaperManager mWallpaperManager;
     private IBinder mWindowToken;
 
-    private int mOriginalDefaultPage;
-    private int mDefaultPage;
+    private long mDefaultScreenId;
 
     private ShortcutAndWidgetContainer mDragSourceInternal;
     private static boolean sAccessibilityEnabled;
@@ -303,7 +301,7 @@ public class Workspace extends SmoothPagedView
         // With workspace, data is available straight from the get-go
         setDataIsReady();
 
-        mShowSearchBar = SettingsProvider.getBoolean(SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH, context,
+        mShowSearchBar = SettingsProvider.getBoolean(context, SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
 
         mLauncher = (Launcher) context;
@@ -320,7 +318,8 @@ public class Workspace extends SmoothPagedView
                 res.getInteger(R.integer.config_workspaceOverviewShrinkPercentage) / 100.0f;
         mOverviewModePageOffset = res.getDimensionPixelSize(R.dimen.overview_mode_page_offset);
         mCameraDistance = res.getInteger(R.integer.config_cameraDistance);
-        mOriginalDefaultPage = mDefaultPage = a.getInt(R.styleable.Workspace_defaultScreen, 1);
+        mDefaultScreenId = SettingsProvider.getLongCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID, -1);
         a.recycle();
 
         setOnHierarchyChangeListener(this);
@@ -406,7 +405,6 @@ public class Workspace extends SmoothPagedView
      */
     protected void initWorkspace() {
         Context context = getContext();
-        mCurrentPage = mDefaultPage;
         Launcher.setScreen(mCurrentPage);
         LauncherAppState app = LauncherAppState.getInstance();
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
@@ -548,6 +546,13 @@ public class Workspace extends SmoothPagedView
         mWorkspaceScreens.put(screenId, newScreen);
         mScreenOrder.add(insertIndex, screenId);
         addView(newScreen, insertIndex);
+
+        if (mDefaultScreenId == screenId) {
+            int defaultPage = getPageIndexForScreenId(screenId);
+            moveToScreen(defaultPage, false);
+            Launcher.setScreen(defaultPage);
+        }
+
         return screenId;
     }
 
@@ -562,9 +567,6 @@ public class Workspace extends SmoothPagedView
         customScreen.setPadding(0, 0, 0, 0);
 
         addFullScreenPage(customScreen);
-
-        // Ensure that the current page and default page are maintained.
-        mDefaultPage = mOriginalDefaultPage + 1;
 
         // Update the custom content hint
         mLauncher.updateCustomContentHintVisibility();
@@ -591,9 +593,6 @@ public class Workspace extends SmoothPagedView
         }
 
         mCustomContentCallbacks = null;
-
-        // Ensure that the current page and default page are maintained.
-        mDefaultPage = mOriginalDefaultPage - 1;
 
         // Update the custom content hint
         mLauncher.updateCustomContentHintVisibility();
@@ -1287,6 +1286,10 @@ public class Workspace extends SmoothPagedView
     public void computeScroll() {
         super.computeScroll();
         mWallpaperOffset.syncWithScroll();
+
+        if (isInOverviewMode() && !isReordering(true)) {
+            updateDefaultScreenButton();
+        }
     }
 
     void showOutlines() {
@@ -1840,6 +1843,27 @@ public class Workspace extends SmoothPagedView
         return getChangeStateAnimation(state, animated, 0, -1);
     }
 
+    private void updateDefaultScreenButton() {
+        View overviewPanel = mLauncher.getOverviewPanel();
+        if (overviewPanel != null) {
+            View defaultPageButton = overviewPanel.findViewById(R.id.default_screen_button);
+            defaultPageButton.setActivated(
+                    getScreenIdForPageIndex(getPageNearestToCenterOfScreen()) == mDefaultScreenId);
+        }
+    }
+
+    public void onClickDefaultScreenButton() {
+        if (!isInOverviewMode()) return;
+
+        mDefaultScreenId = getScreenIdForPageIndex(getPageNearestToCenterOfScreen());
+
+        exitOverviewMode(getPageNearestToCenterOfScreen(), true);
+
+        SettingsProvider.get(mLauncher).edit()
+                .putLong(SettingsProvider.SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID, mDefaultScreenId)
+                .commit();
+    }
+
     @Override
     protected void getOverviewModePages(int[] range) {
         int start = numCustomPages();
@@ -1854,6 +1878,10 @@ public class Workspace extends SmoothPagedView
         showOutlines();
         // Reordering handles its own animations, disable the automatic ones.
         disableLayoutTransitions();
+
+        mLauncher.getOverviewPanel().animate()
+                .alpha(0f)
+                .start();
     }
 
     protected void onEndReordering() {
@@ -1871,6 +1899,13 @@ public class Workspace extends SmoothPagedView
 
         // Re-enable auto layout transitions for page deletion.
         enableLayoutTransitions();
+
+        // Show the default screen button
+        updateDefaultScreenButton();
+
+        mLauncher.getOverviewPanel().animate()
+                .alpha(1f)
+                .start();
     }
 
     public boolean isInOverviewMode() {
@@ -4436,7 +4471,7 @@ public class Workspace extends SmoothPagedView
     }
 
     void moveToDefaultScreen(boolean animate) {
-        moveToScreen(mDefaultPage, animate);
+        moveToScreen(getPageIndexForScreenId(mDefaultScreenId), animate);
     }
 
     void moveToCustomContentScreen(boolean animate) {

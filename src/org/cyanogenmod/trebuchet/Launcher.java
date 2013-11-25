@@ -379,9 +379,6 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
-        // Load all settings
-        SettingsProvider.load(this);
-
         LauncherAppState.setApplicationContext(getApplicationContext());
         LauncherAppState app = LauncherAppState.getInstance();
 
@@ -1195,6 +1192,15 @@ public class Launcher extends Activity
             }
         });
         settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
+
+        View defaultScreenButton = findViewById(R.id.default_screen_button);
+        defaultScreenButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                mWorkspace.onClickDefaultScreenButton();
+            }
+        });
+        defaultScreenButton.setOnTouchListener(getHapticFeedbackTouchListener());
         mOverviewPanel.setAlpha(0f);
 
         // Setup the workspace
