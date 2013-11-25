@@ -3683,7 +3683,7 @@ public class Launcher extends Activity
         }
 
         // Remove the extra empty screen
-        mWorkspace.removeExtraEmptyScreen();
+        mWorkspace.removeExtraEmptyScreens();
 
         if (!AppsCustomizePagedView.DISABLE_ALL_APPS &&
                 addedApps != null && mAppsCustomizeContent != null) {
