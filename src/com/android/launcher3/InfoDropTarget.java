@@ -71,19 +71,22 @@ public class InfoDropTarget extends ButtonDropTarget {
         }
     }
 
+    private ComponentName dragItemComponentName(Object dragInfo) {
+        if (dragInfo instanceof AppInfo) {
+            return ((AppInfo) dragInfo).componentName;
+        } else if (dragInfo instanceof ShortcutInfo) {
+            return ((ShortcutInfo) dragInfo).intent.getComponent();
+        } else if (dragInfo instanceof PendingAddItemInfo) {
+            return ((PendingAddItemInfo) dragInfo).componentName;
+        }
+        return null;
+    }
+
     @Override
     public boolean acceptDrop(DragObject d) {
         // acceptDrop is called just before onDrop. We do the work here, rather than
         // in onDrop, because it allows us to reject the drop (by returning false)
         // so that the object being dragged isn't removed from the drag source.
-        ComponentName componentName = null;
-        if (d.dragInfo instanceof AppInfo) {
-            componentName = ((AppInfo) d.dragInfo).componentName;
-        } else if (d.dragInfo instanceof ShortcutInfo) {
-            componentName = ((ShortcutInfo) d.dragInfo).intent.getComponent();
-        } else if (d.dragInfo instanceof PendingAddItemInfo) {
-            componentName = ((PendingAddItemInfo) d.dragInfo).componentName;
-        }
         final UserHandleCompat user;
         if (d.dragInfo instanceof ItemInfo) {
             user = ((ItemInfo) d.dragInfo).user;
@@ -91,6 +94,7 @@ public class InfoDropTarget extends ButtonDropTarget {
             user = UserHandleCompat.myUserHandle();
         }
 
+        ComponentName componentName = dragItemComponentName(d.dragInfo);
         if (componentName != null) {
             mLauncher.startApplicationDetailsActivity(componentName, user);
         }
@@ -102,12 +106,7 @@ public class InfoDropTarget extends ButtonDropTarget {
 
     @Override
     public void onDragStart(DragSource source, Object info, int dragAction) {
-        boolean isVisible = true;
-
-        // Hide this button unless we are dragging something from AllApps
-        if (!source.supportsAppInfoDropTarget()) {
-            isVisible = false;
-        }
+        boolean isVisible = dragItemComponentName(info) != null;
 
         mActive = isVisible;
         mDrawable.resetTransition();
