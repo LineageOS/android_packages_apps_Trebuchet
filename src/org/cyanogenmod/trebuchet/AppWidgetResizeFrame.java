@@ -36,7 +36,6 @@ public class AppWidgetResizeFrame extends FrameLayout {
     private int mBaselineHeight;
     private int mBaselineX;
     private int mBaselineY;
-    private int mResizeMode;
 
     private int mRunningHInc;
     private int mRunningVInc;
@@ -78,7 +77,6 @@ public class AppWidgetResizeFrame extends FrameLayout {
         mLauncher = (Launcher) context;
         mCellLayout = cellLayout;
         mWidgetView = widgetView;
-        mResizeMode = widgetView.getAppWidgetInfo().resizeMode;
         mDragLayer = dragLayer;
 
         final AppWidgetProviderInfo info = widgetView.getAppWidgetInfo();
@@ -121,14 +119,6 @@ public class AppWidgetResizeFrame extends FrameLayout {
         mWidgetPaddingRight = p.right;
         mWidgetPaddingBottom = p.bottom;
 
-        if (mResizeMode == AppWidgetProviderInfo.RESIZE_HORIZONTAL) {
-            mTopHandle.setVisibility(GONE);
-            mBottomHandle.setVisibility(GONE);
-        } else if (mResizeMode == AppWidgetProviderInfo.RESIZE_VERTICAL) {
-            mLeftHandle.setVisibility(GONE);
-            mRightHandle.setVisibility(GONE);
-        }
-
         final float density = mLauncher.getResources().getDisplayMetrics().density;
         mBackgroundPadding = (int) Math.ceil(density * BACKGROUND_PADDING);
         mTouchTargetWidth = 2 * mBackgroundPadding;
@@ -140,14 +130,11 @@ public class AppWidgetResizeFrame extends FrameLayout {
     }
 
     public boolean beginResizeIfPointInRegion(int x, int y) {
-        boolean horizontalActive = (mResizeMode & AppWidgetProviderInfo.RESIZE_HORIZONTAL) != 0;
-        boolean verticalActive = (mResizeMode & AppWidgetProviderInfo.RESIZE_VERTICAL) != 0;
 
-        mLeftBorderActive = (x < mTouchTargetWidth) && horizontalActive;
-        mRightBorderActive = (x > getWidth() - mTouchTargetWidth) && horizontalActive;
-        mTopBorderActive = (y < mTouchTargetWidth + mTopTouchRegionAdjustment) && verticalActive;
-        mBottomBorderActive = (y > getHeight() - mTouchTargetWidth + mBottomTouchRegionAdjustment)
-                && verticalActive;
+        mLeftBorderActive = x < mTouchTargetWidth;
+        mRightBorderActive = x > getWidth() - mTouchTargetWidth;
+        mTopBorderActive = y < mTouchTargetWidth + mTopTouchRegionAdjustment;
+        mBottomBorderActive = y > getHeight() - mTouchTargetWidth + mBottomTouchRegionAdjustment;
 
         boolean anyBordersActive = mLeftBorderActive || mRightBorderActive
                 || mTopBorderActive || mBottomBorderActive;
@@ -452,13 +439,7 @@ public class AppWidgetResizeFrame extends FrameLayout {
                 }
             });
             AnimatorSet set = LauncherAnimUtils.createAnimatorSet();
-            if (mResizeMode == AppWidgetProviderInfo.RESIZE_VERTICAL) {
-                set.playTogether(oa, topOa, bottomOa);
-            } else if (mResizeMode == AppWidgetProviderInfo.RESIZE_HORIZONTAL) {
-                set.playTogether(oa, leftOa, rightOa);
-            } else {
-                set.playTogether(oa, leftOa, rightOa, topOa, bottomOa);
-            }
+            set.playTogether(oa, leftOa, rightOa, topOa, bottomOa);
 
             set.setDuration(SNAP_DURATION);
             set.start();
