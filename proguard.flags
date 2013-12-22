@@ -50,4 +50,4 @@
   *;
 }
 
--keep class com.cyanogenmod.trebuchet.preference.Preferences$*Fragment
+-keep class org.cyanogenmod.trebuchet.settings.SettingsActivity$*Fragment
