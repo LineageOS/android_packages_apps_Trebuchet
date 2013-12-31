@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.Log;
+import org.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.lang.ref.WeakReference;
 
@@ -111,6 +112,18 @@ public class LauncherAppState {
         ContentResolver resolver = sContext.getContentResolver();
         resolver.registerContentObserver(LauncherSettings.Favorites.CONTENT_URI, true,
                 mFavoritesObserver);
+
+        // Generate default typeface
+        String fontFamily = SettingsProvider.getString(sContext,
+                SettingsProvider.SETTINGS_UI_GENERAL_ICONS_TEXT_FONT_FAMILY,
+                R.string.preferences_interface_general_icons_text_font_family_default);
+
+        // TODO: Implement font styles
+        int fontStyle = SettingsProvider.getInt(sContext,
+                SettingsProvider.SETTINGS_UI_GENERAL_ICONS_TEXT_FONT_STYLE,
+                R.integer.preferences_interface_general_icons_text_font_style_default);
+
+        Utilities.generateTypeface(fontFamily, fontStyle);
     }
 
     /**
