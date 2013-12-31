@@ -1320,6 +1320,7 @@ public class Launcher extends Activity
         BubbleTextView favorite = (BubbleTextView) mInflater.inflate(layoutResId, parent, false);
         favorite.applyFromShortcutInfo(info, mIconCache);
         favorite.setOnClickListener(this);
+        Utilities.applyTypeface(favorite);
         return favorite;
     }
 
