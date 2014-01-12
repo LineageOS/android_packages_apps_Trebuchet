@@ -30,18 +30,6 @@
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="system|signature" />
     <permission
-        android:name="com.android.launcher.permission.INSTALL_SHORTCUT"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="dangerous"
-        android:label="@string/permlab_install_shortcut"
-        android:description="@string/permdesc_install_shortcut" />
-    <permission
-        android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"
-        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
-        android:protectionLevel="dangerous"
-        android:label="@string/permlab_uninstall_shortcut"
-        android:description="@string/permdesc_uninstall_shortcut"/>
-    <permission
         android:name="com.android.launcher3.permission.READ_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="normal"
@@ -176,18 +164,18 @@
         <!-- Intent received used to install shortcuts from other applications -->
         <receiver
             android:name="org.cyanogenmod.trebuchet.InstallShortcutReceiver"
-            android:permission="com.android.launcher3.permission.INSTALL_SHORTCUT">
+            android:permission="com.android.launcher.permission.INSTALL_SHORTCUT">
             <intent-filter>
-                <action android:name="com.android.launcher3.action.INSTALL_SHORTCUT" />
+                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
             </intent-filter>
         </receiver>
 
         <!-- Intent received used to uninstall shortcuts from other applications -->
         <receiver
             android:name="org.cyanogenmod.trebuchet.UninstallShortcutReceiver"
-            android:permission="com.android.launcher3.permission.UNINSTALL_SHORTCUT">
+            android:permission="com.android.launcher.permission.UNINSTALL_SHORTCUT">
             <intent-filter>
-                <action android:name="com.android.launcher3.action.UNINSTALL_SHORTCUT" />
+                <action android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
             </intent-filter>
         </receiver>
 
