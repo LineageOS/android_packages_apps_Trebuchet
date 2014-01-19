@@ -258,8 +258,10 @@ public class Workspace extends SmoothPagedView
     private float mCurrentScale;
     private float mNewScale;
     private float[] mOldBackgroundAlphas;
+    private float[] mOldBackgroundAlphaMultipliers;
     private float[] mOldAlphas;
     private float[] mNewBackgroundAlphas;
+    private float[] mNewBackgroundAlphaMultipliers;
     private float[] mNewAlphas;
     private int mLastChildCount = -1;
     private float mTransitionProgress;
@@ -310,13 +312,15 @@ public class Workspace extends SmoothPagedView
         mShowOutlines = SettingsProvider.getBoolean(context,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_PAGE_OUTLINES,
                 R.bool.preferences_interface_homescreen_scrolling_page_outlines_default);
+        mWorkspaceFadeInAdjacentScreens = SettingsProvider.getBoolean(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_FADE_ADJACENT,
+                R.bool.preferences_interface_homescreen_scrolling_fade_adjacent_default);
         TransitionEffect.setFromString(this, SettingsProvider.getString(context,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_TRANSITION_EFFECT,
                 R.string.preferences_interface_homescreen_scrolling_transition_effect));
 
         mLauncher = (Launcher) context;
         final Resources res = getResources();
-        mWorkspaceFadeInAdjacentScreens = res.getBoolean(R.bool.config_workspaceFadeAdjacentScreens);
         mFadeInAdjacentScreens = false;
         mWallpaperManager = WallpaperManager.getInstance(context);
 
@@ -1424,7 +1428,7 @@ public class Workspace extends SmoothPagedView
                     float scrollProgress = getScrollProgress(screenCenter, child, i);
                     float alpha = 1 - Math.abs(scrollProgress);
                     child.getShortcutsAndWidgets().setAlpha(alpha);
-                    if (!mIsDragOccuring) {
+                    if (!mIsDragOccuring && !mShowOutlines) {
                         child.setBackgroundAlphaMultiplier(
                                 backgroundAlphaInterpolator(Math.abs(scrollProgress)));
                     } else {
@@ -1514,6 +1518,15 @@ public class Workspace extends SmoothPagedView
         return listener;
     }
 
+    public void setShowOutlines(boolean show) {
+        mShowOutlines = show;
+    }
+
+    @Override
+    public void setFadeInAdjacentScreens(boolean fade) {
+        mWorkspaceFadeInAdjacentScreens = fade;
+    }
+
     @Override
     protected void screenScrolled(int screenCenter) {
         final boolean isRtl = isLayoutRtl();
@@ -1526,9 +1539,10 @@ public class Workspace extends SmoothPagedView
         }
         mUseTransitionEffect = !isOnLastPageBeforeCustomContent && mState == State.NORMAL && !mIsSwitchingState;
 
+        updatePageAlphaValues(screenCenter);
+
         super.screenScrolled(screenCenter);
 
-        updatePageAlphaValues(screenCenter);
         updateStateForCustomContent(screenCenter);
         enableHwLayersOnVisiblePages();
 
@@ -1853,8 +1867,10 @@ public class Workspace extends SmoothPagedView
         if (mLastChildCount == childCount) return;
 
         mOldBackgroundAlphas = new float[childCount];
+        mOldBackgroundAlphaMultipliers = new float[childCount];
         mOldAlphas = new float[childCount];
         mNewBackgroundAlphas = new float[childCount];
+        mNewBackgroundAlphaMultipliers = new float[childCount];
         mNewAlphas = new float[childCount];
     }
 
@@ -2031,6 +2047,7 @@ public class Workspace extends SmoothPagedView
         final boolean stateIsSmall = (state == State.SMALL);
         final boolean stateIsOverview = (state == State.OVERVIEW);
         float finalBackgroundAlpha = (stateIsSpringLoaded || stateIsOverview) ? 1.0f : 0f;
+        float finalBackgroundAlphaMultiplier = (stateIsSpringLoaded || stateIsOverview || mShowOutlines) ? 1.0f : 0f;
         float finalHotseatAndPageIndicatorAlpha = (stateIsOverview || stateIsSmall) ? 0f : 1f;
         float finalOverviewPanelAlpha = stateIsOverview ? 1f : 0f;
         float finalSearchBarAlpha = !stateIsNormal ? 0f : 1f;
@@ -2108,9 +2125,12 @@ public class Workspace extends SmoothPagedView
             mNewAlphas[i] = finalAlpha;
             if (animated) {
                 mOldBackgroundAlphas[i] = cl.getBackgroundAlpha();
+                mOldBackgroundAlphaMultipliers[i] = cl.getBackgroundAlphaMultiplier();
                 mNewBackgroundAlphas[i] = finalBackgroundAlpha;
+                mNewBackgroundAlphaMultipliers[i] = finalBackgroundAlphaMultiplier;
             } else {
                 cl.setBackgroundAlpha(finalBackgroundAlpha);
+                cl.setBackgroundAlphaMultiplier(finalBackgroundAlphaMultiplier);
                 cl.setShortcutAndWidgetAlpha(finalAlpha);
             }
         }
@@ -2151,6 +2171,9 @@ public class Workspace extends SmoothPagedView
                                     cl.setBackgroundAlpha(
                                             a * mOldBackgroundAlphas[i] +
                                             b * mNewBackgroundAlphas[i]);
+                                    cl.setBackgroundAlphaMultiplier(
+                                            a * mOldBackgroundAlphaMultipliers[i] +
+                                            b * mNewBackgroundAlphaMultipliers[i]);
                                 }
                             });
                         anim.play(bgAnim);
