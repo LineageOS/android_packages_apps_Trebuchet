@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:launcher="http://schemas.android.com/apk/res/com.cyanogenmod.trebuchet"
+        xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher3"
         android:key="ui_general"
         android:title="@string/preferences_interface_general_title">
     <PreferenceCategory android:title="@string/preferences_interface_general_icons_category">
@@ -23,7 +23,7 @@
                 android:title="@string/preferences_interface_general_icons_large_title"
                 android:summary="@string/preferences_interface_general_icons_large_summary"
                 android:defaultValue="@bool/preferences_interface_general_icons_large_default" />
-        <org.cyanogenmod.trebuchet.settings.FontStylePreference android:key="ui_general_icons_text_font"
+        <com.android.launcher3.settings.FontStylePreference android:key="ui_general_icons_text_font"
                 android:title="@string/preferences_interface_general_icons_text_style_title"
                 android:summary="@string/preferences_interface_general_icons_text_style_summary"
                 android:entries="@array/preferences_interface_general_icons_text_font_family_entries"

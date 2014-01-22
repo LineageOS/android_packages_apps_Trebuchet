@@ -25,6 +25,10 @@
 
     <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="19" />
 
+    <original-package android:name="com.cyanogenmod.trebuchet" />
+    <original-package android:name="com.android.launcher2" />
+    <original-package android:name="com.android.launcher3" />
+
     <permission
         android:name="com.android.launcher3.permission.PRELOAD_WORKSPACE"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
@@ -61,14 +65,14 @@
     <uses-permission android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS" />
 
     <application
-        android:name="org.cyanogenmod.trebuchet.LauncherApplication"
+        android:name="com.android.launcher3.LauncherApplication"
         android:label="@string/application_name"
         android:icon="@mipmap/ic_launcher_home"
         android:hardwareAccelerated="true"
         android:largeHeap="@bool/config_largeHeap"
         android:supportsRtl="true">
         <activity
-            android:name="org.cyanogenmod.trebuchet.Launcher"
+            android:name="com.android.launcher3.Launcher"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
@@ -83,7 +87,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="org.cyanogenmod.trebuchet.settings.SettingsActivity"
+        <activity android:name="com.android.launcher3.settings.SettingsActivity"
                 android:label="@string/preferences_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -93,7 +97,7 @@
         </activity>
 
         <activity
-            android:name="org.cyanogenmod.trebuchet.ToggleWeightWatcher"
+            android:name="com.android.launcher3.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
             android:enabled="@bool/debug_memory_enabled"
             android:icon="@mipmap/ic_launcher_home">
@@ -105,7 +109,7 @@
         </activity>
 
         <activity
-            android:name="org.cyanogenmod.trebuchet.WallpaperPickerActivity"
+            android:name="com.android.launcher3.WallpaperPickerActivity"
             android:theme="@style/Theme.WallpaperCropper"
             android:label="@string/pick_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -118,7 +122,7 @@
         </activity>
 
         <activity
-            android:name="org.cyanogenmod.trebuchet.WallpaperCropActivity"
+            android:name="com.android.launcher3.WallpaperCropActivity"
             android:theme="@style/Theme.WallpaperCropper"
             android:label="@string/crop_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -133,7 +137,7 @@
 
         <!-- Debugging tools -->
         <activity
-            android:name="org.cyanogenmod.trebuchet.MemoryDumpActivity"
+            android:name="com.android.launcher3.MemoryDumpActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:label="@string/debug_memory_activity"
             android:enabled="@bool/debug_memory_enabled"
@@ -147,14 +151,14 @@
             </intent-filter>
         </activity>
 
-        <service android:name="org.cyanogenmod.trebuchet.MemoryTracker"
+        <service android:name="com.android.launcher3.MemoryTracker"
             android:enabled="@bool/debug_memory_enabled"
             >
         </service>
 
         <!-- Intent received used to prepopulate the default workspace. -->
         <receiver
-            android:name="org.cyanogenmod.trebuchet.PreloadReceiver"
+            android:name="com.android.launcher3.PreloadReceiver"
             android:permission="com.android.launcher3.permission.PRELOAD_WORKSPACE">
             <intent-filter>
                 <action android:name="com.android.launcher3.action.PRELOAD_WORKSPACE" />
@@ -163,7 +167,7 @@
 
         <!-- Intent received used to install shortcuts from other applications -->
         <receiver
-            android:name="org.cyanogenmod.trebuchet.InstallShortcutReceiver"
+            android:name="com.android.launcher3.InstallShortcutReceiver"
             android:permission="com.android.launcher.permission.INSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
@@ -172,7 +176,7 @@
 
         <!-- Intent received used to uninstall shortcuts from other applications -->
         <receiver
-            android:name="org.cyanogenmod.trebuchet.UninstallShortcutReceiver"
+            android:name="com.android.launcher3.UninstallShortcutReceiver"
             android:permission="com.android.launcher.permission.UNINSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
@@ -181,14 +185,14 @@
 
         <!-- New user initialization; set up initial wallpaper -->
         <receiver
-            android:name="org.cyanogenmod.trebuchet.UserInitializeReceiver"
+            android:name="com.android.launcher3.UserInitializeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.USER_INITIALIZE" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="org.cyanogenmod.trebuchet.PackageChangedReceiver" >
+        <receiver android:name="com.android.launcher3.PackageChangedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_CHANGED"/>
                 <action android:name="android.intent.action.PACKAGE_REPLACED"/>
@@ -199,8 +203,8 @@
 
         <!-- The settings provider contains Home's data, like the workspace favorites -->
         <provider
-            android:name="org.cyanogenmod.trebuchet.LauncherProvider"
-            android:authorities="org.cyanogenmod.trebuchet.settings"
+            android:name="com.android.launcher3.LauncherProvider"
+            android:authorities="com.android.launcher3.settings"
             android:exported="true"
             android:writePermission="com.android.launcher3.permission.WRITE_SETTINGS"
             android:readPermission="com.android.launcher3.permission.READ_SETTINGS" />

@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.cyanogenmod.trebuchet;
+package com.android.launcher3;
 
-import org.cyanogenmod.trebuchet.backup.BackupProtos.CheckedMessage;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Favorite;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Key;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Journal;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Resource;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Screen;
-import org.cyanogenmod.trebuchet.backup.BackupProtos.Widget;
+import com.android.launcher3.backup.BackupProtos.CheckedMessage;
+import com.android.launcher3.backup.BackupProtos.Favorite;
+import com.android.launcher3.backup.BackupProtos.Key;
+import com.android.launcher3.backup.BackupProtos.Journal;
+import com.android.launcher3.backup.BackupProtos.Resource;
+import com.android.launcher3.backup.BackupProtos.Screen;
+import com.android.launcher3.backup.BackupProtos.Widget;
 
 import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
 import com.google.protobuf.nano.MessageNano;
@@ -41,7 +41,7 @@ import java.util.zip.CRC32;
  *
  * base64 -D icon.log > icon.bin
  * java -classpath $ANDROID_HOST_OUT/framework/protoutil.jar:$ANDROID_HOST_OUT/../common/obj/JAVA_LIBRARIES/host-libprotobuf-java-2.3.0-nano_intermediates/javalib.jar \
- *   org.cyanogenmod.trebuchet.DecoderRing -i icon.bin
+ *   com.android.launcher3.DecoderRing -i icon.bin
  *
  * TODO: write a wrapper to setup the classpath
  */

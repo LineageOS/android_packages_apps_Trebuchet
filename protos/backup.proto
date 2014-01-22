@@ -16,7 +16,7 @@
 
  package launcher_backup;
 
-option java_package = "org.cyanogenmod.trebuchet.backup";
+option java_package = "com.android.launcher3.backup";
 option java_outer_classname = "BackupProtos";
 
 message Key {

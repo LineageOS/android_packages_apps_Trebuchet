@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<org.cyanogenmod.trebuchet.CheckableFrameLayout
+<com.android.launcher3.CheckableFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/wallpaperThumbnailWidth"
     android:layout_height="@dimen/wallpaperThumbnailHeight"
@@ -37,4 +37,4 @@
         android:layout_gravity="center"
         android:drawablePadding="4dp"
         android:textColor="@android:color/white"/>
-</org.cyanogenmod.trebuchet.CheckableFrameLayout>
+</com.android.launcher3.CheckableFrameLayout>

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.cyanogenmod.trebuchet.stress;
+package com.android.launcher3.stress;
 
 
-import org.cyanogenmod.trebuchet.Launcher;
+import com.android.launcher3.Launcher;
 
 import android.content.pm.ActivityInfo;
 import android.os.SystemClock;
