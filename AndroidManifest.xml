@@ -47,6 +47,8 @@
         android:protectionLevel="signature"
         />
 
+    <original-package android:name="com.cyanogenmod.trebuchet" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
