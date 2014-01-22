@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<org.cyanogenmod.trebuchet.FolderIcon
+<com.android.launcher3.FolderIcon
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:antialias="true"
         android:src="@drawable/portal_ring_inner_holo"/>
-    <org.cyanogenmod.trebuchet.BubbleTextView
+    <com.android.launcher3.BubbleTextView
         style="@style/WorkspaceIcon"
         android:id="@+id/folder_icon_name" />
-</org.cyanogenmod.trebuchet.FolderIcon>
+</com.android.launcher3.FolderIcon>

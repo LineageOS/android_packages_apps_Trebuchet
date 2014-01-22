@@ -13,9 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.cyanogenmod.trebuchet.PageIndicator
+<com.android.launcher3.PageIndicator
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
     android:animateLayoutChanges="true"
     launcher:windowSize="@integer/config_maxNumberOfPageIndicatorsToShow">
-</org.cyanogenmod.trebuchet.PageIndicator>
+</com.android.launcher3.PageIndicator>

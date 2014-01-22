@@ -24,21 +24,21 @@
     android:layout_height="match_parent"
     android:background="@drawable/workspace_bg">
 
-    <org.cyanogenmod.trebuchet.DragLayer
+    <com.android.launcher3.DragLayer
         android:id="@+id/drag_layer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
         <!-- The workspace contains 5 screens of cells -->
-        <org.cyanogenmod.trebuchet.Workspace
+        <com.android.launcher3.Workspace
             android:id="@+id/workspace"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             launcher:defaultScreen="@integer/config_workspaceDefaultScreen"
             launcher:pageSpacing="@dimen/workspace_page_spacing"
             launcher:pageIndicator="@id/page_indicator">
-        </org.cyanogenmod.trebuchet.Workspace>
+        </com.android.launcher3.Workspace>
 
         <include layout="@layout/hotseat"
             android:id="@+id/hotseat"
@@ -78,7 +78,7 @@
             android:layout_height="match_parent"
             android:visibility="gone" />
 
-        <org.cyanogenmod.trebuchet.DrawableStateProxyView
+        <com.android.launcher3.DrawableStateProxyView
             android:id="@+id/voice_button_proxy"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -97,5 +97,5 @@
         <include layout="@layout/overview_panel"
             android:id="@+id/overview_panel"
             android:visibility="gone" />
-    </org.cyanogenmod.trebuchet.DragLayer>
+    </com.android.launcher3.DragLayer>
 </FrameLayout>

@@ -87,7 +87,7 @@
     <!-- Memory debugging, including a memory dump icon -->
     <bool name="debug_memory_enabled">false</bool>
 
-    <!-- Name of a subclass of org.cyanogenmod.trebuchet.AppFilter used to
+    <!-- Name of a subclass of AppFilter used to
          filter the activities shown in the launcher. Can be empty. -->
     <string name="app_filter_class" translatable="false"></string>
 

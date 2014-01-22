@@ -23,7 +23,7 @@
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
-        android:targetPackage="org.cyanogenmod.trebuchet"
+        android:targetPackage="com.android.launcher3"
         android:label="Rotation stress test using Launcher2">
     </instrumentation>
 </manifest>
