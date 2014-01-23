@@ -567,7 +567,14 @@ public class Launcher extends Activity
 
     /** To be overriden by subclasses to hint to Launcher that we have custom content */
     protected boolean hasCustomContentToLeft() {
-        return false;
+        final SearchManager searchManager =
+            (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
+        if (globalSearchActivity == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
