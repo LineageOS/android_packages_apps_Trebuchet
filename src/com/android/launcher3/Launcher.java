@@ -1383,6 +1383,21 @@ public class Launcher extends Activity
         });
         transitionEffectButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
+        View iconPackButton = findViewById(R.id.icon_pack_button);
+        iconPackButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                IconPackHelper.pickIconPack(Launcher.this, new Runnable() {
+                    @Override
+                    public void run() {
+                        mIconCache.flush();
+                        mModel.forceReload();
+                    }
+                });
+            }
+        });
+        iconPackButton.setOnTouchListener(getHapticFeedbackTouchListener());
+
         View sortButton = findViewById(R.id.sort_button);
         sortButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -2914,6 +2929,7 @@ public class Launcher extends Activity
         View wallpaperButton = mOverviewPanel.findViewById(R.id.wallpaper_button);
         View sortButton = mOverviewPanel.findViewById(R.id.sort_button);
         View filterButton = mOverviewPanel.findViewById(R.id.filter_button);
+        View iconPackButton = findViewById(R.id.icon_pack_button);
 
         PagedView pagedView = !isAllAppsVisible() ? mWorkspace : mAppsCustomizeContent;
 
@@ -2925,6 +2941,13 @@ public class Launcher extends Activity
         // TODO: implement filtering
         // filterButton.setVisibility(isAllAppsVisible() ? View.VISIBLE : View.GONE);
         filterButton.setVisibility(View.GONE);
+
+        boolean isVisible = !isAllAppsVisible();
+        if (isVisible) {
+            int numIconPacks = IconPackHelper.getSupportedPackages(this).size();
+            isVisible = numIconPacks > 0;
+        }
+        iconPackButton.setVisibility(isVisible ? View.VISIBLE : View.GONE);
 
         // Make sure overview panel is drawn above apps customize
         mOverviewPanel.bringToFront();
