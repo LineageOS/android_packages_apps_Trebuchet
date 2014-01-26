@@ -16,6 +16,24 @@
       "revId": "2e609067f6939f5c2bff0dee0459b0e563d1a731",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a54edaf_2948495b",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-26T11:55:01Z",
+      "side": 1,
+      "message": "Yes, In CM10.2 this was translated, but I see no reason to translate this really.",
+      "parentUuid": "1a54edaf_293129ed",
+      "revId": "2e609067f6939f5c2bff0dee0459b0e563d1a731",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
