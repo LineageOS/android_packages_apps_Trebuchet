@@ -18,11 +18,11 @@
         android:layout_weight="1"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
     <ImageView
-        android:src="@*android:drawable/ic_cab_done_holo_dark"
+        android:src="@drawable/ic_cab_done_holo_dark"
         android:id="@+id/check"
         android:layout_gravity="center_vertical"
-        android:layout_width="@dimen/app_icon_size"
-        android:layout_height="@dimen/app_icon_size"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_margin="8dp"/>
 
 </LinearLayout>
