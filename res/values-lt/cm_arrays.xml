@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+<!--
+     Copyright (C) 2012-2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,8 +21,8 @@
         <item>Apačioje</item>
     </string-array>
     <string-array name="preferences_interface_drawer_indicator_position_entries">
-        <item>Viršus/Kairė</item>
-        <item>Apačia/Dešinė</item>
+        <item>Viršus / Kairė</item>
+        <item>Apačia / Dešinė</item>
     </string-array>
     <string-array name="preferences_interface_drawer_orientation_entries">
         <item>Horizontaliai</item>
