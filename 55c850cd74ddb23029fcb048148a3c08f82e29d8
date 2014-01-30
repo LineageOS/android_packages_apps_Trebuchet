@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_82769a3c",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Waarom wordt dit niet vertaald?",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_6273964e",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Normaal",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_c28ee226",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Licht",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_a293de4e",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Compact?",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_0299ea6e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "\u0027opstarts\u0027?\n\n- Aantal keren opgestart",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_e29de65a",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Niet-geëscapet aanhalingsteken",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_42a3f29e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "op het startscherm en [in] het overzicht?",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_22a06e90",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "Ik zou hier gewoon \u0027Lettertype\u0027 van maken",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_82adfa8a",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-01-30T09:56:19Z",
+      "side": 1,
+      "message": "\u0027Stijl van tekst bij pictogrammen\u0027",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
