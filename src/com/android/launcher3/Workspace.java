@@ -280,7 +280,7 @@ public class Workspace extends SmoothPagedView
         }
     };
 
-    private boolean mShowSearchBar;
+    protected boolean mShowSearchBar;
     private boolean mShowOutlines;
 
     /**
@@ -2007,7 +2007,7 @@ public class Workspace extends SmoothPagedView
         if (mState != State.NORMAL) {
             return false;
         }
-        return true;
+        return mShowSearchBar;
     }
 
     public void updateInteractionForState() {
