@@ -81,7 +81,7 @@ public class Workspace extends SmoothPagedView
         implements DropTarget, DragSource, DragScroller, View.OnTouchListener,
         DragController.DragListener, LauncherTransitionable, ViewGroup.OnHierarchyChangeListener,
         Insettable {
-    private static final String TAG = "Launcher.Workspace";
+    private static final String TAG = "Launcher.Workspa    public void updateVoiceButtonProxyVisible(boolean forceDisableVoiceButtonProxy) {ce";
 
     // Y rotation to apply to the workspace screens
     private static final float WORKSPACE_OVERSCROLL_ROTATION = 24f;
@@ -2007,7 +2007,7 @@ public class Workspace extends SmoothPagedView
         if (mState != State.NORMAL) {
             return false;
         }
-        return true;
+        return mShowSearchBar;
     }
 
     public void updateInteractionForState() {
