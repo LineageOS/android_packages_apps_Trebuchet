@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_42d132fb",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_82769a3c",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_6273964e",
         "filename": "res/values-nl/cm_arrays.xml",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-30T09:56:19Z",
       "side": 1,
       "message": "Normaal",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_22ceae5a",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_6273964e",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_82db3a1b",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_c28ee226",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_a293de4e",
         "filename": "res/values-nl/cm_arrays.xml",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-30T09:56:19Z",
       "side": 1,
       "message": "Compact?",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_62d8b61e",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_a293de4e",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_c2038275",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "-1 gestart?",
+      "parentUuid": "fade3982_0299ea6e",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_e29de65a",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2014-01-30T09:56:19Z",
       "side": 1,
       "message": "Niet-geëscapet aanhalingsteken",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_a208fe92",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_e29de65a",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_02fe0a6b",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_42a3f29e",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_22a06e90",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_e202066f",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_22a06e90",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_82adfa8a",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -149,6 +293,24 @@
       "writtenOn": "2014-01-30T09:56:19Z",
       "side": 1,
       "message": "\u0027Stijl van tekst bij pictogrammen\u0027",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_42f8127d",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-30T11:09:39Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_82adfa8a",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
