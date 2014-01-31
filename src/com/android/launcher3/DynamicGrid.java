@@ -251,6 +251,20 @@ class DeviceProfile {
                 (iconSizePx + 2 * edgeMarginPx);
     }
 
+    void updateFromPreferences(Context context) {
+        int prefNumRows =  SettingsProvider.getIntCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS, (int) numRows);
+        int prefNumColumns =  SettingsProvider.getIntCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS, (int) numColumns);
+
+        if (prefNumRows > 0) {
+            numRows = prefNumRows;
+        }
+        if (prefNumColumns > 0) {
+            numColumns = prefNumColumns;
+        }
+    }
+
     private float dist(PointF p0, PointF p1) {
         return (float) Math.sqrt((p1.x - p0.x)*(p1.x-p0.x) +
                 (p1.y-p0.y)*(p1.y-p0.y));
