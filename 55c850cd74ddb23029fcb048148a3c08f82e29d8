@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_8876bb3c",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "Omdat dit font stijlen zijn en die zijn volgens mij altijd in het Engels als je een font kiest.\n\n- Arial Regular\n- Arial Light\n- Arial Condensed\n\nen zo ook voor andere fonts.\n\nBij Arial Compact krijg ik hele andere zoekresultaten: https://www.google.nl/search?q\u003dariel+compact",
+      "parentUuid": "fade3982_82769a3c",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_6273964e",
         "filename": "res/values-nl/cm_arrays.xml",
         "patchSetId": 4
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "fade3982_6273964e",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_e8866712",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "-1\n\nAls we het vertalen zou het nog altijd zijn\n\n- Standaard",
+      "parentUuid": "fade3982_22ceae5a",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_487cb320",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "zou kunnen",
+      "parentUuid": "fade3982_82db3a1b",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_a293de4e",
         "filename": "res/values-nl/cm_arrays.xml",
         "patchSetId": 4
@@ -136,6 +190,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "fade3982_a293de4e",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_28796f30",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "-1 \n\nAls we het vertalen zou het nog altijd zijn\n\n- Smal",
+      "parentUuid": "fade3982_62d8b61e",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -177,6 +249,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_c88e0327",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "geen idee of het gaat passen, maar dan \n\n- Aantal keren gestart",
+      "parentUuid": "fade3982_c2038275",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_e29de65a",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -206,6 +296,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "fade3982_e29de65a",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_6873774e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fade3982_a208fe92",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -247,6 +355,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_a893bf4e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fade3982_02fe0a6b",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_22a06e90",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -282,6 +408,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_08990b6f",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fade3982_e202066f",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_82adfa8a",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
@@ -311,6 +455,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "fade3982_82adfa8a",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_e89dc75a",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-01-31T13:42:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fade3982_42f8127d",
       "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
