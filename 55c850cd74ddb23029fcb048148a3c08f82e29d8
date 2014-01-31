@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_08b0ebdc",
+        "filename": "res/values-nl/cm_arrays.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-01-31T14:06:11Z",
+      "side": 1,
+      "message": "-1 imho Arial zou zo moeten blijven, regular\u003dstandaard oid en light\u003dlicht, condensed-\u003dcompact of smal maakt mij niet uit.",
+      "parentUuid": "fade3982_8876bb3c",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_6273964e",
         "filename": "res/values-nl/cm_arrays.xml",
         "patchSetId": 4
