@@ -201,6 +201,8 @@ public class LauncherAppState {
         Utilities.setIconSize(grid.iconSizePx);
         grid.updateFromConfiguration(context.getResources(), width, height,
                 availableWidth, availableHeight);
+
+        grid.updateFromPreferences(context);
         return grid;
     }
     DynamicGrid getDynamicGrid() {

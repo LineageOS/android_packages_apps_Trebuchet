@@ -22,4 +22,17 @@
             android:title="@string/preferences_interface_homescreen_search_title"
             android:summary="@string/preferences_interface_homescreen_search_summary"
             android:defaultValue="@bool/preferences_interface_homescreen_search_default" />
+
+    <com.android.launcher3.NumberPreference
+            android:key="ui_homescreen_rows"
+            android:title="@string/preferences_interface_homescreen_rows_title"
+            launcher:min="1"
+            launcher:max="10" />
+
+    <com.android.launcher3.NumberPreference
+            android:key="ui_homescreen_columns"
+            android:title="@string/preferences_interface_homescreen_columns_title"
+            launcher:min="1"
+            launcher:max="10" />
+
 </PreferenceScreen>
