@@ -285,6 +285,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_897ebaac",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-04T13:12:13Z",
+      "side": 1,
+      "message": "https://www.dropbox.com/s/c3c6o5s78tdxwnn/Screenshot_2014-02-03-07-12-59.png\n\nZoals te zien is, is er niet veel ruimte.\n\n- Aantal starts",
+      "parentUuid": "fade3982_c88e0327",
+      "revId": "55c850cd74ddb23029fcb048148a3c08f82e29d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_e29de65a",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 4
