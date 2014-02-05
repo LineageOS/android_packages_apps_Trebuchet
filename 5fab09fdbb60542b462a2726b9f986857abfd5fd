@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_df04f4c7",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-05T13:29:43Z",
+      "side": 1,
+      "message": "Ja, maar de uitleg staat al in de summary...lijkt me duidelijk wat deze optie doet?",
+      "parentUuid": "fade3982_ffce18b3",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_3fc1a081",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_bf0930e0",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-05T13:29:43Z",
+      "side": 1,
+      "message": "- Lettertypestijl",
+      "parentUuid": "fade3982_3fc1a081",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_bfd49047",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-05T12:54:09Z",
       "side": 1,
       "message": "2x \u003e\u003e",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_1f0f7ce2",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-05T13:29:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fade3982_bfd49047",
       "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
