@@ -15,6 +15,10 @@
 -->
 
 <resources>
+    <!-- Workspace -->
+    <dimen name="overview_panel_bottom_padding">50dp</dimen>
+    <dimen name="overview_panel_button_spacing">30dp</dimen>
+
     <dimen name="app_icon_size">72dp</dimen>
 
 <!-- QSB -->

@@ -16,15 +16,6 @@
 
 <resources>
     <!-- Workspace -->
-    <dimen name="overview_panel_bottom_padding">50dp</dimen>
-    <dimen name="overview_panel_button_spacing">30dp</dimen>
-
-    <dimen name="app_icon_size">64dp</dimen>
-
-<!-- AppsCustomize -->
-    <dimen name="apps_customize_tab_bar_height">60dp</dimen>
-    <dimen name="apps_customize_tab_bar_margin_top">8dp</dimen>
-    <dimen name="app_widget_preview_label_margin_top">8dp</dimen>
-    <dimen name="app_widget_preview_label_margin_left">@dimen/app_widget_preview_padding_left</dimen>
-    <dimen name="app_widget_preview_label_margin_right">@dimen/app_widget_preview_padding_right</dimen>
+    <dimen name="overview_panel_bottom_padding">35dp</dimen>
+    <dimen name="overview_panel_button_spacing">15dp</dimen>
 </resources>
