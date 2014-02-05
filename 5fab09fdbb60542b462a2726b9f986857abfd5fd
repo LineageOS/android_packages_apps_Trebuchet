@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_ffce18b3",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7221
+      },
+      "writtenOn": "2014-02-05T12:54:09Z",
+      "side": 1,
+      "message": "Engels \u003d \u0027Larger icons\u0027 dus \u0027Grotere pictogrammen\u0027.",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_3fc1a081",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7221
+      },
+      "writtenOn": "2014-02-05T12:54:09Z",
+      "side": 1,
+      "message": "Lettertype kan niet aangepast worden, enkel stijl: \u0027Lettertype stijl\u0027",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_bfd49047",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7221
+      },
+      "writtenOn": "2014-02-05T12:54:09Z",
+      "side": 1,
+      "message": "2x \u003e\u003e",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
