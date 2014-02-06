@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_421da70e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-02-06T10:44:57Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_df04f4c7",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_3fc1a081",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 5
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "- Lettertypestijl",
       "parentUuid": "fade3982_3fc1a081",
+      "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_6220ab4a",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-02-06T10:44:57Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "fade3982_bf0930e0",
       "revId": "5fab09fdbb60542b462a2726b9f986857abfd5fd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
