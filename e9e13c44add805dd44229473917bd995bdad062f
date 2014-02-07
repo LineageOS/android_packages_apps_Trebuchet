@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_fd874010",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7221
+      },
+      "writtenOn": "2014-02-07T03:54:35Z",
+      "side": 1,
+      "message": "Ik vind \u0027Overzicht\u0027 geen goede vertaling voor \u0027Drawer\u0027:\n\u0027Apps-overzicht\u0027\n\u0027Apps-scherm\u0027\n?",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_dd8cfc37",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7221
+      },
+      "writtenOn": "2014-02-07T03:54:35Z",
+      "side": 1,
+      "message": "Deze is geen titel maar eerder een instructie, zie ook Engelse vertaling.\n\u0027Pas apps-overzicht aan\u0027 of \u0027Pas apps-scherm aan\u0027",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
