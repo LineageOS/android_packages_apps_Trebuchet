@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_3d5a4884",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-07T05:42:56Z",
+      "side": 1,
+      "message": "gebruiken we in 10.2 ook\n\nhttps://github.com/CyanogenMod/android_packages_apps_Trebuchet/blob/cm-10.2/res/values-nl/cm_strings.xml#L74\n\nZou \"App-overzicht\" kunnen worden",
+      "parentUuid": "fade3982_3dfec86b",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_dd8cfc37",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 7
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "+1",
       "parentUuid": "fade3982_dd8cfc37",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_1d5f8473",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-02-07T05:42:56Z",
+      "side": 1,
+      "message": "Dit is geen instructie, maar een First-run uitleg:\n\nhttps://www.dropbox.com/s/2ejmi5e1zqphvfp/Screenshot_2014-02-06-02-23-08.png",
+      "parentUuid": "fade3982_dd087c94",
       "revId": "e9e13c44add805dd44229473917bd995bdad062f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
