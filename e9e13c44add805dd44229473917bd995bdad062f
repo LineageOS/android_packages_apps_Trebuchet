@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_93e2639e",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-02-08T12:21:19Z",
+      "side": 1,
+      "message": "+1 voor App-overzicht",
+      "parentUuid": "fade3982_3d5a4884",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_dd8cfc37",
         "filename": "res/values-nl/cm_strings.xml",
         "patchSetId": 7
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Dit is geen instructie, maar een First-run uitleg:\n\nhttps://www.dropbox.com/s/2ejmi5e1zqphvfp/Screenshot_2014-02-06-02-23-08.png",
       "parentUuid": "fade3982_dd087c94",
+      "revId": "e9e13c44add805dd44229473917bd995bdad062f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_f3edaf8f",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7630
+      },
+      "writtenOn": "2014-02-08T12:21:19Z",
+      "side": 1,
+      "message": "+1 Oww, zo jammer dat je de context mist als je alleen de string naam ziet, en ja ik weet het..... gewoon zoeken.....",
+      "parentUuid": "fade3982_1d5f8473",
       "revId": "e9e13c44add805dd44229473917bd995bdad062f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
