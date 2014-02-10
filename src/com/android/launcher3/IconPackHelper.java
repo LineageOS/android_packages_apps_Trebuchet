@@ -40,6 +40,10 @@ import com.android.launcher3.settings.SettingsProvider;
 
 public class IconPackHelper {
 
+    static final String ICON_MASK_TAG = "iconmask";
+    static final String ICON_BACK_TAG = "iconback";
+    static final String ICON_UPON_TAG = "iconupon";
+
     public final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
         "com.gau.go.launcherex.theme"
@@ -56,10 +60,36 @@ public class IconPackHelper {
     private final Context mContext;
     private String mLoadedIconPackName;
     private Resources mLoadedIconPackResource;
+    private Drawable mIconBack, mIconUpon, mIconMask;
+
+    public Drawable getIconBack() {
+        return mIconBack;
+    }
+
+    public Drawable getIconMask() {
+        return mIconMask;
+    }
+
+    public Drawable getIconUpon() {
+        return mIconUpon;
+    }
 
     IconPackHelper(Context context) {
         mContext = context;
         mIconPackResources = new HashMap<String, String>();
+    }
+
+    private Drawable getDrawableForName(String name) {
+        if (isIconPackLoaded()) {
+            String item = mIconPackResources.get(name);
+            if (!TextUtils.isEmpty(item)) {
+                int id = getResourceIdForDrawable(item);
+                if (id != 0) {
+                    return mLoadedIconPackResource.getDrawable(id);
+                }
+            }
+        }
+        return null;
     }
 
     public static Map<String, IconPackInfo> getSupportedPackages(Context context) {
@@ -91,6 +121,14 @@ public class IconPackHelper {
         do {
 
             if (eventType != XmlPullParser.START_TAG) {
+                continue;
+            }
+
+            if (parser.getName().equalsIgnoreCase(ICON_MASK_TAG) ||
+                    parser.getName().equalsIgnoreCase(ICON_BACK_TAG) ||
+                    parser.getName().equalsIgnoreCase(ICON_UPON_TAG)) {
+                String icon = parser.getAttributeValue(null, "img");
+                iconPackResources.put(parser.getName().toLowerCase(), icon);
                 continue;
             }
 
@@ -179,6 +217,9 @@ public class IconPackHelper {
         }
         mLoadedIconPackResource = res;
         mLoadedIconPackName = packageName;
+        mIconBack = getDrawableForName(ICON_BACK_TAG);
+        mIconMask = getDrawableForName(ICON_MASK_TAG);
+        mIconUpon = getDrawableForName(ICON_UPON_TAG);
         return true;
     }
 
@@ -280,9 +321,10 @@ public class IconPackHelper {
     public void unloadIconPack() {
         mLoadedIconPackResource = null;
         mLoadedIconPackName = null;
-        if (mIconPackResources != null) {
-            mIconPackResources.clear();
-        }
+        mIconPackResources = null;
+        mIconMask = null;
+        mIconBack = null;
+        mIconUpon = null;
     }
 
     public static void pickIconPack(final Context context, final boolean pickIcon) {
@@ -344,15 +386,20 @@ public class IconPackHelper {
         return mLoadedIconPackResource;
     }
 
-    public int getResourceIdForActivityIcon(ActivityInfo info) {
+    public String getActivityIcon(ActivityInfo info) {
         String drawable = mIconPackResources.get(info.packageName.toLowerCase()
                 + "." + info.name.toLowerCase());
         if (drawable == null) {
             // Icon pack doesn't have an icon for the activity, fallback to package icon
             drawable = mIconPackResources.get(info.packageName.toLowerCase());
-            if (drawable == null) {
-                return 0;
-            }
+        }
+        return drawable;
+    }
+
+    public int getResourceIdForActivityIcon(ActivityInfo info) {
+        String drawable = getActivityIcon(info);
+        if (drawable == null) {
+            return 0;
         }
         return getResourceIdForDrawable(drawable);
     }
