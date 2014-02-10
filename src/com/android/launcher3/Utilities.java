@@ -33,6 +33,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import com.android.launcher3.settings.SettingsProvider;
+
 /**
  * Various utilities shared amongst the Launcher's classes.
  */
@@ -103,10 +105,15 @@ final class Utilities {
         }
     }
 
+    static Bitmap createIconBitmap(Drawable icon, Context context) {
+        return createIconBitmap(icon, context, null, null, null, 1f);
+    }
+
     /**
      * Returns a bitmap suitable for the all apps view.
      */
-    static Bitmap createIconBitmap(Drawable icon, Context context) {
+    static Bitmap createIconBitmap(Drawable icon, Context context, Drawable iconBack,
+            Drawable iconMask, Drawable iconUpon, float scale) {
         synchronized (sCanvas) { // we share the statics :-(
             if (sIconWidth == -1) {
                 initStatics(context);
@@ -143,7 +150,7 @@ final class Utilities {
             int textureWidth = sIconTextureWidth;
             int textureHeight = sIconTextureHeight;
 
-            final Bitmap bitmap = Bitmap.createBitmap(textureWidth, textureHeight,
+            Bitmap bitmap = Bitmap.createBitmap(textureWidth, textureHeight,
                     Bitmap.Config.ARGB_8888);
             final Canvas canvas = sCanvas;
             canvas.setBitmap(bitmap);
@@ -164,7 +171,33 @@ final class Utilities {
 
             sOldBounds.set(icon.getBounds());
             icon.setBounds(left, top, left+width, top+height);
+            boolean useLargeIcons = SettingsProvider.getBoolean(context, SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,
+                    R.bool.preferences_interface_general_icons_large_default);
+            canvas.save();
+            if (useLargeIcons) {
+                canvas.scale(scale, scale, width / 2, height/2);
+            }
             icon.draw(canvas);
+            canvas.restore();
+            if (iconMask != null) {
+                iconMask.setBounds(icon.getBounds());
+                ((BitmapDrawable) iconMask).getPaint().setXfermode(
+                        new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                iconMask.draw(canvas);
+            }
+            if (iconBack != null) {
+                canvas.setBitmap(null);
+                Bitmap finalBitmap = Bitmap.createBitmap(textureWidth, textureHeight,
+                        Bitmap.Config.ARGB_8888);
+                canvas.setBitmap(finalBitmap);
+                iconBack.setBounds(icon.getBounds());
+                iconBack.draw(canvas);
+                canvas.drawBitmap(bitmap, null, icon.getBounds(), null);
+                bitmap = finalBitmap;
+            }
+            if (iconUpon != null) {
+                iconUpon.draw(canvas);
+            }
             icon.setBounds(sOldBounds);
             canvas.setBitmap(null);
 
