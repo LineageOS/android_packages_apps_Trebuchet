@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fade3982_4582c601",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-02-13T15:23:26Z",
+      "side": 1,
+      "message": "So the idea here was that if you have large icons turned off, the scale would make it look REALLY small.\n\nBut since we changed the logic, let me remove this check since it looks good either way",
+      "parentUuid": "fade3982_05a1dea9",
+      "revId": "1454e9f6f486e42626fa4da084062400fc36db45",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fade3982_e5a5dab5",
         "filename": "src/com/android/launcher3/Utilities.java",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-13T15:18:32Z",
       "side": 1,
       "message": "Same if twice?",
+      "revId": "1454e9f6f486e42626fa4da084062400fc36db45",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_2587c210",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-02-13T15:23:26Z",
+      "side": 1,
+      "message": "Yea, let me merge the two since masking and back go hand in hand",
+      "parentUuid": "fade3982_e5a5dab5",
       "revId": "1454e9f6f486e42626fa4da084062400fc36db45",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
