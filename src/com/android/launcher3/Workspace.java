@@ -3946,7 +3946,7 @@ public class Workspace extends SmoothPagedView
 
         boolean beingCalledAfterUninstall = mDeferredAction != null;
 
-        if (success && !(beingCalledAfterUninstall && !mUninstallSuccessful)) {
+        if (success) {
             if (target != this && mDragInfo != null) {
                 CellLayout parentCell = getParentCellLayoutForView(mDragInfo.cell);
                 if (parentCell != null) {
@@ -3960,7 +3960,7 @@ public class Workspace extends SmoothPagedView
                 // be done post drop animation.
                 stripEmptyScreens();
             }
-        } else if (mDragInfo != null) {
+        } else if (mDragInfo != null && (!(target instanceof InfoDropTarget))) {
             CellLayout cellLayout;
             if (mLauncher.isHotseatLayout(target)) {
                 cellLayout = mLauncher.getHotseat().getLayout();
