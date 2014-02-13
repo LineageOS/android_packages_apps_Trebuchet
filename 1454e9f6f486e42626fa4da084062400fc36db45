@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_05a1dea9",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2014-02-13T15:18:32Z",
+      "side": 1,
+      "message": "What exactly does this do in relation to the large icons preference?",
+      "revId": "1454e9f6f486e42626fa4da084062400fc36db45",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fade3982_e5a5dab5",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2014-02-13T15:18:32Z",
+      "side": 1,
+      "message": "Same if twice?",
+      "revId": "1454e9f6f486e42626fa4da084062400fc36db45",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
