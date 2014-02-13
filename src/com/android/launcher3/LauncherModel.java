@@ -2827,9 +2827,11 @@ public class LauncherModel extends BroadcastReceiver {
         for (ItemInfo i : infos) {
             if (i instanceof ShortcutInfo) {
                 ShortcutInfo info = (ShortcutInfo) i;
-                ComponentName cn = info.intent.getComponent();
-                if (cn != null && f.filterItem(null, info, cn)) {
-                    filtered.add(info);
+                if (info.intent != null)   {
+                    ComponentName cn = info.intent.getComponent();
+                    if (cn != null && f.filterItem(null, info, cn)) {
+                        filtered.add(info);
+                    }
                 }
             } else if (i instanceof FolderInfo) {
                 FolderInfo info = (FolderInfo) i;
