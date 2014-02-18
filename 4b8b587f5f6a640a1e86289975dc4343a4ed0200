@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fade3982_5c829c01",
+        "filename": "res/values-nl/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-02-18T14:21:53Z",
+      "side": 1,
+      "message": "In CMFM en andere apps hebben we \u0027The CyanogenMod Project\u0027 gewoon vertaald. Verder zie ik niet echt in wrm dat niet gebeurt?",
+      "revId": "4b8b587f5f6a640a1e86289975dc4343a4ed0200",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
