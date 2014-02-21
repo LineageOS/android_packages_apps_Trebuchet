@@ -7,13 +7,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import android.widget.ArrayAdapter;
+import android.widget.CheckedTextView;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -29,13 +31,8 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.launcher3.Launcher;
 import com.android.launcher3.settings.SettingsProvider;
 
 public class IconPackHelper {
@@ -98,7 +95,7 @@ public class IconPackHelper {
         return null;
     }
 
-    public static Map<String, IconPackInfo> getSupportedPackages(Context context) {
+    public static List<IconPackInfo> getSupportedPackages(Context context) {
         Intent i = new Intent();
         Map<String, IconPackInfo> packages = new HashMap<String, IconPackInfo>();
         PackageManager packageManager = context.getPackageManager();
@@ -118,7 +115,7 @@ public class IconPackHelper {
             }
             i.removeCategory(category);
         }
-        return packages;
+        return new ArrayList<IconPackInfo>(packages.values());
     }
 
     private static void loadResourcesFromXmlParser(XmlPullParser parser,
@@ -357,47 +354,56 @@ public class IconPackHelper {
         mIconScale = 1f;
     }
 
-    public static void pickIconPack(final Context context, final boolean pickIcon) {
-        Map<String, IconPackInfo> supportedPackages = getSupportedPackages(context);
+    public static void pickIconPack(final Context context) {
+        final List<IconPackInfo> supportedPackages = getSupportedPackages(context);
         if (supportedPackages.isEmpty()) {
             Toast.makeText(context, R.string.no_iconpacks_summary, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        final IconAdapter adapter = new IconAdapter(context, supportedPackages);
+        // Sort alphabetically
+        Collections.sort(supportedPackages, new Comparator<IconPackInfo>() {
+            @Override
+            public int compare(IconPackInfo a, IconPackInfo b) {
+                return a.label.toString().compareToIgnoreCase(b.label.toString());
+            }
+        });
+
+        // Add default icons
+        Resources res = context.getResources();
+        String defaultLabel = res.getString(R.string.default_iconpack_title);
+        Drawable icon = res.getDrawable(R.mipmap.ic_launcher_home);
+        supportedPackages.add(0, new IconPackInfo(defaultLabel, icon, ""));
+
+        final String currentIconPack = SettingsProvider.getStringCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, "");
+        int currentPosition = 0;
+
+        for (int i = 0; i < supportedPackages.size(); i++) {
+            IconPackInfo info = supportedPackages.get(i);
+            if (info.packageName.equals(currentIconPack)) {
+                currentPosition = i;
+                break;
+            }
+        }
+
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(R.string.dialog_pick_iconpack_title);
-        if (!pickIcon) {
-            builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int position) {
-                    if (adapter.isCurrentIconPack(position)) {
-                        ((Launcher) context).getWorkspace().exitOverviewMode(true);
-                        return;
-                    }
-                    String selectedPackage = adapter.getItem(position);
-                    SettingsProvider.putString(context,
-                            SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, selectedPackage);
-                    LauncherAppState.getInstance().getIconCache().flush();
-                    LauncherAppState.getInstance().getModel().forceReload();
+
+        builder.setSingleChoiceItems(new IconAdapter(context, supportedPackages), currentPosition, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                IconPackInfo info = supportedPackages.get(which);
+                if (info.packageName.equals(currentIconPack)) {
                     ((Launcher) context).getWorkspace().exitOverviewMode(true);
                 }
-            });
-        } else {
-            builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    String selectedPackage = adapter.getItem(which);
-                    Launcher launcherActivity = (Launcher) context;
-                    if (TextUtils.isEmpty(selectedPackage)) {
-                        launcherActivity.onActivityResult(Launcher.REQUEST_PICK_ICON, Activity.RESULT_OK, null);
-                    } else {
-                        Intent i = new Intent();
-                        i.setClass(context, IconPickerActivity.class);
-                        i.putExtra(IconPickerActivity.PACKAGE_NAME_EXTRA, selectedPackage);
-                        launcherActivity.startActivityForResult(i, Launcher.REQUEST_PICK_ICON);
-                    }
-                }
-            });
-        }
+                SettingsProvider.putString(context,
+                        SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, info.packageName);
+                LauncherAppState.getInstance().getIconCache().flush();
+                LauncherAppState.getInstance().getModel().forceReload();
+                ((Launcher) context).getWorkspace().exitOverviewMode(true);
+            }
+        });
         builder.show().getWindow().getDecorView().setAlpha(0.8f);
     }
 
@@ -450,67 +456,39 @@ public class IconPackHelper {
         }
     }
 
-    private static class IconAdapter extends BaseAdapter {
-        ArrayList<IconPackInfo> mSupportedPackages;
-        LayoutInflater mLayoutInflater;
-        String mCurrentIconPack;
-        int mCurrentIconPackPosition = -1;
+    private static class IconAdapter extends ArrayAdapter<IconPackInfo> {
+        private LayoutInflater mInflater;
 
-        IconAdapter(Context ctx, Map<String, IconPackInfo> supportedPackages) {
-            mLayoutInflater = LayoutInflater.from(ctx);
-            mSupportedPackages = new ArrayList<IconPackInfo>(supportedPackages.values());
-            Collections.sort(mSupportedPackages, new Comparator<IconPackInfo>() {
-                @Override
-                public int compare(IconPackInfo lhs, IconPackInfo rhs) {
-                    return lhs.label.toString().compareToIgnoreCase(rhs.label.toString());
-                }
-            });
+        public IconAdapter(Context context, List<IconPackInfo> supportedPackages) {
+            super(context, -1, supportedPackages);
 
-            Resources res = ctx.getResources();
-            String defaultLabel = res.getString(R.string.default_iconpack_title);
-            Drawable icon = res.getDrawable(R.mipmap.ic_launcher_home);
-            mSupportedPackages.add(0, new IconPackInfo(defaultLabel, icon, ""));
-
-            mCurrentIconPack = SettingsProvider.getStringCustomDefault(ctx,
-                  SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, "");
-        }
-
-        @Override
-        public int getCount() {
-            return mSupportedPackages.size();
-        }
-
-        @Override
-        public String getItem(int position) {
-            return (String) mSupportedPackages.get(position).packageName;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        public boolean isCurrentIconPack(int position) {
-            return mCurrentIconPackPosition == position;
+            mInflater = LayoutInflater.from(context);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            IconPackInfo info = getItem(position);
+            CheckedTextView textView;
+
             if (convertView == null) {
-                convertView = mLayoutInflater.inflate(R.layout.iconpack_chooser, null);
+                textView = (CheckedTextView) mInflater.inflate(R.layout.list_item_checkable, parent, false);
+            } else {
+                textView = (CheckedTextView) convertView;
             }
-            IconPackInfo info = mSupportedPackages.get(position);
-            TextView txtView = (TextView) convertView.findViewById(R.id.title);
-            txtView.setText(info.label);
-            ImageView imgView = (ImageView) convertView.findViewById(R.id.icon);
-            imgView.setImageDrawable(info.icon);
-            RadioButton radioButton = (RadioButton) convertView.findViewById(R.id.radio);
-            boolean isCurrentIconPack = info.packageName.equals(mCurrentIconPack);
-            radioButton.setChecked(isCurrentIconPack);
-            if (isCurrentIconPack) {
-                mCurrentIconPackPosition = position;
+
+            if (textView != null) {
+                textView.setText(info.label);
+                textView.setTag(info);
+
+                // Scale icon
+                int drawablePadding = textView.getCompoundDrawablePadding();
+                Drawable icon = info.icon;
+                icon.setBounds(0, 0, icon.getIntrinsicWidth() - 2 * drawablePadding, icon.getIntrinsicHeight() - 2 * drawablePadding);
+
+                textView.setCompoundDrawablesRelative(icon, null, null, null);
             }
-            return convertView;
+
+            return textView;
         }
     }
 

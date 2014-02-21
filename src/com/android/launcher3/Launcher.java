@@ -1388,7 +1388,7 @@ public class Launcher extends Activity
         iconPackButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                IconPackHelper.pickIconPack(Launcher.this, false);
+                IconPackHelper.pickIconPack(Launcher.this);
             }
         });
         iconPackButton.setOnTouchListener(getHapticFeedbackTouchListener());
