@@ -27,24 +27,8 @@
         android:paddingTop="@dimen/overview_panel_top_padding">
 
         <TextView
-            android:id="@+id/default_screen_button"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/overview_panel_button_spacing"
-            android:paddingRight="@dimen/overview_panel_button_spacing"
-            android:text="@string/default_screen_button_text"
-            android:drawablePadding="4dp"
-            android:drawableTop="@drawable/default_screen_button"
-            android:gravity="center_horizontal"
-            android:fontFamily="sans-serif-condensed"
-            android:textAllCaps="true"
-            android:textSize="12sp" />
-
-        <TextView
             android:id="@+id/transition_effect_button"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/overview_panel_button_spacing"
             android:paddingRight="@dimen/overview_panel_button_spacing"
@@ -57,9 +41,22 @@
             android:textSize="12sp" />
 
         <TextView
+            android:id="@+id/default_screen_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/overview_panel_button_spacing"
+            android:paddingRight="@dimen/overview_panel_button_spacing"
+            android:text="@string/default_screen_button_text"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/default_screen_button"
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-condensed"
+            android:textAllCaps="true"
+            android:textSize="12sp" />
+
+        <TextView
             android:id="@+id/icon_pack_button"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/overview_panel_button_spacing"
             android:paddingRight="@dimen/overview_panel_button_spacing"
