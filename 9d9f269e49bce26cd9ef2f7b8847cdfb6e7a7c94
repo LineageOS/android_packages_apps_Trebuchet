@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_86f22e99",
+        "filename": "res/values-af/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-02-24T14:07:41Z",
+      "side": 1,
+      "message": "Please remove these comments",
+      "revId": "9d9f269e49bce26cd9ef2f7b8847cdfb6e7a7c94",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
