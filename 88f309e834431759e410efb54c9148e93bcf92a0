@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_366d4505",
+        "filename": "res/values-es-rXA/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2134
+      },
+      "writtenOn": "2014-03-02T08:43:24Z",
+      "side": 1,
+      "message": "Asturiano, amigo. This doesn\u0027t must be translated. And below.",
+      "revId": "88f309e834431759e410efb54c9148e93bcf92a0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
