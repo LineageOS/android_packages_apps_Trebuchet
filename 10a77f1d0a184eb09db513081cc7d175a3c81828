@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_d103430c",
+        "filename": "res/values-es-rXA/cm_arrays.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-03-02T13:22:54Z",
+      "side": 1,
+      "message": "Please remove this array...",
+      "revId": "10a77f1d0a184eb09db513081cc7d175a3c81828",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3109cf2d",
+        "filename": "res/values-es-rXA/cm_arrays.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2597
+      },
+      "writtenOn": "2014-03-02T13:22:54Z",
+      "side": 1,
+      "message": "... and this one too",
+      "revId": "10a77f1d0a184eb09db513081cc7d175a3c81828",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
