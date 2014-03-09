@@ -30,8 +30,8 @@
             android:fragment="com.android.launcher3.settings.SettingsActivity$GeneralFragment"
             android:title="@string/preferences_interface_general_title" />
             
-    <header android:id="@+id/preferences_application_section"
-            android:title="@string/preferences_application_title" />        
+    <!--<header android:id="@+id/preferences_application_section"
+            android:title="@string/preferences_application_title" />-->        
             
     <header android:id="@+id/preferences_application_version"
             android:summary="@string/application_copyright" />        
