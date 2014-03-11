@@ -121,4 +121,35 @@
     <string name="widget_button_text" msgid="2880537293434387943">"Widgets"</string>
     <string name="wallpaper_button_text" msgid="8404103075899945851">"Fons de pantalla"</string>
     <string name="settings_button_text" msgid="8119458837558863227">"Configuració"</string>
+
+  <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
+  <string name="sort_button_text">Ordena</string>
+  <string name="filter_button_text">Filtre</string>
+  <string name="default_screen_button_text">Pantalla predeterminada</string>
+  <string name="transition_effect_button_text">Efecte de lliscament</string>
+  <string name="sort_mode_title">Títol</string>
+  <string name="sort_mode_launch_count">Nombre d\'execucions</string>
+  <string name="sort_mode_install_time">Data d\'instal·lació</string>
+  <string name="scrolling_page_outlines">Contorn de la pàgina</string>
+  <string name="scrolling_fade_adjacent">Esvaeix les pàgines laterals</string>
+  <string name="wallpaper_scroll">Fes lliscar el fons de pantalla</string>
+  <string name="preferences_title">Ajustaments</string>
+  <string name="preferences_application_title">App</string>
+  <string name="preferences_interface_homescreen_title">Pantalla inicial</string>
+  <string name="preferences_interface_homescreen_search_title">Barra de cerca</string>
+  <string name="preferences_interface_homescreen_search_summary">Mostra sempre la barra de cerca a la part superior de la pantalla</string>
+  <string name="preferences_interface_drawer_title">Calaix d\'aplicacions</string>
+  <string name="preferences_interface_dock_title">Acoplament</string>
+  <string name="preferences_interface_general_title">General</string>
+  <string name="preferences_interface_general_icons_category">Icones</string>
+  <string name="preferences_interface_general_icons_large_title">Icones grans</string>
+  <string name="preferences_interface_general_icons_large_summary">Utilitza icones grans per les aplicacions de la pantalla d\'inici i del calaix d\'aplicacions</string>
+  <string name="preferences_interface_general_icons_text_style_title">Estil del tipus de lletra</string>
+  <string name="preferences_interface_general_icons_text_style_summary">Variant i estil del tipus de lletra a utilitzar al text de les icones</string>
+  <string name="dialog_pick_iconpack_title">Agafa un paquet d\'icones</string>
+  <string name="default_iconpack_title">Icones predeterminades</string>
+  <string name="icon_packs_title">Paquets d\'icones</string>
+  <string name="no_iconpacks_summary">No hi ha paquets d\'icones instal·lats</string>
+  <string name="all_apps_cling_cm">Personalitza el teu calaix d\'aplicacions</string>
+  <string name="all_apps_cling_summary">Pica a l\'indicador de la pàgina  per veure ajustaments de configuració addicionals</string>
 </resources>
