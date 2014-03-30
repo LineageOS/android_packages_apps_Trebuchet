@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:id="@+id/group_customize_sort_mode">
         <item android:id="@+id/sort_mode_title"
             android:title="@string/sort_mode_title" />
         <item android:id="@+id/sort_mode_launch_count"
