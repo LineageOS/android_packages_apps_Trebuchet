@@ -17,9 +17,14 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header android:id="@+id/preferences_homescreen_section"
-            android:fragment="com.android.launcher3.settings.SettingsActivity$HomescreenFragment"
+            android:fragment="com.cyanogenmod.trebuchet.settings.SettingsActivity$HomescreenFragment"
             android:title="@string/preferences_interface_homescreen_title" />
 
+    <header android:id="@+id/preferences_drawer_section"
+            android:fragment="com.cyanogenmod.trebuchet.settings.SettingsActivity$DrawerFragment"
+            android:title="@string/preferences_interface_drawer_title"
+            android:summary="@string/preferences_interface_drawer_summary" />
+    
     <!--<header android:id="@+id/preferences_drawer_section"
             android:title="@string/preferences_interface_drawer_title" />
             
@@ -27,7 +32,7 @@
             android:title="@string/preferences_interface_dock_title" />-->
     
     <header android:id="@+id/preferences_general_section"
-            android:fragment="com.android.launcher3.settings.SettingsActivity$GeneralFragment"
+            android:fragment="com.cyanogenmod.trebuchet.settings.SettingsActivity$GeneralFragment"
             android:title="@string/preferences_interface_general_title" />
             
     <header android:id="@+id/preferences_application_section"

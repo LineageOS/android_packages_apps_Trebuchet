@@ -18,12 +18,12 @@
 */
 -->
 
-<com.android.launcher3.WallpaperRootView
+<com.cyanogenmod.trebuchet.WallpaperRootView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/wallpaper_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.android.launcher3.CropView
+    <com.cyanogenmod.trebuchet.CropView
         android:id="@+id/cropView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -74,4 +74,4 @@
             android:layout_height="2dp"
             android:background="@drawable/tile_shadow_bottom" />
     </LinearLayout>
-</com.android.launcher3.WallpaperRootView>
+</com.cyanogenmod.trebuchet.WallpaperRootView>

@@ -15,7 +15,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher3"
+        xmlns:launcher="http://schemas.android.com/apk/res/com.cyanogenmod.trebuchet"
         android:key="ui_homescreen"
         android:title="@string/preferences_interface_homescreen_title">
     <CheckBoxPreference android:key="ui_homescreen_search"
