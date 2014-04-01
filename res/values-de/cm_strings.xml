@@ -32,6 +32,14 @@
   <string name="preferences_interface_homescreen_search_title">Suchleiste</string>
   <string name="preferences_interface_homescreen_search_summary">Dauerhafte Anzeige der Suchleiste am oberen Bildschirmrand</string>
   <string name="preferences_interface_drawer_title">App-Übersicht</string>
+  <string name="preferences_interface_drawer_summary">Apps und Widgets</string>
+  <string name="preferences_interface_drawer_apps_category">Apps</string>
+  <string name="preferences_interface_drawer_hidden_apps_title">Verstecke Apps</string>
+  <string name="preferences_interface_drawer_hidden_apps_summary">Apps auf den App-Seiten verstecken.</string>
+  <string name="preferences_interface_drawer_hidden_apps_shortcuts_title">Verstecke App-Verknüpfungen</string>
+  <string name="preferences_interface_drawer_hidden_apps_shortcuts_summary">Verknüpfungen für versteckte Apps vom Startbildschirm entfernen</string>
+  <string name="preferences_interface_drawer_hidden_apps_widgets_title">Verstecke App-Widgets</string>
+  <string name="preferences_interface_drawer_hidden_apps_widgets_summary">Widgets von versteckten Apps vom Startbildschirm entfernen</string>
   <string name="preferences_interface_dock_title">Dock</string>
   <string name="preferences_interface_general_title">Allgemein</string>
   <string name="preferences_interface_general_icons_category">Symbole</string>
