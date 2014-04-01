@@ -94,6 +94,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".settings.HiddenAppsActivity"
+                android:label="@string/preferences_title">
+            <intent-filter>
+                <action android:name=".settings.HiddenAppsActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.android.launcher3.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
