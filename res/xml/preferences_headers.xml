@@ -26,6 +26,11 @@
     <header android:id="@+id/preferences_dock_section"
             android:title="@string/preferences_interface_dock_title" />-->
     
+    <header android:id="@+id/preferences_drawer_section"
+            android:fragment="com.android.launcher3.settings.SettingsActivity$DrawerFragment"
+            android:title="@string/preferences_interface_drawer_title"
+            android:summary="@string/preferences_interface_drawer_summary" />
+
     <header android:id="@+id/preferences_general_section"
             android:fragment="com.android.launcher3.settings.SettingsActivity$GeneralFragment"
             android:title="@string/preferences_interface_general_title" />
