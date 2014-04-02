@@ -432,8 +432,11 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
         mWidgetSpacingLayout.setPadding(mPageLayoutPaddingLeft, mPageLayoutPaddingTop,
                 mPageLayoutPaddingRight, mPageLayoutPaddingBottom);
-        mCellCountX = (int) grid.allAppsNumCols;
-        mCellCountY = (int) grid.allAppsNumRows;
+        mCellCountX = grid.allAppsNumCols;
+        mCellCountY = grid.allAppsNumRows;
+        if (SettingsProvider.Interface.Drawer.getHideIconLabels(mLauncher)) {
+            mCellCountY = grid.allAppsNumRowsNoText;
+        }
         updatePageCounts();
 
         // Force a measure to update recalculate the gaps
@@ -1057,6 +1060,8 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
     private void setupPage(AppsCustomizeCellLayout layout) {
         layout.setGridSize(mCellCountX, mCellCountY);
+        layout.getShortcutsAndWidgets().setHideIconLabels(
+                SettingsProvider.Interface.Drawer.getHideIconLabels(mLauncher));
 
         layout.setOnClickListener(mLauncher);
 

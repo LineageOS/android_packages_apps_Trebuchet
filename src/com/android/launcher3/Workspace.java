@@ -566,7 +566,12 @@ public class Workspace extends SmoothPagedView
 
         CellLayout newScreen = (CellLayout)
                 mLauncher.getLayoutInflater().inflate(R.layout.workspace_screen, null);
-
+        if (mHideIconLabels) {
+            DeviceProfile grid = LauncherAppState.getInstance().getDynamicGrid().getDeviceProfile();
+            newScreen.setGridSize((int) grid.numColumns,
+                    (int) (grid.numRows * grid.cellHeightPx / grid.iconSizePx));
+            newScreen.getShortcutsAndWidgets().setHideIconLabels(true);
+        }
         newScreen.setOnLongClickListener(mLongClickListener);
         newScreen.setOnClickListener(mLauncher);
         newScreen.setSoundEffectsEnabled(false);
