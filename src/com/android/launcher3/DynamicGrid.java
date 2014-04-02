@@ -90,6 +90,7 @@ class DeviceProfile {
     int hotseatBarHeightPx;
     int hotseatAllAppsRank;
     int allAppsNumRows;
+    int allAppsNumRowsNoText;
     int allAppsNumCols;
     boolean searchBarVisible;
     int searchBarSpaceWidthPx;
@@ -244,8 +245,11 @@ class DeviceProfile {
         if (isLandscape) {
             allAppsNumRows = (availableHeightPx - pageIndicatorOffset - 4 * edgeMarginPx) /
                     (iconSizePx + iconTextSizePx + 2 * edgeMarginPx);
+            allAppsNumRowsNoText =  (availableHeightPx - pageIndicatorOffset - 4 * edgeMarginPx) /
+                    (iconSizePx + edgeMarginPx);
         } else {
             allAppsNumRows = (int) numRows + 1;
+            allAppsNumRowsNoText = (int) (allAppsNumRows * cellHeightPx / iconSizePx);
         }
         allAppsNumCols = (availableWidthPx - padding.left - padding.right - 2 * edgeMarginPx) /
                 (iconSizePx + 2 * edgeMarginPx);
