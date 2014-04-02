@@ -332,7 +332,7 @@ public class Workspace extends SmoothPagedView
         mSpringLoadedShrinkFactor =
             res.getInteger(R.integer.config_workspaceSpringLoadShrinkPercentage) / 100.0f;
         mOverviewModeShrinkFactor =
-                res.getInteger(R.integer.config_workspaceOverviewShrinkPercentage) / 100.0f;
+                res.getInteger(R.integer.config_workspaceOverviewShrinkPercentage) / 70.0f;
         mOverviewModePageOffset = res.getDimensionPixelSize(R.dimen.overview_mode_page_offset);
         mCameraDistance = res.getInteger(R.integer.config_cameraDistance);
         mDefaultPage = a.getInt(R.styleable.Workspace_defaultScreen, 1);

@@ -1007,6 +1007,18 @@ public class Launcher extends Activity
         }
     }
 
+    protected void startThemesSettings() {
+        Intent settings;
+            settings = new Intent(Intent.ACTION_MAIN);
+        settings.setClassName("com.tmobile.themechooser","com.tmobile.themechooser.ThemeChooser");
+        startActivity(settings);
+        if (mWorkspace.isInOverviewMode()) {
+            mWorkspace.exitOverviewMode(false);
+        } else if (mAppsCustomizeContent.isInOverviewMode()) {
+            mAppsCustomizeContent.exitOverviewMode(false);
+        }
+    }
+
     public void onClickSortModeButton(View v) {
         final PopupMenu popupMenu = new PopupMenu(this, v);
         final Menu menu = popupMenu.getMenu();
@@ -1357,14 +1369,14 @@ public class Launcher extends Activity
         });
         wallpaperButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
-        View settingsButton = findViewById(R.id.settings_button);
-        settingsButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                startSettings();
-            }
-        });
-        settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
+//        View settingsButton = findViewById(R.id.settings_button);
+//        settingsButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                startSettings();
+//            }
+//        });
+//        settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
         View defaultScreenButton = findViewById(R.id.default_screen_button);
         defaultScreenButton.setOnClickListener(new OnClickListener() {
@@ -1384,14 +1396,23 @@ public class Launcher extends Activity
         });
         transitionEffectButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
-        View iconPackButton = findViewById(R.id.icon_pack_button);
-        iconPackButton.setOnClickListener(new OnClickListener() {
+//        View iconPackButton = findViewById(R.id.icon_pack_button);
+//        iconPackButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View arg0) {
+//                IconPackHelper.pickIconPack(Launcher.this, false);
+//            }
+//        });
+//        iconPackButton.setOnTouchListener(getHapticFeedbackTouchListener());
+
+        View themesButton = findViewById(R.id.themes_button);
+        themesButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                IconPackHelper.pickIconPack(Launcher.this, false);
+                startThemesSettings();
             }
         });
-        iconPackButton.setOnTouchListener(getHapticFeedbackTouchListener());
+        themesButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
         View sortButton = findViewById(R.id.sort_button);
         sortButton.setOnClickListener(new OnClickListener() {
@@ -2931,7 +2952,8 @@ public class Launcher extends Activity
         View wallpaperButton = mOverviewPanel.findViewById(R.id.wallpaper_button);
         View sortButton = mOverviewPanel.findViewById(R.id.sort_button);
         View filterButton = mOverviewPanel.findViewById(R.id.filter_button);
-        View iconPackButton = findViewById(R.id.icon_pack_button);
+        View themesButton = findViewById(R.id.themes_button);
+//        View iconPackButton = findViewById(R.id.icon_pack_button);
 
         PagedView pagedView = !isAllAppsVisible() ? mWorkspace : mAppsCustomizeContent;
 
@@ -2949,7 +2971,7 @@ public class Launcher extends Activity
             int numIconPacks = IconPackHelper.getSupportedPackages(this).size();
             isVisible = numIconPacks > 0;
         }
-        iconPackButton.setVisibility(isVisible ? View.VISIBLE : View.GONE);
+        //iconPackButton.setVisibility(isVisible ? View.VISIBLE : View.GONE);
 
         // Make sure overview panel is drawn above apps customize
         mOverviewPanel.bringToFront();
