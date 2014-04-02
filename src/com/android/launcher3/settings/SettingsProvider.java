@@ -26,6 +26,7 @@ public final class SettingsProvider {
 
     public static final String SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID = "ui_homescreen_default_screen_id";
     public static final String SETTINGS_UI_HOMESCREEN_SEARCH = "ui_homescreen_search";
+    public static final String SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS = "ui_homescreen_general_hide_icon_labels";
     public static final String SETTINGS_UI_HOMESCREEN_SCROLLING_TRANSITION_EFFECT = "ui_homescreen_scrolling_transition_effect";
     public static final String SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL = "ui_homescreen_scrolling_wallpaper_scroll";
     public static final String SETTINGS_UI_HOMESCREEN_SCROLLING_PAGE_OUTLINES = "ui_homescreen_scrolling_page_outlines";
@@ -33,6 +34,7 @@ public final class SettingsProvider {
     public static final String SETTINGS_UI_DRAWER_SCROLLING_TRANSITION_EFFECT = "ui_drawer_scrolling_transition_effect";
     public static final String SETTINGS_UI_DRAWER_SCROLLING_FADE_ADJACENT = "ui_drawer_scrolling_fade_adjacent";
     public static final String SETTINGS_UI_DRAWER_HIDDEN_APPS = "ui_drawer_hidden_apps";
+    public static final String SETTINGS_UI_DRAWER_HIDE_ICON_LABELS = "ui_drawer_hide_icon_labels";
     public static final String SETTINGS_UI_GENERAL_ICONS_LARGE = "ui_general_icons_large";
     public static final String SETTINGS_UI_GENERAL_ICONS_TEXT_FONT_FAMILY = "ui_general_icons_text_font";
     public static final String SETTINGS_UI_GENERAL_ICONS_TEXT_FONT_STYLE = "ui_general_icons_text_font_style";
@@ -79,6 +81,11 @@ public final class SettingsProvider {
     }
 
     public static class Interface {
+        public static class Homescreen {
+            public static boolean getHideIconLabels(Context c) {
+                return getBooleanCustomDefault(c, SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS, false);
+            }
+        }
         public static class Drawer {
             public static String getHiddenApps(Context c) {
                 return getStringCustomDefault(c, SETTINGS_UI_DRAWER_HIDDEN_APPS, "");
@@ -88,6 +95,10 @@ public final class SettingsProvider {
             }
             public static boolean getRemoveWidgetsOfHiddenApps(Context c) {
                 return getBooleanCustomDefault(c, "ui_drawer_remove_hidden_apps_widgets", true);
+            }
+
+            public static boolean getHideIconLabels(Context c) {
+                return getBooleanCustomDefault(c, SETTINGS_UI_DRAWER_HIDE_ICON_LABELS, false);
             }
         }
     }
