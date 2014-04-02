@@ -35,7 +35,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -48,7 +47,6 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
 
-import com.android.launcher3.R;
 import com.android.launcher3.FolderIcon.FolderRingAnimator;
 
 import java.util.ArrayList;
@@ -606,9 +604,8 @@ public class CellLayout extends ViewGroup {
         final LayoutParams lp = params;
 
         // Hotseat icons - remove text
-        if (child instanceof BubbleTextView) {
-            BubbleTextView bubbleChild = (BubbleTextView) child;
-            bubbleChild.setTextVisibility(!mIsHotseat);
+        if (mIsHotseat && child instanceof BubbleTextView) {
+            ((BubbleTextView) child).setTextVisibility(false);
         }
 
         child.setScaleX(getChildrenScale());
