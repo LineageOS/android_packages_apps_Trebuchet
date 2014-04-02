@@ -45,6 +45,7 @@ public class ShortcutAndWidgetContainer extends ViewGroup {
     private int mCountY;
 
     private boolean mInvertIfRtl = false;
+    private boolean mHideIconLabels = false;
 
     public ShortcutAndWidgetContainer(Context context) {
         super(context);
@@ -123,6 +124,10 @@ public class ShortcutAndWidgetContainer extends ViewGroup {
         mIsHotseatLayout = isHotseat;
     }
 
+    public void setHideIconLabels(boolean hideIconLabels) {
+        mHideIconLabels = hideIconLabels;
+    }
+
     int getCellContentWidth() {
         final LauncherAppState app = LauncherAppState.getInstance();
         final DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
@@ -134,7 +139,7 @@ public class ShortcutAndWidgetContainer extends ViewGroup {
         final LauncherAppState app = LauncherAppState.getInstance();
         final DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
         return Math.min(getMeasuredHeight(), mIsHotseatLayout ?
-                grid.hotseatCellHeightPx : grid.cellHeightPx);
+                grid.hotseatCellHeightPx : (mHideIconLabels ? grid.iconSizePx : grid.cellHeightPx));
     }
 
     public void measureChild(View child) {
