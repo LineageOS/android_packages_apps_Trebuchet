@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_283e8fb8",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-04T21:16:43Z",
+      "side": 1,
+      "message": "This seems to be required so we can access it from the menu. Without it the app crashes with a ActivityNotFound",
+      "parentUuid": "9aed3d3a_25099a32",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8506a61e",
         "filename": "res/xml/preferences_headers.xml",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2014-04-04T06:24:39Z",
       "side": 1,
       "message": "Why is this class needed ?",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a89f3fb3",
+        "filename": "src/com/android/launcher3/AccessibleTabView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-04T21:16:43Z",
+      "side": 1,
+      "message": "Initially I tried to rename the package and doing so discovered that this class was missing.\nIt is reference in tab_widget_indicator.xml but it seems, this is not used anywhere. Remove the class and tab_widget_indicator.xml instead?",
+      "parentUuid": "9aed3d3a_6503a210",
       "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -257,6 +293,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_28accfec",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-04T21:16:43Z",
+      "side": 1,
+      "message": "How? Just call loadIcon and loadLabel in refreshApps?\nI thought this pattern is ok, as it only loads the stuff once it is needed.",
+      "parentUuid": "9aed3d3a_c82563af",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e80dc738",
         "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
         "patchSetId": 5
@@ -274,6 +328,24 @@
     },
     {
       "key": {
+        "uuid": "9aed3d3a_c89a83c5",
+        "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-04T21:16:43Z",
+      "side": 1,
+      "message": "So just use getIntCustomDefault(...) for these?",
+      "parentUuid": "9aed3d3a_e80dc738",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c8fe0305",
         "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
         "patchSetId": 5
@@ -285,6 +357,24 @@
       "writtenOn": "2014-04-04T06:24:39Z",
       "side": 1,
       "message": "Can you not just use a regular checkbox with all the focusable/touchable/selectable fields set to false ?",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_9e16fda5",
+        "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-04T21:16:43Z",
+      "side": 1,
+      "message": "This would be possible. But IMO it is cleaner/more reusable, to have a class for it than setting all the values every time you want a non-responding checkbox (which is 1 time by now ;) )",
+      "parentUuid": "9aed3d3a_c8fe0305",
       "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
