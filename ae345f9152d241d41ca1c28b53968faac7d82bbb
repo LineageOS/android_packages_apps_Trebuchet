@@ -1,0 +1,293 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_25099a32",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Do we want to export this activity ?",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8506a61e",
+        "filename": "res/xml/preferences_headers.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Kill it with fire",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6503a210",
+        "filename": "src/com/android/launcher3/AccessibleTabView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Why is this class needed ?",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c84c4379",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 2031,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Kill it",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_6831b7ec",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 2039,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Kill it",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_483af3ce",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "No need to call super",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_8834fbde",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "No need to specify \"\" if using an empty string, () will suffice.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e824a7b0",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Not needed, your onMenuItemSelected will be invoked and you can just handle it there.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_0820eb9a",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "change to MENU_RESET",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_a82a9f7c",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Change to reset",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_4813135d",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "A better pattern would be to return apps from doInBackground and perform this UI action in doPostExecute.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_28104f4e",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "If itemid is home, then just return and finish, otherwise :\n\nreturn super.onMenuItem...",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_681a5770",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Get rid of extra spacing",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_881d1b69",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "No need to override this if you are just returning id.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c82563af",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Should probably do these as part of your async task, as doing them on the main thread will cause jank.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_e80dc738",
+        "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Can you make this bit consistent with the new layout of SettingsProvider. In 10.2 we did the whole static inner class ways of referencing the shared preferences, this time around  its different.",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aed3d3a_c8fe0305",
+        "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-04T06:24:39Z",
+      "side": 1,
+      "message": "Can you not just use a regular checkbox with all the focusable/touchable/selectable fields set to false ?",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
