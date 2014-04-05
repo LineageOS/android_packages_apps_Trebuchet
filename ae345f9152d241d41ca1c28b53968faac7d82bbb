@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_21f6a8d7",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-05T10:07:46Z",
+      "side": 1,
+      "message": "No way. Tried again. If I remove this activity from the Manifest it crashes.\nTesting on latest repo sync version on I9100G. Might be a bug in the system, but however this is required.\n\"ActivitiyNotFoundException: No Activity found to handle Intent [ act\u003d.settings.HiddenAppsActivity }\nI guess this is because the package gets renamed and \"something\" doesn\u0027t get that it\u0027s the same app/package.",
+      "parentUuid": "7af24918_a12ab87c",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8506a61e",
         "filename": "res/xml/preferences_headers.xml",
         "patchSetId": 5
@@ -365,6 +383,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_6100b0ab",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-05T10:07:46Z",
+      "side": 1,
+      "message": "Can you point me to the file please? Can\u0027t find it...\nI\u0027d just create a class that holds ResolveInfo, Drawable, and CharSequence but I\u0027m not sure if this will be bad for memory consumption.",
+      "parentUuid": "7af24918_e124c0b0",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e80dc738",
         "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
         "patchSetId": 5
@@ -418,6 +454,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_41f934c8",
+        "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-05T10:07:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_413ad4ce",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c8fe0305",
         "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
         "patchSetId": 5
@@ -465,6 +519,24 @@
       "side": 1,
       "message": "I just listed all those since I wasn\u0027t sure which ones would be needed. In reality clickable\u003d\"false\" might even suffice.\n\nOnly difference with this implementation is that it avoids the highlight you get even if the checkbox is selected via the row.\nSo in that case, leaving this would be fine, though its a lot of code to get such minimal ui gain :)",
       "parentUuid": "7af24918_9e16fda5",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e113200c",
+        "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-05T10:07:46Z",
+      "side": 1,
+      "message": "Well, it is basicly an empty class with just some empty methods. I would not call that \"a lot of code\" ;)\nI\u0027d leave it as the effort and maintenance is ~0, it looks nicer for the user as well as the developer. Agree?",
+      "parentUuid": "7af24918_41af74e3",
       "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
