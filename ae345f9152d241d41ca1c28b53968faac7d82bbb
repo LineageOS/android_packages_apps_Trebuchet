@@ -401,6 +401,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_a130f89f",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T10:12:47Z",
+      "side": 1,
+      "message": "Have a look at PrivacyGuardAppListAdapter\n\nThat might be the one with the LoadIconTask and what not",
+      "parentUuid": "7af24918_6100b0ab",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e80dc738",
         "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
         "patchSetId": 5
