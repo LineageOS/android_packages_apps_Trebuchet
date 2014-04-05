@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_a12ab87c",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T06:58:55Z",
+      "side": 1,
+      "message": "Doesn\u0027t if i do it and makes sense why it doesnt.\nSince you are invoking the startActivity within the same application.",
+      "parentUuid": "9aed3d3a_283e8fb8",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_8506a61e",
         "filename": "res/xml/preferences_headers.xml",
         "patchSetId": 5
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "Initially I tried to rename the package and doing so discovered that this class was missing.\nIt is reference in tab_widget_indicator.xml but it seems, this is not used anywhere. Remove the class and tab_widget_indicator.xml instead?",
       "parentUuid": "9aed3d3a_6503a210",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_0120cc9a",
+        "filename": "src/com/android/launcher3/AccessibleTabView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T06:58:55Z",
+      "side": 1,
+      "message": "Yea if its not being used, nuke it or if it is being used, replace it with TextView instead.",
+      "parentUuid": "9aed3d3a_a89f3fb3",
       "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -311,6 +347,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_e124c0b0",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T06:58:55Z",
+      "side": 1,
+      "message": "Have a look at how appops loads the application list for a good reference.\n\nIf you scroll fast you\u0027ll see a stutter, and that is because of doing these two calls on the main thread.\n\nInstead you could just load the icon/label and store them in your data structure.",
+      "parentUuid": "9aed3d3a_28accfec",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_e80dc738",
         "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
         "patchSetId": 5
@@ -346,6 +400,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_413ad4ce",
+        "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T06:58:55Z",
+      "side": 1,
+      "message": "Well it would depend on the value type you are trying to obtain, but yea for something like getHiddenApps, you\u0027d use\n\ngetString()...etc",
+      "parentUuid": "9aed3d3a_c89a83c5",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aed3d3a_c8fe0305",
         "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
         "patchSetId": 5
@@ -375,6 +447,24 @@
       "side": 1,
       "message": "This would be possible. But IMO it is cleaner/more reusable, to have a class for it than setting all the values every time you want a non-responding checkbox (which is 1 time by now ;) )",
       "parentUuid": "9aed3d3a_c8fe0305",
+      "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_41af74e3",
+        "filename": "src/com/android/launcher3/widget/InertCheckBox.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-05T06:58:55Z",
+      "side": 1,
+      "message": "I just listed all those since I wasn\u0027t sure which ones would be needed. In reality clickable\u003d\"false\" might even suffice.\n\nOnly difference with this implementation is that it avoids the highlight you get even if the checkbox is selected via the row.\nSo in that case, leaving this would be fine, though its a lot of code to get such minimal ui gain :)",
+      "parentUuid": "7af24918_9e16fda5",
       "revId": "ae345f9152d241d41ca1c28b53968faac7d82bbb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
