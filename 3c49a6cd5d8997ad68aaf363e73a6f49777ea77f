@@ -325,6 +325,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_045a9a83",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T17:09:44Z",
+      "side": 1,
+      "message": "Nevermind, you construct the adapter prior to populating its items so this would be needed.",
+      "parentUuid": "7af24918_4495c23e",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_24923658",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
