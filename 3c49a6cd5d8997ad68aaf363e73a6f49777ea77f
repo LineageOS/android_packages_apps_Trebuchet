@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_c47392b3",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "The intent filter is not needed.\n\nIn which case if the activity doesn\u0027t have any intent filters, we can get rid of the android:exported\u003d\"false\" since it defaults to that anyway.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_04a57a03",
+        "filename": "res/layout/hidden_apps_list.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "android:layout_alignParentTop is a relativelayout layout parameter. Does not have an effect in this case, since the parent is a FrameLayout.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e445ee17",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Use selectableItemBackground instead so the name atleast makes it clearer.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_2448762d",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Don\u0027t think wrap_content is what you want here.\n\nSince if the title is really wrong, it won\u0027t leave any space for your checkbox to show. Instead make it 0dp and let the layout_weight take care of it.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_444b022c",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Neither of the gravity attributes are needed",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_84550ac8",
+        "filename": "res/values/preferences_defaults.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "_default missing for both of these ?",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c45d52ee",
+        "filename": "res/xml/preferences_drawer.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "I fail to see a use case for this checkbox to be honest.\n\nWhy would someone want to hide an app, yet leave the shortcut showing on the homescreen ?",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a462c6ab",
+        "filename": "res/xml/preferences_drawer.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "I feel like this option should also hide the widget from the widget picker.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a40926e0",
+        "filename": "src/com/android/launcher3/FastBitmapDrawable.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Lets not do this change.\n\nGeneral rule is to avoid doing any format changes in upstream code if that is all you are doing in a file. If you are making significant modifications, then its a different story.\n\nJust makes the lives of upstream mergers easier :)",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_04261a68",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Not necessary",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_040f3ae2",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Nuke it !\n\nAlso add brackets please.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_24cb5674",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Since you are only saving in onPause, use apply() here instead so the call is asynchronous and not done on the main thread.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e4b84ee8",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Need a better name for this.\n\nsetCheckedItems or something.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_84c86a76",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Remove spacing",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e4132e0c",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Add brackets",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_84034ab8",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Make it private unless its being referenced somewhere outside.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_24f6b6d7",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "make them final fields",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e4afae92",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "No need to set a listener for each item.\n\nInstead override onListItemClick in your activity and handle it there.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_4495c23e",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Missing braces.\n\nConsidering your adapter will never be modified once set (Unless i missed something). None of this is actually necessary.\n\nJust doing  this once in your adapter constructor is sufficient.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_24923658",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-06T13:13:31Z",
+      "side": 1,
+      "message": "Missing braces",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
