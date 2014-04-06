@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_e4ba0e6e",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Removing the filter crashes with ActivityNotFound. So I\u0027ll leave it there unless the call is somehow wrong",
+      "parentUuid": "7af24918_c47392b3",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_04a57a03",
         "filename": "res/layout/hidden_apps_list.xml",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "android:layout_alignParentTop is a relativelayout layout parameter. Does not have an effect in this case, since the parent is a FrameLayout.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_44b0228c",
+        "filename": "res/layout/hidden_apps_list.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "7af24918_04a57a03",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_046d7a04",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_e445ee17",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_2448762d",
         "filename": "res/layout/hidden_apps_list_item.xml",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "Don\u0027t think wrap_content is what you want here.\n\nSince if the title is really wrong, it won\u0027t leave any space for your checkbox to show. Instead make it 0dp and let the layout_weight take care of it.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e4716ee2",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_2448762d",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_a4676624",
+        "filename": "res/layout/hidden_apps_list_item.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "7af24918_444b022c",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_84550ac8",
         "filename": "res/values/preferences_defaults.xml",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "_default missing for both of these ?",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_447782d4",
+        "filename": "res/values/preferences_defaults.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_84550ac8",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_2474f6cd",
+        "filename": "res/xml/preferences_drawer.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "I use the feature for the following: Add my favourite apps to homescreen and hotseat, then remove them from the drawer. I see no point having them in the drawer, once they are on my homescreen.\nI also hide systems apps I\u0027ll never use (again)\nI would agree the other way round: Why have this checkbox if you can remove shortcuts/widgets from the homescreen by just dragging them to delete?",
+      "parentUuid": "7af24918_c45d52ee",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_a462c6ab",
         "filename": "res/xml/preferences_drawer.xml",
         "patchSetId": 6
@@ -132,6 +258,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "I feel like this option should also hide the widget from the widget picker.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_84818a92",
+        "filename": "res/xml/preferences_drawer.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "This could be removed too (see above)\nBut you are right, hiding apps should also hide its widgets from the picker. Implemented that.\nHow about making this an option?",
+      "parentUuid": "7af24918_a462c6ab",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_647efeaf",
+        "filename": "src/com/android/launcher3/FastBitmapDrawable.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Hm, in this case, I\u0027d change that. However, I\u0027ll remove it",
+      "parentUuid": "7af24918_a40926e0",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_04261a68",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
@@ -166,6 +328,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "Not necessary",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c449d290",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "It does not hurt and makes it clear that you want to replace, not add.\nJust imagine in the future you add an option to manually refresh and that one is somehow done before this one. So I\u0027d leave it.",
+      "parentUuid": "7af24918_04261a68",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_04445a72",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_040f3ae2",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_24cb5674",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
@@ -200,6 +398,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "Since you are only saving in onPause, use apply() here instead so the call is asynchronous and not done on the main thread.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_a44e4694",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_24cb5674",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_e4484e8a",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "restoreCheckedItems? setCheckedItems is not really, what it does.",
+      "parentUuid": "7af24918_e4b84ee8",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_84c86a76",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
@@ -234,6 +468,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "Remove spacing",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_445e6246",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_84c86a76",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_245b5656",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_e4132e0c",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_84034ab8",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
@@ -268,6 +538,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "Make it private unless its being referenced somewhere outside.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_84586a58",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_84034ab8",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_64555e1c",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af24918_24f6b6d7",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_e4afae92",
         "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
         "patchSetId": 6
@@ -302,6 +608,24 @@
       "writtenOn": "2014-04-06T13:13:31Z",
       "side": 1,
       "message": "No need to set a listener for each item.\n\nInstead override onListItemClick in your activity and handle it there.",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_c430b20a",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-06T23:50:54Z",
+      "side": 1,
+      "message": "Can\u0027t do that. The listener is not called if there is a clickable view in the list.\nOr is there a trick?",
+      "parentUuid": "7af24918_e4afae92",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
