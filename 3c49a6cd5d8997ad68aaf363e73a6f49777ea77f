@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_c75d54ee",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "No need to invoke it via the action, change the intent entry in preferences_drawer.xml to something like :\n\n        \u003cintent android:targetPackage\u003d\"com.android.launcher3\"\n               android:targetClass\u003d\"com.android.launcher3.settings.HiddenAppsActivity\"/\u003e",
+      "parentUuid": "7af24918_e4ba0e6e",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_04a57a03",
         "filename": "res/layout/hidden_apps_list.xml",
         "patchSetId": 6
@@ -282,6 +300,58 @@
     },
     {
       "key": {
+        "uuid": "7af24918_a762c8ab",
+        "filename": "res/xml/preferences_drawer.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "Don\u0027t think that should be another option to be honest.\nChecking \"Remove hidden widgets\" should inherently do that as well.",
+      "parentUuid": "7af24918_84818a92",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_0758dcf9",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1932,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "Not used",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e75cd0ef",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1941,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "Not used",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_a40926e0",
         "filename": "src/com/android/launcher3/FastBitmapDrawable.java",
         "patchSetId": 6
@@ -346,6 +416,24 @@
       "side": 1,
       "message": "It does not hurt and makes it clear that you want to replace, not add.\nJust imagine in the future you add an option to manually refresh and that one is somehow done before this one. So I\u0027d leave it.",
       "parentUuid": "7af24918_04261a68",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_4772e47d",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "Alright.",
+      "parentUuid": "7af24918_c449d290",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -451,6 +539,24 @@
       "side": 1,
       "message": "restoreCheckedItems? setCheckedItems is not really, what it does.",
       "parentUuid": "7af24918_e4b84ee8",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_276fd893",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "Im fine with that.",
+      "parentUuid": "7af24918_e4484e8a",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -626,6 +732,24 @@
       "side": 1,
       "message": "Can\u0027t do that. The listener is not called if there is a clickable view in the list.\nOr is there a trick?",
       "parentUuid": "7af24918_e4afae92",
+      "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_876cec9d",
+        "filename": "src/com/android/launcher3/settings/HiddenAppsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2014-04-07T10:23:08Z",
+      "side": 1,
+      "message": "onListItemClick did not get invoked for you ?",
+      "parentUuid": "7af24918_c430b20a",
       "revId": "3c49a6cd5d8997ad68aaf363e73a6f49777ea77f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
