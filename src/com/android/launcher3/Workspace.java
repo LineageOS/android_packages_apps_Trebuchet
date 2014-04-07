@@ -339,7 +339,11 @@ public class Workspace extends SmoothPagedView
         mDefaultPage = a.getInt(R.styleable.Workspace_defaultScreen, 1);
         mDefaultScreenId = SettingsProvider.getLongCustomDefault(context,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID, -1);
+
         a.recycle();
+
+        //dynamic number of max rows & columns
+        CalculateDynamicCellMaxes();
 
         setOnHierarchyChangeListener(this);
         setHapticFeedbackEnabled(false);
@@ -354,6 +358,26 @@ public class Workspace extends SmoothPagedView
     @Override
     public void setInsets(Rect insets) {
         mInsets.set(insets);
+    }
+
+    private void CalculateDynamicCellMaxes() {
+        //get the device profile
+        LauncherAppState app = LauncherAppState.getInstance();
+        DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
+
+        //calculate rows
+        int iSearchBarHeight = (grid.searchBarVisible)? grid.searchBarSpaceHeightPx : 0;
+        float fAvailableSpace = ((grid.availableHeightPx - iSearchBarHeight -
+                                grid.hotseatBarHeightPx - grid.pageIndicatorHeightPx) * 0.9f);
+        int iMaxIcons = ((int)fAvailableSpace / (grid.iconSizePx + grid.iconTextSizePx));
+        SettingsProvider.get(mLauncher).edit().putInt(SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS_MAX,
+                                                      iMaxIcons).commit();
+
+        //calculate columns
+        fAvailableSpace = ((grid.availableWidthPx - grid.desiredWorkspaceLeftRightMarginPx) * 0.9f);
+        iMaxIcons = ((int)fAvailableSpace / grid.iconSizePx);
+        SettingsProvider.get(mLauncher).edit().putInt(SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS_MAX,
+                                                      iMaxIcons).commit();
     }
 
     // estimate the size of a widget with spans hSpan, vSpan. return MAX_VALUE for each
