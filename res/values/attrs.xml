@@ -157,4 +157,12 @@
     </declare-styleable>
     <declare-styleable name="CustomClingText">
     </declare-styleable>
+
+    <!-- used in settings with min & max such as custom rows & columns -->
+    <declare-styleable name="NumberPreference">
+        <attr name="min" format="integer"></attr>
+        <attr name="max" format="integer"></attr>
+        <attr name="dynamicMax" format="boolean"></attr>
+        <attr name="dynamicMaxKey" format="string"></attr>
+    </declare-styleable>
 </resources>
