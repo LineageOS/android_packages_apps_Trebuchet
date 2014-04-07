@@ -52,6 +52,8 @@
     <string name="preferences_interface_homescreen_title">Homescreen</string>
     <string name="preferences_interface_homescreen_search_title">Search bar</string>
     <string name="preferences_interface_homescreen_search_summary">Show persistent search bar at top of screen</string>
+    <string name="preferences_interface_homescreen_rows_title">Number of Rows</string>
+    <string name="preferences_interface_homescreen_columns_title">Number of Columns</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Drawer</string>
