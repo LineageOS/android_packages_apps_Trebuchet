@@ -18,12 +18,30 @@
         xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher3"
         android:key="ui_homescreen"
         android:title="@string/preferences_interface_homescreen_title">
+
     <CheckBoxPreference android:key="ui_homescreen_search"
             android:title="@string/preferences_interface_homescreen_search_title"
             android:summary="@string/preferences_interface_homescreen_search_summary"
             android:defaultValue="@bool/preferences_interface_homescreen_search_default" />
+
     <CheckBoxPreference android:key="ui_homescreen_general_hide_icon_labels"
             android:title="@string/preferences_interface_homescreen_general_hide_icon_labels_title"
             android:summary="@string/preferences_interface_homescreen_general_hide_icon_labels_summary"
             android:defaultValue="@bool/preferences_interface_homescreen_hide_icon_labels_default" />
+
+    <com.android.launcher3.NumberPreference
+            android:key="ui_homescreen_rows"
+            android:title="@string/preferences_interface_homescreen_rows_title"
+            launcher:min="1"
+            launcher:max="@integer/preferences_interface_homescreen_rows_max"
+            launcher:dynamicMaxKey="ui_homescreen_rows_max"
+            launcher:dynamicMax="@bool/preferences_interface_homescreen_rows_dynamicmax" />
+
+    <com.android.launcher3.NumberPreference
+            android:key="ui_homescreen_columns"
+            android:title="@string/preferences_interface_homescreen_columns_title"
+            launcher:min="1"
+            launcher:max="@integer/preferences_interface_homescreen_columns_max"
+            launcher:dynamicMaxKey="ui_homescreen_columns_max"
+            launcher:dynamicMax="@bool/preferences_interface_homescreen_columns_dynamicmax" />
 </PreferenceScreen>
