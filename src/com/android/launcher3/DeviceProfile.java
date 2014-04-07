@@ -191,12 +191,22 @@ public class DeviceProfile {
             points.add(new DeviceProfileQuery(p.minWidthDps, p.minHeightDps, p.numRows));
         }
         numRows = Math.round(invDistWeightedInterpolate(minWidth, minHeight, points));
+        int iTempNumberOfRows = SettingsProvider.getIntCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS, (int)numRows);
+        if (iTempNumberOfRows > 0) {
+            numRows = iTempNumberOfRows;
+        }
         // Interpolate the columns
         points.clear();
         for (DeviceProfile p : profiles) {
             points.add(new DeviceProfileQuery(p.minWidthDps, p.minHeightDps, p.numColumns));
         }
         numColumns = Math.round(invDistWeightedInterpolate(minWidth, minHeight, points));
+        int iTempNumberOfColumns = SettingsProvider.getIntCustomDefault(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS, (int)numColumns);
+        if (iTempNumberOfColumns > 0) {
+            numColumns = iTempNumberOfColumns;
+        }
         // Interpolate the hotseat length
         points.clear();
         for (DeviceProfile p : profiles) {
