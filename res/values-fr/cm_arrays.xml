@@ -17,24 +17,24 @@
 -->
 <resources>
   <string-array name="preferences_interface_general_icons_text_font_family_entries">
-    <item>Regular</item>
-    <item>Light</item>
-    <item>Condensed</item>
+    <item>Régulier</item>
+    <item>Clair</item>
+    <item>Condensé</item>
   </string-array>
   <string-array name="transition_effect_entries">
-    <item>None</item>
-    <item>Zoom In</item>
-    <item>Zoom Out</item>
-    <item>Rotate Up</item>
-    <item>Rotate Down</item>
-    <item>Cube In</item>
-    <item>Cube Out</item>
-    <item>Stack</item>
-    <item>Accordion</item>
-    <item>Flip</item>
-    <item>Cylinder In</item>
-    <item>Cylinder Out</item>
-    <item>Carousel</item>
-    <item>Overview</item>
+    <item>Aucun</item>
+    <item>Zoom avant</item>
+    <item>Zoom arrière</item>
+    <item>Rotation vers le haut</item>
+    <item>Rotation vers le bas</item>
+    <item>Cube intérieur</item>
+    <item>Cube extérieur</item>
+    <item>Empilement</item>
+    <item>Accordéon</item>
+    <item>Retourner</item>
+    <item>Cylindre intérieur</item>
+    <item>Cylindre extérieur</item>
+    <item>Carrousel</item>
+    <item>Aperçu</item>
   </string-array>
 </resources>

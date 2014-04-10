@@ -17,24 +17,24 @@
 -->
 <resources>
   <string-array name="preferences_interface_general_icons_text_font_family_entries">
-    <item>Regular</item>
-    <item>Light</item>
-    <item>Condensed</item>
+    <item>Tavallinen</item>
+    <item>Ohut</item>
+    <item>Tiivistetty</item>
   </string-array>
   <string-array name="transition_effect_entries">
-    <item>None</item>
-    <item>Zoom In</item>
-    <item>Zoom Out</item>
-    <item>Rotate Up</item>
-    <item>Rotate Down</item>
-    <item>Cube In</item>
-    <item>Cube Out</item>
-    <item>Stack</item>
-    <item>Accordion</item>
-    <item>Flip</item>
-    <item>Cylinder In</item>
-    <item>Cylinder Out</item>
-    <item>Carousel</item>
-    <item>Overview</item>
+    <item>Ei mitään</item>
+    <item>Lähennä</item>
+    <item>Loitonna</item>
+    <item>Käännä ylös</item>
+    <item>Käännä alas</item>
+    <item>Kuutio sisään</item>
+    <item>Kuutio ulos</item>
+    <item>Pino</item>
+    <item>Harmonikka</item>
+    <item>Käännä</item>
+    <item>Sylinteri sisään</item>
+    <item>Sylinteri ulos</item>
+    <item>Karuselli</item>
+    <item>Yhteenveto</item>
   </string-array>
 </resources>
