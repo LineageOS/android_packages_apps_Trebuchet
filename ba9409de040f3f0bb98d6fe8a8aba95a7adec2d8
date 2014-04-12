@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_7b033810",
+        "filename": "res/values/preferences_defaults.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8616
+      },
+      "writtenOn": "2014-04-12T21:17:03Z",
+      "side": 1,
+      "message": "Kill whitespace",
+      "revId": "ba9409de040f3f0bb98d6fe8a8aba95a7adec2d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_b235e8f8",
         "filename": "src/com/android/launcher3/Workspace.java",
         "patchSetId": 2
