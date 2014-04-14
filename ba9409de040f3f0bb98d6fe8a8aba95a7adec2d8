@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7af24918_59dac479",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-04-14T23:38:20Z",
+      "side": 1,
+      "message": "no need to capatalize\n\n- Number of rows",
+      "revId": "ba9409de040f3f0bb98d6fe8a8aba95a7adec2d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_b9e7883f",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-04-14T23:38:20Z",
+      "side": 1,
+      "message": "- Number of columns",
+      "revId": "ba9409de040f3f0bb98d6fe8a8aba95a7adec2d8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_7b033810",
         "filename": "res/values/preferences_defaults.xml",
         "patchSetId": 2
