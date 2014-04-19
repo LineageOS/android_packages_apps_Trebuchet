@@ -19,7 +19,11 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">Врста</string>
   <string name="filter_button_text">Филтер</string>
+  <string name="default_screen_button_text">Подразумевани екран</string>
+  <string name="transition_effect_button_text">Ефекат скроловања</string>
   <string name="sort_mode_title">Наслов</string>
+  <string name="sort_mode_launch_count">Тачка покретања</string>
+  <string name="sort_mode_install_time">Време инсталирања</string>
   <string name="scrolling_page_outlines">Контура странице</string>
   <string name="scrolling_fade_adjacent">Замагљени крајеви страница</string>
   <string name="wallpaper_scroll">Скроловање позадине</string>
@@ -29,8 +33,8 @@
   <string name="preferences_interface_homescreen_search_title">Табла за претраживање</string>
   <string name="preferences_interface_homescreen_search_summary">Покажите упорну таблу за претраживање на врху екрана</string>
   <string name="preferences_interface_drawer_title">Фиока</string>
-  <string name="preferences_interface_dock_title">Dock</string>
-  <string name="preferences_interface_general_title">Opšte</string>
+  <string name="preferences_interface_dock_title">Доцк</string>
+  <string name="preferences_interface_general_title">Oпште</string>
   <string name="preferences_interface_general_icons_category">Иконе</string>
   <string name="preferences_interface_general_icons_large_title">Веће иконе</string>
   <string name="preferences_interface_general_icons_large_summary">Користите екстра велике апликационе иконе на почетном екрану и у фиоци</string>
