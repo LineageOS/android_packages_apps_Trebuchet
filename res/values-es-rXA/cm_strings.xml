@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">Ordenar</string>
   <string name="filter_button_text">Filtriar</string>
-  <string name="default_screen_button_text">Pantalla por defeutu</string>
-  <string name="transition_effect_button_text">Efeutu de desplazamientu</string>
   <string name="sort_mode_title">Títulu</string>
-  <string name="sort_mode_launch_count">Vegaes executáu</string>
-  <string name="sort_mode_install_time">Data d\'instalación</string>
   <string name="scrolling_page_outlines">Berbesos de pantalla</string>
   <string name="scrolling_fade_adjacent">Efeutu de dilíu</string>
   <string name="wallpaper_scroll">Desplazar fondu</string>

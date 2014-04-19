@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 CyanogenMod projekt</string>
   <string name="sort_button_text">Třídit</string>
   <string name="filter_button_text">Filtr</string>
-  <string name="default_screen_button_text">Výchozí plocha</string>
-  <string name="transition_effect_button_text">Efekt přechodu</string>
   <string name="sort_mode_title">Název</string>
-  <string name="sort_mode_launch_count">Počet spuštění</string>
-  <string name="sort_mode_install_time">Čas instalace</string>
   <string name="scrolling_page_outlines">Ohraničení stránek</string>
   <string name="scrolling_fade_adjacent">Prolínat hrany ploch</string>
   <string name="wallpaper_scroll">Posouvání tapety</string>

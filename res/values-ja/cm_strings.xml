@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">並べ替え</string>
   <string name="filter_button_text">フィルター</string>
-  <string name="default_screen_button_text">デフォルトの画面</string>
-  <string name="transition_effect_button_text">スクロール効果</string>
   <string name="sort_mode_title">タイトル</string>
-  <string name="sort_mode_launch_count">起動回数</string>
-  <string name="sort_mode_install_time">インストール日時</string>
   <string name="scrolling_page_outlines">ページの外枠を表示</string>
   <string name="scrolling_fade_adjacent">側面のページをフェード</string>
   <string name="wallpaper_scroll">壁紙をスクロール</string>
@@ -45,5 +41,5 @@
   <string name="icon_packs_title">アイコンパック</string>
   <string name="no_iconpacks_summary">アイコンパックがインストールされていません</string>
   <string name="all_apps_cling_cm">ドロワーをカスタマイズ</string>
-  <string name="all_apps_cling_summary">追加の構成設定を表示するには、ページインジケーターをタップします。</string>
+  <string name="all_apps_cling_summary">追加の構成設定を表示するには、ページインジケータをタップします。</string>
 </resources>

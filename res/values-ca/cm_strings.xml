@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">Ordena</string>
   <string name="filter_button_text">Filtre</string>
-  <string name="default_screen_button_text">Pantalla predeterminada</string>
-  <string name="transition_effect_button_text">Efecte desplaçament</string>
   <string name="sort_mode_title">Títol</string>
-  <string name="sort_mode_launch_count">Vegades executat</string>
-  <string name="sort_mode_install_time">Hora d\'instal·lació</string>
   <string name="scrolling_page_outlines">Vores de la pàgina</string>
   <string name="scrolling_fade_adjacent">Esvaeix els costats de les pàgines</string>
   <string name="wallpaper_scroll">Desplaça el fons de pantalla</string>
