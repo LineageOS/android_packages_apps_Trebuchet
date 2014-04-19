@@ -19,11 +19,7 @@
   <string name="application_copyright">版权所有 \u00A9 2014 CyanogenMod 项目</string>
   <string name="sort_button_text">排序</string>
   <string name="filter_button_text">过滤器</string>
-  <string name="default_screen_button_text">默认屏幕</string>
-  <string name="transition_effect_button_text">滚动特效</string>
   <string name="sort_mode_title">标题</string>
-  <string name="sort_mode_launch_count">启动次数</string>
-  <string name="sort_mode_install_time">安装时间</string>
   <string name="scrolling_page_outlines">页概述</string>
   <string name="scrolling_fade_adjacent">边页淡出</string>
   <string name="wallpaper_scroll">滚动壁纸</string>

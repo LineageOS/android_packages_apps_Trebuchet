@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">Ταξινόμηση</string>
   <string name="filter_button_text">Φιλτράρισμα</string>
-  <string name="default_screen_button_text">Προεπιλ. οθόνη</string>
-  <string name="transition_effect_button_text">Εφέ κύλισης</string>
   <string name="sort_mode_title">Τίτλος</string>
-  <string name="sort_mode_launch_count">Αριθμός εκκινήσεων</string>
-  <string name="sort_mode_install_time">Χρόνος εγκατάστασης</string>
   <string name="scrolling_page_outlines">Περίγραμμα σελιδών</string>
   <string name="scrolling_fade_adjacent">Ξεθώριασμα πλευρικών σελίδων</string>
   <string name="wallpaper_scroll">Κύλιση ταπετσαρίας</string>

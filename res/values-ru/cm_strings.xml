@@ -19,11 +19,7 @@
   <string name="application_copyright">\u00A9 Проект CyanogenMod, 2014</string>
   <string name="sort_button_text">Сортировка</string>
   <string name="filter_button_text">Фильтрация</string>
-  <string name="default_screen_button_text">Экран по умолчанию</string>
-  <string name="transition_effect_button_text">Эффект перехода</string>
   <string name="sort_mode_title">По названию</string>
-  <string name="sort_mode_launch_count">По частоте использования</string>
-  <string name="sort_mode_install_time">По времени установки</string>
   <string name="scrolling_page_outlines">Границы страниц</string>
   <string name="scrolling_fade_adjacent">Затемнять края при переходе</string>
   <string name="wallpaper_scroll">Прокрутка обоев</string>

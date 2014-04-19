@@ -19,11 +19,7 @@
   <string name="application_copyright">Copyright \u00A9 2014 The CyanogenMod Project</string>
   <string name="sort_button_text">Rendezés</string>
   <string name="filter_button_text">Szűrő</string>
-  <string name="default_screen_button_text">Alapértelmezett képernyő</string>
-  <string name="transition_effect_button_text">Görgetés effekt</string>
   <string name="sort_mode_title">Név</string>
-  <string name="sort_mode_launch_count">Indítások száma</string>
-  <string name="sort_mode_install_time">Telepítés ideje</string>
   <string name="scrolling_page_outlines">Oldal körvonalak</string>
   <string name="scrolling_fade_adjacent">Elhalványuló váltás az oldalak közt</string>
   <string name="wallpaper_scroll">Háttérkép görgetése</string>
