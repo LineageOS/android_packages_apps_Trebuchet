@@ -62,6 +62,7 @@ public class OverviewSettingsPanel {
 
         List<String> valuesAppList = new ArrayList<String>();
         valuesAppList.add(res.getString(R.string.larger_icons_text));
+        valuesAppList.add(res.getString(R.string.auto_rotate_screen_text));
         if (!Utilities.isRestrictedProfile(mLauncher)) {
             valuesAppList.add(res.getString(R.string.protected_app_settings));
         }

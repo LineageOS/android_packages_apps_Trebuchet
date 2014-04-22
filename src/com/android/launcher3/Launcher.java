@@ -414,6 +414,7 @@ public class Launcher extends Activity
 
     // Preferences
     private boolean mHideIconLabels;
+    private boolean mAutoRotate;
 
     private Runnable mBuildLayersRunnable = new Runnable() {
         public void run() {
@@ -536,6 +537,10 @@ public class Launcher extends Activity
         // this also ensures that any synchronous binding below doesn't re-trigger another
         // LauncherModel load.
         mPaused = false;
+
+        mAutoRotate = SettingsProvider.getBoolean(this,
+                SettingsProvider.SETTINGS_UI_GENERAL_ORIENTATION,
+                R.bool.preferences_interface_general_orientation_default);
 
         if (PROFILE_STARTUP) {
             android.os.Debug.startMethodTracing(
@@ -4730,8 +4735,7 @@ public class Launcher extends Activity
     }
 
     public boolean isRotationEnabled() {
-        boolean enableRotation = sForceEnableRotation ||
-                getResources().getBoolean(R.bool.allow_rotation);
+        boolean enableRotation = sForceEnableRotation || mAutoRotate;
         return enableRotation;
     }
     public void lockScreenOrientation() {
@@ -4751,6 +4755,8 @@ public class Launcher extends Activity
                     }
                 }, mRestoreScreenOrientationDelay);
             }
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
         }
     }
 
