@@ -18,6 +18,9 @@
         xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher3"
         android:key="ui_general"
         android:title="@string/preferences_interface_general_title">
+    <CheckBoxPreference android:key="ui_general_orientation"
+            android:title="@string/preferences_interface_general_orientation_title"
+            android:defaultValue="@bool/preferences_interface_general_orientation_default" />
     <PreferenceCategory android:title="@string/preferences_interface_general_icons_category">
         <CheckBoxPreference android:key="ui_general_icons_large"
                 android:title="@string/preferences_interface_general_icons_large_title"
