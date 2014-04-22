@@ -75,6 +75,9 @@
     <!-- Larger icons -->
     <string name="larger_icons_text">Larger icons</string>
 
+    <!-- Auto rotate screen -->
+    <string name="auto_rotate_screen_text">Auto-rotation</string>
+
     <!-- Icon labels -->
     <string name="icon_labels">Icon labels</string>
     <string name="icon_labels_show">Show</string>

@@ -156,6 +156,14 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 : res.getString(R.string.setting_state_off);
                         ((TextView) v.findViewById(R.id.item_state)).setText(state);
                         break;
+                    case 1:
+                        current = SettingsProvider.getBoolean(mContext,
+                                SettingsProvider.SETTINGS_UI_GENERAL_ORIENTATION,
+                                R.bool.preferences_interface_general_orientation_default);
+                        state = current ? res.getString(R.string.setting_state_on)
+                                : res.getString(R.string.setting_state_off);
+                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        break;
                     default:
                         ((TextView) v.findViewById(R.id.item_state)).setText("");
                 }
@@ -331,6 +339,12 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             mLauncher.setUpdateDynamicGrid();
                             break;
                         case 1:
+                            onSettingsBooleanChanged(v,
+                                    SettingsProvider.SETTINGS_UI_GENERAL_ORIENTATION,
+                                    R.bool.preferences_interface_general_orientation_default);
+                            mLauncher.setUpdateDynamicGrid();
+                            break;
+                        case 2:
                             Intent intent = new Intent();
                             intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                                     OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
