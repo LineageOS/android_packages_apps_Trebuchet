@@ -22,16 +22,23 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.WallpaperInfo;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.database.Cursor;
-import android.database.DataSetObserver;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapRegionDecoder;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -40,11 +47,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LevelListDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.ThemesContract.ThemesColumns;
 import android.util.Log;
 import android.util.Pair;
 import android.view.ActionMode;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -54,7 +64,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.BaseAdapter;
@@ -64,27 +73,26 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 
-import com.android.gallery3d.exif.ExifInterface;
+import com.android.gallery3d.common.Utils;
 import com.android.photos.BitmapRegionTileSource;
-import com.android.launcher3.settings.SettingsProvider;
 
 import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class WallpaperPickerActivity extends WallpaperCropActivity {
-    static final String TAG = "Launcher.WallpaperPickerActivity";
+public class LockWallpaperPickerActivity extends WallpaperCropActivity {
+    static final String TAG = LockWallpaperPickerActivity.class.getSimpleName();
 
     public static final int IMAGE_PICK = 5;
     public static final int PICK_WALLPAPER_THIRD_PARTY_ACTIVITY = 6;
     public static final int PICK_LIVE_WALLPAPER = 7;
-    private static final String TEMP_WALLPAPER_TILES = "TEMP_WALLPAPER_TILES";
-
-    private static final int MENU_WALLPAPER_SCROLL = 0;
-
+    private static final String TEMP_WALLPAPER_TILES = "TEMP_KEYGUARD_WALLPAPER_TILES";
 
     private View mSelectedThumb;
     private boolean mIgnoreNextTap;
@@ -100,7 +108,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
 
     ArrayList<Uri> mTempWallpaperTiles = new ArrayList<Uri>();
     private SavedWallpaperImages mSavedImages;
-    private WallpaperInfo mLiveWallpaperInfoOnPickerLaunch;
 
     public static class PickImageInfo extends WallpaperTileInfo {
         @Override
@@ -108,6 +115,16 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.setType("image/*");
             Utilities.startActivityForResultSafely(a, intent, IMAGE_PICK);
+        }
+    }
+
+    public static class UserDesktopWallpaperInfo extends WallpaperTileInfo {
+        @Override
+        public void onClick(WallpaperCropActivity a) {
+            WallpaperManager am = WallpaperManager.getInstance(a);
+            am.clearKeyguardWallpaper();
+            a.setResult(RESULT_OK);
+            a.finish();
         }
     }
 
@@ -143,6 +160,125 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         }
         @Override
         public boolean isNamelessWallpaper() {
+            return true;
+        }
+    }
+
+    /**
+     * For themes which have regular wallpapers
+     */
+    public static class ThemeWallpaperInfo extends WallpaperTileInfo {
+        String mPackageName;
+        boolean mIsLegacy;
+        Drawable mThumb;
+        Context mContext;
+
+        public ThemeWallpaperInfo(Context context, String packageName, boolean legacy, Drawable thumb) {
+            this.mContext = context;
+            this.mPackageName = packageName;
+            this.mIsLegacy = legacy;
+            this.mThumb = thumb;
+        }
+
+        @Override
+        public void onClick(WallpaperCropActivity a) {
+            CropView v = a.getCropView();
+            try {
+                BitmapRegionTileSource source = null;
+                if (mIsLegacy) {
+                    final PackageManager pm = a.getPackageManager();
+                    PackageInfo pi = pm.getPackageInfo(mPackageName, 0);
+                    Resources res = a.getPackageManager().getResourcesForApplication(mPackageName);
+                    int resId = pi.legacyThemeInfos[0].wallpaperResourceId;
+
+                    int rotation = WallpaperCropActivity.getRotationFromExif(res, resId);
+                    source = new BitmapRegionTileSource(
+                            res, a, resId, 1024, rotation);
+                } else {
+                    Resources res = a.getPackageManager().getResourcesForApplication(mPackageName);
+                    if (res == null) {
+                        return;
+                    }
+
+                    int rotation = 0;
+                    source = new BitmapRegionTileSource(
+                            res, a, "wallpapers", 1024, rotation, true);
+                }
+                v.setTileSource(source, null);
+                v.setTouchEnabled(true);
+            } catch (NameNotFoundException e) {
+            }
+        }
+
+        @Override
+        public void onSave(WallpaperCropActivity a) {
+            ((LockWallpaperPickerActivity)a).cropImageAndSetWallpaper(
+                    "wallpapers",
+                    mPackageName,
+                    mIsLegacy,
+                    true);
+        }
+
+        @Override
+        public boolean isNamelessWallpaper() {
+            return true;
+        }
+
+        @Override
+        public boolean isSelectable() {
+            return true;
+        }
+    }
+
+    /**
+     * For themes that have LOCKSCREEN wallpapers
+     */
+    public static class ThemeLockWallpaperInfo extends WallpaperTileInfo {
+        String mPackageName;
+        Drawable mThumb;
+        Context mContext;
+
+        public ThemeLockWallpaperInfo(Context context, String packageName, Drawable thumb) {
+            this.mContext = context;
+            this.mPackageName = packageName;
+            this.mThumb = thumb;
+        }
+
+        @Override
+        public void onClick(WallpaperCropActivity a) {
+            CropView v = a.getCropView();
+            try {
+                BitmapRegionTileSource source = null;
+                Resources res = a.getPackageManager().getResourcesForApplication(mPackageName);
+                if (res == null) {
+                    return;
+                }
+
+                int rotation = 0;
+                source = new BitmapRegionTileSource(
+                        res, a, "lockscreen", 1024, rotation, true);
+                v.setTileSource(source, null);
+                v.setTouchEnabled(true);
+            } catch (NameNotFoundException e) {
+            }
+        }
+
+        @Override
+        public void onSave(WallpaperCropActivity a) {
+            ((LockWallpaperPickerActivity)a).cropImageAndSetWallpaper(
+                    "lockscreen",
+                    mPackageName,
+                    false,
+                    true);
+        }
+
+        @Override
+        public boolean isNamelessWallpaper() {
+            return true;
+        }
+
+        @Override
+        public boolean isSelectable() {
             return true;
         }
     }
@@ -184,6 +320,392 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         @Override
         public boolean isNamelessWallpaper() {
             return true;
+        }
+    }
+
+    protected void cropImageAndSetWallpaper(String path, String packageName, final boolean legacy,
+            final boolean finishActivityWhenDone) {
+
+        Point outSize = new Point();
+        getWindowManager().getDefaultDisplay().getSize(outSize);
+
+        final int outWidth = outSize.x;
+        final int outHeight = outSize.y;
+        Runnable onEndCrop = new Runnable() {
+            public void run() {
+                if (finishActivityWhenDone) {
+                    setResult(Activity.RESULT_OK);
+                    finish();
+                }
+            }
+        };
+
+        RectF cropRect = new RectF(mCropView.getCrop());
+        BitmapCropTask cropTask = null;
+        try {
+            if (legacy) {
+                final PackageManager pm = getPackageManager();
+                PackageInfo pi = pm.getPackageInfo(packageName, 0);
+                Resources res = getPackageManager().getResourcesForApplication(packageName);
+                int resId = pi.legacyThemeInfos[0].wallpaperResourceId;
+                cropTask = new BitmapCropTask(this, res, resId,
+                        cropRect, 0, outWidth, outHeight, true, false, onEndCrop);
+            } else {
+                Resources res = getPackageManager().getResourcesForApplication(packageName);
+                if (res == null) {
+                    return;
+                }
+                cropTask = new BitmapCropTask(this, res, path, cropRect,
+                        0, outWidth, outHeight, true, false, onEndCrop);
+            }
+        } catch (NameNotFoundException e) {
+            return;
+        }
+
+        if (cropTask != null) {
+            cropTask.execute();
+        }
+    }
+
+    protected static class BitmapCropTask extends AsyncTask<Void, Void, Boolean> {
+        Uri mInUri = null;
+        Context mContext;
+        String mInFilePath;
+        byte[] mInImageBytes;
+        int mInResId = 0;
+        InputStream mInStream;
+        RectF mCropBounds = null;
+        int mOutWidth, mOutHeight;
+        int mRotation;
+        String mOutputFormat = "jpg"; // for now
+        boolean mSetWallpaper;
+        boolean mSaveCroppedBitmap;
+        Bitmap mCroppedBitmap;
+        Runnable mOnEndRunnable;
+        Resources mResources;
+        OnBitmapCroppedHandler mOnBitmapCroppedHandler;
+        boolean mNoCrop;
+        boolean mImageFromAsset;
+
+        public BitmapCropTask(Context c, Resources res , String assetPath,
+                RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mContext = c;
+            mResources = res;
+            mInFilePath = assetPath;
+            mImageFromAsset = true;
+            init(cropBounds, rotation,
+                    outWidth, outHeight, setWallpaper, saveCroppedBitmap, onEndRunnable);
+        }
+
+        public BitmapCropTask(Context c, String filePath,
+                RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mContext = c;
+            mInFilePath = filePath;
+            init(cropBounds, rotation,
+                    outWidth, outHeight, setWallpaper, saveCroppedBitmap, onEndRunnable);
+        }
+
+        public BitmapCropTask(byte[] imageBytes,
+                RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mInImageBytes = imageBytes;
+            init(cropBounds, rotation,
+                    outWidth, outHeight, setWallpaper, saveCroppedBitmap, onEndRunnable);
+        }
+
+        public BitmapCropTask(Context c, Uri inUri,
+                RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mContext = c;
+            mInUri = inUri;
+            init(cropBounds, rotation,
+                    outWidth, outHeight, setWallpaper, saveCroppedBitmap, onEndRunnable);
+        }
+
+        public BitmapCropTask(Context c, Resources res, int inResId,
+                RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mContext = c;
+            mInResId = inResId;
+            mResources = res;
+            init(cropBounds, rotation,
+                    outWidth, outHeight, setWallpaper, saveCroppedBitmap, onEndRunnable);
+        }
+
+        private void init(RectF cropBounds, int rotation, int outWidth, int outHeight,
+                boolean setWallpaper, boolean saveCroppedBitmap, Runnable onEndRunnable) {
+            mCropBounds = cropBounds;
+            mRotation = rotation;
+            mOutWidth = outWidth;
+            mOutHeight = outHeight;
+            mSetWallpaper = setWallpaper;
+            mSaveCroppedBitmap = saveCroppedBitmap;
+            mOnEndRunnable = onEndRunnable;
+        }
+
+        public void setOnBitmapCropped(OnBitmapCroppedHandler handler) {
+            mOnBitmapCroppedHandler = handler;
+        }
+
+        public void setNoCrop(boolean value) {
+            mNoCrop = value;
+        }
+
+        public void setOnEndRunnable(Runnable onEndRunnable) {
+            mOnEndRunnable = onEndRunnable;
+        }
+
+        // Helper to setup input stream
+        private void regenerateInputStream() {
+            if (mInUri == null && mInResId == 0 && mInFilePath == null && mInImageBytes == null && !mImageFromAsset) {
+                Log.w(TAG, "cannot read original file, no input URI, resource ID, or " +
+                        "image byte array given");
+            } else {
+                Utils.closeSilently(mInStream);
+                try {
+                    if (mImageFromAsset) {
+                        AssetManager am = mResources.getAssets();
+                        String[] pathImages = am.list(mInFilePath);
+                        if (pathImages == null || pathImages.length == 0) {
+                            throw new IOException("did not find any images in path: " + mInFilePath);
+                        }
+                        InputStream is = am.open(mInFilePath + File.separator + pathImages[0]);
+                        mInStream = new BufferedInputStream(is);
+                    } else if (mInUri != null) {
+                        mInStream = new BufferedInputStream(
+                                mContext.getContentResolver().openInputStream(mInUri));
+                    } else if (mInFilePath != null) {
+                        mInStream = mContext.openFileInput(mInFilePath);
+                    } else if (mInImageBytes != null) {
+                        mInStream = new BufferedInputStream(
+                                new ByteArrayInputStream(mInImageBytes));
+                    } else {
+                        mInStream = new BufferedInputStream(
+                                mResources.openRawResource(mInResId));
+                    }
+                } catch (FileNotFoundException e) {
+                    Log.w(TAG, "cannot read file: " + mInUri.toString(), e);
+                } catch (IOException e) {
+                    Log.w(TAG, "cannot read file: " + mInUri.toString(), e);
+                }
+            }
+        }
+
+        public Point getImageBounds() {
+            regenerateInputStream();
+            if (mInStream != null) {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeStream(mInStream, null, options);
+                if (options.outWidth != 0 && options.outHeight != 0) {
+                    return new Point(options.outWidth, options.outHeight);
+                }
+            }
+            return null;
+        }
+
+        public void setCropBounds(RectF cropBounds) {
+            mCropBounds = cropBounds;
+        }
+
+        public Bitmap getCroppedBitmap() {
+            return mCroppedBitmap;
+        }
+        public boolean cropBitmap() {
+            boolean failure = false;
+
+            regenerateInputStream();
+
+            WallpaperManager wallpaperManager = null;
+            if (mSetWallpaper) {
+                wallpaperManager = WallpaperManager.getInstance(mContext.getApplicationContext());
+            }
+            if (mSetWallpaper && mNoCrop && mInStream != null) {
+                try {
+                    wallpaperManager.setKeyguardStream(mInStream);
+                } catch (IOException e) {
+                    Log.w(TAG, "cannot write stream to wallpaper", e);
+                    failure = true;
+                }
+                return !failure;
+            }
+            if (mInStream != null) {
+                // Find crop bounds (scaled to original image size)
+                Rect roundedTrueCrop = new Rect();
+                Matrix rotateMatrix = new Matrix();
+                Matrix inverseRotateMatrix = new Matrix();
+                if (mRotation > 0) {
+                    rotateMatrix.setRotate(mRotation);
+                    inverseRotateMatrix.setRotate(-mRotation);
+
+                    mCropBounds.roundOut(roundedTrueCrop);
+                    mCropBounds = new RectF(roundedTrueCrop);
+
+                    Point bounds = getImageBounds();
+
+                    float[] rotatedBounds = new float[] { bounds.x, bounds.y };
+                    rotateMatrix.mapPoints(rotatedBounds);
+                    rotatedBounds[0] = Math.abs(rotatedBounds[0]);
+                    rotatedBounds[1] = Math.abs(rotatedBounds[1]);
+
+                    mCropBounds.offset(-rotatedBounds[0]/2, -rotatedBounds[1]/2);
+                    inverseRotateMatrix.mapRect(mCropBounds);
+                    mCropBounds.offset(bounds.x/2, bounds.y/2);
+
+                    regenerateInputStream();
+                }
+
+                mCropBounds.roundOut(roundedTrueCrop);
+
+                if (roundedTrueCrop.width() <= 0 || roundedTrueCrop.height() <= 0) {
+                    Log.w(TAG, "crop has bad values for full size image");
+                    failure = true;
+                    return false;
+                }
+
+                // See how much we're reducing the size of the image
+                int scaleDownSampleSize = Math.min(roundedTrueCrop.width() / mOutWidth,
+                        roundedTrueCrop.height() / mOutHeight);
+
+                // Attempt to open a region decoder
+                BitmapRegionDecoder decoder = null;
+                try {
+                    decoder = BitmapRegionDecoder.newInstance(mInStream, true);
+                } catch (IOException e) {
+                    Log.w(TAG, "cannot open region decoder for file: " + mInUri.toString(), e);
+                }
+
+                Bitmap crop = null;
+                if (decoder != null) {
+                    // Do region decoding to get crop bitmap
+                    BitmapFactory.Options options = new BitmapFactory.Options();
+                    if (scaleDownSampleSize > 1) {
+                        options.inSampleSize = scaleDownSampleSize;
+                    }
+                    crop = decoder.decodeRegion(roundedTrueCrop, options);
+                    decoder.recycle();
+                }
+
+                if (crop == null) {
+                    // BitmapRegionDecoder has failed, try to crop in-memory
+                    regenerateInputStream();
+                    Bitmap fullSize = null;
+                    if (mInStream != null) {
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        if (scaleDownSampleSize > 1) {
+                            options.inSampleSize = scaleDownSampleSize;
+                        }
+                        fullSize = BitmapFactory.decodeStream(mInStream, null, options);
+                    }
+                    if (fullSize != null) {
+                        mCropBounds.left /= scaleDownSampleSize;
+                        mCropBounds.top /= scaleDownSampleSize;
+                        mCropBounds.bottom /= scaleDownSampleSize;
+                        mCropBounds.right /= scaleDownSampleSize;
+                        mCropBounds.roundOut(roundedTrueCrop);
+
+                        crop = Bitmap.createBitmap(fullSize, roundedTrueCrop.left,
+                                roundedTrueCrop.top, roundedTrueCrop.width(),
+                                roundedTrueCrop.height());
+                    }
+                }
+
+                if (crop == null) {
+                    Log.w(TAG, "cannot decode file: " + mInUri.toString());
+                    failure = true;
+                    return false;
+                }
+                if (mOutWidth > 0 && mOutHeight > 0 || mRotation > 0) {
+                    float[] dimsAfter = new float[] { crop.getWidth(), crop.getHeight() };
+                    rotateMatrix.mapPoints(dimsAfter);
+                    dimsAfter[0] = Math.abs(dimsAfter[0]);
+                    dimsAfter[1] = Math.abs(dimsAfter[1]);
+
+                    if (!(mOutWidth > 0 && mOutHeight > 0)) {
+                        mOutWidth = Math.round(dimsAfter[0]);
+                        mOutHeight = Math.round(dimsAfter[1]);
+                    }
+
+                    RectF cropRect = new RectF(0, 0, dimsAfter[0], dimsAfter[1]);
+                    RectF returnRect = new RectF(0, 0, mOutWidth, mOutHeight);
+
+                    Matrix m = new Matrix();
+                    if (mRotation == 0) {
+                        m.setRectToRect(cropRect, returnRect, Matrix.ScaleToFit.FILL);
+                    } else {
+                        Matrix m1 = new Matrix();
+                        m1.setTranslate(-crop.getWidth() / 2f, -crop.getHeight() / 2f);
+                        Matrix m2 = new Matrix();
+                        m2.setRotate(mRotation);
+                        Matrix m3 = new Matrix();
+                        m3.setTranslate(dimsAfter[0] / 2f, dimsAfter[1] / 2f);
+                        Matrix m4 = new Matrix();
+                        m4.setRectToRect(cropRect, returnRect, Matrix.ScaleToFit.FILL);
+
+                        Matrix c1 = new Matrix();
+                        c1.setConcat(m2, m1);
+                        Matrix c2 = new Matrix();
+                        c2.setConcat(m4, m3);
+                        m.setConcat(c2, c1);
+                    }
+
+                    Bitmap tmp = Bitmap.createBitmap((int) returnRect.width(),
+                            (int) returnRect.height(), Bitmap.Config.ARGB_8888);
+                    if (tmp != null) {
+                        Canvas c = new Canvas(tmp);
+                        Paint p = new Paint();
+                        p.setFilterBitmap(true);
+                        c.drawBitmap(crop, m, p);
+                        crop = tmp;
+                    }
+                }
+
+                if (mSaveCroppedBitmap) {
+                    mCroppedBitmap = crop;
+                }
+
+                // Get output compression format
+                CompressFormat cf =
+                        convertExtensionToCompressFormat(getFileExtension(mOutputFormat));
+
+                // Compress to byte array
+                ByteArrayOutputStream tmpOut = new ByteArrayOutputStream(2048);
+                if (crop.compress(cf, DEFAULT_COMPRESS_QUALITY, tmpOut)) {
+                    // If we need to set to the wallpaper, set it
+                    if (mSetWallpaper && wallpaperManager != null) {
+                        try {
+                            byte[] outByteArray = tmpOut.toByteArray();
+                            wallpaperManager.setKeyguardStream(new ByteArrayInputStream(outByteArray));
+                            if (mOnBitmapCroppedHandler != null) {
+                                mOnBitmapCroppedHandler.onBitmapCropped(outByteArray);
+                            }
+                        } catch (IOException e) {
+                            Log.w(TAG, "cannot write stream to wallpaper", e);
+                            failure = true;
+                        }
+                    }
+                } else {
+                    Log.w(TAG, "cannot compress bitmap");
+                    failure = true;
+                }
+            } else {
+                Log.w(TAG, "could not complete crop task because input stream is null");
+            }
+            return !failure; // True if any of the operations failed
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            return cropBitmap();
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            if (mOnEndRunnable != null) {
+                mOnEndRunnable.run();
+            }
         }
     }
 
@@ -265,7 +787,7 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
                     v.announceForAccessibility(
                             getString(R.string.announce_selection, v.getContentDescription()));
                 }
-                info.onClick(WallpaperPickerActivity.this);
+                info.onClick(LockWallpaperPickerActivity.this);
             }
         };
         mLongClickListener = new View.OnLongClickListener() {
@@ -288,36 +810,7 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
             }
         };
 
-        // Populate the built-in wallpapers
-        ArrayList<ResourceWallpaperInfo> wallpapers = findBundledWallpapers();
         mWallpapersView = (LinearLayout) findViewById(R.id.wallpaper_list);
-        BuiltInWallpapersAdapter ia = new BuiltInWallpapersAdapter(this, wallpapers);
-        populateWallpapersFromAdapter(mWallpapersView, ia, false, true);
-
-        // Populate the saved wallpapers
-        mSavedImages = new SavedWallpaperImages(this);
-        mSavedImages.loadThumbnailsAndImageIdList();
-        populateWallpapersFromAdapter(mWallpapersView, mSavedImages, true, true);
-
-        // Populate the live wallpapers
-        final LinearLayout liveWallpapersView =
-                (LinearLayout) findViewById(R.id.live_wallpaper_list);
-        final LiveWallpaperListAdapter a = new LiveWallpaperListAdapter(this);
-        a.registerDataSetObserver(new DataSetObserver() {
-            public void onChanged() {
-                liveWallpapersView.removeAllViews();
-                populateWallpapersFromAdapter(liveWallpapersView, a, false, false);
-                initializeScrollForRtl();
-                updateTileIndices();
-            }
-        });
-
-        // Populate the third-party wallpaper pickers
-        final LinearLayout thirdPartyWallpapersView =
-                (LinearLayout) findViewById(R.id.third_party_wallpaper_list);
-        final ThirdPartyWallpaperPickerListAdapter ta =
-                new ThirdPartyWallpaperPickerListAdapter(this);
-        populateWallpapersFromAdapter(thirdPartyWallpapersView, ta, false, false);
 
         // Add a tile for the Gallery
         LinearLayout masterWallpaperList = (LinearLayout) findViewById(R.id.master_wallpaper_list);
@@ -325,6 +818,27 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
                 inflate(R.layout.wallpaper_picker_image_picker_item, masterWallpaperList, false);
         setWallpaperItemPaddingToZero(pickImageTile);
         masterWallpaperList.addView(pickImageTile, 0);
+
+        // Add tile for clear image
+        FrameLayout clearImageTile = (FrameLayout) getLayoutInflater().
+                inflate(R.layout.wallpaper_picker_clear, masterWallpaperList, false);
+        setWallpaperItemPaddingToZero(clearImageTile);
+        masterWallpaperList.addView(clearImageTile, 0);
+
+        // theme LOCKSCREEN wallpapers
+        ArrayList<ThemeLockWallpaperInfo> themeLockWallpapers = findThemeLockWallpapers();
+        ThemeLockWallpapersAdapter tla = new ThemeLockWallpapersAdapter(this, themeLockWallpapers);
+        populateWallpapersFromAdapter(mWallpapersView, tla, false, true);
+
+        // theme wallpapers
+        ArrayList<ThemeWallpaperInfo> themeWallpapers = findThemeWallpapers();
+        ThemeWallpapersAdapter ta = new ThemeWallpapersAdapter(this, themeWallpapers);
+        populateWallpapersFromAdapter(mWallpapersView, ta, false, true);
+
+        // Populate the saved wallpapers
+        mSavedImages = new SavedWallpaperImages(this);
+        mSavedImages.loadThumbnailsAndImageIdList();
+        populateWallpapersFromAdapter(mWallpapersView, mSavedImages, true, true);
 
         // Make its background the last photo taken on external storage
         Bitmap lastPhoto = getThumbnailOfLastPhoto();
@@ -334,7 +848,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
             galleryThumbnailBg.setImageBitmap(getThumbnailOfLastPhoto());
             int colorOverlay = getResources().getColor(R.color.wallpaper_picker_translucent_gray);
             galleryThumbnailBg.setColorFilter(colorOverlay, PorterDuff.Mode.SRC_ATOP);
-
         }
 
         PickImageInfo pickImageInfo = new PickImageInfo();
@@ -342,6 +855,12 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         pickImageInfo.setView(pickImageTile);
         pickImageTile.setOnClickListener(mThumbnailOnClickListener);
         pickImageInfo.setView(pickImageTile);
+
+        UserDesktopWallpaperInfo clearImageInfo = new UserDesktopWallpaperInfo();
+        clearImageTile.setTag(clearImageInfo);
+        clearImageInfo.setView(clearImageTile);
+        clearImageTile.setOnClickListener(mThumbnailOnClickListener);
+        clearImageInfo.setView(clearImageTile);
 
         updateTileIndices();
 
@@ -365,7 +884,7 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
                     public void onClick(View v) {
                         if (mSelectedThumb != null) {
                             WallpaperTileInfo info = (WallpaperTileInfo) mSelectedThumb.getTag();
-                            info.onSave(WallpaperPickerActivity.this);
+                            info.onSave(LockWallpaperPickerActivity.this);
                         }
                     }
                 });
@@ -420,7 +939,7 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
                                 (CheckableFrameLayout) mWallpapersView.getChildAt(i);
                         if (c.isChecked()) {
                             WallpaperTileInfo info = (WallpaperTileInfo) c.getTag();
-                            info.onDelete(WallpaperPickerActivity.this);
+                            info.onDelete(LockWallpaperPickerActivity.this);
                             viewsToRemove.add(c);
                         }
                     }
@@ -490,20 +1009,11 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, MENU_WALLPAPER_SCROLL, 0,
-                R.string.wallpaper_scroll).setCheckable(true);
-
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem wallpaperScroll = menu.findItem(MENU_WALLPAPER_SCROLL);
-
-        wallpaperScroll.setChecked(SettingsProvider.getBoolean(this,
-                SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,
-                R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default));
-
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -511,11 +1021,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case MENU_WALLPAPER_SCROLL:
-                SettingsProvider.get(this).edit()
-                        .putBoolean(SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL, !item.isChecked())
-                        .commit();
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -603,7 +1108,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
     private static Point getDefaultThumbnailSize(Resources res) {
         return new Point(res.getDimensionPixelSize(R.dimen.wallpaperThumbnailWidth),
                 res.getDimensionPixelSize(R.dimen.wallpaperThumbnailHeight));
-
     }
 
     private static Bitmap createThumbnail(Point size, Context context, Uri uri, byte[] imageBytes,
@@ -684,18 +1188,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         } else if (requestCode == PICK_WALLPAPER_THIRD_PARTY_ACTIVITY) {
             setResult(RESULT_OK);
             finish();
-        } else if (requestCode == PICK_LIVE_WALLPAPER) {
-            WallpaperManager wm = WallpaperManager.getInstance(this);
-            final WallpaperInfo oldLiveWallpaper = mLiveWallpaperInfoOnPickerLaunch;
-            WallpaperInfo newLiveWallpaper = wm.getWallpaperInfo();
-            // Try to figure out if a live wallpaper was set;
-            if (newLiveWallpaper != null &&
-                    (oldLiveWallpaper == null ||
-                    !oldLiveWallpaper.getComponent().equals(newLiveWallpaper.getComponent()))) {
-                // Return if a live wallpaper was set
-                setResult(RESULT_OK);
-                finish();
-            }
         }
     }
 
@@ -727,6 +1219,67 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
             bundledWallpapers.add(0, defaultWallpaperInfo);
         }
         return bundledWallpapers;
+    }
+
+    private ArrayList<ThemeWallpaperInfo> findThemeWallpapers() {
+        ArrayList<ThemeWallpaperInfo> themeWallpapers =
+                new ArrayList<ThemeWallpaperInfo>();
+        
+        ContentResolver cr = getContentResolver();
+        String[] projection = { ThemesColumns.PKG_NAME, ThemesColumns.IS_LEGACY_THEME };
+        String selection = ThemesColumns.MODIFIES_LAUNCHER + "=? AND " +
+                ThemesColumns.PKG_NAME + "!=?";
+        String[] selectoinArgs = {"1", "default"};
+        String sortOrder = null;
+        Cursor c = cr.query(ThemesColumns.CONTENT_URI, projection, selection,
+                selectoinArgs, sortOrder);
+        if (c != null) {
+            Bitmap bmp;
+            while (c.moveToNext()) {
+                String pkgName = c.getString(c.getColumnIndexOrThrow(ThemesColumns.PKG_NAME));
+                boolean isLegacy = c.getInt(c.getColumnIndexOrThrow(
+                        ThemesColumns.IS_LEGACY_THEME)) == 1;
+                    bmp = getThemeWallpaper(this, "wallpapers", pkgName, isLegacy, true /* thumb*/);
+                    themeWallpapers.add(
+                            new ThemeWallpaperInfo(this, pkgName, isLegacy,
+                                    new BitmapDrawable(getResources(), bmp)));
+                    if (bmp != null) {
+                        Log.d("", String.format("Loaded bitmap of size %dx%d for %s",
+                                bmp.getWidth(), bmp.getHeight(), pkgName));
+                    }
+            }
+            c.close();
+        }
+        return themeWallpapers;
+    }
+
+    private ArrayList<ThemeLockWallpaperInfo> findThemeLockWallpapers() {
+        ArrayList<ThemeLockWallpaperInfo> themeWallpapers =
+                new ArrayList<ThemeLockWallpaperInfo>();
+        ContentResolver cr = getContentResolver();
+        String[] projection = { ThemesColumns.PKG_NAME };
+        String selection = ThemesColumns.MODIFIES_LOCKSCREEN + "=? AND " +
+                ThemesColumns.PKG_NAME + "!=?";
+        String[] selectoinArgs = {"1", "default"};
+        String sortOrder = null;
+        Cursor c = cr.query(ThemesColumns.CONTENT_URI, projection, selection,
+                selectoinArgs, sortOrder);
+        if (c != null) {
+            Bitmap bmp;
+            while (c.moveToNext()) {
+                String pkgName = c.getString(c.getColumnIndexOrThrow(ThemesColumns.PKG_NAME));
+                    bmp = getThemeWallpaper(this, "lockscreen", pkgName, false, true /* thumb*/);
+                    themeWallpapers.add(
+                            new ThemeLockWallpaperInfo(this, pkgName,
+                                    new BitmapDrawable(getResources(), bmp)));
+                    if (bmp != null) {
+                        Log.d("", String.format("Loaded bitmap of size %dx%d for %s",
+                                bmp.getWidth(), bmp.getHeight(), pkgName));
+                    }
+            }
+            c.close();
+        }
+        return themeWallpapers;
     }
 
     private ResourceWallpaperInfo getDefaultWallpaperInfo() {
@@ -810,10 +1363,6 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         return mSavedImages;
     }
 
-    public void onLiveWallpaperPickerLaunch() {
-        mLiveWallpaperInfoOnPickerLaunch = WallpaperManager.getInstance(this).getWallpaperInfo();
-    }
-
     static class ZeroPaddingDrawable extends LevelListDrawable {
         public ZeroPaddingDrawable(Drawable d) {
             super();
@@ -825,6 +1374,66 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         public boolean getPadding(Rect padding) {
             padding.set(0, 0, 0, 0);
             return true;
+        }
+    }
+
+    private static class ThemeLockWallpapersAdapter extends BaseAdapter implements ListAdapter {
+        private LayoutInflater mLayoutInflater;
+        private ArrayList<ThemeLockWallpaperInfo> mWallpapers;
+
+        ThemeLockWallpapersAdapter(Activity activity, ArrayList<ThemeLockWallpaperInfo> wallpapers) {
+            mLayoutInflater = activity.getLayoutInflater();
+            mWallpapers = wallpapers;
+        }
+
+        public int getCount() {
+            return mWallpapers.size();
+        }
+
+        public ThemeLockWallpaperInfo getItem(int position) {
+            return mWallpapers.get(position);
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Drawable thumb = mWallpapers.get(position).mThumb;
+            if (thumb == null) {
+                Log.e(TAG, "Error decoding thumbnail for wallpaper #" + position);
+            }
+            return createImageTileView(mLayoutInflater, position, convertView, parent, thumb);
+        }
+    }
+
+    private static class ThemeWallpapersAdapter extends BaseAdapter implements ListAdapter {
+        private LayoutInflater mLayoutInflater;
+        private ArrayList<ThemeWallpaperInfo> mWallpapers;
+
+        ThemeWallpapersAdapter(Activity activity, ArrayList<ThemeWallpaperInfo> wallpapers) {
+            mLayoutInflater = activity.getLayoutInflater();
+            mWallpapers = wallpapers;
+        }
+
+        public int getCount() {
+            return mWallpapers.size();
+        }
+
+        public ThemeWallpaperInfo getItem(int position) {
+            return mWallpapers.get(position);
+        }
+
+        public long getItemId(int position) {
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            Drawable thumb = mWallpapers.get(position).mThumb;
+            if (thumb == null) {
+                Log.e(TAG, "Error decoding thumbnail for wallpaper #" + position);
+            }
+            return createImageTileView(mLayoutInflater, position, convertView, parent, thumb);
         }
     }
 
@@ -878,5 +1487,94 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
         }
 
         return view;
+    }
+
+    private static Bitmap getThemeWallpaper(Context context, String path, String pkgName, boolean legacyTheme, boolean thumb) {
+        if (legacyTheme) {
+            return getLegacyThemeWallpaper(context, pkgName, thumb);
+        }
+        InputStream is = null;
+        try {
+            Resources res = context.getPackageManager().getResourcesForApplication(pkgName);
+            if (res == null) {
+                return null;
+            }
+
+            AssetManager am = res.getAssets();
+            String[] wallpapers = am.list(path);
+            if (wallpapers == null || wallpapers.length == 0) {
+                return null;
+            }
+            is = am.open(path + File.separator + wallpapers[0]);
+
+                BitmapFactory.Options bounds = new BitmapFactory.Options();
+                bounds.inJustDecodeBounds = true;
+                BitmapFactory.decodeStream(is, null, bounds);
+                if ((bounds.outWidth == -1) || (bounds.outHeight == -1))
+                    return null;
+
+                int originalSize = (bounds.outHeight > bounds.outWidth) ? bounds.outHeight
+                        : bounds.outWidth;
+                Point outSize;
+
+                if (thumb) {
+                    outSize = getDefaultThumbnailSize(context.getResources());
+                } else {
+                    outSize = getDefaultWallpaperSize(res, ((Activity)context).getWindowManager());
+                }
+                int thumbSampleSize = (outSize.y > outSize.x) ? outSize.y : outSize.x;
+
+                BitmapFactory.Options opts = new BitmapFactory.Options();
+                opts.inSampleSize = originalSize / thumbSampleSize;
+                return BitmapFactory.decodeStream(is, null, opts);
+        } catch (IOException e) {
+            return null;
+        } catch (NameNotFoundException e) {
+            return null;
+        } finally {
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                }
+            }
+        }
+    }
+
+    private static Bitmap getLegacyThemeWallpaper(Context context, String pkgName, boolean thumb) {
+        try {
+            final PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(pkgName, 0);
+            Resources res = context.getPackageManager().getResourcesForApplication(pkgName);
+
+            if (pi == null || res == null) {
+                return null;
+            }
+            int resId = pi.legacyThemeInfos[0].wallpaperResourceId;
+
+            BitmapFactory.Options opts = new BitmapFactory.Options();
+            opts.inJustDecodeBounds = true;
+            BitmapFactory.decodeResource(res, resId, opts);
+            if ((opts.outWidth == -1) || (opts.outHeight == -1))
+                return null;
+
+            int originalSize = (opts.outHeight > opts.outWidth) ? opts.outHeight
+                    : opts.outWidth;
+            Point outSize;
+            if (thumb) {
+                outSize = getDefaultThumbnailSize(context.getResources());
+            } else {
+                outSize = getDefaultWallpaperSize(res, ((Activity)context).getWindowManager());
+            }
+            int thumbSampleSize = (outSize.y > outSize.x) ? outSize.y : outSize.x;
+
+            opts.inJustDecodeBounds = false;
+            opts.inSampleSize = originalSize / thumbSampleSize;
+            opts.inDither = false;
+
+            return BitmapFactory.decodeResource(res, resId, opts);
+        } catch (NameNotFoundException e) {
+            return null;
+        }
     }
 }
