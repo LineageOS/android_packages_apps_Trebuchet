@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_9637ebe2",
+        "filename": "res/layout/wallpaper_picker_clear.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 9444
+      },
+      "writtenOn": "2014-04-26T13:16:20Z",
+      "side": 1,
+      "message": "Copyright CM?",
+      "revId": "119b4ee18b955350555b9c97d0ffa92a08831b2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_7657bf02",
+        "filename": "src/com/android/launcher3/LockWallpaperPickerActivity.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 9444
+      },
+      "writtenOn": "2014-04-26T13:16:20Z",
+      "side": 1,
+      "message": "\u003e 100 chars. Needs wrapping",
+      "revId": "119b4ee18b955350555b9c97d0ffa92a08831b2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
