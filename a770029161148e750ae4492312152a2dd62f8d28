@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_0c2bca83",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 9444
+      },
+      "writtenOn": "2014-04-29T06:32:15Z",
+      "side": 1,
+      "message": "shouldn\u0027t the action should be something like SET_KEYGUARD_WALLPAPER",
+      "revId": "a770029161148e750ae4492312152a2dd62f8d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_8c3ebab6",
+        "filename": "src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 9444
+      },
+      "writtenOn": "2014-04-29T06:32:15Z",
+      "side": 1,
+      "message": "If all these methods here are all not used by this you can throw UnsupportedOperationException and explain it is not implemented",
+      "revId": "a770029161148e750ae4492312152a2dd62f8d28",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
