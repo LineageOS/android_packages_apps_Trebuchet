@@ -160,4 +160,11 @@
         launcher:screen="4"
         launcher:x="4"
         launcher:y="0" />
+    <favorite
+        launcher:packageName="com.google.android.GoogleCamera"
+        launcher:className="com.android.camera.CameraLauncher"
+        launcher:container="-101"
+        launcher:screen="4"
+        launcher:x="4"
+        launcher:y="0" />
 </favorites>
