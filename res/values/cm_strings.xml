@@ -99,4 +99,26 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Hidden apps</string>
+
+    <!-- Settings -->
+    <string name="launcher_settings">LAUNCHER SETTINGS</string>
+    <string name="home_screen_settings">HOME SCREEN SETTINGS</string>
+    <string name="drawer_settings">DRAWER SETTINGS</string>
+    <!-- Text for page scroll -->
+    <string name="page_scroll_effect_text">Page Scroll Effect</string>
+    <!-- Text for drawer scroll -->
+    <string name="drawer_scroll_effect_text">Drawer Scroll Effect</string>
+    <!-- Text for drawer sorting -->
+    <string name="drawer_sorting_text">Drawer Sorting</string>
+    <!-- Text for home screen search -->
+    <string name="home_screen_search_text">Home Screen Search"</string>
+    <!-- Text for larger icons -->
+    <string name="larger_icons_text">Larger Icons</string>
+    <!-- Text for hiding icon labels -->
+    <string name="hide_icon_labels_homescreen">Hide Icon Labels (Homescreen)</string>
+    <string name="hide_icon_labels_drawer">Hide Icon Labels (Drawer)</string>
+    <!-- Settings states -->
+    <string name="setting_state_on">ON</string>
+    <string name="setting_state_off">OFF</string>
+    <string name="themes_button_text">Themes</string>
 </resources>
