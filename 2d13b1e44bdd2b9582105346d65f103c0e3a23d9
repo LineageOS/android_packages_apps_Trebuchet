@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_56a0c590",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Scroll effect",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_b6ade18a",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Scroll effect",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_d6ba15c0",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Sorting mode",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_96aa5d6f",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Search bar",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_f6b599d0",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Larger icons",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_36b0b1dd",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Hide icon labels",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_16b5adcc",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-17T07:40:58Z",
+      "side": 1,
+      "message": "Hide icon labels",
+      "revId": "2d13b1e44bdd2b9582105346d65f103c0e3a23d9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
