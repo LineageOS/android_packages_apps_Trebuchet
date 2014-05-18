@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_d1c05fe3",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-05-18T07:17:56Z",
+      "side": 1,
+      "message": "Can\u0027t this be removed and use a single string for both settings too?",
+      "revId": "25d03a9ff36480870c76451a8b8cc312cf54ff0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
