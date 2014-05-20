@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/settings_bg_color"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/overview_panel_button_spacing"
+    android:paddingRight="@dimen/overview_panel_button_spacing"
+    android:paddingTop="@dimen/overview_panel_bottom_padding" >
+
+    <RelativeLayout
+        android:id="@+id/folder_title_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/listitem_bg" >
+        <ImageView
+            android:id="@+id/folder_lock_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/folder_unlock" />
+
+        <TextView
+            android:id="@+id/folder_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingBottom="@dimen/folder_name_padding"
+            android:paddingTop="@dimen/folder_name_padding"
+            android:text="@string/folder_hint_text"
+            android:textColor="@android:color/white"
+            android:layout_toLeftOf="@id/folder_lock_icon"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hidden_apps_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp" />
+
+</LinearLayout>
