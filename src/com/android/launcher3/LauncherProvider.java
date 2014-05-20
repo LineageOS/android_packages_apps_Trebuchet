@@ -69,7 +69,7 @@ public class LauncherProvider extends ContentProvider {
 
     private static final String DATABASE_NAME = "launcher.db";
 
-    private static final int DATABASE_VERSION = 17;
+    private static final int DATABASE_VERSION = 18;
 
     static final String OLD_AUTHORITY = "com.android.launcher2.settings";
     static final String AUTHORITY = ProviderConfig.AUTHORITY;
@@ -364,7 +364,8 @@ public class LauncherProvider extends ContentProvider {
                     "uri TEXT," +
                     "displayMode INTEGER," +
                     "appWidgetProvider TEXT," +
-                    "modified INTEGER NOT NULL DEFAULT 0" +
+                    "modified INTEGER NOT NULL DEFAULT 0," +
+                    "hidden INTEGER DEFAULT 0" +
                     ");");
             addWorkspacesTable(db);
 
@@ -753,6 +754,11 @@ public class LauncherProvider extends ContentProvider {
 
             if (version == 15) {
                 version = 17;
+            }
+
+            if (oldVersion < 18) {
+                db.execSQL("ALTER TABLE favorites ADD hidden INTEGER DEFAULT 0");
+                version = 18;
             }
 
             if (version != DATABASE_VERSION) {
