@@ -49,6 +49,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.provider.BaseColumns;
 import android.text.TextUtils;
+import android.provider.Settings;
 import android.util.Log;
 import android.util.Pair;
 
@@ -912,6 +913,7 @@ public class LauncherModel extends BroadcastReceiver {
                 final int screenIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.SCREEN);
                 final int cellXIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLX);
                 final int cellYIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLY);
+                final int hiddenIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.HIDDEN);
 
                 FolderInfo folderInfo = null;
                 switch (c.getInt(itemTypeIndex)) {
@@ -926,6 +928,7 @@ public class LauncherModel extends BroadcastReceiver {
                 folderInfo.screenId = c.getInt(screenIndex);
                 folderInfo.cellX = c.getInt(cellXIndex);
                 folderInfo.cellY = c.getInt(cellYIndex);
+                folderInfo.hidden = c.getInt(hiddenIndex) > 0;
 
                 return folderInfo;
             }
@@ -1873,8 +1876,9 @@ public class LauncherModel extends BroadcastReceiver {
                             LauncherSettings.Favorites.SPANY);
                     final int restoredIndex = c.getColumnIndexOrThrow(
                             LauncherSettings.Favorites.RESTORED);
-                    //final int uriIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.URI);
-                    //final int displayModeIndex = c.getColumnIndexOrThrow(
+                    final int hiddenIndex = c.getColumnIndexOrThrow(
+                            LauncherSettings.Favorites.HIDDEN);
+                    //final int uriIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.URI); //final int displayModeIndex = c.getColumnIndexOrThrow(
                     //        LauncherSettings.Favorites.DISPLAY_MODE);
 
                     ShortcutInfo info;
@@ -2018,6 +2022,7 @@ public class LauncherModel extends BroadcastReceiver {
                                 folderInfo.cellY = c.getInt(cellYIndex);
                                 folderInfo.spanX = 1;
                                 folderInfo.spanY = 1;
+                                folderInfo.hidden = c.getInt(hiddenIndex) > 0;
 
                                 // check & update map of what's occupied
                                 deleteOnInvalidPlacement.set(false);
@@ -2385,8 +2390,11 @@ public class LauncherModel extends BroadcastReceiver {
             ArrayList<ComponentName> mHiddenApps = new ArrayList<ComponentName>();
             ArrayList<String> mHiddenAppsPackages = new ArrayList<String>();
             Context context = mApp.getContext();
-            String[] flattened = SettingsProvider.getStringCustomDefault(context,
-                    SettingsProvider.SETTINGS_UI_DRAWER_HIDDEN_APPS, "").split("\\|");
+            // Since Trebuchet is compiled using the SDK we have to hardcode this string
+            String protectedComponents = Settings.Secure.getString(context.getContentResolver(),
+                    "protected_components");
+            protectedComponents = protectedComponents == null ? "" : protectedComponents;
+            String[] flattened = protectedComponents.split("\\|");
             boolean hideShortcuts = SettingsProvider.getBoolean(context,
                     SettingsProvider.SETTINGS_UI_DRAWER_REMOVE_HIDDEN_APPS_SHORTCUTS,
                     R.bool.preferences_interface_drawer_remove_hidden_apps_shortcuts_default);
@@ -2416,20 +2424,30 @@ public class LauncherModel extends BroadcastReceiver {
                             }
                         }
                     } else {
+                        // Only remove items from folders that aren't hidden
                         final FolderInfo folder = (FolderInfo)item;
                         List<ShortcutInfo> shortcuts = folder.contents;
+
                         int NN = shortcuts.size() - 1;
                         for (int j = NN; j >= 0; j--) {
                             ShortcutInfo sci = shortcuts.get(j);
                             if (sci.intent != null && sci.intent.getComponent() != null) {
-                                if (mHiddenApps.contains(sci.intent.getComponent())) {
-                                    LauncherModel.deleteItemFromDatabase(mContext, sci);
-                                    folder.remove(sci);
+                                if (!folder.hidden){
+                                    if (mHiddenApps.contains(sci.intent.getComponent())) {
+                                        LauncherModel.deleteItemFromDatabase(mContext, sci);
+                                        folder.remove(sci);
+                                    }
+                                } else {
+                                    if (!mHiddenApps.contains(sci.intent.getComponent())) {
+                                        LauncherModel.deleteItemFromDatabase(mContext, sci);
+                                        folder.remove(sci);
+                                    }
                                 }
+
                             }
                         }
 
-                        if (folder.contents.size() == 1 /*&& !(folder instanceof LiveFolderInfo)*/) {
+                        if (folder.contents.size() == 1 && !folder.hidden) {
                             ShortcutInfo finalItem = folder.contents.get(0);
                             finalItem.container = folder.container;
                             LauncherModel.deleteItemFromDatabase(mContext, folder);
