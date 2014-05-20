@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/background_dark">
+
+    <TextView
+        android:id="@+id/pattern_lock_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/draw_an_unlock_pattern"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/pattern_lock_header_size"
+        android:paddingTop="@dimen/overview_panel_top_padding"
+        android:layout_gravity="center"/>
+
+    <com.android.internal.widget.LockPatternView
+        android:id="@+id/lock_pattern_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dip"
+        android:layout_marginBottom="4dip"
+        android:layout_marginStart="8dip"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:contentDescription="@string/hidden_apps_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/pattern_lock_btn_cancel"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmd_cancel"/>
+
+        <Button
+            android:id="@+id/pattern_lock_btn_continue"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cmd_continue"/>
+    </LinearLayout>
+</LinearLayout>

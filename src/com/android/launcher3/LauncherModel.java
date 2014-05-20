@@ -819,6 +819,7 @@ public class LauncherModel extends BroadcastReceiver {
                 final int screenIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.SCREEN);
                 final int cellXIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLX);
                 final int cellYIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLY);
+                final int hiddenIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.HIDDEN);
 
                 FolderInfo folderInfo = null;
                 switch (c.getInt(itemTypeIndex)) {
@@ -833,6 +834,7 @@ public class LauncherModel extends BroadcastReceiver {
                 folderInfo.screenId = c.getInt(screenIndex);
                 folderInfo.cellX = c.getInt(cellXIndex);
                 folderInfo.cellY = c.getInt(cellYIndex);
+                folderInfo.hidden = c.getInt(hiddenIndex) > 0;
 
                 return folderInfo;
             }
@@ -1727,6 +1729,8 @@ public class LauncherModel extends BroadcastReceiver {
                             (LauncherSettings.Favorites.SPANX);
                     final int spanYIndex = c.getColumnIndexOrThrow(
                             LauncherSettings.Favorites.SPANY);
+                    final int hiddenIndex = c.getColumnIndexOrThrow(
+                            LauncherSettings.Favorites.HIDDEN);
                     //final int uriIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.URI);
                     //final int displayModeIndex = c.getColumnIndexOrThrow(
                     //        LauncherSettings.Favorites.DISPLAY_MODE);
@@ -1858,6 +1862,7 @@ public class LauncherModel extends BroadcastReceiver {
                                 folderInfo.cellY = c.getInt(cellYIndex);
                                 folderInfo.spanX = 1;
                                 folderInfo.spanY = 1;
+                                folderInfo.hidden = c.getInt(hiddenIndex) > 0;
 
                                 // Skip loading items that are out of bounds
                                 if (container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
@@ -2251,8 +2256,12 @@ public class LauncherModel extends BroadcastReceiver {
                             }
                         }
                     } else {
+                        // Only remove items from folders that aren't hidden
                         final FolderInfo folder = (FolderInfo)item;
                         List<ShortcutInfo> shortcuts = folder.contents;
+                        if (folder.hidden) {
+                            continue;
+                        }
                         int NN = shortcuts.size() - 1;
                         for (int j = NN; j >= 0; j--) {
                             ShortcutInfo sci = shortcuts.get(j);
