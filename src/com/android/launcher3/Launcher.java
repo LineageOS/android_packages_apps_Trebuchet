@@ -146,7 +146,7 @@ public class Launcher extends Activity
     private static final int REQUEST_PICK_WALLPAPER = 10;
 
     private static final int REQUEST_BIND_APPWIDGET = 11;
-    public static final int REQUEST_TRANSITION_EFFECTS = 14;
+    public static final int REQUEST_HIDE_FOLDER = 12;
 
     static final int REQUEST_PICK_ICON = 13;
 
@@ -249,6 +249,8 @@ public class Launcher extends Activity
     private int[] mTmpAddItemCellCoordinates = new int[2];
 
     private FolderInfo mFolderInfo;
+
+    private FolderIcon mHiddenFolderIcon;
 
     private Hotseat mHotseat;
     private View mOverviewPanel;
@@ -760,6 +762,40 @@ public class Launcher extends Activity
                 mWorkspace.exitOverviewMode(false);
             }
             return;
+        } else if (requestCode == REQUEST_HIDE_FOLDER) {
+            if (resultCode == RESULT_OK && data != null) {
+                boolean hidden = data.getBooleanExtra(
+                        HiddenFolderActivity.HIDDEN_FOLDER_STATUS, false);
+                int position = data.getIntExtra(
+                        HiddenFolderActivity.HIDDEN_FOLDER_LAUNCH, -1);
+                if (mHiddenFolderIcon != null) {
+                    FolderInfo info = mHiddenFolderIcon.getFolderInfo();
+                    info.hidden = hidden;
+                    if (info.hidden) {
+                        mHiddenFolderIcon.getFolder().addAppsToHiddenApps();
+                    } else {
+                        mHiddenFolderIcon.getFolder()
+                                .removeAppsFromHiddenApps();
+                    }
+
+                    LauncherModel.updateItemInDatabase(this, info);
+                    //We need to make sure this change gets written to the DB before
+                    //OnResume restarts the process
+                    mModel.flushWorkerThread();
+
+                    if (position != -1) {
+                        Folder folder = mHiddenFolderIcon.getFolder();
+                        View v = folder.getViewFromPosition(position);
+                        Object tag = v.getTag();
+                        if (tag instanceof ShortcutInfo) {
+                            startActivitySafely(v,
+                                    ((ShortcutInfo) tag).getIntent(),
+                                    v.getTag());
+                        }
+                    }
+                }
+                return;
+            }
         }
 
         boolean delayExitSpringLoadedMode = false;
@@ -1975,6 +2011,12 @@ public class Launcher extends Activity
         return mDragController;
     }
 
+    public void startActivityForResult(Intent intent, int requestCode,
+            FolderIcon info) {
+        mHiddenFolderIcon = info;
+        startActivityForResult(intent, requestCode);
+    }
+
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
         if (requestCode >= 0) mWaitingForResult = true;
@@ -2738,6 +2780,11 @@ public class Launcher extends Activity
     public void openFolder(FolderIcon folderIcon) {
         Folder folder = folderIcon.getFolder();
         FolderInfo info = folder.mInfo;
+
+        if (info.hidden) {
+            folder.startHiddenFolderManager();
+            return;
+        }
 
         info.opened = true;
 

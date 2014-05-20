@@ -96,8 +96,6 @@
 
     <!-- Hidden apps -->
     <string name="hidden_apps_title">Hidden apps</string>
-
-    <!-- Settings -->
     <string name="launcher_settings">LAUNCHER SETTINGS</string>
     <string name="home_screen_settings">HOME SCREEN SETTINGS</string>
     <string name="drawer_settings">DRAWER SETTINGS</string>
@@ -117,4 +115,29 @@
     <string name="setting_state_on">ON</string>
     <string name="setting_state_off">OFF</string>
     <string name="themes_button_text">Themes</string>
+
+    <!-- Hidden states -->
+    <string name="hidden_folder">locked</string>
+    <string name="unhidden_folder">unlocked</string>
+
+    <!-- Pattern Lock -->
+    <string name="pattern_lock_screen_title">Pattern Lock Screen</string>
+    <string name="cmd_confirm">Confirm</string>
+    <string name="cmd_cancel">Cancel</string>
+    <string name="cmd_continue">Continue</string>
+    <string name="cmd_forgot_pattern">Forgot pattern?</string>
+    <string name="cmd_retry">Retry</string>
+    <string name="loading">Loading…</string>
+    <string name="lockscreen_access_pattern_cell_added">Cell added</string>
+    <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
+    <string name="lockscreen_access_pattern_detected">Pattern completed</string>
+    <string name="lockscreen_access_pattern_start">Pattern started</string>
+    <string name="msg_connect_4dots">Connect at least 4 dots.\nTry again…</string>
+    <string name="draw_an_unlock_pattern">Draw an unlock pattern:</string>
+    <string name="draw_pattern_to_unlock">Draw pattern to unlock:</string>
+    <string name="msg_pattern_recorded">Pattern recorded!</string>
+    <string name="msg_redraw_pattern_to_confirm">Redraw pattern to confirm:</string>
+    <string name="msg_release_finger_when_done">Release finger when done</string>
+    <string name="msg_try_again">Sorry, try again</string>
+    <string name="msg_your_new_unlock_pattern">Your new unlock pattern:</string>
 </resources>
