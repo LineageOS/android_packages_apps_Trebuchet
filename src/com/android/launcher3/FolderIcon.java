@@ -580,6 +580,20 @@ public class FolderIcon extends LinearLayout implements FolderListener {
         }
 
         int nItemsInPreview = Math.min(items.size(), NUM_ITEMS_IN_PREVIEW);
+
+        // Hidden folder - don't display Preview
+        if (mInfo.hidden) {
+            mParams = computePreviewItemDrawingParams(NUM_ITEMS_IN_PREVIEW/2, mParams);
+            canvas.save();
+            canvas.translate(mParams.transX + mPreviewOffsetX, mParams.transY + mPreviewOffsetY);
+            canvas.scale(mParams.scale, mParams.scale);
+            Drawable lock = getResources().getDrawable(R.drawable.lock);
+            lock.setBounds(0, 0, mIntrinsicIconSize, mIntrinsicIconSize);
+            lock.draw(canvas);
+            canvas.restore();
+            return;
+        }
+
         if (!mAnimating) {
             for (int i = nItemsInPreview - 1; i >= 0; i--) {
                 v = (TextView) items.get(i);

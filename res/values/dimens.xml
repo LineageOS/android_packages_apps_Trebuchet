@@ -103,4 +103,8 @@
 
     <!-- Settings Pane dimen -->
     <dimen name="settings_pane_handle">48dp</dimen>
+
+    <!-- Pattern Lock -->
+    <dimen name="pattern_lock_header_size">20sp</dimen>
+
 </resources>

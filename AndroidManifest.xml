@@ -106,6 +106,19 @@
         </activity>
 
         <activity
+            android:name="com.android.launcher3.HiddenFolderActivity"
+            android:label="@string/hidden_apps_title"
+            android:theme="@style/Theme">
+        </activity>
+
+        <activity
+            android:name=".LockPatternActivity"
+            android:label="@string/pattern_lock_screen_title"
+            android:exported="false"
+            android:theme="@style/Theme" >
+        </activity>
+
+        <activity
             android:name="com.android.launcher3.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
             android:enabled="@bool/debug_memory_enabled"
