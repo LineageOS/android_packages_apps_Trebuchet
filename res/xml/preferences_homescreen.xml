@@ -26,4 +26,8 @@
             android:title="@string/preferences_interface_homescreen_general_hide_icon_labels_title"
             android:summary="@string/preferences_interface_homescreen_general_hide_icon_labels_summary"
             android:defaultValue="@bool/preferences_interface_homescreen_hide_icon_labels_default" />
+    <CheckBoxPreference android:key="ui_homescreen_scrolling_wallpaper_scroll"
+            android:title="@string/preferences_interface_homescreen_scrolling_wallpaper_title"
+            android:summary="@string/preferences_interface_homescreen_scrolling_wallpaper_summary"
+            android:defaultValue="@bool/preferences_interface_homescreen_scrolling_wallpaper_scroll_default" />
 </PreferenceScreen>

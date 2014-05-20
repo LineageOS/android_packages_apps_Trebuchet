@@ -54,6 +54,8 @@
     <string name="preferences_interface_homescreen_search_summary">Show persistent search bar at top of screen</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_title">Hide icon labels</string>
     <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">Hide icon labels on homescreen</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_title">Scroll wallpaper</string>
+    <string name="preferences_interface_homescreen_scrolling_wallpaper_summary">Scrolls wallpaper with homescreen</string>
 
     <!-- Drawer -->
     <string name="preferences_interface_drawer_title">Drawer</string>
