@@ -20,11 +20,14 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.widget.AutoScrollHelper;
 import android.text.InputType;
@@ -43,7 +46,9 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -61,6 +66,12 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         View.OnLongClickListener, DropTarget, FolderListener, TextView.OnEditorActionListener,
         View.OnFocusChangeListener {
     private static final String TAG = "Launcher.Folder";
+
+    private static final String PROTECTED_ACTION = "cyanogenmod.intent.action.PACKAGE_PROTECTED";
+    private static final String PROTECTED_STATE =
+            "cyanogenmod.intent.action.PACKAGE_PROTECTED_STATE";
+    private static final String PROTECTED_COMPONENT =
+            "cyanogenmod.intent.action.PACKAGE_PROTECTED_COMPONENT";
 
     protected DragController mDragController;
     protected Launcher mLauncher;
@@ -103,6 +114,8 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     private boolean mSuppressFolderDeletion = false;
     private boolean mItemAddedBackToSelfViaIcon = false;
     FolderEditText mFolderName;
+    ImageView mFolderLock;
+    RelativeLayout mFolderTitleSection;
     private float mFolderIconPivotX;
     private float mFolderIconPivotY;
 
@@ -123,6 +136,8 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     private Runnable mDeferredAction;
     private boolean mDeferDropAfterUninstall;
     private boolean mUninstallSuccessful;
+
+    private boolean mHiddenFolder = false;
 
     /**
      * Used to inflate the Workspace from XML.
@@ -167,6 +182,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         super.onFinishInflate();
         mScrollView = (ScrollView) findViewById(R.id.scroll_view);
         mContent = (CellLayout) findViewById(R.id.folder_content);
+        int measureSpec = MeasureSpec.UNSPECIFIED;
 
         LauncherAppState app = LauncherAppState.getInstance();
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
@@ -181,7 +197,6 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
 
         // We find out how tall the text view wants to be (it is set to wrap_content), so that
         // we can allocate the appropriate amount of space for it.
-        int measureSpec = MeasureSpec.UNSPECIFIED;
         mFolderName.measure(measureSpec, measureSpec);
         mFolderNameHeight = mFolderName.getMeasuredHeight();
 
@@ -199,6 +214,12 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             mFolderName.setVisibility(View.GONE);
             mFolderNameHeight = getPaddingBottom();
         }
+
+        mFolderLock = (ImageView) findViewById(R.id.folder_lock);
+        mFolderTitleSection = (RelativeLayout) findViewById(R.id.folder_title_section);
+        mFolderLock.measure(measureSpec, measureSpec);
+        mFolderLock.setOnClickListener(this);
+        mFolderTitleSection.measure(measureSpec, measureSpec);
     }
 
     private ActionMode.Callback mActionModeCallback = new ActionMode.Callback() {
@@ -223,6 +244,69 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         if (tag instanceof ShortcutInfo) {
             mLauncher.onClick(v);
         }
+
+        if (v.getId() == R.id.folder_lock) {
+            startHiddenFolderManager();
+        }
+    }
+
+    public void startHiddenFolderManager() {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(HiddenFolderFragment.HIDDEN_FOLDER_STATUS, mInfo.hidden);
+        mLauncher.startHiddenFolderActivity(bundle, mFolderIcon);
+    }
+
+    public String[] getComponentTitles() {
+        int size = mItemsInReadingOrder.size();
+        String[] componentsTitles = new String[size];
+        for (int i = 0; i < size; i++) {
+            View v = mItemsInReadingOrder.get(i);
+            Object tag = v.getTag();
+            if (tag instanceof ShortcutInfo) {
+                componentsTitles[i] = ((ShortcutInfo) tag).title.toString();
+            }
+        }
+        return componentsTitles;
+    }
+
+    public String[] getComponents() {
+        int size = mItemsInReadingOrder.size();
+        String[] components = new String[size];
+        for (int i = 0; i < size; i++) {
+            View v = mItemsInReadingOrder.get(i);
+            Object tag = v.getTag();
+            if (tag instanceof ShortcutInfo) {
+                components[i] = ((ShortcutInfo) tag).getIntent().getComponent()
+                        .flattenToString();
+            }
+        }
+        return components;
+    }
+
+    public void modifyProtectedApps(boolean protect) {
+        String components = getComponentString();
+
+        Intent intent = new Intent();
+        intent.setAction(PROTECTED_ACTION);
+        intent.putExtra(PROTECTED_STATE, protect);
+        intent.putExtra(PROTECTED_COMPONENT, components);
+
+        mLauncher.sendBroadcast(intent);
+    }
+
+    private String getComponentString() {
+        int size = mItemsInReadingOrder.size();
+        String components = "";
+        for (int i = 0; i < size; i++) {
+            View v = mItemsInReadingOrder.get(i);
+            Object tag = v.getTag();
+            if (tag instanceof ShortcutInfo) {
+                ComponentName componentName = ((ShortcutInfo) tag).getIntent().getComponent();
+                components += componentName.flattenToString() + "|";
+            }
+        }
+
+        return components;
     }
 
     public boolean onLongClick(View v) {
@@ -262,6 +346,8 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     public void startEditingFolderName() {
         mFolderName.setHint("");
         mIsEditingName = true;
+
+        mInputMethodManager.showSoftInput(mFolderName, 0);
     }
 
     public void dismissEditingName() {
@@ -405,12 +491,16 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         updateTextViewFocus();
         mInfo.addListener(this);
 
+        setFolderName();
+        updateItemLocationsInDatabase();
+    }
+
+    public void setFolderName() {
         if (!sDefaultFolderName.contentEquals(mInfo.title)) {
             mFolderName.setText(mInfo.title);
         } else {
             mFolderName.setText("");
         }
-        updateItemLocationsInDatabase();
     }
 
     /**
@@ -974,13 +1064,16 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     }
 
     private int getFolderHeight() {
-        int height = getPaddingTop() + getPaddingBottom()
-                + getContentAreaHeight() + mFolderNameHeight;
+        int height = getPaddingTop() + getPaddingBottom() + mFolderNameHeight
+                + getContentAreaHeight();
         return height;
     }
 
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = getPaddingLeft() + getPaddingRight() + mContent.getDesiredWidth();
+        int width = getPaddingLeft()
+                + getPaddingRight()
+                + Math.max(mContent.getDesiredWidth(),
+                        mFolderTitleSection.getMeasuredWidth());
         int height = getFolderHeight();
         int contentAreaWidthSpec = MeasureSpec.makeMeasureSpec(mContent.getDesiredWidth(),
                 MeasureSpec.EXACTLY);
@@ -988,8 +1081,12 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
                 MeasureSpec.EXACTLY);
         mContent.setFixedSize(mContent.getDesiredWidth(), mContent.getDesiredHeight());
         mScrollView.measure(contentAreaWidthSpec, contentAreaHeightSpec);
-        mFolderName.measure(contentAreaWidthSpec,
-                MeasureSpec.makeMeasureSpec(mFolderNameHeight, MeasureSpec.EXACTLY));
+        mFolderName.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
+                mFolderNameHeight, MeasureSpec.EXACTLY));
+        mFolderLock.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
+                mFolderNameHeight, MeasureSpec.EXACTLY));
+        mFolderTitleSection.measure(contentAreaWidthSpec, MeasureSpec
+                .makeMeasureSpec(mFolderNameHeight, MeasureSpec.EXACTLY));
         setMeasuredDimension(width, height);
     }
 
@@ -1231,5 +1328,9 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     @Override
     public void getHitRectRelativeToDragLayer(Rect outRect) {
         getHitRect(outRect);
+    }
+
+    public View getViewFromPosition(int position) {
+        return mItemsInReadingOrder.get(position);
     }
 }

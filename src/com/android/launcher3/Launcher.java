@@ -66,7 +66,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
-import android.provider.Settings;
 import android.speech.RecognizerIntent;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -103,7 +102,6 @@ import android.widget.Toast;
 
 import com.android.launcher3.DropTarget.DragObject;
 import com.android.launcher3.PagedView.TransitionEffect;
-import com.android.launcher3.settings.SettingsActivity;
 import com.android.launcher3.settings.SettingsProvider;
 
 import java.io.DataInputStream;
@@ -146,9 +144,10 @@ public class Launcher extends Activity
     private static final int REQUEST_PICK_WALLPAPER = 10;
 
     private static final int REQUEST_BIND_APPWIDGET = 11;
-    public static final int REQUEST_TRANSITION_EFFECTS = 14;
 
     static final int REQUEST_PICK_ICON = 13;
+
+    private static final int REQUEST_LOCK_PATTERN = 14;
 
     /**
      * IntentStarter uses request codes starting with this. This must be greater than all activity
@@ -208,6 +207,8 @@ public class Launcher extends Activity
     public static final String SHOW_WEIGHT_WATCHER = "debug.show_mem";
     public static final boolean SHOW_WEIGHT_WATCHER_DEFAULT = false;
 
+    public static final String PROTECTED_FOLDER_CHANGED =
+            "com.cyanogenmod.trebuchet.action.protected_folder_changed";
     /** The different states that Launcher can be in. */
     private enum State { NONE, WORKSPACE, APPS_CUSTOMIZE, APPS_CUSTOMIZE_SPRING_LOADED };
     private State mState = State.WORKSPACE;
@@ -239,6 +240,7 @@ public class Launcher extends Activity
     private DragController mDragController;
     private View mWeightWatcher;
     private TransitionEffectsFragment mTransitionEffectsFragment;
+    protected HiddenFolderFragment mHiddenFolderFragment;
 
     private AppWidgetManager mAppWidgetManager;
     private LauncherAppWidgetHost mAppWidgetHost;
@@ -249,6 +251,9 @@ public class Launcher extends Activity
     private int[] mTmpAddItemCellCoordinates = new int[2];
 
     private FolderInfo mFolderInfo;
+
+    protected FolderIcon mHiddenFolderIcon;
+    private boolean mHiddenFolderAuth = false;
 
     private Hotseat mHotseat;
     private View mOverviewPanel;
@@ -288,7 +293,7 @@ public class Launcher extends Activity
 
     private Dialog mTransitionEffectDialog;
 
-    private LauncherModel mModel;
+    protected LauncherModel mModel;
     private IconCache mIconCache;
     private boolean mUserPresent = true;
     private boolean mVisible = false;
@@ -393,6 +398,65 @@ public class Launcher extends Activity
         return Log.isLoggable(propertyName, Log.VERBOSE);
     }
 
+    private BroadcastReceiver protectedAppsChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Update the workspace
+            updateDynamicGrid();
+            mWorkspace.hideOutlines();
+            mSearchDropTargetBar.showSearchBar(false);
+        }
+    };
+
+    private BroadcastReceiver protectedFoldersChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            boolean hidden = intent.getBooleanExtra(
+                    HiddenFolderFragment.HIDDEN_FOLDER_STATUS, false);
+            int position = intent.getIntExtra(
+                    HiddenFolderFragment.HIDDEN_FOLDER_LAUNCH, -1);
+            String newTitle = intent.getStringExtra(HiddenFolderFragment.HIDDEN_FOLDER_NAME);
+            if (mHiddenFolderIcon != null) {
+                if (position != -1) {
+                    Folder folder = mHiddenFolderIcon.getFolder();
+                    View v = folder.getViewFromPosition(position);
+                    Object tag = v.getTag();
+                    if (tag instanceof ShortcutInfo) {
+                        startActivitySafely(v,
+                                ((ShortcutInfo) tag).getIntent(),
+                                v.getTag());
+
+                        return;
+                    }
+                }
+
+                // Folder name
+                FolderInfo info = mHiddenFolderIcon.getFolderInfo();
+                if (!info.title.equals(newTitle)) {
+                    info.setTitle(newTitle);
+                    mHiddenFolderIcon.getFolder().setFolderName();
+                    LauncherModel.updateItemInDatabase(getApplicationContext(), info);
+                }
+
+                // Folder hidden status
+                if (info.hidden == hidden) {
+                    return;
+                } else {
+                    info.hidden = hidden;
+                    // flip the boolean value to accomodate framework
+                    // in framework "false" is "protected" and "true" is "visible"
+                    mHiddenFolderIcon.getFolder().modifyProtectedApps(!info.hidden);
+
+                    LauncherModel.updateItemInDatabase(getApplicationContext(), info);
+                    // We need to make sure this change gets written to the DB before
+                    // OnResume restarts the process
+                    mModel.flushWorkerThread();
+                }
+            }
+            return;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -487,6 +551,14 @@ public class Launcher extends Activity
         unlockScreenOrientation(true);
 
         showFirstRunCling();
+
+        IntentFilter protectedAppsFilter = new IntentFilter(
+                "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE");
+        registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
+                "cyanogenmod.permission.PROTECTED_APP", null);
+
+        IntentFilter protectedFoldersFilter = new IntentFilter(PROTECTED_FOLDER_CHANGED);
+        registerReceiver(protectedFoldersChangedReceiver, protectedFoldersFilter);
     }
 
     private void initializeDynamicGrid() {
@@ -760,6 +832,23 @@ public class Launcher extends Activity
                 mWorkspace.exitOverviewMode(false);
             }
             return;
+        } else if (requestCode == REQUEST_LOCK_PATTERN) {
+            mHiddenFolderAuth = true;
+            switch (resultCode) {
+                case RESULT_OK:
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    fragmentTransaction.setCustomAnimations(0, 0);
+                    fragmentTransaction.replace(R.id.launcher, mHiddenFolderFragment,
+                            HiddenFolderFragment.HIDDEN_FOLDER_FRAGMENT);
+                    fragmentTransaction.commit();
+                    break;
+                case RESULT_CANCELED:
+                    // User failed to enter/confirm a lock pattern, back out
+                    break;
+            }
+            return;
         }
 
         boolean delayExitSpringLoadedMode = false;
@@ -870,10 +959,6 @@ public class Launcher extends Activity
         }
         super.onResume();
 
-        if (settingsChanged()) {
-            android.os.Process.killProcess(android.os.Process.myPid());
-        }
-
         // Restore the previous launcher state
         if (mOnResumeState == State.WORKSPACE) {
             showWorkspace(false);
@@ -965,11 +1050,21 @@ public class Launcher extends Activity
         mWorkspace.onResume();
         mAppsCustomizeContent.onResume();
 
-        //Close out TransitionEffects Fragment
+        //Close out Fragments
         Fragment f = getFragmentManager().findFragmentByTag(
                 TransitionEffectsFragment.TRANSITION_EFFECTS_FRAGMENT);
         if (f != null) {
             mTransitionEffectsFragment.setEffect();
+        }
+        Fragment f1 = getFragmentManager().findFragmentByTag(
+                HiddenFolderFragment.HIDDEN_FOLDER_FRAGMENT);
+        if (f1 != null && !mHiddenFolderAuth) {
+            mHiddenFolderFragment.saveHiddenFolderStatus(-1);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction
+                    .remove(mHiddenFolderFragment).commit();
+        } else {
+            mHiddenFolderAuth = false;
         }
     }
 
@@ -1969,10 +2064,27 @@ public class Launcher extends Activity
         mDragController = null;
 
         LauncherAnimUtils.onDestroyActivity();
+
+        unregisterReceiver(protectedAppsChangedReceiver);
+        unregisterReceiver(protectedFoldersChangedReceiver);
     }
 
     public DragController getDragController() {
         return mDragController;
+    }
+
+    public void startHiddenFolderActivity(Bundle bundle, FolderIcon info) {
+        // Validate Lock Pattern
+        Intent lockPatternActivity = new Intent();
+        lockPatternActivity.setClassName(
+                "com.android.settings",
+                "com.android.settings.applications.LockPatternActivity");
+        startActivityForResult(lockPatternActivity, REQUEST_LOCK_PATTERN);
+        mHiddenFolderAuth = false;
+
+        mHiddenFolderIcon = info;
+        mHiddenFolderFragment = new HiddenFolderFragment();
+        mHiddenFolderFragment.setArguments(bundle);
     }
 
     @Override
@@ -2294,6 +2406,14 @@ public class Launcher extends Activity
 
     @Override
     public void onBackPressed() {
+        Fragment f1 = getFragmentManager().findFragmentByTag(
+                HiddenFolderFragment.HIDDEN_FOLDER_FRAGMENT);
+        if (f1 != null) {
+            mHiddenFolderFragment.saveHiddenFolderStatus(-1);
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            fragmentTransaction
+                    .remove(mHiddenFolderFragment).commit();
+        }
         if (isAllAppsVisible()) {
             if (isClingsEnabled()) {
                 dismissAllAppsCling(null);
@@ -2738,6 +2858,11 @@ public class Launcher extends Activity
     public void openFolder(FolderIcon folderIcon) {
         Folder folder = folderIcon.getFolder();
         FolderInfo info = folder.mInfo;
+
+        if (info.hidden) {
+            folder.startHiddenFolderManager();
+            return;
+        }
 
         info.opened = true;
 
