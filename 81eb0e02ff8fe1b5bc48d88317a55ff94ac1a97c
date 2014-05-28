@@ -119,6 +119,23 @@
       "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_0663adb2",
+        "filename": "src/com/android/launcher3/HiddenFolderActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2014-05-28T10:37:25Z",
+      "side": 1,
+      "message": "Should get an instance of LauncherAppState and get the IconCache instead of loading the icon from packagemanager, otherwise we have an instance where applications like hangouts doesn\u0027t show an icon theme.",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
