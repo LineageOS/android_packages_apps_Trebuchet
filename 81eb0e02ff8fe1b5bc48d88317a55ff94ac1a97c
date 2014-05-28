@@ -33,6 +33,24 @@
       "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_26e9911b",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-05-28T08:45:06Z",
+      "side": 1,
+      "message": "For some reason the default workspace xml files specify that the GmailActivity component even though this component doesn\u0027t define the launcher intent filter category. \n\nI don\u0027t think this is a problem with any other components, just this specific component as defined by launcher3 defaults. So quick fix would be to fix the defaults xml files.",
+      "parentUuid": "da0c15f0_667c2973",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
