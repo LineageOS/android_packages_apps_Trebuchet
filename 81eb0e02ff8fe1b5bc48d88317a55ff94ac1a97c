@@ -136,6 +136,24 @@
       "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_c60095ad",
+        "filename": "src/com/android/launcher3/HiddenFolderActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-05-28T11:00:22Z",
+      "side": 1,
+      "message": "@Adnan, the same sort of thing is also happening for the Share menu: Hangouts icon cannot be themed.\n\nhttps://plus.google.com/109029747093415775348/posts/T6KNLaKkRrW",
+      "parentUuid": "da0c15f0_0663adb2",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
