@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_0679ed93",
+        "filename": "Android.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2014-05-28T05:10:43Z",
+      "side": 1,
+      "message": "Need to find a way to get through this without this change.",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
