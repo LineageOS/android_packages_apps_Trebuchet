@@ -16,6 +16,23 @@
       "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_667c2973",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2014-05-28T07:17:29Z",
+      "side": 1,
+      "message": "The componentName returned from ShortcutInfo isn\u0027t always android.intent.category.LAUNCHER.\n\nEx: The component returned for Gmail is \"com.google.android.gm/com.google.android.gm.GmailActivity\" instead of the launcher intent component \"com.google.android.gm/com.google.android.gm.ConversationListActivityGmail\" in the Folder save, so the launcher activity is never hidden from the drawer.",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
