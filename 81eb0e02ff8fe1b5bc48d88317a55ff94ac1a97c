@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "da0c15f0_66f3890b",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-05-28T08:53:57Z",
+      "side": 1,
+      "message": "- Pattern lock screen",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_46f805e6",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-05-28T08:53:57Z",
+      "side": 1,
+      "message": "use \\u2026\n\n- Loading\\u2026",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_a6dda172",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-05-28T08:53:57Z",
+      "side": 1,
+      "message": "- Connect at least 4 dots.\\nTry again.\n\nAOSP doesn\u0027t use ... in the end either.",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_86da1d77",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2881
+      },
+      "writtenOn": "2014-05-28T08:53:57Z",
+      "side": 1,
+      "message": "- Pattern recorded.",
+      "revId": "81eb0e02ff8fe1b5bc48d88317a55ff94ac1a97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da0c15f0_667c2973",
         "filename": "src/com/android/launcher3/Folder.java",
         "patchSetId": 5
