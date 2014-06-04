@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_1b049fbe",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1579
+      },
+      "writtenOn": "2014-06-04T12:12:36Z",
+      "side": 1,
+      "message": "!mInfo.hidden",
+      "revId": "7f2d375bc55929bd9f5928a8a0b5b5059391ca01",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
