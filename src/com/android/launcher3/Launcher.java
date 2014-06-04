@@ -3160,9 +3160,7 @@ public class Launcher extends Activity
                         mSearchDropTargetBar.hideSearchBar(false);
                     }
 
-                    if (contentType == AppsCustomizePagedView.ContentType.Applications) {
-                        showAllAppsCling();
-                    }
+                    showAllAppsCling();
                 }
             });
 
