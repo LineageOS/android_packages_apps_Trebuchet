@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -153,18 +154,18 @@ public class TransitionEffectsFragment extends Fragment {
 
     @Override
     public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        int width = displaymetrics.widthPixels;
+        final ObjectAnimator anim = ObjectAnimator.ofFloat(this, "translationX", enter ? width : 0,  enter ? 0 : width);
+
+        View overviewPanel = ((Launcher) getActivity()).getOverviewPanel();
+        final ObjectAnimator anim2 = ObjectAnimator.ofFloat(overviewPanel, "translationX",
+                enter ? 0 : -overviewPanel.getWidth(), enter ? -overviewPanel.getWidth() : 0);
+        anim2.setInterpolator(new LinearInterpolator());
+        anim2.start();
+
         if (enter) {
-            DisplayMetrics displaymetrics = new DisplayMetrics();
-            getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-            int width = displaymetrics.widthPixels;
-            final ObjectAnimator anim = ObjectAnimator.ofFloat(this, "translationX", width, 0);
-
-            final View darkPanel = ((Launcher) getActivity()).getDarkPanel();
-            darkPanel.setVisibility(View.VISIBLE);
-            ObjectAnimator anim2 = ObjectAnimator.ofFloat(
-                   darkPanel , "alpha", 0.0f, 0.3f);
-            anim2.start();
-
             anim.addListener(new Animator.AnimatorListener() {
                 @Override
                 public void onAnimationStart(Animator arg0) {}
@@ -172,17 +173,14 @@ public class TransitionEffectsFragment extends Fragment {
                 public void onAnimationRepeat(Animator arg0) {}
                 @Override
                 public void onAnimationEnd(Animator arg0) {
-                    darkPanel.setVisibility(View.GONE);
                     setImageViewToEffect();
                 }
                 @Override
                 public void onAnimationCancel(Animator arg0) {}
             });
-
-            return anim;
-        } else {
-            return super.onCreateAnimator(transit, enter, nextAnim);
         }
+        anim.setInterpolator(new LinearInterpolator());
+        return anim;
     }
 
     private class TransitionsArrayAdapter extends ArrayAdapter<String> {

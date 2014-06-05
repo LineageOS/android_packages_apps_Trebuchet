@@ -1,15 +1,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="wrap_content"
+    android:id="@+id/settings_pane">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="@color/settings_bg_color"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/overview_panel_bottom_padding" >
+        android:orientation="vertical" >
 
         <LinearLayout
             android:id="@+id/settings_pane_header"
@@ -102,20 +101,11 @@
             </LinearLayout>
         </LinearLayout>
 
-        <view
-            class="com.android.launcher3.list.PinnedHeaderListView"
-            android:id="@+id/settings_home_screen_listview"
+        <com.android.launcher3.list.PinnedHeaderListView
+            android:id="@+id/settings_pane_listview"
             android:layout_width="match_parent"
-            android:layout_height="0dip"
-            android:fastScrollEnabled="true"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:fastScrollEnabled="true" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/dark_panel"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_dark"
-        android:visibility="gone" />
 </FrameLayout>

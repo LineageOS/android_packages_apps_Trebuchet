@@ -64,7 +64,6 @@ import android.widget.TextView;
 import com.android.launcher3.FolderIcon.FolderRingAnimator;
 import com.android.launcher3.Launcher.CustomContentCallbacks;
 import com.android.launcher3.LauncherSettings.Favorites;
-import com.android.launcher3.backup.BackupProtos;
 import com.android.launcher3.settings.SettingsProvider;
 
 import java.util.ArrayList;
@@ -100,6 +99,9 @@ public class Workspace extends SmoothPagedView
     private ObjectAnimator mChildrenOutlineFadeInAnimation;
     private ObjectAnimator mChildrenOutlineFadeOutAnimation;
     private float mChildrenOutlineAlpha = 0;
+
+    // Children offset when in overview panel settings
+    private float mChildrenScaledOffsetY = 0;
 
     // These properties refer to the background protection gradient used for AllApps and Customize
     private ValueAnimator mBackgroundFadeInAnimation;
@@ -579,6 +581,8 @@ public class Workspace extends SmoothPagedView
         mScreenOrder.add(insertIndex, screenId);
         addView(newScreen, insertIndex);
 
+        newScreen.setTranslationY(mChildrenScaledOffsetY / getScaleY());
+
         if (mDefaultScreenId == screenId) {
             int defaultPage = getPageIndexForScreenId(screenId);
             moveToScreen(defaultPage, false);
@@ -867,8 +871,6 @@ public class Workspace extends SmoothPagedView
      */
     void addInScreen(View child, long container, long screenId, int x, int y, int spanX, int spanY,
             boolean insert, boolean computeXYFromRank) {
-        //Reload settings
-        reloadSettings();
         if (container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
             if (getScreenWithId(screenId) == null) {
                 Log.e(TAG, "Skipping child, screenId " + screenId + " not found");
@@ -1368,6 +1370,15 @@ public class Workspace extends SmoothPagedView
 
     public float getChildrenOutlineAlpha() {
         return mChildrenOutlineAlpha;
+    }
+
+    public void setChildrenSettingsPanelOffsetY(float offsetY) {
+        mChildrenScaledOffsetY = offsetY;
+        if (mState != State.OVERVIEW || mIsSwitchingState) return;
+        for (int i = 0; i < getChildCount(); i++) {
+            CellLayout cl = (CellLayout) getChildAt(i);
+            cl.setTranslationY(offsetY / cl.getScaleY() / getScaleY());
+        }
     }
 
     void disableBackground() {
@@ -1977,7 +1988,7 @@ public class Workspace extends SmoothPagedView
     }
 
     private void enableOverviewMode(boolean enable, int snapPage, boolean animated) {
-        //Check to see if Settings need to taken
+        // Check to see if Settings need to taken
         reloadSettings();
 
         State finalState = Workspace.State.OVERVIEW;
@@ -2135,6 +2146,11 @@ public class Workspace extends SmoothPagedView
                 cl.setScaleX(1f);
                 cl.setScaleY(1f);
                 cl.setShortcutAndWidgetAlpha(1f);
+            }
+
+            // Settings panel may have moved screens
+            if (oldStateIsOverview) {
+                cl.setTranslationY(0f);
             }
 
             // If we are animating to/from the small state, then hide the side pages and fade the

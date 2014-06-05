@@ -25,7 +25,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
-public class SlidingUpPanelLayout extends ViewGroup {
+public class SlidingUpPanelLayout extends ViewGroup implements Insettable {
     private static final String TAG = SlidingUpPanelLayout.class.getSimpleName();
 
     /**
@@ -87,6 +87,11 @@ public class SlidingUpPanelLayout extends ViewGroup {
      * The size of the overhang in pixels.
      */
     private int mPanelHeight = -1;
+
+    /**
+     * The size of the overhang in pixels.
+     */
+    private int mHiddenHeight = -1;
 
     /**
      * The size of the shadow in pixels.
@@ -197,6 +202,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
     private boolean mFirstLayout = true;
 
     private final Rect mTmpRect = new Rect();
+
+    protected final Rect mInsets = new Rect();
 
     /**
      * Listener for monitoring events about sliding panes.
@@ -330,6 +337,11 @@ public class SlidingUpPanelLayout extends ViewGroup {
         }
     }
 
+    @Override
+    public void setInsets(Rect insets) {
+        mInsets.set(insets);
+    }
+
     /**
      * Set the color used to fade the pane covered by the sliding pane out when the pane
      * will become fully covered in the expanded state.
@@ -455,10 +467,10 @@ public class SlidingUpPanelLayout extends ViewGroup {
         if (getChildCount() == 0) {
             return;
         }
-        final int leftBound = getPaddingLeft();
-        final int rightBound = getWidth() - getPaddingRight();
-        final int topBound = getPaddingTop();
-        final int bottomBound = getHeight() - getPaddingBottom();
+        final int leftBound = getPaddingLeft() + mInsets.left;
+        final int rightBound = getWidth() - getPaddingRight() - mInsets.right;
+        final int topBound = getPaddingTop() + mInsets.top;
+        final int bottomBound = getHeight() - getPaddingBottom() - mInsets.bottom;
         final int left;
         final int right;
         final int top;
@@ -528,7 +540,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
             throw new IllegalStateException("Height must have an exact value or MATCH_PARENT");
         }
 
-        int layoutHeight = heightSize - getPaddingTop() - getPaddingBottom();
+        int layoutHeight = heightSize - getPaddingTop() - getPaddingBottom() - mInsets.top - mInsets.bottom;
         int panelHeight = mPanelHeight;
 
         final int childCount = getChildCount();
@@ -592,8 +604,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        final int paddingLeft = getPaddingLeft();
-        final int paddingTop = getPaddingTop();
+        final int paddingLeft = getPaddingLeft() + mInsets.left;
+        final int paddingTop = getPaddingTop() + mInsets.top;
         final int slidingTop = getSlidingTop();
 
         final int childCount = getChildCount();
@@ -810,11 +822,11 @@ public class SlidingUpPanelLayout extends ViewGroup {
     private int getSlidingTop() {
         if (mSlideableView != null) {
             return mIsSlidingUp
-                    ? getMeasuredHeight() - getPaddingBottom() - mSlideableView.getMeasuredHeight()
-                    : getPaddingTop();
+                    ? getMeasuredHeight() - getPaddingBottom() - mSlideableView.getMeasuredHeight() - mInsets.bottom
+                    : getPaddingTop() + mInsets.top;
         }
 
-        return getMeasuredHeight() - getPaddingBottom();
+        return getMeasuredHeight() - getPaddingBottom() - mInsets.bottom;
     }
 
     /**

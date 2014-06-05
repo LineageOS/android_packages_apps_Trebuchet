@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -32,7 +33,7 @@ public class OverviewSettingsPanel {
     public void initializeAdapter() {
         // Settings pane Listview
         mListView = (PinnedHeaderListView) mLauncher
-                .findViewById(R.id.settings_home_screen_listview);
+                .findViewById(R.id.settings_pane_listview);
         mListView.setOverScrollMode(ListView.OVER_SCROLL_NEVER);
         Resources res = mLauncher.getResources();
         String[] headers = new String[] {
@@ -77,7 +78,7 @@ public class OverviewSettingsPanel {
         ((SlidingUpPanelLayout) mOverviewPanel)
                 .setPanelSlideListener(new SettingsSimplePanelSlideListener());
 
-        //Quick Settings Buttons
+        // Quick Settings Buttons
         View widgetButton = mLauncher.findViewById(R.id.widget_button);
         widgetButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -115,7 +116,7 @@ public class OverviewSettingsPanel {
 
         defaultScreenButton.setOnTouchListener(mLauncher.getHapticFeedbackTouchListener());
 
-        //Handle
+        // Handle
         View v = mOverviewPanel.findViewById(R.id.settings_pane_header);
         ((SlidingUpPanelLayout) mOverviewPanel).setEnableDragViewTouchEvents(true);
         ((SlidingUpPanelLayout) mOverviewPanel).setDragView(v);
@@ -177,7 +178,8 @@ public class OverviewSettingsPanel {
 
 
     class SettingsSimplePanelSlideListener extends SlidingUpPanelLayout.SimplePanelSlideListener {
-        ImageView mAnimatedArrow;
+        private ImageView mAnimatedArrow;
+        private boolean mArrowStateExpanded;
 
         public SettingsSimplePanelSlideListener() {
             super();
@@ -185,19 +187,36 @@ public class OverviewSettingsPanel {
         }
 
         @Override
-        public void onPanelCollapsed(View panel) {
-            mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow_reverse);
+        public void onPanelSlide(View panel, float slideOffset) {
+            // Move the workspace up with panel
+            float panelOffset = panel.getHeight() - ((SlidingUpPanelLayout) mOverviewPanel).getPanelHeight();
+            mLauncher.getWorkspace().setChildrenSettingsPanelOffsetY(-panelOffset * (1.0f - slideOffset));
+            mLauncher.getOverviewPanel().findViewById(R.id.default_home_screen_panel).setTranslationY(-panelOffset);
 
-            AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
-            frameAnimation.start();
-        }
+            // Animate in panel background
+            Drawable panelBackground = panel.getBackground();
+            if (panelBackground == null) {
+                panelBackground = mLauncher.getResources().getDrawable(R.color.settings_bg_color);
+                panel.setBackground(panelBackground);
+            }
+            panelBackground.setAlpha((int) ((1.0f - slideOffset) * 255));
 
-        @Override
-        public void onPanelExpanded(View panel) {
-            mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow);
+            // Animate the arrow when slide crosses 50%
+            if (slideOffset > 0.5f && mArrowStateExpanded) {
+                mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow_reverse);
 
-            AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
-            frameAnimation.start();
+                AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
+                frameAnimation.start();
+
+                mArrowStateExpanded = false;
+            } else if (slideOffset < 0.5f && !mArrowStateExpanded) {
+                mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow);
+
+                AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
+                frameAnimation.start();
+
+                mArrowStateExpanded = true;
+            }
         }
     }
 }

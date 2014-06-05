@@ -20,6 +20,7 @@ package com.android.launcher3;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -92,7 +93,10 @@ import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Advanceable;
 import android.widget.FrameLayout;
@@ -252,7 +256,6 @@ public class Launcher extends Activity
 
     private Hotseat mHotseat;
     private View mOverviewPanel;
-    private View mDarkPanel;
     OverviewSettingsPanel mOverviewSettingsPanel;
 
     private View mAllAppsButton;
@@ -375,19 +378,6 @@ public class Launcher extends Activity
     }
 
     private Stats mStats;
-
-    public Animator.AnimatorListener mAnimatorListener = new Animator.AnimatorListener() {
-        @Override
-        public void onAnimationStart(Animator arg0) {}
-        @Override
-        public void onAnimationRepeat(Animator arg0) {}
-        @Override
-        public void onAnimationEnd(Animator arg0) {
-            mDarkPanel.setVisibility(View.GONE);
-        }
-        @Override
-        public void onAnimationCancel(Animator arg0) {}
-    };
 
     private static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -1086,7 +1076,6 @@ public class Launcher extends Activity
 
         mTransitionEffectsFragment = new TransitionEffectsFragment();
         mTransitionEffectsFragment.setArguments(bundle);
-        fragmentTransaction.setCustomAnimations(0, 0);
         fragmentTransaction.replace(R.id.launcher, mTransitionEffectsFragment,
                 TransitionEffectsFragment.TRANSITION_EFFECTS_FRAGMENT);
         fragmentTransaction.commit();
@@ -1114,15 +1103,7 @@ public class Launcher extends Activity
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction
-                .setCustomAnimations(0, R.anim.exit_out_right);
-        fragmentTransaction
                 .remove(mTransitionEffectsFragment).commit();
-
-        mDarkPanel.setVisibility(View.VISIBLE);
-        ObjectAnimator anim = ObjectAnimator.ofFloat(
-                mDarkPanel, "alpha", 0.3f, 0.0f);
-        anim.start();
-        anim.addListener(mAnimatorListener);
     }
 
     public void onClickTransitionEffectOverflowMenuButton(View v) {
@@ -1354,7 +1335,6 @@ public class Launcher extends Activity
                 this, mOverviewPanel);
         mOverviewSettingsPanel.initializeAdapter();
         mOverviewSettingsPanel.initializeViews();
-        mDarkPanel = ((SlidingUpPanelLayout) mOverviewPanel).findViewById(R.id.dark_panel);
 
         // Setup the workspace
         mWorkspace.setHapticFeedbackEnabled(false);
@@ -2849,9 +2829,6 @@ public class Launcher extends Activity
     }
     View getOverviewPanel() {
         return mOverviewPanel;
-    }
-    View getDarkPanel() {
-        return mDarkPanel;
     }
     SearchDropTargetBar getSearchBar() {
         return mSearchDropTargetBar;

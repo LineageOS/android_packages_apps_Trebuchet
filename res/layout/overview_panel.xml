@@ -30,7 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:background="@color/settings_bg_color"
         android:paddingTop="@dimen/overview_panel_top_padding" >
 
         <ImageView
