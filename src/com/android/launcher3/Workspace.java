@@ -135,8 +135,6 @@ public class Workspace extends SmoothPagedView
 
     private Runnable mRemoveEmptyScreenRunnable;
 
-    public final static String INTENT_ACTION_ASSIST = "android.intent.action.ASSIST";
-
     /**
      * CellInfo for the cell that is currently being dragged
      */
@@ -1259,9 +1257,12 @@ public class Workspace extends SmoothPagedView
 
         if (hasCustomContent() && getNextPage() == 0 && !mCustomContentShowing) {
             mCustomContentShowing = true;
-            Intent i = new Intent(INTENT_ACTION_ASSIST);
-            mLauncher.startActivity(i);
-            mLauncher.overridePendingTransition(0, R.anim.exit_out_right);
+
+            if(!isInOverviewMode()) {
+                // Start Google Now and register the gesture to return to Trebuchet
+                mLauncher.onCustomContentLaunch();
+            }
+
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onShow();
                 mCustomContentShowTime = System.currentTimeMillis();
@@ -1385,6 +1386,7 @@ public class Workspace extends SmoothPagedView
             int firstIndex = numCustomPages();
             // Exclude the last extra empty screen (if we have > MIN_PARALLAX_PAGE_SPAN pages)
             int lastIndex = getChildCount() - 1 - emptyExtraPages;
+
             if (isLayoutRtl()) {
                 int temp = firstIndex;
                 firstIndex = lastIndex;
@@ -1625,7 +1627,13 @@ public class Workspace extends SmoothPagedView
     }
 
     public int numCustomPages() {
-        return hasCustomContent() ? 1 : 0;
+        // GEL integration is a special case (not a *real* screen) and should
+        // not be counted as custom content.
+        if(mLauncher.isGelIntegrationEnabled()) {
+            return 0;
+        } else {
+            return hasCustomContent() ? 1 : 0;
+        }
     }
 
     public boolean isOnOrMovingToCustomContent() {
@@ -2085,8 +2093,13 @@ public class Workspace extends SmoothPagedView
 
     @Override
     protected void getOverviewModePages(int[] range) {
-        int start = numCustomPages() - 1;
+        int start = numCustomPages();
         int end = getChildCount() - 1;
+
+        // For GEL integration, do not include the first page (GEL)
+        if(mLauncher.isGelIntegrationEnabled()) {
+            start += 1;
+        }
 
         range[0] = Math.max(0, Math.min(start, getChildCount() - 1));
         range[1] = Math.max(0,  end);
@@ -4817,7 +4830,14 @@ public class Workspace extends SmoothPagedView
     }
 
     void moveToDefaultScreen(boolean animate) {
-        moveToScreen(getPageIndexForScreenId(mDefaultScreenId), animate);
+        // Do not use the custom page or index -1 as default,
+        // if custom content is enabled.
+        int idx = getPageIndexForScreenId(mDefaultScreenId);
+        int ccIndex = getPageIndexForScreenId(CUSTOM_CONTENT_SCREEN_ID);
+        if(hasCustomContent() && (idx == ccIndex || idx == -1)) {
+            idx = 1;
+        }
+        moveToScreen(idx, animate);
     }
 
     void moveToCustomContentScreen(boolean animate) {

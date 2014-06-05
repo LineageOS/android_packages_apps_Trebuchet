@@ -242,6 +242,8 @@ public class Launcher extends Activity
     private static int NEW_APPS_ANIMATION_INACTIVE_TIMEOUT_SECONDS = 5;
     private static int NEW_APPS_ANIMATION_DELAY = 500;
 
+    private static boolean sGelIntegrationEnabled = false;
+
     private final BroadcastReceiver mCloseSystemDialogsReceiver
             = new CloseSystemDialogsIntentReceiver();
     private final ContentObserver mWidgetObserver = new AppWidgetResetObserver();
@@ -471,6 +473,8 @@ public class Launcher extends Activity
         mSavedState = savedInstanceState;
         restoreState(mSavedState);
 
+        sGelIntegrationEnabled = hasCustomContentToLeft();
+
         if (PROFILE_STARTUP) {
             android.os.Debug.stopMethodTracing();
         }
@@ -548,20 +552,37 @@ public class Launcher extends Activity
         sPausedFromUserAction = true;
     }
 
-    /** To be overriden by subclasses to hint to Launcher that we have custom content */
+    /** To be overridden by subclasses to hint to Launcher that we have custom content */
     protected boolean hasCustomContentToLeft() {
         final SearchManager searchManager =
             (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
-        if (globalSearchActivity == null) {
-            return false;
-        } else {
-            return true;
+
+        // Currently the only custom content available is the GEL launcher integration,
+        // only supported on CyanogenMod.
+        return globalSearchActivity != null && isCM();
+    }
+
+    public boolean isGelIntegrationEnabled() {
+        return sGelIntegrationEnabled;
+    }
+
+    public void onCustomContentLaunch() {
+        if(isCM()) {
+            GELIntegrationHelper.getInstance().registerSwipeBackGestureListenerAndStartGEL(this);
         }
     }
 
     /**
-     * To be overridden by subclasses to populate the custom content container and call
+     * Check if the device running this application is running CyanogenMod.
+     * @return true if this device is running CM.
+     */
+    protected boolean isCM() {
+        return getPackageManager().hasSystemFeature("com.cyanogenmod.android");
+    }
+
+    /**
+     * To be overridden by subclasses to create the custom content and call
      * {@link #addToCustomContentPage}. This will only be invoked if
      * {@link #hasCustomContentToLeft()} is {@code true}.
      */
@@ -976,6 +997,10 @@ public class Launcher extends Activity
 
         if (settingsChanged()) {
             android.os.Process.killProcess(android.os.Process.myPid());
+        }
+
+        if(isCM()) {
+            GELIntegrationHelper.getInstance().handleGELResume();
         }
 
         // Restore the previous launcher state
