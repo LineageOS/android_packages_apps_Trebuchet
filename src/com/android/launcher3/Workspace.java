@@ -130,8 +130,6 @@ public class Workspace extends SmoothPagedView
     private HashMap<Long, CellLayout> mWorkspaceScreens = new HashMap<Long, CellLayout>();
     private ArrayList<Long> mScreenOrder = new ArrayList<Long>();
 
-    public final static String INTENT_ACTION_ASSIST = "android.intent.action.ASSIST";
-
     /**
      * CellInfo for the cell that is currently being dragged
      */
@@ -1135,9 +1133,12 @@ public class Workspace extends SmoothPagedView
 
         if (hasCustomContent() && getNextPage() == 0 && !mCustomContentShowing) {
             mCustomContentShowing = true;
-            Intent i = new Intent(INTENT_ACTION_ASSIST);
-            mLauncher.startActivity(i);
-            mLauncher.overridePendingTransition(0, R.anim.exit_out_right);
+
+            if(!isInOverviewMode()) {
+                // Start Google Now and register the gesture to return to Trebuchet
+                mLauncher.registerSwipeBackGestureListenerAndStartGEL();
+            }
+
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onShow();
                 mCustomContentShowTime = System.currentTimeMillis();
@@ -1920,7 +1921,7 @@ public class Workspace extends SmoothPagedView
 
     @Override
     protected void getOverviewModePages(int[] range) {
-        int start = numCustomPages() - 1;
+        int start = numCustomPages();
         int end = getChildCount() - 1;
 
         range[0] = Math.max(0, Math.min(start, getChildCount() - 1));
