@@ -101,6 +101,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.service.gesture.EdgeGestureManager;
+import com.android.internal.util.gesture.EdgeGesturePosition;
+
 import com.android.launcher3.DropTarget.DragObject;
 import com.android.launcher3.PagedView.TransitionEffect;
 import com.android.launcher3.settings.SettingsActivity;
@@ -171,6 +174,9 @@ public class Launcher extends Activity
     static final String INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION =
             "com.android.launcher3.intent.extra.shortcut.INGORE_LAUNCH_ANIMATION";
 
+    // The Intent for the search activity (resolves to Google Now when installed)
+    public final static String INTENT_ACTION_ASSIST = "android.intent.action.ASSIST";
+
     // Type: int
     private static final String RUNTIME_STATE_CURRENT_SCREEN = "launcher.current_screen";
     // Type: int
@@ -205,6 +211,9 @@ public class Launcher extends Activity
     private static final String WALLPAPER_PICKER_ACTIVITY =
             "com.android.wallpapercropper.WallpaperPickerActivity";
 
+    private static final String GEL_ACTIVITY = "com.google.android.velvet.ui.VelvetActivity";
+    private static final String GEL_PACKAGE_NAME = "com.google.android.googlequicksearchbox";
+
     public static final String SHOW_WEIGHT_WATCHER = "debug.show_mem";
     public static final boolean SHOW_WEIGHT_WATCHER_DEFAULT = false;
 
@@ -218,6 +227,9 @@ public class Launcher extends Activity
     private static final int EXIT_SPRINGLOADED_MODE_LONG_TIMEOUT = 600;
     private static final int SHOW_CLING_DURATION = 250;
     private static final int DISMISS_CLING_DURATION = 200;
+
+    // Track the status of launching the Google Now custom content page
+    private static boolean GEL_LAUNCHED = false;
 
     private static final Object sLock = new Object();
     private static int sScreen = DEFAULT_SCREEN;
@@ -345,6 +357,8 @@ public class Launcher extends Activity
     private Rect mRectForFolderAnimation = new Rect();
 
     private BubbleTextView mWaitingForResume;
+
+    private EdgeGestureManager.EdgeGestureActivationListener mEdgeGestureActivationListener = null;
 
     private HideFromAccessibilityHelper mHideFromAccessibilityHelper
         = new HideFromAccessibilityHelper();
@@ -747,6 +761,70 @@ public class Launcher extends Activity
         return result;
     }
 
+    /**
+     * 1. Registers an EdgeGestureActivationListener with the EdgeGestureManager so that the user can return to
+     *    Trebuchet when they swipe from the right edge of the device.
+     * 2. Starts the Google Now Activity with an exit_out_right transition animation so that the new Activity appears to slide in
+     *    as another screen (similar to GEL).
+     */
+    public void registerSwipeBackGestureListenerAndStartGEL() {
+        EdgeGestureManager edgeGestureManager = EdgeGestureManager.getInstance();
+        if(mEdgeGestureActivationListener == null) {
+            mEdgeGestureActivationListener = new EdgeGestureManager.EdgeGestureActivationListener() {
+                ActivityManager mAm = (ActivityManager) Launcher.this.getSystemService(ACTIVITY_SERVICE);
+
+                @Override
+                public void onEdgeGestureActivation(int touchX, int touchY, EdgeGesturePosition position, int flags) {
+                    // Retrieve the top level activity information
+                    List< ActivityManager.RunningTaskInfo > taskInfo = mAm.getRunningTasks(1);
+                    ComponentName topActivityComponentInfo = taskInfo.get(0).topActivity;
+                    String topActivityClassName = topActivityComponentInfo.getClassName();
+                    String topActivityPackageName = topActivityComponentInfo.getPackageName();
+
+                    // If the top level activity is Google Now, return to home. Otherwise, do nothing.
+                    if(GEL_ACTIVITY.equals(topActivityClassName) && GEL_PACKAGE_NAME.equals(topActivityPackageName)) {
+                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        homeIntent.addCategory(Intent.CATEGORY_HOME);
+                        Launcher.GEL_LAUNCHED = false;
+                        startActivity(homeIntent);
+                        overridePendingTransition(0, R.anim.exit_out_left);
+                        dropEventsUntilLift();
+                    }
+                }
+            };
+            edgeGestureManager.setEdgeGestureActivationListener(mEdgeGestureActivationListener);
+        }
+        mEdgeGestureActivationListener.restoreListenerState();
+        edgeGestureManager.updateEdgeGestureActivationListener(mEdgeGestureActivationListener, 0x01 << 2);
+
+        // Start the Google Now Activity
+        Intent i = new Intent(INTENT_ACTION_ASSIST);
+        startActivity(i);
+        Launcher.GEL_LAUNCHED = true;
+        overridePendingTransition(0, R.anim.exit_out_right);
+    }
+
+    /**
+     * Handle necessary cleanup and reset tasks for GEL integration, to be called from onResume.
+     */
+    private void handleGELResume() {
+        // If there is an active EdgeGestureActivationListener for GEL integration,
+        // it should stop listening when we have resumed the launcher.
+        if(mEdgeGestureActivationListener != null) {
+            EdgeGestureManager edgeGestureManager = EdgeGestureManager.getInstance();
+            // Update the listener so it is not listening to any postiions (-1)
+            edgeGestureManager.updateEdgeGestureActivationListener(mEdgeGestureActivationListener, -1);
+        }
+
+        // If the GEL launched flag is set to true, yet we have resumed,
+        // just move to the default screen without animation and reset the flag.
+        if(GEL_LAUNCHED) {
+            //mWorkspace.moveToDefaultScreen(false);
+            GEL_LAUNCHED = false;
+        }
+    }
+
     @Override
     protected void onActivityResult(
             final int requestCode, final int resultCode, final Intent data) {
@@ -880,6 +958,8 @@ public class Launcher extends Activity
         if (settingsChanged()) {
             android.os.Process.killProcess(android.os.Process.myPid());
         }
+
+        handleGELResume();
 
         // Restore the previous launcher state
         if (mOnResumeState == State.WORKSPACE) {
