@@ -1133,6 +1133,12 @@ public class Workspace extends SmoothPagedView
 
         if (hasCustomContent() && getNextPage() == 0 && !mCustomContentShowing) {
             mCustomContentShowing = true;
+
+            if(!isInOverviewMode()) {
+                // Start Google Now and register the gesture to return to Trebuchet
+                mLauncher.registerSwipeBackGestureListenerAndStartGEL();
+            }
+
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onShow();
                 mCustomContentShowTime = System.currentTimeMillis();
