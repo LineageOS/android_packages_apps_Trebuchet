@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_09bc5504",
+        "filename": "res/layout/settings_pane.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-06T05:37:54Z",
+      "side": 0,
+      "message": "Removing this causes the Settings List to get covered up by NavBar.\n\nSee: http://imgur.com/R8Dq0rv",
+      "revId": "d2e0c5413b4e97dbdffc215710a6ae90fc527f37",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_6937d1b0",
+        "filename": "res/layout/settings_transitions_screen.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-06T05:37:54Z",
+      "side": 0,
+      "message": "Removing this causes the ScrollEffects List to get covered up by NavBar.\n\nSee: http://imgur.com/v5gMOQl",
+      "revId": "d2e0c5413b4e97dbdffc215710a6ae90fc527f37",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
