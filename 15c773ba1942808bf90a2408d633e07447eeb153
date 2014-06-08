@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_5e9e0057",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2014-06-08T11:07:01Z",
+      "side": 1,
+      "message": "This should really be done in CMLauncher extends Launcher as the comment says above.",
+      "revId": "15c773ba1942808bf90a2408d633e07447eeb153",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_bea3dc9d",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 1078
+      },
+      "writtenOn": "2014-06-08T11:07:01Z",
+      "side": 0,
+      "message": "Just make numCustomPages() return 0 if the custom page is the fake one?",
+      "revId": "b7a1a30539176f83e90993c4689d03dd6d843690",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
