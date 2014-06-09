@@ -52,7 +52,9 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:ellipsize="end"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"/>
 
                 <Space
                     android:layout_width="0dip"
@@ -72,7 +74,9 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:ellipsize="end"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true" />
 
                 <Space
                     android:layout_width="0dip"
@@ -92,7 +96,9 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:ellipsize="end"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true" />
 
                 <Space
                     android:layout_width="0dip"
