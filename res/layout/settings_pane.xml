@@ -52,7 +52,8 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
                 <Space
                     android:layout_width="0dip"
@@ -72,7 +73,8 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
                 <Space
                     android:layout_width="0dip"
@@ -92,7 +94,8 @@
                     android:textAllCaps="true"
                     android:textSize="12sp"
                     android:textColor="@android:color/white"
-                    android:maxLines="2" />
+                    android:maxLines="1"
+                    android:ellipsize="end" />
 
                 <Space
                     android:layout_width="0dip"
