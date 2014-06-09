@@ -55,6 +55,7 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ScaleGestureDetector;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -293,6 +294,7 @@ public class Workspace extends SmoothPagedView
     private boolean mShowOutlines;
     private boolean mHideIconLabels;
 
+    private ScaleGestureDetector scaleGestureListener;
     /**
      * Used to inflate the Workspace from XML.
      *
@@ -362,6 +364,37 @@ public class Workspace extends SmoothPagedView
         // Disable multitouch across the workspace/all apps/customize tray
         setMotionEventSplittingEnabled(true);
         setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+
+        scaleGestureListener = new ScaleGestureDetector(mLauncher,
+                new ScaleGestureDetector.OnScaleGestureListener() {
+
+                    private int mode = 0;
+
+                    @Override
+                    public boolean onScale(ScaleGestureDetector detector) {
+                        double scaleFactor = detector.getScaleFactor();
+                        if (1.0f > scaleFactor) {
+                            mode = 1;//Log.i("ScaleFactor", "Pinch Dection");
+                        } else  {
+                            mode = 0;//Log.i("onScaleEnd", "Zoom Dection");
+                        }
+
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onScaleBegin(ScaleGestureDetector detector) {
+                        mode = -1;
+                        return true;
+                    }
+
+                    @Override
+                    public void onScaleEnd(ScaleGestureDetector detector) {
+                        if (mode == 1) {
+                            enableOverviewMode(true, -1, true);
+                        }
+                    }
+                });
     }
 
     @Override
@@ -4900,5 +4933,11 @@ public class Workspace extends SmoothPagedView
     public void scrollTo(int x, int y) {
         mEnforceRealBounds = isInOverviewMode();
         super.scrollTo(x, y);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        scaleGestureListener.onTouchEvent(ev);
+        return super.onTouchEvent(ev);
     }
 }
