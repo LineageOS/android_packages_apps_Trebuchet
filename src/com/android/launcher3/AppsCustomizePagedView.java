@@ -170,9 +170,29 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
      * The different sort modes than can be used to order items.
      */
     public enum SortMode {
-        Title,
-        LaunchCount,
-        InstallTime
+        Title(0),
+        LaunchCount(1),
+        InstallTime(2);
+
+        private final int mValue;
+        private SortMode(int value) {
+            mValue = value;
+        }
+
+        public int getValue() {
+            return mValue;
+        }
+
+        public static SortMode getModeForValue(int value) {
+            switch (value) {
+            case 1:
+                return LaunchCount;
+            case 2:
+                return InstallTime;
+            default :
+                return Title;
+            }
+        }
     }
     private SortMode mSortMode = SortMode.Title;
 
@@ -334,6 +354,10 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
                 mHiddenPackages.add(cmp.getPackageName());
             }
         }
+
+        int sortMode = SettingsProvider.getInt(context, SettingsProvider.SETTINGS_UI_DRAWER_SORT_MODE,
+                R.integer.preferences_interface_drawer_sort_mode_default);
+        setSortMode(SortMode.getModeForValue(sortMode));
     }
 
     @Override
