@@ -16,6 +16,24 @@
       "revId": "b7a1a30539176f83e90993c4689d03dd6d843690",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_17310ba3",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-10T12:25:31Z",
+      "side": 0,
+      "message": "Done in patch 8 in this change: http://review.cyanogenmod.org/#/c/65219/.",
+      "parentUuid": "da0c15f0_bea3dc9d",
+      "revId": "b7a1a30539176f83e90993c4689d03dd6d843690",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
