@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_b8879911",
+        "filename": "src/com/android/launcher3/GELIntegrationHelper.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-11T07:21:08Z",
+      "side": 1,
+      "message": "Unfortunately, the Activity returned by searchManager.getGlobalSearchActivity() seems to be an intermediate activity which then launches \"VelvetActivity,\" which is the Activity I am really interested in. So, I think this needs to be hard coded here.",
+      "parentUuid": "da0c15f0_b7549f54",
+      "revId": "1d44cee0074b50286b493ebf657f53af61d30431",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da0c15f0_775a0785",
         "filename": "src/com/android/launcher3/GELIntegrationHelper.java",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-10T17:29:02Z",
       "side": 1,
       "message": "should probably set -1 as a constant. Also there\u0027s a typo in the comment \"postiions\"",
+      "revId": "1d44cee0074b50286b493ebf657f53af61d30431",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_988c5537",
+        "filename": "src/com/android/launcher3/GELIntegrationHelper.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-11T07:21:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da0c15f0_775a0785",
       "revId": "1d44cee0074b50286b493ebf657f53af61d30431",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
