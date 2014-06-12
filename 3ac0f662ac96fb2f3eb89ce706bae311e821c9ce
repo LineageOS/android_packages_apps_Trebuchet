@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_5e90e5ec",
+        "filename": "res/values-sw600dp/dimens.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1579
+      },
+      "writtenOn": "2014-06-12T23:01:16Z",
+      "side": 0,
+      "message": "Please overlaying overview_panel_handle_size with such as 20dp here, or layout breaks on some devices",
+      "revId": "3ac0f662ac96fb2f3eb89ce706bae311e821c9ce",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
