@@ -1255,7 +1255,8 @@ public class Workspace extends SmoothPagedView
         super.notifyPageSwitchListener();
         Launcher.setScreen(getNextPage());
 
-        if (hasCustomContent() && getNextPage() == 0 && !mCustomContentShowing) {
+        int ccIndex = getPageIndexForScreenId(CUSTOM_CONTENT_SCREEN_ID);
+        if (hasCustomContent() && getNextPage() == ccIndex && !mCustomContentShowing) {
             mCustomContentShowing = true;
 
             if (mCustomContentCallbacks != null) {
@@ -1263,7 +1264,7 @@ public class Workspace extends SmoothPagedView
                 mCustomContentShowTime = System.currentTimeMillis();
                 mLauncher.updateVoiceButtonProxyVisible(false);
             }
-        } else if (hasCustomContent() && mCustomContentShowing) {
+        } else if (hasCustomContent() &&  getNextPage() != ccIndex && mCustomContentShowing) {
             mCustomContentShowing = false;
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onHide();
