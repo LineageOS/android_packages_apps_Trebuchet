@@ -38,6 +38,8 @@ import com.android.launcher3.R;
 import org.cyanogenmod.trebuchet.home.HomeUtils;
 import org.cyanogenmod.trebuchet.home.HomeWrapper;
 
+import java.lang.Override;
+
 public class TrebuchetLauncher extends Launcher {
 
     private static final String TAG = "TrebuchetLauncher";
@@ -128,7 +130,6 @@ public class TrebuchetLauncher extends Launcher {
 
         @Override
         public void onHide() {
-            updateQsbBarColorState(255);
             if (mCurrentHomeApp != null) {
                 mCurrentHomeApp.mInstance.onHide();
             }
@@ -205,7 +206,12 @@ public class TrebuchetLauncher extends Launcher {
     }
 
     @Override
-    protected void addCustomContentToLeft() {
+    public void onCustomContentLaunch() {
+       // Nothing to do here.
+    }
+
+    @Override
+    protected void populateCustomContentContainer() {
         if (mCurrentHomeApp != null) {
             mQsbScroller = addToCustomContentPage(mCurrentHomeApp.mInstance.createCustomView(),
                     mCustomContentCallbacks, mCurrentHomeApp.mInstance.getName());
