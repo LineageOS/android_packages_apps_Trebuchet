@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_fb6c6b0a",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "This might not be necessary anymore, since we now compile against CM after my changes?",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_bb62f314",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "Make \"protected_components\" a constant?",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_db71a7e2",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "This whole block from line 326 - 339 is code duplication of updateProtectedAppsList(). You should just invoke updateProtectedAppsList() instead.",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9b672f25",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2072,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "Make \"protected_components\" a constant?",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_3b7703d6",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "You\u0027ve got three methods below (getComponentTitles(), getComponents(), getComponentString()) that all look similar (looping through mItemsInReadingOrder to find ShortcutInfo instances). You could abstract that into a getShortcutInfos() method or something like that, then loop through that.\n\nOf course this means you\u0027ve got to loop through those items twice, but it could be worth it for code simplicity if this list is small (seems likely).",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_db48878a",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "I noticed when testing that I cannot use swiping to input text for the folder name. The only way is to tap each letter. I think it might be TYPE_TEXT_FLAG_NO_SUGGESTIONS that is causing that. Not a big deal but might be worth considering if you want that flag.",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_3b5ee345",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "Mentioned this on the other review as well, not sure if you want to call notifyDataSetChanged() each time an icon is loaded. Could probably just set the icon for the updated component?",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_9b356ff9",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2191,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "Could be named more accurately -- startLockPatternActivityAndSetHiddenFolderFragment() ? That\u0027s probably a little too long, but you get the point.",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_1b22ffb9",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2393,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-12T07:33:09Z",
+      "side": 1,
+      "message": "As before, we\u0027re building against CM now, so will this change?",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
