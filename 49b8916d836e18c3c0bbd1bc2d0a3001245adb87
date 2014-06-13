@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_6169cc8b",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-13T05:35:27Z",
+      "side": 1,
+      "message": "Nice improvement.",
+      "parentUuid": "ba0121b8_5eef45b0",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_db48878a",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 3
@@ -206,6 +224,24 @@
       "side": 1,
       "message": "Following convention set in Folder.java  (:220)",
       "parentUuid": "ba0121b8_db48878a",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_414be82b",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-13T05:35:27Z",
+      "side": 1,
+      "message": "Alright. Guess that was intentional.",
+      "parentUuid": "ba0121b8_be2ae1e5",
       "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -311,6 +347,24 @@
       "side": 1,
       "message": "Constant for now, will modify when SDK flag gets changed in your change.",
       "parentUuid": "ba0121b8_1b22ffb9",
+      "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_01dd7042",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2393,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-13T05:35:27Z",
+      "side": 1,
+      "message": "Sounds good.",
+      "parentUuid": "ba0121b8_de399543",
       "revId": "49b8916d836e18c3c0bbd1bc2d0a3001245adb87",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
