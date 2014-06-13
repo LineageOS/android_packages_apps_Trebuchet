@@ -45,8 +45,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map.Entry;
 
-import com.android.launcher3.settings.SettingsProvider;
-
 /**
  * Cache of application icons.  Icons can be made from any thread.
  */
@@ -83,9 +81,6 @@ public class IconCache {
 
         // need to set mIconDpi before getting default icon
         mDefaultIcon = makeDefaultIcon();
-
-        mIconPackHelper = new IconPackHelper(context);
-        loadIconPack();
     }
 
     public Drawable getFullResDefaultActivityIcon() {
@@ -133,14 +128,7 @@ public class IconCache {
             resources = null;
         }
         if (resources != null) {
-            int iconId = 0;
-            if (mIconPackHelper != null && mIconPackHelper.isIconPackLoaded()) {
-                iconId = mIconPackHelper.getResourceIdForActivityIcon(info);
-                if (iconId != 0) {
-                    return getFullResIcon(mIconPackHelper.getIconPackResources(), iconId);
-                }
-            }
-            iconId = info.getIconResource();
+            int iconId = info.getIconResource();
             if (iconId != 0) {
                 return getFullResIcon(resources, iconId);
             }
@@ -159,16 +147,6 @@ public class IconCache {
         d.draw(c);
         c.setBitmap(null);
         return b;
-    }
-
-    private void loadIconPack() {
-        mIconPackHelper.unloadIconPack();
-        String iconPack = SettingsProvider.getStringCustomDefault(mContext,
-                SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, "");
-        if (!TextUtils.isEmpty(iconPack) && !mIconPackHelper.loadIconPack(iconPack)) {
-            SettingsProvider.putString(mContext,
-                    SettingsProvider.SETTINGS_UI_GENERAL_ICONS_ICON_PACK, "");
-        }
     }
 
     /**
@@ -202,7 +180,6 @@ public class IconCache {
         synchronized (mCache) {
             mCache.clear();
         }
-        loadIconPack();
     }
 
     /**
