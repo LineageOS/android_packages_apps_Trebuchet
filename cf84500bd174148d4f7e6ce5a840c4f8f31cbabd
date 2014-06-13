@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_21cb5474",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-13T05:38:26Z",
+      "side": 1,
+      "message": "Much better!",
+      "revId": "cf84500bd174148d4f7e6ce5a840c4f8f31cbabd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
