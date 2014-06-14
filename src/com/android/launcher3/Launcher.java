@@ -1617,7 +1617,6 @@ public class Launcher extends Activity
             favorite.setCompoundDrawables(null, d, null, null);
             favorite.setOnTouchListener(getHapticFeedbackTouchListener());
         }
-        Utilities.applyTypeface(favorite);
         return favorite;
     }
 
