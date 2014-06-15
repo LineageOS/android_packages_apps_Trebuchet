@@ -147,7 +147,16 @@ class AllAppsList {
                         info.activityInfo.applicationInfo.packageName,
                         info.activityInfo.name);
                 if (applicationInfo == null) {
-                    add(new AppInfo(context.getPackageManager(), info, mIconCache, null));
+                    AppInfo appInfo = new AppInfo(context.getPackageManager(),
+                            info, mIconCache, null);
+                    if (mAppFilter != null && !mAppFilter.shouldShowApp(appInfo.componentName)) {
+                        return;
+                    }
+                    if (findActivity(data, appInfo.componentName)) {
+                        return;
+                    }
+                    data.add(appInfo);
+                    modified.add(appInfo);
                 } else {
                     mIconCache.remove(applicationInfo.componentName);
                     mIconCache.getTitleAndIcon(applicationInfo, info, null);
@@ -166,6 +175,57 @@ class AllAppsList {
                 }
             }
         }
+    }
+
+    public ArrayList<AppInfo> getDisableAppInfoForPackage(Context context, String packageName) {
+        ArrayList<AppInfo> disabled = new ArrayList<AppInfo>();
+        final List<ResolveInfo> matches = findActivitiesForPackage(context, packageName);
+        if (matches.size() > 0) {
+            // Find disabled/removed activities and remove them from data and add them
+            // to the removed list.
+            for (int i = data.size() - 1; i >= 0; i--) {
+                final AppInfo applicationInfo = data.get(i);
+                final ComponentName component = applicationInfo.intent.getComponent();
+                if (packageName.equals(component.getPackageName())) {
+                    if (!findActivity(matches, component)) {
+                        disabled.add(applicationInfo);
+                    }
+                }
+            }
+
+            // Find enabled activities and add them to the adapter
+            // Also updates existing activities with new labels/icons
+            int count = matches.size();
+            for (int i = 0; i < count; i++) {
+                final ResolveInfo info = matches.get(i);
+                AppInfo applicationInfo = findApplicationInfoLocked(
+                        info.activityInfo.applicationInfo.packageName,
+                        info.activityInfo.name);
+                if (applicationInfo == null) {
+                    AppInfo appInfo = new AppInfo(context.getPackageManager(),
+                            info, mIconCache, null);
+                    if (mAppFilter != null && !mAppFilter.shouldShowApp(appInfo.componentName)) {
+                        return disabled;
+                    }
+                    if (findActivity(data, appInfo.componentName)) {
+                        return disabled;
+                    }
+                    disabled.add(appInfo);
+                } else {
+                    disabled.add(applicationInfo);
+                }
+            }
+        } else {
+            // Remove all data for this package.
+            for (int i = data.size() - 1; i >= 0; i--) {
+                final AppInfo applicationInfo = data.get(i);
+                final ComponentName component = applicationInfo.intent.getComponent();
+                if (packageName.equals(component.getPackageName())) {
+                    disabled.add(applicationInfo);
+                }
+            }
+        }
+        return disabled;
     }
 
     /**

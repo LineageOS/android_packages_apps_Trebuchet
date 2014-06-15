@@ -40,7 +40,6 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Parcelable;
@@ -93,7 +92,6 @@ public class LauncherModel extends BroadcastReceiver {
     private static final int ITEMS_CHUNK = 6; // batch size for the workspace icons
     private static final long INVALID_SCREEN_ID = -1L;
 
-    private final boolean mAppsCanBeOnRemoveableStorage;
     private final boolean mOldContentProviderExists;
 
     private final LauncherAppState mApp;
@@ -200,7 +198,6 @@ public class LauncherModel extends BroadcastReceiver {
         Context context = app.getContext();
         ContentResolver contentResolver = context.getContentResolver();
 
-        mAppsCanBeOnRemoveableStorage = Environment.isExternalStorageRemovable();
         mOldContentProviderExists = (contentResolver.acquireContentProviderClient(
                 LauncherSettings.Favorites.OLD_CONTENT_URI) != null);
         mApp = app;
@@ -1245,20 +1242,8 @@ public class LauncherModel extends BroadcastReceiver {
             }
 
         } else if (Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(action)) {
-            final boolean replacing = intent.getBooleanExtra(Intent.EXTRA_REPLACING, false);
             String[] packages = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
-            if (!replacing) {
-                enqueuePackageUpdated(new PackageUpdatedTask(PackageUpdatedTask.OP_ADD, packages));
-                if (mAppsCanBeOnRemoveableStorage) {
-                    // Only rebind if we support removable storage.  It catches the case where
-                    // apps on the external sd card need to be reloaded
-                    startLoaderFromBackground();
-                }
-            } else {
-                // If we are replacing then just update the packages in the list
-                enqueuePackageUpdated(new PackageUpdatedTask(PackageUpdatedTask.OP_UPDATE,
-                        packages));
-            }
+            enqueuePackageUpdated(new PackageUpdatedTask(PackageUpdatedTask.OP_UPDATE, packages));
         } else if (Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE.equals(action)) {
             final boolean replacing = intent.getBooleanExtra(Intent.EXTRA_REPLACING, false);
             if (!replacing) {
@@ -1917,28 +1902,7 @@ public class LauncherModel extends BroadcastReceiver {
                                 if (itemType != LauncherSettings.Favorites.ITEM_TYPE_ALLAPPS) {
                                     try {
                                         intent = Intent.parseUri(intentDescription, 0);
-                                        ComponentName cn = intent.getComponent();
-                                        if (cn != null && !isValidPackageComponent(manager, cn)) {
-                                            if (restored) {
-                                                // might be installed later
-                                                Launcher.addDumpLog(TAG,
-                                                        "package not yet restored: " + cn, true);
-                                            } else {
-                                                if (!mAppsCanBeOnRemoveableStorage) {
-                                                    // Log the invalid package, and remove it
-                                                    Launcher.addDumpLog(TAG,
-                                                            "Invalid package removed: " + cn, true);
-                                                    itemsToRemove.add(id);
-                                                } else {
-                                                    // If apps can be on external storage, then we just
-                                                    // leave them for the user to remove (maybe add
-                                                    // visual treatment to it)
-                                                    Launcher.addDumpLog(TAG,
-                                                            "Invalid package found: " + cn, true);
-                                                }
-                                                continue;
-                                            }
-                                        } else if (restored) {
+                                        if (restored) {
                                             // no special handling necessary for this restored item
                                             restoredRows.add(id);
                                             restored = false;
@@ -2068,62 +2032,95 @@ public class LauncherModel extends BroadcastReceiver {
                                 // Read all Launcher-specific widget details
                                 int appWidgetId = c.getInt(appWidgetIdIndex);
                                 String savedProvider = c.getString(appWidgetProviderIndex);
+                                ComponentName savedComponent = ComponentName.unflattenFromString(
+                                        savedProvider);
 
                                 id = c.getLong(idIndex);
+                                String providerName = null;
+                                int[] minSpan = null;
 
                                 final AppWidgetProviderInfo provider =
                                         widgets.getAppWidgetInfo(appWidgetId);
 
+                                // Use cached data or grab new data if it is available
                                 if (!isSafeMode && (provider == null || provider.provider == null ||
                                         provider.provider.getPackageName() == null)) {
-                                    String log = "Deleting widget that isn't installed anymore: id="
-                                        + id + " appWidgetId=" + appWidgetId;
-                                    Log.e(TAG, log);
-                                    Launcher.addDumpLog(TAG, log, false);
-                                    itemsToRemove.add(id);
+                                    if (savedComponent != null && !isValidPackage(manager, savedComponent)) {
+                                        // Don't delete disabled components
+                                        String log = "Widget is disabled: id="
+                                                + id + " appWidgetId=" + appWidgetId;
+                                            Log.e(TAG, log);
+                                            Launcher.addDumpLog(TAG, log, false);
+
+                                        // Create the provider from the database info. It will be
+                                        // available later when the component or app will be ready
+                                        // again
+                                        providerName = savedComponent.flattenToString();
+                                        appWidgetInfo = new LauncherAppWidgetInfo(appWidgetId,
+                                                savedComponent);
+                                        appWidgetInfo.disabled = true;
+                                        minSpan = new int[]{0, 0};
+
+                                    } else {
+                                        String log = "Deleting widget that isn't installed " +
+                                            "anymore: id=" + id + " appWidgetId=" + appWidgetId;
+                                        Log.e(TAG, log);
+                                        Launcher.addDumpLog(TAG, log, false);
+                                        itemsToRemove.add(id);
+                                        continue;
+                                    }
                                 } else {
                                     appWidgetInfo = new LauncherAppWidgetInfo(appWidgetId,
                                             provider.provider);
-                                    appWidgetInfo.id = id;
-                                    appWidgetInfo.screenId = c.getInt(screenIndex);
-                                    appWidgetInfo.cellX = c.getInt(cellXIndex);
-                                    appWidgetInfo.cellY = c.getInt(cellYIndex);
-                                    appWidgetInfo.spanX = c.getInt(spanXIndex);
-                                    appWidgetInfo.spanY = c.getInt(spanYIndex);
-                                    int[] minSpan = Launcher.getMinSpanForWidget(context, provider);
-                                    appWidgetInfo.minSpanX = minSpan[0];
-                                    appWidgetInfo.minSpanY = minSpan[1];
-
-                                    container = c.getInt(containerIndex);
-                                    if (container != LauncherSettings.Favorites.CONTAINER_DESKTOP &&
-                                        container != LauncherSettings.Favorites.CONTAINER_HOTSEAT) {
-                                        Log.e(TAG, "Widget found where container != " +
-                                            "CONTAINER_DESKTOP nor CONTAINER_HOTSEAT - ignoring!");
-                                        continue;
-                                    }
-
-                                    appWidgetInfo.container = c.getInt(containerIndex);
-                                    // check & update map of what's occupied
-                                    deleteOnInvalidPlacement.set(false);
-                                    if (!checkItemPlacement(occupied, appWidgetInfo,
-                                            deleteOnInvalidPlacement)) {
-                                        if (deleteOnInvalidPlacement.get()) {
-                                            itemsToRemove.add(id);
-                                        }
-                                        break;
-                                    }
-                                    String providerName = provider.provider.flattenToString();
-                                    if (!providerName.equals(savedProvider)) {
-                                        ContentValues values = new ContentValues();
-                                        values.put(LauncherSettings.Favorites.APPWIDGET_PROVIDER,
-                                                providerName);
-                                        String where = BaseColumns._ID + "= ?";
-                                        String[] args = {Integer.toString(c.getInt(idIndex))};
-                                        contentResolver.update(contentUri, values, where, args);
-                                    }
-                                    sBgItemsIdMap.put(appWidgetInfo.id, appWidgetInfo);
-                                    sBgAppWidgets.add(appWidgetInfo);
+                                    appWidgetInfo.disabled = false;
+                                    providerName = provider.provider.flattenToString();
+                                    minSpan = Launcher.getMinSpanForWidget(context, provider);
                                 }
+
+                                // Add common info
+                                appWidgetInfo.id = id;
+                                appWidgetInfo.screenId = c.getInt(screenIndex);
+                                appWidgetInfo.cellX = c.getInt(cellXIndex);
+                                appWidgetInfo.cellY = c.getInt(cellYIndex);
+                                appWidgetInfo.spanX = c.getInt(spanXIndex);
+                                appWidgetInfo.spanY = c.getInt(spanYIndex);
+                                if (minSpan == null) {
+                                    // Just use the current height as min size
+                                    minSpan = new int[] {appWidgetInfo.spanX, appWidgetInfo.spanY};
+                                }
+                                appWidgetInfo.minSpanX = minSpan[0];
+                                appWidgetInfo.minSpanY = minSpan[1];
+
+                                container = c.getInt(containerIndex);
+                                if (container != LauncherSettings.Favorites.CONTAINER_DESKTOP &&
+                                    container != LauncherSettings.Favorites.CONTAINER_HOTSEAT) {
+                                    Log.e(TAG, "Widget found where container != " +
+                                        "CONTAINER_DESKTOP nor CONTAINER_HOTSEAT - ignoring!");
+                                    continue;
+                                }
+
+                                appWidgetInfo.container = c.getInt(containerIndex);
+                                // check & update map of what's occupied
+                                deleteOnInvalidPlacement.set(false);
+                                if (!checkItemPlacement(occupied, appWidgetInfo,
+                                        deleteOnInvalidPlacement)) {
+                                    if (deleteOnInvalidPlacement.get()) {
+                                        itemsToRemove.add(id);
+                                    }
+                                    break;
+                                }
+
+                                if (!providerName.equals(savedProvider)) {
+                                    ContentValues values = new ContentValues();
+                                    values.put(LauncherSettings.Favorites.APPWIDGET_PROVIDER,
+                                            providerName);
+                                    String where = BaseColumns._ID + "= ?";
+                                    String[] args = {Integer.toString(c.getInt(idIndex))};
+                                    contentResolver.update(contentUri, values, where, args);
+                                }
+                                sBgItemsIdMap.put(appWidgetInfo.id, appWidgetInfo);
+                                sBgAppWidgets.add(appWidgetInfo);
+
                                 break;
                             }
                         } catch (Exception e) {
@@ -2832,7 +2829,7 @@ public class LauncherModel extends BroadcastReceiver {
         public static final int OP_NONE = 0;
         public static final int OP_ADD = 1;
         public static final int OP_UPDATE = 2;
-        public static final int OP_REMOVE = 3; // uninstlled
+        public static final int OP_REMOVE = 3; // uninstalled
         public static final int OP_UNAVAILABLE = 4; // external media unmounted
 
 
@@ -2843,6 +2840,12 @@ public class LauncherModel extends BroadcastReceiver {
 
         public void run() {
             final Context context = mApp.getContext();
+            final PackageManager pm = context.getPackageManager();
+
+            ArrayList<AppInfo> added = null;
+            ArrayList<AppInfo> modified = null;
+            final ArrayList<AppInfo> removedApps = new ArrayList<AppInfo>();
+            final ArrayList<AppInfo> disabledApps = new ArrayList<AppInfo>();
 
             final String[] packages = mPackages;
             final int N = packages.length;
@@ -2863,7 +2866,6 @@ public class LauncherModel extends BroadcastReceiver {
                     }
                     break;
                 case OP_REMOVE:
-                case OP_UNAVAILABLE:
                     for (int i=0; i<N; i++) {
                         if (DEBUG_LOADERS) Log.d(TAG, "mAllAppsList.removePackage " + packages[i]);
                         mBgAllAppsList.removePackage(packages[i]);
@@ -2871,11 +2873,14 @@ public class LauncherModel extends BroadcastReceiver {
                                 mApp.getWidgetPreviewCacheDb(), packages[i]);
                     }
                     break;
+                case OP_UNAVAILABLE:
+                    for (int i=0; i<N; i++) {
+                        if (DEBUG_LOADERS) Log.d(TAG, "package unavailable " + packages[i]);
+                        disabledApps.addAll(mBgAllAppsList.getDisableAppInfoForPackage(
+                                context, packages[i]));
+                    }
+                    break;
             }
-
-            ArrayList<AppInfo> added = null;
-            ArrayList<AppInfo> modified = null;
-            final ArrayList<AppInfo> removedApps = new ArrayList<AppInfo>();
 
             if (mBgAllAppsList.added.size() > 0) {
                 added = new ArrayList<AppInfo>(mBgAllAppsList.added);
@@ -2932,32 +2937,43 @@ public class LauncherModel extends BroadcastReceiver {
                 });
             }
 
-            final ArrayList<String> removedPackageNames =
-                    new ArrayList<String>();
+            final ArrayList<String> removedPackageNames = new ArrayList<String>();
+            final ArrayList<String> disabledPackageNames = new ArrayList<String>();
             if (mOp == OP_REMOVE) {
                 // Mark all packages in the broadcast to be removed
                 removedPackageNames.addAll(Arrays.asList(packages));
-            } else if (mOp == OP_UPDATE) {
-                // Mark disabled packages in the broadcast to be removed
-                final PackageManager pm = context.getPackageManager();
-                for (int i=0; i<N; i++) {
-                    if (isPackageDisabled(pm, packages[i])) {
-                        removedPackageNames.add(packages[i]);
-                    }
-                }
+            } else if (mOp == OP_UNAVAILABLE) {
+                // Mark all packages in the broadcast to be disabled
+                disabledPackageNames.addAll(Arrays.asList(packages));
             }
             // Remove all the components associated with this package
-            for (String pn : removedPackageNames) {
-                ArrayList<ItemInfo> infos = getItemInfoForPackageName(pn);
-                for (ItemInfo i : infos) {
-                    deleteItemFromDatabase(context, i);
+            // Don't remove disabled/not present packages
+            int count = removedPackageNames.size();
+            for (int j = count - 1; j >= 0; j--) {
+                String pn = removedPackageNames.get(j);
+                if (!isPackageDisabled(pm, pn)) {
+                    ArrayList<ItemInfo> infos = getItemInfoForPackageName(pn);
+                    for (ItemInfo i : infos) {
+                        deleteItemFromDatabase(context, i);
+                    }
+                } else {
+                    disabledPackageNames.add(removedPackageNames.remove(j));
                 }
             }
             // Remove all the specific components
-            for (AppInfo a : removedApps) {
-                ArrayList<ItemInfo> infos = getItemInfoForComponentName(a.componentName);
-                for (ItemInfo i : infos) {
-                    deleteItemFromDatabase(context, i);
+            // Don't remove disabled/not present componentes
+            count = removedApps.size();
+            for (int j = count - 1; j >= 0; j--) {
+                AppInfo a = removedApps.get(j);
+                if (isValidPackageComponent(pm, a.componentName)) {
+                    ArrayList<ItemInfo> infos = getItemInfoForComponentName(a.componentName);
+                    for (ItemInfo i : infos) {
+                        deleteItemFromDatabase(context, i);
+                    }
+                } else {
+                    AppInfo info = removedApps.remove(j);
+                    info.disabled = true;
+                    disabledApps.add(info);
                 }
             }
             if (!removedPackageNames.isEmpty() || !removedApps.isEmpty()) {
@@ -2975,6 +2991,33 @@ public class LauncherModel extends BroadcastReceiver {
                         }
                     }
                 });
+            }
+            if (!disabledPackageNames.isEmpty() || !disabledApps.isEmpty()) {
+                // Call the components-removed callback
+                mHandler.post(new Runnable() {
+                    public void run() {
+                        Callbacks cb = mCallbacks != null ? mCallbacks.get() : null;
+                        if (callbacks == cb && cb != null) {
+                            callbacks.bindAppsUpdated(disabledApps);
+                        }
+                    }
+                });
+            }
+
+            final AppWidgetManager widgets = AppWidgetManager.getInstance(context);
+            for (LauncherAppWidgetInfo info : sBgAppWidgets) {
+                if (info.hostView != null && info.hostView.getAppWidgetInfo() == null) {
+                    // Update the app widget
+                    final AppWidgetProviderInfo provider =
+                            widgets.getAppWidgetInfo(info.appWidgetId);
+                    if (provider != null && provider.provider != null) {
+                        int[] minSpan = Launcher.getMinSpanForWidget(context, provider);
+                        info.minSpanX = minSpan[0];
+                        info.minSpanY = minSpan[1];
+                        info.hostView.setAppWidget(info.appWidgetId, provider);
+                    }
+                }
+                info.disabled = !isValidPackage(pm, info.providerName);
             }
 
             final ArrayList<Object> widgetsAndShortcuts =
@@ -3033,11 +3076,28 @@ public class LauncherModel extends BroadcastReceiver {
 
         try {
             // Check the activity
-            PackageInfo pi = pm.getPackageInfo(cn.getPackageName(), 0);
+            pm.getPackageInfo(cn.getPackageName(), 0);
             return (pm.getActivityInfo(cn, 0) != null);
         } catch (NameNotFoundException e) {
             return false;
         }
+    }
+
+    public static boolean isValidPackage(PackageManager pm, ComponentName cn) {
+        if (cn == null) {
+            return false;
+        }
+        if (isPackageDisabled(pm, cn.getPackageName())) {
+            return false;
+        }
+
+        try {
+            // Check the activity
+            pm.getPackageInfo(cn.getPackageName(), 0);
+        } catch (NameNotFoundException e) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -3051,6 +3111,8 @@ public class LauncherModel extends BroadcastReceiver {
         } else {
             info.title = "";
         }
+        info.disabled = !isValidPackageComponent(
+                mApp.getContext().getPackageManager(), intent.getComponent());
         info.setIcon(mIconCache.getIcon(intent, info.title.toString()));
         info.itemType = LauncherSettings.Favorites.ITEM_TYPE_SHORTCUT;
         info.restoredIntent = intent;
@@ -3092,8 +3154,8 @@ public class LauncherModel extends BroadcastReceiver {
             Cursor c, int iconIndex, int titleIndex, HashMap<Object, CharSequence> labelCache) {
         ComponentName componentName = intent.getComponent();
         final ShortcutInfo info = new ShortcutInfo();
-        if (componentName != null && !isValidPackageComponent(manager, componentName)) {
-            Log.d(TAG, "Invalid package found in getShortcutInfo: " + componentName);
+        if (componentName == null) {
+            Log.d(TAG, "Invalid package found in getShortcutInfo: null. Intent: " + intent);
             return null;
         } else {
             try {
@@ -3104,6 +3166,8 @@ public class LauncherModel extends BroadcastReceiver {
                         componentName.getPackageName());
             }
         }
+
+        info.disabled = !isValidPackageComponent(manager, intent.getComponent());
 
         // TODO: See if the PackageManager knows about this case.  If it doesn't
         // then return null & delete this.
@@ -3272,13 +3336,15 @@ public class LauncherModel extends BroadcastReceiver {
         // TODO: If there's an explicit component and we can't install that, delete it.
 
         info.title = c.getString(titleIndex);
+        String packageName = c.getString(iconPackageIndex);
+        PackageManager packageManager = context.getPackageManager();
+
+        info.disabled = isPackageDisabled(packageManager, packageName);
 
         int iconType = c.getInt(iconTypeIndex);
         switch (iconType) {
         case LauncherSettings.Favorites.ICON_TYPE_RESOURCE:
-            String packageName = c.getString(iconPackageIndex);
             String resourceName = c.getString(iconResourceIndex);
-            PackageManager packageManager = context.getPackageManager();
             info.customIcon = false;
             // the resource
             try {
@@ -3437,6 +3503,7 @@ public class LauncherModel extends BroadcastReceiver {
         }
 
         final ShortcutInfo info = new ShortcutInfo();
+        info.disabled = !isValidPackageComponent(context.getPackageManager(), data.getComponent());
 
         if (icon == null) {
             if (fallbackIcon != null) {
@@ -3458,10 +3525,6 @@ public class LauncherModel extends BroadcastReceiver {
 
     boolean queueIconToBeChecked(HashMap<Object, byte[]> cache, ShortcutInfo info, Cursor c,
             int iconIndex) {
-        // If apps can't be on SD, don't even bother.
-        if (!mAppsCanBeOnRemoveableStorage) {
-            return false;
-        }
         // If this icon doesn't have a custom icon, check to see
         // what's stored in the DB, and if it doesn't match what
         // we're going to show, store what we are going to show back
