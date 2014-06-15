@@ -98,6 +98,11 @@ public class ItemInfo {
     CharSequence title;
 
     /**
+     * Indicates that the component or application of item is disabled
+     */
+    boolean disabled;
+
+    /**
      * The position of the item in a drag-and-drop operation.
      */
     int[] dropPos = null;
@@ -114,6 +119,7 @@ public class ItemInfo {
         screenId = info.screenId;
         itemType = info.itemType;
         container = info.container;
+        disabled = info.disabled;
         // tempdebug:
         LauncherModel.checkItemInfo(this);
     }
@@ -182,6 +188,6 @@ public class ItemInfo {
     public String toString() {
         return "Item(id=" + this.id + " type=" + this.itemType + " container=" + this.container
             + " screen=" + screenId + " cellX=" + cellX + " cellY=" + cellY + " spanX=" + spanX
-            + " spanY=" + spanY + " dropPos=" + dropPos + ")";
+            + " spanY=" + spanY + " dropPos=" + dropPos + " disabled=" + disabled + ")";
     }
 }

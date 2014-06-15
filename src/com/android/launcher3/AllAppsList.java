@@ -147,7 +147,16 @@ class AllAppsList {
                         info.activityInfo.applicationInfo.packageName,
                         info.activityInfo.name);
                 if (applicationInfo == null) {
-                    add(new AppInfo(context.getPackageManager(), info, mIconCache, null));
+                    AppInfo appInfo = new AppInfo(context.getPackageManager(),
+                            info, mIconCache, null);
+                    if (mAppFilter != null && !mAppFilter.shouldShowApp(appInfo.componentName)) {
+                        return;
+                    }
+                    if (findActivity(data, appInfo.componentName)) {
+                        return;
+                    }
+                    data.add(appInfo);
+                    modified.add(appInfo);
                 } else {
                     mIconCache.remove(applicationInfo.componentName);
                     mIconCache.getTitleAndIcon(applicationInfo, info, null);
