@@ -4803,8 +4803,11 @@ public class Workspace extends SmoothPagedView
                 ShortcutInfo shortcutInfo = (ShortcutInfo) info;
                 BubbleTextView shortcut = (BubbleTextView) child;
                 shortcutInfo.restore();
-                shortcutInfo.updateIcon(mIconCache);
-                shortcutInfo.title = appInfo.title.toString();
+                shortcutInfo.disabled = appInfo.disabled;
+                if (!shortcutInfo.disabled) {
+                    shortcutInfo.updateIcon(mIconCache);
+                    shortcutInfo.title = appInfo.title.toString();
+                }
                 shortcut.applyFromShortcutInfo(shortcutInfo, mIconCache);
             }
         }
