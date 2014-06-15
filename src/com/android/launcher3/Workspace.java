@@ -337,7 +337,6 @@ public class Workspace extends SmoothPagedView
 
         mLauncher = (Launcher) context;
         final Resources res = getResources();
-
         mFadeInAdjacentScreens = false;
         mWallpaperManager = WallpaperManager.getInstance(context);
 
@@ -1620,6 +1619,12 @@ public class Workspace extends SmoothPagedView
                     float scrollProgress = getScrollProgress(screenCenter, child, i);
                     float alpha = 1 - Math.abs(scrollProgress);
                     child.getShortcutsAndWidgets().setAlpha(alpha);
+                    if (!mIsDragOccuring && !mShowOutlines) {
+                        child.setBackgroundAlphaMultiplier(
+                                backgroundAlphaInterpolator(Math.abs(scrollProgress)));
+                    } else {
+                        child.setBackgroundAlphaMultiplier(1f);
+                    }
                 }
             }
         }
