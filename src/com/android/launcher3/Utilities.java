@@ -24,6 +24,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Matrix;
@@ -357,5 +358,23 @@ public final class Utilities {
                     ". Make sure to create a MAIN intent-filter for the corresponding activity " +
                     "or use the exported attribute for this activity.", e);
         }
+    }
+
+    public static Bitmap createDisabledIconEffect(Bitmap src) {
+        final int width = src.getWidth();
+        final int height = src.getHeight();
+
+        Bitmap dst = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(dst);
+        Paint paint = new Paint();
+        ColorMatrix cm = new ColorMatrix();
+        cm.setSaturation(0);
+        ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
+        paint.setColorFilter(f);
+        paint.setColor(Color.GRAY);
+        paint.setAlpha(125);
+        c.drawBitmap(src, 0, 0, paint);
+
+        return dst;
     }
 }
