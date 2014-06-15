@@ -60,6 +60,7 @@ class ShortcutInfo extends ItemInfo {
      * The application icon.
      */
     private Bitmap mIcon;
+    private Bitmap mDisabledIcon;
 
     long firstInstallTime;
     int flags = 0;
@@ -109,7 +110,11 @@ class ShortcutInfo extends ItemInfo {
             iconResource.packageName = info.iconResource.packageName;
             iconResource.resourceName = info.iconResource.resourceName;
         }
+        disabled = info.disabled;
         mIcon = info.mIcon; // TODO: should make a copy here.  maybe we don't need this ctor at all
+        if (disabled) {
+            updateDisabledIcon();
+        }
         customIcon = info.customIcon;
         initFlagsAndFirstInstallTime(
                 getPackageInfo(context, intent.getComponent().getPackageName()));
@@ -143,17 +148,25 @@ class ShortcutInfo extends ItemInfo {
 
     public void setIcon(Bitmap b) {
         mIcon = b;
+        updateDisabledIcon();
     }
 
     public Bitmap getIcon(IconCache iconCache) {
         if (mIcon == null && itemType != LauncherSettings.Favorites.ITEM_TYPE_ALLAPPS) {
             updateIcon(iconCache);
         }
-        return mIcon;
+        if (disabled && (mDisabledIcon == null &&
+                itemType != LauncherSettings.Favorites.ITEM_TYPE_ALLAPPS)) {
+            updateDisabledIcon();
+        }
+        return disabled ? mDisabledIcon : mIcon;
     }
 
     public void updateIcon(IconCache iconCache) {
         mIcon = iconCache.getIcon(intent);
+        if (disabled) {
+            updateDisabledIcon();
+        }
         usingFallbackIcon = iconCache.isDefaultIcon(mIcon);
     }
 
@@ -218,6 +231,13 @@ class ShortcutInfo extends ItemInfo {
             Log.d(tag, "   title=\"" + info.title + " icon=" + info.mIcon
                     + " customIcon=" + info.customIcon);
         }
+    }
+
+    private void updateDisabledIcon() {
+        if (mDisabledIcon != null) {
+            mDisabledIcon.recycle();
+        }
+        mDisabledIcon = Utilities.createDisabledIconEffect(mIcon);
     }
 }
 
