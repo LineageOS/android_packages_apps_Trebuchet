@@ -127,7 +127,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
     protected LauncherScroller mScroller;
     private Interpolator mDefaultInterpolator;
     private VelocityTracker mVelocityTracker;
-    private int mPageSpacing = 0;
 
     private float mParentDownMotionX;
     private float mParentDownMotionY;
@@ -829,13 +828,14 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         // NOTE: We multiply by 2f to account for the fact that depending on the offset of the
         // viewport, we can be at most one and a half screens offset once we scale down
         DisplayMetrics dm = getResources().getDisplayMetrics();
-        int maxSize = Math.max(dm.widthPixels + mInsets.left + mInsets.right,
-                dm.heightPixels + mInsets.top + mInsets.bottom);
+        int maxSize = Math.max(dm.widthPixels, dm.heightPixels + mInsets.top + mInsets.bottom);
 
         int parentWidthSize = (int) (2f * maxSize);
         int parentHeightSize = (int) (2f * maxSize);
         int scaledWidthSize, scaledHeightSize;
         if (mUseMinScale) {
+            parentWidthSize = (int) (1.5f * maxSize);
+            parentHeightSize = maxSize;
             scaledWidthSize = (int) (parentWidthSize / mMinScale);
             scaledHeightSize = (int) (parentHeightSize / mMinScale);
         } else {
@@ -895,17 +895,21 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
                         childHeightMode = MeasureSpec.EXACTLY;
                     }
 
-                    childWidth = getViewportWidth() - horizontalPadding
-                            - mInsets.left - mInsets.right;
-                    childHeight = getViewportHeight() - verticalPadding
-                            - mInsets.top - mInsets.bottom;
+                    childWidth = widthSize - horizontalPadding;
+                    childHeight = heightSize - verticalPadding - mInsets.top - mInsets.bottom;
                     mNormalChildHeight = childHeight;
+
                 } else {
                     childWidthMode = MeasureSpec.EXACTLY;
                     childHeightMode = MeasureSpec.EXACTLY;
 
-                    childWidth = getViewportWidth() - mInsets.left - mInsets.right;
-                    childHeight = getViewportHeight();
+                    if (mUseMinScale) {
+                        childWidth = getViewportWidth();
+                        childHeight = getViewportHeight();
+                    } else {
+                        childWidth = widthSize - getPaddingLeft() - getPaddingRight();
+                        childHeight = heightSize - getPaddingTop() - getPaddingBottom();
+                    }
                 }
 
                 final int childWidthMeasureSpec =
@@ -927,6 +931,8 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         if (DEBUG) Log.d(TAG, "PagedView.onLayout()");
         final int childCount = getChildCount();
 
+        int screenWidth = getViewportWidth();
+
         int offsetX = getViewportOffsetX();
         int offsetY = getViewportOffsetY();
 
@@ -941,10 +947,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
 
         int verticalPadding = getPaddingTop() + getPaddingBottom();
 
-        LayoutParams lp = (LayoutParams) getChildAt(startIndex).getLayoutParams();
-        LayoutParams nextLp;
-
-        int childLeft = offsetX + (lp.isFullScreenPage ? 0 : getPaddingLeft());
+        int childLeft = offsetX + (screenWidth - getChildWidth(startIndex)) / 2;
         if (mPageScrolls == null || getChildCount() != mChildCountOnLastLayout) {
             mPageScrolls = new int[getChildCount()];
         }
@@ -952,7 +955,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         for (int i = startIndex; i != endIndex; i += delta) {
             final View child = getPageAt(i);
             if (child.getVisibility() != View.GONE) {
-                lp = (LayoutParams) child.getLayoutParams();
+                LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 int childTop;
                 if (lp.isFullScreenPage) {
                     childTop = offsetY;
@@ -970,26 +973,16 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
                 child.layout(childLeft, childTop,
                         childLeft + child.getMeasuredWidth(), childTop + childHeight);
 
-                int scrollOffsetLeft = lp.isFullScreenPage ? 0 : getPaddingLeft();
-                mPageScrolls[i] = childLeft - scrollOffsetLeft - offsetX;
+                // We assume the left and right padding are equal, and hence center the pages
+                // horizontally
+                int scrollOffset = (getViewportWidth() - childWidth) / 2;
+                mPageScrolls[i] = childLeft - scrollOffset - offsetX;
 
-                int pageGap = mPageSpacing;
-                int next = i + delta;
-                if (next != endIndex) {
-                    nextLp = (LayoutParams) getPageAt(next).getLayoutParams();
-                } else {
-                    nextLp = null;
+                if (i != endIndex - delta) {
+                    childLeft += childWidth + scrollOffset;
+                    int nextScrollOffset = (getViewportWidth() - getChildWidth(i + delta)) / 2;
+                    childLeft += nextScrollOffset;
                 }
-
-                // Prevent full screen pages from showing in the viewport
-                // when they are not the current page.
-                if (lp.isFullScreenPage) {
-                    pageGap = getPaddingLeft();
-                } else if (nextLp != null && nextLp.isFullScreenPage) {
-                    pageGap = getPaddingRight();
-                }
-
-                childLeft += childWidth + pageGap;
             }
         }
 
@@ -1055,11 +1048,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
 
     public void setFadeInAdjacentScreens(boolean fade) {
         mFadeInAdjacentScreens = fade;
-    }
-
-    public void setPageSpacing(int pageSpacing) {
-        mPageSpacing = pageSpacing;
-        requestLayout();
     }
 
     protected void screenScrolled(int screenCenter) {
@@ -1422,22 +1410,24 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
      * Return true if a tap at (x, y) should trigger a flip to the previous page.
      */
     protected boolean hitsPreviousPage(float x, float y) {
+        int offset = (getViewportWidth() - getChildWidth(mCurrentPage)) / 2;
         if (isLayoutRtl()) {
             return (x > (getViewportOffsetX() + getViewportWidth() -
-                    getPaddingRight() - mPageSpacing));
+                    offset));
         }
-        return (x < getViewportOffsetX() + getPaddingLeft() + mPageSpacing);
+        return (x < getViewportOffsetX() + offset);
     }
 
     /**
      * Return true if a tap at (x, y) should trigger a flip to the next page.
      */
     protected boolean hitsNextPage(float x, float y) {
+        int offset = (getViewportWidth() - getChildWidth(mCurrentPage)) / 2;
         if (isLayoutRtl()) {
-            return (x < getViewportOffsetX() + getPaddingLeft() + mPageSpacing);
+            return (x < getViewportOffsetX() + offset);
         }
         return  (x > (getViewportOffsetX() + getViewportWidth() -
-                getPaddingRight() - mPageSpacing));
+                offset));
     }
 
     /** Returns whether x and y originated within the buffered viewport */
@@ -1632,21 +1622,9 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
     protected float getScrollProgress(int screenCenter, View v, int page) {
         final int halfScreenSize = getViewportWidth() / 2;
 
+        int offset = (getViewportWidth() - getChildWidth(page)) / 2;
+        int totalDistance = v.getMeasuredWidth() + offset;
         int delta = screenCenter - (getScrollForPage(page) + halfScreenSize);
-        int count = getChildCount();
-
-        final int totalDistance;
-
-        int adjacentPage = page + 1;
-        if ((delta < 0 && !isLayoutRtl()) || (delta > 0 && isLayoutRtl())) {
-            adjacentPage = page - 1;
-        }
-
-        if (adjacentPage < 0 || adjacentPage > count - 1) {
-            totalDistance = v.getMeasuredWidth() + mPageSpacing;
-        } else {
-            totalDistance = Math.abs(getScrollForPage(adjacentPage) - getScrollForPage(page));
-        }
 
         float scrollProgress = delta / (totalDistance * 1.0f);
         scrollProgress = Math.min(scrollProgress, getMaxScrollProgress());
@@ -1669,13 +1647,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
             return 0;
         } else {
             View child = getChildAt(index);
-
-            int scrollOffset = 0;
-            LayoutParams lp = (LayoutParams) child.getLayoutParams();
-            if (!lp.isFullScreenPage) {
-                scrollOffset = isLayoutRtl() ? getPaddingRight() : getPaddingLeft();
-            }
-
+            int scrollOffset = (getViewportWidth() - child.getMeasuredWidth()) / 2;
             int baselineX = mPageScrolls[index] + scrollOffset + getViewportOffsetX();
             return (int) (child.getX() - baselineX);
         }
@@ -2759,9 +2731,10 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
                     int newX = 0;
                     if (slideFromLeft) {
                         if (i == 0) {
+                            int pageSpace = (getViewportWidth() - getChildWidth(i)) / 2;
                             // Simulate the page being offscreen with the page spacing
                             oldX = getViewportOffsetX() + getChildOffset(i) - getChildWidth(i)
-                                    - mPageSpacing;
+                                    - pageSpace;
                         } else {
                             oldX = getViewportOffsetX() + getChildOffset(i - 1);
                         }

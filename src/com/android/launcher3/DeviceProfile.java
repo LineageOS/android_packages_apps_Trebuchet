@@ -721,7 +721,6 @@ public class DeviceProfile {
         Rect padding = getWorkspacePadding(orientation);
         workspace.setLayoutParams(lp);
         workspace.setPadding(padding.left, padding.top, padding.right, padding.bottom);
-        workspace.setPageSpacing(getWorkspacePageSpacing(orientation));
 
         // Layout the hotseat
         View hotseat = launcher.findViewById(R.id.hotseat);
