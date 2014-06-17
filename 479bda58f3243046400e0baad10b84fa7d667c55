@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_82aa1b6f",
+        "filename": "src/com/android/launcher3/GelIntegrationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-17T12:58:34Z",
+      "side": 1,
+      "message": "Don\u0027t think you need this line any more.",
+      "revId": "479bda58f3243046400e0baad10b84fa7d667c55",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
