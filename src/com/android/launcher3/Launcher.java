@@ -259,6 +259,7 @@ public class Launcher extends Activity
     private View mWeightWatcher;
 
     private TransitionEffectsFragment mTransitionEffectsFragment;
+    private DynamicGridSizeFragment mDynamicGridSizeFragment;
     private LauncherClings mLauncherClings;
     protected HiddenFolderFragment mHiddenFolderFragment;
 
@@ -1160,6 +1161,11 @@ public class Launcher extends Activity
         if (f != null) {
             mTransitionEffectsFragment.setEffect();
         }
+        f = getFragmentManager().findFragmentByTag(
+                DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
+        if (f != null) {
+            mDynamicGridSizeFragment.setSize();
+        }
         Fragment f1 = getFragmentManager().findFragmentByTag(
                 HiddenFolderFragment.HIDDEN_FOLDER_FRAGMENT);
         if (f1 != null && !mHiddenFolderAuth) {
@@ -1271,13 +1277,36 @@ public class Launcher extends Activity
         popupMenu.show();
     }
 
+    public void onClickDynamicGridSizeButton() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        mDynamicGridSizeFragment = new DynamicGridSizeFragment();
+        fragmentTransaction.replace(R.id.launcher, mDynamicGridSizeFragment,
+                DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
+        fragmentTransaction.commit();
+    }
+
+    public void setDynamicGridSize(DeviceProfile.GridSize size) {
+        SettingsProvider.putInt(this,
+                SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, size.getValue());
+
+        updateDynamicGrid();
+        mOverviewSettingsPanel.notifyDataSetInvalidated();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction
+                .setCustomAnimations(0, R.anim.exit_out_right);
+        fragmentTransaction
+                .remove(mDynamicGridSizeFragment).commit();
+
+    }
+
     public void onClickTransitionEffectButton(View v, final boolean pageOrDrawer) {
         Bundle bundle = new Bundle();
         bundle.putBoolean(TransitionEffectsFragment.PAGE_OR_DRAWER_SCROLL_SELECT,
                 pageOrDrawer);
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
 
         mTransitionEffectsFragment = new TransitionEffectsFragment();
         mTransitionEffectsFragment.setArguments(bundle);
@@ -2629,8 +2658,12 @@ public class Launcher extends Activity
         } else if (mWorkspace.isInOverviewMode()) {
             Fragment f = getFragmentManager().findFragmentByTag(
                     TransitionEffectsFragment.TRANSITION_EFFECTS_FRAGMENT);
+            Fragment f2 = getFragmentManager().findFragmentByTag(
+                    DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
             if (f != null) {
                 mTransitionEffectsFragment.setEffect();
+            } else if (f2 != null) {
+                mDynamicGridSizeFragment.setSize();
             } else {
                 mWorkspace.exitOverviewMode(true);
             }

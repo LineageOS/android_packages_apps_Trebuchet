@@ -112,4 +112,6 @@
 
     <!-- Settings Pane dimen -->
     <dimen name="settings_pane_handle">48dp</dimen>
+
+    <dimen name="dialog_padding">10dp</dimen>
 </resources>
