@@ -16,6 +16,24 @@
       "revId": "479bda58f3243046400e0baad10b84fa7d667c55",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_42c76345",
+        "filename": "src/com/android/launcher3/GelIntegrationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-06-17T13:01:35Z",
+      "side": 1,
+      "message": "Well, the hope is that by setting it to 0 it stops any animations from occurring at all. I want all the animation to be contained in the swiping that is already being handled now in Trebuchet. If there are further animations after you have scrolled into the intermediate \"Cyanogen Home\" activity, it looks strange. \n\nHowever, in practice, I\u0027m not sure if this line is having an effect, so I will verify that.",
+      "parentUuid": "ba0121b8_82aa1b6f",
+      "revId": "479bda58f3243046400e0baad10b84fa7d667c55",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
