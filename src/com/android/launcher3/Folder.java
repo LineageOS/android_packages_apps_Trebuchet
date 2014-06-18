@@ -1209,7 +1209,10 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     }
 
     private void replaceFolderWithFinalItem() {
-        // Add the last remaining child to the workspace in place of the folder
+        if (mInfo.hidden) {
+            return;
+        }
+        // Add the last  remaining child to the workspace in place of the folder
         Runnable onCompleteRunnable = new Runnable() {
             @Override
             public void run() {
