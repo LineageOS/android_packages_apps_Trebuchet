@@ -60,11 +60,13 @@ public class HomeWrapper {
         mInstance = instance;
         cachedMethods = new SparseArray<Method>(M_LAST_ID);
 
+
         final String sha1 = createDigest(cls);
         if (!sha1.equals(Home.SIGNATURE)) {
             throw new SecurityException("The remote Home app doesn't implement " +
                     "the current Home Host Protocol. Signature: " + sha1);
         }
+
 
         // Obtain the app flags
         mNotificationFlags = getNotificationFlags();
@@ -74,6 +76,20 @@ public class HomeWrapper {
     /** @see Home#onStart(Context) **/
     public void onStart() {
         invokeVoidContextMethod(M_ID_ONSTART, "onStart");
+    }
+
+    /**
+     * Load and show the content of this home app if true,
+     * hide and remove providers if false.
+     * @param showContent Should content be shown
+     */
+    public void setShowContent(boolean showContent) {
+        try {
+            Method method = mClass.getMethod("setShowContent", Context.class, boolean.class);
+            method.invoke(mInstance, mContext, showContent);
+        } catch (ReflectiveOperationException ex) {
+            throw new SecurityException(ex);
+        }
     }
 
     /** @see Home#onDestroy(Context) **/
