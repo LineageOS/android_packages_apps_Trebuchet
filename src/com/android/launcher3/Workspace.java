@@ -1307,8 +1307,6 @@ public class Workspace extends SmoothPagedView
         int customPageIndex = getPageIndexForScreenId(CUSTOM_CONTENT_SCREEN_ID);
         if (hasCustomContent() && whichPage == customPageIndex && !mCustomContentShowing) {
             if(!isInOverviewMode()) {
-                mCustomContentShowing = true;
-                // Start Google Now and register the gesture to return to Trebuchet
                 mLauncher.onCustomContentLaunch();
             }
         }
@@ -1830,9 +1828,12 @@ public class Workspace extends SmoothPagedView
         // mCustomContentShowing can be lost if the Activity is recreated,
         // So make sure it is set to the right value.
         mCustomContentShowing = mCustomContentShowing
-                                || (customPageIndex == getCurrentPage()
-                                    && hasCustomContent());
-        if (mCustomContentShowing && mLauncher.isGelIntegrationEnabled()) {
+                                || (((customPageIndex == getCurrentPage())
+                                     || (customPageIndex == getNextPage()))
+                                && hasCustomContent());
+        if (mCustomContentShowing
+            && (mLauncher.getCustomContentMode() == Launcher.CustomContentMode.GEL)
+            && !isInOverviewMode()) {
             moveToScreen((customPageIndex + 1), true);
         }
     }
@@ -4856,7 +4857,7 @@ public class Workspace extends SmoothPagedView
         int idx = getPageIndexForScreenId(mDefaultScreenId);
         int ccIndex = getPageIndexForScreenId(CUSTOM_CONTENT_SCREEN_ID);
         if(hasCustomContent() && (idx == ccIndex || idx == -1)
-           && mLauncher.isGelIntegrationEnabled()) {
+           && !isInOverviewMode()) {
             idx = 1;
         }
         moveToScreen(idx, animate);
