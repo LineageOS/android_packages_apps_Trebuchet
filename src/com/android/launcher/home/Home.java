@@ -65,7 +65,7 @@ public interface Home {
      * </pre><br/>
      * DO NOT MODIFY!
      */
-    public static final String SIGNATURE = "5/A6Mxkz8gHHzzVf4qZR+hiSOAw=";
+    public static final String SIGNATURE = "BYo+7Lfo2nRbtOUo8sA55Ot/FUc=";
 
     /**
      * Defines the name of the metadata used to declared the full qualified Home stub class
@@ -104,6 +104,13 @@ public interface Home {
      * @param context the current {@link Context} of the host launcher.
      */
     void onStart(Context context);
+
+    /**
+     * Load and show the content of this home app if true,
+     * hide and remove providers if false.
+     * @param showContent Should content be shown
+     */
+    void setShowContent(boolean showContent);
 
     /**
      * Invoked when the <code>Home</code> app should be destroy.<br/>
