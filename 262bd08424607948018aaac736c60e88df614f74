@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_a476473c",
+        "filename": "res/values/attrs.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-21T12:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_e9edba8f",
+      "revId": "262bd08424607948018aaac736c60e88df614f74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_e4367fb3",
         "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_8473434d",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-21T12:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_e4367fb3",
+      "revId": "262bd08424607948018aaac736c60e88df614f74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_09cf4eb1",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-06-20T19:44:20Z",
       "side": 1,
       "message": "Shouldn\u0027t this be f2 as well (to match below)?",
+      "revId": "262bd08424607948018aaac736c60e88df614f74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_44792b2f",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-21T12:58:00Z",
+      "side": 1,
+      "message": "Local variables, scope doesn\u0027t matter in this case.",
+      "parentUuid": "ba0121b8_09cf4eb1",
       "revId": "262bd08424607948018aaac736c60e88df614f74",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
