@@ -16,6 +16,24 @@
       "revId": "f7cccfb1f83cd0409556ce3c0045402dcc304f0e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_1eb93bea",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-24T09:02:20Z",
+      "side": 1,
+      "message": "If it cannot find a corresponding ShortcutInfo it will return null. The remove call in FolderInfo seems capable of handling a null parameter.",
+      "parentUuid": "ba0121b8_bef12fd0",
+      "revId": "f7cccfb1f83cd0409556ce3c0045402dcc304f0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
