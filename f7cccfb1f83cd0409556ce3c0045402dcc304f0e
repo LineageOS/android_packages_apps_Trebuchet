@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_bef12fd0",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2014-06-24T08:50:31Z",
+      "side": 1,
+      "message": "Will getShortcutForComponent possibly ever return null for whatever reason?",
+      "revId": "f7cccfb1f83cd0409556ce3c0045402dcc304f0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
