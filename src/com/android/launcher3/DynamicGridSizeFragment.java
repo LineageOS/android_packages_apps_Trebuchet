@@ -135,7 +135,7 @@ public class DynamicGridSizeFragment extends Fragment implements NumberPicker.On
         int rows = mCustomGridRows == 0 ? (int) grid.numRows : mCustomGridRows;
         int columns = mCustomGridColumns == 0 ? (int) grid.numColumns : mCustomGridColumns;
 
-        String text = rows + " x " + columns;
+        String text = rows + " \u00d7 " + columns;
 
         Bitmap bm = BitmapFactory.decodeResource(getResources(),
                 drawableId).copy(Bitmap.Config.ARGB_8888, true);
@@ -318,9 +318,10 @@ public class DynamicGridSizeFragment extends Fragment implements NumberPicker.On
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS, grid.numRowsBase);
                 int columns = SettingsProvider.getIntCustomDefault(getActivity(),
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS, grid.numColumnsBase);
-                state += "(" + rows + "x" + columns + ")";
+                String gridSize =  rows + " " + "\u00d7" + " " + columns;
 
-                textView.setText(state);
+                textView.setText(getString(R.string.grid_size_custom_label_in_list,
+						state, gridSize));
             }
 
             convertView.setOnClickListener(mSettingsItemListener);
