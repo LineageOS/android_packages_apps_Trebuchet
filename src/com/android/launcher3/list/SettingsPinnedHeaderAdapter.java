@@ -208,7 +208,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS, 0);
                 int columns = SettingsProvider.getIntCustomDefault(mLauncher,
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS, 0);
-                state += "(" + rows + "x" + columns + ")";
+                state += "(" + rows + "\u00d7" + columns + ")";
                 break;
         }
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
