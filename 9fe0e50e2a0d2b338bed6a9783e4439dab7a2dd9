@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_94ad2734",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-06-27T00:33:16Z",
+      "side": 1,
+      "message": "Isn\u0027t it possible to draw the grid image dynamically so the user always gets displayed the correct grid preview? That would look much better IMHO.",
+      "revId": "9fe0e50e2a0d2b338bed6a9783e4439dab7a2dd9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b4b02b8d",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-06-27T00:33:16Z",
+      "side": 1,
+      "message": "IMHO it would look betetter with spaces between the numbers and the multiplication sign too.\n\nCustom (5x5)   \u003d\u003e   Cutsom (5 x 5)",
+      "revId": "9fe0e50e2a0d2b338bed6a9783e4439dab7a2dd9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
