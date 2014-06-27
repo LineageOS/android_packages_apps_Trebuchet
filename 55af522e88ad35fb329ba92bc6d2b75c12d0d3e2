@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_7435f344",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2014-06-27T00:03:11Z",
+      "side": 1,
+      "message": "I think adding a space infront of the ( would look better.",
+      "revId": "55af522e88ad35fb329ba92bc6d2b75c12d0d3e2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
