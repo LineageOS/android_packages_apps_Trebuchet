@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_34637b1c",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7164
+      },
+      "writtenOn": "2014-06-27T00:38:06Z",
+      "side": 1,
+      "message": "I agree. Dynamic previews would be nice. But I don\u0027t have a enough skill to carry out it.",
+      "parentUuid": "ba0121b8_94ad2734",
+      "revId": "9fe0e50e2a0d2b338bed6a9783e4439dab7a2dd9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_b4b02b8d",
         "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
         "patchSetId": 2
