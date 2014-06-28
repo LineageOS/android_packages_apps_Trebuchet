@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_a0d105fe",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1053
+      },
+      "writtenOn": "2014-06-28T05:16:56Z",
+      "side": 1,
+      "message": "Please use spaces instead of tabs.",
+      "revId": "29bafa9ce9345ce9351a5580c04c92a3759e2979",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
