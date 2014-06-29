@@ -16,6 +16,24 @@
       "revId": "65627fc5a2881cae391d2858440a07c43999a275",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_b76f8691",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 7164
+      },
+      "writtenOn": "2014-06-29T18:51:32Z",
+      "side": 1,
+      "message": "I\u0027m afraid that someone misses a space character when he or she attempts to change here.\nI\u0027ll fix line 138.",
+      "parentUuid": "ba0121b8_575eeae9",
+      "revId": "65627fc5a2881cae391d2858440a07c43999a275",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
