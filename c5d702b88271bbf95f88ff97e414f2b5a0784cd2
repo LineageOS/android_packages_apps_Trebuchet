@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_572c2a4a",
+        "filename": "res/layout-sw600dp/dynamic_grid_size_screen.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-29T19:09:08Z",
+      "side": 1,
+      "message": "From what I can tell the layout_width and the layout_height are the only changes from the file that exists in res/layout. Maybe it makes more sense to make this a dimens entry and add the value to the appropriate dimens.xml files instead?",
+      "revId": "c5d702b88271bbf95f88ff97e414f2b5a0784cd2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
