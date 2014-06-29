@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_575eeae9",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-06-29T18:38:33Z",
+      "side": 1,
+      "message": "Why is it:\n\" \" + \"(\" \nand \" \" + \"\\u00d7\" + \" \"?\n\nThese should either be consolidated into a single string constant (to be used with line: 138) or be condensed into one expression.",
+      "revId": "65627fc5a2881cae391d2858440a07c43999a275",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
