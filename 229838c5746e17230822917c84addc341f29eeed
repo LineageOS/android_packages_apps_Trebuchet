@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_e9a3e19c",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-02T21:28:14Z",
+      "side": 1,
+      "message": "It\u0027s ok to omit the \u0027m\u0027 for public fields: http://source.android.com/source/code-style.html#follow-field-naming-conventions\n\nPersonally, I think it makes sense to omit it here, as those classes are used like C structs.",
+      "parentUuid": "ba0121b8_4e4f7392",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_0e91fbf0",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 1
