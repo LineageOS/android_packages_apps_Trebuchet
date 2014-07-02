@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba0121b8_2e94bfe0",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2014-07-02T07:17:34Z",
+      "side": 1,
+      "message": "List\u003cPair\u003e  isn\u0027t the same than a Map? But with a map you can check if an key or object exists and iterate over both.",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_ee02c73d",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 1
@@ -31,6 +48,40 @@
       "side": 1,
       "message": "I didn\u0027t add them (just reordered and expanded the full package import), but I can clean it up nevertheless.",
       "parentUuid": "ba0121b8_ee02c73d",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0e91fbf0",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2014-07-02T07:17:34Z",
+      "side": 1,
+      "message": "No \"this\" needed then",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_6ebcf76c",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2014-07-02T07:17:34Z",
+      "side": 1,
+      "message": "Same here",
       "revId": "229838c5746e17230822917c84addc341f29eeed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
