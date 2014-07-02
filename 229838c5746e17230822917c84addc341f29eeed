@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_ee02c73d",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-07-02T06:46:09Z",
+      "side": 1,
+      "message": "Seems some of the imports that were added aren\u0027t being used. Can we clean these up?",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
