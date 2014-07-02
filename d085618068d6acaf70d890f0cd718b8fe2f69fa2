@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_096a9580",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2275,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-07-02T13:45:40Z",
+      "side": 1,
+      "message": "to hole PageScrolls? typo?",
+      "revId": "d085618068d6acaf70d890f0cd718b8fe2f69fa2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_a90f29e0",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-07-02T13:45:40Z",
+      "side": 1,
+      "message": "System.arrayCopy()?\n\nor list.clone()",
+      "revId": "d085618068d6acaf70d890f0cd718b8fe2f69fa2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
