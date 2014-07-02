@@ -16,6 +16,24 @@
       "revId": "229838c5746e17230822917c84addc341f29eeed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_2efddf3a",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-02T06:47:53Z",
+      "side": 1,
+      "message": "I didn\u0027t add them (just reordered and expanded the full package import), but I can clean it up nevertheless.",
+      "parentUuid": "ba0121b8_ee02c73d",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
