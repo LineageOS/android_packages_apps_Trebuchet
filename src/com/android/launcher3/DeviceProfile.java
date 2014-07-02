@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,7 +89,7 @@ public class DeviceProfile {
                     return Condensed;
                 case 3:
                     return Custom;
-                default :
+                default:
                     return Comfortable;
             }
         }
@@ -157,7 +158,6 @@ public class DeviceProfile {
     int searchBarHeightPx;
     int pageIndicatorHeightPx;
 
-
     boolean searchBarVisible;
 
     float dragViewScale;
@@ -225,6 +225,7 @@ public class DeviceProfile {
             points.add(new DeviceProfileQuery(p.minWidthDps, p.minHeightDps, p.numRows));
         }
         numRows = Math.round(invDistWeightedInterpolate(minWidth, minHeight, points));
+
         numRowsBase = (int) numRows;
         int gridResize = SettingsProvider.getIntCustomDefault(context,
                 SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, 0);
@@ -237,12 +238,14 @@ public class DeviceProfile {
                 numRows = iTempNumberOfRows;
             }
         }
+
         // Interpolate the columns
         points.clear();
         for (DeviceProfile p : profiles) {
             points.add(new DeviceProfileQuery(p.minWidthDps, p.minHeightDps, p.numColumns));
         }
         numColumns = Math.round(invDistWeightedInterpolate(minWidth, minHeight, points));
+
         numColumnsBase = (int) numColumns;
         if (GridSize.getModeForValue(gridResize) != GridSize.Custom) {
             numColumns += gridResize;
@@ -253,6 +256,7 @@ public class DeviceProfile {
                 numColumns = iTempNumberOfColumns;
             }
         }
+
         // Interpolate the hotseat length
         points.clear();
         for (DeviceProfile p : profiles) {

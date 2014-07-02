@@ -183,6 +183,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         R.string.sort_mode_install_time);
                 break;
         }
+
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
     }
 
@@ -210,6 +211,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                 state = rows + " " + "\u00d7" + " " + columns;
                 break;
         }
+
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
     }
 
@@ -232,7 +234,6 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
 
         @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
             String value = ((TextView) v.findViewById(R.id.item_name)).getText().toString();
             Resources res = mLauncher.getResources();
 
@@ -283,10 +284,8 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                 intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                         OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                 mLauncher.startActivity(intent);
-            } else if (value.equals(res
-                    .getString(R.string.scrolling_wallpaper))) {
-                onSettingsBooleanChanged(
-                        v,
+            } else if (value.equals(res.getString(R.string.scrolling_wallpaper))) {
+                onSettingsBooleanChanged(v,
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,
                         R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);
                 mLauncher.setUpdateDynamicGrid();
@@ -312,8 +311,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                     mLauncher.getWorkspace().updatePageScrollForCustomPage(!current);
                     mLauncher.setUpdateDynamicGrid();
                 }
-            } else if (value.equals(res
-                    .getString(R.string.grid_size_text))) {
+            } else if (value.equals(res.getString(R.string.grid_size_text))) {
                 mLauncher.onClickDynamicGridSizeButton();
             }
 
