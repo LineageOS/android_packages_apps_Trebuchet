@@ -183,6 +183,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         R.string.sort_mode_install_time);
                 break;
         }
+
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
     }
 
@@ -210,6 +211,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                 state = rows + " " + "\u00d7" + " " + columns;
                 break;
         }
+
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
     }
 
@@ -283,10 +285,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                 intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                         OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                 mLauncher.startActivity(intent);
-            } else if (value.equals(res.getString(R.string.protected_app_settings))) {
-
-            } else if (value.equals(res
-                    .getString(R.string.scrolling_wallpaper))) {
+            } else if (value.equals(res.getString(R.string.scrolling_wallpaper))) {
                 onSettingsBooleanChanged(
                         v,
                         SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,
@@ -314,8 +313,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                     mLauncher.getWorkspace().updatePageScrollForCustomPage(!current);
                     mLauncher.updateDynamicGrid();
                 }
-            } else if (value.equals(res
-                    .getString(R.string.grid_size_text))) {
+            } else if (value.equals(res.getString(R.string.grid_size_text))) {
                 mLauncher.onClickDynamicGridSizeButton();
             }
 

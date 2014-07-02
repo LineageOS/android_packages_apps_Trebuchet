@@ -1,5 +1,6 @@
 
 /*
+ * Copyright (C) 2014 CyanogenMod Project
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1300,17 +1301,13 @@ public class Launcher extends Activity
         mOverviewSettingsPanel.notifyDataSetInvalidated();
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction
-                .setCustomAnimations(0, R.anim.exit_out_right);
-        fragmentTransaction
-                .remove(mDynamicGridSizeFragment).commit();
+        fragmentTransaction.setCustomAnimations(0, R.anim.exit_out_right);
+        fragmentTransaction.remove(mDynamicGridSizeFragment).commit();
 
         mDarkPanel.setVisibility(View.VISIBLE);
-        ObjectAnimator anim = ObjectAnimator.ofFloat(
-                mDarkPanel, "alpha", 0.3f, 0.0f);
-        anim.start();
+        ObjectAnimator anim = ObjectAnimator.ofFloat(mDarkPanel, "alpha", 0.3f, 0.0f);
         anim.addListener(mAnimatorListener);
-
+        anim.start();
     }
 
     public void onClickTransitionEffectButton(View v, final boolean pageOrDrawer) {
