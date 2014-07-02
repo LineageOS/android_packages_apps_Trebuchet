@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_4e4f7392",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2014-07-02T08:18:50Z",
+      "side": 1,
+      "message": "mComponentName and mTitle (class members)",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_0e91fbf0",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 1
@@ -136,6 +153,24 @@
       "side": 1,
       "message": "What do you mean?",
       "parentUuid": "ba0121b8_6ebcf76c",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_ae444f74",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2014-07-02T08:18:50Z",
+      "side": 1,
+      "message": "I forgot to push the class members comment. What i mean is: mTitle, mIcon, mRemove and mPosition.",
+      "parentUuid": "ba0121b8_0ea8db1e",
       "revId": "229838c5746e17230822917c84addc341f29eeed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
