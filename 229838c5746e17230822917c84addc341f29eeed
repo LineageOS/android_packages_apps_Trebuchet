@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_8ebb4b72",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-02T07:42:31Z",
+      "side": 1,
+      "message": "It\u0027s not the same ;) List\u003cPair\u003e is sorted in addition order, Map is sorted in the natural order of the keys.",
+      "parentUuid": "ba0121b8_2e94bfe0",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_ee02c73d",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 1
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_2eab1f1f",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-02T07:42:31Z",
+      "side": 1,
+      "message": "Right, but I figured it looks more consistent that way; \u0027this\u0027 definitely is needed in line 323.",
+      "parentUuid": "ba0121b8_0e91fbf0",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_6ebcf76c",
         "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
         "patchSetId": 1
@@ -82,6 +118,24 @@
       "writtenOn": "2014-07-02T07:17:34Z",
       "side": 1,
       "message": "Same here",
+      "revId": "229838c5746e17230822917c84addc341f29eeed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_0ea8db1e",
+        "filename": "src/com/android/launcher3/HiddenFolderFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-02T07:42:31Z",
+      "side": 1,
+      "message": "What do you mean?",
+      "parentUuid": "ba0121b8_6ebcf76c",
       "revId": "229838c5746e17230822917c84addc341f29eeed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
