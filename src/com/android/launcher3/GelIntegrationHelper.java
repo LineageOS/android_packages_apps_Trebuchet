@@ -2,7 +2,9 @@ package com.android.launcher3;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.SearchManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.service.gesture.EdgeGestureManager;
 import com.android.internal.util.gesture.EdgeGesturePosition;
@@ -15,9 +17,6 @@ import java.util.List;
  * in CyanogenMod.
  */
 public class GelIntegrationHelper {
-    // The Intent for the search activity (resolves to Google Now when installed)
-    public final static String INTENT_ACTION_ASSIST = "android.intent.action.ASSIST";
-
     private static final String GEL_ACTIVITY = "com.google.android.velvet.ui.VelvetActivity";
     private static final String GEL_PACKAGE_NAME = "com.google.android.googlequicksearchbox";
 
@@ -79,8 +78,12 @@ public class GelIntegrationHelper {
         edgeGestureManager.updateEdgeGestureActivationListener(mEdgeGestureActivationListener,
                                                                edge);
 
-        // Start the Google Now Activity
-        Intent i = new Intent(INTENT_ACTION_ASSIST);
+        // Start the Global Search Activity
+        Intent i = new Intent();
+        final SearchManager searchManager =
+            (SearchManager) launcherActivity.getSystemService(Context.SEARCH_SERVICE);
+        ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
+        i.setComponent(globalSearchActivity);
         launcherActivity.startActivity(i);
         launcherActivity.overridePendingTransition(0, R.anim.exit_out_right);
     }
