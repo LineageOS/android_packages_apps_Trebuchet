@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_a99f2902",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2275,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-03T04:49:35Z",
+      "side": 1,
+      "message": "Yes, typo. Fixed.",
+      "parentUuid": "ba0121b8_096a9580",
+      "revId": "d085618068d6acaf70d890f0cd718b8fe2f69fa2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_a90f29e0",
         "filename": "src/com/android/launcher3/Workspace.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-02T13:45:40Z",
       "side": 1,
       "message": "System.arrayCopy()?\n\nor list.clone()",
+      "revId": "d085618068d6acaf70d890f0cd718b8fe2f69fa2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_e98921cc",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-03T04:49:35Z",
+      "side": 1,
+      "message": "I\u0027m trying to go from ArrayList\u003cInteger\u003e to int[] here. \n\nSystem.arrayCopy() is int[] -\u003e int[]\nlist.clone() is ArrayList\u003cInteger\u003e -\u003e ArrayList\u003cInteger\u003e\n\nThere might be a better way, but from my quick research, iterating over the list is the best way to convert an ArrayList to an array. This has lots of upvotes: http://stackoverflow.com/questions/718554/how-to-convert-an-arraylist-containing-integers-to-primitive-int-array.\n\nI tried writing this code to work with the array in place, but it ended up being hard to read and I kept making off by one errors, so I went with this ArrayList solution.",
+      "parentUuid": "ba0121b8_a90f29e0",
       "revId": "d085618068d6acaf70d890f0cd718b8fe2f69fa2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
