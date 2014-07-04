@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_bea3da9d",
+        "filename": "src/com/android/launcher3/DragLayer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-04T05:54:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_3ee98a1b",
+      "revId": "392abcb30e2f41dd649cb073df6ceca9309c4aac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_1eee4622",
         "filename": "src/com/android/launcher3/DragLayer.java",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba0121b8_9ea09692",
+        "filename": "src/com/android/launcher3/DragLayer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-04T05:54:57Z",
+      "side": 1,
+      "message": "Line breaks should occur after a comma, if both resulting lines will stay under 100 characters.\n\nhttp://www.oracle.com/technetwork/java/javase/documentation/codeconventions-136091.html#248",
+      "parentUuid": "ba0121b8_1eee4622",
+      "revId": "392abcb30e2f41dd649cb073df6ceca9309c4aac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba0121b8_7ef3020b",
         "filename": "src/com/android/launcher3/GelIntegrationHelper.java",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-03T18:04:23Z",
       "side": 1,
       "message": "final SearchManager searchManager \u003d\n        (SearchManager) launcherActivity.getSystemService(Context.SEARCH_SERVICE);",
+      "revId": "392abcb30e2f41dd649cb073df6ceca9309c4aac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba0121b8_fead5289",
+        "filename": "src/com/android/launcher3/GelIntegrationHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-04T05:54:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba0121b8_7ef3020b",
       "revId": "392abcb30e2f41dd649cb073df6ceca9309c4aac",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
