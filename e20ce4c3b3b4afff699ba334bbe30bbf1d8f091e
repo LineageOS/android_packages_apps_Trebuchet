@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_747cc172",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-07-05T23:57:42Z",
+      "side": 1,
+      "message": "While you\u0027re at it, I suggest converting this into an http://developer.android.com/reference/android/animation/AnimatorListenerAdapter.html",
+      "revId": "e20ce4c3b3b4afff699ba334bbe30bbf1d8f091e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
