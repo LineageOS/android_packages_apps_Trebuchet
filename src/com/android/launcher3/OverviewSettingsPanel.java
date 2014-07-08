@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
+
 import com.android.launcher3.list.PinnedHeaderListView;
 import com.android.launcher3.list.SettingsPinnedHeaderAdapter;
 
@@ -15,6 +16,8 @@ public class OverviewSettingsPanel {
     public static final String ANDROID_SETTINGS = "com.android.settings";
     public static final String ANDROID_PROTECTED_APPS =
             "com.android.settings.applications.ProtectedAppsActivity";
+    public static final String ANDROID_HIDDEN_APPS =
+            "com.android.settings.applications.HiddenAppsActivity";
     public static final String THEME_SETTINGS =
             "com.android.settings.Settings$ThemeSettingsActivity";
     public static final int HOME_SETTINGS_POSITION = 0;
@@ -66,7 +69,9 @@ public class OverviewSettingsPanel {
         String[] valuesDrawer = new String[] {
                 res.getString(R.string.scroll_effect_text),
                 res.getString(R.string.drawer_sorting_text),
-                res.getString(R.string.icon_labels)};
+                res.getString(R.string.icon_labels),
+                res.getString(R.string.hidden_apps_title)
+        };
 
         String[] valuesApp = new String[] {
                 res.getString(R.string.larger_icons_text),

@@ -220,6 +220,8 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     private ArrayList<Object> mFilteredWidgets;
     private ArrayList<ComponentName> mProtectedApps;
     private ArrayList<String> mProtectedPackages;
+    private ArrayList<ComponentName> mHiddenApps;
+    private ArrayList<String> mHiddenPackages;
 
     // Cling
     private boolean mHasShownAllAppsCling;
@@ -343,7 +345,12 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
             setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
         }
 
-        updateProtectedAppsList(context);
+        mProtectedApps = new ArrayList<ComponentName>();
+        mProtectedPackages = new ArrayList<String>();
+        mHiddenApps = new ArrayList<ComponentName>();
+        mHiddenPackages = new ArrayList<String>();
+
+        updateAllAppsLists(context);
     }
 
     @Override
@@ -2078,23 +2085,38 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     private void updateProtectedAppsList(Context context) {
-        String protectedComponents = Settings.Secure.getString(context.getContentResolver(),
-                LauncherModel.SETTINGS_PROTECTED_COMPONENTS);
-        protectedComponents = protectedComponents == null ? "" : protectedComponents;
-        String [] flattened = protectedComponents.split("\\|");
-        mProtectedApps = new ArrayList<ComponentName>(flattened.length);
-        mProtectedPackages = new ArrayList<String>(flattened.length);
+        updateAppsList(context, LauncherModel.SETTINGS_PROTECTED_COMPONENTS, mProtectedApps,
+                mProtectedPackages);
+    }
+
+    private void updateHiddenAppsList(Context context) {
+        updateAppsList(context, LauncherModel.SETTINGS_HIDDEN_COMPONENTS, mHiddenApps,
+                mHiddenPackages);
+    }
+
+    private void updateAllAppsLists(Context context) {
+        updateProtectedAppsList(context);
+        updateHiddenAppsList(context);
+    }
+
+    private void updateAppsList(Context context, String setting, List<ComponentName> apps,
+            List<String> packages) {
+        String components = Settings.Secure.getString(context.getContentResolver(), setting);
+        components = components == null ? "" : components;
+        String[] flattened = components.split("\\|");
+        apps.clear();
+        packages.clear();
         for (String flat : flattened) {
             ComponentName cmp = ComponentName.unflattenFromString(flat);
             if (cmp != null) {
-                mProtectedApps.add(cmp);
-                mProtectedPackages.add(cmp.getPackageName());
+                apps.add(cmp);
+                packages.add(cmp.getPackageName());
             }
         }
     }
 
     public void filterAppsWithoutInvalidate() {
-        updateProtectedAppsList(mLauncher);
+        updateAllAppsLists(mLauncher);
 
         mFilteredApps = new ArrayList<AppInfo>(mApps);
         Iterator<AppInfo> iterator = mFilteredApps.iterator();
@@ -2102,6 +2124,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
             AppInfo appInfo = iterator.next();
             boolean system = (appInfo.flags & AppInfo.DOWNLOADED_FLAG) == 0;
             if (mProtectedApps.contains(appInfo.componentName) ||
+                    mHiddenApps.contains(appInfo.componentName) ||
                 (system && !getShowSystemApps()) ||
                 (!system && !getShowDownloadedApps())) {
                 iterator.remove();
@@ -2116,7 +2139,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     public void filterWidgetsWithoutInvalidate() {
-        updateProtectedAppsList(mLauncher);
+        updateAllAppsLists(mLauncher);
 
         mFilteredWidgets = new ArrayList<Object>(mWidgets);
 
@@ -2147,6 +2170,7 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
             }
             boolean system = (flags & AppInfo.DOWNLOADED_FLAG) == 0;
             if (mProtectedPackages.contains(packageName) ||
+                    mHiddenApps.contains(packageName) ||
                     (system && !getShowSystemApps()) ||
                     (!system && !getShowDownloadedApps())) {
                 iterator.remove();

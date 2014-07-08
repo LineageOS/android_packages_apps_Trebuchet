@@ -68,7 +68,8 @@
     <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS" />
     <uses-permission android:name="cyanogenmod.permission.PROTECTED_APP" />
-
+    <uses-permission android:name="cyanogenmod.permission.HIDDEN_APP" />
+    
     <application
         android:name="com.android.launcher3.LauncherApplication"
         android:label="@string/cm_application_name"

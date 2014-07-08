@@ -56,7 +56,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -539,6 +538,10 @@ public class Launcher extends Activity
                 "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE");
         registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
                 "cyanogenmod.permission.PROTECTED_APP", null);
+        IntentFilter hiddenAppsFilter = new IntentFilter(
+                "cyanogenmod.intent.action.HIDDEN_COMPONENT_UPDATE");
+        registerReceiver(protectedAppsChangedReceiver, hiddenAppsFilter,
+                "cyanogenmod.permission.HIDDEN_APP", null);
     }
 
     public void restoreGelSetting() {
