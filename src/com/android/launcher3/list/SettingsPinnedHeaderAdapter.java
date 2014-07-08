@@ -2,23 +2,23 @@ package com.android.launcher3.list;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.android.launcher3.AppsCustomizePagedView;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.OverviewSettingsPanel;
-import com.android.launcher3.AppsCustomizePagedView;
 import com.android.launcher3.R;
-
 import com.android.launcher3.settings.SettingsProvider;
-import android.view.View.OnClickListener;
-import android.content.SharedPreferences;
 
 public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
     private static final int PARTITION_TAG = 0;
@@ -319,6 +319,12 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     SettingsProvider.SETTINGS_UI_DRAWER_HIDE_ICON_LABELS,
                                     R.bool.preferences_interface_drawer_hide_icon_labels_default);
                             mLauncher.setUpdateDynamicGrid();
+                            break;
+                        case 3:
+                            Intent intent = new Intent();
+                            intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
+                                    OverviewSettingsPanel.ANDROID_HIDDEN_APPS);
+                            mLauncher.startActivity(intent);
                             break;
                     }
                     break;

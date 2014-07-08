@@ -48,8 +48,8 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.provider.BaseColumns;
-import android.text.TextUtils;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 
@@ -81,6 +81,7 @@ public class LauncherModel extends BroadcastReceiver {
     static final boolean DEBUG_LOADERS = false;
     static final String TAG = "Launcher.Model";
     public static final String SETTINGS_PROTECTED_COMPONENTS = "protected_components";
+    public static final String SETTINGS_HIDDEN_COMPONENTS = "hidden_components";
 
     // true = use a "More Apps" folder for non-workspace apps on upgrade
     // false = strew non-workspace apps across the workspace on upgrade
