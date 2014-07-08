@@ -603,6 +603,10 @@ public class Launcher extends Activity
                 "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE");
         registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
                 "cyanogenmod.permission.PROTECTED_APP", null);
+        IntentFilter hiddenAppsFilter = new IntentFilter(
+                "cyanogenmod.intent.action.HIDDEN_COMPONENT_UPDATE");
+        registerReceiver(protectedAppsChangedReceiver, hiddenAppsFilter,
+                "cyanogenmod.permission.HIDDEN_APP", null);
 
         try {
             sAnimatorDurationScale = Settings.Global.getFloat(getContentResolver(),

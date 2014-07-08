@@ -327,6 +327,12 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     R.bool.preferences_interface_drawer_hide_icon_labels_default);
                             mLauncher.setUpdateDynamicGrid();
                             break;
+                        case 3:
+                            Intent intent = new Intent();
+                            intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
+                                    OverviewSettingsPanel.ANDROID_HIDDEN_APPS);
+                            mLauncher.startActivity(intent);
+                            break;
                     }
                     break;
                 default:

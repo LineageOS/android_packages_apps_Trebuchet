@@ -76,7 +76,8 @@
 
     <!-- Protected apps -->
     <string name="protected_app_settings">Protected apps</string>
-
+    <string name="hidden_apps_title">Protected apps</string>
+    
     <!-- Text for hiding/showing search screen on left (if installed) -->
     <string name="search_screen_left_text">Search panel</string>
 
