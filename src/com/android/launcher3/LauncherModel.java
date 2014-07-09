@@ -2431,7 +2431,8 @@ public class LauncherModel extends BroadcastReceiver {
                     final ItemInfo item = workspaceItems.get(i);
                     if (item instanceof ShortcutInfo) {
                         ShortcutInfo shortcut = (ShortcutInfo)item;
-                        if (shortcut.intent != null && shortcut.intent.getComponent() != null) {
+                        if (shortcut.itemType != LauncherSettings.Favorites.ITEM_TYPE_ALLAPPS &&
+                                shortcut.intent != null && shortcut.intent.getComponent() != null) {
                             if (mHiddenApps.contains(shortcut.intent.getComponent())) {
                                 LauncherModel.deleteItemFromDatabase(mContext, shortcut);
                                 workspaceItems.remove(i);
