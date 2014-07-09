@@ -47,6 +47,6 @@
   <string name="icon_labels_hide">Verbergen</string>
   <string name="protected_app_settings">Geschützte Apps</string>
   <string name="search_screen_left_text">Google Now</string>
-  <string name="search_screen_left_unsupported_toast">Um diese Funktion nutzen zu können, müssen Sie CyanogenMod und eine unterstützte Such-App installiert haben.</string>
+  <string name="search_screen_left_unsupported_toast">Um diese Funktion nutzen zu können, muss CyanogenMod und eine unterstützte Such-App installiert sein.</string>
   <string name="dialog_confirm">Bestätigen</string>
 </resources>
