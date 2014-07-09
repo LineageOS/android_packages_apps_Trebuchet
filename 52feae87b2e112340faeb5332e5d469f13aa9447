@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba0121b8_a6046c7e",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2513,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-09T09:19:13Z",
+      "side": 1,
+      "message": "Seems like you should add the listener first, before calling anim.play in line 2512.",
+      "revId": "52feae87b2e112340faeb5332e5d469f13aa9447",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
