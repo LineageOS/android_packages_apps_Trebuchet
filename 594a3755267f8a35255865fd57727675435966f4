@@ -16,6 +16,24 @@
       "revId": "594a3755267f8a35255865fd57727675435966f4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a061dce_da71a1e2",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-07-10T21:10:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a061dce_fa9e2506",
+      "revId": "594a3755267f8a35255865fd57727675435966f4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
