@@ -656,8 +656,10 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         super.setOnLongClickListener(l);
     }
 
+    boolean mCallFromScrollBy = false;
     @Override
     public void scrollBy(int x, int y) {
+        mCallFromScrollBy = true;
         scrollTo(mUnboundedScrollX + x, getScrollY() + y);
     }
 
@@ -683,7 +685,11 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
                     overScroll(x);
                 }
             }
-        } else if (isXAfterLastPage) {
+        } else if (isXAfterLastPage &&
+                (mCallFromScrollBy || (!mScroller.isFinished() &&
+                (getScrollX() != mScroller.getCurrX()
+                        || mOverScrollX != mScroller.getCurrX())))) {
+            mCallFromScrollBy = false;
             super.scrollTo(mMaxScrollX, y);
             if (mAllowOverScroll) {
                 if (isRtl) {
