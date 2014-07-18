@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_19b03edd",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-07-18T10:50:38Z",
+      "side": 1,
+      "message": "This should probably be (j \u003c columns).",
+      "revId": "e6edbd7824e2081e071495294fd2a0c31fe55e79",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
