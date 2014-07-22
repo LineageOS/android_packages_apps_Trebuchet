@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a061dce_2925efaa",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-07-22T06:47:33Z",
+      "side": 1,
+      "message": "In removeExtraEmptyScreenLeft() you call mScroller.forceFinished(), mNextPage \u003d INVALID_PAGE, and updateCurrentPage(). \n\nWhy is that not necessary here? There might be a totally simple reason, but the methods are almost identical except for these inconsistencies and I wondered why.",
+      "revId": "6f2c713f18095edbee1d61415398b683357c5924",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
