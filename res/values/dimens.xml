@@ -118,4 +118,6 @@
 
     <dimen name="grid_padding">15dp</dimen>
     <dimen name="grid_custom_text">50dp</dimen>
+
+    <dimen name="scrubber_bottom_padding">30dp</dimen>
 </resources>
