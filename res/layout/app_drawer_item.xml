@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:autofit="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:splitMotionEvents="false"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        <com.android.launcher3.AutoFitTextView
+                android:id="@+id/drawer_item_title"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:includeFontPadding="false"
+                android:gravity="start|top"
+                android:singleLine="true"
+                autofit:minTextSize="8sp"
+                android:textSize="35sp"
+                android:textColor="@android:color/white"/>
+        <LinearLayout
+                android:id="@+id/drawer_item_flow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+    </LinearLayout>
+    <Space android:id="@+id/spacer"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:visibility="gone" />
+</LinearLayout>
