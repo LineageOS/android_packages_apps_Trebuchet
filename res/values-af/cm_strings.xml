@@ -52,6 +52,4 @@
   <string name="search_screen_left_text">Soek paneel</string>
   <string name="search_screen_left_unsupported_toast">Jy moet \'n ondersteunde soek program hê en CyanogenMod om hierdie funksie te gebruik.</string>
   <string name="dialog_confirm">Bevestig</string>
-  <string name="permission_desc_read_extension_data">Laat toegang tot byvoegsels vir DashClock se data toe</string>
-  <string name="permission_label_read_extension_data">Vra byvoegsel vir DashClock data aan</string>
 </resources>
