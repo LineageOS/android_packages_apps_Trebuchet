@@ -4984,7 +4984,7 @@ public class Launcher extends Activity
         mGrid.layout(Launcher.this);
 
         // Synchronized reload
-        mModel.startLoader(true, mWorkspace.getCurrentPage());
+        mModel.startLoader(true, mWorkspace.getRestorePage());
         mWorkspace.updateCustomContentVisibility();
 
     }
