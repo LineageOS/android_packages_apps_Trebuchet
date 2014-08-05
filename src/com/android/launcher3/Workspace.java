@@ -2272,7 +2272,14 @@ public class Workspace extends SmoothPagedView
         setImportantForAccessibility(accessible);
     }
 
-    public void updatePageScrollForCustomPage(boolean enabled) {
+    public void updatePageScrollForCustomPage() {
+        boolean enabled =
+                mLauncher.getCustomContentMode() != Launcher.CustomContentMode.DISABLED;
+
+        if (!enabled) {
+            return;
+        }
+
         int diff;
         // If multiple PageScrolls have been computed already,
         // find the distance between the first and second scroll.
