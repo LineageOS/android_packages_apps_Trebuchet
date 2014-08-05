@@ -304,9 +304,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                     .getString(R.string.search_screen_left_text)) &&
                     ((Integer)v.getTag() == OverviewSettingsPanel.HOME_SETTINGS_POSITION)) {
                 onClickSearchPanelButton();
-                boolean customContentEnabled =
-                        mLauncher.getCustomContentMode() != Launcher.CustomContentMode.DISABLED;
-                mLauncher.getWorkspace().updatePageScrollForCustomPage(customContentEnabled);
+                mLauncher.getWorkspace().updatePageScrollForCustomPage();
                 mLauncher.setUpdateDynamicGrid();
             } else if (value.equals(res
                     .getString(R.string.grid_size_text))) {

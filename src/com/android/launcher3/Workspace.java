@@ -70,10 +70,7 @@ import com.android.launcher3.LauncherSettings.Favorites;
 import com.android.launcher3.backup.BackupProtos;
 import com.android.launcher3.settings.SettingsProvider;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * The workspace is a wide area with a wallpaper and a finite number of pages.
@@ -2272,7 +2269,14 @@ public class Workspace extends SmoothPagedView
         setImportantForAccessibility(accessible);
     }
 
-    public void updatePageScrollForCustomPage(boolean enabled) {
+    public void updatePageScrollForCustomPage() {
+        boolean enabled =
+                mLauncher.getCustomContentMode() != Launcher.CustomContentMode.DISABLED;
+
+        if (!enabled) {
+            return;
+        }
+
         int diff;
         // If multiple PageScrolls have been computed already,
         // find the distance between the first and second scroll.
