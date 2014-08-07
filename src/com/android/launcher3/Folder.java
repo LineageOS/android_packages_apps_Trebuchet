@@ -543,6 +543,11 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             }
             @Override
             public void onAnimationEnd(Animator animation) {
+                // If the animation scale is set too low, the FirstFrameAnimatorHelper
+                // will prevent the alpha from getting set to the final 1f value!
+                if (getAlpha() != 1) {
+                    setAlpha(1f);
+                }
                 mState = STATE_OPEN;
                 setLayerType(LAYER_TYPE_NONE, null);
 
