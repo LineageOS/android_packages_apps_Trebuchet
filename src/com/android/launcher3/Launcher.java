@@ -66,6 +66,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.speech.RecognizerIntent;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -403,6 +404,16 @@ public class Launcher extends Activity
         }
     }
 
+    public static float sTransitionAnimationScale = 1f;
+    public static float sAnimatorDurationScale = 1f;
+    public static float sWindowAnimationScale = 1f;
+
+    public static boolean isAnimatorScaleSafe() {
+        return (sTransitionAnimationScale >= 1f
+                && sAnimatorDurationScale >= 1f
+                && sWindowAnimationScale >= 1f);
+    }
+
     private CustomContentMode mCustomContentMode = CustomContentMode.CUSTOM_HOME;
 
     // Preferences
@@ -456,6 +467,39 @@ public class Launcher extends Activity
             updateDynamicGrid();
         }
     };
+
+    private class AnimatorScaleObserver extends ContentObserver {
+
+        /**
+         * Creates a content observer.
+         *
+         * @param handler The handler to run {@link #onChange} on, or null if none.
+         */
+        public AnimatorScaleObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            onChange(selfChange, null);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            try {
+                sTransitionAnimationScale = Settings.Global.getFloat(getContentResolver(),
+                        Settings.Global.TRANSITION_ANIMATION_SCALE);
+                sWindowAnimationScale = Settings.Global.getFloat(getContentResolver(),
+                        Settings.Global.WINDOW_ANIMATION_SCALE);
+                sAnimatorDurationScale = Settings.Global.getFloat(getContentResolver(),
+                        Settings.Global.ANIMATOR_DURATION_SCALE);
+            } catch (Settings.SettingNotFoundException e) {
+                sTransitionAnimationScale = 1f;
+                sWindowAnimationScale = 1f;
+                sAnimatorDurationScale = 1f;
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -564,6 +608,23 @@ public class Launcher extends Activity
                 "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE");
         registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
                 "cyanogenmod.permission.PROTECTED_APP", null);
+
+        try {
+            sTransitionAnimationScale = Settings.Global.getFloat(getContentResolver(),
+                    Settings.Global.TRANSITION_ANIMATION_SCALE);
+            sWindowAnimationScale = Settings.Global.getFloat(getContentResolver(),
+                    Settings.Global.WINDOW_ANIMATION_SCALE);
+            sAnimatorDurationScale = Settings.Global.getFloat(getContentResolver(),
+                    Settings.Global.ANIMATOR_DURATION_SCALE);
+        } catch (Settings.SettingNotFoundException e) {
+            sTransitionAnimationScale = 1f;
+            sWindowAnimationScale = 1f;
+            sAnimatorDurationScale = 1f;
+        }
+
+
+        AnimatorScaleObserver obs = new AnimatorScaleObserver(new Handler());
+        getContentResolver().registerContentObserver(Settings.Global.CONTENT_URI, true, obs);
     }
 
     public void restoreCustomContentMode() {
