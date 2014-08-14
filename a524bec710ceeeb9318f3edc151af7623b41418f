@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1b2928_9c03ad0d",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:41:13Z",
+      "side": 1,
+      "message": "Please revert this.\nSee: https://source.android.com/source/code-style.html#fully-qualify-imports",
+      "revId": "a524bec710ceeeb9318f3edc151af7623b41418f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
