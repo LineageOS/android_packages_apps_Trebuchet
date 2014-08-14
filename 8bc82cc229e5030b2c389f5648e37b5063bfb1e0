@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1b2928_d93ff7d4",
+        "filename": "src/com/android/launcher3/OverviewSettingsPanel.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "Please wrap this lines to 100 chars.",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_39254bc2",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "state \u003d current ? res.getString(R.string.setting_state_on)\n        : res.getString(R.string.setting_state_off);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_19220fba",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "state \u003d current ? res.getString(R.string.icon_labels_hide)\n        : res.getString(R.string.icon_labels_show);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_792fc3a1",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "current \u003d SettingsProvider.getBoolean(mContext,\n        SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,\n        R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);\nstate \u003d current ? res.getString(R.string.setting_state_on)\n        : res.getString(R.string.setting_state_off);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_592c87ab",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "current \u003d SettingsProvider.getBoolean(mContext,\n        SettingsProvider.SETTINGS_UI_DRAWER_HIDE_ICON_LABELS,\n        R.bool.preferences_interface_drawer_hide_icon_labels_default);\nstate \u003d current ? res.getString(R.string.icon_labels_hide)\n        : res.getString(R.string.icon_labels_show);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_b9179b53",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "current \u003d SettingsProvider.getBoolean(mContext,\n        SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,\n        R.bool.preferences_interface_general_icons_large_default);\nstate \u003d current ? res.getString(R.string.setting_state_on)\n        : res.getString(R.string.setting_state_off);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_991c5f79",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "onSettingsBooleanChanged(v,\n        SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,\n        R.bool.preferences_interface_homescreen_search_default);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_f911135f",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "boolean customContentEnabled \u003d mLauncher.getCustomContentMode()\n        !\u003d Launcher.CustomContentMode.DISABLED;\nmLauncher.getWorkspace().updatePageScrollForCustomPage(\n        customContentEnabled);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_d916d754",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "onIconLabelsBooleanChanged(v,\n        SettingsProvider.SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS,\n        R.bool.preferences_interface_homescreen_hide_icon_labels_default);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_19096f32",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "onSettingsBooleanChanged(v,\n        SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,\n        R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_7906a321",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "onIconLabelsBooleanChanged(v,\n        SettingsProvider.SETTINGS_UI_DRAWER_HIDE_ICON_LABELS,\n        R.bool.preferences_interface_drawer_hide_icon_labels_default);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1b2928_5903e70f",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4884
+      },
+      "writtenOn": "2014-08-14T17:37:19Z",
+      "side": 1,
+      "message": "onSettingsBooleanChanged(v,\n        SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,\n        R.bool.preferences_interface_general_icons_large_default);",
+      "revId": "8bc82cc229e5030b2c389f5648e37b5063bfb1e0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
