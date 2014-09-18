@@ -32,8 +32,8 @@
             android:layout_marginEnd="25dp"
             android:orientation="vertical">
             <LinearLayout
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:layout_marginEnd="20dp"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="bottom|end"
             android:onClick="dismissMigrationWorkspaceCling" />
     </FrameLayout>
 </com.android.launcher3.Cling>

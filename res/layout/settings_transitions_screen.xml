@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@drawable/listitem_bg"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:clickable="true" >
 
             <ImageView
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/listitem_bg"
             android:clickable="true" >
 
@@ -50,7 +50,7 @@
                 android:id="@+id/transition_options_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:adjustViewBounds="true"
                 android:src="@drawable/overflow_options_menu" />
         </LinearLayout>

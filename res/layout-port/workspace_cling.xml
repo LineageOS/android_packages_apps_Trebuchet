@@ -33,8 +33,8 @@
             android:layout_marginTop="30dp"
             android:orientation="vertical">
             <LinearLayout
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:layout_width="match_parent"
@@ -63,14 +63,14 @@
             android:id="@+id/focused_hotseat_app_bubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|left"
-            android:layout_marginLeft="25dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="25dp"
             android:layout_marginBottom="90dp"
             android:orientation="vertical"
             android:visibility="gone">
             <LinearLayout
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:layout_width="240dp"
@@ -91,8 +91,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginLeft="78dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="78dp"
                 android:src="@drawable/cling_arrow_down" />
         </LinearLayout>
     </FrameLayout>
@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="bottom|end"
         android:onClick="dismissWorkspaceCling" />
 </com.android.launcher3.Cling>

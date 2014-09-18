@@ -41,8 +41,8 @@
             android:src="@drawable/default_screen_button"
             android:scaleType="fitCenter"
             android:gravity="top"
-            android:paddingLeft="@dimen/overview_panel_button_spacing"
-            android:paddingRight="@dimen/overview_panel_button_spacing"/>
+            android:paddingStart="@dimen/overview_panel_button_spacing"
+            android:paddingEnd="@dimen/overview_panel_button_spacing"/>
     </LinearLayout>
 
     <include layout="@layout/settings_pane" />

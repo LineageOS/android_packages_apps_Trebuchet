@@ -55,7 +55,7 @@
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
         android:paddingEnd="8dp"
-        android:paddingRight="8dp"
+        android:paddingEnd="8dp"
         android:onClick="onClickVoiceButton"
         android:focusable="true"
         android:clickable="true"

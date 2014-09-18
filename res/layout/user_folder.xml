@@ -47,7 +47,7 @@
             android:paddingBottom="@dimen/folder_name_padding"
             android:paddingTop="@dimen/folder_name_padding"
             android:adjustViewBounds="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/folder_unlock" />
 
         <com.android.launcher3.FolderEditText
@@ -66,8 +66,8 @@
             android:textColor="#ff777777"
             android:textColorHighlight="#ffCCCCCC"
             android:textCursorDrawable="@null"
-            android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@id/folder_lock"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/folder_lock"
             android:textSize="16sp" />
     </RelativeLayout>
 
