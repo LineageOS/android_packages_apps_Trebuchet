@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:background="@color/settings_bg_color"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/overview_panel_button_spacing"
-    android:paddingRight="@dimen/overview_panel_button_spacing"
+    android:paddingStart="@dimen/overview_panel_button_spacing"
+    android:paddingEnd="@dimen/overview_panel_button_spacing"
     android:paddingTop="@dimen/overview_panel_bottom_padding"
     android:focusable="true"
     android:focusableInTouchMode="true"
@@ -20,7 +20,7 @@
             android:id="@+id/folder_lock_icon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:src="@drawable/folder_unlock"
             android:background="@drawable/listitem_bg" />
@@ -29,7 +29,7 @@
             android:id="@+id/folder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:paddingBottom="@dimen/folder_name_padding"
             android:paddingTop="@dimen/folder_name_padding"
             android:hint="@string/folder_hint_text"
@@ -46,6 +46,6 @@
         android:id="@+id/hidden_apps_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp" />
+        android:layout_marginStart="5dp" />
 
 </LinearLayout>

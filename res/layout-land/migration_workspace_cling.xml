@@ -24,8 +24,8 @@
         android:layout_width="400dp"
         android:layout_height="wrap_content"
         android:layout_gravity="end|center_vertical"
+        android:paddingStart="60dp"
         android:paddingEnd="60dp"
-        android:paddingRight="60dp"
         android:orientation="vertical">
         <LinearLayout
             android:id="@+id/migration_workspace_cling_bubble"
@@ -35,9 +35,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="4dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:layout_marginEnd="4dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:orientation="vertical"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:onClick="dismissMigrationWorkspaceCling" />
     </LinearLayout>
 </com.android.launcher3.Cling>

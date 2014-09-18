@@ -3,8 +3,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal|bottom"
     android:background="@drawable/listitem_bg"
-    android:paddingLeft="@dimen/overview_panel_list_padding"
-    android:paddingRight="@dimen/overview_panel_list_padding"
+    android:paddingStart="@dimen/overview_panel_list_padding"
+    android:paddingEnd="@dimen/overview_panel_list_padding"
     android:orientation="horizontal" >
 
     <TextView
@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:gravity="left"
+        android:gravity="start"
         android:paddingBottom="@dimen/overview_panel_list_padding"
         android:paddingTop="@dimen/overview_panel_list_padding"
         android:textSize="20sp"
         android:textColor="@color/listitem_text"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:maxLines="1"/>
@@ -29,14 +29,14 @@
         android:layout_height="wrap_content"
         android:drawablePadding="4dp"
         android:fontFamily="sans-serif-condensed"
-        android:gravity="right"
+        android:gravity="end"
         android:paddingBottom="@dimen/overview_panel_list_padding"
         android:paddingTop="@dimen/overview_panel_list_padding"
         android:textSize="20sp"
         android:textAllCaps="true"
         android:textColor="@color/listitem_text"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/item_name"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/item_name"
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:maxLines="1"/>
