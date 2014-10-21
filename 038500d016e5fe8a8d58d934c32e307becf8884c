@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a18252c_9e78c191",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-10-21T04:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a18252c_fe08d52a",
+      "revId": "038500d016e5fe8a8d58d934c32e307becf8884c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a18252c_9e03a10d",
         "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T17:11:22Z",
       "side": 1,
       "message": "extra space",
+      "revId": "038500d016e5fe8a8d58d934c32e307becf8884c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a18252c_fe6d75cd",
+        "filename": "src/com/android/launcher3/DynamicGridSizeFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-10-21T04:26:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a18252c_9e03a10d",
       "revId": "038500d016e5fe8a8d58d934c32e307becf8884c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
