@@ -460,6 +460,17 @@ public class Launcher extends Activity
         @Override
         public void onReceive(Context context, Intent intent) {
             // Update the workspace
+            Runnable r = new Runnable() {
+                @Override
+                public void run() {
+                    updateDynamicGrid();
+                }
+            };
+
+            if (waitUntilResume(r)) {
+                return;
+            }
+
             updateDynamicGrid();
         }
     };
