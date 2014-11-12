@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_cded6d90",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2771,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2014-11-12T08:31:16Z",
+      "side": 1,
+      "message": "instanceof handles null already if i am correct?",
+      "revId": "a60fa8d181c6908626274b812da9c0824efcac81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
