@@ -16,6 +16,24 @@
       "revId": "a60fa8d181c6908626274b812da9c0824efcac81",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_edeca991",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2771,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-11-12T08:33:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_cded6d90",
+      "revId": "a60fa8d181c6908626274b812da9c0824efcac81",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
