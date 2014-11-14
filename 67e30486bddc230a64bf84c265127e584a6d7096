@@ -16,6 +16,24 @@
       "revId": "67e30486bddc230a64bf84c265127e584a6d7096",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4665b7df",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-11-14T12:05:48Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "1a122d0e_26207b9b",
+      "revId": "67e30486bddc230a64bf84c265127e584a6d7096",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
