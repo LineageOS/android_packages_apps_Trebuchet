@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_26207b9b",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2014-11-14T11:58:30Z",
+      "side": 1,
+      "message": "Why did you change this? Was it being called from a background thread?",
+      "revId": "67e30486bddc230a64bf84c265127e584a6d7096",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
