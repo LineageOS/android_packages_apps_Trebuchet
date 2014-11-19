@@ -1764,6 +1764,7 @@ public class LauncherModel extends BroadcastReceiver {
             if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
                     item.cellX < 0 || item.cellY < 0 ||
                     item.cellX + item.spanX > countX || item.cellY + item.spanY > countY) {
+                deleteOnInvalidPlacement.set(true);
                 Log.e(TAG, "Error loading shortcut " + item
                         + " into cell (" + containerIndex + "-" + item.screenId + ":"
                         + item.cellX + "," + item.cellY
@@ -1774,6 +1775,7 @@ public class LauncherModel extends BroadcastReceiver {
             for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
                 for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
                     if (screens[x][y] != null) {
+                        deleteOnInvalidPlacement.set(true);
                         Log.e(TAG, "Error loading shortcut " + item
                                 + " into cell (" + containerIndex + "-" + item.screenId + ":"
                                 + x + "," + y
@@ -2241,6 +2243,23 @@ public class LauncherModel extends BroadcastReceiver {
                         }
                     }
 
+                    long maxScreenId = 0;
+                    for (ItemInfo item: sBgItemsIdMap.values()) {
+                        long screenId = item.screenId;
+                        if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
+                                !sBgWorkspaceScreens.contains(screenId)) {
+                            sBgWorkspaceScreens.add(screenId);
+                            if (screenId > maxScreenId) {
+                                maxScreenId = screenId;
+                            }
+                        }
+                    }
+                    boolean screensModified = false;
+                    if (maxScreenId > 0) {
+                        LauncherAppState.getLauncherProvider().updateMaxScreenId(maxScreenId);
+                        screensModified = true;
+                    }
+
                     // If there are any empty screens remove them, and update.
                     if (unusedScreens.size() != 0) {
                         // Log to disk
@@ -2248,8 +2267,10 @@ public class LauncherModel extends BroadcastReceiver {
                                 TextUtils.join(", ", unusedScreens), true);
 
                         sBgWorkspaceScreens.removeAll(unusedScreens);
-                        updateWorkspaceScreenOrder(context, sBgWorkspaceScreens);
+                        screensModified = true;
                     }
+                    if(screensModified)
+                        updateWorkspaceScreenOrder(context, sBgWorkspaceScreens);
                 }
 
                 if (DEBUG_LOADERS) {
