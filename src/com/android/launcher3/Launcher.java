@@ -1055,9 +1055,6 @@ public class Launcher extends Activity
         }
         super.onResume();
 
-
-        updateGridIfNeeded();
-
         // Restore the previous launcher state
         if (mOnResumeState == State.WORKSPACE) {
             showWorkspace(false);
@@ -1167,6 +1164,8 @@ public class Launcher extends Activity
         } else {
             mHiddenFolderAuth = false;
         }
+
+        updateGridIfNeeded();
     }
 
     @Override
@@ -1275,10 +1274,14 @@ public class Launcher extends Activity
     }
 
     public void setDynamicGridSize(DeviceProfile.GridSize size) {
-        SettingsProvider.putInt(this,
-                SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, size.getValue());
+        int gridSize = SettingsProvider.getIntCustomDefault(this,
+                SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, 0);
+        if (gridSize != size.getValue()) {
+            SettingsProvider.putInt(this,
+                    SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, size.getValue());
 
-        updateDynamicGrid();
+            setUpdateDynamicGrid();
+        }
 
         mOverviewSettingsPanel.notifyDataSetInvalidated();
 
