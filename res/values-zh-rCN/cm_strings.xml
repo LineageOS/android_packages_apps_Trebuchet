@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="launcher_settings">启动器设置</string>
+  <string name="home_screen_settings">主屏幕设置</string>
+  <string name="drawer_settings">抽屉设置</string>
+  <string name="app_settings">应用设置</string>
+
+    <string name="scrolling_page_outlines">页面概述</string>
+    <string name="scrolling_fade_adjacent">边页褪色</string>
+
+    <string name="wallpaper_scroll">滚动壁纸</string>
+
+    <!-- Settings -->
+    <string name="preferences_title">设置</string>
+    <!-- Application -->
+    <string name="preferences_application_title">应用程序</string>
+
+    <!-- UI -->
+    <!-- Homescreen -->
+    <string name="preferences_interface_homescreen_title">主屏幕</string>
+    <string name="preferences_interface_homescreen_search_title">搜索栏</string>
+    <string name="preferences_interface_homescreen_search_summary">在屏幕顶部持久显示搜索栏</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_title">隐藏图标标签</string>
+    <string name="preferences_interface_homescreen_general_hide_icon_labels_summary">隐藏桌面图标标签</string>
+
+    <!-- Drawer -->
+    <string name="preferences_interface_drawer_title">抽屉</string>
+    <string name="preferences_interface_drawer_summary">应用程序和部件的抽屉</string>
+    <string name="preferences_interface_drawer_apps_category">应用程序</string>
+    <string name="preferences_interface_drawer_hidden_apps_title">隐藏应用程序</string>
+    <string name="preferences_interface_drawer_hidden_apps_summary">从抽屉隐藏应用程序</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_title">删除快捷方式</string>
+    <string name="preferences_interface_drawer_hidden_apps_shortcuts_summary">从主屏幕删除快捷方式隐藏应用程序</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_title">删除小部件</string>
+    <string name="preferences_interface_drawer_hidden_apps_widgets_summary">从主屏幕删除小部件隐藏应用程序</string>
+    <string name="preferences_interface_drawer_hide_icon_labels_title">隐藏图标标签</string>
+    <string name="preferences_interface_drawer_hide_icon_labels_summary">在抽屉隐藏图标标签</string>
+
+    <!-- Dock -->
+    <string name="preferences_interface_dock_title">Dock</string>
+
+    <!-- General -->
+    <string name="dialog_pick_iconpack_title">选择图标包</string>
+    <string name="default_iconpack_title">默认图标</string>
+    <string name="no_iconpacks_summary">没有安装图标包</string>
+    <!-- Dynamic Grid -->
+  <string name="grid_size_text">网格大小</string>
+  <string name="grid_size_comfortable">宽松</string>
+  <string name="grid_size_cozy">合适</string>
+  <string name="grid_size_condensed">紧凑</string>
+  <string name="grid_size_custom">自定义</string>
+  <string name="preferences_interface_homescreen_custom">选择自定义尺寸</string>
+    <string name="preferences_interface_homescreen_rows_title">行数</string>
+    <string name="preferences_interface_homescreen_columns_title">列数</string>
+
+    <!-- Clear keyguard wallpaper tile text -->
+    <string name="clear_keyguard_wallpaper">清晰</string>
+
+    <!-- The title text for the all apps cling [CHAR_LIMIT=60] -->
+    <string name="all_apps_cling_cm">自定义你的抽屉</string>
+    <!-- The description of how to access Trebuchet settings [CHAR_LIMIT=160] -->
+    <string name="all_apps_cling_summary">点击页面指示器以查看其他配置设置</string>
+
+    <!-- Noun, menu item used to reset hidden apps list -->
+    <string name="menu_hidden_apps_delete">重置</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_title">隐藏应用程序</string>
+
+    <!-- Scroll effect -->
+  <string name="scroll_effect_text">滚动特效</string>
+
+  <string name="sort_mode_install_time">安装时间</string>
+
+    <!-- Home screen search bar -->
+  <string name="home_screen_search_text">搜索栏</string>
+
+    <!-- Larger icons -->
+  <string name="larger_icons_text">大图标</string>
+
+    <!-- Icon labels -->
+  <string name="icon_labels">图标标签</string>
+  <string name="icon_labels_show">显示</string>
+  <string name="icon_labels_hide">隐藏</string>
+
+    <!-- Protected apps -->
+  <string name="protected_app_settings">受保护的应用</string>
+    <!-- Settings states -->
+    <string name="setting_state_on">打开</string>
+    <string name="setting_state_off">关闭</string>
+    <!-- Themes button -->
+    <string name="themes_button_text">主题</string>
+    <!-- Wallpaper scroll effect -->
+    <string name="scrolling_wallpaper">滚动壁纸</string>
+    <!-- Toast message when search screen on left is not supported -->
+    <string name="search_screen_left_unsupported_toast">使用此功能你必须有一个支持的搜索应用程序和CyanogenMod.</string>
+
+    <!-- Dialog -->
+  <string name="dialog_confirm">确认</string>
+
+</resources>
