@@ -16,6 +16,24 @@
       "revId": "7be8f32388f08ebe2a7c75a1e13934d6fde62cd7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_c95f040d",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1274,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-02T14:41:56Z",
+      "side": 1,
+      "message": "Hm... i\u0027m re-thinking this, but originally the idea was that even if you have one protected app in a folder it\u0027d stay on the workspace as a protected folder.\n\nBut if you make that one app not protected any more the folder would just disappear because it\u0027s no longer protected and isn\u0027t allowed to have \u003c2 items. So I\u0027m not sure, maybe we should just get rid of this block and allow the folder be to removed if it has \u003c2 items regardless of whether it\u0027s protected.",
+      "parentUuid": "bab6814e_a968c0bb",
+      "revId": "7be8f32388f08ebe2a7c75a1e13934d6fde62cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
