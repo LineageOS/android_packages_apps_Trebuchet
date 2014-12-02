@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_a968c0bb",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1274,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2014-12-02T14:35:47Z",
+      "side": 1,
+      "message": "why is this \u003e\u003d 1 instead of just strictly greater?",
+      "revId": "7be8f32388f08ebe2a7c75a1e13934d6fde62cd7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
