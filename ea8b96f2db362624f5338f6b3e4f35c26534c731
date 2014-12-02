@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_490e7435",
+        "filename": "res/xml/default_workspace_5x6.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2014-12-02T13:52:24Z",
+      "side": 1,
+      "message": "Gallery is already here, seems redundant if its in the hotseat as well.",
+      "revId": "ea8b96f2db362624f5338f6b3e4f35c26534c731",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_a913a05b",
+        "filename": "res/xml/default_workspace_5x6.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2014-12-02T13:52:24Z",
+      "side": 1,
+      "message": "Since gallery is above, go for File Manager",
+      "revId": "ea8b96f2db362624f5338f6b3e4f35c26534c731",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
