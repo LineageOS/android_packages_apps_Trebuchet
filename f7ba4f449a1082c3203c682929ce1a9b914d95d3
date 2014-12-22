@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_d7f15dcf",
+        "filename": "res/values-sw360dp-land/dimens.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2014-12-22T15:40:53Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "f7ba4f449a1082c3203c682929ce1a9b914d95d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b7ee51ea",
+        "filename": "res/values-sw360dp-land/dimens.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5531
+      },
+      "writtenOn": "2014-12-22T15:40:53Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "f7ba4f449a1082c3203c682929ce1a9b914d95d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
