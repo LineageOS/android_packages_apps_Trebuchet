@@ -13,6 +13,9 @@ import com.android.launcher3.list.SettingsPinnedHeaderAdapter;
 
 public class OverviewSettingsPanel {
     public static final String ANDROID_SETTINGS = "com.android.settings";
+    public static final String THEME_PACKAGE = "org.cyanogenmod.theme.chooser";
+    public static final String THEME_SETTINGS =
+            "org.cyanogenmod.theme.chooser.ChooserActivity";
     public static final String ANDROID_PROTECTED_APPS =
             "com.android.settings.applications.ProtectedAppsActivity";
     public static final int HOME_SETTINGS_POSITION = 0;
@@ -108,17 +111,14 @@ public class OverviewSettingsPanel {
         });
         wallpaperButton.setOnTouchListener(mLauncher.getHapticFeedbackTouchListener());
 
-        //Quick Settings Button
-        View settingsButton = mLauncher.findViewById(R.id.settings_button);
-        settingsButton.setOnClickListener(new OnClickListener() {
+        View themesButton = mLauncher.findViewById(R.id.themes_button);
+        themesButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                if (!mLauncher.getWorkspace().isSwitchingState()) {
-                    mLauncher.startSettings();
-                }
+              mLauncher.startThemeSettings();
             }
         });
-        settingsButton.setOnTouchListener(mLauncher.getHapticFeedbackTouchListener());
+        themesButton.setOnTouchListener(mLauncher.getHapticFeedbackTouchListener());
 
         //Manage Apps Button
         View manageAppsButton = mLauncher.findViewById(R.id.manage_apps_button);
@@ -165,7 +165,7 @@ public class OverviewSettingsPanel {
         View widgetButton = mOverviewPanel.findViewById(R.id.widget_button);
         View wallpaperButton = mOverviewPanel
                 .findViewById(R.id.wallpaper_button);
-        View settingsButton = mOverviewPanel.findViewById(R.id.settings_button);
+        View themesButton = mOverviewPanel.findViewById(R.id.themes_button);
         View defaultHomePanel = mOverviewPanel.findViewById(R.id.default_screen_button);
 
         boolean isAllAppsVisible = mLauncher.isAllAppsVisible();
