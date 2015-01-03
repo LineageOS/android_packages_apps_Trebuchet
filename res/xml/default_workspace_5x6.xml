@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The Android Open Source Project
+<!-- Copyright (C) 2015 The CyangenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,99 +19,111 @@
 
     <!-- Left screen [1] -->
     <appwidget
-        launcher:packageName="com.android.settings"
-        launcher:className="com.android.settings.widget.SettingsAppWidgetProvider"
+        launcher:packageName="com.cyanogenmod.lockclock"
+        launcher:className="com.cyanogenmod.lockclock.ClockWidgetProvider"
         launcher:screen="1"
         launcher:x="0"
-        launcher:y="3"
-        launcher:spanX="4"
-        launcher:spanY="1" />
-
-    <!-- Middle screen [2] -->
-    <appwidget
-        launcher:packageName="com.android.deskclock"
-        launcher:className="com.android.alarmclock.AnalogAppWidgetProvider"
-        launcher:screen="2"
-        launcher:x="1"
         launcher:y="0"
-        launcher:spanX="2"
+        launcher:spanX="4"
         launcher:spanY="2" />
     <favorite
-        launcher:packageName="com.android.camera"
-        launcher:className="com.android.camera.Camera"
+        launcher:packageName="org.cyanogenmod.theme.chooser"
+        launcher:className="org.cyanogenmod.theme.chooser.ChooserActivity"
+        launcher:screen="1"
+        launcher:x="0"
+        launcher:y="4" />
+
+    <!-- Middle screen [2] -->
+    <resolve
         launcher:screen="2"
         launcher:x="0"
-        launcher:y="3" />
-
-    <!-- Right screen [3] -->
+        launcher:y="3" >
+        <favorite
+              launcher:packageName="com.cyanogenmod.eleven"
+              launcher:className="com.cyanogenmod.eleven.ElevenApplication"/>
+        <favorite
+              launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MUSIC;end" />
+    </resolve>
     <favorite
         launcher:packageName="com.android.gallery3d"
         launcher:className="com.android.gallery3d.app.GalleryActivity"
-        launcher:screen="3"
+        launcher:screen="2"
         launcher:x="1"
         launcher:y="3" />
     <favorite
-        launcher:packageName="com.android.settings"
-        launcher:className="com.android.settings.Settings"
-        launcher:screen="3"
-        launcher:x="2"
-        launcher:y="3" />
-
-    <!-- Far-right screen [4] -->
-
-    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
-    <!-- Dialer (if available, fallback to File Manager), Contacts, [All Apps], Messaging, Browser -->
-    <resolve
-        launcher:container="-101"
-        launcher:screen="1"
-        launcher:x="1"
-        launcher:y="0" >
-        <favorite launcher:uri="#Intent;action=android.intent.action.DIAL;end" />
-        <favorite launcher:uri="#Intent;action=android.intent.action.CALL_BUTTON;end" />
-
-        <favorite
-            launcher:packageName="com.android.dialer"
-            launcher:className="com.android.dialer.DialtactsActivity" />
-        <favorite
-            launcher:packageName="com.cyanogenmod.filemanager"
-            launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity" />
-    </resolve>
-
-    <favorite
-        launcher:packageName="com.android.contacts"
-        launcher:className="com.android.contacts.activities.PeopleActivity"
-        launcher:container="-101"
+        launcher:packageName="org.cyanogenmod.audiofx"
+        launcher:className="org.cyanogenmod.audiofx.ActivityMusic"
         launcher:screen="2"
         launcher:x="2"
-        launcher:y="0" />
+        launcher:y="3" />
+    <favorite
+        launcher:packageName="com.android.soundrecorder"
+        launcher:className="com.android.soundrecorder.SoundRecorder"
+        launcher:screen="2"
+        launcher:x="2"
+        launcher:y="3" />
 
-    <resolve
-        launcher:container="-101"
-        launcher:screen="4"
-        launcher:x="4"
-        launcher:y="0" >
-        <favorite
-            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MESSAGING;end" />
-        <favorite launcher:uri="sms:" />
-        <favorite launcher:uri="smsto:" />
-        <favorite launcher:uri="mms:" />
-        <favorite launcher:uri="mmsto:" />
-
-        <favorite
-            launcher:packageName="com.android.mms"
-            launcher:className="com.android.mms.ui.ConversationList" />
-    </resolve>
-    <resolve
-        launcher:container="-101"
-        launcher:screen="5"
+    <!-- Right screen [3] -->
+    <appwidget
+        launcher:packageName="com.android.calculator2"
+        launcher:className="com.android.calculator2.widget.CalculatorWidget"
+        launcher:screen="3"
+        launcher:x="0"
+        launcher:y="0"
+        launcher:spanX="4"
+        launcher:spanY="4" />
+    <favorite
+        launcher:packageName="com.cyanogenmod.filemanager"
+        launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity"
+        launcher:screen="3"
         launcher:x="5"
-        launcher:y="0" >
-        <favorite
-            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
-        <favorite launcher:uri="http://www.example.com/" />
+        launcher:y="5" />
 
-        <favorite
-            launcher:packageName="com.android.browser"
-            launcher:className="com.android.browser.BrowserActivity" />
+    <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
+    <!-- Dialer (or CMFM), Messaging, [All Apps], Camera, Browser -->
+    <resolve
+         launcher:container="-101"
+         launcher:screen="0"
+         launcher:x="0"
+         launcher:y="0" >
+         <favorite launcher:uri="#Intent;action=android.intent.action.DIAL;end" />
+         <favorite launcher:uri="tel:123" />
+         <favorite launcher:uri="#Intent;action=android.intent.action.CALL_BUTTON;end" />
+    <favorite
+        launcher:packageName="com.android.dialer"
+        launcher:className="com.android.dialer.DialtactsActivity" />
+     <favorite
+         launcher:packageName="com.cyanogenmod.filemanager"
+         launcher:className="com.cyanogenmod.filemanager.activities.NavigationActivity" />
     </resolve>
+
+    <favorite
+       launcher:container="-101"
+       launcher:screen="3"
+       launcher:x="1"
+       launcher:y="0"
+       launcher:packageName="com.android.mms"
+       launcher:className="com.android.mms.ui.ConversationList" />
+
+    <favorite
+       launcher:packageName="comandroid.camera"
+       launcher:className="com.android.camera.Camera"
+       launcher:container="-101"
+       launcher:screen="3"
+       launcher:x="3"
+       launcher:y="0" />
+
+    <resolve
+       launcher:container="-101"
+       launcher:screen="3"
+       launcher:x="4"
+       launcher:y="0" >
+      <favorite
+         launcher:packageName="com.android.browser"
+         launcher:className="com.android.browser.BrowserActivity" />
+      <favorite
+         launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
+       <favorite launcher:uri="http://cyanogenmod.org/" />
+    </resolve>
+
 </favorites>
