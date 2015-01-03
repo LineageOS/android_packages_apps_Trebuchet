@@ -1233,6 +1233,12 @@ public class Launcher extends Activity
         boolean isScrollingAllowed();
     }
 
+    protected void startThemeSettings() {
+      Intent settings = new Intent().setClassName(OverviewSettingsPanel.THEME_PACKAGE,
+          OverviewSettingsPanel.THEME_SETTINGS);
+      startActivity(settings);
+    }
+
     protected boolean hasSettings() {
         return false;
     }
@@ -1415,15 +1421,6 @@ public class Launcher extends Activity
         });
 
         popupMenu.show();
-    }
-
-    protected void startSettings() {
-        Intent settings;
-        settings = new Intent(android.provider.Settings.ACTION_SETTINGS);
-        startActivity(settings);
-        if (mWorkspace.isInOverviewMode()) {
-            mWorkspace.exitOverviewMode(false);
-        }
     }
 
     public interface QSBScroller {
