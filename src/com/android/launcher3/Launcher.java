@@ -1419,9 +1419,9 @@ public class Launcher extends Activity
         popupMenu.show();
     }
 
-    protected void startSettings() {
-        Intent settings;
-        settings = new Intent(android.provider.Settings.ACTION_SETTINGS);
+    protected void startThemeSettings() {
+        Intent settings = new Intent().setClassName(OverviewSettingsPanel.THEME_PACKAGE,
+            OverviewSettingsPanel.THEME_SETTINGS);
         startActivity(settings);
         if (mWorkspace.isInOverviewMode()) {
             mWorkspace.exitOverviewMode(false);
@@ -1430,7 +1430,7 @@ public class Launcher extends Activity
 
     protected void startManageApps() {
         Intent manageApps;
-        manageApps= new Intent(ACTION_MANAGE_APPS);
+        manageApps = new Intent(ACTION_MANAGE_APPS);
         startActivity(manageApps);
         if (mWorkspace.isInOverviewMode()) {
             mWorkspace.exitOverviewMode(false);
