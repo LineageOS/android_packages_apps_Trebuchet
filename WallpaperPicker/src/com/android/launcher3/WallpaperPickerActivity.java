@@ -1017,6 +1017,11 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
                 addWallpapers(bundled, wallpaperRes, r.first.packageName, r.second);
             } catch (PackageManager.NameNotFoundException e) {
             }
+        } else {
+            // Fall back to our package name and built in wallpapers.
+            // If these do not exist, addWallpapers will not add any.
+            final String packageName = getResources().getResourcePackageName(R.array.wallpapers);
+            addWallpapers(bundled, getResources(), packageName, R.array.wallpapers);
         }
 
         if (partner == null || !partner.hideDefaultWallpaper()) {
