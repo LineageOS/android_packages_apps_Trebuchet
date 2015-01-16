@@ -4082,7 +4082,7 @@ public class Launcher extends Activity
             if (voiceButtonContainer != null) voiceButtonContainer.setVisibility(View.GONE);
             if (searchButton != null) searchButton.setVisibility(View.GONE);
             if (voiceButton != null) voiceButton.setVisibility(View.GONE);
-            updateVoiceButtonProxyVisible(false);
+            updateVoiceButtonProxyVisible(true);
             return false;
         }
     }
@@ -4135,7 +4135,7 @@ public class Launcher extends Activity
         } else {
             if (voiceButtonContainer != null) voiceButtonContainer.setVisibility(View.GONE);
             if (voiceButton != null) voiceButton.setVisibility(View.GONE);
-            updateVoiceButtonProxyVisible(false);
+            updateVoiceButtonProxyVisible(true);
             return false;
         }
     }
