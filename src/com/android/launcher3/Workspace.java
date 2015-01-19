@@ -2284,6 +2284,9 @@ public class Workspace extends SmoothPagedView
             return null;
         }
 
+        // Check to see if new Settings need to taken
+        reloadSettings();
+
         // Initialize animation arrays for the first time if necessary
         initAnimationArrays();
 
