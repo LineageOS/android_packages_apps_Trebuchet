@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a9d85d2_db30760a",
+        "filename": "res/values-sw/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "unneeded change",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_bb35aaf8",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "unneeded changes here and below",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_1b3b1eed",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "unneeded changes here and below",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_fb3f32d4",
+        "filename": "res/xml/default_workspace_4x4.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "again, most indentation is broken in this file",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_5b25a6c0",
+        "filename": "res/xml/default_workspace_5x5.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "again, most indentation is broken in this file",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_3b225aba",
+        "filename": "res/xml/default_workspace_5x6.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "again, most indentation is broken in this file",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a9d85d2_9b2f0ea1",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 1237,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-01-19T10:48:16Z",
+      "side": 1,
+      "message": "broken indentation",
+      "revId": "90114b82e6f16e263a339f0a9590736ffd25704e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
