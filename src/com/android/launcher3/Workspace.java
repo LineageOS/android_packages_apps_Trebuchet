@@ -1442,7 +1442,7 @@ public class Workspace extends SmoothPagedView
                 if (mWallpaperIsLiveWallpaper) {
                     parallaxPageSpan = numScrollingPages - 1;
                 } else {
-                    parallaxPageSpan = Math.max(MIN_PARALLAX_PAGE_SPAN, numScrollingPages - 1);
+                    parallaxPageSpan = Math.max(MIN_PARALLAX_PAGE_SPAN, numScrollingPages - 0.5);
                 }
                 mNumPagesForWallpaperParallax = parallaxPageSpan;
 
@@ -1810,7 +1810,7 @@ public class Workspace extends SmoothPagedView
                 R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);
 
         if (!mScrollWallpaper) {
-            if (mWindowToken != null) mWallpaperManager.setWallpaperOffsets(mWindowToken, 0f, 0.5f);
+            if (mWindowToken != null) mWallpaperManager.setWallpaperOffsets(mWindowToken, 0.5f, 0f);
         } else {
             mWallpaperOffset.syncWithScroll();
         }
@@ -5340,7 +5340,7 @@ public class Workspace extends SmoothPagedView
                 R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);
 
         if (!mScrollWallpaper) {
-            if (mWindowToken != null) mWallpaperManager.setWallpaperOffsets(mWindowToken, 0f, 0.5f);
+            if (mWindowToken != null) mWallpaperManager.setWallpaperOffsets(mWindowToken, 0.5f, 0f);
         } else {
             mWallpaperOffset.syncWithScroll();
         }
