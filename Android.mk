@@ -40,7 +40,7 @@ LOCAL_PROTOC_FLAGS := --proto_path=$(LOCAL_PATH)/protos/
 
 LOCAL_PACKAGE_NAME := Trebuchet
 LOCAL_PRIVILEGED_MODULE := true
-#LOCAL_CERTIFICATE := shared
+LOCAL_CERTIFICATE := platform
 
 LOCAL_AAPT_FLAGS += --rename-manifest-package com.cyanogenmod.trebuchet
 
