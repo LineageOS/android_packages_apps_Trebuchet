@@ -22,9 +22,11 @@ import android.animation.AnimatorSet;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.ContentObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -33,10 +35,15 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Handler;
 import android.os.Parcelable;
+import android.os.PowerManager;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewDebug;
@@ -85,6 +92,11 @@ public class CellLayout extends ViewGroup {
     private boolean mLastDownOnOccupiedCell = false;
 
     private OnTouchListener mInterceptTouchListener;
+
+    private boolean mDoubleTapToSleepEnabled;
+    private GestureDetector mDoubleTapGesture;
+    private Handler mHandler = new Handler();
+    private SettingsObserver mSettingsObserver;
 
     private ArrayList<FolderRingAnimator> mFolderOuterRings = new ArrayList<FolderRingAnimator>();
     private int[] mFolderLeaveBehindCell = {-1, -1};
@@ -292,6 +304,37 @@ public class CellLayout extends ViewGroup {
         // Make the feedback view large enough to hold the blur bitmap.
         addView(mTouchFeedbackView, (int) (grid.cellWidthPx * 1.5), (int) (grid.cellHeightPx * 1.5));
         addView(mShortcutsAndWidgets);
+
+        mSettingsObserver = new SettingsObserver(mHandler);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+
+        mSettingsObserver.observe();
+        mDoubleTapGesture = new GestureDetector(getContext(),
+                new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Log.e(TAG, "Double tap recognized!!!");
+                PowerManager pm = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+                if(pm != null) {
+                    pm.goToSleep(e.getEventTime());
+                } else {
+                    Log.e(TAG, "getSystemService returned null PowerManager");
+                }
+
+                return true;
+            }
+        });
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+
+        mSettingsObserver.unobserve();
     }
 
     public void enableHardwareLayer(boolean hasLayer) {
@@ -680,6 +723,16 @@ public class CellLayout extends ViewGroup {
         // even in the case where we return early. Not clearing here was causing bugs whereby on
         // long-press we'd end up picking up an item from a previous drag operation.
         if (mInterceptTouchListener != null && mInterceptTouchListener.onTouch(this, ev)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (mDoubleTapToSleepEnabled) {
+            mDoubleTapGesture.onTouchEvent(event);
             return true;
         }
 
@@ -3265,5 +3318,39 @@ out:            for (int i = x; i < x + spanX - 1 && x < xCount; i++) {
 
     public boolean lastDownOnOccupiedCell() {
         return mLastDownOnOccupiedCell;
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = getContext().getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE), false, this);
+            update();
+        }
+
+        void unobserve() {
+            ContentResolver resolver = getContext().getContentResolver();
+            resolver.unregisterContentObserver(this);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            update();
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            update();
+        }
+
+        public void update() {
+            ContentResolver resolver = getContext().getContentResolver();
+            mDoubleTapToSleepEnabled = Settings.System.getInt(
+                    resolver, Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 1) == 1;
+        }
     }
 }
