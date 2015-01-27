@@ -34,9 +34,12 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Parcelable;
+import android.os.PowerManager;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewDebug;
@@ -85,6 +88,7 @@ public class CellLayout extends ViewGroup {
     private boolean mLastDownOnOccupiedCell = false;
 
     private OnTouchListener mInterceptTouchListener;
+    private GestureDetector mDoubleTapGesture;
 
     private ArrayList<FolderRingAnimator> mFolderOuterRings = new ArrayList<FolderRingAnimator>();
     private int[] mFolderLeaveBehindCell = {-1, -1};
@@ -292,6 +296,20 @@ public class CellLayout extends ViewGroup {
         // Make the feedback view large enough to hold the blur bitmap.
         addView(mTouchFeedbackView, (int) (grid.cellWidthPx * 1.5), (int) (grid.cellHeightPx * 1.5));
         addView(mShortcutsAndWidgets);
+
+        mDoubleTapGesture = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                Log.d(TAG, "Gesture!!");
+                PowerManager pm = (PowerManager) getContext().getSystemService(Context.POWER_SERVICE);
+                if(pm != null)
+                    pm.goToSleep(e.getEventTime());
+                else
+                    Log.d(TAG, "getSystemService returned null PowerManager");
+
+                return true;
+            }
+        });
     }
 
     public void enableHardwareLayer(boolean hasLayer) {
@@ -684,6 +702,15 @@ public class CellLayout extends ViewGroup {
         }
 
         return false;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (Settings.System.getInt(getContext().getContentResolver(),
+                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0) == 1)
+            mDoubleTapGesture.onTouchEvent(event);
+
+        return true;
     }
 
     /**
