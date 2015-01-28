@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fad55976_9e4b7fb0",
+        "filename": "Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2015-01-28T10:09:26Z",
+      "side": 1,
+      "message": "Same like with the uid, I don\u0027t know how to get the DEVICE_POWER permission without signing with the platform key.",
+      "parentUuid": "fad55976_de64d74a",
+      "revId": "c861e863b6a3bbc798eb6f215848df421eeedd9e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fad55976_1e5f8f73",
         "filename": "AndroidManifest.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T10:04:03Z",
       "side": 1,
       "message": "We have a lot of random filters for packages which are uid systemui, we\u0027d probably not want to filter trebuchet out on accident. Also, we\u0027d rather that trebuchet not have any more access than it already does.",
+      "revId": "c861e863b6a3bbc798eb6f215848df421eeedd9e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_be4e43bf",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3081
+      },
+      "writtenOn": "2015-01-28T10:09:26Z",
+      "side": 1,
+      "message": "I agree, but I don\u0027t know how to get the DEVICE_POWER permission without sharing the system or sytemui uid.",
+      "parentUuid": "fad55976_1e5f8f73",
       "revId": "c861e863b6a3bbc798eb6f215848df421eeedd9e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
