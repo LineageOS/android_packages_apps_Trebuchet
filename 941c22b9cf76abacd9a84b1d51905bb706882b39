@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_7edb2bee",
+        "filename": "src/com/android/launcher3/CellLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-01-28T10:17:28Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "941c22b9cf76abacd9a84b1d51905bb706882b39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_5ed8e7ef",
+        "filename": "src/com/android/launcher3/CellLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-01-28T10:17:28Z",
+      "side": 1,
+      "message": "shouldn\u0027t always print",
+      "revId": "941c22b9cf76abacd9a84b1d51905bb706882b39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_bee5a3a9",
+        "filename": "src/com/android/launcher3/CellLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-01-28T10:17:28Z",
+      "side": 1,
+      "message": "braces",
+      "revId": "941c22b9cf76abacd9a84b1d51905bb706882b39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_def2176f",
+        "filename": "src/com/android/launcher3/CellLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-01-28T10:17:28Z",
+      "side": 1,
+      "message": "braces, returning true implies you handled it, if you didn\u0027t, you should return false.",
+      "revId": "941c22b9cf76abacd9a84b1d51905bb706882b39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
