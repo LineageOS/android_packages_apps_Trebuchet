@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "bacf61ea_a21c7278",
+        "filename": "res/xml/default_workspace_4x4.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2015-02-04T09:52:09Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "d03633a3aa189791f5c488740c9385d5fe2e98e9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_02129e62",
+        "filename": "res/xml/default_workspace_5x5.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2015-02-04T09:52:09Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "d03633a3aa189791f5c488740c9385d5fe2e98e9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_a20912e0",
         "filename": "res/xml/default_workspace_5x6.xml",
         "patchSetId": 1
@@ -13,6 +47,23 @@
       "writtenOn": "2015-02-04T00:14:24Z",
       "side": 1,
       "message": "Wrong class name widget does not appear",
+      "revId": "d03633a3aa189791f5c488740c9385d5fe2e98e9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c217e652",
+        "filename": "res/xml/default_workspace_5x6.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2015-02-04T09:52:09Z",
+      "side": 1,
+      "message": "You called apollo here. Dummy :p",
       "revId": "d03633a3aa189791f5c488740c9385d5fe2e98e9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
