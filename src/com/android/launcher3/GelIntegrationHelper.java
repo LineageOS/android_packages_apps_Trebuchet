@@ -68,7 +68,6 @@ public class GelIntegrationHelper {
                         Intent homeIntent = new Intent(Intent.ACTION_MAIN);
                         homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         homeIntent.addCategory(Intent.CATEGORY_HOME);
-                        homeIntent.setPackage(launcherActivity.getPackageName());
                         launcherActivity.startActivity(homeIntent);
                         launcherActivity.overridePendingTransition(0, 0);
                         dropEventsUntilLift();
@@ -81,13 +80,16 @@ public class GelIntegrationHelper {
         int edge = isLayoutRtl ? EDGE_GESTURE_SERVICE_LEFT_EDGE : EDGE_GESTURE_SERVICE_RIGHT_EDGE;
         edgeGestureManager.updateEdgeGestureActivationListener(mEdgeGestureActivationListener,
                                                                edge);
-
-        // Start the Global Search Activity
-        final SearchManager searchManager =
-                (SearchManager) launcherActivity.getSystemService(Context.SEARCH_SERVICE);
-        ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
-        Intent intent = new Intent();
-        intent.setComponent(globalSearchActivity);
+        // Attempt to use Intent.ACTION_ASSIST, if supported
+        Intent intent = new Intent(Intent.ACTION_ASSIST);
+        if (!isIntentSupported(launcherActivity, intent)) {
+            // Start the Global Search Activity
+            final SearchManager searchManager =
+                    (SearchManager) launcherActivity.getSystemService(Context.SEARCH_SERVICE);
+            ComponentName globalSearchActivity = searchManager.getGlobalSearchActivity();
+            intent = new Intent();
+            intent.setComponent(globalSearchActivity);
+        }
 
         try {
             launcherActivity.startActivity(intent);
@@ -96,4 +98,10 @@ public class GelIntegrationHelper {
             Log.e(TAG, "Unable to launch global search activity.");
         }
     }
+
+    private boolean isIntentSupported(Context context, Intent intent) {
+        PackageManager pm = context.getPackageManager();
+        return pm.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY) != null;
+    }
+
 }
