@@ -1673,7 +1673,8 @@ public class LauncherModel extends BroadcastReceiver
                 if (mIsLoaderTaskRunning) {
                     // Ensure that we are never running the background loading at this point since
                     // we also touch the background collections
-                    throw new RuntimeException("Error! Background loading is already running");
+                    stopLoader();
+                    // throw new RuntimeException("Error! Background loading is already running");
                 }
             }
 
