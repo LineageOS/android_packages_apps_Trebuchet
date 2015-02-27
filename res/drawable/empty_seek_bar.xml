@@ -14,17 +14,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="360dp"
-        android:height="48dp"
-        android:viewportWidth="360"
-        android:viewportHeight="48">
-
-    <path
-            android:strokeColor="#FFFFFF"
-            android:strokeWidth="2"
-            android:strokeMiterLimit="10"
-            android:strokeLineCap="round"
-            android:pathData="M16,24h328" />
-</vector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#00000000"/>
+</shape>
