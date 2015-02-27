@@ -15,4 +15,30 @@
                 android:visibility="invisible"
                 android:clipToPadding="false" />
     </FrameLayout>
+    <FrameLayout
+            android:id="@+id/app_drawer_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/app_drawer_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"/>
+    </FrameLayout>
+    <FrameLayout
+            android:id="@+id/scrubber_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/scrubber_back"
+            android:clipToPadding="false">
+        <com.android.launcher3.AppDrawerScrubber
+                android:id="@+id/app_drawer_scrubber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"/>
+    </FrameLayout>
 </FrameLayout>
