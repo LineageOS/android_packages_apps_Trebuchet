@@ -56,7 +56,6 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
         mIconParams = new
                 LinearLayout.LayoutParams(mDeviceProfile.folderCellWidthPx,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-        System.out.println("RAJ - cell width: " + mDeviceProfile.folderCellWidthPx + " height: " + mDeviceProfile.folderCellHeightPx);
         mSpacerParams = new
                 LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 (int) Utilities.convertDpToPixel(SCRUBBER_MARGIN_FROM_BOTTOM_DP, mLauncher));
@@ -274,6 +273,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
                 inflate(R.layout.app_drawer_item, parent, false);
         ViewHolder holder = new ViewHolder(v);
         holder.mSpacer.setLayoutParams(mSpacerParams);
+        holder.mTextView.setPadding(0, 0, 0, mDeviceProfile.iconTextSizePx + 10);
         for (int i = 0; i < mDeviceProfile.numColumnsBase; i++) {
             AppDrawerIconView icon = (AppDrawerIconView) mLayoutInflater.inflate(
                     R.layout.drawer_icon, holder.mLayout, false);
