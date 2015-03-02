@@ -154,9 +154,11 @@ public class DragLayer extends FrameLayout implements ViewGroup.OnHierarchyChang
         View view = child.findViewById(R.id.app_drawer_recyclerview);
         FrameLayout.LayoutParams lp =
                 (FrameLayout.LayoutParams) view.getLayoutParams();
-        lp.bottomMargin += insets.bottom - mInsets.bottom;
+        int paddingBottom = view.getPaddingBottom() + insets.bottom - mInsets.bottom;
         lp.topMargin += insets.top - mInsets.top;
         view.setLayoutParams(lp);
+        view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(),
+                paddingBottom);
 
         // Scrubber
         view = child.findViewById(R.id.app_drawer_scrubber_container);
