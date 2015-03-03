@@ -393,6 +393,7 @@ public class Launcher extends Activity
 
     // Preferences
     private boolean mHideIconLabels;
+    private AppDrawerListAdapter.DrawerType mDrawerType;
 
     private Runnable mBuildLayersRunnable = new Runnable() {
         public void run() {
@@ -567,6 +568,10 @@ public class Launcher extends Activity
         mHideIconLabels = SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS,
                 R.bool.preferences_interface_homescreen_hide_icon_labels_default);
+        mDrawerType = AppDrawerListAdapter.DrawerType.getModeForValue(
+                SettingsProvider.getInt(this,
+                        SettingsProvider.SETTINGS_UI_DRAWER_TYPE,
+                        R.integer.preferences_interface_drawer_type_default));
 
         // Determine the dynamic grid properties
         Point smallestSize = new Point();
@@ -1259,6 +1264,13 @@ public class Launcher extends Activity
 
     protected boolean hasSettings() {
         return false;
+    }
+
+    public void updateDrawerType() {
+        mDrawerType = AppDrawerListAdapter.DrawerType.getModeForValue(
+                SettingsProvider.getInt(this,
+                        SettingsProvider.SETTINGS_UI_DRAWER_TYPE,
+                        R.integer.preferences_interface_drawer_type_default));
     }
 
     public void onClickSortModeButton(View v) {
@@ -3613,7 +3625,7 @@ public class Launcher extends Activity
         }
 
         boolean material = Utilities.isLmpOrAbove();
-
+        boolean drawer = mDrawerType == AppDrawerListAdapter.DrawerType.Drawer;
         final Resources res = getResources();
 
         final int duration = res.getInteger(R.integer.config_appsCustomizeZoomInTime);
@@ -3626,7 +3638,7 @@ public class Launcher extends Activity
         final View fromView = mWorkspace;
         final View toView;
 
-        if (contentType == AppsCustomizePagedView.ContentType.Applications) {
+        if (drawer && contentType == AppsCustomizePagedView.ContentType.Applications) {
             toView = findViewById(R.id.app_drawer_container);
         } else {
             toView = mAppsCustomizeTabHost;
@@ -3662,7 +3674,11 @@ public class Launcher extends Activity
             if (isWidgetTray) {
                 revealView.setBackground(res.getDrawable(R.drawable.quantum_panel_dark));
             } else {
-                revealView.setBackgroundColor(res.getColor(R.color.app_drawer_background));
+                if (drawer) {
+                    revealView.setBackgroundColor(res.getColor(R.color.app_drawer_background));
+                } else {
+                    revealView.setBackground(res.getDrawable(R.drawable.quantum_panel));
+                }
             }
 
             // Hide the real page background, and swap in the fake one
@@ -3888,6 +3904,7 @@ public class Launcher extends Activity
         }
 
         boolean material = Utilities.isLmpOrAbove();
+        boolean drawer = mDrawerType == AppDrawerListAdapter.DrawerType.Drawer;
         final Resources res = getResources();
 
         final int duration = res.getInteger(R.integer.config_appsCustomizeZoomOutTime);
@@ -3900,7 +3917,8 @@ public class Launcher extends Activity
                 res.getInteger(R.integer.config_appsCustomizeZoomScaleFactor);
         final View fromView;
 
-        if (mAppsCustomizeContent.getContentType() != AppsCustomizePagedView.ContentType.Widgets) {
+        if (drawer && mAppsCustomizeContent.getContentType()
+                != AppsCustomizePagedView.ContentType.Widgets) {
             fromView = (FrameLayout) findViewById(R.id.app_drawer_container);
         } else {
             fromView = mAppsCustomizeTabHost;
@@ -3956,8 +3974,12 @@ public class Launcher extends Activity
                 if (isWidgetTray) {
                     revealView.setBackground(res.getDrawable(R.drawable.quantum_panel_dark));
                 } else {
-                    revealView.setBackgroundColor(res.getColor(
-                            R.color.app_drawer_background));
+                    if (drawer) {
+                        revealView.setBackgroundColor(res.getColor(
+                                R.color.app_drawer_background));
+                    } else {
+                        revealView.setBackground(res.getDrawable(R.drawable.quantum_panel));
+                    }
                 }
 
                 int width = revealView.getMeasuredWidth();
