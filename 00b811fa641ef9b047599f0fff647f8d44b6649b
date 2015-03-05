@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_3a3ee0b8",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "\u003e 100 chars",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_1aa5dc03",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be used anywhere in the latest patch",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_ba9f70b3",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem to be used anywhere in the latest patch",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_fa456817",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "tabbing",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_7a5218df",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "should this be \u003e\u003d ?",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_baedb027",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "wrap",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_1af31c0c",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:05:08Z",
+      "side": 1,
+      "message": "wrap",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
