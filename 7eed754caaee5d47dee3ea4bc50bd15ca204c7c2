@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_3f09b232",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T17:01:19Z",
+      "side": 1,
+      "message": "delete this commented line?",
+      "revId": "7eed754caaee5d47dee3ea4bc50bd15ca204c7c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_ba03f00c",
+        "filename": "src/com/android/launcher3/locale/LocaleUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T17:01:19Z",
+      "side": 1,
+      "message": "hmm looks like when I ported this to music I changed the tag to Music since the Contact one said ContactLocale",
+      "revId": "7eed754caaee5d47dee3ea4bc50bd15ca204c7c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
