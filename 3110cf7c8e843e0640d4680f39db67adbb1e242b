@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_3aac20ed",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-05T17:22:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_5a3ab4ce",
+      "revId": "3110cf7c8e843e0640d4680f39db67adbb1e242b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_3a3700e5",
         "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-05T17:08:19Z",
       "side": 1,
       "message": "rip this out?",
+      "revId": "3110cf7c8e843e0640d4680f39db67adbb1e242b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_9ab9cc31",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-05T17:22:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_3a3700e5",
       "revId": "3110cf7c8e843e0640d4680f39db67adbb1e242b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
