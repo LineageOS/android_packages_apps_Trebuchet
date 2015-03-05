@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_3ada6079",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-05T17:32:26Z",
+      "side": 1,
+      "message": "Since the scrubber indicator (shows the letter you\u0027re seeking to) isn\u0027t directly attached to the seekbar view, this offset is to keep the indicator in the correct view bounds when it gets translated over to where in the seek bar the user is scrubbing to.\n\nAs for 6, it\u0027s kind of arbitrary, its shifts the indicator to a position that looks correctly associated with the user\u0027s touch point.",
+      "parentUuid": "9ad45d7e_ba513011",
+      "revId": "9202de4a2b2b103ac2622ff35964e263f7e99e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_1a579c03",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-05T17:16:47Z",
       "side": 1,
       "message": "where did you get this number from? is it possible to base it on some other view\u0027s y position?",
+      "revId": "9202de4a2b2b103ac2622ff35964e263f7e99e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_7a8df87a",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 3743,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-05T17:32:26Z",
+      "side": 1,
+      "message": "Random number, changed to use the toView\u0027s height value instead.",
+      "parentUuid": "9ad45d7e_1a579c03",
       "revId": "9202de4a2b2b103ac2622ff35964e263f7e99e9d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
