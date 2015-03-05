@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_fa5c48ef",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:28:21Z",
+      "side": 1,
+      "message": "can we just close the info arraylist instead of iterating and adding everything",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_1a583cfa",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:28:21Z",
+      "side": 1,
+      "message": "this iterator doesn\u0027t seemed to be used except for getting the first item",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_5a72b47d",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:28:21Z",
+      "side": 1,
+      "message": "no real need for clear here",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_9a6c2c9e",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:28:21Z",
+      "side": 1,
+      "message": "i think we need to sort by appInfos outside of the for loop, not in the sublist",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_da04e4c7",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-03-05T18:28:21Z",
+      "side": 1,
+      "message": "since this is a recursive call per letter, i think we\u0027re looking to sort the headerlist at the end of entire recurisve call correct?\nAlso seems like the headerlist is sorting only the startString, but if we already separated them by columns, we\u0027d need to sort by the actual names to be safe?",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
