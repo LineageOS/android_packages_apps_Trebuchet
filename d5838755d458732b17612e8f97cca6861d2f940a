@@ -454,6 +454,24 @@
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f5d57bb9",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T11:42:37Z",
+      "side": 1,
+      "message": "It\u0027s because it\u0027s the default density value in pixels. You can use:\n\nandroid.util.DisplayMetrics.DENSITY_DEFAULT \n\ninstead here. This ain\u0027t no magic number.",
+      "parentUuid": "9ad45d7e_d51157b1",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
