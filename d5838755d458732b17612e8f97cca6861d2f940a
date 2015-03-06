@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "9ad45d7e_d5a037a8",
+        "filename": "res/drawable/scrubber_back.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "Do we want to add these to colors.xml and the dimens to the dimens xml for everything?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_b5a5c3b6",
+        "filename": "res/layout/scrub_layout.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "Do we care about RTL?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_15abef8a",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "Javadocs are fun, I swear!",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f5af3b92",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "switch statement might be more readable.",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_5595673e",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "You know you wanna javadox!",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_d581574f",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 13
@@ -13,6 +98,23 @@
       "writtenOn": "2015-03-06T08:48:52Z",
       "side": 1,
       "message": "Remove debug statement?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_35927358",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-06T10:11:18Z",
+      "side": 1,
+      "message": "info can be null too, in which case this causes NPE",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
