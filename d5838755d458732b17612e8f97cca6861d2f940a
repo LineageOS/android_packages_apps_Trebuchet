@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_15fe4f6b",
+        "filename": "res/drawable/scrubber_back.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "this dimen gets removed in the open/close anim patch. i\u0027ll update that patch with the colors.xml file change.",
+      "parentUuid": "9ad45d7e_d5a037a8",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_b5a5c3b6",
         "filename": "res/layout/scrub_layout.xml",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-06T10:11:18Z",
       "side": 1,
       "message": "Do we care about RTL?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f5029b6e",
+        "filename": "res/layout/scrub_layout.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Good point, fixing in an upcoming patch. don\u0027t want to modify this too far beyond what was completed in the squashed patches.",
+      "parentUuid": "9ad45d7e_b5a5c3b6",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_55f8c77c",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_15abef8a",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_f5af3b92",
         "filename": "src/com/android/launcher3/AppDrawerIconView.java",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-06T10:11:18Z",
       "side": 1,
       "message": "switch statement might be more readable.",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_35f55383",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_f5af3b92",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_b52f83f5",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_5595673e",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_d581574f",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-06T08:48:52Z",
       "side": 1,
       "message": "Remove debug statement?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_b51663a5",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_d581574f",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_1535af45",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_35927358",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_b53b039c",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 13
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-06T08:48:52Z",
       "side": 1,
       "message": "The options menu still has a setting for drawer sort order, should you use that here or will we not support it? I don\u0027t think we\u0027ve thought through the possibility of supporting different sorting orders with this new drawer implementation though, so the option might have to be removed.",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f539fb42",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Vertical app drawer will not have a sort mode aside from by app name.\n\n@hayden is working on a patch to disable these settings when the user selects vertical app drawer.",
+      "parentUuid": "9ad45d7e_b53b039c",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_553f2725",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_15412f0c",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_554ba72b",
         "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
         "patchSetId": 13
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-06T08:48:52Z",
       "side": 1,
       "message": "Could these numbers be constants somewhere?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_353c332f",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_554ba72b",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_95499fd3",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 3736,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "AOSP upstream code, I want to minimize changes to their code blocks to make upstream merges/cherry-picks as easy as possible",
+      "parentUuid": "9ad45d7e_d55dd7ed",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_d5879710",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 13
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_7546abc0",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 4012,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "AOSP upstream code, I want to minimize changes to their code blocks to make upstream merges/cherry-picks as easy as possible",
+      "parentUuid": "9ad45d7e_d5879710",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_b58ca336",
         "filename": "src/com/android/launcher3/Utilities.java",
         "patchSetId": 13
@@ -217,6 +433,24 @@
       "writtenOn": "2015-03-06T09:59:11Z",
       "side": 1,
       "message": "Where does 160f come from?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d51157b1",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T11:12:27Z",
+      "side": 1,
+      "message": "Pretty sure this is just from stackoverflow (seems like a standard constant) @Adnan anything to add?\n\nhttp://stackoverflow.com/questions/4605527/converting-pixels-to-dp",
+      "parentUuid": "9ad45d7e_b58ca336",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
