@@ -67,6 +67,57 @@
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d55dd7ed",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 3736,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T09:59:11Z",
+      "side": 1,
+      "message": "Could 0.01f be a constant somewhere?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d5879710",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 4012,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T09:59:11Z",
+      "side": 1,
+      "message": "Constant? \n\nI guess these don\u0027t have to be if you only ever refer to them in one place, but it might be easier to adjust them later if we want to change the animations. Maybe we need an app drawer constants class or something?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_b58ca336",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T09:59:11Z",
+      "side": 1,
+      "message": "Where does 160f come from?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
