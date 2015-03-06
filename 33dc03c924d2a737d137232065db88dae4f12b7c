@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_f5861b12",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 3746,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T10:02:54Z",
+      "side": 1,
+      "message": "Constants here for animation values?",
+      "revId": "33dc03c924d2a737d137232065db88dae4f12b7c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
