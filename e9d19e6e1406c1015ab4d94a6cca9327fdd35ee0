@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_f59d7b5a",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1270,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T10:15:39Z",
+      "side": 1,
+      "message": "Should you also do something to release the resources for the alternate drawer type that you\u0027ve switched away from? I notice that there is no loading whatsoever once I\u0027ve loaded both drawers and I switch back and forth, so it seems like both of them with all the icons are held in memory. \n\nI\u0027m not sure what code you would change to adjust that at the moment, but just a thought.",
+      "revId": "e9d19e6e1406c1015ab4d94a6cca9327fdd35ee0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_55a3a79e",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T10:15:39Z",
+      "side": 1,
+      "message": "If the new type is the vertical app drawer with the scrubber, I think you should disable the \"Sorting mode\" option for the app drawer and lock it to \"Title\" since it seems like alphabetical is the only supported sorting here. \n\nOr hide that feature altogether when you select that drawer type.",
+      "revId": "e9d19e6e1406c1015ab4d94a6cca9327fdd35ee0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
