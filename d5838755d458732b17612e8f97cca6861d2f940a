@@ -387,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_b51ca378",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 3736,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T13:29:09Z",
+      "side": 1,
+      "message": "Alright.",
+      "parentUuid": "9ad45d7e_95499fd3",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_d5879710",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 13
@@ -416,6 +434,24 @@
       "side": 1,
       "message": "AOSP upstream code, I want to minimize changes to their code blocks to make upstream merges/cherry-picks as easy as possible",
       "parentUuid": "9ad45d7e_d5879710",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_1512cf62",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 4012,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T13:29:09Z",
+      "side": 1,
+      "message": "Okay.",
+      "parentUuid": "9ad45d7e_7546abc0",
       "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
