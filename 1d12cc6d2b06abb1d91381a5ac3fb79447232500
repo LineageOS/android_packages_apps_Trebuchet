@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_5948012e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T14:34:38Z",
+      "side": 1,
+      "message": "Try to keep the first line under 70 characters. You can see in Gerrit that the first 70 characters are bolded because that\u0027s the \"title\" of the commit.\n\nAfter that, you can add as many lines as you want and they should wrap on their own.",
+      "revId": "1d12cc6d2b06abb1d91381a5ac3fb79447232500",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_19468923",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T14:34:38Z",
+      "side": 1,
+      "message": "Do you use Log below?",
+      "revId": "1d12cc6d2b06abb1d91381a5ac3fb79447232500",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_3941cd0c",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T14:34:38Z",
+      "side": 1,
+      "message": "Added some whitespace here.",
+      "revId": "1d12cc6d2b06abb1d91381a5ac3fb79447232500",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_f93615b3",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T14:34:38Z",
+      "side": 1,
+      "message": "Added some whitespace here.",
+      "revId": "1d12cc6d2b06abb1d91381a5ac3fb79447232500",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d93b519b",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T14:34:38Z",
+      "side": 1,
+      "message": "Added some whitespace here.",
+      "revId": "1d12cc6d2b06abb1d91381a5ac3fb79447232500",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
