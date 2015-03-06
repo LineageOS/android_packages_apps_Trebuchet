@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_952fdfa0",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T13:28:58Z",
+      "side": 1,
+      "message": "Should this be 2015 or is this code older?",
+      "revId": "0917c12ed0f816dcff08bcc9fad8b84caecb86c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d5179752",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T13:28:58Z",
+      "side": 1,
+      "message": "Should this be 2015 or is this code older?",
+      "revId": "0917c12ed0f816dcff08bcc9fad8b84caecb86c1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
