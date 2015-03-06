@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_1a3b1ced",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_3a3ee0b8",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_1aa5dc03",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-05T18:05:08Z",
       "side": 1,
       "message": "this doesn\u0027t seem to be used anywhere in the latest patch",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_fa3f28d4",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "will remove from http://review.cyanogenmod.org/#/c/90243/5",
+      "parentUuid": "9ad45d7e_1aa5dc03",
       "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_3a2260ba",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "will remove from http://review.cyanogenmod.org/#/c/90360",
+      "parentUuid": "9ad45d7e_ba9f70b3",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_fa456817",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-05T18:05:08Z",
       "side": 1,
       "message": "tabbing",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_7a2cd8ab",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_fa456817",
       "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_da17c452",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "Looks like it, can\u0027t find seem to repro the edge case where this would get triggered but installing new apps into the 0th position seems to still work with this \"\u003e\u003d\" and the binarySearch says it\u0027ll be a nonnegative value.",
+      "parentUuid": "9ad45d7e_7a5218df",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_baedb027",
         "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
         "patchSetId": 12
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_7a033810",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_baedb027",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_1af31c0c",
         "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
         "patchSetId": 12
@@ -115,6 +223,24 @@
       "writtenOn": "2015-03-05T18:05:08Z",
       "side": 1,
       "message": "wrap",
+      "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_d5fe7704",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T07:41:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_1af31c0c",
       "revId": "00b811fa641ef9b047599f0fff647f8d44b6649b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
