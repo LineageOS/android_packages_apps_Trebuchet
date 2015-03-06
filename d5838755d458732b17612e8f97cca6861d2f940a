@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_d581574f",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T08:48:52Z",
+      "side": 1,
+      "message": "Remove debug statement?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_b53b039c",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T08:48:52Z",
+      "side": 1,
+      "message": "The options menu still has a setting for drawer sort order, should you use that here or will we not support it? I don\u0027t think we\u0027ve thought through the possibility of supporting different sorting orders with this new drawer implementation though, so the option might have to be removed.",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_15412f0c",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T08:48:52Z",
+      "side": 1,
+      "message": "Could this padding be defined in xml or in a style somewhere more central?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_554ba72b",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-03-06T08:48:52Z",
+      "side": 1,
+      "message": "Could these numbers be constants somewhere?",
+      "revId": "d5838755d458732b17612e8f97cca6861d2f940a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
