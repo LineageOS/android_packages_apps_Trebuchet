@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_95623fd7",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T09:52:33Z",
+      "side": 1,
+      "message": "Did you mean clone the arraylist? Replaced the loop with a call to clone()",
+      "parentUuid": "9ad45d7e_fa5c48ef",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_1a583cfa",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-05T18:28:21Z",
       "side": 1,
       "message": "this iterator doesn\u0027t seemed to be used except for getting the first item",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_356553e1",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T09:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_1a583cfa",
       "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_15a5af03",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T09:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_5a72b47d",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_9a6c2c9e",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_55af27e3",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T09:52:33Z",
+      "side": 1,
+      "message": "Makes sense, fixing this by sorting appInfos object before this for loop",
+      "parentUuid": "9ad45d7e_9a6c2c9e",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_da04e4c7",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 6
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-05T18:28:21Z",
       "side": 1,
       "message": "since this is a recursive call per letter, i think we\u0027re looking to sort the headerlist at the end of entire recurisve call correct?\nAlso seems like the headerlist is sorting only the startString, but if we already separated them by columns, we\u0027d need to sort by the actual names to be safe?",
+      "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_95b99f31",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T09:52:33Z",
+      "side": 1,
+      "message": "1) Moved the mHeaderList sort to the base case. This is just sorting the full list of Headers (hence not having to sort by any thing more than the startString buckets). \n\n2) We are already going to be sorting by  by actual names when we sort the appInfos object before the for-loop above where we create AppItemIndexedInfos. Since the appInfos object is getting sorted prior to the AppItemIndexedInfos are created, they will be guaranteed to be sorted by full name.",
+      "parentUuid": "9ad45d7e_da04e4c7",
       "revId": "07d914179ad0f0cabcc27bed6ad12e630fe73b0d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
