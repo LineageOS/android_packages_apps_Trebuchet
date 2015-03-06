@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_95ad1f8b",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1270,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T10:18:30Z",
+      "side": 1,
+      "message": "The legacy app drawer code is fairly intermingled between the apps page and the widgets page, so I didn\u0027t take a crack at this for the time being. But its definitely a memory concern, and needs to be addressed in the near future.",
+      "parentUuid": "9ad45d7e_f59d7b5a",
+      "revId": "e9d19e6e1406c1015ab4d94a6cca9327fdd35ee0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_55a3a79e",
         "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-06T10:15:39Z",
       "side": 1,
       "message": "If the new type is the vertical app drawer with the scrubber, I think you should disable the \"Sorting mode\" option for the app drawer and lock it to \"Title\" since it seems like alphabetical is the only supported sorting here. \n\nOr hide that feature altogether when you select that drawer type.",
+      "revId": "e9d19e6e1406c1015ab4d94a6cca9327fdd35ee0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_75aa2b72",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-06T10:18:30Z",
+      "side": 1,
+      "message": "@Hayden has a wip patch to fix this.",
+      "parentUuid": "9ad45d7e_55a3a79e",
       "revId": "e9d19e6e1406c1015ab4d94a6cca9327fdd35ee0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
