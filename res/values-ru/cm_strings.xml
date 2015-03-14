@@ -49,4 +49,5 @@
   <string name="dialog_confirm">Подтвердить</string>
   <string name="permission_label_read_extension_data">Запрос данных расширений DashClock</string>
   <string name="permission_desc_read_extension_data">Приложение сможет считывать данные расширений DashClock.</string>
+  <string name="search_activity_not_found">Отсутсвует приложение поиска!</string>
 </resources>
