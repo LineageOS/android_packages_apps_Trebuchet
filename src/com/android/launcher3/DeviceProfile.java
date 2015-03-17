@@ -294,8 +294,7 @@ public class DeviceProfile {
         updateAvailableDimensions(context);
 
         // Search Bar
-        searchBarVisible = SettingsProvider.getBoolean(context, SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
-                R.bool.preferences_interface_homescreen_search_default);
+        searchBarVisible = isSearchBarEnabled(context);
         searchBarSpaceWidthPx = Math.min(searchBarSpaceMaxWidthPx, widthPx);
         searchBarSpaceHeightPx = 2 * edgeMarginPx + (searchBarVisible ? searchBarHeightPx  : 3 * edgeMarginPx);
     }
@@ -705,8 +704,7 @@ public class DeviceProfile {
 
     public void layout(Launcher launcher) {
         // Update search bar for live settings
-        searchBarVisible = SettingsProvider.getBoolean(launcher, SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
-                R.bool.preferences_interface_homescreen_search_default);
+        searchBarVisible = isSearchBarEnabled(launcher);
         searchBarSpaceHeightPx = 2 * edgeMarginPx + (searchBarVisible ? searchBarHeightPx : 3 * edgeMarginPx);
         FrameLayout.LayoutParams lp;
         Resources res = launcher.getResources();
@@ -883,5 +881,25 @@ public class DeviceProfile {
 //            lp.height = r.height();
 //            overviewMode.setLayoutParams(lp);
 //        }
+    }
+
+    private boolean isSearchBarEnabled(Context context) {
+        boolean searchActivityExists = Utilities.searchActivityExists(context);
+
+        boolean isSearchEnabled = SettingsProvider.getBoolean(context,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
+                R.bool.preferences_interface_homescreen_search_default);
+
+        if (searchActivityExists) {
+            return isSearchEnabled;
+        } else {
+            if (isSearchEnabled) {
+                // Disable search bar
+                SettingsProvider.putBoolean(context,
+                        SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH, false);
+            }
+
+            return false;
+        }
     }
 }

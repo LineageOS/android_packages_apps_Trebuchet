@@ -17,7 +17,9 @@
 package com.android.launcher3;
 
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -363,5 +365,13 @@ public final class Utilities {
     public static boolean isRestrictedProfile(Context context) {
         UserManager um = (UserManager) context.getSystemService(Context.USER_SERVICE);
         return um.getUserInfo(um.getUserHandle()).isRestricted();
+    }
+
+    public static boolean searchActivityExists(Context context) {
+        SearchManager searchManager =
+                (SearchManager) context.getSystemService(Context.SEARCH_SERVICE);
+        ComponentName activityName = searchManager.getGlobalSearchActivity();
+
+        return activityName != null;
     }
 }
