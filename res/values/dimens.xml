@@ -130,17 +130,4 @@
     <dimen name="vertical_app_drawer_icon_padding">5dp</dimen>
 
     <dimen name="app_drawer_scrubber_padding">20dp</dimen>
-
-    <!-- App Drawer Item -->
-    <dimen name="app_drawer_char_width">27dp</dimen>
-    <dimen name="container_paddingStart">6dp</dimen>
-    <dimen name="container_paddingEnd">6dp</dimen>
-    <dimen name="aftv_width">32dp</dimen>
-    <dimen name="aftv_marginTop">10dp</dimen>
-    <dimen name="aftv_minTextSize">8sp</dimen>
-    <dimen name="aftv_textSize">24sp</dimen>
-
-    <!-- Folder open animation -->
-    <integer name="folder_translate_y_dist">300</integer>
-    <integer name="folder_icon_translate_y_dist">100</integer>
 </resources>
