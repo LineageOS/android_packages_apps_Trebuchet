@@ -5029,19 +5029,25 @@ public class Launcher extends Activity
             item.hostView.updateAppWidget(null);
             item.hostView.setOnClickListener(this);
         }
+        LauncherAppState app = LauncherAppState.getInstance();
+        DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
+        if(item.minSpanX <= (int) grid.numColumns &&
+                item.minSpanY <= (int) grid.numRows) {
+            item.hostView.setTag(item);
+            item.onBindAppWidget(this);
 
-        item.hostView.setTag(item);
-        item.onBindAppWidget(this);
+            workspace.addInScreen(item.hostView, item.container, item.screenId, item.cellX,
+                    item.cellY, item.spanX, item.spanY, false);
+            addWidgetToAutoAdvanceIfNeeded(item.hostView, appWidgetInfo);
 
-        workspace.addInScreen(item.hostView, item.container, item.screenId, item.cellX,
-                item.cellY, item.spanX, item.spanY, false);
-        addWidgetToAutoAdvanceIfNeeded(item.hostView, appWidgetInfo);
+            workspace.requestLayout();
 
-        workspace.requestLayout();
-
-        if (DEBUG_WIDGETS) {
-            Log.d(TAG, "bound widget id="+item.appWidgetId+" in "
-                    + (SystemClock.uptimeMillis()-start) + "ms");
+            if (DEBUG_WIDGETS) {
+                Log.d(TAG, "bound widget id=" + item.appWidgetId + " in "
+                        + (SystemClock.uptimeMillis() - start) + "ms");
+            }
+        }else{
+            return;
         }
     }
 
