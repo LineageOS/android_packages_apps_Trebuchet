@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "5ac665da_3088b3e7",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5035,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-31T05:54:17Z",
+      "side": 1,
+      "message": "I think the intention here is to only add it if it is completely within the boundaries?",
+      "parentUuid": "5ac665da_30b9d3ea",
+      "revId": "5dea4a8d91c4c6f3b0b764acaa2bd71c04611f1b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac665da_906d2735",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 5049,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-03-31T05:54:17Z",
+      "side": 1,
+      "message": "Yeah the else is unnecessary...",
+      "revId": "5dea4a8d91c4c6f3b0b764acaa2bd71c04611f1b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac665da_5299f76d",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 1
