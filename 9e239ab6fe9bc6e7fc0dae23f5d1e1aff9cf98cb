@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5ac665da_7086abba",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-03-31T06:08:05Z",
+      "side": 1,
+      "message": "lol! i\u0027m a total idiot. ignore me!",
+      "parentUuid": "5ac665da_b5d8151f",
+      "revId": "9e239ab6fe9bc6e7fc0dae23f5d1e1aff9cf98cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac665da_1504897c",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 1
