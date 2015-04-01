@@ -1619,6 +1619,8 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
     }
 
     public void sortApps() {
+        // optimize Title sort by not re-running searches since we already sort based on new app
+        // installs and change of sort mode
         Collections.sort(mFilteredApps, getComparatorForSortMode());
 
         if (mContentType == ContentType.Applications) {

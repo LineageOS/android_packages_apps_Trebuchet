@@ -4333,7 +4333,9 @@ public class Launcher extends Activity
         if (resetPageToZero) {
             mAppsCustomizeTabHost.reset();
         }
-        mAppsCustomizeContent.sortApps();
+        if (mAppsCustomizeContent.getSortMode() != AppsCustomizePagedView.SortMode.Title) {
+            mAppsCustomizeContent.sortApps();
+        }
         showAppsCustomizeHelper(animated, false, contentType);
         mAppsCustomizeTabHost.post(new Runnable() {
             @Override
