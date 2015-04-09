@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_abcbaa1d",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1730,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-09T11:34:44Z",
+      "side": 1,
+      "message": "Hanging white space",
+      "revId": "ea9e7d79cb3690ded6f54d8bbf67a31f9c90fa0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0bd11ece",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1733,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-09T11:34:44Z",
+      "side": 1,
+      "message": "Can\u0027t you reuse getIndexOfComponent here? and return true/false based on if the index is \u003d -1?",
+      "revId": "ea9e7d79cb3690ded6f54d8bbf67a31f9c90fa0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
