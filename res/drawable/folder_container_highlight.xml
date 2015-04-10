@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:height="72dp"
+        android:width="72dp"
+        android:viewportHeight="72"
+        android:viewportWidth="72">
+
+    <group
+        android:name="folder_container_highlight">
+        <path
+            android:name="folder_path_fill"
+            android:pathData="  M6,4
+                                h60
+                                c1.2,0 2,0.8 2,2
+                                v60
+                                c0,1.2 -0.8,2 -2,2
+                                h-60
+                                c-1.2,0 -2,-0.8 -2,-2
+                                v-60
+                                c0,-1.2 0.8,-2 2,-2
+                                z"
+            android:fillColor="#ff524e5e"/>
+        <path
+            android:name="folder_path_stroke"
+            android:pathData="  M6,2
+                                h60
+                                c2.4,0 4,1.6 4,4
+                                v60
+                                c0,2.4 -1.6,4 -4,4
+                                h-60
+                                c-2.4,0 -4,-1.6 -4,-4
+                                v-60
+                                c0,-2.4 1.6,-4 4,-4
+                                z"
+            android:strokeColor="#96ffffff"
+            android:strokeWidth="4"/>
+
+    </group>
+
+</vector>
