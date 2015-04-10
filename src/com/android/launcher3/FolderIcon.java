@@ -18,6 +18,7 @@ package com.android.launcher3;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.content.Context;
@@ -39,6 +40,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.launcher3.DropTarget.DragObject;
@@ -58,17 +60,17 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     private CheckLongPressHelper mLongPressHelper;
 
     // The number of icons to display in the
-    private static final int NUM_ITEMS_IN_PREVIEW = 3;
+    private static final int NUM_ITEMS_IN_PREVIEW = 4;
     private static final int CONSUMPTION_ANIMATION_DURATION = 100;
     private static final int DROP_IN_ANIMATION_DURATION = 400;
     private static final int INITIAL_ITEM_ANIMATION_DURATION = 350;
     private static final int FINAL_ITEM_ANIMATION_DURATION = 200;
 
     // The degree to which the inner ring grows when accepting drop
-    private static final float INNER_RING_GROWTH_FACTOR = 0.15f;
+    private static final float INNER_RING_GROWTH_FACTOR = 0.0f;
 
     // The degree to which the outer ring is scaled in its natural state
-    private static final float OUTER_RING_GROWTH_FACTOR = 0.3f;
+    private static final float OUTER_RING_GROWTH_FACTOR = 0.15f;
 
     // The amount of vertical spread between items in the stack [0...1]
     private static final float PERSPECTIVE_SHIFT_FACTOR = 0.18f;
@@ -88,10 +90,11 @@ public class FolderIcon extends FrameLayout implements FolderListener {
 
     public static Drawable sSharedFolderLeaveBehind = null;
 
-    private ImageView mPreviewBackground;
+    private View mPreviewBackground;
+    private View mFakePreviewBackground;
     private BubbleTextView mFolderName;
 
-    FolderRingAnimator mFolderRingAnimator = null;
+    FolderIconAnimator mFolderIconAnimator = null;
 
     // These variables are all associated with the drawing of the preview; they are stored
     // as member variables for shared usage and to avoid computation on each frame
@@ -157,11 +160,14 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         lp.topMargin = grid.iconSizePx + grid.iconDrawablePaddingPx;
 
         // Offset the preview background to center this view accordingly
-        icon.mPreviewBackground = (ImageView) icon.findViewById(R.id.preview_background);
+        icon.mPreviewBackground = icon.findViewById(R.id.preview_background);
         lp = (FrameLayout.LayoutParams) icon.mPreviewBackground.getLayoutParams();
-        lp.topMargin = grid.folderBackgroundOffset;
-        lp.width = grid.folderIconSizePx;
-        lp.height = grid.folderIconSizePx;
+        lp.width = grid.iconSizePx;
+        lp.height = grid.iconSizePx;
+        icon.mPreviewBackground.setLayoutParams(lp);
+
+        icon.mFakePreviewBackground = icon.findViewById(R.id.fake_preview_background);
+        icon.mFakePreviewBackground.setLayoutParams(lp);
 
         icon.setTag(folderInfo);
         icon.setOnClickListener(launcher);
@@ -175,7 +181,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         folder.bind(folderInfo);
         icon.mFolder = folder;
 
-        icon.mFolderRingAnimator = new FolderRingAnimator(launcher, icon);
+        icon.mFolderIconAnimator = new FolderIconAnimator(icon);
         folderInfo.addListener(icon);
 
         icon.setOnFocusChangeListener(launcher.mFocusHandler);
@@ -188,67 +194,42 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         return super.onSaveInstanceState();
     }
 
-    public static class FolderRingAnimator {
+    public static class FolderIconAnimator {
         public int mCellX;
         public int mCellY;
-        private CellLayout mCellLayout;
-        public float mOuterRingSize;
-        public float mInnerRingSize;
         public FolderIcon mFolderIcon = null;
-        public static Drawable sSharedOuterRingDrawable = null;
-        public static Drawable sSharedInnerRingDrawable = null;
-        public static int sPreviewSize = -1;
         public static int sPreviewPadding = -1;
 
-        private ValueAnimator mAcceptAnimator;
-        private ValueAnimator mNeutralAnimator;
+        private LauncherViewPropertyAnimator mAcceptAnimator;
+        private LauncherViewPropertyAnimator mNeutralAnimator;
 
-        public FolderRingAnimator(Launcher launcher, FolderIcon folderIcon) {
+        public FolderIconAnimator(FolderIcon folderIcon) {
             mFolderIcon = folderIcon;
-            Resources res = launcher.getResources();
-
-            // We need to reload the static values when configuration changes in case they are
-            // different in another configuration
-            if (sStaticValuesDirty) {
-                if (Looper.myLooper() != Looper.getMainLooper()) {
-                    throw new RuntimeException("FolderRingAnimator loading drawables on non-UI thread "
-                            + Thread.currentThread());
-                }
-
-                LauncherAppState app = LauncherAppState.getInstance();
-                DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
-                sPreviewSize = grid.folderIconSizePx;
-                sPreviewPadding = res.getDimensionPixelSize(R.dimen.folder_preview_padding);
-                sSharedOuterRingDrawable = res.getDrawable(R.drawable.portal_ring_outer_holo);
-                sSharedInnerRingDrawable = res.getDrawable(R.drawable.portal_ring_inner_nolip_holo);
-                sSharedFolderLeaveBehind = res.getDrawable(R.drawable.portal_ring_rest);
-                sStaticValuesDirty = false;
-            }
         }
 
         public void animateToAcceptState() {
             if (mNeutralAnimator != null) {
                 mNeutralAnimator.cancel();
             }
-            mAcceptAnimator = LauncherAnimUtils.ofFloat(mCellLayout, 0f, 1f);
+
+            if (mFolderIcon == null) {
+                return;
+            }
+
+            mAcceptAnimator = new LauncherViewPropertyAnimator(mFolderIcon.mFakePreviewBackground);
+            mFolderIcon.mFakePreviewBackground.setScaleX(1.2f);
+            mFolderIcon.mFakePreviewBackground.setScaleY(1.2f);
+            mFolderIcon.mFakePreviewBackground.setAlpha(0f);
+            mAcceptAnimator.alpha(1f)
+                    .setDuration(CONSUMPTION_ANIMATION_DURATION);
+
             mAcceptAnimator.setDuration(CONSUMPTION_ANIMATION_DURATION);
 
-            final int previewSize = sPreviewSize;
-            mAcceptAnimator.addUpdateListener(new AnimatorUpdateListener() {
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    final float percent = (Float) animation.getAnimatedValue();
-                    mOuterRingSize = (1 + percent * OUTER_RING_GROWTH_FACTOR) * previewSize;
-                    mInnerRingSize = (1 + percent * INNER_RING_GROWTH_FACTOR) * previewSize;
-                    if (mCellLayout != null) {
-                        mCellLayout.invalidate();
-                    }
-                }
-            });
             mAcceptAnimator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationStart(Animator animation) {
                     if (mFolderIcon != null) {
-                        mFolderIcon.mPreviewBackground.setVisibility(INVISIBLE);
+                        mFolderIcon.mFakePreviewBackground.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -259,28 +240,23 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             if (mAcceptAnimator != null) {
                 mAcceptAnimator.cancel();
             }
-            mNeutralAnimator = LauncherAnimUtils.ofFloat(mCellLayout, 0f, 1f);
-            mNeutralAnimator.setDuration(CONSUMPTION_ANIMATION_DURATION);
 
-            final int previewSize = sPreviewSize;
-            mNeutralAnimator.addUpdateListener(new AnimatorUpdateListener() {
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    final float percent = (Float) animation.getAnimatedValue();
-                    mOuterRingSize = (1 + (1 - percent) * OUTER_RING_GROWTH_FACTOR) * previewSize;
-                    mInnerRingSize = (1 + (1 - percent) * INNER_RING_GROWTH_FACTOR) * previewSize;
-                    if (mCellLayout != null) {
-                        mCellLayout.invalidate();
-                    }
-                }
-            });
+            if (mFolderIcon == null) {
+                return;
+            }
+
+            mNeutralAnimator = new LauncherViewPropertyAnimator(mFolderIcon.mFakePreviewBackground);
+            mFolderIcon.mFakePreviewBackground.setScaleX(1.2f);
+            mFolderIcon.mFakePreviewBackground.setScaleY(1.2f);
+            mFolderIcon.mFakePreviewBackground.setAlpha(1f);
+            mNeutralAnimator.alpha(0f)
+                    .setDuration(CONSUMPTION_ANIMATION_DURATION);
+
             mNeutralAnimator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    if (mCellLayout != null) {
-                        mCellLayout.hideFolderAccept(FolderRingAnimator.this);
-                    }
                     if (mFolderIcon != null) {
-                        mFolderIcon.mPreviewBackground.setVisibility(VISIBLE);
+                        mFolderIcon.mFakePreviewBackground.setVisibility(View.INVISIBLE);
                     }
                 }
             });
@@ -288,27 +264,9 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         }
 
         // Location is expressed in window coordinates
-        public void getCell(int[] loc) {
-            loc[0] = mCellX;
-            loc[1] = mCellY;
-        }
-
-        // Location is expressed in window coordinates
         public void setCell(int x, int y) {
             mCellX = x;
             mCellY = y;
-        }
-
-        public void setCellLayout(CellLayout layout) {
-            mCellLayout = layout;
-        }
-
-        public float getOuterRingSize() {
-            return mOuterRingSize;
-        }
-
-        public float getInnerRingSize() {
-            return mInnerRingSize;
         }
     }
 
@@ -353,14 +311,20 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         mInfo.add(item);
     }
 
+    public void setPreviewBackground(int res) {
+        if (res < 0) {
+            mPreviewBackground.setBackground(null);
+        } else {
+            mPreviewBackground.setBackgroundResource(res);
+        }
+    }
+
     public void onDragEnter(Object dragInfo) {
         if (mFolder.isDestroyed() || !willAcceptItem((ItemInfo) dragInfo)) return;
         CellLayout.LayoutParams lp = (CellLayout.LayoutParams) getLayoutParams();
         CellLayout layout = (CellLayout) getParent().getParent();
-        mFolderRingAnimator.setCell(lp.cellX, lp.cellY);
-        mFolderRingAnimator.setCellLayout(layout);
-        mFolderRingAnimator.animateToAcceptState();
-        layout.showFolderAccept(mFolderRingAnimator);
+        mFolderIconAnimator.setCell(lp.cellX, lp.cellY);
+        mFolderIconAnimator.animateToAcceptState();
         mOpenAlarm.setOnAlarmListener(mOnOpenListener);
         if (SPRING_LOADING_ENABLED &&
                 ((dragInfo instanceof AppInfo) || (dragInfo instanceof ShortcutInfo))) {
@@ -368,7 +332,10 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             // though widget-style shortcuts can be added to folders. The issue is that we need
             // to deal with configuration activities which are currently handled in
             // Workspace#onDropExternal.
-            mOpenAlarm.setAlarm(ON_OPEN_DELAY);
+
+            // For the new folder UI disable opening folders on drag events for the time being
+            // User will just drop the icon into the folder and can reorder after opening the folder
+            // mOpenAlarm.setAlarm(ON_OPEN_DELAY);
         }
         mDragInfo = (ItemInfo) dragInfo;
     }
@@ -429,7 +396,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     }
 
     public void onDragExit() {
-        mFolderRingAnimator.animateToNaturalState();
+        mFolderIconAnimator.animateToNaturalState();
         mOpenAlarm.cancelAlarm();
     }
 
@@ -522,8 +489,8 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             mIntrinsicIconSize = drawableSize;
             mTotalWidth = totalSize;
 
-            final int previewSize = mPreviewBackground.getLayoutParams().height;
-            final int previewPadding = FolderRingAnimator.sPreviewPadding;
+            final int previewSize = mPreviewBackground.getLayoutParams().height / 2;
+            final int previewPadding = FolderIconAnimator.sPreviewPadding;
 
             mAvailableSpaceInPreview = (previewSize - 2 * previewPadding);
             // cos(45) = 0.707  + ~= 0.1) = 0.8f
@@ -649,26 +616,80 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         int nItemsInPreview = Math.min(items.size(), NUM_ITEMS_IN_PREVIEW);
 
         // Hidden folder - don't display Preview
+        View folderLock = findViewById(R.id.folder_lock_image);
+        folderLock.setVisibility(mInfo.hidden ? VISIBLE : INVISIBLE);
+        View appView = findViewById(R.id.app_0);
+        appView.setVisibility(mInfo.hidden ? INVISIBLE : VISIBLE);
+        appView = findViewById(R.id.app_1);
+        appView.setVisibility(mInfo.hidden ? INVISIBLE : VISIBLE);
+        appView = findViewById(R.id.app_2);
+        appView.setVisibility(mInfo.hidden ? INVISIBLE : VISIBLE);
+        appView = findViewById(R.id.app_3);
+        appView.setVisibility(mInfo.hidden ? INVISIBLE : VISIBLE);
+
         if (mInfo.hidden) {
-            mParams = computePreviewItemDrawingParams(NUM_ITEMS_IN_PREVIEW/2, mParams);
-            canvas.save();
-            canvas.translate(mParams.transX + mPreviewOffsetX, mParams.transY + mPreviewOffsetY);
-            canvas.scale(mParams.scale, mParams.scale);
-            Drawable lock = getResources().getDrawable(R.drawable.folder_lock);
-            lock.setBounds(0, 0, mIntrinsicIconSize, mIntrinsicIconSize);
-            lock.draw(canvas);
-            canvas.restore();
             return;
         }
 
         if (!mAnimating) {
-            for (int i = nItemsInPreview - 1; i >= 0; i--) {
-                v = (TextView) items.get(i);
-                if (!mHiddenItems.contains(v.getTag())) {
-                    d = getTopDrawable(v);
-                    mParams = computePreviewItemDrawingParams(i, mParams);
-                    mParams.drawable = d;
-                    drawPreviewItem(canvas, mParams);
+            LauncherAppState app = LauncherAppState.getInstance();
+            DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
+
+            // get dimen for the icon size
+            // ratio: iconsize = 3*padding + 2*small_icon_size
+            // padding*6.5 = small_icon_size
+            // so padding = folderIconSize / 16
+            int padding = grid.iconSizePx / 16;
+            int smallIconSize = (int) (padding * 6.5);
+
+            for (int i = NUM_ITEMS_IN_PREVIEW; i >= 0; i--) {
+                d = null;
+                if (i < items.size()) {
+                    v = (TextView) items.get(i);
+                    if (!mHiddenItems.contains(v.getTag())) {
+                        d = getTopDrawable(v);
+                        mParams = computePreviewItemDrawingParams(i, mParams);
+                        mParams.drawable = d;
+                    }
+                }
+
+                ImageView appIcon = null;
+                int marginLeft = 0, marginRight = 0, marginTop = 0, marginBottom = 0;
+                switch(i) {
+                    case 0:
+                        appIcon = (ImageView) findViewById(R.id.app_0);
+                        marginLeft = padding;
+                        marginTop = padding;
+                        break;
+                    case 1:
+                        appIcon = (ImageView) findViewById(R.id.app_1);
+                        marginTop = padding;
+                        marginRight = padding;
+                        break;
+                    case 2:
+                        appIcon = (ImageView) findViewById(R.id.app_2);
+                        marginBottom = padding;
+                        marginLeft = padding;
+                        break;
+                    case 3:
+                        appIcon = (ImageView) findViewById(R.id.app_3);
+                        marginBottom = padding;
+                        marginRight = padding;
+                        break;
+                }
+
+                if (appIcon != null) {
+                    appIcon.setImageDrawable(d);
+                    RelativeLayout.LayoutParams layoutParams
+                            = (RelativeLayout.LayoutParams) appIcon.getLayoutParams();
+                    layoutParams.width = smallIconSize;
+                    layoutParams.height = smallIconSize;
+                    layoutParams.leftMargin = marginLeft;
+                    layoutParams.rightMargin = marginRight;
+                    layoutParams.topMargin = marginTop;
+                    layoutParams.bottomMargin = marginBottom;
+
+                    appIcon.setLayoutParams(layoutParams);
                 }
             }
         } else {

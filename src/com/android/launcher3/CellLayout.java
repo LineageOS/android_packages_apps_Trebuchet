@@ -45,8 +45,6 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
 
-import com.android.launcher3.FolderIcon.FolderRingAnimator;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -86,7 +84,6 @@ public class CellLayout extends ViewGroup {
 
     private OnTouchListener mInterceptTouchListener;
 
-    private ArrayList<FolderRingAnimator> mFolderOuterRings = new ArrayList<FolderRingAnimator>();
     private int[] mFolderLeaveBehindCell = {-1, -1};
 
     private float FOREGROUND_ALPHA_DAMPER = 0.65f;
@@ -450,48 +447,11 @@ public class CellLayout extends ViewGroup {
             }
         }
 
-        int previewOffset = FolderRingAnimator.sPreviewSize;
-
         // The folder outer / inner ring image(s)
         LauncherAppState app = LauncherAppState.getInstance();
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
-        for (int i = 0; i < mFolderOuterRings.size(); i++) {
-            FolderRingAnimator fra = mFolderOuterRings.get(i);
 
-            Drawable d;
-            int width, height;
-            cellToPoint(fra.mCellX, fra.mCellY, mTempLocation);
-            View child = getChildAt(fra.mCellX, fra.mCellY);
-
-            if (child != null) {
-                int centerX = mTempLocation[0] + mCellWidth / 2;
-                int centerY = mTempLocation[1] + previewOffset / 2 +
-                        child.getPaddingTop() + grid.folderBackgroundOffset;
-
-                // Draw outer ring, if it exists
-                if (FolderIcon.HAS_OUTER_RING) {
-                    d = FolderRingAnimator.sSharedOuterRingDrawable;
-                    width = (int) (fra.getOuterRingSize() * getChildrenScale());
-                    height = width;
-                    canvas.save();
-                    canvas.translate(centerX - width / 2, centerY - height / 2);
-                    d.setBounds(0, 0, width, height);
-                    d.draw(canvas);
-                    canvas.restore();
-                }
-
-                // Draw inner ring
-                d = FolderRingAnimator.sSharedInnerRingDrawable;
-                width = (int) (fra.getInnerRingSize() * getChildrenScale());
-                height = width;
-                canvas.save();
-                canvas.translate(centerX - width / 2, centerY - width / 2);
-                d.setBounds(0, 0, width, height);
-                d.draw(canvas);
-                canvas.restore();
-            }
-        }
-
+        int previewOffset = grid.iconSizePx;
         if (mFolderLeaveBehindCell[0] >= 0 && mFolderLeaveBehindCell[1] >= 0) {
             Drawable d = FolderIcon.sSharedFolderLeaveBehind;
             int width = d.getIntrinsicWidth();
@@ -520,17 +480,6 @@ public class CellLayout extends ViewGroup {
             mOverScrollForegroundDrawable.setBounds(mForegroundRect);
             mOverScrollForegroundDrawable.draw(canvas);
         }
-    }
-
-    public void showFolderAccept(FolderRingAnimator fra) {
-        mFolderOuterRings.add(fra);
-    }
-
-    public void hideFolderAccept(FolderRingAnimator fra) {
-        if (mFolderOuterRings.contains(fra)) {
-            mFolderOuterRings.remove(fra);
-        }
-        invalidate();
     }
 
     public void setFolderLeaveBehindCell(int x, int y) {

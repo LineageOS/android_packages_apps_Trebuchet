@@ -64,13 +64,11 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import android.view.accessibility.AccessibilityManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.TextView;
 
-import com.android.launcher3.FolderIcon.FolderRingAnimator;
+import com.android.launcher3.FolderIcon.FolderIconAnimator;
 import com.android.launcher3.Launcher.CustomContentCallbacks;
 import com.android.launcher3.LauncherSettings.Favorites;
 import com.android.launcher3.compat.PackageInstallerCompat;
@@ -242,7 +240,7 @@ public class Workspace extends SmoothPagedView
     public static final int REORDER_TIMEOUT = 350;
     private final Alarm mFolderCreationAlarm = new Alarm();
     private final Alarm mReorderAlarm = new Alarm();
-    private FolderRingAnimator mDragFolderRingAnimator = null;
+    private FolderIconAnimator mDragFolderIconAnimator = null;
     private FolderIcon mDragOverFolderIcon = null;
     private boolean mCreateUserFolderOnDrop = false;
     private boolean mAddToExistingFolderOnDrop = false;
@@ -2545,7 +2543,9 @@ public class Workspace extends SmoothPagedView
             // Animation animation = AnimationUtils.loadAnimation(mLauncher, R.anim.drop_down);
             // overviewPanel.startAnimation(animation);
             anim.play(hotseatAlpha);
-            if (mShowSearchBar) anim.play(searchBarAlpha);
+            if (mShowSearchBar && !mLauncher.getDragController().isDragging()) {
+                    anim.play(searchBarAlpha);
+            }
             anim.play(pageIndicatorAlpha);
             anim.setStartDelay(delay);
         } else {
@@ -2558,7 +2558,7 @@ public class Workspace extends SmoothPagedView
                 AlphaUpdateListener.updateVisibility(pageIndicator);
             }
 
-            if (mShowSearchBar) {
+            if (mShowSearchBar && !mLauncher.getDragController().isDragging()) {
                 searchBar.setAlpha(finalSearchBarAlpha);
                 AlphaUpdateListener.updateVisibility(searchBar);
             }
@@ -3522,9 +3522,9 @@ public class Workspace extends SmoothPagedView
     }
 
     private void cleanupFolderCreation() {
-        if (mDragFolderRingAnimator != null) {
-            mDragFolderRingAnimator.animateToNaturalState();
-            mDragFolderRingAnimator = null;
+        if (mDragFolderIconAnimator != null) {
+            mDragFolderIconAnimator.animateToNaturalState();
+            mDragFolderIconAnimator = null;
         }
         mFolderCreationAlarm.setOnAlarmListener(null);
         mFolderCreationAlarm.cancelAlarm();
@@ -3881,15 +3881,13 @@ public class Workspace extends SmoothPagedView
         }
 
         public void onAlarm(Alarm alarm) {
-            if (mDragFolderRingAnimator != null) {
+            if (mDragFolderIconAnimator != null) {
                 // This shouldn't happen ever, but just in case, make sure we clean up the mess.
-                mDragFolderRingAnimator.animateToNaturalState();
+                mDragFolderIconAnimator.animateToNaturalState();
             }
-            mDragFolderRingAnimator = new FolderRingAnimator(mLauncher, null);
-            mDragFolderRingAnimator.setCell(cellX, cellY);
-            mDragFolderRingAnimator.setCellLayout(layout);
-            mDragFolderRingAnimator.animateToAcceptState();
-            layout.showFolderAccept(mDragFolderRingAnimator);
+            mDragFolderIconAnimator = new FolderIconAnimator(null);
+            mDragFolderIconAnimator.setCell(cellX, cellY);
+            mDragFolderIconAnimator.animateToAcceptState();
             layout.clearDragOutlines();
             setDragMode(DRAG_MODE_CREATE_FOLDER);
         }
