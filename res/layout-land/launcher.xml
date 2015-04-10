@@ -24,6 +24,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/workspace_bg">
 
+    <FrameLayout
+        android:id="@+id/reveal_fake_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        android:background="@color/folder_background"
+        android:clipToPadding="false" />
+
     <com.android.launcher3.DragLayer
         android:id="@+id/drag_layer"
         android:layout_width="match_parent"
