@@ -95,6 +95,13 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
         anim.setDuration(sTransitionInDuration);
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
+            public void onAnimationStart(Animator animation) {
+                if (v.getVisibility() != View.VISIBLE) {
+                    v.setVisibility(View.VISIBLE);
+                }
+            }
+
+            @Override
             public void onAnimationEnd(Animator animation) {
                 v.setLayerType(View.LAYER_TYPE_NONE, null);
             }
