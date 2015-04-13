@@ -43,6 +43,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
@@ -2601,6 +2602,30 @@ public class Launcher extends Activity
                     appWidgetInfo);
             mWorkspace.removeExtraEmptyScreen(true, onComplete, delay, false);
         }
+    }
+
+    /**
+     * This is used when starting widget config activities. Make sure to set mWaitingForResult so that
+     * the ItemInfo for the pending item is properly saved.
+     *
+     * @param intent
+     * @param requestCode
+     * @param fillInIntent
+     * @param flagsMask
+     * @param flagsValues
+     * @param extraFlags
+     * @param options
+     * @throws IntentSender.SendIntentException
+     */
+    @Override
+    public void startIntentSenderForResult(IntentSender intent, int requestCode,
+        Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+            throws IntentSender.SendIntentException {
+        if (requestCode >= 0) {
+            mWaitingForResult = true;
+        }
+        super.startIntentSenderForResult(intent, requestCode, fillInIntent, flagsMask, flagsValues,
+                extraFlags, options);
     }
 
     protected void moveToCustomContentScreen(boolean animate) {
