@@ -21,17 +21,21 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.ComponentName;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.provider.Settings;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.RecyclerView;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.SectionIndexer;
 import com.android.launcher3.locale.LocaleSetManager;
@@ -51,6 +55,7 @@ import java.util.List;
 public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdapter.ViewHolder>
         implements View.OnLongClickListener, DragSource, SectionIndexer {
 
+    private static final String TAG = AppDrawerListAdapter.class.getSimpleName();
     private static final String NUMERIC_OR_SPECIAL_HEADER = "#";
 
     /**
@@ -84,6 +89,9 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
     private ItemAnimatorSet mItemAnimatorSet;
 
+    private int mDrawerBackgroundColor = 0;
+    private int mDrawerDragBackgroundColor = 0;
+
     public enum DrawerType {
         Drawer(0),
         Pager(1);
@@ -110,14 +118,12 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public AutoFitTextView mTextView;
         public ViewGroup mLayout;
-        public View mFadingBackgroundFront;
-        public View mFadingBackgroundBack;
+        public FrameLayout mContainerView;
         public ViewHolder(View itemView) {
             super(itemView);
+            mContainerView = (FrameLayout) itemView;
             mTextView = (AutoFitTextView) itemView.findViewById(R.id.drawer_item_title);
             mLayout = (ViewGroup) itemView.findViewById(R.id.drawer_item_flow);
-            mFadingBackgroundFront = itemView.findViewById(R.id.fading_background_front);
-            mFadingBackgroundBack = itemView.findViewById(R.id.fading_background_back);
         }
     }
 
@@ -158,6 +164,11 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             mViewHolderSet = new HashSet<>();
             mInterpolator = new DecelerateInterpolator();
             YDPI = ctx.getResources().getDisplayMetrics().ydpi;
+
+            mDrawerDragBackgroundColor = ctx.getResources().getColor(R.color
+                    .app_drawer_drag_background);
+            mDrawerBackgroundColor = ctx.getResources().getColor(android.R.color.transparent);
+
             mLayoutChangeListener = new View.OnLayoutChangeListener() {
                 @Override
                 public void onLayoutChange(View v, int left, int top, int right, int bottom,
@@ -281,6 +292,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             }
         }
 
+        private static final int MAX_ALPHA = 155;
         public void animate(ViewHolder holder, Animator animation, float percentage) {
             percentage = mInterpolator.getInterpolation(percentage);
 
@@ -288,19 +300,28 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
                 percentage = 1 - percentage;
             }
 
+            // Scale header text letters
             final float targetScale = (MAX_SCALE - MIN_SCALE) * percentage + MIN_SCALE;
             holder.mTextView.setScaleX(targetScale);
             holder.mTextView.setScaleY(targetScale);
 
+            // Derive color with alpha
+            int a = (int) (percentage * 255.0);
+            a = (a > MAX_ALPHA) ? MAX_ALPHA : a;
+            int r = Color.red(mDrawerDragBackgroundColor);
+            int g = Color.green(mDrawerDragBackgroundColor);
+            int b = Color.blue(mDrawerDragBackgroundColor);
+            int color = Color.argb(a, r, g, b);
+
+            // Perform animation
             if (getSectionForPosition(holder.getPosition()) == mSectionTarget) {
-                holder.mFadingBackgroundFront.setVisibility(View.INVISIBLE);
-                holder.mFadingBackgroundBack.setAlpha(percentage);
-                holder.mFadingBackgroundBack.setVisibility(View.VISIBLE);
+                holder.mContainerView.setBackgroundColor(color);
+                holder.mContainerView.setForeground(null);
             } else {
-                holder.mFadingBackgroundFront.setAlpha(percentage);
-                holder.mFadingBackgroundFront.setVisibility(View.VISIBLE);
-                holder.mFadingBackgroundBack.setVisibility(View.INVISIBLE);
+                holder.mContainerView.setBackgroundColor(mDrawerBackgroundColor);
+                holder.mContainerView.setForeground(new ColorDrawable(color));
             }
+
         }
 
         /**
@@ -314,7 +335,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
         }
     }
 
-    private static class ItemAnimator implements ValueAnimator.AnimatorUpdateListener {
+    private class ItemAnimator implements ValueAnimator.AnimatorUpdateListener {
         private ViewHolder mViewHolder;
         private ItemAnimatorSet mAnimatorSet;
 
@@ -325,7 +346,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
-            mAnimatorSet.animate(mViewHolder, animation);
+            mItemAnimatorSet.animate(mViewHolder, animation);
         }
     }
 
@@ -365,9 +386,24 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     private void initParams() {
         mDeviceProfile = LauncherAppState.getInstance().getDynamicGrid().getDeviceProfile();
 
-        int width = mDeviceProfile.cellWidthPx + 2 * mDeviceProfile.edgeMarginPx;
+        int width = mDeviceProfile.allAppsIconSizePx + 2 * mDeviceProfile.edgeMarginPx;
+        int drawnWidth = (mDeviceProfile.allAppsCellWidthPx * mDeviceProfile.numColumnsBase) +
+                ((mDeviceProfile.edgeMarginPx * 2) * mDeviceProfile.numColumnsBase);
+
         mIconParams = new
                 LinearLayout.LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        boolean isLarge = SettingsProvider.getBoolean(mLauncher,
+                SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,
+                R.bool.preferences_interface_general_icons_large_default);
+
+        if (!isLarge) {
+            mIconParams.setMarginStart(mDeviceProfile.edgeMarginPx);
+            mIconParams.setMarginEnd(mDeviceProfile.edgeMarginPx);
+        }
+
+        mIconParams.topMargin = mDeviceProfile.edgeMarginPx;
+        mIconParams.gravity = Gravity.CENTER;
         mIconRect = new Rect(0, 0, mDeviceProfile.allAppsIconSizePx,
                 mDeviceProfile.allAppsIconSizePx);
 
@@ -470,6 +506,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
         ArrayList<AppInfo> infos = getAllApps();
 
         mLauncher.mAppDrawer.getLayoutManager().removeAllViews();
+
         setApps(infos);
     }
 
@@ -662,6 +699,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
         holder.mTextView.setPivotY(holder.mTextView.getHeight() / 2);
 
         final int size = indexedInfo.mInfo.size();
+
         for (int i = 0; i < holder.mLayout.getChildCount(); i++) {
             AppDrawerIconView icon = (AppDrawerIconView) holder.mLayout.getChildAt(i);
             icon.setLayoutParams(mIconParams);
@@ -816,7 +854,29 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
     @Override
     public int getSectionForPosition(int position) {
-        return mSectionHeaders.get(mHeaderList.get(position).mStartString).mSectionIndex;
+        if (mSectionHeaders == null) {
+            return 0;
+        }
+        int index = 0;
+        if (position < mHeaderList.size()) {
+            AppItemIndexedInfo info = null;
+            try {
+                info = mHeaderList.get(position);
+            } catch (Exception e) {
+                return 0;
+            }
+            if (info != null) {
+                SectionIndices indices = mSectionHeaders.get(info.mStartString);
+                if (indices != null) {
+                    index = indices.mSectionIndex;
+                } else {
+                    Log.w(TAG, "SectionIndices are null");
+                }
+            } else {
+                Log.w(TAG, "AppItemIndexedInfo is null");
+            }
+        }
+        return index;
     }
 
     private void filterProtectedApps(ArrayList<AppInfo> list) {
