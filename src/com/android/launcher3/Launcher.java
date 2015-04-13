@@ -2708,6 +2708,30 @@ public class Launcher extends Activity
                 extraFlags, options);
     }
 
+    /**
+     * This is used when starting widget config activities. Make sure to setWaitingForResult so that
+     * the ItemInfo for the pending item is properly saved.
+     *
+     * @param intent
+     * @param requestCode
+     * @param fillInIntent
+     * @param flagsMask
+     * @param flagsValues
+     * @param extraFlags
+     * @param options
+     * @throws IntentSender.SendIntentException
+     */
+    @Override
+    public void startIntentSenderForResult(IntentSender intent, int requestCode,
+        Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+            throws IntentSender.SendIntentException {
+        if (requestCode >= 0) {
+            setWaitingForResult(true);
+        }
+        super.startIntentSenderForResult(intent, requestCode, fillInIntent, flagsMask, flagsValues,
+                extraFlags, options);
+    }
+
     protected void moveToCustomContentScreen(boolean animate) {
         // Close any folders that may be open.
         closeFolder();
