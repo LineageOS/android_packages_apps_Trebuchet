@@ -14,56 +14,56 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:autofit="http://schemas.android.com/apk/res-auto"
-              android:splitMotionEvents="false"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-    <View
-        android:id="@+id/fading_background_back"
-        android:alpha="0"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignTop="@+id/drawer_item_flow"
-        android:layout_alignBottom="@+id/drawer_item_flow"
-        android:background="@color/app_drawer_drag_background" />
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    android:splitMotionEvents="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <!-- Layout in back to front render order -->
     <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="locale"
+        android:paddingStart="@dimen/container_paddingStart"
+        android:paddingEnd="@dimen/container_paddingEnd"
+        android:weightSum="1.0">
+
+        <com.android.launcher3.AutoFitTextView
+            android:id="@+id/drawer_item_title"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/aftv_marginTop"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:singleLine="true"
+            autofit:minTextSize="@dimen/aftv_minTextSize"
+            android:textSize="@dimen/aftv_textSize"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@android:color/white"
+            android:shadowRadius="4.0"
+            android:shadowDy="2"
+            android:shadowColor="@color/aftv_shadowColor"/>
+
+        <!-- Layout in back to front render order -->
+        <LinearLayout
             android:id="@+id/drawer_item_flow"
-            android:layout_alignParentRight="true"
-            android:paddingTop="10dp"
-            android:layout_toRightOf="@+id/drawer_item_title"
-            android:layout_width="match_parent"
+            android:layout_weight="0.9"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+            android:gravity="center"
+            android:orientation="horizontal"/>
+    </LinearLayout>
 
     <View
         android:id="@+id/fading_background_front"
-        android:alpha="0"
+        android:visibility="invisible"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignTop="@id/drawer_item_flow"
         android:layout_alignBottom="@id/drawer_item_flow"
-        android:background="@color/app_drawer_drag_background" />
+        android:background="@color/app_drawer_drag_background"/>
 
-    <com.android.launcher3.AutoFitTextView
-        android:id="@+id/drawer_item_title"
-        android:layout_width="27dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="6dp"
-        android:layout_centerVertical="true"
-        android:includeFontPadding="false"
-        android:gravity="center"
-        android:singleLine="true"
-        autofit:minTextSize="8sp"
-        android:textSize="24sp"
-        android:layout_gravity="center"
-        android:fontFamily="sans-serif-light"
-        android:textColor="@android:color/white"
-        android:shadowRadius="4.0"
-        android:shadowDy="2"
-        android:shadowColor="#b0000000"/>
-
-</RelativeLayout>
+</FrameLayout>
