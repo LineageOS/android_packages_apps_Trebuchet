@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ac371cc_c52a467e",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2611,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-15T11:33:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac371cc_c503660c",
+      "revId": "bb53f5d25144084b2099133a15adba551796eb92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_6513925d",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-15T11:26:16Z",
       "side": 1,
       "message": "Did Trebuchet add a call to startIntentSenderForResult that Launcher3 didn\u0027t have so they didn\u0027t have to override it before?",
+      "revId": "bb53f5d25144084b2099133a15adba551796eb92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_25207a9b",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2624,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-15T11:33:55Z",
+      "side": 1,
+      "message": "Yeah so for L there\u0027s a new compat file that gets added for the AppWidgetManager \"./src/com/android/launcher3/compat/AppWidgetManagerCompatVL.java\" where if the current SDK level is L or above, it\u0027ll use this call instead of \"startActivityForResult\"",
+      "parentUuid": "3ac371cc_6513925d",
       "revId": "bb53f5d25144084b2099133a15adba551796eb92",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
