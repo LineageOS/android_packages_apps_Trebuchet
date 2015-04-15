@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_c54ec695",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-15T21:22:22Z",
+      "side": 1,
+      "message": "if (title !\u003d null) {",
+      "revId": "3ac410ac68195712bae4bb18afd6bf561692881d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2544fa72",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2188,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-15T21:22:22Z",
+      "side": 1,
+      "message": "Indent by 4.",
+      "revId": "3ac410ac68195712bae4bb18afd6bf561692881d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a5810a92",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3986,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-15T21:22:22Z",
+      "side": 1,
+      "message": "This if block doesn\u0027t make much sense here, and the comment doesn\u0027t really fit what the method is doing either. I think this check can just be removed.",
+      "revId": "3ac410ac68195712bae4bb18afd6bf561692881d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_857e8eac",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3987,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-15T21:22:22Z",
+      "side": 1,
+      "message": "Can use PackageManager.NameNotFoundException here and remove the additional import.",
+      "revId": "3ac410ac68195712bae4bb18afd6bf561692881d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e5494290",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3988,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-15T21:22:22Z",
+      "side": 1,
+      "message": "getPackInfo -\u003e getPackageInfo",
+      "revId": "3ac410ac68195712bae4bb18afd6bf561692881d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
