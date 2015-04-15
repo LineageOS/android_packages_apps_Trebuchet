@@ -30,7 +30,9 @@ import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
 import android.content.res.Configuration;
@@ -2181,6 +2183,11 @@ public class LauncherModel extends BroadcastReceiver
                                             iconPackageIndex, iconResourceIndex, iconIndex,
                                             titleIndex);
 
+                                    CharSequence title = getShortcutTitle(manager, intent);
+                                    if(title != null ){
+                                                info.title = title;
+                                    }
+
                                     // App shortcuts that used to be automatically added to Launcher
                                     // didn't always have the correct intent flags set, so do that
                                     // here
@@ -3963,4 +3970,28 @@ public class LauncherModel extends BroadcastReceiver
             Log.d(TAG, "mLoaderTask=null");
         }
     }
+
+    private CharSequence getShortcutTitle(PackageManager manager, Intent intent) {
+        ComponentName componentName = intent.getComponent();
+        if (componentName == null) {
+            return null;
+        }
+        try {
+            PackageInfo pi = manager.getPackageInfo(componentName.getPackageName(), 0);
+            if (!pi.applicationInfo.enabled) {
+                // If we return null here, the corresponding item will be
+                // removed from the launcher
+                // db and will not appear in the workspace.
+                return null;
+            }
+        } catch (NameNotFoundException e) {
+            Log.d(TAG, "getPackInfo failed for package " + componentName.getPackageName());
+        }
+        ResolveInfo resolveInfo = manager.resolveActivity(intent, 0);
+        if (resolveInfo != null) {
+            return resolveInfo.activityInfo.loadLabel(manager);
+        }
+        return null;
+    }
+
 }
