@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_8a033d0f",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2628,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-15T11:19:17Z",
+      "side": 1,
+      "message": "Does setWaitingForResult ever get unflagged?",
+      "revId": "bb53f5d25144084b2099133a15adba551796eb92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
