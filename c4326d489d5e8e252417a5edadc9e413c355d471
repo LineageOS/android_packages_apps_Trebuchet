@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_f02bbe31",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2185,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-04-16T01:34:18Z",
+      "side": 1,
+      "message": "IMHO, the right way of do it is to put inside of getShortcutInfo(Cursor..) and use LauncherActivityInfoCompat lai \u003d mLauncherApps.resolveActivity(newIntent, user); and update the labelCache\n\nSee getShortcutInfo(PackageManager,...)",
+      "revId": "c4326d489d5e8e252417a5edadc9e413c355d471",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
