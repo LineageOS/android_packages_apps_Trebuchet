@@ -16,6 +16,24 @@
       "revId": "c4326d489d5e8e252417a5edadc9e413c355d471",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_3026f668",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2185,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-04-16T01:36:50Z",
+      "side": 1,
+      "message": "Using the label cache is a good idea, but using mLauncherApps.resolveActivity() isn\u0027t possible as shortcuts are likely to not be launcher activities.",
+      "parentUuid": "3ac371cc_f02bbe31",
+      "revId": "c4326d489d5e8e252417a5edadc9e413c355d471",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
