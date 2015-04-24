@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da7fb54a_f07bce79",
+        "filename": "res/layout/app_drawer_item.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-24T09:48:53Z",
+      "side": 1,
+      "message": "The initial goal was to do away with the relative layout, but yes we could in this scenario.  However after playing a little more I reverted back to having the multiple views and setting alpha b/c for some reason it seems smoother on bacon. :-|",
+      "parentUuid": "da7fb54a_9503540f",
+      "revId": "4fcaccddf4e6af8fd4612e18cba11b4fa94dbe56",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7fb54a_7506d021",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 13
