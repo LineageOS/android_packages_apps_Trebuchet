@@ -46,21 +46,15 @@
         android:layout_alignBottom="@id/drawer_item_flow"
         android:background="@color/app_drawer_drag_background" />
 
-    <View
-        android:id="@+id/drawer_title_spacer"
-        android:layout_width="27dp"
-        android:layout_height="24dp"
-        android:layout_alignBottom="@id/drawer_item_flow"
-        android:layout_toLeftOf="@id/drawer_item_flow"/>
-
     <com.android.launcher3.AutoFitTextView
         android:id="@+id/drawer_item_title"
         android:layout_width="27dp"
         android:layout_height="fill_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginLeft="6dp"
-        android:layout_above="@id/drawer_title_spacer"
+        android:layout_alignTop="@id/drawer_item_flow"
+        android:layout_alignBottom="@id/drawer_item_flow"
         android:layout_centerVertical="true"
         android:includeFontPadding="false"
         android:gravity="center"
@@ -73,6 +67,5 @@
         android:shadowRadius="4.0"
         android:shadowDy="2"
         android:shadowColor="#b0000000"/>
-
 
 </RelativeLayout>
