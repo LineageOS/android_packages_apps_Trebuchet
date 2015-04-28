@@ -1191,12 +1191,8 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         int contentAreaHeightSpec = MeasureSpec.makeMeasureSpec(getContentAreaHeight(),
                 MeasureSpec.EXACTLY);
 
-        if (LauncherAppState.isDisableAllApps()) {
-            // Don't cap the height of the content to allow scrolling.
-            mContent.setFixedSize(getContentAreaWidth(), mContent.getDesiredHeight());
-        } else {
-            mContent.setFixedSize(getContentAreaWidth(), getContentAreaHeight());
-        }
+        // Don't cap the height of the content to allow scrolling.
+        mContent.setFixedSize(getContentAreaWidth(), mContent.getDesiredHeight());
 
         mScrollView.measure(contentAreaWidthSpec, contentAreaHeightSpec);
         mFolderName.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
