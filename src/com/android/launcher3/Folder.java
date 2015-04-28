@@ -166,12 +166,12 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         mIconCache = app.getIconCache();
 
         Resources res = getResources();
-        mMaxCountX = (int) grid.numColumns;
+        mMaxCountX = (int) grid.numColumnsBase;
         // Allow scrolling folders when DISABLE_ALL_APPS is true.
         if (LauncherAppState.isDisableAllApps()) {
             mMaxCountY = mMaxNumItems = Integer.MAX_VALUE;
         } else {
-            mMaxCountY = (int) grid.numRows;
+            mMaxCountY = (int) grid.numRowsBase;
             mMaxNumItems = mMaxCountX * mMaxCountY;
         }
 
@@ -1197,6 +1197,9 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         } else {
             mContent.setFixedSize(getContentAreaWidth(), getContentAreaHeight());
         }
+
+        // Don't cap the height of the content to allow scrolling.
+        mContent.setFixedSize(getContentAreaWidth(), mContent.getDesiredHeight());
 
         mScrollView.measure(contentAreaWidthSpec, contentAreaHeightSpec);
         mFolderName.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
