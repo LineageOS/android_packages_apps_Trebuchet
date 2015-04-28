@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da7fb54a_74c16980",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-28T09:49:04Z",
+      "side": 1,
+      "message": "This is no longer used, thanks for the reminder!",
+      "parentUuid": "da7fb54a_b955aa1e",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7fb54a_749329a4",
         "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-28T08:58:42Z",
       "side": 1,
       "message": "Hm, I see a couple of other places where this same call sequence happens, maybe move this to the handleMessage method so it applies to all incoming messages?",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_d45dd5ed",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-28T09:49:04Z",
+      "side": 1,
+      "message": "Discussed in person, want to consolidate the checking logic.",
+      "parentUuid": "da7fb54a_749329a4",
       "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2015-04-28T08:58:42Z",
       "side": 1,
       "message": "Is there a better name for this? Maybe AppDrawerSmoothScroller?",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_94beedfd",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-28T09:49:04Z",
+      "side": 1,
+      "message": "NO IT IS MINE! hehe I\u0027ll change it.",
+      "parentUuid": "da7fb54a_9906261f",
       "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
