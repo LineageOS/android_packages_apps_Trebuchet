@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7fb54a_b955aa1e",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-28T08:58:42Z",
+      "side": 1,
+      "message": "Move this declaration to the block with the other constants.",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_749329a4",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-28T08:58:42Z",
+      "side": 1,
+      "message": "Hm, I see a couple of other places where this same call sequence happens, maybe move this to the handleMessage method so it applies to all incoming messages?",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_54962595",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-28T08:58:42Z",
+      "side": 1,
+      "message": "Is the removeMessages call very costly? seems like it\u0027d be just as bad as checking for hasMessages. Maybe just call it outside of the hasMessages check?",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_b903ea0e",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-28T08:58:42Z",
+      "side": 1,
+      "message": "Formatting for these method blocks seems like it could use some whitespace",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_9906261f",
+        "filename": "src/com/android/launcher3/AppDrawerScrubber.java",
+        "patchSetId": 17
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-04-28T08:58:42Z",
+      "side": 1,
+      "message": "Is there a better name for this? Maybe AppDrawerSmoothScroller?",
+      "revId": "1e419c85c500aba563919b428587b1398f1d9a6e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
