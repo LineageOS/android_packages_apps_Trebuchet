@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7fb54a_2f20679b",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-04-29T07:17:47Z",
+      "side": 1,
+      "message": "Unnecessary casting :-D",
+      "revId": "10f12e01310c1cfef1921058af08f2ffeb7299fa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
