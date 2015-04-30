@@ -79,6 +79,8 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     private LinkedHashMap<String, SectionIndices> mSectionHeaders;
     private LinearLayout.LayoutParams mIconParams;
     private Rect mIconRect;
+    private int mNumColumns = 0;
+    private int mExtraPadding = 0;
     private LocaleSetManager mLocaleSetManager;
 
     private ArrayList<ComponentName> mProtectedApps;
@@ -375,21 +377,20 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     private void initParams() {
         mDeviceProfile = LauncherAppState.getInstance().getDynamicGrid().getDeviceProfile();
 
-        int width = mDeviceProfile.allAppsIconSizePx + 2 * mDeviceProfile.edgeMarginPx;
-        int drawnWidth = (mDeviceProfile.allAppsCellWidthPx * mDeviceProfile.numColumnsBase) +
-                ((mDeviceProfile.edgeMarginPx * 2) * mDeviceProfile.numColumnsBase);
-
-        mIconParams = new
-                LinearLayout.LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT);
-
         boolean isLarge = SettingsProvider.getBoolean(mLauncher,
                 SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,
                 R.bool.preferences_interface_general_icons_large_default);
 
-        if (!isLarge) {
-            mIconParams.setMarginStart(mDeviceProfile.edgeMarginPx);
-            mIconParams.setMarginEnd(mDeviceProfile.edgeMarginPx);
-        }
+        int width = mDeviceProfile.allAppsIconSizePx + 2 * mDeviceProfile.edgeMarginPx;
+
+        int neededWidth = mLauncher.getResources()
+                .getDimensionPixelSize(R.dimen.app_drawer_char_width);
+        int availableWidth = mDeviceProfile.availableWidthPx - neededWidth;
+        mNumColumns = (int) Math.floor(availableWidth / width);
+        int leftOverPx = availableWidth % width;
+        mExtraPadding = (leftOverPx / (mNumColumns - 1)) / 2;
+
+        mIconParams = new LinearLayout.LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         mIconParams.topMargin = mDeviceProfile.edgeMarginPx;
         mIconParams.bottomMargin = mDeviceProfile.edgeMarginPx;
@@ -448,8 +449,8 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
         Collections.sort(appInfos, LauncherModel.getAppNameComparator());
 
-        for (int i = 0; i < appInfos.size(); i += mDeviceProfile.numColumnsBase) {
-            int endIndex = (int) Math.min(i + mDeviceProfile.numColumnsBase, appInfos.size());
+        for (int i = 0; i < appInfos.size(); i += mNumColumns) {
+            int endIndex = (int) Math.min(i + mNumColumns, appInfos.size());
             ArrayList<AppInfo> subList = new ArrayList<AppInfo>(appInfos.subList(i, endIndex));
             AppItemIndexedInfo indexInfo;
             indexInfo = new AppItemIndexedInfo(startString, bucketIndex, subList, i != 0);
@@ -638,7 +639,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             holder.mTextView.setLayoutParams(marginParams);
         }
 
-        for (int i = 0; i < mDeviceProfile.numColumnsBase; i++) {
+        for (int i = 0; i < mNumColumns; i++) {
             AppDrawerIconView icon = (AppDrawerIconView) mLayoutInflater.inflate(
                     R.layout.drawer_icon, holder.mLayout, false);
             icon.setOnClickListener(mLauncher);
@@ -690,9 +691,24 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
         final int size = indexedInfo.mInfo.size();
 
-        for (int i = 0; i < holder.mLayout.getChildCount(); i++) {
+        int childSize = holder.mLayout.getChildCount();
+        for (int i = 0; i < childSize; i++) {
             AppDrawerIconView icon = (AppDrawerIconView) holder.mLayout.getChildAt(i);
             icon.setLayoutParams(mIconParams);
+            int extraStart = mExtraPadding;
+            int extraEnd = mExtraPadding;
+            // Do not amend the starting and ending padding, only the padding between icons
+            if (i == 0) {
+                extraStart = 0;
+            } else if (i == childSize - 1) {
+                extraEnd = 0;
+            }
+
+            LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) icon.getLayoutParams();
+            lp.leftMargin = extraStart;
+            lp.rightMargin = extraEnd;
+            icon.setLayoutParams(lp);
+
             if (i >= size) {
                 icon.setVisibility(View.INVISIBLE);
             } else {
@@ -702,6 +718,10 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
                 Drawable d = Utilities.createIconDrawable(info.iconBitmap);
                 d.setBounds(mIconRect);
                 icon.mIcon.setImageDrawable(d);
+                icon.mIcon.setPadding(mDeviceProfile.iconDrawablePaddingPx,
+                        mDeviceProfile.iconDrawablePaddingPx,
+                        mDeviceProfile.iconDrawablePaddingPx,
+                        mDeviceProfile.iconDrawablePaddingPx);
                 icon.mLabel.setText(info.title);
                 icon.mLabel.setVisibility(mHideIconLabels ? View.INVISIBLE : View.VISIBLE);
             }
