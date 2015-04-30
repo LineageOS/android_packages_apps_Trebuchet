@@ -1228,6 +1228,10 @@ public class Launcher extends Activity
         if (mWorkspace.getCustomContentCallbacks() != null) {
             mWorkspace.getCustomContentCallbacks().onHide();
         }
+        final View overviewPanel = this.getOverviewPanel();
+            if (((SlidingUpPanelLayout) overviewPanel).isExpanded()) {
+            ((SlidingUpPanelLayout) overviewPanel).collapsePane();
+        }
     }
 
     QSBScroller mQsbScroller = new QSBScroller() {
