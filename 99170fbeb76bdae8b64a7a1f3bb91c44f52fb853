@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da7fb54a_9879bb32",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-01T05:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7fb54a_78ceb784",
+      "revId": "99170fbeb76bdae8b64a7a1f3bb91c44f52fb853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7fb54a_98cb7b72",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da7fb54a_b8767f3c",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-01T05:53:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7fb54a_98cb7b72",
+      "revId": "99170fbeb76bdae8b64a7a1f3bb91c44f52fb853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da7fb54a_b8c83f76",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2015-05-01T05:41:11Z",
       "side": 1,
       "message": "ASCII Art diagram!",
+      "revId": "99170fbeb76bdae8b64a7a1f3bb91c44f52fb853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7fb54a_d873434c",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-01T05:53:12Z",
+      "side": 1,
+      "message": "Decided to go with a comment block instead :P",
+      "parentUuid": "da7fb54a_b8c83f76",
       "revId": "99170fbeb76bdae8b64a7a1f3bb91c44f52fb853",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
