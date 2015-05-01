@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7fb54a_986a9b19",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-01T07:38:20Z",
+      "side": 1,
+      "message": "Why does this have to be final? Also wouldn\u0027t it make sense to make this variable SlidingUpPanelLayout so that you don\u0027t have to cast for each statement below?",
+      "revId": "bb11a8d6c56e229e38c87e5ab7bcd9fd88d002b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
