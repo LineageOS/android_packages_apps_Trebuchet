@@ -60,7 +60,7 @@
                 android:background="@drawable/scrubber_back"
                 android:clipToPadding="false">
 
-            <com.android.launcher3.AppDrawerScrubber
+            <com.cyanogenmod.trebuchet.AppDrawerScrubber
                     android:id="@+id/app_drawer_scrubber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

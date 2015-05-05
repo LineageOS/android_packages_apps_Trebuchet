@@ -23,7 +23,7 @@
     android:layout_alignParentBottom="true"
     android:background="@drawable/seek_back">
 
-    <com.android.launcher3.AutoExpandTextView
+    <com.cyanogenmod.trebuchet.AutoExpandTextView
         android:id="@+id/scrubberText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

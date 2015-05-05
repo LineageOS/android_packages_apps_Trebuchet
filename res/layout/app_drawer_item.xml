@@ -47,7 +47,7 @@
         android:layout_alignBottom="@id/drawer_item_flow"
         android:background="@color/app_drawer_drag_background" />
 
-    <com.android.launcher3.AutoFitTextView
+    <com.cyanogenmod.trebuchet.AutoFitTextView
         android:id="@+id/drawer_item_title"
         android:layout_width="@dimen/app_drawer_char_width"
         android:layout_height="wrap_content"
