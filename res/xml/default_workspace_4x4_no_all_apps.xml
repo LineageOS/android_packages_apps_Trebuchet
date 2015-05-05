@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<favorites xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+<favorites xmlns:launcher="http://schemas.android.com/apk/res-auto/com.cyanogenmod.trebuchet">
     <!-- Hotseat (We use the screen as the position of the item in the hotseat) -->
     <!-- Dialer Hangouts Maps Chrome Camera -->
     <favorite
@@ -53,4 +53,3 @@
         launcher:x="4"
         launcher:y="0" />
 </favorites>
-

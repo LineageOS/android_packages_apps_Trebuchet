@@ -19,11 +19,11 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.launcher3"
+    package="com.cyanogenmod.trebuchet"
     android:versionName="@string/application_version"
     android:versionCode="1000">
 
-    <original-package android:name="com.android.launcher3" />
+    <original-package android:name="com.cyanogenmod.trebuchet" />
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="16" />
 
@@ -40,23 +40,23 @@
         android:label="@string/permlab_uninstall_shortcut"
         android:description="@string/permdesc_uninstall_shortcut"/>
     <permission
-        android:name="com.android.launcher3.permission.READ_SETTINGS"
+        android:name="com.cyanogenmod.trebuchet.permission.READ_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="normal"
         android:label="@string/permlab_read_settings"
         android:description="@string/permdesc_read_settings"/>
     <permission
-        android:name="com.android.launcher3.permission.WRITE_SETTINGS"
+        android:name="com.cyanogenmod.trebuchet.permission.WRITE_SETTINGS"
         android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
         android:protectionLevel="signatureOrSystem"
         android:label="@string/permlab_write_settings"
         android:description="@string/permdesc_write_settings"/>
     <permission
-        android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS"
+        android:name="com.cyanogenmod.trebuchet.permission.RECEIVE_LAUNCH_BROADCASTS"
         android:protectionLevel="signature"
         />
     <permission
-        android:name="com.android.launcher3.permission.RECEIVE_FIRST_LOAD_BROADCAST"
+        android:name="com.cyanogenmod.trebuchet.permission.RECEIVE_FIRST_LOAD_BROADCAST"
         android:protectionLevel="signatureOrSystem" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -70,16 +70,16 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS" />
-    <uses-permission android:name="com.android.launcher3.permission.RECEIVE_FIRST_LOAD_BROADCAST" />
+    <uses-permission android:name="com.cyanogenmod.trebuchet.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.cyanogenmod.trebuchet.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.cyanogenmod.trebuchet.permission.RECEIVE_LAUNCH_BROADCASTS" />
+    <uses-permission android:name="com.cyanogenmod.trebuchet.permission.RECEIVE_FIRST_LOAD_BROADCAST" />
     <uses-permission android:name="cyanogenmod.permission.PROTECTED_APP" />
 
     <application
-        android:name="com.android.launcher3.LauncherApplication"
+        android:name="com.cyanogenmod.trebuchet.LauncherApplication"
         android:allowBackup="@bool/enable_backup"
-        android:backupAgent="com.android.launcher3.LauncherBackupAgentHelper"
+        android:backupAgent="com.cyanogenmod.trebuchet.LauncherBackupAgentHelper"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher_home"
         android:label="@string/cm_application_name"
@@ -88,7 +88,7 @@
         android:supportsRtl="true" >
 
         <activity
-            android:name="com.android.launcher3.Launcher"
+            android:name="com.cyanogenmod.trebuchet.Launcher"
             android:launchMode="singleTask"
             android:clearTaskOnLaunch="true"
             android:stateNotNeeded="true"
@@ -104,7 +104,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.ToggleWeightWatcher"
+            android:name="com.cyanogenmod.trebuchet.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
             android:enabled="@bool/debug_memory_enabled"
             android:icon="@mipmap/ic_launcher_home">
@@ -116,7 +116,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.LauncherWallpaperPickerActivity"
+            android:name="com.cyanogenmod.trebuchet.LauncherWallpaperPickerActivity"
             android:theme="@style/Theme.WallpaperPicker"
             android:label="@string/pick_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -129,7 +129,7 @@
         </activity>
 
         <activity
-            android:name="com.android.launcher3.WallpaperCropActivity"
+            android:name="com.cyanogenmod.trebuchet.WallpaperCropActivity"
             android:theme="@style/Theme.WallpaperCropper"
             android:label="@string/crop_wallpaper"
             android:icon="@mipmap/ic_launcher_wallpaper"
@@ -144,7 +144,7 @@
 
         <!-- Debugging tools -->
         <activity
-            android:name="com.android.launcher3.MemoryDumpActivity"
+            android:name="com.cyanogenmod.trebuchet.MemoryDumpActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:label="@string/debug_memory_activity"
             android:enabled="@bool/debug_memory_enabled"
@@ -158,13 +158,13 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.android.launcher3.MemoryTracker"
+        <service android:name="com.cyanogenmod.trebuchet.MemoryTracker"
             android:enabled="@bool/debug_memory_enabled"
             >
         </service>
 
         <receiver
-            android:name="com.android.launcher3.WallpaperChangedReceiver">
+            android:name="com.cyanogenmod.trebuchet.WallpaperChangedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.WALLPAPER_CHANGED" />
             </intent-filter>
@@ -172,7 +172,7 @@
 
         <!-- Intent received used to install shortcuts from other applications -->
         <receiver
-            android:name="com.android.launcher3.InstallShortcutReceiver"
+            android:name="com.cyanogenmod.trebuchet.InstallShortcutReceiver"
             android:permission="com.android.launcher.permission.INSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher.action.INSTALL_SHORTCUT" />
@@ -181,7 +181,7 @@
 
         <!-- Intent received used to uninstall shortcuts from other applications -->
         <receiver
-            android:name="com.android.launcher3.UninstallShortcutReceiver"
+            android:name="com.cyanogenmod.trebuchet.UninstallShortcutReceiver"
             android:permission="com.android.launcher.permission.UNINSTALL_SHORTCUT">
             <intent-filter>
                 <action android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
@@ -189,7 +189,7 @@
         </receiver>
 
         <!-- Intent received used to initialize a restored widget -->
-        <receiver android:name="com.android.launcher3.AppWidgetsRestoredReceiver" >
+        <receiver android:name="com.cyanogenmod.trebuchet.AppWidgetsRestoredReceiver" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_HOST_RESTORED"/>
             </intent-filter>
@@ -197,14 +197,14 @@
 
         <!-- New user initialization; set up initial wallpaper -->
         <receiver
-            android:name="com.android.launcher3.UserInitializeReceiver"
+            android:name="com.cyanogenmod.trebuchet.UserInitializeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.USER_INITIALIZE" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.launcher3.PackageChangedReceiver" >
+        <receiver android:name="com.cyanogenmod.trebuchet.PackageChangedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_CHANGED"/>
                 <action android:name="android.intent.action.PACKAGE_REPLACED"/>
@@ -213,13 +213,13 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.launcher3.StartupReceiver" >
+        <receiver android:name="com.cyanogenmod.trebuchet.StartupReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.launcher3.ThemeChangedReceiver" >
+        <receiver android:name="com.cyanogenmod.trebuchet.ThemeChangedReceiver" >
             <intent-filter>
                 <action android:name="org.cyanogenmod.intent.action.THEME_CHANGED"/>
             </intent-filter>
@@ -227,11 +227,11 @@
 
         <!-- The settings provider contains Home's data, like the workspace favorites -->
         <provider
-            android:name="com.android.launcher3.LauncherProvider"
-            android:authorities="com.android.launcher3.settings"
+            android:name="com.cyanogenmod.trebuchet.LauncherProvider"
+            android:authorities="com.cyanogenmod.trebuchet.settings"
             android:exported="true"
-            android:writePermission="com.android.launcher3.permission.WRITE_SETTINGS"
-            android:readPermission="com.android.launcher3.permission.READ_SETTINGS" />
+            android:writePermission="com.cyanogenmod.trebuchet.permission.WRITE_SETTINGS"
+            android:readPermission="com.cyanogenmod.trebuchet.permission.READ_SETTINGS" />
 
         <meta-data android:name="android.nfc.disable_beam_default"
                        android:value="true" />

@@ -18,7 +18,7 @@
 */
 -->
 
-<com.android.launcher3.AlphaDisableableButton
+<com.cyanogenmod.trebuchet.AlphaDisableableButton
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/ActionBarSetWallpaperStyle"
     android:id="@+id/set_wallpaper_button"
@@ -29,4 +29,4 @@
     android:drawablePadding="8dp"
     android:gravity="start|center_vertical"
     android:text="@string/wallpaper_instructions">
-</com.android.launcher3.AlphaDisableableButton>
+</com.cyanogenmod.trebuchet.AlphaDisableableButton>
