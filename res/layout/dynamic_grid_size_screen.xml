@@ -36,7 +36,7 @@
     </LinearLayout>
 
     <view
-        class="com.android.launcher3.DynamicGridSizeFragment$GridSizeView"
+        class="com.cyanogenmod.trebuchet.DynamicGridSizeFragment$GridSizeView"
         android:id="@+id/dynamic_grid_size_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
