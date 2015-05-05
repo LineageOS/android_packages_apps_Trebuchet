@@ -13,9 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<com.android.launcher3.AppsCustomizeTabHost
+<com.cyanogenmod.trebuchet.AppsCustomizeTabHost
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto/com.cyanogenmod.trebuchet"
     android:clipChildren="false">
 
     <LinearLayout
@@ -43,7 +43,7 @@
                     android:visibility="invisible"
                     android:clipToPadding="false" />
             </FrameLayout>
-            <com.android.launcher3.AppsCustomizePagedView
+            <com.cyanogenmod.trebuchet.AppsCustomizePagedView
                 android:id="@+id/apps_customize_pane_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -59,4 +59,4 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
     </LinearLayout>
-</com.android.launcher3.AppsCustomizeTabHost>
+</com.cyanogenmod.trebuchet.AppsCustomizeTabHost>

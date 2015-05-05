@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.launcher3;
+package com.cyanogenmod.trebuchet;
 
 import android.content.Context;
 import android.util.AttributeSet;

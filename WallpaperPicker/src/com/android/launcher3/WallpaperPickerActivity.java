@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.launcher3;
+package com.cyanogenmod.trebuchet;
 
 import android.animation.LayoutTransition;
 import android.annotation.TargetApi;
@@ -1122,8 +1122,8 @@ public class WallpaperPickerActivity extends WallpaperCropActivity {
 
     public Pair<ApplicationInfo, Integer> getWallpaperArrayResourceId() {
         // Context.getPackageName() may return the "original" package name,
-        // com.android.launcher3; Resources needs the real package name,
-        // com.android.launcher3. So we ask Resources for what it thinks the
+        // com.cyanogenmod.trebuchet; Resources needs the real package name,
+        // com.cyanogenmod.trebuchet. So we ask Resources for what it thinks the
         // package name should be.
         final String packageName = getResources().getResourcePackageName(R.array.wallpapers);
         try {
