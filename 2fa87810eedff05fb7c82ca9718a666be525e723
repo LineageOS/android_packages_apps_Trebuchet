@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_083acb36",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-06T06:10:53Z",
+      "side": 1,
+      "message": "It looks like maxContentAreaHeight isn\u0027t used",
+      "revId": "2fa87810eedff05fb7c82ca9718a666be525e723",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
