@@ -16,6 +16,24 @@
       "revId": "a491071085be2fd2d3f784cccc068b9517da2834",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_28ca2f50",
+        "filename": "tests/stress/AndroidManifest.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2015-05-06T05:34:24Z",
+      "side": 1,
+      "message": "You want me to change aosp strings? I\u0027ve not changed this",
+      "parentUuid": "9a89bdaa_089e4b56",
+      "revId": "a491071085be2fd2d3f784cccc068b9517da2834",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
