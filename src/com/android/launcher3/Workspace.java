@@ -1165,6 +1165,29 @@ public class Workspace extends SmoothPagedView
         return super.onGenericMotionEvent(event);
     }
 
+    /**
+     * Get the count of widgets
+     *
+     * {@hide}
+     * @return {@link Integer}
+     */
+    public int getWidgetCount() {
+        int widgetCount = 0;
+        final int clCount = getChildCount();
+        for (int i = 0; i < clCount; i++) {
+            CellLayout cl = (CellLayout) getChildAt(i);
+            ShortcutAndWidgetContainer swc = cl.getShortcutsAndWidgets();
+            final int itemCount = swc.getChildCount();
+            for (int j = 0; j < itemCount; j++) {
+                View v = swc.getChildAt(j);
+                if (v != null  && v.getTag() instanceof LauncherAppWidgetInfo) {
+                    widgetCount++;
+                }
+            }
+        }
+        return widgetCount;
+    }
+
     protected void reinflateWidgetsIfNecessary() {
         final int clCount = getChildCount();
         for (int i = 0; i < clCount; i++) {
