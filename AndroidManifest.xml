@@ -163,6 +163,14 @@
             >
         </service>
 
+        <service
+            android:name="com.android.launcher3.stats.internal.service.AggregationIntentService"
+            android:exported="false">
+            <intent-filter>
+               <action android:name="com.cyanogenmod.filemanager.AGGREGATE_AND_TRACK" />
+            </intent-filter>
+        </service>
+
         <receiver
             android:name="com.android.launcher3.WallpaperChangedReceiver">
             <intent-filter>

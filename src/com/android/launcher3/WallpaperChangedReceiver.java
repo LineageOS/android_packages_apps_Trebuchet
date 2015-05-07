@@ -19,11 +19,16 @@ package com.android.launcher3;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+
+import com.android.launcher3.stats.LauncherStats;
 
 public class WallpaperChangedReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent data) {
         LauncherAppState.setApplicationContext(context.getApplicationContext());
         LauncherAppState appState = LauncherAppState.getInstance();
         appState.onWallpaperChanged();
+        LauncherApplication.getLauncherStats().sendWallpaperChangedEvent(
+                LauncherStats.ORIGIN_CHOOSER);
     }
 }
