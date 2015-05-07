@@ -1165,7 +1165,7 @@ public class Workspace extends SmoothPagedView
         return super.onGenericMotionEvent(event);
     }
 
-    protected void reinflateWidgetsIfNecessary() {
+   protected void reinflateWidgetsIfNecessary() {
         final int clCount = getChildCount();
         for (int i = 0; i < clCount; i++) {
             CellLayout cl = (CellLayout) getChildAt(i);
