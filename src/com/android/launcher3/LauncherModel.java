@@ -3389,6 +3389,13 @@ public class LauncherModel extends BroadcastReceiver
         return widgetsAndShortcuts;
     }
 
+    /**
+     * @return {@link Integer} count of widgets that are in the workspace
+     */
+    public static int getWidgetCount() {
+        return sBgAppWidgets.size();
+    }
+
     private static boolean isPackageDisabled(Context context, String packageName,
             UserHandleCompat user) {
         final LauncherAppsCompat launcherApps = LauncherAppsCompat.getInstance(context);
