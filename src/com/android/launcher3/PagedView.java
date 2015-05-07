@@ -498,7 +498,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
         return (mNextPage != INVALID_PAGE) ? mNextPage : mCurrentPage;
     }
 
-    int getPageCount() {
+    public int getPageCount() {
         return getChildCount();
     }
 

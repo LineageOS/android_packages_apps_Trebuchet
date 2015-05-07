@@ -19,11 +19,14 @@ package com.android.launcher3;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 public class WallpaperChangedReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent data) {
         LauncherAppState.setApplicationContext(context.getApplicationContext());
         LauncherAppState appState = LauncherAppState.getInstance();
         appState.onWallpaperChanged();
+        Log.i("TEST", "Got here");
+        // [TODO][MSB]: verify this is when theme changes wallpaper
     }
 }

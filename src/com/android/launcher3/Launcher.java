@@ -16,38 +16,13 @@
 
 package com.android.launcher3;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.animation.TimeInterpolator;
-import android.animation.ValueAnimator;
+import android.animation.*;
 import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityOptions;
-import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.Dialog;
-import android.app.SearchManager;
+import android.app.*;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
-import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
-import android.content.ComponentCallbacks2;
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.IntentSender;
-import android.content.SharedPreferences;
+import android.content.*;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -55,23 +30,10 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.os.StrictMode;
-import android.os.SystemClock;
+import android.os.*;
 import android.speech.RecognizerIntent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -81,66 +43,28 @@ import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.ContextThemeWrapper;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.HapticFeedbackConstants;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.Surface;
-import android.view.View;
+import android.view.*;
 import android.view.View.OnLongClickListener;
-import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Advanceable;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.PopupMenu;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import com.android.launcher3.DropTarget.DragObject;
 import com.android.launcher3.PagedView.PageSwitchListener;
-import com.android.launcher3.compat.AppWidgetManagerCompat;
-import com.android.launcher3.compat.LauncherActivityInfoCompat;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.android.launcher3.compat.PackageInstallerCompat;
-import com.android.launcher3.compat.PackageInstallerCompat.PackageInstallInfo;
-import com.android.launcher3.compat.UserHandleCompat;
-import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.PagedView.TransitionEffect;
+import com.android.launcher3.compat.*;
+import com.android.launcher3.compat.PackageInstallerCompat.PackageInstallInfo;
 import com.android.launcher3.settings.SettingsProvider;
+import com.android.launcher3.stats.LauncherStats;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -480,6 +404,8 @@ public class Launcher extends Activity
         }
 
         super.onCreate(savedInstanceState);
+
+        ((LauncherApplication)getApplication()).setLauncher(this);
 
         initializeDynamicGrid();
         mHideIconLabels = SettingsProvider.getBoolean(this,
@@ -1304,15 +1230,18 @@ public class Launcher extends Activity
                         mAppsCustomizeContent.setSortMode(AppsCustomizePagedView.SortMode.Title);
                         break;
                     case R.id.sort_mode_install_time:
-                        mAppsCustomizeContent.setSortMode(AppsCustomizePagedView.SortMode.InstallTime);
+                        mAppsCustomizeContent
+                                .setSortMode(AppsCustomizePagedView.SortMode.InstallTime);
                         break;
                     case R.id.sort_mode_launch_count:
-                        mAppsCustomizeContent.setSortMode(AppsCustomizePagedView.SortMode.LaunchCount);
+                        mAppsCustomizeContent
+                                .setSortMode(AppsCustomizePagedView.SortMode.LaunchCount);
                         break;
                 }
                 mOverviewSettingsPanel.notifyDataSetInvalidated();
-                SettingsProvider.putInt(getBaseContext(), SettingsProvider.SETTINGS_UI_DRAWER_SORT_MODE,
-                        mAppsCustomizeContent.getSortMode().getValue());
+                SettingsProvider
+                        .putInt(getBaseContext(), SettingsProvider.SETTINGS_UI_DRAWER_SORT_MODE,
+                                mAppsCustomizeContent.getSortMode().getValue());
                 return true;
             }
         });
@@ -1479,6 +1408,8 @@ public class Launcher extends Activity
         Intent settings;
         settings = new Intent(android.provider.Settings.ACTION_SETTINGS);
         startActivity(settings);
+        LauncherApplication.getLauncherStats().sendSettingsOpenedEvent(
+                LauncherStats.ORIGIN_TREB_LONGPRESS);
         if (mWorkspace.isInOverviewMode()) {
             mWorkspace.exitOverviewMode(false);
         }
@@ -2177,6 +2108,9 @@ public class Launcher extends Activity
     public void removeAppWidget(LauncherAppWidgetInfo launcherInfo) {
         removeWidgetToAutoAdvance(launcherInfo.hostView);
         launcherInfo.hostView = null;
+        AppWidgetProviderInfo info = mAppWidgetManager.getAppWidgetInfo(launcherInfo.appWidgetId);
+        String packageName = info.providerInfo.packageName;
+        LauncherApplication.getLauncherStats().sendWidgetRemoveEvent(packageName);
     }
 
     void showOutOfSpaceMessage(boolean isHotseatLayout) {
@@ -2607,6 +2541,8 @@ public class Launcher extends Activity
                     appWidgetInfo);
             mWorkspace.removeExtraEmptyScreenDelayed(true, onComplete, delay, false);
         }
+        String packageName = appWidgetInfo.providerInfo.packageName;
+        LauncherApplication.getLauncherStats().sendWidgetAddEvent(packageName);
     }
 
     /**
@@ -2895,6 +2831,13 @@ public class Launcher extends Activity
             onClickAllAppsButton(v);
         } else if (tag instanceof AppInfo) {
             startAppShortcutOrInfoActivity(v);
+            LauncherApplication.getLauncherStats().sendAppLaunchEvent(
+                    LauncherStats.ORIGIN_APPDRAWER, ((AppInfo)tag).componentName.getPackageName());
+            String packageName = ((AppInfo)tag).getIntent().getComponent().getPackageName();
+            if (LauncherStats.SETTINGS_PACKAGE_NAME.equals(packageName)) {
+                LauncherApplication.getLauncherStats()
+                    .sendSettingsOpenedEvent(LauncherStats.ORIGIN_APPDRAWER);
+            }
         } else if (tag instanceof LauncherAppWidgetInfo) {
             if (v instanceof PendingAppWidgetHostView) {
                 onClickPendingWidget((PendingAppWidgetHostView) v);
@@ -3059,6 +3002,13 @@ public class Launcher extends Activity
 
         // Start activities
         startAppShortcutOrInfoActivity(v);
+        String packageName = intent.getComponent().getPackageName();
+        LauncherApplication.getLauncherStats().sendAppLaunchEvent(LauncherStats.ORIGIN_HOMESCREEN,
+                packageName);
+        if (LauncherStats.SETTINGS_PACKAGE_NAME.equals(packageName)) {
+            LauncherApplication.getLauncherStats().sendSettingsOpenedEvent(
+                    LauncherStats.ORIGIN_HOMESCREEN);
+        }
     }
 
     private void startAppShortcutOrInfoActivity(View v) {
@@ -3171,6 +3121,8 @@ public class Launcher extends Activity
         final Intent pickWallpaper = new Intent(Intent.ACTION_SET_WALLPAPER);
         pickWallpaper.setComponent(getWallpaperPickerComponent());
         startActivityForResult(pickWallpaper, REQUEST_PICK_WALLPAPER);
+        LauncherApplication.getLauncherStats().sendWallpaperChangedEvent(
+                LauncherStats.ORIGIN_TREB_LONGPRESS);
     }
 
     /**
@@ -5891,6 +5843,7 @@ public class Launcher extends Activity
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
     }
+
 }
 
 interface LauncherTransitionable {
