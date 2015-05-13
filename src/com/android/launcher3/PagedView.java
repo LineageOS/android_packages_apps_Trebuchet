@@ -3084,6 +3084,9 @@ public abstract class PagedView extends ViewGroup implements ViewGroup.OnHierarc
 
             @Override
             public void screenScrolled(View v, int i, float scrollProgress) {
+                if(scrollProgress >= 1.0f || scrollProgress <= -1.0f) {
+                    return;
+                }
                 float rotation =
                         (mUp ? TRANSITION_SCREEN_ROTATION : -TRANSITION_SCREEN_ROTATION) * scrollProgress;
 
