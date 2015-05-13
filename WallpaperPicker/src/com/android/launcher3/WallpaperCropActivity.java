@@ -130,7 +130,7 @@ public class WallpaperCropActivity extends Activity {
                 }
             }
         };
-        setCropViewTileSource(bitmapSource, true, false, onLoad);
+        setCropViewTileSource(bitmapSource, true, true, onLoad);
     }
 
     @Override
