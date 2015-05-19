@@ -462,7 +462,7 @@ public class DeviceProfile {
         // Folder
         folderCellWidthPx = cellWidthPx + 3 * edgeMarginPx;
         folderCellHeightPx = cellHeightPx + edgeMarginPx;
-        folderBackgroundOffset = 0;
+        folderBackgroundOffset = -edgeMarginPx;
         folderIconSizePx = iconSizePx + 2 * -folderBackgroundOffset;
 
         // All Apps
