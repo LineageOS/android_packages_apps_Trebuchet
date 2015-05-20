@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_0ebabce1",
+        "filename": "Android.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-20T13:04:10Z",
+      "side": 1,
+      "message": "whitespace! :-D I\u0027ll get rid of it :-p",
+      "parentUuid": "9a89bdaa_b35bf953",
+      "revId": "3c7e22c56604d24bb5f5f9a56d6ac4474520cc12",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_d3587d59",
         "filename": "AndroidManifest.xml",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a89bdaa_2ebf80d1",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-20T13:04:10Z",
+      "side": 1,
+      "message": "yeah, fucking intellij I swear I have to reconfigure it every update.",
+      "parentUuid": "9a89bdaa_aedab076",
+      "revId": "3c7e22c56604d24bb5f5f9a56d6ac4474520cc12",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_8e132c5c",
         "filename": "src/com/android/launcher3/WallpaperChangedReceiver.java",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2015-05-20T11:13:47Z",
       "side": 1,
       "message": "test code?",
+      "revId": "3c7e22c56604d24bb5f5f9a56d6ac4474520cc12",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_8ececc81",
+        "filename": "src/com/android/launcher3/WallpaperChangedReceiver.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-20T13:04:10Z",
+      "side": 1,
+      "message": "yes, still needs to be addressed it looks like",
+      "parentUuid": "9a89bdaa_8e132c5c",
       "revId": "3c7e22c56604d24bb5f5f9a56d6ac4474520cc12",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
