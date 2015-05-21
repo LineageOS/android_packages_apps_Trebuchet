@@ -1021,7 +1021,7 @@ public class LauncherModel extends BroadcastReceiver
         return items;
     }
 
-    /**
+    /*
      * Find a folder in the db, creating the FolderInfo if necessary, and adding it to folderList.
      */
     FolderInfo getFolderById(Context context, HashMap<Long,FolderInfo> folderList, long id) {
@@ -1883,38 +1883,131 @@ public class LauncherModel extends BroadcastReceiver
                 return true;
             }
 
+            if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
+                    item.cellX < 0 || item.cellY < 0 ||
+                    item.cellX + item.spanX > countX || item.cellY + item.spanY > countY) {
+                // If this is a shortcut (1x1), move everything forward by 1 and place the shortcut
+                // in the next available space.
+                if (item.spanX == 1 && item.spanY == 1) {
+                    if (item.cellX + 1 > countX) {
+                        item.cellX = item.cellX % countX;
+                        item.cellY += 1;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                    if (item.cellY + 1 > countY) {
+                        item.cellY = item.cellY % countY;
+                        item.screenId += 1;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                } else {
+                    // Widget that doesn't fit, we don't support moving these around, so delete it.
+
+                    // TODO: actually check if the widget wont fit, try to resize
+                    deleteOnInvalidPlacement.set(true);
+                    return false;
+                }
+
+                // If something horrid happens...
+                if (item.cellX > countX || item.cellY > countY) {
+                    Log.e(TAG, "Error loading shortcut " + item
+                            + " into cell (" + containerIndex + "-" + item.screenId + ":"
+                            + item.cellX + "," + item.cellY
+                            + ") out of screen bounds ( " + countX + "x" + countY + ")");
+                    return false;
+                }
+            }
+
             if (!occupied.containsKey(item.screenId)) {
                 ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
                 occupied.put(item.screenId, items);
             }
 
-            final ItemInfo[][] screens = occupied.get(item.screenId);
-            if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
-                    item.cellX < 0 || item.cellY < 0 ||
-                    item.cellX + item.spanX > countX || item.cellY + item.spanY > countY) {
-                Log.e(TAG, "Error loading shortcut " + item
-                        + " into cell (" + containerIndex + "-" + item.screenId + ":"
-                        + item.cellX + "," + item.cellY
-                        + ") out of screen bounds ( " + countX + "x" + countY + ")");
-                return false;
-            }
+            ItemInfo[][] screens = occupied.get(item.screenId);
+
 
             // Check if any workspace icons overlap with each other
             for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
+                Log.v("BIRD", "first loop" + x);
+
                 for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
+                    Log.v("BIRD", "second loop" + x + ":" + y);
+
                     if (screens[x][y] != null) {
-                        Log.e(TAG, "Error loading shortcut " + item
-                            + " into cell (" + containerIndex + "-" + item.screenId + ":"
-                            + x + "," + y
-                            + ") occupied by "
-                            + screens[x][y]);
-                        return false;
+                        Log.v("BIRD", "overlapping icons at" + x + ":" + y);
+                        ItemInfo occupiedItem = screens[x][y];
+
+                        if (occupiedItem.wasMovedDueToReducedSpace) {
+
+                            // something exists here, we need to move it to the next available space
+                            // lets hunt for that
+                            Log.v("BIRD", "X:" + x + " countx:" + countX);
+
+                            for (int nextX = 0; nextX < countX; nextX++) {
+                                if (screens[nextX][y] == null) {
+                                    // spot is not taken, lets move here
+                                    Log.v("BIRD", "free space at" + nextX + ":" + y);
+
+                                    item.cellX = nextX;
+                                    item.cellY = y;
+                                    break;
+                                }
+                                if (nextX == countX) {
+                                    Log.v("BIRD", "last coumn");
+                                    nextX = 0;
+                                    if (y == countY) {
+
+                                        item.screenId += 1;
+                                        Log.v("BIRD", "new screen: " + item.screenId);
+
+                                        ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
+                                        occupied.put(item.screenId, items);
+                                        screens = occupied.get(item.screenId);
+                                        y = 0;
+
+                                    }
+                                    if (y < countY) {
+                                        Log.v("BIRD", "next row");
+                                        y++;
+                                    }
+                                }
+                            }
+
+                            if (!occupied.containsKey(item.screenId)) {
+                                ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
+                                occupied.put(item.screenId, items);
+                            }
+
+
+                        } else {
+                            Log.e(TAG, "Error loading shortcut " + item
+                                    + " into cell (" + containerIndex + "-" + item.screenId + ":"
+                                    + x + "," + y
+                                    + ") occupied by "
+                                    + screens[x][y]);
+                            return false;
+                        }
                     }
                 }
             }
+
+            if (item.requiresDbUpdate) {
+                moveItemInDatabase(mContext, item, item.container, item.screenId, item.cellX,
+                        item.cellY);
+            }
+
+            if (!sBgWorkspaceScreens.contains(item.screenId)) {
+                sBgWorkspaceScreens.add(item.screenId);
+                Collections.sort(sBgWorkspaceScreens);
+                updateWorkspaceScreenOrder(mContext, sBgWorkspaceScreens);
+            }
+
+            screens = occupied.get(item.screenId);
             for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
                 for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
                     screens[x][y] = item;
+
                 }
             }
 
