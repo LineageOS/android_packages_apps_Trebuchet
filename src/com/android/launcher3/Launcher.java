@@ -481,7 +481,7 @@ public class Launcher extends Activity
 
         super.onCreate(savedInstanceState);
 
-        initializeDynamicGrid();
+        initializeDynamicGrid(false);
         mHideIconLabels = SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS,
                 R.bool.preferences_interface_homescreen_hide_icon_labels_default);
@@ -566,8 +566,10 @@ public class Launcher extends Activity
     @Override
     public void onLauncherProviderChange() { }
 
-    private void initializeDynamicGrid() {
-        LauncherAppState.setApplicationContext(getApplicationContext());
+    private void initializeDynamicGrid(boolean updateGrid) {
+        if (!updateGrid) {
+            LauncherAppState.setApplicationContext(getApplicationContext());
+        }
         LauncherAppState app = LauncherAppState.getInstance();
 
         mHideIconLabels = SettingsProvider.getBoolean(this,
@@ -1981,7 +1983,8 @@ public class Launcher extends Activity
                         LauncherModel.LOADER_FLAG_CLEAR_WORKSPACE);
             } else if (ENABLE_DEBUG_INTENTS && DebugIntents.MIGRATE_DATABASE.equals(action)) {
                 mModel.resetLoadedState(false, true);
-                mModel.startLoader(false, PagedView.INVALID_RESTORE_PAGE,
+                mModel.startLoader(false, PagedView.INVALID_
+                        RESTORE_PAGE,
                         LauncherModel.LOADER_FLAG_CLEAR_WORKSPACE
                                 | LauncherModel.LOADER_FLAG_MIGRATE_SHORTCUTS);
             } else if (LauncherAppsCompat.ACTION_MANAGED_PROFILE_ADDED.equals(action)
@@ -5167,6 +5170,9 @@ public class Launcher extends Activity
         PackageInstallerCompat.getInstance(this).onFinishBind();
         mModel.recheckRestoredItems(this);
         mWorkspace.stripEmptyScreens();
+        if (mWorkspace.isInOverviewMode()) {
+            mWorkspace.resetOverviewMode();
+        }
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
@@ -5814,7 +5820,7 @@ public class Launcher extends Activity
     public void updateDynamicGrid(int page) {
         mSearchDropTargetBar.setupQSB(Launcher.this);
 
-        initializeDynamicGrid();
+        initializeDynamicGrid(true);
 
         mGrid.layout(Launcher.this);
 
