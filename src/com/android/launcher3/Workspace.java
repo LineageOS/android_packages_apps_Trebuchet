@@ -601,24 +601,25 @@ public class Workspace extends SmoothPagedView
         Launcher.addDumpLog(TAG, "11683562 - insertNewWorkspaceScreen(): " + screenId +
                 " at index: " + insertIndex, true);
 
-        if (mWorkspaceScreens.containsKey(screenId)) {
-            throw new RuntimeException("Screen id " + screenId + " already exists!");
-        }
 
-        CellLayout newScreen = (CellLayout)
-                mLauncher.getLayoutInflater().inflate(R.layout.workspace_screen, null);
+        // sometimes a screen will attempt to get added twice
+        // Dont panic, but don't insert the screen twice.
+        if (!mWorkspaceScreens.containsKey(screenId)) {
+            CellLayout newScreen = (CellLayout)
+                    mLauncher.getLayoutInflater().inflate(R.layout.workspace_screen, null);
 
-        newScreen.setOnLongClickListener(mLongClickListener);
-        newScreen.setOnClickListener(mLauncher);
-        newScreen.setSoundEffectsEnabled(false);
-        mWorkspaceScreens.put(screenId, newScreen);
-        mScreenOrder.add(insertIndex, screenId);
-        addView(newScreen, insertIndex);
+            newScreen.setOnLongClickListener(mLongClickListener);
+            newScreen.setOnClickListener(mLauncher);
+            newScreen.setSoundEffectsEnabled(false);
+            mWorkspaceScreens.put(screenId, newScreen);
+            mScreenOrder.add(insertIndex, screenId);
+            addView(newScreen, insertIndex);
 
-        if (mDefaultScreenId == screenId) {
-            int defaultPage = getPageIndexForScreenId(screenId);
-            moveToScreen(defaultPage, false);
-            Launcher.setScreen(defaultPage);
+            if (mDefaultScreenId == screenId) {
+                int defaultPage = getPageIndexForScreenId(screenId);
+                moveToScreen(defaultPage, false);
+                Launcher.setScreen(defaultPage);
+            }
         }
 
         return screenId;
@@ -1088,7 +1089,8 @@ public class Workspace extends SmoothPagedView
             // TODO: This branch occurs when the workspace is adding views
             // outside of the defined grid
             // maybe we should be deleting these items from the LauncherModel?
-            Launcher.addDumpLog(TAG, "Failed to add to item at (" + lp.cellX + "," + lp.cellY + ") to CellLayout", true);
+            Launcher.addDumpLog(TAG, "Failed to add to item at (" + lp.cellX + "," + lp.cellY +
+                    ") to CellLayout at screen:" + screenId, true);
         }
 
         if (!(child instanceof Folder)) {
