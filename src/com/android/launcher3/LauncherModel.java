@@ -1511,11 +1511,7 @@ public class LauncherModel extends BroadcastReceiver
     }
 
     public void stopLoader() {
-        synchronized (mLock) {
-            if (mLoaderTask != null) {
-                mLoaderTask.stopLocked();
-            }
-        }
+        resetLoadedState(false, true);
     }
 
     /** Loads the workspace screens db into a map of Rank -> ScreenId */
@@ -1883,38 +1879,120 @@ public class LauncherModel extends BroadcastReceiver
                 return true;
             }
 
+            if (item.cellX < 0 || item.cellY < 0 || item.cellY > countY || item.cellX > countX
+                    || item.cellX + item.spanX > countX
+                    || item.cellY + item.spanY > countY) {
+
+                if (item.itemType != LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET) {
+                    if (item.cellX + 1 > countX) {
+                        item.cellX = 0;
+                        item.cellY += 1;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                    if (item.cellY + 1 > countY) {
+                        item.cellY = 0;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                } else {
+                    // see if widget can be shrunk to fit a screen, if not, just remove it
+                    if (item.minSpanX > countX || item.minSpanY > countY) {
+                        deleteOnInvalidPlacement.set(true);
+                        return false;
+                    }
+                    if (item.cellX + item.spanX > countX) {
+                        item.cellX = 0;
+                        item.spanY = item.spanY / 2;
+                        item.spanX = countX;
+                        item.requiresDbUpdate = true;
+                        item.wasMovedDueToReducedSpace = true;
+                    }
+                    if (item.cellY + item.spanY > countY) {
+                        item.cellY = 0;
+                        item.spanY = countY;
+                        item.requiresDbUpdate = true;
+                        item.wasMovedDueToReducedSpace = true;
+                    }
+                    if (item.cellY + item.spanY == countY && item.cellX + item.spanX == countX) {
+                        // if the widget is the size of the grid, make a screen all it's own.
+                        item.screenId = sBgWorkspaceScreens.size() + 1;
+                    }
+                }
+            }
+
             if (!occupied.containsKey(item.screenId)) {
                 ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
                 occupied.put(item.screenId, items);
             }
 
-            final ItemInfo[][] screens = occupied.get(item.screenId);
-            if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
-                    item.cellX < 0 || item.cellY < 0 ||
-                    item.cellX + item.spanX > countX || item.cellY + item.spanY > countY) {
-                Log.e(TAG, "Error loading shortcut " + item
-                        + " into cell (" + containerIndex + "-" + item.screenId + ":"
-                        + item.cellX + "," + item.cellY
-                        + ") out of screen bounds ( " + countX + "x" + countY + ")");
-                return false;
-            }
+            ItemInfo[][] screens = occupied.get(item.screenId);
 
             // Check if any workspace icons overlap with each other
-            for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
-                for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
+            for (int x = item.cellX; x < (item.cellX + item.spanX); x++) {
+                for (int y = item.cellY; y < (item.cellY + item.spanY); y++) {
                     if (screens[x][y] != null) {
-                        Log.e(TAG, "Error loading shortcut " + item
-                            + " into cell (" + containerIndex + "-" + item.screenId + ":"
-                            + x + "," + y
-                            + ") occupied by "
-                            + screens[x][y]);
-                        return false;
+                        ItemInfo occupiedItem = screens[x][y];
+                        if (occupiedItem.wasMovedDueToReducedSpace || item.wasMovedDueToReducedSpace) {
+                            // overlapping icon exists here
+                            // we must find a free space.
+                            boolean freeFound = false;
+                            int nextX = 0;
+                            int nextY = 0;
+                            while (!freeFound) {
+                                if (screens[nextX][nextY] == null) {
+                                    // spot is not taken, lets move here
+                                    item.cellX = nextX;
+                                    item.cellY = nextY;
+                                    // item has been moved and is at it's final home
+                                    item.wasMovedDueToReducedSpace = false;
+                                    item.requiresDbUpdate = true;
+                                    freeFound = true;
+                                } else {
+                                    if (nextX == countX - 1) {
+                                        if (nextY == countY - 1) {
+                                            item.screenId += 1;
+                                            item.wasMovedDueToReducedSpace = true;
+                                            item.requiresDbUpdate = true;
+                                            if (!occupied.containsKey(item.screenId)) {
+                                                ItemInfo[][] items = new ItemInfo[countX][countY];
+                                                occupied.put(item.screenId, items);
+                                            }
+                                            nextY = 0;
+                                            nextX = 0;
+                                            screens = occupied.get(item.screenId);
+                                        } else {
+                                            nextX = 0;
+                                            nextY++;
+                                        }
+                                    } else {
+                                        nextX++;
+                                    }
+                                }
+                            }
+                        }
                     }
+                    if (!occupied.containsKey(item.screenId)) {
+                        ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
+                        occupied.put(item.screenId, items);
+                    }
+                    screens = occupied.get(item.screenId);
                 }
             }
-            for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
-                for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
+
+            screens = occupied.get(item.screenId);
+            for (int x = item.cellX; x < (item.cellX + item.spanX); x++) {
+                for (int y = item.cellY; y < (item.cellY + item.spanY); y++) {
                     screens[x][y] = item;
+                    if (item.itemType == LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET) {
+                        // fill up the entire grid where the widget technically is
+                        for (int spanX = x; spanX > item.spanX; spanX++) {
+                            screens[spanX][y] = item;
+                            for (int spanY = y; spanY > item.spanX; spanY++) {
+                                screens[spanX][spanY] = item;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -2497,25 +2575,17 @@ public class LauncherModel extends BroadcastReceiver
                     Launcher.addDumpLog(TAG, "11683562 -   sBgWorkspaceScreens: " +
                             TextUtils.join(", ", sBgWorkspaceScreens), true);
 
-                    // Remove any empty screens
-                    ArrayList<Long> unusedScreens = new ArrayList<Long>(sBgWorkspaceScreens);
+                    // Make sure that we have all the screens we will need that may have been added
                     for (ItemInfo item: sBgItemsIdMap.values()) {
                         long screenId = item.screenId;
-                        if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
-                                unusedScreens.contains(screenId)) {
-                            unusedScreens.remove(screenId);
+                        if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
+                            if (!sBgWorkspaceScreens.contains(screenId)) {
+                                sBgWorkspaceScreens.add(screenId);
+                            }
                         }
                     }
 
-                    // If there are any empty screens remove them, and update.
-                    if (unusedScreens.size() != 0) {
-                        // Log to disk
-                        Launcher.addDumpLog(TAG, "11683562 -   unusedScreens (to be removed): " +
-                                TextUtils.join(", ", unusedScreens), true);
-
-                        sBgWorkspaceScreens.removeAll(unusedScreens);
-                        updateWorkspaceScreenOrder(context, sBgWorkspaceScreens);
-                    }
+                    updateWorkspaceScreenOrder(context, sBgWorkspaceScreens);
                 }
 
                 if (DEBUG_LOADERS) {
