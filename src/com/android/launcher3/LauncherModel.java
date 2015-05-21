@@ -1888,10 +1888,33 @@ public class LauncherModel extends BroadcastReceiver
                 occupied.put(item.screenId, items);
             }
 
-            final ItemInfo[][] screens = occupied.get(item.screenId);
             if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP &&
                     item.cellX < 0 || item.cellY < 0 ||
                     item.cellX + item.spanX > countX || item.cellY + item.spanY > countY) {
+                // If this is a shortcut (1x1), move everything forward by 1 and place the shortcut
+                // in the next available space.
+                if (item.spanX == 1 && item.spanY == 1) {
+                    if (item.cellX + 1 > countX) {
+                        item.cellX = item.cellX % countX;
+                        item.cellY += 1;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                    if (item.cellY + 1 > countY) {
+                        item.cellY = item.cellY % countY;
+                        item.screenId += 1;
+                        item.wasMovedDueToReducedSpace = true;
+                        item.requiresDbUpdate = true;
+                    }
+                } else {
+                    // Widget that doesn't fit, we don't support moving these around, so delete it.
+                    deleteOnInvalidPlacement.set(true);
+                    return false;
+                }
+
+                // If this is a widget, determine if it will fit on the desktop at all, if so, see above.
+                // If it doesn't fit, set delete to true.
+
                 Log.e(TAG, "Error loading shortcut " + item
                         + " into cell (" + containerIndex + "-" + item.screenId + ":"
                         + item.cellX + "," + item.cellY
@@ -1899,19 +1922,45 @@ public class LauncherModel extends BroadcastReceiver
                 return false;
             }
 
+            ItemInfo[][] screens = occupied.get(item.screenId);
+
             // Check if any workspace icons overlap with each other
             for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
                 for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
                     if (screens[x][y] != null) {
-                        Log.e(TAG, "Error loading shortcut " + item
-                            + " into cell (" + containerIndex + "-" + item.screenId + ":"
-                            + x + "," + y
-                            + ") occupied by "
-                            + screens[x][y]);
-                        return false;
+                        ItemInfo occupiedInfo = screens[x][y];
+                        if (occupiedInfo.wasMovedDueToReducedSpace) {
+                            // The item occupying this space got there because it's original space
+                            // was removed. So, move over to make way for it.
+                            if (item.cellX + 2 > countX) {
+                                item.cellX = 0;
+                                item.cellY += 1;
+                                item.wasMovedDueToReducedSpace = true;
+                                item.requiresDbUpdate = true;
+                            }
+                            if (item.cellY + 2 > countY) {
+                                item.cellY = 0;
+                                item.screenId += 1;
+                                item.wasMovedDueToReducedSpace = true;
+                                item.requiresDbUpdate = true;
+
+                                if (!occupied.containsKey(item.screenId)) {
+                                    ItemInfo[][] items = new ItemInfo[countX + 1][countY + 1];
+                                    occupied.put(item.screenId, items);
+                                }
+                            }
+                        } else {
+                            Log.e(TAG, "Error loading shortcut " + item
+                                    + " into cell (" + containerIndex + "-" + item.screenId + ":"
+                                    + x + "," + y
+                                    + ") occupied by "
+                                    + screens[x][y]);
+                            return false;
+                        }
                     }
                 }
             }
+            screens = occupied.get(item.screenId);
             for (int x = item.cellX; x < (item.cellX+item.spanX); x++) {
                 for (int y = item.cellY; y < (item.cellY+item.spanY); y++) {
                     screens[x][y] = item;
