@@ -5820,6 +5820,7 @@ public class Launcher extends Activity
 
         // Synchronized reload
         mModel.stopLoader(); //make sure the loader isn't running
+        mModel.resetLoadedState(true, true);
         mModel.startLoader(true, page);
         mWorkspace.updateCustomContentVisibility();
 
