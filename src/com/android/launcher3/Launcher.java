@@ -2263,12 +2263,10 @@ public class Launcher extends Activity
 
             // If we are already on home, then just animate back to the workspace,
             // otherwise, just wait until onResume to set the state back to Workspace
-            if (mWorkspace.getOpenFolder() == null) {
-                if (alreadyOnHome) {
-                    showWorkspace(true);
-                } else {
-                    mOnResumeState = State.WORKSPACE;
-                }
+            if (alreadyOnHome) {
+                showWorkspace(true);
+            } else {
+                mOnResumeState = State.WORKSPACE;
             }
 
             final View v = getWindow().peekDecorView();
@@ -2320,7 +2318,7 @@ public class Launcher extends Activity
         outState.putInt(RUNTIME_STATE, mState.ordinal());
         // We close any open folder since it will not be re-opened, and we need to make sure
         // this state is reflected.
-        closeFolder(false);
+        closeFolder();
 
         if (mPendingAddInfo.container != ItemInfo.NO_ID && mPendingAddInfo.screenId > -1 &&
                 mWaitingForResult) {
@@ -3439,10 +3437,6 @@ public class Launcher extends Activity
         Folder folder = folderIcon.getFolder();
         FolderInfo info = folder.mInfo;
 
-        if (folder.getState() == Folder.STATE_ANIMATING) {
-            return;
-        }
-
         if (info.hidden) {
             folder.startHiddenFolderManager();
             return;
@@ -3459,7 +3453,8 @@ public class Launcher extends Activity
             Log.w(TAG, "Opening folder (" + folder + ") which already has a parent (" +
                     folder.getParent() + ").");
         }
-        folder.animateOpen(getWorkspace());
+        folder.animateOpen();
+        growAndFadeOutFolderIcon(folderIcon);
 
         // Notify the accessibility manager that this folder "window" has appeared and occluded
         // the workspace items
@@ -3468,31 +3463,24 @@ public class Launcher extends Activity
     }
 
     public void closeFolder() {
-        closeFolder(true);
-    }
-
-    public void closeFolder(boolean animate) {
         Folder folder = mWorkspace != null ? mWorkspace.getOpenFolder() : null;
         if (folder != null) {
             if (folder.isEditingName()) {
                 folder.dismissEditingName();
             }
-            closeFolder(folder, animate);
+            closeFolder(folder);
         }
     }
 
     void closeFolder(Folder folder) {
-        closeFolder(folder, true);
-    }
-
-    void closeFolder(Folder folder, boolean animate) {
-        if (folder.getState() == Folder.STATE_ANIMATING) {
-            return;
-        }
-
         folder.getInfo().opened = false;
 
-        folder.animateClosed(animate);
+        ViewGroup parent = (ViewGroup) folder.getParent().getParent();
+        if (parent != null) {
+            FolderIcon fi = (FolderIcon) mWorkspace.getViewForTag(folder.mInfo);
+            shrinkAndFadeInFolderIcon(fi);
+        }
+        folder.animateClosed();
 
         // Notify the accessibility manager that this folder "window" has disappeard and no
         // longer occludeds the workspace items
