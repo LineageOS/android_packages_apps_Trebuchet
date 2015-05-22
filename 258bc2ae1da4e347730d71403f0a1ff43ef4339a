@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a89bdaa_3f41680c",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-22T05:31:20Z",
+      "side": 1,
+      "message": "This has something to do with filemanager?",
+      "revId": "258bc2ae1da4e347730d71403f0a1ff43ef4339a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a89bdaa_e4c5b95b",
         "filename": "src/com/android/launcher3/Launcher.java",
         "patchSetId": 7
@@ -13,6 +30,23 @@
       "writtenOn": "2015-05-21T17:15:12Z",
       "side": 1,
       "message": "I might have a suggestion for you about where else to include the page count stat. There\u0027s a call back in Launcher.java for bindScreens(AL\u003clong\u003e ids) that will get called when the launcher model has read in the db and has loaded up the screens that need to be bound to the workspace. So if we report this behavior there we could remove some of the chatter in the stats and only be notified once when the users workspace pages have been loaded instead of on every onResume.",
+      "revId": "258bc2ae1da4e347730d71403f0a1ff43ef4339a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_9f1d1412",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 1238,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-22T05:31:20Z",
+      "side": 1,
+      "message": "Do you have to do this on every onPause? Might be better to do it when the number of widgets and pages changes. This way, we have to take the time to write to shared prefs every time the user leaves the launcher, that happens a lot in a day.\n\nIt might not take that much time though, but it would be worth checking on. I found that writing shared prefs for the settings of trebuchet took about 100 milliseconds when I investigated another perf issue previously.",
       "revId": "258bc2ae1da4e347730d71403f0a1ff43ef4339a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -47,6 +81,23 @@
       "writtenOn": "2015-05-21T17:15:12Z",
       "side": 1,
       "message": "Should these log methods be in the Logger util class? I realize the tags are different, but it seems both are logs related to stats.",
+      "revId": "258bc2ae1da4e347730d71403f0a1ff43ef4339a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_bf1ad815",
+        "filename": "src/com/android/launcher3/stats/external/StatsUtil.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-22T05:31:20Z",
+      "side": 1,
+      "message": "Cyanogen",
       "revId": "258bc2ae1da4e347730d71403f0a1ff43ef4339a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
