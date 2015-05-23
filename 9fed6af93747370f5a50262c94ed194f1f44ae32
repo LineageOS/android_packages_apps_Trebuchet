@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_5e362d04",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-23T04:49:02Z",
+      "side": 1,
+      "message": "Think these lines should probably be removed instead of just being commented out.",
+      "revId": "9fed6af93747370f5a50262c94ed194f1f44ae32",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
