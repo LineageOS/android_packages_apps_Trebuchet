@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_01ec6cc6",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 1,
+      "message": "Extra white space",
+      "revId": "9436a0157f3d3cfa2c92e67a610f9a7709da0601",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c108c494",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1900,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 1,
+      "message": "Hm, why are we using the mod operator here? Seems... odd. Looking at the following loops it seems like there\u0027d be no difference here compared to just setting this to 0 and searching for the next empty spot.",
+      "revId": "9436a0157f3d3cfa2c92e67a610f9a7709da0601",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a103b875",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 1,
+      "message": "Extra white space",
+      "revId": "9436a0157f3d3cfa2c92e67a610f9a7709da0601",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_61db701c",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1923,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 1,
+      "message": "Do we ever reset this flag? Or does this get set if an icon is ever moved and stays on forever?",
+      "revId": "9436a0157f3d3cfa2c92e67a610f9a7709da0601",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_41ce745b",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2598,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 1,
+      "message": "Hm, so we\u0027re not removing these screens because they might be getting bound later? Not seeing why we\u0027d comment this out.",
+      "revId": "9436a0157f3d3cfa2c92e67a610f9a7709da0601",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

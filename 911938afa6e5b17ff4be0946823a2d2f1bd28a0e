@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_e1e6a0e7",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-27T14:08:30Z",
+      "side": 0,
+      "message": "Why do we no longer want to throw this exception?",
+      "revId": "911938afa6e5b17ff4be0946823a2d2f1bd28a0e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
