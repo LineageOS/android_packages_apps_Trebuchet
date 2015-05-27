@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_4192f458",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-27T12:48:57Z",
+      "side": 1,
+      "message": "Not again!!",
+      "revId": "365e8c7133528291822fbea645874120b7394e9b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_819cfc6a",
+        "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-27T12:48:57Z",
+      "side": 1,
+      "message": ":0",
+      "revId": "365e8c7133528291822fbea645874120b7394e9b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
