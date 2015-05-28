@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_44ce825b",
+        "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-28T08:17:23Z",
+      "side": 1,
+      "message": "This isn\u0027t used ever",
+      "revId": "3326c6c9813be70eae6b123f1d244dcc3db4ac17",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
