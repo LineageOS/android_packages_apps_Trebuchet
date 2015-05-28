@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6490de96",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 2601,
+      "author": {
+        "id": 13408
+      },
+      "writtenOn": "2015-05-28T04:52:21Z",
+      "side": 1,
+      "message": "For some reason (that i\u0027ll be looking into this morning), this check removes workspaces that have widgets only since adding our dynamic resize code.",
+      "range": {
+        "startLine": 2601,
+        "startChar": 23,
+        "endLine": 2601,
+        "endChar": 27
+      },
+      "revId": "67092f9cc979fca481f790156afc6a2960101044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_4493e2a3",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 13408
+      },
+      "writtenOn": "2015-05-28T04:52:21Z",
+      "side": 1,
+      "message": "This exception was removed because instead of just failing to insert a new workspace (because one already existed), we should return the workspace that already exists.",
+      "range": {
+        "startLine": 604,
+        "startChar": 13,
+        "endLine": 604,
+        "endChar": 19
+      },
+      "revId": "67092f9cc979fca481f790156afc6a2960101044",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
