@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_67be2001",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 5822,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-28T11:36:12Z",
+      "side": 1,
+      "message": "I think synchronized reload is required here. Might need to revisit that for this patch, forceReload works, but it causes a UI bug. Seems you\u0027ll need to set UI state on finishBinding or force synchronized loading here.",
+      "revId": "3999ecc2f129648df4fbc15fb1dbf8d9f02f990c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
