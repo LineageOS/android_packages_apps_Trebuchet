@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_c4a532b6",
+        "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-28T06:58:48Z",
+      "side": 1,
+      "message": "I realized this happened because I had a different launcher set as my home, so the intent service fired before I had ever laid out the workspace since I applied that patch.",
+      "parentUuid": "7a8ec9b2_c4be12d4",
+      "revId": "8c9881577c69c14e6d645d2da447ebc956c070f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_a4b906ef",
         "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
         "patchSetId": 12
