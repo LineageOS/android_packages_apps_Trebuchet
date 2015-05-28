@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_c4be12d4",
+        "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-28T06:53:37Z",
+      "side": 1,
+      "message": "Should the default be 1? You can\u0027t possibly have less than 1. \nOr, are you trying to distinguish between a count that hasn\u0027t been recorded yet and an actual value? If so, you should not send this event if the shared pref evaluates to -1.",
+      "revId": "8c9881577c69c14e6d645d2da447ebc956c070f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a4b906ef",
+        "filename": "src/com/android/launcher3/stats/internal/service/AggregationIntentService.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-28T06:53:37Z",
+      "side": 1,
+      "message": "I have zero widgets and the aggregation service is sending -1 because of this default. That is an invalid count. Should we use 0 for the default here instead? As above, though, if you want to identify when the count simply has not been recorded yet, we probably shouldn\u0027t even send the event until it has been recorded.",
+      "revId": "8c9881577c69c14e6d645d2da447ebc956c070f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
