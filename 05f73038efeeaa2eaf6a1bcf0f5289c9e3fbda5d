@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_67c46040",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 1958,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-28T17:12:07Z",
+      "side": 1,
+      "message": "I\u0027m fairly certain this is causing some unintended behavior, need to do some more digging to be sure, but as far as i can tell for my use case (going from 4x4 to 3x3 and back), elements in the first screen that over flow go to a new page, and elements in my second screen that overflow go to *another* new page. This is despite the fact that there\u0027s plenty of free space available on the first overflow page.",
+      "revId": "05f73038efeeaa2eaf6a1bcf0f5289c9e3fbda5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_47c76445",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 1966,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-28T17:12:07Z",
+      "side": 1,
+      "message": "Seems unnecessary, we\u0027re doing this anyway on line 1989, and this value will get reset.",
+      "revId": "05f73038efeeaa2eaf6a1bcf0f5289c9e3fbda5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_87c16c31",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 1984,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-28T17:12:07Z",
+      "side": 1,
+      "message": "Seems unnecessary, we\u0027re doing this anyway on line 1989, and this value will get reset.",
+      "revId": "05f73038efeeaa2eaf6a1bcf0f5289c9e3fbda5d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
