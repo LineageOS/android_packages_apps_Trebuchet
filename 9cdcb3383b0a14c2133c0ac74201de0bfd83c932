@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_5209e430",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-29T14:48:02Z",
+      "side": 1,
+      "message": "instead of aligning parameters, i\u0027ve seen common practice in the trebuchet code is to just use two indents past the line above.",
+      "revId": "9cdcb3383b0a14c2133c0ac74201de0bfd83c932",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_92036c0f",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 891,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-05-29T14:48:02Z",
+      "side": 1,
+      "message": "does moving this line up here actually affect anything? in fact, don\u0027t we want to make sure the hardware layer type is set prior to running this animation?",
+      "revId": "9cdcb3383b0a14c2133c0ac74201de0bfd83c932",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
