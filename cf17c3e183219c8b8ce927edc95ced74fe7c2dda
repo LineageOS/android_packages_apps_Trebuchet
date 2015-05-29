@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_122bdc31",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-29T07:36:52Z",
+      "side": 1,
+      "message": ":\u0027(",
+      "parentUuid": "7a8ec9b2_52f644d8",
+      "revId": "cf17c3e183219c8b8ce927edc95ced74fe7c2dda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_720340b9",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-29T07:33:47Z",
       "side": 1,
       "message": "did you mean to add \"/* package */\" ?",
+      "revId": "cf17c3e183219c8b8ce927edc95ced74fe7c2dda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f225905c",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-05-29T07:36:52Z",
+      "side": 1,
+      "message": "Yes I did.  It has package level access.",
+      "parentUuid": "7a8ec9b2_720340b9",
       "revId": "cf17c3e183219c8b8ce927edc95ced74fe7c2dda",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
