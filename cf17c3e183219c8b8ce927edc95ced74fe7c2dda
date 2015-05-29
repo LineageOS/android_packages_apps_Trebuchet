@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_12b03cf4",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-05-29T07:42:26Z",
+      "side": 1,
+      "message": "Oh so the comment is just to make sure nobody changes it to public later?",
+      "parentUuid": "7a8ec9b2_f225905c",
+      "revId": "cf17c3e183219c8b8ce927edc95ced74fe7c2dda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_9200ccac",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 18
