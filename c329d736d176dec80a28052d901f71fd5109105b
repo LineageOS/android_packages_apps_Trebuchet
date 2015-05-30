@@ -16,6 +16,24 @@
       "revId": "c329d736d176dec80a28052d901f71fd5109105b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_ad62c914",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-05-30T07:08:06Z",
+      "side": 1,
+      "message": "hmm interesting - didn\u0027t even know that setting exists",
+      "parentUuid": "7a8ec9b2_8db6ed3b",
+      "revId": "c329d736d176dec80a28052d901f71fd5109105b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
