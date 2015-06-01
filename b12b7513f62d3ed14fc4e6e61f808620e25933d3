@@ -84,6 +84,24 @@
       "revId": "b12b7513f62d3ed14fc4e6e61f808620e25933d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_98a70d4f",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 13408
+      },
+      "writtenOn": "2015-06-01T09:13:32Z",
+      "side": 1,
+      "message": "After doing some testing without this change, its not needed anymore.",
+      "parentUuid": "7a8ec9b2_98e2ad9e",
+      "revId": "b12b7513f62d3ed14fc4e6e61f808620e25933d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
