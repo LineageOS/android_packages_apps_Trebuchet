@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2fbb0674",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1910,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-04T07:15:52Z",
+      "side": 1,
+      "message": "Can we add a few more comments so this won\u0027t be super hard to understand when someone looks at it later? There\u0027s a lot of new code here.\n\nAbove this line, maybe something like:\n\n// If the current item\u0027s position lies outside of the bounds\n// of the current grid size, attempt to place it in the next\n// available position.",
+      "revId": "0a535835245a13607bfecc624831ef470709cfa4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_8faa5a18",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1947,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-04T07:15:52Z",
+      "side": 1,
+      "message": "Does screenId start at 0? I think you might be off by 1 here if so.",
+      "revId": "0a535835245a13607bfecc624831ef470709cfa4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_6f742ecf",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1964,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-04T07:15:52Z",
+      "side": 1,
+      "message": "// If an item is overlapping another because one of them\n// was moved due to the size of the grid changing,\n// move the current item to a free spot past this one.",
+      "revId": "0a535835245a13607bfecc624831ef470709cfa4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_cf49c290",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1982,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-04T07:15:52Z",
+      "side": 1,
+      "message": "// If we\u0027ve reached the bottom of the page and are still \n// searching, add a new page to place this item.",
+      "revId": "0a535835245a13607bfecc624831ef470709cfa4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
