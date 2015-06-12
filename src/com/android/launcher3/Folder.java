@@ -1556,9 +1556,10 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             mRearrangeOnClose = false;
         }
         if (getItemCount() <= 1) {
-            if (!mDragInProgress && !mSuppressFolderDeletion) {
+            boolean isDragging = mLauncher.getDragController().isDragging();
+            if (!isDragging && !mSuppressFolderDeletion) {
                 replaceFolderWithFinalItem();
-            } else if (mDragInProgress) {
+            } else if (isDragging) {
                 mDeleteFolderOnDropCompleted = true;
             }
         }
