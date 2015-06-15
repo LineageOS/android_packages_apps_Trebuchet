@@ -333,22 +333,10 @@ public class Workspace extends SmoothPagedView
         // With workspace, data is available straight from the get-go
         setDataIsReady();
 
-        mShowSearchBar = SettingsProvider.getBoolean(context, SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
-                R.bool.preferences_interface_homescreen_search_default);
-        mShowOutlines = SettingsProvider.getBoolean(context,
-                SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_PAGE_OUTLINES,
-                R.bool.preferences_interface_homescreen_scrolling_page_outlines_default);
-        mHideIconLabels = SettingsProvider.getBoolean(context,
-                SettingsProvider.SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS,
-                R.bool.preferences_interface_homescreen_hide_icon_labels_default);
-        mWorkspaceFadeInAdjacentScreens = SettingsProvider.getBoolean(context,
-                SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_FADE_ADJACENT,
-                R.bool.preferences_interface_homescreen_scrolling_fade_adjacent_default);
-        TransitionEffect.setFromString(this, SettingsProvider.getString(context,
-                SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_TRANSITION_EFFECT,
-                R.string.preferences_interface_homescreen_scrolling_transition_effect));
-
         mLauncher = (Launcher) context;
+
+        reloadSettings();
+
         final Resources res = getResources();
         mWorkspaceFadeInAdjacentScreens = LauncherAppState.getInstance().getDynamicGrid().
                 getDeviceProfile().shouldFadeAdjacentWorkspaceScreens();
@@ -1019,8 +1007,8 @@ public class Workspace extends SmoothPagedView
      */
     void addInScreen(View child, long container, long screenId, int x, int y, int spanX, int spanY,
             boolean insert, boolean computeXYFromRank) {
-        //Reload settings
-        reloadSettings();
+        //Reload settings - no dont why stop.
+        //reloadSettings();
         if (container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
             if (getScreenWithId(screenId) == null) {
                 Log.e(TAG, "Skipping child, screenId " + screenId + " not found");
@@ -1720,21 +1708,21 @@ public class Workspace extends SmoothPagedView
     }
 
     @Override
-    public void setFadeInAdjacentScreens(boolean fade) {
-        mWorkspaceFadeInAdjacentScreens = fade;
-    }
-
-    @Override
     protected void screenScrolled(int screenCenter) {
         final boolean isRtl = isLayoutRtl();
 
         boolean isOnLastPageBeforeCustomContent = false;
         if (hasCustomContent()) {
-            int customContentWidth = mWorkspaceScreens.get(CUSTOM_CONTENT_SCREEN_ID).getMeasuredWidth();
-            isOnLastPageBeforeCustomContent = (mOverScrollX < customContentWidth && (!hasCustomContent() || isLayoutRtl())) ||
-                    (mOverScrollX > mMaxScrollX - customContentWidth && (!hasCustomContent() || !isLayoutRtl()));
+            int customContentWidth = mWorkspaceScreens.get(CUSTOM_CONTENT_SCREEN_ID)
+                    .getMeasuredWidth();
+            isOnLastPageBeforeCustomContent =
+                    (mOverScrollX < customContentWidth && (!hasCustomContent() || isLayoutRtl())) ||
+                    (mOverScrollX > mMaxScrollX - customContentWidth
+                            && (!hasCustomContent() || !isLayoutRtl()));
         }
-        mUseTransitionEffect = !isOnLastPageBeforeCustomContent && mState == State.NORMAL && !mIsSwitchingState;
+        mUseTransitionEffect = !isOnLastPageBeforeCustomContent
+                && mState == State.NORMAL
+                && !mIsSwitchingState;
 
         super.screenScrolled(screenCenter);
 
@@ -5355,6 +5343,7 @@ public class Workspace extends SmoothPagedView
     }
 
     private void reloadSettings() {
+
         mShowSearchBar = SettingsProvider.getBoolean(mLauncher, SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
         mShowOutlines = SettingsProvider.getBoolean(mLauncher,
@@ -5369,7 +5358,6 @@ public class Workspace extends SmoothPagedView
         TransitionEffect.setFromString(this, SettingsProvider.getString(mLauncher,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_TRANSITION_EFFECT,
                 R.string.preferences_interface_homescreen_scrolling_transition_effect));
-
         mScrollWallpaper = SettingsProvider.getBoolean(mLauncher,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,
                 R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);
