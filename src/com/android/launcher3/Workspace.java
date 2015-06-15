@@ -1732,15 +1732,24 @@ public class Workspace extends SmoothPagedView
 
         boolean isOnLastPageBeforeCustomContent = false;
         if (hasCustomContent()) {
-            int customContentWidth = mWorkspaceScreens.get(CUSTOM_CONTENT_SCREEN_ID).getMeasuredWidth();
-            isOnLastPageBeforeCustomContent = (mOverScrollX < customContentWidth && (!hasCustomContent() || isLayoutRtl())) ||
-                    (mOverScrollX > mMaxScrollX - customContentWidth && (!hasCustomContent() || !isLayoutRtl()));
+            int customContentWidth = mWorkspaceScreens.get(CUSTOM_CONTENT_SCREEN_ID)
+                    .getMeasuredWidth();
+            isOnLastPageBeforeCustomContent =
+                    (mOverScrollX < customContentWidth && (!hasCustomContent() || isLayoutRtl())) ||
+                    (mOverScrollX > mMaxScrollX - customContentWidth
+                            && (!hasCustomContent() || !isLayoutRtl()));
         }
-        mUseTransitionEffect = !isOnLastPageBeforeCustomContent && mState == State.NORMAL && !mIsSwitchingState;
+        mUseTransitionEffect = !isOnLastPageBeforeCustomContent
+                && mState == State.NORMAL
+                && !mIsSwitchingState;
 
         super.screenScrolled(screenCenter);
 
-        updatePageAlphaValues(screenCenter);
+        // don't set page alpha's if no animation exists
+        if (!mLauncher.getWorkspaceTransitionEffect().equals(TransitionEffect
+                .TRANSITION_EFFECT_NONE)) {
+            updatePageAlphaValues(screenCenter);
+        }
         updateStateForCustomContent(screenCenter);
         enableHwLayersOnVisiblePages();
 
