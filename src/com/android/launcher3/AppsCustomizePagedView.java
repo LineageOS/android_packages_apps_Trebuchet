@@ -1489,8 +1489,9 @@ public class AppsCustomizePagedView extends PagedViewWithDraggableItems implemen
 
         mUseTransitionEffect = !mIsSwitchingState;
 
-        super.screenScrolled(screenCenter);
-        enableHwLayersOnVisiblePages();
+        // call the workspace screenscrolled
+        // workspace inherits pageview
+        mLauncher.getWorkspace().screenScrolled(screenCenter);
 
         boolean isInOverscroll = mOverScrollX < 0 || mOverScrollX > mMaxScrollX;
 
