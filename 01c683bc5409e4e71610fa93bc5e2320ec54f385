@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_6d48d15c",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1494,
+      "author": {
+        "id": 13408
+      },
+      "writtenOn": "2015-06-16T08:55:48Z",
+      "side": 1,
+      "message": "+2 this is a completely unneeded part of this fix. I think I got it confused with something else.",
+      "parentUuid": "fa31d9ce_2d10994e",
+      "revId": "01c683bc5409e4e71610fa93bc5e2320ec54f385",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_cd561d06",
         "filename": "src/com/android/launcher3/Workspace.java",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-16T08:47:49Z",
       "side": 1,
       "message": "Hm, this would break the \"FadeInAdjacentPages\" setting behavior. Is there a better way to fix this bug?",
+      "revId": "01c683bc5409e4e71610fa93bc5e2320ec54f385",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_ad780991",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 13408
+      },
+      "writtenOn": "2015-06-16T08:55:48Z",
+      "side": 1,
+      "message": "I thought there was a setting for this, can\u0027t seem to find it though. It\u0027s not in the overview menu",
+      "parentUuid": "fa31d9ce_cd561d06",
       "revId": "01c683bc5409e4e71610fa93bc5e2320ec54f385",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
