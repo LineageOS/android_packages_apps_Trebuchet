@@ -958,15 +958,8 @@ public class Launcher extends Activity
                     final CellLayout dropLayout = mWorkspace.getScreenWithId(mPendingAddInfo.screenId);
 
                     dropLayout.setDropPending(true);
-                    final Runnable onComplete = new Runnable() {
-                        @Override
-                        public void run() {
-                            completeTwoStageWidgetDrop(resultCode, appWidgetId);
-                            dropLayout.setDropPending(false);
-                        }
-                    };
-                    mWorkspace.removeExtraEmptyScreenDelayed(true, onComplete,
-                            ON_ACTIVITY_RESULT_ANIMATION_DELAY, false);
+                    completeTwoStageWidgetDrop(resultCode, appWidgetId);
+                    dropLayout.setDropPending(false);
                 } else {
                     PendingAddArguments args = preparePendingAddArgs(requestCode, data, appWidgetId,
                             mPendingAddInfo);
@@ -1127,9 +1120,7 @@ public class Launcher extends Activity
                 startTimeCallbacks = System.currentTimeMillis();
             }
 
-            if (mAppsCustomizeContent != null) {
-                mAppsCustomizeContent.setBulkBind(true);
-            }
+            if (mAppsCustomizeContent != null) mAppsCustomizeContent.setBulkBind(true);
             for (int i = 0; i < mBindOnResumeCallbacks.size(); i++) {
                 mBindOnResumeCallbacks.get(i).run();
             }
