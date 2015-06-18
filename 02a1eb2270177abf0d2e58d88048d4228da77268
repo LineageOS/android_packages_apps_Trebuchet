@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_eca3e34d",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-18T10:37:18Z",
+      "side": 1,
+      "message": "Should we still call removeextraemptryscreens after this?",
+      "revId": "02a1eb2270177abf0d2e58d88048d4228da77268",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_cc9e1f07",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-18T10:37:18Z",
+      "side": 1,
+      "message": "Probably not needed.",
+      "revId": "02a1eb2270177abf0d2e58d88048d4228da77268",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
