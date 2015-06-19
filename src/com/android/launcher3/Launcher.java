@@ -5905,7 +5905,7 @@ public class Launcher extends Activity
 
         // Synchronized reload
         mModel.resetLoadedState(true, true);
-        mModel.startLoader(true, page);
+        mModel.startLoader(true, page, LauncherModel.LOADER_FLAG_RESIZE_GRID);
         mWorkspace.updateCustomContentVisibility();
 
         mAppDrawerAdapter.reset();
