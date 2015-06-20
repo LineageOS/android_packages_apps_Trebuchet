@@ -33,6 +33,24 @@
       "revId": "ca4a613d4311a1d9c1bce2397f1593d8a311d79e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_6b90bded",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2648,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-20T10:23:36Z",
+      "side": 1,
+      "message": "1) This was only ever needed with the addition of the grid resizing feature, so we don\u0027t ever want to do this block if shouldResize \u003d\u003d true.\n\n2) Yeah, maybe a better name. shouldResize tells checkItemPlacement to resize the grid whilst it checks the placement. Not sure what to rename it to though.",
+      "parentUuid": "ba2be162_cb9e0907",
+      "revId": "ca4a613d4311a1d9c1bce2397f1593d8a311d79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
