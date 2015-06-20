@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba2be162_abc0f5e1",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5908,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-20T10:24:16Z",
+      "side": 1,
+      "message": "Probably another conditional. I really only want to do this if the dynamic grid SIZE has changed. I\u0027ll look into that.",
+      "parentUuid": "ba2be162_2bffa535",
+      "revId": "ca4a613d4311a1d9c1bce2397f1593d8a311d79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_cb9e0907",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 2
