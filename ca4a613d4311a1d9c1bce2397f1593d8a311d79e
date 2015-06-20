@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_2bffa535",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5908,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-20T10:16:59Z",
+      "side": 1,
+      "message": "This loader path gets taken by every setting change that requires a grid reload (even if it\u0027s not a resize). E.g. turning search bar on/off. Is that okay? Or should we have an extra conditional here for whether this flag needs to be set.",
+      "revId": "ca4a613d4311a1d9c1bce2397f1593d8a311d79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_cb9e0907",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2648,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-20T10:16:59Z",
+      "side": 1,
+      "message": "Hm, looks like this flag is being used to make sure all items that need to update the db get a chance to do so.\n\n1) Shouldn\u0027t we make sure this is the case every time we load the workspace? If any items requiresDbUpdate, we should update the db.\n\n2) If no for 1), then \"shouldResize\" may need a better name: forceDbUpdate? or just gridResized? the flag makes it seem as though it\u0027s what\u0027s forcing the resizing of the grid, where it seems the checkItemPlacement is implicitly resizing the grid for us (aside from the overlapping items case).",
+      "revId": "ca4a613d4311a1d9c1bce2397f1593d8a311d79e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
