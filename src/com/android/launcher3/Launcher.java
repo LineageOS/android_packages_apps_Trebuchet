@@ -5210,6 +5210,12 @@ public class Launcher extends Activity
         if (mWorkspace.isInOverviewMode()) {
             mWorkspace.resetOverviewMode();
         }
+
+        // If all apps is visible when we finish binding, reset visibility.
+        if (isAllAppsVisible()) {
+            hideAppsCustomizeHelper(Workspace.State.NORMAL, false, false, null);
+            showAppsCustomizeHelper(false, false, mAppsCustomizeContent.getContentType());
+        }
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
