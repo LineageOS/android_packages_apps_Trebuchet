@@ -4944,6 +4944,9 @@ public class Launcher extends Activity
                      */
                     if (item.container == LauncherSettings.Favorites.CONTAINER_DESKTOP) {
                         CellLayout cl = mWorkspace.getScreenWithId(item.screenId);
+                        if (isAllAppsVisible()) {
+                            cl.setShortcutAndWidgetAlpha(0f);
+                        }
                         if (cl != null && cl.isOccupied(item.cellX, item.cellY)) {
                             View v = cl.getChildAt(item.cellX, item.cellY);
                             Object tag = v.getTag();
@@ -4959,7 +4962,7 @@ public class Launcher extends Activity
 
                     workspace.addInScreenFromBind(shortcut, item.container, item.screenId, item.cellX,
                             item.cellY, 1, 1);
-                    if (animateIcons) {
+                    if (animateIcons && !isAllAppsVisible()) {
                         // Animate all the applications up now
                         shortcut.setAlpha(0f);
                         shortcut.setScaleX(0f);
