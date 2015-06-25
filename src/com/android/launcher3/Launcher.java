@@ -4959,7 +4959,7 @@ public class Launcher extends Activity
 
                     workspace.addInScreenFromBind(shortcut, item.container, item.screenId, item.cellX,
                             item.cellY, 1, 1);
-                    if (animateIcons) {
+                    if (animateIcons && !isAllAppsVisible()) {
                         // Animate all the applications up now
                         shortcut.setAlpha(0f);
                         shortcut.setScaleX(0f);
@@ -4981,7 +4981,15 @@ public class Launcher extends Activity
             }
         }
 
-        if (animateIcons) {
+        // Hide all cell layouts if AllApps is currently visible.
+        if (isAllAppsVisible()) {
+            for (Long screenId : mWorkspace.getScreenOrder()) {
+                CellLayout cl = mWorkspace.getScreenWithId(screenId);
+                cl.setShortcutAndWidgetAlpha(0f);
+            }
+        }
+
+        if (animateIcons && !isAllAppsVisible()) {
             // Animate to the correct page
             if (newShortcutsScreenId > -1) {
                 long currentScreenId = mWorkspace.getScreenIdForPageIndex(mWorkspace.getNextPage());
