@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_34458818",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 4985,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-26T10:17:09Z",
+      "side": 1,
+      "message": "Since this is now happening after the views get inflated and we iterate through all the workspace items, is there any \"flashing\" or jank as the icons appear and quickly disappear? Would be curious what this looks like especially on a slower device.",
+      "revId": "9c62a9e8989899092c540c39407df570d56ec62a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
