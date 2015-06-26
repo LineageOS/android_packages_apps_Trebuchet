@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_d4341ce1",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4945,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-26T04:53:16Z",
+      "side": 1,
+      "message": "What if the bound components aren\u0027t in the DESKTOP container? E.g. HOTSEAT?",
+      "revId": "74cbf791496e2cb94f1b0f4075065881094db294",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_b43198ef",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4965,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-26T04:53:16Z",
+      "side": 1,
+      "message": "There\u0027s another component further down that handles animations when \"animateIcons\" is true, should we add this \"!isAllAppsVisible()\" check there as well?",
+      "revId": "74cbf791496e2cb94f1b0f4075065881094db294",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
