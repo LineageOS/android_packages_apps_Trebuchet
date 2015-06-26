@@ -81,7 +81,6 @@ import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.Log;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -100,7 +99,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.OvershootInterpolator;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Advanceable;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -119,6 +117,7 @@ import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.LongArrayMap;
+import com.android.launcher3.util.TestingUtils;
 import com.android.launcher3.util.Thunk;
 import com.android.launcher3.widget.PendingAddWidgetInfo;
 import com.android.launcher3.widget.WidgetHostViewLoader;
@@ -229,9 +228,6 @@ public class Launcher extends Activity
     static final String ACTION_FIRST_LOAD_COMPLETE =
             "com.android.launcher3.action.FIRST_LOAD_COMPLETE";
 
-    public static final String SHOW_WEIGHT_WATCHER = "debug.show_mem";
-    public static final boolean SHOW_WEIGHT_WATCHER_DEFAULT = false;
-
     private static final String QSB_WIDGET_ID = "qsb_widget_id";
     private static final String QSB_WIDGET_PROVIDER = "qsb_widget_provider";
     private static final String PROPERTY_SHOW_TREB_HIDDEN =
@@ -278,9 +274,10 @@ public class Launcher extends Activity
     private View mPageIndicators;
     @Thunk DragLayer mDragLayer;
     private DragController mDragController;
-    private View mWeightWatcher;
     private DynamicGridSizeFragment mDynamicGridSizeFragment;
     private boolean mIsHiddenMenuOptionEnabled;
+
+    public View mWeightWatcher;
 
     protected static RemoteFolderManager sRemoteFolderManager;
 
@@ -451,10 +448,9 @@ public class Launcher extends Activity
     protected static HashMap<String, CustomAppWidget> sCustomAppWidgets =
             new HashMap<String, CustomAppWidget>();
 
-    private static final boolean ENABLE_CUSTOM_WIDGET_TEST = false;
     static {
-        if (ENABLE_CUSTOM_WIDGET_TEST) {
-            sCustomAppWidgets.put(DummyWidget.class.getName(), new DummyWidget());
+        if (TestingUtils.ENABLE_CUSTOM_WIDGET_TEST) {
+            TestingUtils.addDummyWidget(sCustomAppWidgets);
         }
     }
 
@@ -1770,19 +1766,8 @@ public class Launcher extends Activity
             mSearchDropTargetBar.setQsbSearchBar(getOrCreateQsbBar());
         }
 
-        if (getResources().getBoolean(R.bool.debug_memory_enabled)) {
-            Log.v(TAG, "adding WeightWatcher");
-            mWeightWatcher = new WeightWatcher(this);
-            mWeightWatcher.setAlpha(0.5f);
-            ((FrameLayout) mLauncherView).addView(mWeightWatcher,
-                    new FrameLayout.LayoutParams(
-                            FrameLayout.LayoutParams.MATCH_PARENT,
-                            FrameLayout.LayoutParams.WRAP_CONTENT,
-                            Gravity.BOTTOM)
-            );
-
-            boolean show = shouldShowWeightWatcher();
-            mWeightWatcher.setVisibility(show ? View.VISIBLE : View.GONE);
+        if (TestingUtils.MEMORY_DUMP_ENABLED) {
+            TestingUtils.addWeightWatcher(this);
         }
 
         sRemoteFolderManager.onSetupViews();
@@ -3165,21 +3150,6 @@ public class Launcher extends Activity
             return;
         }
 
-        final Intent intent = shortcut.intent;
-
-        // Check for special shortcuts
-        if (intent.getComponent() != null) {
-            final String shortcutClass = intent.getComponent().getClassName();
-
-            if (shortcutClass.equals(MemoryDumpActivity.class.getName())) {
-                MemoryDumpActivity.startDump(this);
-                return;
-            } else if (shortcutClass.equals(ToggleWeightWatcher.class.getName())) {
-                toggleShowWeightWatcher();
-                return;
-            }
-        }
-
         // Check for abandoned promise
         if ((v instanceof BubbleTextView)
                 && shortcut.isPromise()
@@ -4321,30 +4291,6 @@ public class Launcher extends Activity
         int count = orderedScreenIds.size();
         for (int i = 0; i < count; i++) {
             mWorkspace.insertNewWorkspaceScreenBeforeEmptyScreen(orderedScreenIds.get(i));
-        }
-    }
-
-    private boolean shouldShowWeightWatcher() {
-        String spKey = LauncherAppState.getSharedPreferencesKey();
-        SharedPreferences sp = getSharedPreferences(spKey, Context.MODE_PRIVATE);
-        boolean show = sp.getBoolean(SHOW_WEIGHT_WATCHER, SHOW_WEIGHT_WATCHER_DEFAULT);
-
-        return show;
-    }
-
-    private void toggleShowWeightWatcher() {
-        String spKey = LauncherAppState.getSharedPreferencesKey();
-        SharedPreferences sp = getSharedPreferences(spKey, Context.MODE_PRIVATE);
-        boolean show = sp.getBoolean(SHOW_WEIGHT_WATCHER, true);
-
-        show = !show;
-
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putBoolean(SHOW_WEIGHT_WATCHER, show);
-        editor.commit();
-
-        if (mWeightWatcher != null) {
-            mWeightWatcher.setVisibility(show ? View.VISIBLE : View.GONE);
         }
     }
 
