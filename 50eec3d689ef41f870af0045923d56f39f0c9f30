@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_2f453518",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 4993,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-06-27T02:59:49Z",
+      "side": 1,
+      "message": "if they\u0027re already getting set to alpha 0 just above here, is this step necessary?",
+      "revId": "50eec3d689ef41f870af0045923d56f39f0c9f30",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
