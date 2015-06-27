@@ -16,6 +16,24 @@
       "revId": "9c62a9e8989899092c540c39407df570d56ec62a",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_2ff775f8",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 4985,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-27T02:47:57Z",
+      "side": 1,
+      "message": "I think this occurred quickly enough that no jank was seen, the loop just below this loop that hid all the icons would occur between frames. Even on slower devices that I tested. However, to address this, I have added code above in the latest patchset to hide the icons and folders before they are ever added to the workspace.",
+      "parentUuid": "bff0334d_34458818",
+      "revId": "9c62a9e8989899092c540c39407df570d56ec62a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
