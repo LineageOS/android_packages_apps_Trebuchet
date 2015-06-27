@@ -16,6 +16,24 @@
       "revId": "50eec3d689ef41f870af0045923d56f39f0c9f30",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_2f5e55e6",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 4993,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-27T03:02:40Z",
+      "side": 1,
+      "message": "I think so. Makes sure all widgets on all screens are also hidden.",
+      "parentUuid": "bff0334d_2f453518",
+      "revId": "50eec3d689ef41f870af0045923d56f39f0c9f30",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
