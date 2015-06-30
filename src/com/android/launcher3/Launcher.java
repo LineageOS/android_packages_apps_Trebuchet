@@ -474,6 +474,15 @@ public class Launcher extends Activity
         }
     };
 
+    private final BroadcastReceiver mScreenReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (mWorkspace.getOpenFolder() != null) {
+                closeFolder(false);
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -573,6 +582,9 @@ public class Launcher extends Activity
                 "cyanogenmod.intent.action.PROTECTED_COMPONENT_UPDATE");
         registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
                 "cyanogenmod.permission.PROTECTED_APP", null);
+
+        IntentFilter screenFilter = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+        registerReceiver(mScreenReceiver, screenFilter);
     }
 
     @Override
