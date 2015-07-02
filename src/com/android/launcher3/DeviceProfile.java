@@ -813,6 +813,10 @@ public class DeviceProfile {
                     getSearchBarTopOffset(),
                     2 * edgeMarginPx, 0);
         }
+        if (launcher.mSearchWidgetId >= 0) {
+            // remove padding on widget
+            searchBar.setPadding(0, 0, 0, 0);
+        }
         searchBar.setLayoutParams(lp);
 
         // Layout the drop target icons
