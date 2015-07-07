@@ -33,6 +33,24 @@
       "revId": "bd1a8fc2e7dfac94e509ea5b21d9f7c5e96c8d58",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_938eae25",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 4643,
+      "author": {
+        "id": 9045
+      },
+      "writtenOn": "2015-07-07T00:12:58Z",
+      "side": 1,
+      "message": "we\u0027re setting the padding on the parent viewgroup of the widget, not the widget itself",
+      "parentUuid": "7ffa3b31_b35f6a0d",
+      "revId": "bd1a8fc2e7dfac94e509ea5b21d9f7c5e96c8d58",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
