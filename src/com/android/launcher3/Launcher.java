@@ -2957,10 +2957,10 @@ public class Launcher extends Activity
     }
 
     public void startVoice() {
+        final SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        ComponentName activityName = searchManager.getGlobalSearchActivity();
         try {
-            final SearchManager searchManager =
-                    (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-            ComponentName activityName = searchManager.getGlobalSearchActivity();
             Intent intent = new Intent(RecognizerIntent.ACTION_WEB_SEARCH);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             if (activityName != null) {
@@ -2968,9 +2968,11 @@ public class Launcher extends Activity
             }
             startActivity(null, intent, "onClickVoiceButton");
         } catch (ActivityNotFoundException e) {
-            Intent intent = new Intent(RecognizerIntent.ACTION_WEB_SEARCH);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivitySafely(null, intent, "onClickVoiceButton");
+            // If the voice search activity doesn't exist, just launch regular search
+            Intent intent = new Intent(SearchManager.INTENT_ACTION_GLOBAL_SEARCH);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setComponent(activityName);
+            startActivity(intent);
         }
     }
 
