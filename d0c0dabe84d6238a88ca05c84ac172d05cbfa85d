@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_83a0a2a7",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-08T06:00:13Z",
+      "side": 1,
+      "message": "If call calls to updateVoiceSearchIcon should be dependent on the result from updating the global search icon, should we just have another method which will call this in sequence? or maybe updateVoiceSearchIcon should do this check for us?",
+      "revId": "d0c0dabe84d6238a88ca05c84ac172d05cbfa85d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
