@@ -1178,7 +1178,8 @@ public class Launcher extends Activity
         InstallShortcutReceiver.disableAndFlushInstallQueue(this);
 
         // Update the voice search button proxy
-        updateVoiceButtonProxyVisible(false);
+        boolean searchVisible = updateGlobalSearchIcon();
+        updateVoiceSearchIcon(searchVisible);
 
         // Again, as with the above scenario, it's possible that one or more of the global icons
         // were updated in the wrong orientation.

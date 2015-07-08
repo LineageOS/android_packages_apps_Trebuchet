@@ -1296,14 +1296,16 @@ public class Workspace extends SmoothPagedView
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onShow(false);
                 mCustomContentShowTime = System.currentTimeMillis();
-                mLauncher.updateVoiceButtonProxyVisible(false);
+                boolean searchVisible = mLauncher.updateGlobalSearchIcon();
+                mLauncher.updateVoiceSearchIcon(searchVisible);
             }
         } else if (hasCustomContent() && getNextPage() != 0 && mCustomContentShowing) {
             mCustomContentShowing = false;
             if (mCustomContentCallbacks != null) {
                 mCustomContentCallbacks.onHide();
                 mLauncher.resetQSBScroll();
-                mLauncher.updateVoiceButtonProxyVisible(false);
+                boolean searchVisible = mLauncher.updateGlobalSearchIcon();
+                mLauncher.updateVoiceSearchIcon(searchVisible);
             }
         }
     }
@@ -2601,7 +2603,8 @@ public class Workspace extends SmoothPagedView
             setScaleY(mNewScale);
             setTranslationY(finalWorkspaceTranslationY);
         }
-        mLauncher.updateVoiceButtonProxyVisible(false);
+        boolean searchVisible = mLauncher.updateGlobalSearchIcon();
+        mLauncher.updateVoiceSearchIcon(searchVisible);
 
         if (stateIsNormal || stateIsNormalHidden) {
             animateBackgroundGradient(0f, animated);
