@@ -30,6 +30,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,7 +70,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     private static final float INNER_RING_GROWTH_FACTOR = 0.0f;
 
     // The degree to which the outer ring is scaled in its natural state
-    private static final float OUTER_RING_GROWTH_FACTOR = 0.15f;
+    private static final float OUTER_RING_GROWTH_FACTOR = 0.1f;
 
     // The amount of vertical spread between items in the stack [0...1]
     private static final float PERSPECTIVE_SHIFT_FACTOR = 0.18f;
@@ -183,11 +184,9 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         icon.setDrawingCacheEnabled(true);
 
         // get dimen for the icon size
-        // ratio: iconsize = 3*padding + 2*small_icon_size
-        // padding*6.5 = small_icon_size
-        // so padding = folderIconSize / 16
-        int padding = grid.iconSizePx / 16;
-        int smallIconSize = (int) (padding * 6.5);
+
+        int padding = grid.iconSizePx / 8;
+        int smallIconSize = (int) (padding * 2.75);
 
         for (int i = NUM_ITEMS_IN_PREVIEW; i >= 0; i--) {
             ImageView appIcon = null;
@@ -284,25 +283,16 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             mAcceptAnimator = LauncherAnimUtils.ofFloat(mCellLayout, 0f, 1f);
             mAcceptAnimator.setDuration(CONSUMPTION_ANIMATION_DURATION);
 
+            Log.w("HAX","AnimateToAcceptState");
+
             final int previewSize = sPreviewSize;
             mAcceptAnimator.addUpdateListener(new AnimatorUpdateListener() {
                 public void onAnimationUpdate(ValueAnimator animation) {
                     float percent = (Float) animation.getAnimatedValue();
-                    if (mFolderIcon != null) {
-                        percent = 1f;
-                    }
                     mOuterRingSize = (1 + percent * OUTER_RING_GROWTH_FACTOR) * previewSize;
                     mInnerRingSize = (1 + percent * INNER_RING_GROWTH_FACTOR) * previewSize;
                     if (mCellLayout != null) {
                         mCellLayout.invalidate();
-                    }
-                }
-            });
-            mAcceptAnimator.addListener(new AnimatorListenerAdapter() {
-                @Override
-                public void onAnimationStart(Animator animation) {
-                    if (mFolderIcon != null) {
-                        mFolderIcon.mPreviewBackground.setBackground(null);
                     }
                 }
             });
@@ -320,9 +310,6 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             mNeutralAnimator.addUpdateListener(new AnimatorUpdateListener() {
                 public void onAnimationUpdate(ValueAnimator animation) {
                     float percent = (Float) animation.getAnimatedValue();
-                    if (mFolderIcon != null) {
-                        percent = 0f;
-                    }
                     mOuterRingSize = (1 + (1 - percent) * OUTER_RING_GROWTH_FACTOR) * previewSize;
                     mInnerRingSize = (1 + (1 - percent) * INNER_RING_GROWTH_FACTOR) * previewSize;
                     if (mCellLayout != null) {
@@ -337,7 +324,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                         mCellLayout.hideFolderAccept(FolderRingAnimator.this);
                     }
                     if (mFolderIcon != null) {
-                        mFolderIcon.mPreviewBackground.setBackgroundResource(R.drawable.folder_bg);
+                        mFolderIcon.mPreviewBackground.setVisibility(View.VISIBLE);
                     }
                 }
             });
@@ -410,14 +397,6 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         mInfo.add(item);
     }
 
-    public void setPreviewBackground(int res) {
-        if (res < 0) {
-            mPreviewBackground.setBackground(null);
-        } else {
-            mPreviewBackground.setBackgroundResource(res);
-        }
-    }
-
     public void onDragEnter(Object dragInfo) {
         if (mFolder.isDestroyed() || !willAcceptItem((ItemInfo) dragInfo)) return;
         CellLayout.LayoutParams lp = (CellLayout.LayoutParams) getLayoutParams();
@@ -427,6 +406,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         mFolderRingAnimator.animateToAcceptState();
         layout.showFolderAccept(mFolderRingAnimator);
         mOpenAlarm.setOnAlarmListener(mOnOpenListener);
+        Log.w("HAX","OnDragEnter");
         if (SPRING_LOADING_ENABLED &&
                 ((dragInfo instanceof AppInfo) || (dragInfo instanceof ShortcutInfo))) {
             // TODO: we currently don't support spring-loading for PendingAddShortcutInfos even
@@ -456,7 +436,14 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                 item = (ShortcutInfo) mDragInfo;
             }
             mFolder.beginExternalDrag(item);
-            mLauncher.openFolder(FolderIcon.this);
+            mFolderRingAnimator.mCellLayout.hideFolderAccept(mFolderRingAnimator);
+
+            int[] folderTouchXY = new int[2];
+            mFolder.getLocationOnScreen(folderTouchXY);
+            int[] folderTouchXYOffset = {folderTouchXY[0] + mFolder.getWidth() / 2,
+                    folderTouchXY[1] + mFolder.getHeight() / 2};
+
+            mLauncher.openFolder(FolderIcon.this, folderTouchXYOffset);
         }
     };
 
@@ -503,6 +490,8 @@ public class FolderIcon extends FrameLayout implements FolderListener {
             DragObject d) {
         item.cellX = -1;
         item.cellY = -1;
+
+        Log.w("HAX","onDrop");
 
         // Typically, the animateView corresponds to the DragView; however, if this is being done
         // after a configuration activity (ie. for a Shortcut being dragged from AllApps) we
