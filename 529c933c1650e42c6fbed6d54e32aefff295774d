@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_773550f7",
+        "filename": "res/layout/hidden_folder.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-10T04:03:55Z",
+      "side": 1,
+      "message": "There are other tags in here that aren\u0027t RTL friendly, but all the same it should be \"marginEnd\"\n\nAlso - \n\nCan we do \"android:startOf\u003d\"@id/folder_lock_icon\" instead?",
+      "revId": "529c933c1650e42c6fbed6d54e32aefff295774d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
