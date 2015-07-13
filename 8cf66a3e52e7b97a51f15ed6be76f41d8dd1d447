@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_c058d257",
+        "filename": "res/layout/hidden_folder.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-07-13T22:53:42Z",
+      "side": 1,
+      "message": "RTL thanks your for its consideration.",
+      "revId": "8cf66a3e52e7b97a51f15ed6be76f41d8dd1d447",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
