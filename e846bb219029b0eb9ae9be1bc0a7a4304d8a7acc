@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ce5363e2",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-14T04:35:47Z",
+      "side": 1,
+      "message": "This is a bit nitpicky but it\u0027s good practice to define static final variables together, this probably belongs better after line 98:  `private static final int CLOSE_FOLDER_DELAY_MS \u003d 150;`",
+      "range": {
+        "startLine": 140,
+        "startChar": 29,
+        "endLine": 140,
+        "endChar": 45
+      },
+      "revId": "e846bb219029b0eb9ae9be1bc0a7a4304d8a7acc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
