@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_4e82b3ca",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-07-14T07:04:16Z",
+      "side": 0,
+      "message": "Do you handle this case? I think this is where you\u0027re dragging something out of the folder and it needs to close.",
+      "revId": "270da9357a33017f6ec30a8b11e71b81d00285b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
