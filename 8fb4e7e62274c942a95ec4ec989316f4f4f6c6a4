@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_c3fc5c40",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "space after comma please.",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_a3f9684e",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "remove debugging",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_839424ea",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "please keep comments for magic values",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_6399101e",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "remove debug",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_439e0c08",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "remove debug",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_23a31852",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "remove debug",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_038814c4",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3484,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-07-14T03:30:36Z",
+      "side": 1,
+      "message": "space after comma",
+      "revId": "8fb4e7e62274c942a95ec4ec989316f4f4f6c6a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
