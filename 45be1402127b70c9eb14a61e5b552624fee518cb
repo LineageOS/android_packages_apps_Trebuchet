@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ce6243d9",
+        "filename": "res/layout/user_folder.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-14T04:08:15Z",
+      "side": 1,
+      "message": "this looks unnecessary, the Folder class will always have a reference to itself.",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 37
+      },
+      "revId": "45be1402127b70c9eb14a61e5b552624fee518cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_8e832b57",
+        "filename": "res/layout/user_folder.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-14T04:08:15Z",
+      "side": 1,
+      "message": "use a constant here, @android:color/transparent?",
+      "range": {
+        "startLine": 60,
+        "startChar": 33,
+        "endLine": 60,
+        "endChar": 41
+      },
+      "revId": "45be1402127b70c9eb14a61e5b552624fee518cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_0e971b93",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-14T04:08:15Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be hardcoded.",
+      "range": {
+        "startLine": 654,
+        "startChar": 37,
+        "endLine": 654,
+        "endChar": 41
+      },
+      "revId": "45be1402127b70c9eb14a61e5b552624fee518cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_ce900399",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-07-14T04:08:15Z",
+      "side": 1,
+      "message": "define a constant for this",
+      "range": {
+        "startLine": 673,
+        "startChar": 52,
+        "endLine": 673,
+        "endChar": 54
+      },
+      "revId": "45be1402127b70c9eb14a61e5b552624fee518cb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
