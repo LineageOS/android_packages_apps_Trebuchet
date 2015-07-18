@@ -34,6 +34,24 @@
       "revId": "3ee5147a2dff7b86bc2a4c0211f203b3aeed7e3f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_a62a8be4",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-07-18T02:17:25Z",
+      "side": 1,
+      "message": "I think that is a valid enough reason. LGTM :)",
+      "parentUuid": "ff0f0b1f_06f6d790",
+      "revId": "3ee5147a2dff7b86bc2a4c0211f203b3aeed7e3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
