@@ -16,6 +16,24 @@
       "revId": "3ee5147a2dff7b86bc2a4c0211f203b3aeed7e3f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_06f6d790",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-07-18T02:15:55Z",
+      "side": 1,
+      "message": "Right now I only check for isDisabled which could be in this state for safe mode as well.  TBH (I mimicked what GEL shows) ;)",
+      "parentUuid": "ff0f0b1f_a6bbabe3",
+      "revId": "3ee5147a2dff7b86bc2a4c0211f203b3aeed7e3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
