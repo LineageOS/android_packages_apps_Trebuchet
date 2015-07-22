@@ -438,6 +438,30 @@
     },
     {
       "key": {
+        "uuid": "df140735_ed098d31",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3487,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-07-22T23:37:08Z",
+      "side": 1,
+      "message": "Done\nWe only want to execute this block if the op is OP_REMOVE.  Updated the patch to check for that condition so the intent is clear.",
+      "parentUuid": "df140735_39f22f08",
+      "range": {
+        "startLine": 3487,
+        "startChar": 16,
+        "endLine": 3487,
+        "endChar": 27
+      },
+      "revId": "3ee5147a2dff7b86bc2a4c0211f203b3aeed7e3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_46716fe0",
         "filename": "src/com/android/launcher3/Workspace.java",
         "patchSetId": 1
