@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_12e4c7ab",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-09-07T22:56:58Z",
+      "side": 1,
+      "message": "Two things.\nFirst, why are you redoing width/height adjustments after they have been calculated above? Should these adjustments be made in conjunction with those other adjustments? Or should the above adjustments be fixed to include the bug fix you are introducing?\nSecond, neither of the resulting values is the original crop width. Shouldn\u0027t  roundedTrueCrop.width() be a possible result? the second option seems correct, but the first one you\u0027re adding width to the left position to create a new width that is larger than the original crop width.",
+      "revId": "9893eb3dedb48d956e59ad796a115d006cdcc137",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
