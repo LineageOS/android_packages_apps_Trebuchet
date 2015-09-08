@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_b23513fa",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-08T01:17:18Z",
+      "side": 1,
+      "message": "Since \"if (roundedTrueCrop.width() \u003e fullSize.getWidth())\" above adjust the size to the same width (or height in the block below), left should be reset to be 0. Otherwise left + width will be \u003e than original image width.",
+      "range": {
+        "startLine": 701,
+        "startChar": 52,
+        "endLine": 701,
+        "endChar": 53
+      },
+      "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
