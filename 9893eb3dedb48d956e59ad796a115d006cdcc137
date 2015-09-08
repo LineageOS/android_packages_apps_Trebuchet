@@ -16,6 +16,24 @@
       "revId": "9893eb3dedb48d956e59ad796a115d006cdcc137",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_525fdf40",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-08T01:12:21Z",
+      "side": 1,
+      "message": "yeah, I took the easy way :/ I think i found the bug and have a proper fix. a sec.",
+      "parentUuid": "3f1d235d_12e4c7ab",
+      "revId": "9893eb3dedb48d956e59ad796a115d006cdcc137",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
