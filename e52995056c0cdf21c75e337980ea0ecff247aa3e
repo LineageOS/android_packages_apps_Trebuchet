@@ -39,6 +39,24 @@
       "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_fcd93df4",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-11T21:36:47Z",
+      "side": 1,
+      "message": "This code is the point of my patch, but without the \"\u003e\u003d\" is never enters here. This code tries to adjust the width to avoid the left + width of the crop view doesn\u0027t be bigger than the with of the bitmap itself. This block tries to adjust left and right to fit into fullsize bitmap width\n\nOtherwise you will get the IllegalArgumentException in Bitmap#createBitmap() [http://developer.android.com/reference/android/graphics/Bitmap.html#createBitmap%28android.graphics.Bitmap,%20int,%20int,%20int,%20int%29]",
+      "parentUuid": "1f1a1f67_dc3a0133",
+      "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
