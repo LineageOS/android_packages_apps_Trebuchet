@@ -22,6 +22,23 @@
       "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_dc3a0133",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-09-11T21:04:13Z",
+      "side": 1,
+      "message": "Whats the point of this block? I know it\u0027s not your code, but I\u0027m getting adjustment \u003d\u003d 0 ever time (unless right-width is negative) which means left isn\u0027t being touched.\n\nIf I\u0027m reading the code correctly, the math is still off.\n\nIf this block\u0027s purpose is to shift the crop rectangle left to fit within the original image, perhaps the adjustment should be changed to be (rounded.right - full.right) or (rounded.left - full.left). That way the final left/right fit within the image itself. I think the adjustment based of the right value is better because the width won\u0027t always be the same as the full width (r.left - f.left !\u003d r.right - f.right).",
+      "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
