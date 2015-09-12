@@ -22,6 +22,30 @@
       "revId": "03d7fe019373d8122693a615e5e266c0c35416fe",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_02c5b48e",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2015-09-12T02:47:22Z",
+      "side": 1,
+      "message": "Right, my failure here is that it should enter this code block if the call backs are null, not available or is from all apps button rank.",
+      "parentUuid": "1f1a1f67_c2e57c3a",
+      "range": {
+        "startLine": 1878,
+        "startChar": 55,
+        "endLine": 1878,
+        "endChar": 58
+      },
+      "revId": "03d7fe019373d8122693a615e5e266c0c35416fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
