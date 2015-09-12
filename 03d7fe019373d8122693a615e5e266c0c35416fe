@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_c2e57c3a",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-12T02:42:31Z",
+      "side": 1,
+      "message": "Just a nitpick, but all over this class, the check for null callbalk is  like the next block of code (and i think is clear this way):\n\n    final Callbacks cb \u003d mCallbacks !\u003d null ? mCallbacks.get() : null;\n    if (cb!\u003d null \u0026\u0026 cb.isAllAppsButtonRank((int) item.screenId)) {\n      ...\n    }",
+      "range": {
+        "startLine": 1878,
+        "startChar": 55,
+        "endLine": 1878,
+        "endChar": 58
+      },
+      "revId": "03d7fe019373d8122693a615e5e266c0c35416fe",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
