@@ -57,6 +57,24 @@
       "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_c876bb3f",
+        "filename": "WallpaperPicker/src/com/android/launcher3/WallpaperCropActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-09-13T11:06:33Z",
+      "side": 1,
+      "message": "I agree that the \"\u003e\u003d\" is 100% necessary. What I\u0027m trying to get at is that the math inside this block looks incorrect.\n\nConsider the following (width only):\nOriginal [left \u003d 0, right \u003d 10, width \u003d right-left \u003d 10]\nCrop [left \u003d 3, right \u003d 14, width \u003d right-left \u003d 11]\n- The first block sets right\u003d13 (3+10)\n- The second block (is now entered because crop.right \u003e\u003d orignal.width)\n- adjustment \u003d crop.left - max(0, crop.right - crop.width) \u003d 3 - max(0, 13 - 10) \u003d 3 - 3 \u003d 0\n- crop.left and crop.right stay the same position, with values outside the original image.\n\nIf you were to change this calculation for adjustment, to say (crop.right - original.right), it would allow for the adjustment to push the crop bounds within the original image.",
+      "parentUuid": "1f1a1f67_fcd93df4",
+      "revId": "e52995056c0cdf21c75e337980ea0ecff247aa3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
