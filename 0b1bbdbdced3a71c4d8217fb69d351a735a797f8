@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_28f76ff8",
+        "filename": "WallpaperPicker/res/values/cm_strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 14061
+      },
+      "writtenOn": "2015-09-14T03:45:20Z",
+      "side": 0,
+      "message": "Please fix this string to: Set lockscreen wallpaper\n\nThe word \"lock screen\" needs to be fixed to \"lockscreen\", because that\u0027s the proper way this particular word is written.",
+      "revId": "0b1bbdbdced3a71c4d8217fb69d351a735a797f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
