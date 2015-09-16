@@ -2980,6 +2980,9 @@ public class LauncherModel extends BroadcastReceiver
             N = appWidgets.size();
             for (int i = 0; i < N; i++) {
                 final LauncherAppWidgetInfo widget = appWidgets.get(i);
+                // Need to ensure the spans are sane (e.g. not below min spans)
+                widget.spanX = (widget.spanX > widget.minSpanX) ? widget.spanX : widget.minSpanX;
+                widget.spanY = (widget.spanY > widget.minSpanY) ? widget.spanY : widget.minSpanY;
                 final Runnable r = new Runnable() {
                     public void run() {
                         Callbacks callbacks = tryGetCallbacks(oldCallbacks);
