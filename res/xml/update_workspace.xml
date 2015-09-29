@@ -26,6 +26,13 @@
         launcher:x="0"
         launcher:y="0" />
     <favorite
+        launcher:packageName="com.cyngn.dialer"
+        launcher:className="com.android.dialer.DialtactsActivity"
+        launcher:container="-101"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="0" />
+    <favorite
         launcher:packageName="com.android.contacts"
         launcher:className="com.android.contacts.activities.PeopleActivity"
         launcher:container="-101"
