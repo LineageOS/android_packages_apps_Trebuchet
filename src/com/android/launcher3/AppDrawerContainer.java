@@ -19,7 +19,7 @@ public class AppDrawerContainer extends InsettableFrameLayout {
         FrameLayout.LayoutParams lp =
                 (FrameLayout.LayoutParams) view.getLayoutParams();
         int paddingBottom = view.getPaddingBottom() + insets.bottom - mInsets.bottom;
-        int paddingTop = view.getPaddingTop() + insets.top - mInsets.top;
+        int paddingTop = insets.top - mInsets.top;
         view.setLayoutParams(lp);
         view.setPadding(view.getPaddingLeft(), paddingTop, view.getPaddingRight(), paddingBottom);
 
