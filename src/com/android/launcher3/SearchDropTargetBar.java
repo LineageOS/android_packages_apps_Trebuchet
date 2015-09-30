@@ -41,7 +41,7 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
     private static final AccelerateInterpolator sAccelerateInterpolator =
             new AccelerateInterpolator();
 
-    private boolean mIsSearchBarHidden;
+    public boolean mIsSearchBarHidden;
     private View mQSBSearchBar;
     private View mDropTargetBar;
     private ButtonDropTarget mInfoDropTarget;
@@ -80,8 +80,16 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
     }
 
     public void setQsbSearchBar(View qsb) {
+        float alpha = 1f;
+        int visibility = View.VISIBLE;
+        if (mQSBSearchBar != null) {
+            alpha = mQSBSearchBar.getAlpha();
+            visibility = mQSBSearchBar.getVisibility();
+        }
         mQSBSearchBar = qsb;
         if (mQSBSearchBar != null) {
+            mQSBSearchBar.setAlpha(alpha);
+            mQSBSearchBar.setVisibility(visibility);
             if (mEnableDropDownDropTargets) {
                 mQSBSearchBarAnim = LauncherAnimUtils.ofFloat(mQSBSearchBar, "translationY", 0,
                         -mBarHeight);
@@ -209,6 +217,9 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
         // Animate out the QSB search bar, and animate in the drop target bar
         prepareStartAnimation(mDropTargetBar);
         mDropTargetBarAnim.start();
+        if (mQSBSearchBar == null) {
+            return;
+        }
         if (!isAnyFolderOpen() && (!mIsSearchBarHidden || mQSBSearchBar.getAlpha() > 0f)) {
             prepareStartAnimation(mQSBSearchBar);
             mQSBSearchBarAnim.start();
@@ -232,6 +243,9 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
             // Restore the QSB search bar, and animate out the drop target bar
             prepareStartAnimation(mDropTargetBar);
             mDropTargetBarAnim.reverse();
+            if (mQSBSearchBar == null) {
+                return;
+            }
             if (!isAnyFolderOpen() && (!mIsSearchBarHidden || mQSBSearchBar.getAlpha() < 1f)) {
                 if (mLauncher != null && mLauncher.shouldShowSearchBar()
                         && mQSBSearchBar.getVisibility() != View.VISIBLE) {
