@@ -41,7 +41,7 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
     private static final AccelerateInterpolator sAccelerateInterpolator =
             new AccelerateInterpolator();
 
-    private boolean mIsSearchBarHidden;
+    public boolean mIsSearchBarHidden;
     private View mQSBSearchBar;
     private View mDropTargetBar;
     private ButtonDropTarget mInfoDropTarget;
@@ -93,6 +93,9 @@ public class SearchDropTargetBar extends FrameLayout implements DragController.D
             // Create a no-op animation of the search bar is null
             mQSBSearchBarAnim = ValueAnimator.ofFloat(0, 0);
             mQSBSearchBarAnim.setDuration(sTransitionInDuration);
+        }
+        if (mIsSearchBarHidden) {
+            mQSBSearchBar.setAlpha(0f);
         }
     }
 
