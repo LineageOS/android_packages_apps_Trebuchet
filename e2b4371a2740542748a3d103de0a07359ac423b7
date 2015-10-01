@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_f8a14597",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-10-01T06:01:21Z",
+      "side": 1,
+      "message": "Extra tab",
+      "revId": "e2b4371a2740542748a3d103de0a07359ac423b7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
