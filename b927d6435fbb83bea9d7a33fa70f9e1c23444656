@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_386fcdc6",
+        "filename": "src/com/android/launcher3/SearchDropTargetBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-10-01T02:48:18Z",
+      "side": 1,
+      "message": "I can\u0027t follow you with this code. If i read it correctly, you always set the same alpha and visibility, because is the same check (mQSBSearchBar !\u003d null) here and below.",
+      "range": {
+        "startLine": 85,
+        "startChar": 12,
+        "endLine": 85,
+        "endChar": 25
+      },
+      "revId": "b927d6435fbb83bea9d7a33fa70f9e1c23444656",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_f86825bb",
+        "filename": "src/com/android/launcher3/SearchDropTargetBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-10-01T02:48:18Z",
+      "side": 1,
+      "message": "IMHO, it\u0027s probably better how it was handled in http://review.cyanogenmod.org/#/c/110555/",
+      "range": {
+        "startLine": 220,
+        "startChar": 12,
+        "endLine": 220,
+        "endChar": 25
+      },
+      "revId": "b927d6435fbb83bea9d7a33fa70f9e1c23444656",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_d86561e3",
+        "filename": "src/com/android/launcher3/SearchDropTargetBar.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-10-01T02:48:18Z",
+      "side": 1,
+      "message": "IMHO, it\u0027s probably better how it was handled in http://review.cyanogenmod.org/#/c/110555/",
+      "range": {
+        "startLine": 246,
+        "startChar": 16,
+        "endLine": 246,
+        "endChar": 29
+      },
+      "revId": "b927d6435fbb83bea9d7a33fa70f9e1c23444656",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
