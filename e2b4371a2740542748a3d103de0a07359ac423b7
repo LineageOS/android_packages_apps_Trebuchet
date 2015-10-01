@@ -16,6 +16,24 @@
       "revId": "e2b4371a2740542748a3d103de0a07359ac423b7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_98a8f977",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-10-01T06:03:39Z",
+      "side": 1,
+      "message": "Actually I believe this is correct indentation for Java.",
+      "parentUuid": "9f436f4f_f8a14597",
+      "revId": "e2b4371a2740542748a3d103de0a07359ac423b7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
