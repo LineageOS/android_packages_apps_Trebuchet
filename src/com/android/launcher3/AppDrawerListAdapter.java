@@ -122,7 +122,9 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             super(itemView);
             mContainerView = itemView;
             mFadingBackgroundBackView = itemView.findViewById(R.id.fading_background_back);
+            mFadingBackgroundBackView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             mFadingBackgroundFrontView = itemView.findViewById(R.id.fading_background_front);
+            mFadingBackgroundFrontView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             mTextView = (AutoFitTextView) itemView.findViewById(R.id.drawer_item_title);
             mTextView.bringToFront();
             mLayout = (ViewGroup) itemView.findViewById(R.id.drawer_item_flow);
