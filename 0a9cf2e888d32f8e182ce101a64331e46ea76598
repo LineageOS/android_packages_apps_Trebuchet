@@ -45,6 +45,30 @@
       "revId": "0a9cf2e888d32f8e182ce101a64331e46ea76598",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_d8aa01d1",
+        "filename": "src/com/android/launcher3/SearchDropTargetBar.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 940
+      },
+      "writtenOn": "2015-10-01T02:56:30Z",
+      "side": 1,
+      "message": "There might be cases where searchBarHidden is false and qsbBar is null, in which case we would NPE",
+      "parentUuid": "9f436f4f_9818f975",
+      "range": {
+        "startLine": 236,
+        "startChar": 38,
+        "endLine": 236,
+        "endChar": 51
+      },
+      "revId": "0a9cf2e888d32f8e182ce101a64331e46ea76598",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
