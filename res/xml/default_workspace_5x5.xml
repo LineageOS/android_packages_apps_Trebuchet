@@ -141,7 +141,7 @@
         launcher:packageName="com.cyanogenmod.eleven"
         launcher:className="com.cyanogenmod.eleven.ui.activities.HomeActivity"
         launcher:screen="2"
-        launcher:x="0"
+        launcher:x="3"
         launcher:y="4" />
 
     <favorite
