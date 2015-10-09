@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_a9e80616",
+        "filename": "src/com/android/launcher3/LauncherAppState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-10-09T21:34:23Z",
+      "side": 1,
+      "message": "i\u0027m wondering... do we need to have this override both here and in LauncherProvider?  Or would it still work if it was just in LauncherProvider?",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_4982c251",
+        "filename": "src/com/android/launcher3/LauncherAppState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-10-09T21:34:23Z",
+      "side": 1,
+      "message": "would it be possible to get the default assets for the app, instead of creating a new AssetManager and then adding the path?",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
