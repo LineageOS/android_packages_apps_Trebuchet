@@ -23,12 +23,16 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Handler;
+import android.os.SystemProperties;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -215,8 +219,36 @@ public class LauncherAppState implements DeviceProfile.DeviceProfileCallbacks {
             Point largestSize = new Point();
             display.getCurrentSizeRange(smallestSize, largestSize);
 
+            String mcc = SystemProperties.get("ro.prebundled.mcc");
+
+            Resources resources = context.getResources();
+
+            if (!TextUtils.isEmpty(mcc)) {
+                Log.d(TAG, "mcc not empty: " + mcc);
+                Configuration tempConfiguration =
+                        new Configuration(resources.getConfiguration());
+                tempConfiguration.mcc = Integer.parseInt(mcc);
+
+                String publicSrcDir = null;
+                try {
+                    String packageName = sContext.getPackageName();
+                    publicSrcDir = sContext.getPackageManager().getApplicationInfo(packageName, 0)
+                            .publicSourceDir;
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                AssetManager assetManager = new AssetManager();
+                if (!TextUtils.isEmpty(publicSrcDir)) {
+                    assetManager.addAssetPath(publicSrcDir);
+                }
+
+                resources = new Resources(assetManager, new DisplayMetrics(),
+                        tempConfiguration);
+            }
+
             dynamicGrid = new DynamicGrid(context,
-                    context.getResources(),
+                    resources,
                     Math.min(smallestSize.x, smallestSize.y),
                     Math.min(largestSize.x, largestSize.y),
                     realSize.x, realSize.y,
