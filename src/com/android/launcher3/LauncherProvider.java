@@ -30,6 +30,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -40,8 +43,10 @@ import android.database.sqlite.SQLiteStatement;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.SparseArray;
 
@@ -315,6 +320,50 @@ public class LauncherProvider extends ContentProvider {
 
             AutoInstallsLayout loader = AutoInstallsLayout.get(getContext(),
                     mOpenHelper.mAppWidgetHost, mOpenHelper);
+
+            Configuration tempConfiguration = new Configuration();
+            String mcc = SystemProperties.get("ro.prebundled.mcc");
+
+            if (!TextUtils.isEmpty(mcc)) {
+                Log.d(TAG, "mcc not empty: " + mcc);
+                tempConfiguration.mcc = Integer.parseInt(mcc);
+                String publicSrcDir = null;
+                try {
+                    String packageName = getContext().getPackageName();
+                    publicSrcDir = getContext().getPackageManager().getApplicationInfo(packageName, 0)
+                            .publicSourceDir;
+                } catch (PackageManager.NameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                AssetManager assetManager = new AssetManager();
+                if (!TextUtils.isEmpty(publicSrcDir)) {
+                    assetManager.addAssetPath(publicSrcDir);
+                }
+                Resources customResources = new Resources(assetManager, new DisplayMetrics(),
+                        tempConfiguration);
+
+                int defaultLayout = LauncherAppState.getInstance()
+                        .getDynamicGrid().getDeviceProfile().defaultLayoutId;
+                Log.d(TAG, "default layout id: " + defaultLayout);
+                int workspaceResId = customResources.getIdentifier(Partner.RES_DEFAULT_LAYOUT,
+                        "xml-mcc" + mcc, getContext().getPackageName());
+                Log.d(TAG, "workspace layout id: " + workspaceResId);
+                loader = new DefaultLayoutParser(getContext(), mOpenHelper.mAppWidgetHost,
+                        mOpenHelper, customResources, defaultLayout);
+                boolean isMccLoaderNull = loader == null;
+                Log.d(TAG, "is mcc loader null: " + isMccLoaderNull);
+                /*int defaultLayout = LauncherAppState.getInstance()
+                        .getDynamicGrid().getDeviceProfile().defaultLayoutId;
+                Log.d(TAG, "default layout id: " + defaultLayout);
+                int workspaceResId = customResources.getIdentifier(Partner.RES_DEFAULT_LAYOUT,
+                        "xml-mcc" + mcc, getContext().getPackageName());
+                Log.d(TAG, "workspace layout id: " + workspaceResId);
+                loader = new DefaultLayoutParser(getContext(), mOpenHelper.mAppWidgetHost,
+                        mOpenHelper, customResources, workspaceResId);
+                boolean isMccLoaderNull = loader == null;
+                Log.d(TAG, "is mcc loader null: " + isMccLoaderNull);*/
+            }
 
             if (loader == null) {
                 final Partner partner = Partner.get(getContext().getPackageManager());
