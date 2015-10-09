@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_a9d1265a",
+        "filename": "src/com/android/launcher3/LauncherAppState.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-09T21:40:52Z",
+      "side": 1,
+      "message": "Not sure, but you should probably make a constant for \"ro.prebundled.mcc\"",
+      "parentUuid": "7f287b81_a9e80616",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_4982c251",
         "filename": "src/com/android/launcher3/LauncherAppState.java",
         "patchSetId": 2
@@ -30,6 +48,74 @@
       "writtenOn": "2015-10-09T21:34:23Z",
       "side": 1,
       "message": "would it be possible to get the default assets for the app, instead of creating a new AssetManager and then adding the path?",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_e9904e98",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-09T21:40:52Z",
+      "side": 1,
+      "message": "Line over length",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_09d95a82",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-09T21:40:52Z",
+      "side": 1,
+      "message": "NumberFormatException - if the string does not contain a parsable integer.\n\n\nWe might not be able to guarantee mcc is not alpha numerical",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_e9e5ee39",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-09T21:40:52Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_c9e23230",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-09T21:40:52Z",
+      "side": 1,
+      "message": "Remove commented code",
       "revId": "6b5241f27f015204d2a41939b9b74a9818c66d2e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
