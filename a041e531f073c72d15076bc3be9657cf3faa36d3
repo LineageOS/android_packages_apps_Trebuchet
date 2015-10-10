@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_24979b93",
+        "filename": "res/values-mcc234/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-10-10T02:47:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_c431f7ee",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_e434f3e0",
         "filename": "res/values/cm_strings.xml",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7f287b81_84888f71",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-10-10T02:47:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_e434f3e0",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f287b81_2440bb35",
         "filename": "src/com/android/launcher3/LauncherAppState.java",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-10-10T01:37:52Z",
       "side": 1,
       "message": "over length",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_a4838b56",
+        "filename": "src/com/android/launcher3/LauncherAppState.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-10-10T02:47:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f287b81_2440bb35",
       "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
