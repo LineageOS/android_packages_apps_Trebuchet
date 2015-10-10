@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_c431f7ee",
+        "filename": "res/values-mcc234/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-10-10T01:31:57Z",
+      "side": 1,
+      "message": "this string should go in a vendor/extra overlay",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_e434f3e0",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-10-10T01:31:57Z",
+      "side": 1,
+      "message": "give this a generic name instead of \"o2\"",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
