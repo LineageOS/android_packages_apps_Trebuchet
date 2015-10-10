@@ -33,6 +33,23 @@
       "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_2440bb35",
+        "filename": "src/com/android/launcher3/LauncherAppState.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2015-10-10T01:37:52Z",
+      "side": 1,
+      "message": "over length",
+      "revId": "a041e531f073c72d15076bc3be9657cf3faa36d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
