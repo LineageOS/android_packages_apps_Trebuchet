@@ -2384,7 +2384,7 @@ public class Launcher extends Activity
 
             final View v = getWindow().peekDecorView();
             if (v != null && v.getWindowToken() != null) {
-                InputMethodManager imm = (InputMethodManager)getSystemService(
+                InputMethodManager imm = (InputMethodManager) getSystemService(
                         INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
             }
@@ -2419,7 +2419,9 @@ public class Launcher extends Activity
                 mWorkspace.post(new Runnable() {
                     @Override
                     public void run() {
-                        mWorkspace.moveToDefaultScreen(true);
+                        if (mWorkspace != null) {
+                            mWorkspace.moveToDefaultScreen(true);
+                        }
                     }
                 });
             }
