@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f3283f1_ac6ca39c",
+        "filename": "src/com/android/launcher3/AppsCustomizePagedView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1574,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2015-11-01T10:13:11Z",
+      "side": 1,
+      "message": "is this just copied over from the source that was removed in the earlier patch?\n\nif not, why not just combine these two for loops? it looks like the only difference in the if-statement? so this should just be an else clause?",
+      "range": {
+        "startLine": 1574,
+        "startChar": 20,
+        "endLine": 1574,
+        "endChar": 67
+      },
+      "revId": "88dc0de52961f2337b9c308a5506acfa50940722",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
