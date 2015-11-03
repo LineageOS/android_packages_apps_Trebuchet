@@ -501,6 +501,10 @@ public class AutoInstallsLayout {
             mFolderElements = elements;
         }
 
+        protected boolean isRemoteFolder() {
+            return false;
+        }
+
         @Override
         public long parseAndAdd(XmlResourceParser parser)
                 throws XmlPullParserException, IOException {
@@ -517,6 +521,9 @@ public class AutoInstallsLayout {
             mValues.put(Favorites.SPANX, 1);
             mValues.put(Favorites.SPANY, 1);
             mValues.put(Favorites._ID, mCallback.generateNewItemId());
+            if (isRemoteFolder()) {
+                mValues.put("subType", 1);
+            }
             long folderId = mCallback.insertAndCheck(mDb, mValues);
             if (folderId < 0) {
                 if (LOGD) Log.e(TAG, "Unable to add folder");
@@ -552,7 +559,7 @@ public class AutoInstallsLayout {
             // We can only have folders with >= 2 items, so we need to remove the
             // folder and clean up if less than 2 items were included, or some
             // failed to add, and less than 2 were actually added
-            if (folderItems.size() < 2) {
+            if (folderItems.size() < 2 && !isRemoteFolder()) {
                 // Delete the folder
                 Uri uri = Favorites.getContentUri(folderId, false);
                 SqlArguments args = new SqlArguments(uri, null, null);

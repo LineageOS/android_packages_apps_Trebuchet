@@ -492,6 +492,10 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             }
         }
 
+        if (info.subType == 1) {
+            count = 6;
+        }
+
         // We rearrange the items in case there are any empty gaps
         setupContentForNumItems(count);
 
@@ -1468,6 +1472,10 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     }
 
     private void replaceFolderWithFinalItem() {
+        if (mInfo.subType == 1) {
+            return;
+        }
+
         if (mInfo.hidden && getItemCount() >= 1) {
             return;
         }

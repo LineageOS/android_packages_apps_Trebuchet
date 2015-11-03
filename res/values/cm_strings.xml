@@ -87,4 +87,5 @@
 
     <!-- Search Manager doesn't exist -->
     <string name="search_activity_not_found">A search activity could not be found!</string>
+    <string name="recommendations_title">Recommendations</string>
 </resources>
