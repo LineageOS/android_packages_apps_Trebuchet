@@ -63,6 +63,8 @@ import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
 
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
+
 import java.lang.ref.WeakReference;
 import java.net.URISyntaxException;
 import java.security.InvalidParameterException;
@@ -115,6 +117,8 @@ public class LauncherModel extends BroadcastReceiver
     private LoaderTask mLoaderTask;
     private boolean mIsLoaderTaskRunning;
     private volatile boolean mFlushingWorkerThread;
+
+    private static RemoteFolderUpdater remoteFolderUpdater;
 
     /**
      * Maintain a set of packages per user, for which we added a shortcut on the workspace.
@@ -933,10 +937,10 @@ public class LauncherModel extends BroadcastReceiver
         String userSerial = Long.toString(UserManagerCompat.getInstance(context)
                 .getSerialNumberForUser(user));
         Cursor c = cr.query(LauncherSettings.Favorites.CONTENT_URI,
-            new String[] { "title", "intent", "profileId" },
-            "title=? and (intent=? or intent=?) and profileId=?",
-            new String[] { title, intentWithPkg.toUri(0), intentWithoutPkg.toUri(0), userSerial },
-            null);
+                new String[]{"title", "intent", "profileId"},
+                "title=? and (intent=? or intent=?) and profileId=?",
+                new String[]{title, intentWithPkg.toUri(0), intentWithoutPkg.toUri(0), userSerial},
+                null);
         try {
             return c.moveToFirst();
         } finally {
@@ -1012,6 +1016,7 @@ public class LauncherModel extends BroadcastReceiver
                 final int cellXIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLX);
                 final int cellYIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.CELLY);
                 final int hiddenIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.HIDDEN);
+                final int subType = c.getColumnIndexOrThrow(LauncherSettings.Favorites.SUBTYPE);
 
                 FolderInfo folderInfo = null;
                 switch (c.getInt(itemTypeIndex)) {
@@ -1027,6 +1032,7 @@ public class LauncherModel extends BroadcastReceiver
                 folderInfo.cellX = c.getInt(cellXIndex);
                 folderInfo.cellY = c.getInt(cellYIndex);
                 folderInfo.hidden = c.getInt(hiddenIndex) > 0;
+                folderInfo.subType = subType;
 
                 return folderInfo;
             }
@@ -2126,6 +2132,7 @@ public class LauncherModel extends BroadcastReceiver
                     //final int displayModeIndex = c.getColumnIndexOrThrow(
                     final int hiddenIndex = c.getColumnIndexOrThrow(
                             LauncherSettings.Favorites.HIDDEN);
+                    final int subTypeIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.SUBTYPE);
                     //final int uriIndex = c.getColumnIndexOrThrow(LauncherSettings.Favorites.URI); //final int displayModeIndex = c.getColumnIndexOrThrow(
                     //        LauncherSettings.Favorites.DISPLAY_MODE);
 
@@ -2363,6 +2370,7 @@ public class LauncherModel extends BroadcastReceiver
                                 folderInfo.spanX = 1;
                                 folderInfo.spanY = 1;
                                 folderInfo.hidden = c.getInt(hiddenIndex) > 0;
+                                folderInfo.subType = c.getInt(subTypeIndex);
 
                                 // check & update map of what's occupied
                                 if (!checkItemPlacement(occupied, folderInfo, shouldResize)) {
@@ -2384,6 +2392,11 @@ public class LauncherModel extends BroadcastReceiver
 
                                 sBgItemsIdMap.put(folderInfo.id, folderInfo);
                                 sBgFolders.put(folderInfo.id, folderInfo);
+
+                                if (folderInfo.subType == FolderInfo.REMOTE_SUBTYPE) {
+                                    syncRemoteFolder(folderInfo, mContext);
+                                }
+
                                 break;
 
                             case LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET:
@@ -2859,7 +2872,7 @@ public class LauncherModel extends BroadcastReceiver
                             }
                             workspaceItems.remove(i);
                             folders.remove(Long.valueOf(item.id));
-                        } else if (folder.contents.size() == 0 /*&& !(folder instanceof LiveFolderInfo)*/) {
+                        } else if (folder.contents.size() == 0 && folder.subType == 0) {
                             LauncherModel.deleteFolderContentsFromDatabase(mContext, folder);
                             workspaceItems.remove(i);
                             folders.remove(Long.valueOf(item.id));
@@ -4244,5 +4257,60 @@ public class LauncherModel extends BroadcastReceiver
 
     public Callbacks getCallback() {
         return mCallbacks != null ? mCallbacks.get() : null;
+    }
+
+    public static RemoteFolderUpdater getRemoteFolderUpdaterInstance() {
+        if (remoteFolderUpdater == null) {
+            remoteFolderUpdater = new RemoteFolderUpdater();
+        }
+        return remoteFolderUpdater;
+    }
+
+    protected synchronized void syncRemoteFolder(final FolderInfo folderInfo, final Context context) {
+
+        String spKey = LauncherAppState.getSharedPreferencesKey();
+        SharedPreferences sp = context.getSharedPreferences(spKey, Context.MODE_PRIVATE);
+        boolean isEnabled = sp.getBoolean(RemoteFolder.REMOTE_FOLDER_ENABLED, true);
+
+        if (!isEnabled) {
+            Log.e(TAG, "Prevented remote folder sync, since it has been explicitly disabled.");
+            return;
+        }
+
+        RemoteFolderUpdater updater = getRemoteFolderUpdaterInstance();
+        final int count = 6;
+
+        updater.requestSync(context, count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+            @Override
+            public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+
+                synchronized (mLock) {
+
+                    // Clear contents to prevent any duplicates
+                    if (folderInfo.contents != null && !folderInfo.contents.isEmpty()) {
+                        deleteItemsFromDatabase(context, folderInfo.contents);
+                        folderInfo.contents.clear();
+                    }
+
+                    // Add each remote folder item, update the DB, and notify listeners
+                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getIcon(),
+                                UserHandleCompat.myUserHandle());
+                        folderInfo.add(shortcutInfo);
+                    }
+
+                    updateItemInDatabase(context, folderInfo);
+                    folderInfo.itemsChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(String error) {
+                Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+            }
+        });
     }
 }
