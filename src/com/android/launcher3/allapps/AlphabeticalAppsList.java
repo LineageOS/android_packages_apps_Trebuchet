@@ -15,7 +15,6 @@
  */
 package com.android.launcher3.allapps;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -48,6 +47,9 @@ public class AlphabeticalAppsList {
 
     private static final int FAST_SCROLL_FRACTION_DISTRIBUTE_BY_ROWS_FRACTION = 0;
     private static final int FAST_SCROLL_FRACTION_DISTRIBUTE_BY_NUM_SECTIONS = 1;
+
+    private static final String CUSTOM_PREDICTIONS_SCRUBBER = "★";
+    private static final String CUSTOM_PREDICTIONS_HEADER = "☆";
 
     private final int mFastScrollDistributionMode = FAST_SCROLL_FRACTION_DISTRIBUTE_BY_NUM_SECTIONS;
 
@@ -197,6 +199,8 @@ public class AlphabeticalAppsList {
     private int mNumPredictedAppsPerRow;
     private int mNumAppRowsInAdapter;
 
+    boolean mCustomPredictedAppsEnabled;
+
     public AlphabeticalAppsList(Context context) {
         mLauncher = (Launcher) context;
         mIndexer = new AlphabeticIndexCompat(context);
@@ -292,10 +296,30 @@ public class AlphabeticalAppsList {
      * Sets the current set of predicted apps.  Since this can be called before we get the full set
      * of applications, we should merge the results only in onAppsUpdated() which is idempotent.
      */
-    public void setPredictedApps(List<ComponentKey> apps) {
+    public void setPredictedAppComponents(List<ComponentKey> apps) {
+        if (!mCustomPredictedAppsEnabled) {
+            throw new IllegalStateException("Unable to set predicted app components when adapter " +
+                    "is set to accept a custom predicted apps list.");
+        }
+
         mPredictedAppComponents.clear();
         mPredictedAppComponents.addAll(apps);
         onAppsUpdated();
+    }
+
+    /**
+     * Sets the current set of predicted apps. This uses the info directly, so we do not
+     * merge data in {@link #onAppsUpdated()}, but go directly to {@link #updateAdapterItems()}.
+     */
+    public void setPredictedApps(List<AppInfo> apps) {
+        if (!mCustomPredictedAppsEnabled) {
+            throw new IllegalStateException("Unable to set predicted apps directly when adapter " +
+                    "is not set to accept a custom predicted apps list.");
+        }
+
+        mPredictedApps.clear();
+        mPredictedApps.addAll(apps);
+        updateAdapterItems();
     }
 
     /**
@@ -415,27 +439,48 @@ public class AlphabeticalAppsList {
         }
 
         // Process the predicted app components
-        mPredictedApps.clear();
-        if (mPredictedAppComponents != null && !mPredictedAppComponents.isEmpty() && !hasFilter()) {
-            for (ComponentKey ck : mPredictedAppComponents) {
-                AppInfo info = mComponentToAppMap.get(ck);
-                if (info != null) {
-                    mPredictedApps.add(info);
-                } else {
-                    if (LauncherAppState.isDogfoodBuild()) {
-                        Log.e(TAG, "Predicted app not found: " + ck.flattenToString(mLauncher));
+        boolean hasPredictedApps;
+
+        // We haven't measured yet. Skip this for now. We will set properly after measure.
+        if (mNumPredictedAppsPerRow == 0) {
+            hasPredictedApps = false;
+        } else if (mCustomPredictedAppsEnabled) {
+            hasPredictedApps = !mPredictedApps.isEmpty();
+        } else {
+            mPredictedApps.clear();
+            hasPredictedApps = mPredictedAppComponents != null &&
+                    !mPredictedAppComponents.isEmpty();
+        }
+
+        if (hasPredictedApps && !hasFilter()) {
+            if (!mCustomPredictedAppsEnabled) {
+                for (ComponentKey ck : mPredictedAppComponents) {
+                    AppInfo info = mComponentToAppMap.get(ck);
+                    if (info != null) {
+                        mPredictedApps.add(info);
+                    } else {
+                        if (LauncherAppState.isDogfoodBuild()) {
+                            Log.e(TAG, "Predicted app not found: " + ck.flattenToString(mLauncher));
+                        }
+                    }
+                    // Stop at the number of predicted apps
+                    if (mPredictedApps.size() == mNumPredictedAppsPerRow) {
+                        break;
                     }
                 }
-                // Stop at the number of predicted apps
-                if (mPredictedApps.size() == mNumPredictedAppsPerRow) {
-                    break;
+            } else {
+                // Shrink to column count.
+                if (mPredictedApps.size() > mNumPredictedAppsPerRow) {
+                    mPredictedApps.subList(mNumAppsPerRow, mPredictedApps.size()).clear();
                 }
             }
 
             if (!mPredictedApps.isEmpty()) {
                 // Add a section for the predictions
                 lastSectionInfo = new SectionInfo();
-                lastFastScrollerSectionInfo = new FastScrollSectionInfo("");
+                String text = mCustomPredictedAppsEnabled ? CUSTOM_PREDICTIONS_SCRUBBER : " ";
+                lastFastScrollerSectionInfo =
+                        new FastScrollSectionInfo(text);
                 AdapterItem sectionItem = AdapterItem.asSectionBreak(position++, lastSectionInfo);
                 mSections.add(lastSectionInfo);
                 mFastScrollerSections.add(lastFastScrollerSectionInfo);
@@ -443,8 +488,9 @@ public class AlphabeticalAppsList {
 
                 // Add the predicted app items
                 for (AppInfo info : mPredictedApps) {
+                    text = mCustomPredictedAppsEnabled ? CUSTOM_PREDICTIONS_HEADER : " ";
                     AdapterItem appItem = AdapterItem.asPredictedApp(position++, lastSectionInfo,
-                            "", lastSectionInfo.numApps++, info, appIndex++);
+                            text, lastSectionInfo.numApps++, info, appIndex++);
                     if (lastSectionInfo.firstAppItem == null) {
                         lastSectionInfo.firstAppItem = appItem;
                         lastFastScrollerSectionInfo.fastScrollToItem = appItem;

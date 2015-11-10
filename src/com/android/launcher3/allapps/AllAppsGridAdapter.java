@@ -40,6 +40,7 @@ import com.android.launcher3.AppInfo;
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
+import com.android.launcher3.RemoteFolderManager;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
@@ -185,7 +186,10 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                             mPredictedAppsDividerPaint);
                     hasDrawnPredictedAppsDivider = true;
 
-                } else if (showSectionNames && shouldDrawItemSection(holder, i, items)) {
+                    if (!mApps.mCustomPredictedAppsEnabled) continue;
+                }
+
+                if (showSectionNames && shouldDrawItemSection(holder, i, items)) {
                     // At this point, we only draw sections for each section break;
                     int viewTopOffset = (2 * child.getPaddingTop());
                     int pos = holder.getPosition();
@@ -314,7 +318,8 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
             AlphabeticalAppsList.AdapterItem item = items.get(pos);
 
             // Ensure it's an icon
-            if (item.viewType != AllAppsGridAdapter.ICON_VIEW_TYPE) {
+            if (item.viewType != AllAppsGridAdapter.ICON_VIEW_TYPE &&
+                    item.viewType != AllAppsGridAdapter.PREDICTION_ICON_VIEW_TYPE) {
                 return false;
             }
             // Draw the section header for the first item in each section
@@ -322,6 +327,8 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     (items.get(pos - 1).viewType == AllAppsGridAdapter.SECTION_BREAK_VIEW_TYPE);
         }
     }
+
+    private final RemoteFolderManager mRemoteFolderManager;
 
     private Launcher mLauncher;
     private LayoutInflater mLayoutInflater;
@@ -409,6 +416,8 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         if (marketInfo != null) {
             mMarketAppName = marketInfo.loadLabel(pm).toString();
         }
+
+        mRemoteFolderManager = launcher.getRemoteFolderManager();
     }
 
     /**
@@ -508,7 +517,11 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                 icon.setLongPressTimeout(ViewConfiguration.get(parent.getContext())
                         .getLongPressTimeout());
                 icon.setFocusable(true);
-                return new ViewHolder(icon);
+
+                ViewHolder holder = new ViewHolder(icon);
+                mRemoteFolderManager.onCreateViewHolder(holder);
+
+                return holder;
             }
             case EMPTY_SEARCH_VIEW_TYPE:
                 return new ViewHolder(mLayoutInflater.inflate(R.layout.all_apps_empty_search,
@@ -556,6 +569,9 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     icon.setTextVisibility(!hideIconLabels);
                 }
                 icon.applyFromApplicationInfo(info);
+                icon.setFastScrollDimmed(mIconsDimmed, !mIconsDimmed);
+
+                mRemoteFolderManager.onBindViewHolder(holder, info);
                 break;
             }
             case EMPTY_SEARCH_VIEW_TYPE:
