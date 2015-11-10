@@ -204,12 +204,33 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
         Selection.setSelection(mSearchQueryBuilder, 0);
     }
 
+    public int getNumPredictedAppsPerRow() {
+        return mNumPredictedAppsPerRow;
+    }
+
     /**
-     * Sets the current set of predicted apps.
+     * Sets the current set of predicted apps by component.
+     * Only usable when custom predicted apps are disabled.
      */
-    public void setPredictedApps(List<ComponentKey> apps) {
+    public void setPredictedAppComponents(List<ComponentKey> apps) {
+        mApps.setPredictedAppComponents(apps);
+        updateScrubber();
+    }
+
+    /**
+     * Sets the current set of predicted apps by info.
+     * Only usable when custom predicated apps are enabled.
+     */
+    public void setPredictedApps(List<AppInfo> apps) {
         mApps.setPredictedApps(apps);
         updateScrubber();
+    }
+
+    /**
+     * Set whether the predicted apps row will have a customized selection of apps.
+     */
+    public void setCustomPredictedAppsEnabled(boolean enabled) {
+        mApps.mCustomPredictedAppsEnabled = enabled;
     }
 
     /**
