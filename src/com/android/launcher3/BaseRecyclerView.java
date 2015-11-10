@@ -77,7 +77,7 @@ public abstract class BaseRecyclerView extends RecyclerView
         mDeltaThreshold = getResources().getDisplayMetrics().density * SCROLL_DELTA_THRESHOLD_DP;
 
         ScrollListener listener = new ScrollListener();
-        setOnScrollListener(listener);
+        addOnScrollListener(listener);
     }
 
     private class ScrollListener extends OnScrollListener {
