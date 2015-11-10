@@ -33,12 +33,23 @@ public class BaseRecyclerViewScrubberSection {
     private static final int MAX_SECTIONS = ALPHA_LETTERS.length() + MAX_NUMBER_CUSTOM_SECTIONS;
     public static final int INVALID_INDEX = -1;
 
+    /** Header strings which have different strings in the scrubber **/
+    private static final HashMap<String, String> sHeaderScrubberStringMap;
+    static {
+        sHeaderScrubberStringMap = new HashMap<String, String>();
+        sHeaderScrubberStringMap.put(AppDrawerListAdapter.REMOTE_HEADER,
+                AppDrawerListAdapter.REMOTE_SCRUBBER);
+    }
+
     private AutoExpandTextView.HighlightedText mHighlightedText;
     private int mPreviousValidIndex;
     private int mNextValidIndex;
     private int mAdapterIndex;
 
     public BaseRecyclerViewScrubberSection(String text, boolean highlight, int idx) {
+        if (sHeaderScrubberStringMap.get(text) != null) {
+            text = sHeaderScrubberStringMap.get(text);
+        }
         mHighlightedText = new AutoExpandTextView.HighlightedText(text, highlight);
         mAdapterIndex = idx;
         mPreviousValidIndex = mNextValidIndex = idx;

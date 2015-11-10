@@ -359,6 +359,13 @@ public class Workspace extends PagedView
         }
     }
 
+    /**
+     * @return A {@link Set} of {@link Long}s representing ids of the workspace screens
+     */
+    public Set<Long> getWorkspaceScreenIds() {
+        return mWorkspaceScreens.keySet();
+    }
+
     // estimate the size of a widget with spans hSpan, vSpan. return MAX_VALUE for each
     // dimension if unsuccessful
     public int[] estimateItemSize(ItemInfo itemInfo, boolean springLoaded) {
@@ -3818,6 +3825,7 @@ public class Workspace extends PagedView
                     mDragInfo.container, mDragInfo.screenId);
             if (cellLayout != null) {
                 cellLayout.onDropChild(mDragInfo.cell);
+                cellLayout.setUseTempCoords(false);
             } else if (LauncherAppState.isDogfoodBuild()) {
                 throw new RuntimeException("Invalid state: cellLayout == null in "
                         + "Workspace#onDropCompleted. Please file a bug. ");

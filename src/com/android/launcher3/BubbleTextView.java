@@ -170,16 +170,21 @@ public class BubbleTextView extends TextView
 
     public void applyFromShortcutInfo(ShortcutInfo info, IconCache iconCache,
             boolean promiseStateChanged) {
-        Bitmap b = info.getIcon(iconCache);
+        Drawable iconDrawable;
+        if (info.customDrawable != null) {
+            iconDrawable = info.customDrawable;
+        } else {
+            Bitmap b = info.getIcon(iconCache);
 
-        if (b.getWidth() > mIconSize || b.getHeight() > mIconSize) {
-            b = Bitmap.createScaledBitmap(b, mIconSize, mIconSize, false);
-            info.setIcon(b);
-            info.updateIcon(iconCache);
+            if (b.getWidth() > mIconSize || b.getHeight() > mIconSize) {
+                b = Bitmap.createScaledBitmap(b, mIconSize, mIconSize, false);
+                info.setIcon(b);
+                info.updateIcon(iconCache);
+            }
+
+            iconDrawable = mLauncher.createIconDrawable(b);
+            ((FastBitmapDrawable) iconDrawable).setGhostModeEnabled(info.isDisabled != 0);
         }
-
-        FastBitmapDrawable iconDrawable = mLauncher.createIconDrawable(b);
-        iconDrawable.setGhostModeEnabled(info.isDisabled != 0);
 
         setIcon(iconDrawable, mIconSize);
         if (info.contentDescription != null) {
@@ -194,7 +199,13 @@ public class BubbleTextView extends TextView
     }
 
     public void applyFromApplicationInfo(AppInfo info) {
-        setIcon(mLauncher.createIconDrawable(info.iconBitmap), mIconSize);
+        Drawable iconDrawable;
+        if (info.customDrawable != null) {
+            iconDrawable = info.customDrawable;
+        } else {
+            iconDrawable = mLauncher.createIconDrawable(info.iconBitmap);
+        }
+        setIcon(iconDrawable, mIconSize);
         setText(info.title);
         if (info.contentDescription != null) {
             setContentDescription(info.contentDescription);
