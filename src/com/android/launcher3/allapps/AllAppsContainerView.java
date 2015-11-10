@@ -204,12 +204,33 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
         Selection.setSelection(mSearchQueryBuilder, 0);
     }
 
+    public int getNumPredictedAppsPerRow() {
+        return mNumPredictedAppsPerRow;
+    }
+
     /**
-     * Sets the current set of predicted apps.
+     * Sets the current set of predicted apps by component.
+     * Only usable when custom predicted apps are disabled.
      */
-    public void setPredictedApps(List<ComponentKey> apps) {
+    public void setPredictedAppComponents(List<ComponentKey> apps) {
+        mApps.setPredictedAppComponents(apps);
+        updateScrubber();
+    }
+
+    /**
+     * Sets the current set of predicted apps by info.
+     * Only usable when custom predicated apps are enabled.
+     */
+    public void setPredictedApps(List<AppInfo> apps) {
         mApps.setPredictedApps(apps);
         updateScrubber();
+    }
+
+    /**
+     * Set whether the predicted apps row will have a customized selection of apps.
+     */
+    public void setCustomPredictedAppsEnabled(boolean enabled) {
+        mApps.mCustomPredictedAppsEnabled = enabled;
     }
 
     /**
@@ -260,6 +281,10 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
 
     public List<AppInfo> getApps() {
         return mApps.getApps();
+    }
+
+    public int getSectionStrategy() {
+        return mSectionStrategy;
     }
 
     private void updateSectionStrategy() {
@@ -411,17 +436,11 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
             mNumAppsPerRow = grid.allAppsNumCols;
             mNumPredictedAppsPerRow = grid.allAppsNumPredictiveCols;
 
-            // If there is a start margin to draw section names, determine how we are going to merge
-            // app sections
-            boolean mergeSectionsFully = mSectionStrategy == SECTION_STRATEGY_GRID;
-            AlphabeticalAppsList.MergeAlgorithm mergeAlgorithm = mergeSectionsFully ?
-                    new FullMergeAlgorithm() :
-                    new SimpleSectionMergeAlgorithm((int) Math.ceil(mNumAppsPerRow / 2f),
-                            MIN_ROWS_IN_MERGED_SECTION_PHONE, MAX_NUM_MERGES_PHONE);
-
             mAppsRecyclerView.setNumAppsPerRow(grid, mNumAppsPerRow);
             mAdapter.setNumAppsPerRow(mNumAppsPerRow);
-            mApps.setNumAppsPerRow(mNumAppsPerRow, mNumPredictedAppsPerRow, mergeAlgorithm);
+
+            boolean mergeSections = mSectionStrategy == SECTION_STRATEGY_GRID;
+            mApps.setNumAppsPerRow(mNumAppsPerRow, mNumPredictedAppsPerRow, mergeSections);
         }
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
