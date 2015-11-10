@@ -274,6 +274,45 @@ public class FolderPagedView extends PagedView {
         }
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        if (getChildCount() == 0) {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        } else {
+            // We should only be as large as our pages, so measure all of them first.
+            View page = null;
+            for (int i = 0; i < getChildCount(); i++) {
+                page = getChildAt(i);
+                page.measure(widthMeasureSpec, heightMeasureSpec);
+            }
+
+            // And then set ourselves to their size.
+            int width = getPaddingLeft() + page.getMeasuredWidth() + getPaddingRight();
+            int height = getPaddingTop() + page.getMeasuredHeight() + getPaddingBottom();
+            mViewport.set(0, 0, width, height);
+            setMeasuredDimension(width, height);
+        }
+    }
+
+    /**
+     * Find the child view for the given rank.
+     * @param rank sorted index of child.
+     * @return view of child at given rank.
+     */
+    public View getChildAtRank(int rank) {
+        int pagePos = rank % mMaxItemsPerPage;
+        int pageNo = rank / mMaxItemsPerPage;
+        int cellX = pagePos % mGridCountX;
+        int cellY = pagePos / mGridCountX;
+
+        CellLayout page = getPageAt(pageNo);
+        if (page != null) {
+            return page.getChildAt(cellX, cellY);
+        } else {
+            return null;
+        }
+    }
+
     /**
      * Updates position and rank of all the children in the view.
      * It essentially removes all views from all the pages and then adds them again in appropriate

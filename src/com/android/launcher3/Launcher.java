@@ -112,7 +112,6 @@ import com.android.launcher3.list.SettingsPinnedHeaderAdapter;
 import com.android.launcher3.model.WidgetsModel;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
-import com.android.launcher3.stats.internal.service.AggregationIntentService;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.LongArrayMap;
 import com.android.launcher3.util.Thunk;
@@ -265,6 +264,7 @@ public class Launcher extends Activity
     private View mWeightWatcher;
     protected HiddenFolderFragment mHiddenFolderFragment;
     private DynamicGridSizeFragment mDynamicGridSizeFragment;
+    private RemoteFolderManager mRemoteFolderManager;
 
     private AppWidgetManagerCompat mAppWidgetManager;
     private LauncherAppWidgetHost mAppWidgetHost;
@@ -516,6 +516,8 @@ public class Launcher extends Activity
 
         mAppWidgetHost = new LauncherAppWidgetHost(this, APPWIDGET_HOST_ID);
         mAppWidgetHost.startListening();
+
+        mRemoteFolderManager = new RemoteFolderManager(this);
 
         // If we are getting an onCreate, we can actually preempt onResume and unset mPaused here,
         // this also ensures that any synchronous binding below doesn't re-trigger another
@@ -2146,6 +2148,10 @@ public class Launcher extends Activity
         return mWorkspace;
     }
 
+    public RemoteFolderManager getRemoteFolderManager() {
+        return mRemoteFolderManager;
+    }
+
     public Hotseat getHotseat() {
         return mHotseat;
     }
@@ -2717,10 +2723,14 @@ public class Launcher extends Activity
     }
 
     FolderIcon addFolder(CellLayout layout, long container, final long screenId, int cellX,
-            int cellY) {
-        final FolderInfo folderInfo = new FolderInfo();
+                         int cellY) {
+        FolderInfo folderInfo = new FolderInfo();
         folderInfo.title = getText(R.string.folder_name);
+        return addFolder(layout, container, screenId, cellX, cellY, folderInfo);
+    }
 
+    FolderIcon addFolder(CellLayout layout, long container, final long screenId, int cellX,
+            int cellY, FolderInfo folderInfo) {
         // Update the model
         LauncherModel.addItemToDatabase(Launcher.this, folderInfo, container, screenId,
                 cellX, cellY);
@@ -2867,10 +2877,11 @@ public class Launcher extends Activity
         } else if (v == mAllAppsButton) {
             onClickAllAppsButton(v);
         } else if (tag instanceof AppInfo) {
+            AppInfo info = (AppInfo) tag;
             startAppShortcutOrInfoActivity(v);
             LauncherApplication.getLauncherStats().sendAppLaunchEvent(
-                    LauncherStats.ORIGIN_APPDRAWER, ((AppInfo)tag).componentName.getPackageName());
-            String packageName = ((AppInfo)tag).getIntent().getComponent().getPackageName();
+                    LauncherStats.ORIGIN_APPDRAWER, info.componentName.getPackageName());
+            String packageName = info.getIntent().getComponent().getPackageName();
             if (LauncherStats.SETTINGS_PACKAGE_NAME.equals(packageName)) {
                 LauncherApplication.getLauncherStats()
                         .sendSettingsOpenedEvent(LauncherStats.ORIGIN_APPDRAWER);
@@ -3536,7 +3547,7 @@ public class Launcher extends Activity
             Log.w(TAG, "Opening folder (" + folder + ") which already has a parent (" +
                     folder.getParent() + ").");
         }
-        folder.animateOpen(getWorkspace(), folderTouch);
+        folder.animateOpen();
         /*growAndFadeOutFolderIcon(folderIcon);*/
 
         // Notify the accessibility manager that this folder "window" has appeared and occluded
@@ -4193,6 +4204,7 @@ public class Launcher extends Activity
 
         if (addedApps != null && mAppsView != null) {
             mAppsView.addApps(addedApps);
+            mRemoteFolderManager.onBindAddApps(addedApps);
         }
     }
 
@@ -4216,7 +4228,7 @@ public class Launcher extends Activity
         final AnimatorSet anim = LauncherAnimUtils.createAnimatorSet();
         final Collection<Animator> bounceAnims = new ArrayList<Animator>();
         final boolean animateIcons = forceAnimateIcons && canRunNewAppsAnimation();
-        Workspace workspace = mWorkspace;
+        final Workspace workspace = mWorkspace;
         long newShortcutsScreenId = -1;
         for (int i = start; i < end; i++) {
             final ItemInfo item = shortcuts.get(i);
@@ -4256,6 +4268,9 @@ public class Launcher extends Activity
                     view = FolderIcon.fromXml(R.layout.folder_icon, this,
                             (ViewGroup) workspace.getChildAt(workspace.getCurrentPage()),
                             (FolderInfo) item, mIconCache);
+                    if (view == null) {
+                        continue;
+                    }
                     ((FolderIcon) view).setTextVisible(!mHideIconLabels);
                     break;
                 default:
@@ -4515,6 +4530,8 @@ public class Launcher extends Activity
         }
 
         mWorkspace.stripEmptyScreens();
+
+        mRemoteFolderManager.bindFinished();
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
@@ -4597,6 +4614,7 @@ public class Launcher extends Activity
 
         if (mAppsView != null) {
             mAppsView.setApps(apps);
+            mRemoteFolderManager.onSetApps();
         }
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.bindAllApplications(apps);
@@ -4714,7 +4732,7 @@ public class Launcher extends Activity
             for (AppInfo info : appInfos) {
                 removedComponents.add(info.componentName);
             }
-            if (!packageNames.isEmpty()) {
+            if (packageNames != null && !packageNames.isEmpty()) {
                 mWorkspace.removeItemsByPackageName(packageNames, user);
             }
             if (!removedComponents.isEmpty()) {
