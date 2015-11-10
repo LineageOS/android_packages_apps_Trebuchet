@@ -119,7 +119,7 @@ public class FolderInfo extends ItemInfo {
 
     @Override
     public String toString() {
-        return "FolderInfo(id=" + this.id + " type=" + this.itemType
+        return "FolderInfo(id=" + this.id + " type=" + this.itemType + " subtype=" + this.subType
                 + " container=" + this.container + " screen=" + screenId
                 + " cellX=" + cellX + " cellY=" + cellY + " spanX=" + spanX
                 + " spanY=" + spanY + " dropPos=" + Arrays.toString(dropPos) + ")";

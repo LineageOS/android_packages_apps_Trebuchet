@@ -245,6 +245,11 @@ public class DefaultLayoutParser extends AutoInstallsLayout {
             }
             return addedId;
         }
+
+        @Override
+        public boolean isRemoteFolder() {
+            return false;
+        }
     }
 
     /**
@@ -271,6 +276,11 @@ public class DefaultLayoutParser extends AutoInstallsLayout {
             }
             return -1;
         }
+
+        @Override
+        public boolean isRemoteFolder() {
+            return false;
+        }
     }
 
     /**
@@ -290,9 +300,24 @@ public class DefaultLayoutParser extends AutoInstallsLayout {
         }
     }
 
-    private class RemoteFolderParser extends MyFolderParser {
+    protected class RemoteFolderParser extends FolderParser {
+        public RemoteFolderParser() {
+            super();
+        }
+
         @Override
-        protected boolean isRemoteFolder() {
+        public long parseAndAdd(XmlResourceParser parser) throws XmlPullParserException,
+                IOException {
+            final int resId = getAttributeResourceValue(parser, ATTR_FOLDER_ITEMS, 0);
+            if (resId != 0) {
+                parser = mSourceRes.getXml(resId);
+                beginDocument(parser, TAG_REMOTE_FOLDER);
+            }
+            return super.parseAndAdd(parser);
+        }
+
+        @Override
+        public boolean isRemoteFolder() {
             return true;
         }
     }

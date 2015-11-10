@@ -27,8 +27,14 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13 \
                                android-support-v7-recyclerview \
                                guava
 
-LOCAL_SRC_FILES := $(call all-java-files-under, src) \
-    $(call all-java-files-under, WallpaperPicker/src) \
+remote_folder_shortcut_dir := ../../experimental/RemoteFolder
+
+java_src_dirs := src \
+    WallpaperPicker/src \
+    $(remote_folder_shortcut_dir)/lib \
+    $(remote_folder_shortcut_dir)/src
+
+LOCAL_SRC_FILES := $(call all-java-files-under, java_src_dirs) \
     $(call all-renderscript-files-under, src) \
     $(call all-proto-files-under, protos)
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/WallpaperPicker/res $(LOCAL_PATH)/res
@@ -52,7 +58,6 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_PROGUARD_ENABLED := disabled
 
 include $(BUILD_PACKAGE)
-
 
 #
 # Protocol Buffer Debug Utility in Java
@@ -88,5 +93,6 @@ $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/util/etc/launcher_protoutil | $(ACP)
 	@echo "Copy: $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-new-target)
 	$(hide) chmod 755 $@
+
 
 include $(call all-makefiles-under,$(LOCAL_PATH))

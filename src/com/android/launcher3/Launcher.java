@@ -145,6 +145,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 /**
  * Default launcher application.
@@ -4883,7 +4884,7 @@ public class Launcher extends Activity
         final AnimatorSet anim = LauncherAnimUtils.createAnimatorSet();
         final Collection<Animator> bounceAnims = new ArrayList<Animator>();
         final boolean animateIcons = forceAnimateIcons && canRunNewAppsAnimation();
-        Workspace workspace = mWorkspace;
+        final Workspace workspace = mWorkspace;
         long newShortcutsScreenId = -1;
         for (int i = start; i < end; i++) {
             final ItemInfo item = shortcuts.get(i);
@@ -4934,12 +4935,45 @@ public class Launcher extends Activity
                     }
                     break;
                 case LauncherSettings.Favorites.ITEM_TYPE_FOLDER:
-                    FolderIcon newFolder = FolderIcon.fromXml(R.layout.folder_icon, this,
+                    final FolderIcon newFolder = FolderIcon.fromXml(R.layout.folder_icon, this,
                             (ViewGroup) workspace.getChildAt(workspace.getCurrentPage()),
                             (FolderInfo) item, mIconCache);
-                    newFolder.setTextVisible(!mHideIconLabels);
-                    workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
-                            item.cellY, 1, 1);
+                    if (((FolderInfo) item).subType == 1) {
+
+                        RemoteFolderUpdater updater = new RemoteFolderUpdater();
+                        updater.requestSync(this, 6, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                            @Override
+                            public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+                                newFolder.removeAllViews();
+                                for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+
+                                    ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                            remoteFolderInfo.getTitle(),
+                                            null,
+                                            remoteFolderInfo.getIcon(),
+                                            null);
+                                    newFolder.addItem(shortcutInfo);
+                                    remoteFolderInfo.setRecommendationData(newFolder);
+                                }
+
+                                newFolder.setTextVisible(!mHideIconLabels);
+                                workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
+                                        item.cellY, 1, 1);
+                            }
+
+                            @Override
+                            public void onFailure(String error) {
+                                newFolder.setTextVisible(!mHideIconLabels);
+                                workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
+                                        item.cellY, 1, 1);
+                            }
+                        });
+                    } else {
+                        newFolder.setTextVisible(!mHideIconLabels);
+                        workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
+                                item.cellY, 1, 1);
+                    }
+
                     break;
                 default:
                     throw new RuntimeException("Invalid Item Type");
