@@ -31,7 +31,6 @@ remote_folder_shortcut_dir := ../../experimental/RemoteFolder
 
 java_src_dirs := src \
     WallpaperPicker/src \
-    $(remote_folder_shortcut_dir)/lib \
     $(remote_folder_shortcut_dir)/src
 
 LOCAL_SRC_FILES := $(call all-java-files-under, java_src_dirs) \
