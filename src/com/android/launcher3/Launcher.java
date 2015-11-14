@@ -345,6 +345,8 @@ public class Launcher extends Activity
 
     private DeviceProfile mDeviceProfile;
 
+    private boolean mUseScrubber = true;
+
     // This is set to the view that launched the activity that navigated the user away from
     // launcher. Since there is no callback for when the activity has finished launching, enable
     // the press state and keep this reference to reset the press state when we return to launcher.
@@ -1426,6 +1428,11 @@ public class Launcher extends Activity
         } else {
             mAppsView.setSearchBarController(mAppsView.newDefaultAppSearchController());
         }
+
+        mAppsView.setUseScrubber(mUseScrubber);
+        mAppsView.setSectionStrategy(AllAppsContainerView.SECTION_STRATEGY_RAGGED);
+        mAppsView.setGridTheme(AllAppsContainerView.GRID_THEME_DARK);
+        mWidgetsView.setUseScrubber(false);
 
         // Setup the drag controller (drop targets have to be added in reverse order in priority)
         dragController.setDragScoller(mWorkspace);
