@@ -21,6 +21,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.Rect;
@@ -68,6 +69,10 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     public static final int SEARCH_MARKET_DIVIDER_VIEW_TYPE = 4;
     // The message to continue to a market search when there are no filtered results
     public static final int SEARCH_MARKET_VIEW_TYPE = 5;
+
+    private boolean mIconsDimmed = false;
+
+    private int mGridTheme;
 
     /**
      * ViewHolder for each icon.
@@ -142,7 +147,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     public class GridItemDecoration extends RecyclerView.ItemDecoration {
 
         private static final boolean DEBUG_SECTION_MARGIN = false;
-        private static final boolean FADE_OUT_SECTIONS = false;
+        private static final boolean FADE_OUT_SECTIONS = true;
 
         private HashMap<String, PointF> mCachedSectionBounds = new HashMap<>();
         private Rect mTmpBounds = new Rect();
@@ -349,12 +354,16 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     // Section drawing
     @Thunk int mSectionNamesMargin;
     @Thunk int mSectionHeaderOffset;
+    @Thunk int mSectionStrategy;
     @Thunk Paint mSectionTextPaint;
     @Thunk Paint mPredictedAppsDividerPaint;
 
+    private int mIconSize;
+    private int mAllAppsTextColor;
+
     public AllAppsGridAdapter(Launcher launcher, AlphabeticalAppsList apps,
             View.OnTouchListener touchListener, View.OnClickListener iconClickListener,
-            View.OnLongClickListener iconLongClickListener) {
+            View.OnLongClickListener iconLongClickListener, int sectionStrategy, int gridTheme) {
         Resources res = launcher.getResources();
         mLauncher = launcher;
         mApps = apps;
@@ -367,13 +376,31 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         mTouchListener = touchListener;
         mIconClickListener = iconClickListener;
         mIconLongClickListener = iconLongClickListener;
-        mSectionNamesMargin = res.getDimensionPixelSize(R.dimen.all_apps_grid_view_start_margin);
+        mSectionStrategy = sectionStrategy;
+        mGridTheme = gridTheme;
+        mSectionNamesMargin = mSectionStrategy ==
+                AllAppsContainerView.SECTION_STRATEGY_GRID ?
+                res.getDimensionPixelSize(R.dimen.all_apps_grid_view_start_margin) :
+                res.getDimensionPixelSize(R.dimen.all_apps_grid_view_start_margin_with_sections);
+
+        mIconSize = mSectionStrategy ==
+                AllAppsContainerView.SECTION_STRATEGY_GRID ?
+                res.getDimensionPixelSize(R.dimen.all_apps_icon_size_grid) :
+                res.getDimensionPixelSize(R.dimen.all_apps_icon_size_ragged);
+
+        mAllAppsTextColor = mGridTheme == AllAppsContainerView.GRID_THEME_DARK ?
+                res.getColor(R.color.quantum_panel_text_color_dark) :
+                res.getColor(R.color.quantum_panel_text_color);
+
         mSectionHeaderOffset = res.getDimensionPixelSize(R.dimen.all_apps_grid_section_y_offset);
 
         mSectionTextPaint = new Paint();
         mSectionTextPaint.setTextSize(res.getDimensionPixelSize(
                 R.dimen.all_apps_grid_section_text_size));
-        mSectionTextPaint.setColor(res.getColor(R.color.all_apps_grid_section_text_color));
+        int sectionTextColorId = mGridTheme == AllAppsContainerView.GRID_THEME_DARK ?
+                R.color.all_apps_grid_section_text_color_dark :
+                R.color.all_apps_grid_section_text_color;
+        mSectionTextPaint.setColor(res.getColor(sectionTextColorId));
         mSectionTextPaint.setAntiAlias(true);
 
         mPredictedAppsDividerPaint = new Paint();
@@ -406,6 +433,19 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
      */
     public void setRtl(boolean rtl) {
         mIsRtl = rtl;
+    }
+
+    public void setSectionStrategy(int sectionStrategy) {
+        Resources res = mLauncher.getResources();
+        mSectionStrategy = sectionStrategy;
+        mSectionNamesMargin = mSectionStrategy ==
+                AllAppsContainerView.SECTION_STRATEGY_GRID ?
+                res.getDimensionPixelSize(R.dimen.all_apps_grid_view_start_margin) :
+                res.getDimensionPixelSize(R.dimen.all_apps_grid_view_start_margin_with_sections);
+        mIconSize = mSectionStrategy ==
+                AllAppsContainerView.SECTION_STRATEGY_GRID ?
+                res.getDimensionPixelSize(R.dimen.all_apps_icon_size_grid) :
+                res.getDimensionPixelSize(R.dimen.all_apps_icon_size_ragged);
     }
 
     /**
@@ -501,12 +541,17 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
             case ICON_VIEW_TYPE: {
                 AppInfo info = mApps.getAdapterItems().get(position).appInfo;
                 BubbleTextView icon = (BubbleTextView) holder.mContent;
+                icon.setIconSize(mIconSize);
+                icon.setTextColor(mAllAppsTextColor);
                 icon.applyFromApplicationInfo(info);
+                icon.setFastScrollDimmed(mIconsDimmed, !mIconsDimmed);
                 break;
             }
             case PREDICTION_ICON_VIEW_TYPE: {
                 AppInfo info = mApps.getAdapterItems().get(position).appInfo;
                 BubbleTextView icon = (BubbleTextView) holder.mContent;
+                icon.setIconSize(mIconSize);
+                icon.setTextColor(mAllAppsTextColor);
                 icon.applyFromApplicationInfo(info);
                 break;
             }
@@ -540,6 +585,25 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     public int getItemViewType(int position) {
         AlphabeticalAppsList.AdapterItem item = mApps.getAdapterItems().get(position);
         return item.viewType;
+    }
+
+    public void setIconsDimmed(boolean iconsDimmed) {
+        if (mIconsDimmed != iconsDimmed) {
+            mIconsDimmed = iconsDimmed;
+            notifyDataSetChanged();
+        }
+    }
+
+    public void setGridTheme(int gridTheme) {
+        mGridTheme = gridTheme;
+        int sectionTextColorId = mGridTheme == AllAppsContainerView.GRID_THEME_DARK ?
+                R.color.all_apps_grid_section_text_color_dark :
+                R.color.all_apps_grid_section_text_color;
+        mSectionTextPaint.setColor(mLauncher.getResources().getColor(sectionTextColorId));
+        Resources res = mLauncher.getResources();
+        mAllAppsTextColor = mGridTheme == AllAppsContainerView.GRID_THEME_DARK ?
+                res.getColor(R.color.all_apps_grid_section_text_color_dark) :
+                res.getColor(R.color.all_apps_grid_section_text_color);
     }
 
     /**
