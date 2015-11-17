@@ -42,6 +42,11 @@ public class LauncherSettings {
         public static final String TITLE = "title";
 
         /**
+         * Folder Hidden status
+         */
+        public static final String HIDDEN = "hidden";
+
+        /**
          * The Intent URL of the gesture, describing what it points to. This
          * value is given to {@link android.content.Intent#parseUri(String, int)} to create
          * an Intent that can be launched.
