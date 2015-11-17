@@ -28,6 +28,7 @@ import java.util.Arrays;
  * Represents a folder containing shortcuts or apps.
  */
 public class FolderInfo extends ItemInfo {
+    public static final int REMOTE_SUBTYPE = 1;
 
     /**
      * Whether this folder has been opened

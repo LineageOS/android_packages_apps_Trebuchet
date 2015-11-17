@@ -27,13 +27,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13 \
                                android-support-v7-recyclerview \
                                guava
 
-remote_folder_shortcut_dir := ../../experimental/RemoteFolder
-
-java_src_dirs := src \
-    WallpaperPicker/src \
-    $(remote_folder_shortcut_dir)/src
-
-LOCAL_SRC_FILES := $(call all-java-files-under, java_src_dirs) \
+LOCAL_SRC_FILES := $(call all-java-files-under, src) \
+    $(call all-java-files-under, WallpaperPicker/src) \
     $(call all-renderscript-files-under, src) \
     $(call all-proto-files-under, protos)
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/WallpaperPicker/res $(LOCAL_PATH)/res
@@ -56,7 +51,14 @@ LOCAL_OVERRIDES_PACKAGES := Launcher3
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_PROGUARD_ENABLED := disabled
 
+REMOTE_FOLDER_UPDATER ?= $(LOCAL_PATH)/RemoteFolder
+include $(REMOTE_FOLDER_UPDATER)/Android.mk
+
 include $(BUILD_PACKAGE)
+
+include $(CLEAR_VARS)
+include $(REMOTE_FOLDER_UPDATER)/Android.mk
+include $(BUILD_MULTI_PREBUILT)
 
 #
 # Protocol Buffer Debug Utility in Java
@@ -76,6 +78,7 @@ LOCAL_JAR_MANIFEST := util/etc/manifest.txt
 
 include $(BUILD_HOST_JAVA_LIBRARY)
 
+
 #
 # Protocol Buffer Debug Utility Wrapper Script
 #
@@ -92,6 +95,5 @@ $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/util/etc/launcher_protoutil | $(ACP)
 	@echo "Copy: $(PRIVATE_MODULE) ($@)"
 	$(copy-file-to-new-target)
 	$(hide) chmod 755 $@
-
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
