@@ -125,6 +125,7 @@ import com.android.launcher3.PagedView.TransitionEffect;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -145,7 +146,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 /**
  * Default launcher application.
@@ -403,6 +403,9 @@ public class Launcher extends Activity
     private Rect mRectForFolderAnimation = new Rect();
 
     private BubbleTextView mWaitingForResume;
+
+    // Remote Folder Updater, used in Workspace and Folder
+    private RemoteFolderUpdater remoteFolderUpdater;
 
     // Search widget
     int mSearchWidgetId;
@@ -4938,42 +4941,9 @@ public class Launcher extends Activity
                     final FolderIcon newFolder = FolderIcon.fromXml(R.layout.folder_icon, this,
                             (ViewGroup) workspace.getChildAt(workspace.getCurrentPage()),
                             (FolderInfo) item, mIconCache);
-                    if (((FolderInfo) item).subType == 1) {
-
-                        RemoteFolderUpdater updater = new RemoteFolderUpdater();
-                        updater.requestSync(this, 6, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
-                            @Override
-                            public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
-                                newFolder.removeAllViews();
-                                for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
-
-                                    ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
-                                            remoteFolderInfo.getTitle(),
-                                            null,
-                                            remoteFolderInfo.getIcon(),
-                                            null);
-                                    newFolder.addItem(shortcutInfo);
-                                    remoteFolderInfo.setRecommendationData(newFolder);
-                                }
-
-                                newFolder.setTextVisible(!mHideIconLabels);
-                                workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
-                                        item.cellY, 1, 1);
-                            }
-
-                            @Override
-                            public void onFailure(String error) {
-                                newFolder.setTextVisible(!mHideIconLabels);
-                                workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
-                                        item.cellY, 1, 1);
-                            }
-                        });
-                    } else {
-                        newFolder.setTextVisible(!mHideIconLabels);
-                        workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
-                                item.cellY, 1, 1);
-                    }
-
+                    newFolder.setTextVisible(!mHideIconLabels);
+                    workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
+                            item.cellY, 1, 1);
                     break;
                 default:
                     throw new RuntimeException("Invalid Item Type");
@@ -5971,6 +5941,13 @@ public class Launcher extends Activity
         return SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
+    }
+
+    public RemoteFolderUpdater getRemoteFolderUpdaterInstance() {
+        if (remoteFolderUpdater == null) {
+            remoteFolderUpdater = new RemoteFolderUpdater();
+        }
+        return remoteFolderUpdater;
     }
 }
 
