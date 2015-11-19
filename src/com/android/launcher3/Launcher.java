@@ -125,7 +125,6 @@ import com.android.launcher3.PagedView.TransitionEffect;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
-import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -403,9 +402,6 @@ public class Launcher extends Activity
     private Rect mRectForFolderAnimation = new Rect();
 
     private BubbleTextView mWaitingForResume;
-
-    // Remote Folder Updater, used in Workspace and Folder
-    private RemoteFolderUpdater remoteFolderUpdater;
 
     // Search widget
     int mSearchWidgetId;
@@ -5941,13 +5937,6 @@ public class Launcher extends Activity
         return SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
-    }
-
-    public RemoteFolderUpdater getRemoteFolderUpdaterInstance() {
-        if (remoteFolderUpdater == null) {
-            remoteFolderUpdater = new RemoteFolderUpdater();
-        }
-        return remoteFolderUpdater;
     }
 }
 

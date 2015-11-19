@@ -64,7 +64,6 @@ import android.widget.TextView;
 import com.android.launcher3.FolderInfo.FolderListener;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.settings.SettingsProvider;
-import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -480,71 +479,38 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
 
     void bind(final FolderInfo info) {
         mInfo = info;
-        final ArrayList<ShortcutInfo> children = info.contents;
+        ArrayList<ShortcutInfo> children = info.contents;
+        ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
 
-        if (info.subType == FolderInfo.REMOTE_SUBTYPE && children.isEmpty()) {
-            final int count = 6;
-            RemoteFolderUpdater updater = mLauncher.getRemoteFolderUpdaterInstance();
-            updater.requestSync(getContext(), count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
-                @Override
-                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
-                    children.clear();
-                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
-                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getIcon(),
-                                UserHandleCompat.myUserHandle());
-                        children.add(shortcutInfo);
-
-                        View child = mLauncher.createShortcut(R.layout.application, mContent,
-                                shortcutInfo);
-                        remoteFolderInfo.setRecommendationData(child);
-                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
-                                info.screenId, info.cellX, info.cellY);
-                    }
-                    info.contents = children;
-                    bind(info);
-                }
-
-                @Override
-                public void onFailure(String error) {
-                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
-                    setupContentForNumItems(count);
-                }
-            });
-        } else {
-            ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
-            setupContentForNumItems(children.size());
-            placeInReadingOrder(children);
-            int count = 0;
-            for (int i = 0; i < children.size(); i++) {
-                ShortcutInfo child = (ShortcutInfo) children.get(i);
-                if (createAndAddShortcut(child) == null) {
-                    overflow.add(child);
-                } else {
-                    count++;
-                }
+        setupContentForNumItems(children.size());
+        placeInReadingOrder(children);
+        int count = 0;
+        for (int i = 0; i < children.size(); i++) {
+            ShortcutInfo child = (ShortcutInfo) children.get(i);
+            if (createAndAddShortcut(child) == null) {
+                overflow.add(child);
+            } else {
+                count++;
             }
-
-            // We rearrange the items in case there are any empty gaps
-            setupContentForNumItems(count);
-
-            // If our folder has too many items we prune them from the list. This is an issue
-            // when upgrading from the old Folders implementation which could contain an unlimited
-            // number of items.
-            for (ShortcutInfo item: overflow) {
-                mInfo.remove(item);
-                LauncherModel.deleteItemFromDatabase(mLauncher, item);
-            }
-
-            mItemsInvalidated = true;
-            updateTextViewFocus();
-            mInfo.addListener(this);
-
-            setFolderName();
-            updateItemLocationsInDatabase();
         }
+
+        // We rearrange the items in case there are any empty gaps
+        setupContentForNumItems(count);
+
+        // If our folder has too many items we prune them from the list. This is an issue
+        // when upgrading from the old Folders implementation which could contain an unlimited
+        // number of items.
+        for (ShortcutInfo item: overflow) {
+            mInfo.remove(item);
+            LauncherModel.deleteItemFromDatabase(mLauncher, item);
+        }
+
+        mItemsInvalidated = true;
+        updateTextViewFocus();
+        mInfo.addListener(this);
+
+        setFolderName();
+        updateItemLocationsInDatabase();
     }
 
     public void setFolderName() {

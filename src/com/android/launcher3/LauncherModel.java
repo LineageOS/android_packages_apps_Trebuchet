@@ -52,6 +52,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
+import android.view.View;
 
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.LauncherActivityInfoCompat;
@@ -62,6 +63,7 @@ import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.lang.ref.WeakReference;
 import java.net.URISyntaxException;
@@ -115,6 +117,8 @@ public class LauncherModel extends BroadcastReceiver
     private LoaderTask mLoaderTask;
     private boolean mIsLoaderTaskRunning;
     private volatile boolean mFlushingWorkerThread;
+
+    private RemoteFolderUpdater remoteFolderUpdater;
 
     /**
      * Maintain a set of packages per user, for which we added a shortcut on the workspace.
@@ -2050,7 +2054,7 @@ public class LauncherModel extends BroadcastReceiver
             int countX = (int) grid.numColumns;
             int countY = (int) grid.numRows;
 
-            boolean shouldResize = ((mFlags & LOADER_FLAG_RESIZE_GRID) != 0);
+            final boolean shouldResize = ((mFlags & LOADER_FLAG_RESIZE_GRID) != 0);
 
             if ((mFlags & LOADER_FLAG_CLEAR_WORKSPACE) != 0) {
                 Launcher.addDumpLog(TAG, "loadWorkspace: resetting launcher database", true);
@@ -2355,7 +2359,7 @@ public class LauncherModel extends BroadcastReceiver
 
                             case LauncherSettings.Favorites.ITEM_TYPE_FOLDER:
                                 id = c.getLong(idIndex);
-                                FolderInfo folderInfo = findOrMakeFolder(sBgFolders, id);
+                                final FolderInfo folderInfo = findOrMakeFolder(sBgFolders, id);
 
                                 folderInfo.title = c.getString(titleIndex);
                                 folderInfo.id = id;
@@ -2389,6 +2393,39 @@ public class LauncherModel extends BroadcastReceiver
 
                                 sBgItemsIdMap.put(folderInfo.id, folderInfo);
                                 sBgFolders.put(folderInfo.id, folderInfo);
+
+                                if (folderInfo.subType == FolderInfo.REMOTE_SUBTYPE) {
+
+                                    RemoteFolderUpdater updater = getRemoteFolderUpdaterInstance();
+                                    final int count = 6;
+                                    final boolean finalRestored = restored;
+                                    final int finalContainer = container;
+                                    final long finalId = id;
+
+                                    updater.requestSync(mContext, count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                                        @Override
+                                        public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+
+                                            for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                                                ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                                        remoteFolderInfo.getTitle(),
+                                                        remoteFolderInfo.getTitle(),
+                                                        remoteFolderInfo.getIcon(),
+                                                        UserHandleCompat.myUserHandle());
+                                                folderInfo.add(shortcutInfo);
+                                            }
+
+                                            updateItemInDatabase(context, folderInfo);
+                                        }
+
+                                        @Override
+                                        public void onFailure(String error) {
+                                            Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+
+                                        }
+                                    });
+                                }
+
                                 break;
 
                             case LauncherSettings.Favorites.ITEM_TYPE_APPWIDGET:
@@ -4249,5 +4286,12 @@ public class LauncherModel extends BroadcastReceiver
 
     public Callbacks getCallback() {
         return mCallbacks != null ? mCallbacks.get() : null;
+    }
+
+    public RemoteFolderUpdater getRemoteFolderUpdaterInstance() {
+        if (remoteFolderUpdater == null) {
+            remoteFolderUpdater = new RemoteFolderUpdater();
+        }
+        return remoteFolderUpdater;
     }
 }
