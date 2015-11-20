@@ -53,6 +53,9 @@
     <color name="widgets_view_item_text_color">#C4C4C4</color>
     <color name="widgets_cell_color">#263238</color>
 
+    <!-- CM Settings -->
+    <color name="settings_header_text">#FF6cd2ea</color>
+
     <color name="app_scrubber_highlight_color">@android:color/white</color>
     <color name="app_scrubber_gray_color">@android:color/darker_gray</color>
     <color name="scrubber_background">#CC14191E</color>
