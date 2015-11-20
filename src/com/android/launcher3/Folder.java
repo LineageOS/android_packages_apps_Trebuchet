@@ -64,6 +64,7 @@ import android.widget.TextView;
 import com.android.launcher3.FolderInfo.FolderListener;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.settings.SettingsProvider;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -1632,6 +1633,13 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         createAndAddShortcut(item);
         LauncherModel.addOrMoveItemInDatabase(
                 mLauncher, item, mInfo.id, 0, item.cellX, item.cellY);
+
+        // If this is a Remote Folder, we need to register each view with our updater before clicks.
+        if (mInfo.subType == FolderInfo.REMOTE_SUBTYPE) {
+            RemoteFolderUpdater updater = mLauncher.getModel().getRemoteFolderUpdaterInstance();
+            updater.registerViewForInteraction(getViewForInfo(item), item.getIntent());
+        }
+
     }
 
     public void onRemove(ShortcutInfo item) {

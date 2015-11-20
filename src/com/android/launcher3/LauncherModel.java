@@ -2406,6 +2406,12 @@ public class LauncherModel extends BroadcastReceiver
                                         @Override
                                         public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
 
+                                            // Clear contents to prevent any duplicates
+                                            if (folderInfo.contents != null && folderInfo.contents.isEmpty()) {
+                                                folderInfo.removeAll();
+                                            }
+
+                                            // Add each remote folder item and finally update the DB
                                             for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
                                                 ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
                                                         remoteFolderInfo.getTitle(),
@@ -2414,14 +2420,12 @@ public class LauncherModel extends BroadcastReceiver
                                                         UserHandleCompat.myUserHandle());
                                                 folderInfo.add(shortcutInfo);
                                             }
-
                                             updateItemInDatabase(context, folderInfo);
                                         }
 
                                         @Override
                                         public void onFailure(String error) {
                                             Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
-
                                         }
                                     });
                                 }

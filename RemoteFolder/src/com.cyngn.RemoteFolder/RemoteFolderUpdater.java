@@ -26,6 +26,17 @@ public class RemoteFolderUpdater {
     }
 
     /**
+     * Register a callback to track clicks on our individual Remote Folder items. Make sure the
+     * intent associated with each item has a unique ID.
+     *
+     * @param view The individual item the user may click (or just clicked)
+     * @param intent The intent associated with the ShortcutInfo that belongs to our view
+     */
+    public void registerViewForInteraction(View view, Intent intent) {
+        Log.e(TAG, "Couldn't register view for user interaction, RemoteFolderUpdater may not have been properly setup");
+    }
+
+    /**
      * Holds important information that the launcher will need for each item in the remote folder.
      */
     public class RemoteFolderInfo {

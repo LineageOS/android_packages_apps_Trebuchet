@@ -75,6 +75,15 @@ public class FolderInfo extends ItemInfo {
         itemsChanged();
     }
 
+    /**
+     * Clear all apps & shortcuts. Does not change the DB.
+     */
+    public void removeAll() {
+        for (ShortcutInfo info : contents) {
+            remove(info);
+        }
+    }
+
     public void setTitle(CharSequence title) {
         this.title = title;
         for (int i = 0; i < listeners.size(); i++) {
