@@ -42,6 +42,7 @@ import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
 
 import java.util.HashMap;
@@ -449,12 +450,18 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        boolean hideIconLabels = SettingsProvider.getBoolean(mLauncher,
+                SettingsProvider.SETTINGS_UI_DRAWER_HIDE_ICON_LABELS,
+                R.bool.preferences_interface_drawer_hide_icon_labels_default);
         switch (viewType) {
             case SECTION_BREAK_VIEW_TYPE:
                 return new ViewHolder(new View(parent.getContext()));
             case ICON_VIEW_TYPE: {
                 BubbleTextView icon = (BubbleTextView) mLayoutInflater.inflate(
                         R.layout.all_apps_icon, parent, false);
+                if (hideIconLabels) {
+                    icon.setTextVisibility(!hideIconLabels);
+                }
                 icon.setOnTouchListener(mTouchListener);
                 icon.setOnClickListener(mIconClickListener);
                 icon.setOnLongClickListener(mIconLongClickListener);
@@ -466,6 +473,9 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
             case PREDICTION_ICON_VIEW_TYPE: {
                 BubbleTextView icon = (BubbleTextView) mLayoutInflater.inflate(
                         R.layout.all_apps_prediction_bar_icon, parent, false);
+                if (hideIconLabels) {
+                    icon.setTextVisibility(!hideIconLabels);
+                }
                 icon.setOnTouchListener(mTouchListener);
                 icon.setOnClickListener(mIconClickListener);
                 icon.setOnLongClickListener(mIconLongClickListener);
