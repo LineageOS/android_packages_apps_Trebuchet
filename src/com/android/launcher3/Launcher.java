@@ -1368,7 +1368,9 @@ public class Launcher extends Activity
             mHotseat.setOnLongClickListener(this);
         }
 
+        // Setup the overview panel
         mOverviewPanel = (ViewGroup) findViewById(R.id.overview_panel);
+
         mWidgetsButton = findViewById(R.id.widget_button);
         mWidgetsButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -1404,6 +1406,26 @@ public class Launcher extends Activity
             settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
         } else {
             settingsButton.setVisibility(View.GONE);
+        }
+
+        final VerticalSlidingPanel verticalSlidingPanel = ((VerticalSlidingPanel) mOverviewPanel);
+        //verticalSlidingPanel.setPanelSlideListener(new SettingsSimplePanelSlideListener());
+        verticalSlidingPanel.setEnableDragViewTouchEvents(true);
+
+        //Handle
+        View settingsPaneHeader = mOverviewPanel.findViewById(R.id.settings_pane_header);
+        if (settingsPaneHeader != null) {
+            verticalSlidingPanel.setDragView(settingsPaneHeader);
+            settingsPaneHeader.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (verticalSlidingPanel.isExpanded()) {
+                        verticalSlidingPanel.collapsePane();
+                    } else {
+                        verticalSlidingPanel.expandPane();
+                    }
+                }
+            });
         }
 
         mOverviewPanel.setAlpha(0f);
