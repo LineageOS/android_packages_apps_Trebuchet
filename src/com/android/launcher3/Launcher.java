@@ -53,6 +53,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -258,6 +259,7 @@ public class Launcher extends Activity
 
     @Thunk Hotseat mHotseat;
     private ViewGroup mOverviewPanel;
+    OverviewSettingsPanel mOverviewSettingsPanel;
 
     private View mAllAppsButton;
     private View mWidgetsButton;
@@ -1368,7 +1370,11 @@ public class Launcher extends Activity
             mHotseat.setOnLongClickListener(this);
         }
 
+        // Setup the overview panel
         mOverviewPanel = (ViewGroup) findViewById(R.id.overview_panel);
+        mOverviewSettingsPanel = new OverviewSettingsPanel(this);
+        mOverviewSettingsPanel.initializeAdapter();
+
         mWidgetsButton = findViewById(R.id.widget_button);
         mWidgetsButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -1404,6 +1410,36 @@ public class Launcher extends Activity
             settingsButton.setOnTouchListener(getHapticFeedbackTouchListener());
         } else {
             settingsButton.setVisibility(View.GONE);
+        }
+
+        View defaultScreenButton = findViewById(R.id.default_screen_button);
+        defaultScreenButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                if (!mWorkspace.isSwitchingState()) {
+                    onClickDefaultScreenButton(arg0);
+                }
+            }
+        });
+        defaultScreenButton.setOnTouchListener(getHapticFeedbackTouchListener());
+
+        final VerticalSlidingPanel verticalSlidingPanel = ((VerticalSlidingPanel) mOverviewPanel);
+        verticalSlidingPanel.setPanelSlideListener(new SettingsPanelSlideListener());
+        verticalSlidingPanel.setEnableDragViewTouchEvents(true);
+
+        View settingsPaneHeader = mOverviewPanel.findViewById(R.id.settings_pane_header);
+        if (settingsPaneHeader != null) {
+            verticalSlidingPanel.setDragView(settingsPaneHeader);
+            settingsPaneHeader.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (verticalSlidingPanel.isExpanded()) {
+                        verticalSlidingPanel.collapsePane();
+                    } else {
+                        verticalSlidingPanel.expandPane();
+                    }
+                }
+            });
         }
 
         mOverviewPanel.setAlpha(0f);
@@ -2763,6 +2799,11 @@ public class Launcher extends Activity
         } else {
             startActivity(new Intent(this, SettingsActivity.class));
         }
+    }
+
+    protected void onClickDefaultScreenButton(View v) {
+        if (LOGD) Log.d(TAG, "onClickDefaultScreenButton");
+        // TODO
     }
 
     public View.OnTouchListener getHapticFeedbackTouchListener() {
@@ -4717,6 +4758,39 @@ public class Launcher extends Activity
                     return null;
                 }
             }.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void) null);
+        }
+    }
+
+    class SettingsPanelSlideListener extends VerticalSlidingPanel.SimplePanelSlideListener {
+        ImageView mAnimatedArrow;
+
+        public SettingsPanelSlideListener() {
+            super();
+            mAnimatedArrow = (ImageView) mOverviewPanel.findViewById(R.id.settings_drag_arrow);
+        }
+
+        @Override
+        public void onPanelCollapsed(View panel) {
+            mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow_reverse);
+
+            AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
+            frameAnimation.start();
+
+            /*if (mLauncher.updateGridIfNeeded()) {
+                Workspace workspace = mLauncher.getWorkspace();
+                if (workspace.isInOverviewMode()) {
+                    workspace.setChildrenOutlineAlpha(1.0f);
+                    mLauncher.mSearchDropTargetBar.hideSearchBar(false);
+                }
+            }*/
+        }
+
+        @Override
+        public void onPanelExpanded(View panel) {
+            mAnimatedArrow.setBackgroundResource(R.drawable.transition_arrow);
+
+            AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
+            frameAnimation.start();
         }
     }
 }

@@ -50,4 +50,7 @@
     <color name="widgets_view_section_text_color">#FFFFFF</color>
     <color name="widgets_view_item_text_color">#C4C4C4</color>
     <color name="widgets_cell_color">#263238</color>
+
+    <!-- CM Settings -->
+    <color name="settings_header_text">#FF6cd2ea</color>
 </resources>

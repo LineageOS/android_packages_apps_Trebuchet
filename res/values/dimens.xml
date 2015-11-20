@@ -137,4 +137,13 @@
     <dimen name="pending_widget_min_padding">8dp</dimen>
     <dimen name="pending_widget_elevation">2dp</dimen>
 
+<!-- Overview panel -->
+    <dimen name="sliding_panel_padding">175dp</dimen>
+    <dimen name="overview_panel_top_padding">20dp</dimen>
+    <dimen name="overview_panel_bottom_padding">50dp</dimen>
+    <dimen name="overview_panel_button_spacing">30dp</dimen>
+    <dimen name="overview_panel_list_padding">16dp</dimen>
+    <dimen name="overview_mode_page_offset">60dp</dimen>
+    <dimen name="overview_scaling_padding">50dp</dimen>
+
 </resources>
