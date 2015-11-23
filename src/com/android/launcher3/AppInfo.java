@@ -96,7 +96,8 @@ public class AppInfo extends ItemInfo {
             isDisabled |= ShortcutInfo.FLAG_DISABLED_QUIET_USER;
         }
 
-        iconCache.getTitleAndIcon(this, info, true /* useLowResIcon */);
+        // Using the full res icon on init might need to be made configurable for low spec devices.
+        iconCache.getTitleAndIcon(this, info, false /* useLowResIcon */);
         intent = makeLaunchIntent(context, info, user);
         this.user = user;
     }
