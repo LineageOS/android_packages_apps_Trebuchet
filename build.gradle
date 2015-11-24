@@ -31,9 +31,9 @@ android {
     }
 
     productFlavors {
-        aosp {
-            applicationId 'com.android.launcher3'
-            testApplicationId 'com.android.launcher3.tests'
+        trebuchet {
+            applicationId 'org.lineageos.trebuchet'
+            testApplicationId 'org.lineageos.trebuchet.tests'
         }
 
         l3go {
@@ -58,7 +58,7 @@ android {
             manifest.srcFile "tests/AndroidManifest-common.xml"
         }
 
-        aosp {
+        trebuchet {
             java.srcDirs = ['src_flags']
             manifest.srcFile "AndroidManifest.xml"
         }
