@@ -29,8 +29,10 @@ LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/AndroidManifest-common.xml
 LOCAL_SDK_VERSION := current
 LOCAL_MIN_SDK_VERSION := 21
 
-LOCAL_PACKAGE_NAME := Launcher3Tests
+LOCAL_PACKAGE_NAME := TrebuchetTests
 
-LOCAL_INSTRUMENTATION_FOR := Launcher3
+LOCAL_AAPT_FLAGS += --rename-manifest-package org.lineageos.trebuchet.tests
+
+LOCAL_INSTRUMENTATION_FOR := Trebuchet
 
 include $(BUILD_PACKAGE)
