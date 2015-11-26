@@ -69,6 +69,30 @@
       "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_6c180481",
+        "filename": "tests/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-11-26T07:41:19Z",
+      "side": 1,
+      "message": "I see it was removed in 12.1 too.",
+      "parentUuid": "ff82abbf_8c19c889",
+      "range": {
+        "startLine": 16,
+        "startChar": 48,
+        "endLine": 16,
+        "endChar": 50
+      },
+      "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
