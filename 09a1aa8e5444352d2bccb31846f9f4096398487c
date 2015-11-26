@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_6c3fa4d6",
+        "filename": "tests/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-11-26T07:37:42Z",
+      "side": 1,
+      "message": "So the tests are broke?",
+      "range": {
+        "startLine": 16,
+        "startChar": 48,
+        "endLine": 16,
+        "endChar": 50
+      },
+      "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
