@@ -45,6 +45,30 @@
       "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_8c19c889",
+        "filename": "tests/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 14131
+      },
+      "writtenOn": "2015-11-26T07:39:30Z",
+      "side": 1,
+      "message": "No, when I did mma . then it complained that the Launcher3_intermediates folder does not exists. That I think is because we renamed it from Launcher3 to Trebuchet.",
+      "parentUuid": "ff82abbf_6c3fa4d6",
+      "range": {
+        "startLine": 16,
+        "startChar": 48,
+        "endLine": 16,
+        "endChar": 50
+      },
+      "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
