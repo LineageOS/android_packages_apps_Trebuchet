@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ff82abbf_cc2d90a9",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-11-26T07:38:26Z",
+      "side": 1,
+      "message": "I had to clear the app. Is the onUpgrade path missing?",
+      "range": {
+        "startLine": 540,
+        "startChar": 53,
+        "endLine": 540,
+        "endChar": 54
+      },
+      "revId": "09a1aa8e5444352d2bccb31846f9f4096398487c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff82abbf_6c3fa4d6",
         "filename": "tests/Android.mk",
         "patchSetId": 2
