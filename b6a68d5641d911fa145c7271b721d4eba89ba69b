@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_eca7344f",
+        "filename": "src/com/android/launcher3/LauncherSettings.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-11-26T07:22:26Z",
+      "side": 1,
+      "message": "Whitespace?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 8
+      },
+      "revId": "b6a68d5641d911fa145c7271b721d4eba89ba69b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
