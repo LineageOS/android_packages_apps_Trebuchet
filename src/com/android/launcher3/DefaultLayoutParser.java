@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Implements the layout parser with rules for internal layouts and partner layouts.
  */
-public class DefaultLayoutParser extends AutoInstallsLayout {
+public class \DefaultLayoutParser extends AutoInstallsLayout {
     private static final String TAG = "DefaultLayoutParser";
 
     private static final String TAG_RESOLVE = "resolve";
@@ -35,6 +35,7 @@ public class DefaultLayoutParser extends AutoInstallsLayout {
     private static final String TAG_APPWIDGET = "appwidget";
     private static final String TAG_SHORTCUT = "shortcut";
     private static final String TAG_FOLDER = "folder";
+    private static final String TAG_REMOTE_FOLDER = "remote-folder";
     private static final String TAG_PARTNER_FOLDER = "partner-folder";
     private static final String TAG_INCLUDE = "include";
 
@@ -70,6 +71,7 @@ public class DefaultLayoutParser extends AutoInstallsLayout {
         parsers.put(TAG_SHORTCUT, new UriShortcutParser(mSourceRes));
         parsers.put(TAG_RESOLVE, new ResolveParser());
         parsers.put(TAG_FOLDER, new MyFolderParser());
+        parsers.put(TAG_REMOTE_FOLDER, new RemoteFolderParser());
         parsers.put(TAG_PARTNER_FOLDER, new PartnerFolderParser());
         return parsers;
     }
