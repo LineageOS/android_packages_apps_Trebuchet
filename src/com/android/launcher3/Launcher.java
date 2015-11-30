@@ -125,6 +125,7 @@ import com.android.launcher3.PagedView.TransitionEffect;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -3225,6 +3226,10 @@ public class Launcher extends Activity
             closeFolder();
             // Open the requested folder
             openFolder(folderIcon, folderTouchXYOffset);
+
+            if (info.subType == FolderInfo.REMOTE_SUBTYPE) {
+                mModel.syncRemoteFolder(info, this);
+            }
         } else {
             // Find the open folder...
             int folderScreen;

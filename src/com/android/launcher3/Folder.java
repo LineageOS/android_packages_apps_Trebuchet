@@ -234,7 +234,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         mContent.setGridSize(0, 0);
         mContent.getShortcutsAndWidgets().setMotionEventSplittingEnabled(false);
         mContent.setInvertIfRtl(true);
-        mFolderNameLockContainer = findViewById(R.id.folder_name_lock_container);
+
         mFolderName = (FolderEditText) findViewById(R.id.folder_name);
         mFolderName.setFolder(this);
         mFolderName.setOnFocusChangeListener(this);
@@ -259,11 +259,15 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             mFolderName.setVisibility(View.GONE);
         }
 
+        mFolderNameLockContainer = findViewById(R.id.folder_name_lock_container);
         mFolderLock = (ImageView) findViewById(R.id.folder_lock);
-        mFolderLock.measure(measureSpec, measureSpec);
-        mFolderLock.setOnClickListener(this);
-        mFolderLockHeight = mFolderLock.getMeasuredHeight();
 
+        // Could be null if this Folder an instance of the RemoteFolder subclass
+        if (mFolderLock != null) {
+            mFolderLock.measure(measureSpec, measureSpec);
+            mFolderLock.setOnClickListener(this);
+            mFolderLockHeight = mFolderLock.getMeasuredHeight();
+        }
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
         mScreenWidth = displayMetrics.widthPixels;
     }
@@ -661,11 +665,18 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             Animator circReveal = LauncherAnimUtils.createCircularReveal(this,
                     circX, circY, 0, mScreenWidth);
 
-            final View[] alphaViewSet = new View[] { mFolderNameLockContainer,
-                    mContent, mFolderName, mFolderLock };
+            final View[] alphaViewSet;
+            if (mInfo.subType == FolderInfo.REMOTE_SUBTYPE) {
+                alphaViewSet = new View[] { mContent, mFolderName };
+            } else {
+                alphaViewSet = new View[] { mFolderNameLockContainer,
+                        mContent, mFolderName, mFolderLock };
+            }
+
             for (View view : alphaViewSet) {
                 view.setAlpha(0f);
             }
+
 
             circReveal.setDuration(150);
             circReveal.addListener(new AnimatorListenerAdapter() {
@@ -1374,15 +1385,15 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         centerAboutIcon();
     }
 
-    private int getContentAreaHeight() {
+    protected int getContentAreaHeight() {
         return Math.max(mContent.getDesiredHeight(), MIN_CONTENT_DIMEN);
     }
 
-    private int getContentAreaWidth() {
+    protected int getContentAreaWidth() {
         return Math.max(mContent.getDesiredWidth(), MIN_CONTENT_DIMEN);
     }
 
-    private int getFolderHeight() {
+    protected int getFolderHeight() {
         int height = getPaddingTop() + getPaddingBottom() + mFolderNameHeight
                 + getContentAreaHeight();
         return height;
@@ -1408,8 +1419,10 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             mFolderName.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
                     mFolderNameHeight, MeasureSpec.EXACTLY));
         }
+
         mFolderNameLockContainer.measure(contentAreaWidthSpec,
-                MeasureSpec.makeMeasureSpec(mFolderNameHeight,MeasureSpec.EXACTLY));
+                MeasureSpec.makeMeasureSpec(mFolderNameHeight, MeasureSpec.EXACTLY));
+
         setMeasuredDimension(width, height);
     }
 
@@ -1634,7 +1647,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         LauncherModel.addOrMoveItemInDatabase(
                 mLauncher, item, mInfo.id, 0, item.cellX, item.cellY);
 
-        // If this is a Remote Folder, we need to register each view with our updater before clicks.
+        // If this is a Remote Folder, we need to register each view with our updater for click handling.
         if (mInfo.subType == FolderInfo.REMOTE_SUBTYPE) {
             RemoteFolderUpdater updater = mLauncher.getModel().getRemoteFolderUpdaterInstance();
             updater.registerViewForInteraction(getViewForInfo(item), item.getIntent());
