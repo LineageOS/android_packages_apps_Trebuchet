@@ -50,7 +50,7 @@ LOCAL_AAPT_FLAGS += --rename-manifest-package com.cyanogenmod.trebuchet
 LOCAL_OVERRIDES_PACKAGES := Launcher3
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
-LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_PROGUARD_ENABLED := full
 
 REMOTE_FOLDER_UPDATER ?= $(LOCAL_PATH)/RemoteFolder
 include $(REMOTE_FOLDER_UPDATER)/Android.mk
