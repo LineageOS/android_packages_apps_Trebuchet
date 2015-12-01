@@ -1488,11 +1488,6 @@ public class Launcher extends Activity
             mAppsView.setSearchBarController(mAppsView.newDefaultAppSearchController());
         }
 
-        mAppsView.setUseScrubber(mUseScrubber);
-        mAppsView.setSectionStrategy(AllAppsContainerView.SECTION_STRATEGY_RAGGED);
-        mAppsView.setGridTheme(AllAppsContainerView.GRID_THEME_DARK);
-        mWidgetsView.setUseScrubber(false);
-
         // Setup the drag controller (drop targets have to be added in reverse order in priority)
         dragController.setDragScoller(mWorkspace);
         dragController.setScrollView(mDragLayer);
