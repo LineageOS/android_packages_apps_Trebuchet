@@ -22,6 +22,30 @@
       "revId": "fe70926e116fca0d84b3642aae3fe6c68d6c7264",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_e668babb",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-01T06:37:20Z",
+      "side": 1,
+      "message": "nope, it\u0027s used in updateSearchBarVisibility(View v) to show a string when search activity is not found",
+      "parentUuid": "bf8cb3f7_063d9eba",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "fe70926e116fca0d84b3642aae3fe6c68d6c7264",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
