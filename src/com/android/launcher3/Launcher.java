@@ -29,6 +29,9 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
@@ -251,6 +254,7 @@ public class Launcher extends Activity
     @Thunk DragLayer mDragLayer;
     private DragController mDragController;
     private View mWeightWatcher;
+    private DynamicGridSizeFragment mDynamicGridSizeFragment;
 
     private AppWidgetManagerCompat mAppWidgetManager;
     private LauncherAppWidgetHost mAppWidgetHost;
@@ -263,6 +267,7 @@ public class Launcher extends Activity
 
     @Thunk Hotseat mHotseat;
     private ViewGroup mOverviewPanel;
+    private View mDarkPanel;
     OverviewSettingsPanel mOverviewSettingsPanel;
 
     private View mAllAppsButton;
@@ -359,6 +364,20 @@ public class Launcher extends Activity
     private BubbleTextView mWaitingForResume;
 
     private boolean mReloadLauncher;
+    private boolean mResizeGridRequired;
+
+    public Animator.AnimatorListener mAnimatorListener = new Animator.AnimatorListener() {
+        @Override
+        public void onAnimationStart(Animator arg0) {}
+        @Override
+        public void onAnimationRepeat(Animator arg0) {}
+        @Override
+        public void onAnimationEnd(Animator arg0) {
+            mDarkPanel.setVisibility(View.GONE);
+        }
+        @Override
+        public void onAnimationCancel(Animator arg0) {}
+    };
 
     // Preferences
     private boolean mHideIconLabels;
@@ -1093,6 +1112,13 @@ public class Launcher extends Activity
             mLauncherCallbacks.onResume();
         }
 
+        // Close out fragments
+        Fragment gridFragment = getFragmentManager().findFragmentByTag(
+                DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
+        if (gridFragment != null) {
+            mDynamicGridSizeFragment.setSize();
+        }
+
         reloadLauncherIfNeeded();
     }
 
@@ -1399,6 +1425,8 @@ public class Launcher extends Activity
         mOverviewPanel = (ViewGroup) findViewById(R.id.overview_panel);
         mOverviewSettingsPanel = new OverviewSettingsPanel(this);
         mOverviewSettingsPanel.initializeAdapter();
+
+        mDarkPanel = mOverviewPanel.findViewById(R.id.dark_panel);
 
         mWidgetsButton = findViewById(R.id.widget_button);
         mWidgetsButton.setOnClickListener(new OnClickListener() {
@@ -1720,11 +1748,13 @@ public class Launcher extends Activity
     }
 
     /**
-     * Sets the reload launcher flag to true, which will reload the launcher at the next appropriate
-     * time.
+     * Sets the reload launcher flag to true and the resize grid flag to the parameter value,
+     * which will reload the launcher/grid size at the next appropriate time.
+     * @param shouldResizeGrid Indicates whether the grid needs to be resized.
      */
-    public void setReloadLauncher() {
+    public void setReloadLauncher(boolean shouldResizeGrid) {
         mReloadLauncher = true;
+        mResizeGridRequired = shouldResizeGrid;
     }
 
     /**
@@ -1735,6 +1765,7 @@ public class Launcher extends Activity
         if (mReloadLauncher) {
             reloadLauncher(mWorkspace.getCurrentPage());
             mReloadLauncher = false;
+            mResizeGridRequired = false;
             return true;
         }
 
@@ -1758,10 +1789,74 @@ public class Launcher extends Activity
 
         // Reload
         mModel.resetLoadedState(true, true);
-        mModel.startLoader(page, LauncherModel.LOADER_FLAG_NONE);
+        int flag = mResizeGridRequired ? LauncherModel.LOADER_FLAG_RESIZE_GRID :
+                LauncherModel.LOADER_FLAG_NONE;
+        mModel.startLoader(page, flag);
         mWorkspace.updateCustomContentVisibility();
 
         mAppsView.reset();
+    }
+
+    /**
+     * Replaces currently added fragments in the launcher layout with a
+     * {@link DynamicGridSizeFragment}.
+     */
+    public void onClickDynamicGridSizeButton() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        mDynamicGridSizeFragment = new DynamicGridSizeFragment();
+        fragmentTransaction.replace(R.id.launcher, mDynamicGridSizeFragment,
+                DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
+        fragmentTransaction.commit();
+    }
+
+    /**
+     * If the new grid size is different from the current grid size, the launcher will be reloaded
+     * and the overview settings panel updated with the new grid size value.
+     * @param size The new grid size to set the workspace to.
+     */
+    public void setDynamicGridSize(InvariantDeviceProfile.GridSize size) {
+        int gridSize = SettingsProvider.getIntCustomDefault(this,
+                SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, 0);
+        boolean customValuesChanged = false;
+        if (gridSize == size.getValue() && size == InvariantDeviceProfile.GridSize.Custom) {
+            int tempRows = SettingsProvider.getIntCustomDefault(this,
+                    SettingsProvider.SETTINGS_UI_HOMESCREEN_ROWS, mDeviceProfile.inv.numRows);
+            int tempColumns = SettingsProvider.getIntCustomDefault(this,
+                    SettingsProvider.SETTINGS_UI_HOMESCREEN_COLUMNS, mDeviceProfile.inv.numColumns);
+            if (tempColumns != mDeviceProfile.inv.numColumns ||
+                    tempRows != mDeviceProfile.inv.numRows) {
+                customValuesChanged = true;
+            }
+        }
+
+        if (gridSize != size.getValue() || customValuesChanged) {
+            SettingsProvider.putInt(this,
+                    SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, size.getValue());
+
+            setReloadLauncher(true);
+        }
+
+        mOverviewSettingsPanel.notifyDataSetInvalidated();
+
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        Configuration config = getResources().getConfiguration();
+        if(config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            fragmentTransaction
+                    .setCustomAnimations(0, R.anim.exit_out_left);
+        } else {
+            fragmentTransaction
+                    .setCustomAnimations(0, R.anim.exit_out_right);
+        }
+        fragmentTransaction
+                .remove(mDynamicGridSizeFragment).commit();
+
+        mDarkPanel.setVisibility(View.VISIBLE);
+        ObjectAnimator anim = ObjectAnimator.ofFloat(
+                mDarkPanel, "alpha", 0.3f, 0.0f);
+        anim.start();
+        anim.addListener(mAnimatorListener);
     }
 
     @Override
@@ -1959,6 +2054,10 @@ public class Launcher extends Activity
 
     public ViewGroup getOverviewPanel() {
         return mOverviewPanel;
+    }
+
+    public View getDarkPanel() {
+        return mDarkPanel;
     }
 
     public SearchDropTargetBar getSearchDropTargetBar() {
@@ -2565,7 +2664,14 @@ public class Launcher extends Activity
         } else if (isWidgetsViewVisible())  {
             showOverviewMode(true);
         } else if (mWorkspace.isInOverviewMode()) {
-            showWorkspace(true);
+            Fragment gridFragment = getFragmentManager().findFragmentByTag(
+                    DynamicGridSizeFragment.DYNAMIC_GRID_SIZE_FRAGMENT);
+            if (gridFragment != null) {
+                mDynamicGridSizeFragment.setSize();
+            }
+            else {
+                showWorkspace(true);
+            }
         } else if (mWorkspace.getOpenFolder() != null) {
             Folder openFolder = mWorkspace.getOpenFolder();
             if (openFolder.isEditingName()) {
@@ -3449,6 +3555,8 @@ public class Launcher extends Activity
     }
 
     void showWorkspace(int snapToPage, boolean animated, Runnable onCompleteRunnable) {
+        reloadLauncherIfNeeded();
+
         boolean changed = mState != State.WORKSPACE ||
                 mWorkspace.getState() != Workspace.State.NORMAL;
         if (changed) {
@@ -3477,6 +3585,8 @@ public class Launcher extends Activity
     }
 
     void showOverviewMode(boolean animated) {
+        reloadLauncherIfNeeded();
+
         mWorkspace.setVisibility(View.VISIBLE);
         mStateTransitionAnimation.startAnimationToWorkspace(mState, mWorkspace.getState(),
                 Workspace.State.OVERVIEW,
@@ -4226,6 +4336,10 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.finishBindingItems(false);
         }
+
+        if (mWorkspace.isInOverviewMode()) {
+            reloadLauncherIfNeeded();
+        }
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
@@ -4911,14 +5025,6 @@ public class Launcher extends Activity
 
             AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
             frameAnimation.start();
-
-            /*if (mLauncher.updateGridIfNeeded()) {
-                Workspace workspace = mLauncher.getWorkspace();
-                if (workspace.isInOverviewMode()) {
-                    workspace.setChildrenOutlineAlpha(1.0f);
-                    mLauncher.mSearchDropTargetBar.hideSearchBar(false);
-                }
-            }*/
         }
 
         @Override
