@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.View;
 import java.util.List;
+import android.util.Log;
 
 public class RemoteFolderUpdater {
+
+    private static final String TAG = "RemoteFolderUpdater";
 
     public interface RemoteFolderUpdateListener {
         void onSuccess(List<RemoteFolderInfo> remoteFolderInfoList);
