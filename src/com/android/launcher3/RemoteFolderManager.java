@@ -1,11 +1,19 @@
 package com.android.launcher3;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
+import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.settings.SettingsProvider;
 
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater.RemoteFolderUpdateListener;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater.RemoteFolderInfo;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Manages adding and removing the remote folder from the workspace.
@@ -13,12 +21,18 @@ import java.util.ArrayList;
 public class RemoteFolderManager {
     private static final String TAG = "RemoteFolderManager";
 
+    private static final String REMOTE_APP_PACKAGE = "com.remote";
+    private static final String REMOTE_APP_CLASS = "app";
+
     private final Launcher mLauncher;
 
     /** View which is displayed in the workspace **/
     private FolderIcon mRemoteFolder;
     /** Coordinates of the folder's position before being hidden **/
     private int[] mRemoteFolderCell;
+
+    /** Remote apps shown in the drawer **/
+    private ArrayList<AppInfo> mRemoteApps;
 
     public RemoteFolderManager(final Launcher launcher) {
         mLauncher = launcher;
@@ -64,6 +78,61 @@ public class RemoteFolderManager {
         SettingsProvider.putBoolean(mLauncher,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER, false);
         mLauncher.mOverviewSettingsPanel.notifyDataSetInvalidated();
+    }
+
+    /**
+     * Called when the app drawer is opened.
+     */
+    public void onAppDrawerOpened() {
+        // Don't actually look up the preference. Always use default value,
+        // since app drawer recommendations cannot be removed.
+        boolean remoteAppsEnabled = SettingsProvider.getBoolean(mLauncher, null,
+                R.bool.preferences_interface_homescreen_remote_folder_default);
+
+        if (remoteAppsEnabled) {
+            syncRemoteApps();
+        }
+    }
+
+    private void syncRemoteApps() {
+        final AppDrawerListAdapter appDrawerListAdapter = mLauncher.getAppDrawerListAdapter();
+
+        /**
+         * TODO: Only replace apps if updater's cache is invalid.
+         */
+        // Clear out old apps
+        if (mRemoteApps != null) {
+            appDrawerListAdapter.removeApps(mRemoteApps);
+        }
+
+        // Load enough apps to fill one row
+        final int numDrawerColumns = appDrawerListAdapter.getNumColumns();
+        mRemoteApps = new ArrayList<AppInfo>(numDrawerColumns);
+
+        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+        updater.requestSync(mLauncher, numDrawerColumns, new RemoteFolderUpdateListener() {
+            @Override
+            public void onSuccess(List<RemoteFolderInfo> remoteFolderInfoList) {
+                int i = 0;
+                for (RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                    // Create unique dummy component name so apps can be hashed into the drawer map.
+                    ComponentName componentName =
+                            new ComponentName(REMOTE_APP_PACKAGE + i++, REMOTE_APP_CLASS);
+                    Intent intent = remoteFolderInfo.getIntent().setComponent(componentName);
+                    AppInfo app = new AppInfo(intent, remoteFolderInfo.getTitle(),
+                            remoteFolderInfo.getIcon(), UserHandleCompat.myUserHandle(), true);
+                    mRemoteApps.add(app);
+                }
+
+                // Add apps to launcher
+                appDrawerListAdapter.addApps(mRemoteApps);
+            }
+
+            @Override
+            public void onFailure(String error) {
+                Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+            }
+        });
     }
 
     private void showRemoteFolder() {
