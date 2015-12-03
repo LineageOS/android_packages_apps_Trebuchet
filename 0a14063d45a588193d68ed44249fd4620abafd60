@@ -279,6 +279,30 @@
       "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_0a035c44",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T17:25:49Z",
+      "side": 1,
+      "message": "Will uncomment that as part of next cr\u0027s changes",
+      "parentUuid": "bf8cb3f7_9a2c9d9a",
+      "range": {
+        "startLine": 253,
+        "startChar": 23,
+        "endLine": 258,
+        "endChar": 36
+      },
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
