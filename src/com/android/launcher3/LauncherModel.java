@@ -118,8 +118,6 @@ public class LauncherModel extends BroadcastReceiver
     private boolean mIsLoaderTaskRunning;
     private volatile boolean mFlushingWorkerThread;
 
-    private static RemoteFolderUpdater remoteFolderUpdater;
-
     /**
      * Maintain a set of packages per user, for which we added a shortcut on the workspace.
      */
@@ -154,6 +152,7 @@ public class LauncherModel extends BroadcastReceiver
 
     // < only access in worker thread >
     AllAppsList mBgAllAppsList;
+    ArrayList<AppInfo> mBgRemoteAppsList;
 
     // The lock that must be acquired before referencing any static bg data structures.  Unlike
     // other locks, this one can generally be held long-term because we never expect any of these
@@ -310,6 +309,7 @@ public class LauncherModel extends BroadcastReceiver
 
         mApp = app;
         mBgAllAppsList = new AllAppsList(iconCache, appFilter);
+        mBgRemoteAppsList = new ArrayList<AppInfo>();
         mIconCache = iconCache;
 
         final Resources res = context.getResources();
