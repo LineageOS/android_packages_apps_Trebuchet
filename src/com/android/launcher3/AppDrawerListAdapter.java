@@ -45,7 +45,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 /**
  * AppDrawerListAdapter - list adapter for the vertical app drawer
@@ -55,6 +54,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
     private static final String TAG = AppDrawerListAdapter.class.getSimpleName();
     private static final String NUMERIC_OR_SPECIAL_HEADER = "#";
+    private static final String REMOTE_HEADER = " ";
 
     /**
      * Tracks both the section index and the positional item index for the sections
@@ -71,6 +71,32 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
         }
     }
 
+    private static class Bucket {
+        private int index;
+        private String startString;
+
+        public Bucket(int index, String startString) {
+            this.index = index;
+            this.startString = startString;
+        }
+    }
+
+    private static Bucket getBucketForApp(AppInfo app) {
+        if ((app.flags & AppInfo.REMOTE_APP_FLAG) != 0) {
+            return new Bucket(Integer.MIN_VALUE, REMOTE_HEADER);
+        } else {
+            LocaleUtils localeUtils = LocaleUtils.getInstance();
+            int index = localeUtils.getBucketIndex(app.title.toString());
+            String start = localeUtils.getBucketLabel(index);
+            if (TextUtils.isEmpty(start)) {
+                start = NUMERIC_OR_SPECIAL_HEADER;
+                index = localeUtils.getBucketIndex(start);
+            }
+            return new Bucket(index, start);
+        }
+    }
+
+    private HashSet<AppInfo> mAllApps;
     private ArrayList<AppItemIndexedInfo> mHeaderList;
     private LayoutInflater mLayoutInflater;
 
@@ -370,6 +396,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     public AppDrawerListAdapter(Launcher launcher) {
         mLauncher = launcher;
         mHeaderList = new ArrayList<AppItemIndexedInfo>();
+        mAllApps = new HashSet<AppInfo>();
         mLayoutInflater = LayoutInflater.from(launcher);
 
         mLocaleSetManager = new LocaleSetManager(mLauncher);
@@ -432,63 +459,46 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
     /**
      * Create and populate mHeaderList (buckets for app sorting)
-     * @param info
      */
-    public void populateByCharacter(ArrayList<AppInfo> info) {
-        if (info == null || info.size() <= 0) {
-            Collections.sort(mHeaderList);
-            return;
-        }
+    public void populateByCharacter() {
+        mHeaderList.clear();
 
         // Create a clone of AppInfo ArrayList to preserve data
-        ArrayList<AppInfo> tempInfo = (ArrayList<AppInfo>) info.clone();
+        HashSet<AppInfo> appsToProcess = (HashSet<AppInfo>) mAllApps.clone();
+        while (!appsToProcess.isEmpty()) {
+            ArrayList<AppInfo> matchingApps = new ArrayList<AppInfo>();
 
-        ArrayList<AppInfo> appInfos = new ArrayList<AppInfo>();
+            AppInfo app = appsToProcess.iterator().next();
+            Bucket bucket = getBucketForApp(app);
 
-        // get next app
-        AppInfo app = tempInfo.get(0);
+            // Find other apps that fall into the same bucket
+            for (Iterator<AppInfo> iter = appsToProcess.iterator(); iter.hasNext(); ) {
+                AppInfo otherApp = iter.next();
+                Bucket otherBucket = getBucketForApp(otherApp);
 
-        // get starting character
-        LocaleUtils localeUtils = LocaleUtils.getInstance();
-        int bucketIndex = localeUtils.getBucketIndex(app.title.toString());
-            String startString
-                = localeUtils.getBucketLabel(bucketIndex);
-        if (TextUtils.isEmpty(startString)) {
-            startString = NUMERIC_OR_SPECIAL_HEADER;
-            bucketIndex = localeUtils.getBucketIndex(startString);
-        }
+                if (bucket.index == otherBucket.index) {
+                    matchingApps.add(otherApp);
 
-        // now iterate through
-        for (AppInfo info1 : tempInfo) {
-            int newBucketIndex = localeUtils.getBucketIndex(info1.title.toString());
-
-            String newChar
-                    = localeUtils.getBucketLabel(newBucketIndex);
-            if (TextUtils.isEmpty(newChar)) {
-                newChar = NUMERIC_OR_SPECIAL_HEADER;
+                    // This app doesn't need to be processed again for other strings
+                    iter.remove();
+                }
             }
-            // if same character
-            if (newChar.equals(startString)) {
-                // add it
-                appInfos.add(info1);
+
+            // Sort so they display in alphabetical order
+            Collections.sort(matchingApps, LauncherModel.getAppNameComparator());
+
+            // Split app list by number of columns and add rows to header list
+            for (int i = 0; i < matchingApps.size(); i += mNumColumns) {
+                int endIndex = Math.min(i + mNumColumns, matchingApps.size());
+                ArrayList<AppInfo> subList =
+                        new ArrayList<AppInfo>(matchingApps.subList(i, endIndex));
+                AppItemIndexedInfo indexedInfo =
+                        new AppItemIndexedInfo(bucket.startString, bucket.index, subList, i != 0);
+                mHeaderList.add(indexedInfo);
             }
         }
 
-        Collections.sort(appInfos, LauncherModel.getAppNameComparator());
-
-        for (int i = 0; i < appInfos.size(); i += mNumColumns) {
-            int endIndex = (int) Math.min(i + mNumColumns, appInfos.size());
-            ArrayList<AppInfo> subList = new ArrayList<AppInfo>(appInfos.subList(i, endIndex));
-            AppItemIndexedInfo indexInfo;
-            indexInfo = new AppItemIndexedInfo(startString, bucketIndex, subList, i != 0);
-            mHeaderList.add(indexInfo);
-        }
-
-        for (AppInfo remove : appInfos) {
-            // remove from mApps
-            tempInfo.remove(remove);
-        }
-        populateByCharacter(tempInfo);
+        Collections.sort(mHeaderList);
     }
 
     public void setApps(ArrayList<AppInfo> list) {
@@ -496,13 +506,18 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             initParams();
 
             filterProtectedApps(list);
+            mAllApps.clear();
+            mAllApps.addAll(list);
 
-            mHeaderList.clear();
-            populateByCharacter(list);
-            populateSectionHeaders();
-            mLauncher.updateScrubber();
-            this.notifyDataSetChanged();
+            processApps();
         }
+    }
+
+    private void processApps() {
+        populateByCharacter();
+        populateSectionHeaders();
+        mLauncher.updateScrubber();
+        this.notifyDataSetChanged();
     }
 
     private void populateSectionHeaders() {
@@ -521,126 +536,28 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     }
 
     public void reset() {
-        ArrayList<AppInfo> infos = getAllApps();
-
         mLauncher.mAppDrawer.getLayoutManager().removeAllViews();
 
-        setApps(infos);
-    }
-
-    private ArrayList<AppInfo> getAllApps() {
-        ArrayList<AppInfo> indexedInfos = new ArrayList<AppInfo>();
-
-        for (int j = 0; j < mHeaderList.size(); ++j) {
-            AppItemIndexedInfo indexedInfo = mHeaderList.get(j);
-            for (AppInfo info : indexedInfo.mInfo) {
-                indexedInfos.add(info);
-            }
-        }
-        return indexedInfos;
+        processApps();
     }
 
     public void updateApps(ArrayList<AppInfo> list) {
-        // We remove and re-add the updated applications list because it's properties may have
-        // changed (ie. the title), and this will ensure that the items will be in their proper
-        // place in the list.
         if (!LauncherAppState.isDisableAllApps()) {
-            removeAppsWithoutInvalidate(list);
-            addAppsWithoutInvalidate(list);
+            mAllApps.removeAll(list);
+            mAllApps.addAll(list);
             reset();
         }
     }
-
 
     public void addApps(ArrayList<AppInfo> list) {
-        if (!LauncherAppState.isDisableAllApps()) {
-            addAppsWithoutInvalidate(list);
-            reset();
-        }
-    }
-
-    private void addAppsWithoutInvalidate(ArrayList<AppInfo> list) {
-        // We add it in place, in alphabetical order
-        LocaleUtils localeUtils = LocaleUtils.getInstance();
-
-        int count = list.size();
-        for (int i = 0; i < count; ++i) {
-            AppInfo info = list.get(i);
-            boolean found = false;
-            AppItemIndexedInfo lastInfoForSection = null;
-            int bucketIndex = localeUtils.getBucketIndex(info.title.toString());
-            String start = localeUtils.getBucketLabel(bucketIndex);
-            if (TextUtils.isEmpty(start)) {
-                start = NUMERIC_OR_SPECIAL_HEADER;
-                bucketIndex = localeUtils.getBucketIndex(start);
-            }
-            for (int j = 0; j < mHeaderList.size(); ++j) {
-                AppItemIndexedInfo indexedInfo = mHeaderList.get(j);
-                if (start.equals(indexedInfo.mStartString)) {
-                    Collections.sort(indexedInfo.mInfo, LauncherModel.getAppNameComparator());
-                    int index =
-                            Collections.binarySearch(indexedInfo.mInfo,
-                                    info, LauncherModel.getAppNameComparator());
-                    if (index >= 0) {
-                        found = true;
-                        break;
-                    } else {
-                        lastInfoForSection = indexedInfo;
-                    }
-                }
-            }
-            if (!found) {
-                if (lastInfoForSection != null) {
-                    lastInfoForSection.mInfo.add(info);
-                } else {
-                    // we need to create a new section
-                    ArrayList<AppInfo> newInfos = new ArrayList<AppInfo>();
-                    newInfos.add(info);
-                    AppItemIndexedInfo newInfo =
-                            new AppItemIndexedInfo(start, bucketIndex, newInfos, false);
-                    mHeaderList.add(newInfo);
-                    Collections.sort(mHeaderList);
-                }
-            }
-        }
+        updateApps(list);
     }
 
     public void removeApps(ArrayList<AppInfo> appInfos) {
         if (!LauncherAppState.isDisableAllApps()) {
-            removeAppsWithoutInvalidate(appInfos);
-            //recreate everything
+            mAllApps.removeAll(appInfos);
             reset();
         }
-    }
-
-    private void removeAppsWithoutInvalidate(ArrayList<AppInfo> list) {
-        // loop through all the apps and remove apps that have the same component
-        int length = list.size();
-        for (int i = 0; i < length; ++i) {
-            AppInfo info = list.get(i);
-            for (int j = 0; j < mHeaderList.size(); ++j) {
-                AppItemIndexedInfo indexedInfo = mHeaderList.get(j);
-                ArrayList<AppInfo> clonedIndexedInfoApps =
-                        (ArrayList<AppInfo>) indexedInfo.mInfo.clone();
-                int index =
-                        findAppByComponent(clonedIndexedInfoApps, info);
-                if (index > -1) {
-                    indexedInfo.mInfo.remove(info);
-                }
-            }
-        }
-    }
-
-    private int findAppByComponent(List<AppInfo> list, AppInfo item) {
-        ComponentName removeComponent = item.intent.getComponent();
-        int length = list.size();
-        for (int i = 0; i < length; ++i) {
-            AppInfo info = list.get(i);
-            if (info.intent.getComponent().equals(removeComponent)) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     /*
@@ -751,6 +668,12 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
                         mDeviceProfile.iconDrawablePaddingPx);
                 icon.mLabel.setText(info.title);
                 icon.mLabel.setVisibility(mHideIconLabels ? View.INVISIBLE : View.VISIBLE);
+
+                if ((info.flags & AppInfo.REMOTE_APP_FLAG) != 0) {
+                    mLauncher.getModel().getRemoteFolderUpdaterInstance()
+                            .registerViewForInteraction(icon, info.getIntent());
+                    icon.mDraggable = false;
+                }
             }
         }
         holder.itemView.setTag(indexedInfo);
@@ -758,7 +681,7 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
 
     @Override
     public boolean onLongClick(View v) {
-        if (v instanceof AppDrawerIconView) {
+        if (v instanceof AppDrawerIconView && ((AppDrawerIconView) v).mDraggable) {
             beginDraggingApplication(v);
             mLauncher.enterSpringLoadedDragMode();
         }

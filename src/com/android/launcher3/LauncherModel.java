@@ -108,6 +108,10 @@ public class LauncherModel extends BroadcastReceiver
     private static final int ITEMS_CHUNK = 6; // batch size for the workspace icons
     private static final long INVALID_SCREEN_ID = -1L;
 
+    private static final int REMOTE_APP_COUNT = 4;
+    private static final String REMOTE_APP_PACKAGE = "com.remote";
+    private static final String REMOTE_APP_CLASS = "app";
+
     private final boolean mAppsCanBeOnRemoveableStorage;
     private final boolean mOldContentProviderExists;
 
@@ -154,6 +158,7 @@ public class LauncherModel extends BroadcastReceiver
 
     // < only access in worker thread >
     AllAppsList mBgAllAppsList;
+    ArrayList<AppInfo> mBgRemoteAppsList;
 
     // The lock that must be acquired before referencing any static bg data structures.  Unlike
     // other locks, this one can generally be held long-term because we never expect any of these
@@ -310,6 +315,7 @@ public class LauncherModel extends BroadcastReceiver
 
         mApp = app;
         mBgAllAppsList = new AllAppsList(iconCache, appFilter);
+        mBgRemoteAppsList = new ArrayList<AppInfo>();
         mIconCache = iconCache;
 
         final Resources res = context.getResources();
@@ -1499,6 +1505,63 @@ public class LauncherModel extends BroadcastReceiver
                 }
             }
         }
+    }
+
+    public void loadRemoteApps() {
+        runOnWorkerThread(new Runnable() {
+            @Override
+            public void run() {
+                final Callbacks oldCallbacks = getCallback();
+                if (oldCallbacks == null) {
+                    // This launcher has exited and nobody bothered to tell us.  Just bail.
+                    Log.w(TAG, "LoaderTask running with no launcher (loadRemoteApps)");
+                    return;
+                }
+
+                // Load remote folder apps
+                RemoteFolderUpdater updater = getRemoteFolderUpdaterInstance();
+                updater.requestSync(mApp.getContext(), REMOTE_APP_COUNT,
+                        new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                    @Override
+                    public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+                        // Add each remote item
+                        int i = 0;
+                        for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                            ComponentName componentName = new ComponentName(REMOTE_APP_PACKAGE + i++, REMOTE_APP_CLASS);
+                            Intent intent = remoteFolderInfo.getIntent().setComponent(componentName);
+                            AppInfo app = new AppInfo(intent, remoteFolderInfo.getTitle(), remoteFolderInfo.getIcon(),
+                                    UserHandleCompat.myUserHandle(), true);
+                            mBgRemoteAppsList.add(app);
+                        }
+
+                        final ArrayList<AppInfo> added = mBgRemoteAppsList;
+                        mBgRemoteAppsList = new ArrayList<AppInfo>();
+
+                        // Post callback on main thread
+                        mHandler.post(new Runnable() {
+                            public void run() {
+                                final long bindTime = SystemClock.uptimeMillis();
+                                final Callbacks callbacks = getCallback();
+                                if (callbacks != null && callbacks == oldCallbacks) {
+                                    callbacks.bindAppsAdded(null, null, null, added);
+                                    if (DEBUG_LOADERS) {
+                                        Log.d(TAG, "bound " + added.size() + " apps in "
+                                                + (SystemClock.uptimeMillis() - bindTime) + "ms");
+                                    }
+                                } else {
+                                    Log.i(TAG, "not binding apps: no Launcher activity");
+                                }
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailure(String error) {
+                        Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+                    }
+                });
+            }
+        });
     }
 
     void bindRemainingSynchronousPages() {

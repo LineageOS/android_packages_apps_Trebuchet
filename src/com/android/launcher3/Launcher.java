@@ -3163,7 +3163,16 @@ public class Launcher extends Activity
 
         } else if (tag instanceof AppInfo) {
             shortcut = null;
-            intent = ((AppInfo) tag).intent;
+
+            AppInfo info = (AppInfo) tag;
+            if ((info.flags & AppInfo.REMOTE_APP_FLAG) != 0) {
+                // App is remote, so we cannot launch using package manager.
+                // Clear the component so we launch using the intent action.
+                intent = (Intent) info.intent.clone();
+                intent.setComponent(null);
+            } else {
+                intent = info.intent;
+            }
         } else {
             throw new IllegalArgumentException("Input must be a Shortcut or AppInfo");
         }
@@ -3841,6 +3850,7 @@ public class Launcher extends Activity
 
         if (drawer && contentType == AppsCustomizePagedView.ContentType.Applications) {
             toView = findViewById(R.id.app_drawer_container);
+            mModel.loadRemoteApps();
         } else {
             toView = mAppsCustomizeTabHost;
         }
