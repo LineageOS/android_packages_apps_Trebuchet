@@ -24,4 +24,9 @@ public class RemoteFolderManager {
      * Called when the remote folder is dropped into the delete area on the workspace.
      */
     public void onFolderDeleted() { }
+
+    /**
+     * Called when the app drawer is opened.
+     */
+    public void onAppDrawerOpened() { }
 }
