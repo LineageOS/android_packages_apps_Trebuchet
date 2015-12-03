@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_2a698024",
+        "filename": "res/drawable/listitem_bg.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "I checked the android docs and android:drawable is the required attribute for item and color works as a valid value for that attribute.",
+      "parentUuid": "bf8cb3f7_8f50e134",
+      "range": {
+        "startLine": 19,
+        "startChar": 39,
+        "endLine": 19,
+        "endChar": 55
+      },
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_cf7ca9b7",
         "filename": "res/drawable/listitem_text.xml",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2015-12-02T08:29:14Z",
       "side": 1,
       "message": "Please add the copyright at the top",
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ca7574fc",
+        "filename": "res/drawable/listitem_text.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_cf7ca9b7",
       "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_ea72b811",
+        "filename": "res/layout/custom_grid_size_dialog.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_ef5e4d44",
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_6f30fd08",
         "filename": "res/layout/dynamic_grid_size_screen.xml",
         "patchSetId": 2
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "bf8cb3f7_8a61ac3c",
+        "filename": "res/layout/dynamic_grid_size_screen.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_6f30fd08",
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8cb3f7_af2da5a9",
         "filename": "res/layout/settings_pane_list_header.xml",
         "patchSetId": 2
@@ -87,6 +165,24 @@
       "writtenOn": "2015-12-02T08:29:14Z",
       "side": 1,
       "message": "Please add the copyright at the top",
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_aa66f050",
+        "filename": "res/layout/settings_pane_list_header.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_af2da5a9",
       "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -139,6 +235,24 @@
       "writtenOn": "2015-12-02T08:29:14Z",
       "side": 1,
       "message": "Please add the copyright at the top",
+      "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8cb3f7_8ac68c16",
+        "filename": "src/com/android/launcher3/InsettableLinearLayout.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-03T16:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf8cb3f7_7afe7906",
       "revId": "0a14063d45a588193d68ed44249fd4620abafd60",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
