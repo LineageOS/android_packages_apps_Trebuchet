@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_d5fe76ad",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-12-03T00:17:45Z",
+      "side": 0,
+      "message": "Isn\u0027t this import still needed?",
+      "range": {
+        "startLine": 36,
+        "startChar": 32,
+        "endLine": 36,
+        "endChar": 33
+      },
+      "revId": "95dfdf845c3accc749609d8b955d55fc8df5adf1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
