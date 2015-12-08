@@ -250,12 +250,12 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     R.bool.preferences_interface_general_icons_large_default);
                             mLauncher.setReloadLauncher(false);
                             break;
-                        /*case 1:
+                        case 1:
                             Intent intent = new Intent();
                             intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                                     OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                             mLauncher.startActivity(intent);
-                            break;*/
+                            break;
                     }
             }
 
