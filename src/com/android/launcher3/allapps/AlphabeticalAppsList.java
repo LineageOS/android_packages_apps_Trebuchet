@@ -15,6 +15,7 @@
  */
 package com.android.launcher3.allapps;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -25,6 +26,7 @@ import com.android.launcher3.compat.AlphabeticIndexCompat;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.model.AppNameComparator;
 import com.android.launcher3.util.ComponentKey;
+import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -173,6 +175,8 @@ public class AlphabeticalAppsList {
 
     // The set of filtered apps with the current filter
     private List<AppInfo> mFilteredApps = new ArrayList<>();
+    // The list of all protected apps
+    private ArrayList<ComponentName> mProtectedApps;
     // The current set of adapter items
     private List<AdapterItem> mAdapterItems = new ArrayList<>();
     // The set of sections for the apps with the current filter
@@ -193,6 +197,10 @@ public class AlphabeticalAppsList {
     private int mNumAppsPerRow;
     private int mNumPredictedAppsPerRow;
     private int mNumAppRowsInAdapter;
+
+    private static final int FILTER_APPS_SYSTEM_FLAG = 1;
+    private static final int FILTER_APPS_DOWNLOADED_FLAG = 2;
+    private int mFilterApps = FILTER_APPS_SYSTEM_FLAG | FILTER_APPS_DOWNLOADED_FLAG;
 
     public AlphabeticalAppsList(Context context) {
         mLauncher = (Launcher) context;
@@ -382,6 +390,25 @@ public class AlphabeticalAppsList {
     }
 
     /**
+     * Gets the list of protected components from {@link CMSettings} and updates the existing list
+     * of protected apps
+     * @param context Context
+     */
+    private void updateProtectedAppsList(Context context) {
+        String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
+                CMSettings.Secure.PROTECTED_COMPONENTS);
+        protectedComponents = protectedComponents == null ? "" : protectedComponents;
+        String [] flattened = protectedComponents.split("\\|");
+        mProtectedApps = new ArrayList<ComponentName>(flattened.length);
+        for (String flat : flattened) {
+            ComponentName cmp = ComponentName.unflattenFromString(flat);
+            if (cmp != null) {
+                mProtectedApps.add(cmp);
+            }
+        }
+    }
+
+    /**
      * Updates the set of filtered apps with the current filter.  At this point, we expect
      * mCachedSectionNames to have been calculated for the set of all apps in mApps.
      */
@@ -452,9 +479,17 @@ public class AlphabeticalAppsList {
             }
         }
 
+        updateProtectedAppsList(mLauncher);
+
         // Recreate the filtered and sectioned apps (for convenience for the grid layout) from the
         // ordered set of sections
         for (AppInfo info : getFiltersAppInfos()) {
+            boolean system = (info.flags & AppInfo.DOWNLOADED_FLAG) == 0;
+            if (mProtectedApps.contains(info.componentName) || (system && !getShowSystemApps()) ||
+                    (!system && !getShowDownloadedApps())) {
+                continue;
+            }
+
             String sectionName = getAndUpdateCachedSectionName(info.title);
 
             // Create a new section if the section names do not match
@@ -557,6 +592,14 @@ public class AlphabeticalAppsList {
         if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
         }
+    }
+
+    private boolean getShowSystemApps() {
+        return (mFilterApps & FILTER_APPS_SYSTEM_FLAG) != 0;
+    }
+
+    private boolean getShowDownloadedApps() {
+        return (mFilterApps & FILTER_APPS_DOWNLOADED_FLAG) != 0;
     }
 
     private List<AppInfo> getFiltersAppInfos() {
