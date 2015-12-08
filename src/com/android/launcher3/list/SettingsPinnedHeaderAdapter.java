@@ -2,12 +2,10 @@ package com.android.launcher3.list;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Typeface;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,7 +14,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.OverviewSettingsPanel;
@@ -250,12 +247,12 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     R.bool.preferences_interface_general_icons_large_default);
                             mLauncher.setReloadLauncher(false);
                             break;
-                        /*case 1:
+                        case 1:
                             Intent intent = new Intent();
                             intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                                     OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                             mLauncher.startActivity(intent);
-                            break;*/
+                            break;
                     }
             }
 
