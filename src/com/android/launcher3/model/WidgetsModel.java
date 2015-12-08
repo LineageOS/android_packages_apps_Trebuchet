@@ -7,6 +7,7 @@ import android.content.pm.ResolveInfo;
 import android.util.Log;
 
 import com.android.launcher3.AppFilter;
+import com.android.launcher3.AppInfo;
 import com.android.launcher3.IconCache;
 import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.ItemInfo;
@@ -16,6 +17,7 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.compat.AlphabeticIndexCompat;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.UserHandleCompat;
+import cyanogenmod.providers.CMSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,6 +35,10 @@ public class WidgetsModel {
     private static final String TAG = "WidgetsModel";
     private static final boolean DEBUG = false;
 
+    private static final int FILTER_APPS_SYSTEM_FLAG = 1;
+    private static final int FILTER_APPS_DOWNLOADED_FLAG = 2;
+    private int mFilterApps = FILTER_APPS_SYSTEM_FLAG | FILTER_APPS_DOWNLOADED_FLAG;
+
     /* List of packages that is tracked by this model. */
     private ArrayList<PackageItemInfo> mPackageItemInfos = new ArrayList<>();
 
@@ -41,14 +47,17 @@ public class WidgetsModel {
 
     private ArrayList<Object> mRawList;
 
+    private Context mContext;
     private final AppWidgetManagerCompat mAppWidgetMgr;
     private final WidgetsAndShortcutNameComparator mWidgetAndShortcutNameComparator;
     private final Comparator<ItemInfo> mAppNameComparator;
     private final IconCache mIconCache;
     private final AppFilter mAppFilter;
     private AlphabeticIndexCompat mIndexer;
+    private ArrayList<String> mProtectedPackages;
 
     public WidgetsModel(Context context,  IconCache iconCache, AppFilter appFilter) {
+        mContext = context;
         mAppWidgetMgr = AppWidgetManagerCompat.getInstance(context);
         mWidgetAndShortcutNameComparator = new WidgetsAndShortcutNameComparator(context);
         mAppNameComparator = (new AppNameComparator(context)).getAppInfoComparator();
@@ -110,6 +119,7 @@ public class WidgetsModel {
         mWidgetAndShortcutNameComparator.reset();
 
         InvariantDeviceProfile idp = LauncherAppState.getInstance().getInvariantDeviceProfile();
+        updateProtectedAppsList(mContext);
 
         // add and update.
         for (Object o: rawWidgetsShortcuts) {
@@ -147,7 +157,8 @@ public class WidgetsModel {
                 Log.e(TAG, String.format("Widget cannot be set for %s.", o.getClass().toString()));
                 continue;
             }
-            if (mAppFilter != null && !mAppFilter.shouldShowApp(componentName)) {
+
+            if ((mAppFilter != null && !mAppFilter.shouldShowApp(componentName))) {
                 if (DEBUG) {
                     Log.d(TAG, String.format("%s is filtered and not added to the widget tray.",
                         packageName));
@@ -158,11 +169,15 @@ public class WidgetsModel {
             PackageItemInfo pInfo = tmpPackageItemInfos.get(packageName);
             ArrayList<Object> widgetsShortcutsList = mWidgetsList.get(pInfo);
             if (widgetsShortcutsList != null) {
+                if (pInfo != null && isProtectedComponent(pInfo.flags, packageName))
                 widgetsShortcutsList.add(o);
             } else {
+                pInfo = new PackageItemInfo(packageName);
+                if (isProtectedComponent(pInfo.flags, packageName)) {
+                    continue;
+                }
                 widgetsShortcutsList = new ArrayList<>();
                 widgetsShortcutsList.add(o);
-                pInfo = new PackageItemInfo(packageName);
                 mIconCache.getTitleAndIconForApp(packageName, userHandle,
                         true /* userLowResIcon */, pInfo);
                 pInfo.titleSectionName = mIndexer.computeSectionName(pInfo.title);
@@ -177,6 +192,34 @@ public class WidgetsModel {
         for (PackageItemInfo p: mPackageItemInfos) {
             Collections.sort(mWidgetsList.get(p), mWidgetAndShortcutNameComparator);
         }
+    }
+
+    private void updateProtectedAppsList(Context context) {
+        String protectedComponents = CMSettings.Secure.getString(context.getContentResolver(),
+                CMSettings.Secure.PROTECTED_COMPONENTS);
+        protectedComponents = protectedComponents == null ? "" : protectedComponents;
+        String [] flattened = protectedComponents.split("\\|");
+        mProtectedPackages = new ArrayList<String>(flattened.length);
+        for (String flat : flattened) {
+            ComponentName cmp = ComponentName.unflattenFromString(flat);
+            if (cmp != null) {
+                mProtectedPackages.add(cmp.getPackageName());
+            }
+        }
+    }
+
+    private boolean isProtectedComponent(int flags, String packageName) {
+        boolean system = (flags & AppInfo.DOWNLOADED_FLAG) == 0;
+        return (mProtectedPackages.contains(packageName) || (system && !getShowSystemApps()) ||
+                (!system && !getShowDownloadedApps()));
+    }
+
+    private boolean getShowSystemApps() {
+        return (mFilterApps & FILTER_APPS_SYSTEM_FLAG) != 0;
+    }
+
+    private boolean getShowDownloadedApps() {
+        return (mFilterApps & FILTER_APPS_DOWNLOADED_FLAG) != 0;
     }
 
     /**

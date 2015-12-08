@@ -385,6 +385,27 @@ public class Launcher extends Activity
         public void onAnimationCancel(Animator arg0) {}
     };
 
+    Runnable mUpdateDynamicGridRunnable = new Runnable() {
+        @Override
+        public void run() {
+            setReloadLauncher(false);
+            reloadLauncher(mWorkspace.getRestorePage());
+        }
+    };
+
+    private BroadcastReceiver protectedAppsChangedReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Update the workspace
+            if (waitUntilResume(mUpdateDynamicGridRunnable, true)) {
+                return;
+            }
+
+            setReloadLauncher(false);
+            reloadLauncher(mWorkspace.getRestorePage());
+        }
+    };
+
     // Preferences
     private boolean mHideIconLabels;
 
@@ -551,6 +572,11 @@ public class Launcher extends Activity
             showFirstRunActivity();
             showFirstRunClings();
         }
+
+        IntentFilter protectedAppsFilter = new IntentFilter(
+                cyanogenmod.content.Intent.ACTION_PROTECTED_CHANGED);
+        registerReceiver(protectedAppsChangedReceiver, protectedAppsFilter,
+                cyanogenmod.platform.Manifest.permission.PROTECTED_APP, null);
     }
 
     @Override
@@ -1799,8 +1825,6 @@ public class Launcher extends Activity
     public boolean reloadLauncherIfNeeded() {
         if (mReloadLauncher) {
             reloadLauncher(mWorkspace.getCurrentPage());
-            mReloadLauncher = false;
-            mResizeGridRequired = false;
             return true;
         }
 
@@ -1830,6 +1854,9 @@ public class Launcher extends Activity
         mWorkspace.updateCustomContentVisibility();
 
         mAppsView.reset();
+
+        mReloadLauncher = false;
+        mResizeGridRequired = false;
     }
 
     /**
@@ -2293,6 +2320,8 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onDestroy();
         }
+
+        unregisterReceiver(protectedAppsChangedReceiver);
     }
 
     public DragController getDragController() {
@@ -4399,6 +4428,8 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.finishBindingItems(false);
         }
+
+        mWorkspace.stripEmptyScreens();
 
         if (mWorkspace.isInOverviewMode()) {
             reloadLauncherIfNeeded();
