@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_bea71950",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-09T01:21:11Z",
+      "side": 1,
+      "message": "Import existed already from before the code was commented out",
+      "parentUuid": "7f96bb07_deb0e58e",
+      "range": {
+        "startLine": 254,
+        "startChar": 54,
+        "endLine": 254,
+        "endChar": 57
+      },
+      "revId": "df86a708234ef608fd2c7f27006b690f27a97c0c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f91af0f_1e387cd1",
         "filename": "src/com/android/launcher3/model/WidgetsModel.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2015-12-08T09:46:51Z",
       "side": 1,
       "message": "Seems like this code is duplicated in AlphabeticalAppsList.java. Can we create a separate utility class and refer it at both places instead?",
+      "range": {
+        "startLine": 198,
+        "startChar": 4,
+        "endLine": 229,
+        "endChar": 5
+      },
+      "revId": "df86a708234ef608fd2c7f27006b690f27a97c0c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5e629518",
+        "filename": "src/com/android/launcher3/model/WidgetsModel.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-09T01:21:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f91af0f_1e387cd1",
       "range": {
         "startLine": 198,
         "startChar": 4,
