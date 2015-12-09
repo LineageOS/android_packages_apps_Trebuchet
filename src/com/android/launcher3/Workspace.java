@@ -400,6 +400,13 @@ public class Workspace extends SmoothPagedView
         }
     }
 
+    /**
+     * @return A {@link Set} of {@link Long}s representing ids of the workspace screens
+     */
+    public Set<Long> getWorkspaceScreenIds() {
+        return mWorkspaceScreens.keySet();
+    }
+
     // estimate the size of a widget with spans hSpan, vSpan. return MAX_VALUE for each
     // dimension if unsuccessful
     public int[] estimateItemSize(int hSpan, int vSpan,
@@ -3213,7 +3220,7 @@ public class Workspace extends SmoothPagedView
             target.removeView(v);
 
             FolderIcon fi =
-                mLauncher.addFolder(target, container, screenId, targetCell[0], targetCell[1]);
+                mLauncher.addFolder(target, container, screenId, targetCell[0], targetCell[1], null);
             destInfo.cellX = -1;
             destInfo.cellY = -1;
             sourceInfo.cellX = -1;
@@ -4462,6 +4469,7 @@ public class Workspace extends SmoothPagedView
             }
             if (cellLayout != null) {
                 cellLayout.onDropChild(mDragInfo.cell);
+                cellLayout.setUseTempCoords(false);
             }
         }
         if ((d.cancelled || (beingCalledAfterUninstall && !mUninstallSuccessful))

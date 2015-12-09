@@ -32,9 +32,7 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.app.Dialog;
 import android.app.SearchManager;
-import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProviderInfo;
@@ -62,7 +60,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -73,8 +70,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.StrictMode;
 import android.os.SystemClock;
-import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Selection;
@@ -124,8 +119,6 @@ import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.PagedView.TransitionEffect;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.LauncherStats;
-import com.android.launcher3.stats.internal.service.AggregationIntentService;
-import com.cyngn.RemoteFolder.RemoteFolderUpdater;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -295,6 +288,8 @@ public class Launcher extends Activity
     private DynamicGridSizeFragment mDynamicGridSizeFragment;
     private LauncherClings mLauncherClings;
     protected HiddenFolderFragment mHiddenFolderFragment;
+    private FolderIcon mRemoteFolder;
+    private int[] mRemoteFolderCell = new int[2];
 
     private AppWidgetManagerCompat mAppWidgetManager;
     private LauncherAppWidgetHost mAppWidgetHost;
@@ -403,9 +398,6 @@ public class Launcher extends Activity
     private Rect mRectForFolderAnimation = new Rect();
 
     private BubbleTextView mWaitingForResume;
-
-    // Remote Folder Updater, used in Workspace and Folder
-    private RemoteFolderUpdater remoteFolderUpdater;
 
     // Search widget
     int mSearchWidgetId;
@@ -2806,9 +2798,11 @@ public class Launcher extends Activity
     }
 
     FolderIcon addFolder(CellLayout layout, long container, final long screenId, int cellX,
-            int cellY) {
-        final FolderInfo folderInfo = new FolderInfo();
-        folderInfo.title = getText(R.string.folder_name);
+            int cellY, FolderInfo folderInfo) {
+        if (folderInfo == null) {
+            folderInfo = new FolderInfo();
+            folderInfo.title = getText(R.string.folder_name);
+        }
 
         // Update the model
         LauncherModel.addItemToDatabase(Launcher.this, folderInfo, container, screenId, cellX, cellY,
@@ -3230,7 +3224,7 @@ public class Launcher extends Activity
             // Open the requested folder
             openFolder(folderIcon, folderTouchXYOffset);
 
-            if (info.subType == FolderInfo.REMOTE_SUBTYPE) {
+            if (info.isRemote()) {
                 mModel.syncRemoteFolder(info, this);
             }
         } else {
@@ -4948,6 +4942,10 @@ public class Launcher extends Activity
                     newFolder.setTextVisible(!mHideIconLabels);
                     workspace.addInScreenFromBind(newFolder, item.container, item.screenId, item.cellX,
                             item.cellY, 1, 1);
+
+                    if (((FolderInfo) item).isRemote()) {
+                        mRemoteFolder = newFolder;
+                    }
                     break;
                 default:
                     throw new RuntimeException("Invalid Item Type");
@@ -5199,6 +5197,16 @@ public class Launcher extends Activity
             mWorkspace.resetOverviewMode();
         }
         mModel.updateCount();
+
+        boolean remoteFolderEnabled = SettingsProvider.getBoolean(getApplicationContext(),
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER,
+                R.bool.preferences_interface_homescreen_remote_folder_default);
+        if (remoteFolderEnabled && mRemoteFolder == null) {
+            showRemoteFolder();
+        } else if (!remoteFolderEnabled) {
+            // We might load the remote folder on startup, but we shouldn't show it
+            hideRemoteFolder();
+        }
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
@@ -5767,6 +5775,110 @@ public class Launcher extends Activity
     }
 
     /**
+     * Called when the setting for remote folder is updated
+     * @param newValue the new setting for remote folder
+     */
+    public void onRemoteFolderSettingChanged(final boolean newValue) {
+        if (newValue) {
+            showRemoteFolder();
+        } else {
+            hideRemoteFolder();
+        }
+    }
+
+    /**
+     * Called when the remote folder is dropped into the delete area on the workspace
+     */
+    public void onRemoteFolderDeleted() {
+        hideRemoteFolder();
+        SettingsProvider.putBoolean(this, SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER,
+                false);
+        mOverviewSettingsPanel.notifyDataSetInvalidated();
+    }
+
+    private void showRemoteFolder() {
+        int[] cell;
+        long screen;
+        long container;
+        boolean findNewSpace = true;
+        FolderInfo folderInfo = null;
+
+        // Find a new spot if our old location is taken
+        if (mRemoteFolder != null && mRemoteFolderCell[0] >= 0 && mRemoteFolderCell[1] >= 0) {
+            folderInfo = mRemoteFolder.getFolderInfo();
+            CellLayout cellLayout = getCellLayout(folderInfo.container, folderInfo.screenId);
+            if (cellLayout != null
+                    && !cellLayout.isOccupied(mRemoteFolderCell[0], mRemoteFolderCell[1])) {
+                findNewSpace = false;
+            }
+        }
+        if (findNewSpace) {
+            Pair<Long, int[]> space = LauncherModel.findNextAvailableIconSpace(Launcher.this,
+                    null, null, 0, new ArrayList<Long>(mWorkspace.getWorkspaceScreenIds()));
+            screen = space.first;
+            cell = space.second;
+            container = LauncherSettings.Favorites.CONTAINER_DESKTOP;
+        } else {
+            screen = folderInfo.screenId;
+            cell = mRemoteFolderCell;
+            container = folderInfo.container;
+        }
+
+        if (mRemoteFolder == null) {
+            folderInfo = new FolderInfo();
+            folderInfo.setTitle(getString(R.string.recommendations_title));
+            folderInfo.setRemote(true);
+
+            CellLayout cellLayout = getCellLayout(container, screen);
+            mRemoteFolder = addFolder(cellLayout, container, screen, cell[0], cell[1], folderInfo);
+
+            mModel.syncRemoteFolder(folderInfo, getApplicationContext());
+        } else {
+            // Folder might still think it's on a different screen. Remove it first.
+            CellLayout cellLayout = getCellLayout(folderInfo.container, folderInfo.screenId);
+            if (cellLayout != null) {
+                cellLayout.removeView(mRemoteFolder);
+            }
+
+            mRemoteFolder.setVisibility(View.VISIBLE);
+            mWorkspace.addInScreen(mRemoteFolder, container, screen, cell[0], cell[1], 1, 1,
+                    isWorkspaceLocked());
+            getCellLayout(container, screen).getShortcutsAndWidgets().forceLayout();
+
+            folderInfo.cellX = cell[0];
+            folderInfo.cellY = cell[1];
+            folderInfo.container = container;
+            folderInfo.screenId = screen;
+            LauncherModel.updateItemInDatabase(this, folderInfo);
+        }
+    }
+
+    private void hideRemoteFolder() {
+        // Remote folder does not exist
+        if (mRemoteFolder == null) {
+            Log.e(TAG, "Remote folder is null");
+            return;
+        }
+
+        FolderInfo info = mRemoteFolder.getFolderInfo();
+
+        // Store our location so we can try to re-add in the same spot
+        mRemoteFolderCell[0] = info.cellX;
+        mRemoteFolderCell[1] = info.cellY;
+
+        // Clear the spot
+        CellLayout cellLayout = getCellLayout(info.container, info.screenId);
+        if (cellLayout != null) {
+            cellLayout.removeView(mRemoteFolder);
+        }
+        info.cellX = -1;
+        info.cellY = -1;
+        LauncherModel.updateItemInDatabase(this, info);
+
+        mWorkspace.removeExtraEmptyScreen(false, true);
+    }
+
+    /**
      * Prints out out state for debugging.
      */
     public void dumpState() {
@@ -5945,13 +6057,6 @@ public class Launcher extends Activity
         return SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
-    }
-
-    public RemoteFolderUpdater getRemoteFolderUpdaterInstance() {
-        if (remoteFolderUpdater == null) {
-            remoteFolderUpdater = new RemoteFolderUpdater();
-        }
-        return remoteFolderUpdater;
     }
 }
 
