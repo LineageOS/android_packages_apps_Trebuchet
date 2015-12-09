@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.launcher3.InvariantDeviceProfile;
@@ -21,7 +22,12 @@ import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.settings.SettingsProvider;
 
+import java.lang.Override;
+
 public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
+    public static final String ACTION_SEARCH_BAR_VISIBILITY_CHANGED =
+            "cyanogenmod.intent.action.SEARCH_BAR_VISIBILITY_CHANGED";
+
     private Launcher mLauncher;
     private Context mContext;
 
@@ -59,9 +65,6 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
     protected void bindHeaderView(View view, int partition, Cursor cursor) {
         TextView textView = (TextView) view.findViewById(R.id.item_name);
         textView.setText(mHeaders[partition]);
-        textView.setTypeface(textView.getTypeface(), Typeface.BOLD);
-
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
     }
 
     @Override
@@ -73,15 +76,19 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
 
     @Override
     protected void bindView(View v, int partition, Cursor cursor, int position) {
-        TextView text = (TextView)v.findViewById(R.id.item_name);
+        TextView nameView = (TextView)v.findViewById(R.id.item_name);
+        TextView stateView = (TextView)v.findViewById(R.id.item_state);
+        Switch settingSwitch = (Switch)v.findViewById(R.id.setting_switch);
+        settingSwitch.setClickable(false);
+
         // RTL
         Configuration config = mLauncher.getResources().getConfiguration();
         if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            text.setGravity(Gravity.RIGHT);
+            nameView.setGravity(Gravity.RIGHT);
         }
 
         String title = cursor.getString(1);
-        text.setText(title);
+        nameView.setText(title);
 
         v.setTag(new SettingsPosition(partition, position));
 
@@ -97,9 +104,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         current = SettingsProvider.getBoolean(mContext,
                                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                                 R.bool.preferences_interface_homescreen_search_default);
-                        state = current ? res.getString(R.string.setting_state_on)
-                                : res.getString(R.string.setting_state_off);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setSettingSwitch(stateView, settingSwitch, current);
                         break;
                     case 1:
                         current = SettingsProvider.getBoolean(mContext,
@@ -107,21 +112,19 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 R.bool.preferences_interface_homescreen_hide_icon_labels_default);
                         state = current ? res.getString(R.string.icon_labels_hide)
                                 : res.getString(R.string.icon_labels_show);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setStateText(stateView, settingSwitch, state);
                         break;
                     case 2:
                         current = SettingsProvider.getBoolean(mContext,
                                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SCROLLING_WALLPAPER_SCROLL,
                                 R.bool.preferences_interface_homescreen_scrolling_wallpaper_scroll_default);
-                        state = current ? res.getString(R.string.setting_state_on)
-                                : res.getString(R.string.setting_state_off);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setSettingSwitch(stateView, settingSwitch, current);
                         break;
                     case 3:
                         updateDynamicGridSizeSettingsItem(v);
                         break;
                     default:
-                        ((TextView) v.findViewById(R.id.item_state)).setText("");
+                        hideStates(stateView, settingSwitch);
                 }
                 break;
             case OverviewSettingsPanel.DRAWER_SETTINGS_POSITION:
@@ -132,7 +135,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 R.bool.preferences_interface_drawer_hide_icon_labels_default);
                         state = current ? res.getString(R.string.icon_labels_hide)
                                 : res.getString(R.string.icon_labels_show);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setStateText(stateView, settingSwitch, state);
                         break;
                     case 1:
                         current = SettingsProvider.getBoolean(mContext,
@@ -140,7 +143,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 R.bool.preferences_interface_drawer_compact_default);
                         state = current ? res.getString(R.string.app_drawer_style_compact)
                                 : res.getString(R.string.app_drawer_style_sections);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setStateText(stateView, settingSwitch, state);
                         break;
                     case 2:
                         current = SettingsProvider.getBoolean(mContext,
@@ -148,7 +151,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 R.bool.preferences_interface_drawer_dark_default);
                         state = current ? res.getString(R.string.app_drawer_color_dark)
                                 : res.getString(R.string.app_drawer_color_light);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setStateText(stateView, settingSwitch, state);
                         break;
                     case 3:
                         current = SettingsProvider.getBoolean(mContext,
@@ -156,24 +159,22 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                 R.bool.preferences_interface_use_horizontal_scrubber_default);
                         state = current ? res.getString(R.string.fast_scroller_type_horizontal)
                                 : res.getString(R.string.fast_scroller_type_vertical);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setStateText(stateView, settingSwitch, state);
                         break;
                     default:
-                        ((TextView) v.findViewById(R.id.item_state)).setText("");
+                        hideStates(stateView, settingSwitch);
                 }
                 break;
-            default:
+            case OverviewSettingsPanel.APP_SETTINGS_POSITION:
                 switch (position) {
                     case 0:
                         current = SettingsProvider.getBoolean(mContext,
                                 SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,
                                 R.bool.preferences_interface_general_icons_large_default);
-                        state = current ? res.getString(R.string.setting_state_on)
-                                : res.getString(R.string.setting_state_off);
-                        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+                        setSettingSwitch(stateView, settingSwitch, current);
                         break;
                     default:
-                        ((TextView) v.findViewById(R.id.item_state)).setText("");
+                        hideStates(stateView, settingSwitch);
                 }
         }
 
@@ -234,7 +235,6 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                     switch (position) {
                         case 0:
                             updateSearchBarVisibility(v);
-                            mLauncher.reloadLauncher(false, false);
                             break;
                         case 1:
                             onIconLabelsBooleanChanged(v,
@@ -282,7 +282,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             break;
                     }
                     break;
-                default:
+                case OverviewSettingsPanel.APP_SETTINGS_POSITION:
                     switch (position) {
                         case 0:
                             onSettingsBooleanChanged(v,
@@ -320,6 +320,9 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
         onSettingsBooleanChanged(v,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_SEARCH,
                 R.bool.preferences_interface_homescreen_search_default);
+
+        Intent intent = new Intent(ACTION_SEARCH_BAR_VISIBILITY_CHANGED);
+        mContext.sendBroadcast(intent);
     }
 
     private void onSettingsBooleanChanged(View v, String key, int res) {
@@ -330,10 +333,7 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
         SettingsProvider.putBoolean(mContext, key, !current);
         SettingsProvider.putBoolean(mContext, SettingsProvider.SETTINGS_CHANGED, true);
 
-        String state = current ? mLauncher.getResources().getString(
-                R.string.setting_state_off) : mLauncher.getResources().getString(
-                R.string.setting_state_on);
-        ((TextView) v.findViewById(R.id.item_state)).setText(state);
+        ((Switch)v.findViewById(R.id.setting_switch)).setChecked(!current);
     }
 
     private void onIconLabelsBooleanChanged(View v, String key, int res) {
@@ -390,5 +390,22 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                 R.string.fast_scroller_type_vertical) : mLauncher.getResources().getString(
                 R.string.fast_scroller_type_horizontal);
         ((TextView) v.findViewById(R.id.item_state)).setText(state);
+    }
+
+    private void setStateText(TextView stateView, Switch settingSwitch, String state) {
+        stateView.setText(state);
+        stateView.setVisibility(View.VISIBLE);
+        settingSwitch.setVisibility(View.INVISIBLE);
+    }
+
+    private void setSettingSwitch(TextView stateView, Switch settingSwitch, boolean isChecked) {
+        settingSwitch.setChecked(isChecked);
+        settingSwitch.setVisibility(View.VISIBLE);
+        stateView.setVisibility(View.INVISIBLE);
+    }
+
+    private void hideStates(TextView stateView, Switch settingSwitch) {
+        settingSwitch.setVisibility(View.INVISIBLE);
+        stateView.setVisibility(View.INVISIBLE);
     }
 }
