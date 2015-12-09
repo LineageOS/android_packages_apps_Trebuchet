@@ -369,6 +369,8 @@ public class Launcher extends Activity
     // the press state and keep this reference to reset the press state when we return to launcher.
     private BubbleTextView mWaitingForResume;
 
+    private long mDefaultScreenId;
+
     public Animator.AnimatorListener mAnimatorListener = new Animator.AnimatorListener() {
         @Override
         public void onAnimationStart(Animator arg0) {}
@@ -1788,6 +1790,8 @@ public class Launcher extends Activity
         mHideIconLabels = SettingsProvider.getBoolean(this,
                 SettingsProvider.SETTINGS_UI_HOMESCREEN_HIDE_ICON_LABELS,
                 R.bool.preferences_interface_homescreen_hide_icon_labels_default);
+        mDefaultScreenId = SettingsProvider.getLongCustomDefault(this,
+                SettingsProvider.SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID, 1);
 
         mModel = app.setLauncher(this);
         mIconCache = app.getIconCache();
@@ -3097,7 +3101,24 @@ public class Launcher extends Activity
 
     protected void onClickDefaultScreenButton(View v) {
         if (LOGD) Log.d(TAG, "onClickDefaultScreenButton");
-        // TODO
+
+        if (!mWorkspace.isInOverviewMode()) return;
+
+        mDefaultScreenId = mWorkspace.getScreenIdForPageIndex(mWorkspace.getPageNearestToCenterOfScreen());
+        updateDefaultScreenButton();
+        SettingsProvider.get(this).edit()
+                .putLong(SettingsProvider.SETTINGS_UI_HOMESCREEN_DEFAULT_SCREEN_ID,
+                        mDefaultScreenId)
+                .commit();
+    }
+
+    protected void updateDefaultScreenButton() {
+        if (mOverviewPanel != null) {
+            View defaultPageButton = mOverviewPanel.findViewById(R.id.default_screen_button);
+            defaultPageButton.setActivated(
+                    mWorkspace.getScreenIdForPageIndex(mWorkspace.getPageNearestToCenterOfScreen())
+                            == mDefaultScreenId);
+        }
     }
 
     public View.OnTouchListener getHapticFeedbackTouchListener() {
