@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_a3c4de41",
+        "filename": "src/com/android/launcher3/AutoInstallsLayout.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-10T02:58:00Z",
+      "side": 1,
+      "message": "Use the proper constants here from Favorites and FolderInfo.",
+      "range": {
+        "startLine": 546,
+        "startChar": 16,
+        "endLine": 546,
+        "endChar": 23
+      },
+      "revId": "ab7e70697d57ea13a9e3a12c48f1ae2f4906e878",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_83bc42bc",
+        "filename": "src/com/android/launcher3/AutoInstallsLayout.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-10T02:58:00Z",
+      "side": 1,
+      "message": "Instead of returning false everywhere except the remote implementation, make TagParser abstract and implement the default isRemoteFolder method to return false.",
+      "revId": "ab7e70697d57ea13a9e3a12c48f1ae2f4906e878",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
