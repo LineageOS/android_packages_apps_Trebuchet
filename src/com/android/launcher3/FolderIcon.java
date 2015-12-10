@@ -373,10 +373,14 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     }
 
     private boolean willAcceptItem(ItemInfo item) {
+        if (mInfo.subType == 1) return false;
+
         final int itemType = item.itemType;
 
         boolean hidden = false;
         if (item instanceof FolderInfo){
+            if (((FolderInfo) item).subType == 1) return false;
+
             hidden = ((FolderInfo) item).hidden;
         }
         return ((itemType == LauncherSettings.Favorites.ITEM_TYPE_APPLICATION ||
