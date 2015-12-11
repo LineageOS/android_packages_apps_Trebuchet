@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_927d6ae9",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1863,
+      "author": {
+        "id": 13823
+      },
+      "writtenOn": "2015-12-11T07:09:02Z",
+      "side": 1,
+      "message": "Seems like mWidgetsView.getWidgets() can return null, will mWidgetsView.addWidgets throw exceptions in that case?",
+      "range": {
+        "startLine": 1863,
+        "startChar": 8,
+        "endLine": 1863,
+        "endChar": 39
+      },
+      "revId": "de3a6b966a46840c8e2db84a5bec36bc6fb83c94",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
