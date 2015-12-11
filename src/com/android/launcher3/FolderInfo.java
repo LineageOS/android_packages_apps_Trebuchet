@@ -105,6 +105,7 @@ public class FolderInfo extends ItemInfo {
     void onAddToDatabase(Context context, ContentValues values) {
         super.onAddToDatabase(context, values);
         values.put(LauncherSettings.Favorites.TITLE, title.toString());
+        values.put(LauncherSettings.Favorites.SUBTYPE, subType);
         values.put(LauncherSettings.Favorites.HIDDEN, hidden ? 1 : 0);
         values.put(LauncherSettings.BaseLauncherColumns.SUBTYPE, subType);
     }
