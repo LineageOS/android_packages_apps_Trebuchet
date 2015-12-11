@@ -55,6 +55,14 @@ public class RemoteFolderUpdater {
     }
 
     /**
+     * Return true if the necessary number of items have loaded and was refreshed within the last hour.
+     * @return true if we have enough items with loaded icons
+     */
+    public boolean canUseCache(int requestedSize) {
+        return false;
+    }
+
+    /**
      * Holds important information that the launcher will need for each item in the remote folder.
      */
     public class RemoteFolderInfo {

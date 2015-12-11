@@ -4260,19 +4260,22 @@ public class LauncherModel extends BroadcastReceiver
     }
 
     protected synchronized void syncRemoteFolder(final FolderInfo folderInfo, final Context context) {
-        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
-        final int count = 6;
 
-        updater.requestSync(context, count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+
+        updater.requestSync(context, RemoteFolder.MAX_ITEMS, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
             @Override
             public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+
+                if (remoteFolderInfoList == null || remoteFolderInfoList.isEmpty()) {
+                    return; // the updater may return null if we should already have valid data
+                }
 
                 synchronized (mLock) {
 
                     // Clear contents to prevent any duplicates
-                    if (folderInfo.contents != null && !folderInfo.contents.isEmpty()) {
-                        deleteItemsFromDatabase(context, folderInfo.contents);
-                        folderInfo.contents.clear();
+                    while (!folderInfo.contents.isEmpty()) {
+                        folderInfo.remove(folderInfo.contents.get(0));
                     }
 
                     // Add each remote folder item, update the DB, and notify listeners
@@ -4285,9 +4288,11 @@ public class LauncherModel extends BroadcastReceiver
                         folderInfo.add(shortcutInfo);
                     }
 
+                    Log.e(TAG, "Remote Folder size: " + folderInfo.contents.size());
+
                     updateItemInDatabase(context, folderInfo);
-                    folderInfo.itemsChanged();
                 }
+                folderInfo.itemsChanged();
             }
 
             @Override
