@@ -22,6 +22,30 @@
       "revId": "de3a6b966a46840c8e2db84a5bec36bc6fb83c94",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_9266ca51",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1863,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-12-11T07:20:32Z",
+      "side": 1,
+      "message": "Yeah, they have a null check when binding. So I added one too.",
+      "parentUuid": "5f93b717_927d6ae9",
+      "range": {
+        "startLine": 1863,
+        "startChar": 8,
+        "endLine": 1863,
+        "endChar": 39
+      },
+      "revId": "de3a6b966a46840c8e2db84a5bec36bc6fb83c94",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
