@@ -13,13 +13,19 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.android.launcher3.compat.UserHandleCompat;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by tmiller on 11/24/15.
  */
 public class RemoteFolder extends Folder {
-
     public static final String TAG = "RemoteFolder";
     public static final String REMOTE_FOLDER_ENABLED = "remote_folder_enabled";
+    public static final int MAX_ITEMS = 6;
     private ScrollView mContentScrollView;
     private ImageView mFolderInfo;
     private TextView mFolderHelpText;
@@ -225,5 +231,45 @@ public class RemoteFolder extends Folder {
         mContent.setVisibility(VISIBLE);
         mFolderInfo.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
         this.invalidate();
+    }
+
+    @Override
+    void bind(final FolderInfo info) {
+        super.bind(info);
+
+        final ArrayList<ShortcutInfo> children = info.contents;
+        if (info.isRemote() && children.isEmpty()) {
+            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+            updater.requestSync(getContext(), RemoteFolder.MAX_ITEMS, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                @Override
+                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+                    if (remoteFolderInfoList == null || remoteFolderInfoList.isEmpty()) {
+                        return; // the updater may return null if we should already have valid data
+                    }
+                    children.clear();
+                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getIcon(),
+                                UserHandleCompat.myUserHandle());
+                        children.add(shortcutInfo);
+
+                        View child = mLauncher.createShortcut(R.layout.application, mContent,
+                                shortcutInfo);
+                        remoteFolderInfo.setRecommendationData(child);
+                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
+                                info.screenId, info.cellX, info.cellY);
+                    }
+                    info.contents = children;
+                    bind(info);
+                }
+
+                @Override
+                public void onFailure(String error) {
+                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+                }
+            });
+        }
     }
 }

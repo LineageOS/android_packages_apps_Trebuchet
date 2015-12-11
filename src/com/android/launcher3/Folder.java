@@ -484,51 +484,18 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
 
     void bind(final FolderInfo info) {
         mInfo = info;
-        final ArrayList<ShortcutInfo> children = info.contents;
+        ArrayList<ShortcutInfo> children = info.contents;
 
-        if (info.isRemote() && children.isEmpty()) {
-            final int count = 6;
-            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
-            updater.requestSync(getContext(), count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
-                @Override
-                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
-                    children.clear();
-                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
-                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getIcon(),
-                                UserHandleCompat.myUserHandle());
-                        children.add(shortcutInfo);
-
-                        View child = mLauncher.createShortcut(R.layout.application, mContent,
-                                shortcutInfo);
-                        remoteFolderInfo.setRecommendationData(child);
-                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
-                                info.screenId, info.cellX, info.cellY);
-                    }
-                    info.contents = children;
-                    bind(info);
-                }
-
-                @Override
-                public void onFailure(String error) {
-                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
-                    setupContentForNumItems(count);
-                }
-            });
-        } else {
-            ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
-            setupContentForNumItems(children.size());
-            placeInReadingOrder(children);
-            int count = 0;
-            for (int i = 0; i < children.size(); i++) {
-                ShortcutInfo child = (ShortcutInfo) children.get(i);
-                if (createAndAddShortcut(child) == null) {
-                    overflow.add(child);
-                } else {
-                    count++;
-                }
+        ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
+        setupContentForNumItems(children.size());
+        placeInReadingOrder(children);
+        int count = 0;
+        for (int i = 0; i < children.size(); i++) {
+            ShortcutInfo child = (ShortcutInfo) children.get(i);
+            if (createAndAddShortcut(child) == null) {
+                overflow.add(child);
+            } else {
+                count++;
             }
 
             // We rearrange the items in case there are any empty gaps
