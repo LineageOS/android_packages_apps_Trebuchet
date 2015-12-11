@@ -3,6 +3,7 @@ package com.cyngn.RemoteFolder;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
 import android.view.View;
 import java.util.List;
 import android.util.Log;
@@ -52,6 +53,25 @@ public class RemoteFolderUpdater {
      */
     public void registerViewForInteraction(View view, Intent intent) {
         Log.e(TAG, "Couldn't register view for user interaction, RemoteFolderUpdater may not have been properly setup");
+    }
+
+    /**
+     * Return true if the necessary number of items have loaded and was refreshed within the last hour.
+     * @return true if we have enough items with loaded icons
+     */
+    public boolean canUseCache(int requestedSize) {
+        return false;
+    }
+
+    /**
+     * Check network connection before requesting data.
+     * @param context Needed to get ConnectivityManager
+     * @return true if connected to a network
+     */
+    public boolean isNetworkConnected(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnected();
     }
 
     /**
