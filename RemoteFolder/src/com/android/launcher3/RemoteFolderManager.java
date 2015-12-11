@@ -26,6 +26,15 @@ public class RemoteFolderManager {
     public void onFolderDeleted() { }
 
     /**
+     * Get the original icons (with no badge) to be used for the RemoteFolder's FolderIcon
+     * @param items views currently in the folder
+     * @return an array of drawables for each view
+     */
+    public Drawable[] getDrawablesForFolderIcon(ArrayList<View> items) {
+        return null;
+    }
+
+    /**
      * Called when the app drawer is opened.
      */
     public void onAppDrawerOpened() { }
@@ -34,4 +43,5 @@ public class RemoteFolderManager {
      * Called when the info icon is clicked
      */
     public void onInfoIconClicked() { }
+
 }

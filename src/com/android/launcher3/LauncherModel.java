@@ -62,6 +62,8 @@ import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
 
+import com.android.launcher3.RemoteFolderUpdater;
+
 import java.lang.ref.WeakReference;
 import java.net.URISyntaxException;
 import java.security.InvalidParameterException;
@@ -4255,20 +4257,24 @@ public class LauncherModel extends BroadcastReceiver
     }
 
     protected synchronized void syncRemoteFolder(final FolderInfo folderInfo, final Context context) {
-        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
-        final int count = 6;
 
-        updater.requestSync(context, count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+
+        updater.requestSync(context, RemoteFolder.MAX_ITEMS, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
             @Override
-            public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+            public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList, boolean usingCache) {
+
+                if (remoteFolderInfoList == null || remoteFolderInfoList.isEmpty()) {
+                    Log.e(TAG, "Invalid data returned from updater");
+                    return;
+                } else if (usingCache && !folderInfo.contents.isEmpty()) {
+                    return; // we already have data & the updater returned cached data, nothing needed to do
+                }
 
                 synchronized (mLock) {
 
                     // Clear contents to prevent any duplicates
-                    if (folderInfo.contents != null && !folderInfo.contents.isEmpty()) {
-                        deleteItemsFromDatabase(context, folderInfo.contents);
-                        folderInfo.contents.clear();
-                    }
+                    folderInfo.removeAll();
 
                     // Add each remote folder item, update the DB, and notify listeners
                     for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
@@ -4280,9 +4286,11 @@ public class LauncherModel extends BroadcastReceiver
                         folderInfo.add(shortcutInfo);
                     }
 
+                    Log.e(TAG, "Remote Folder size: " + folderInfo.contents.size());
+
                     updateItemInDatabase(context, folderInfo);
-                    folderInfo.itemsChanged();
                 }
+                folderInfo.itemsChanged();
             }
 
             @Override
