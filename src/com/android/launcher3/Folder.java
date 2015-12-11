@@ -113,7 +113,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
     private static final int ON_EXIT_CLOSE_DELAY = 400;
     private boolean mRearrangeOnClose = false;
     private FolderIcon mFolderIcon;
-    private int mMaxCountX;
+    protected int mMaxCountX;
     private int mMaxCountY;
     private int mMaxNumItems;
     private ArrayList<View> mItemsInReadingOrder = new ArrayList<View>();
@@ -484,71 +484,27 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
 
     void bind(final FolderInfo info) {
         mInfo = info;
-        final ArrayList<ShortcutInfo> children = info.contents;
+        ArrayList<ShortcutInfo> children = info.contents;
 
-        if (info.isRemote() && children.isEmpty()) {
-            final int count = 6;
-            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
-            updater.requestSync(getContext(), count, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
-                @Override
-                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
-                    children.clear();
-                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
-                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getTitle(),
-                                remoteFolderInfo.getIcon(),
-                                UserHandleCompat.myUserHandle());
-                        children.add(shortcutInfo);
 
-                        View child = mLauncher.createShortcut(R.layout.application, mContent,
-                                shortcutInfo);
-                        remoteFolderInfo.setRecommendationData(child);
-                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
-                                info.screenId, info.cellX, info.cellY);
-                    }
-                    info.contents = children;
-                    bind(info);
-                }
-
-                @Override
-                public void onFailure(String error) {
-                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
-                    setupContentForNumItems(count);
-                }
-            });
-        } else {
-            ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
-            setupContentForNumItems(children.size());
-            placeInReadingOrder(children);
-            int count = 0;
-            for (int i = 0; i < children.size(); i++) {
-                ShortcutInfo child = (ShortcutInfo) children.get(i);
-                if (createAndAddShortcut(child) == null) {
-                    overflow.add(child);
-                } else {
-                    count++;
-                }
+        ArrayList<ShortcutInfo> overflow = new ArrayList<ShortcutInfo>();
+        setupContentForNumItems(children.size());
+        placeInReadingOrder(children);
+        int count = 0;
+        for (int i = 0; i < children.size(); i++) {
+            ShortcutInfo child = (ShortcutInfo) children.get(i);
+            if (createAndAddShortcut(child) == null) {
+                overflow.add(child);
+            } else {
+                count++;
             }
 
-            // We rearrange the items in case there are any empty gaps
-            setupContentForNumItems(count);
+        mItemsInvalidated = true;
+        updateTextViewFocus();
+        mInfo.addListener(this);
 
-            // If our folder has too many items we prune them from the list. This is an issue
-            // when upgrading from the old Folders implementation which could contain an unlimited
-            // number of items.
-            for (ShortcutInfo item: overflow) {
-                mInfo.remove(item);
-                LauncherModel.deleteItemFromDatabase(mLauncher, item);
-            }
-
-            mItemsInvalidated = true;
-            updateTextViewFocus();
-            mInfo.addListener(this);
-
-            setFolderName();
-            updateItemLocationsInDatabase();
-        }
+        setFolderName();
+        updateItemLocationsInDatabase();
     }
 
     public void setFolderName() {
@@ -1293,7 +1249,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
             View v = list.get(i);
             ItemInfo info = (ItemInfo) v.getTag();
             LauncherModel.addItemToDatabase(mLauncher, info, mInfo.id, 0,
-                        info.cellX, info.cellY, false);
+                    info.cellX, info.cellY, false);
         }
     }
 
@@ -1307,7 +1263,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         return true;
     }
 
-    private void setupContentDimensions(int count) {
+    protected void setupContentDimensions(int count) {
         ArrayList<View> list = getItemsInReadingOrder();
 
         int countX = mContent.getCountX();
@@ -1344,12 +1300,16 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         return mMaxNumItems;
     }
 
-    private void centerAboutIcon() {
+    protected void centerAboutIcon() {
+        int width = getPaddingLeft() + getPaddingRight() + mContent.getDesiredWidth();
+        int height = getFolderHeight();
+        centerAboutIcon(width, height);
+    }
+
+    protected void centerAboutIcon(int width, int height) {
         DragLayer.LayoutParams lp = (DragLayer.LayoutParams) getLayoutParams();
 
         DragLayer parent = (DragLayer) mLauncher.findViewById(R.id.drag_layer);
-        int width = getPaddingLeft() + getPaddingRight() + mContent.getDesiredWidth();
-        int height = getFolderHeight();
 
         float scale = parent.getDescendantRectRelativeToSelf(mFolderIcon, mTempRect);
 
@@ -1680,12 +1640,6 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         LauncherModel.addOrMoveItemInDatabase(
                 mLauncher, item, mInfo.id, 0, item.cellX, item.cellY);
 
-        // If this is a Remote Folder, we need to register each view with our updater for click handling.
-        if (mInfo.isRemote()) {
-            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
-            updater.registerViewForInteraction(getViewForInfo(item), item.getIntent());
-        }
-
     }
 
     public void onRemove(ShortcutInfo item) {
@@ -1705,11 +1659,11 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         }
     }
 
-    private View getViewForInfo(ShortcutInfo item) {
+    protected View getViewForInfo(ShortcutInfo item) {
         for (int j = 0; j < mContent.getCountY(); j++) {
             for (int i = 0; i < mContent.getCountX(); i++) {
                 View v = mContent.getChildAt(i, j);
-                if (v.getTag() == item) {
+                if (v != null && v.getTag() == item) {
                     return v;
                 }
             }

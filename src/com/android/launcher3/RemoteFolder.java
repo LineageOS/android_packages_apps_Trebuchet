@@ -1,36 +1,70 @@
+/*
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.android.launcher3;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.TextUtils;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
+
+import com.android.launcher3.compat.UserHandleCompat;
+import com.cyngn.RemoteFolder.RemoteFolderUpdater;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by tmiller on 11/24/15.
+ * Represents a set of icons which display recommended apps.
  */
 public class RemoteFolder extends Folder {
-
     public static final String TAG = "RemoteFolder";
     public static final String REMOTE_FOLDER_ENABLED = "remote_folder_enabled";
+    public static final int MAX_ITEMS = 6;
     private ScrollView mContentScrollView;
-    private ImageView mFolderInfo;
+    private ImageView mFolderInfoIcon;
+    private ImageView mRequiredIcon;
     private TextView mFolderHelpText;
-    private Button mCloseInfoButton;
     private View mFolderInfoContainer;
 
-    private int mFolderInfoContainerHeight;
-    private int mHelpTextHeight;
-    private int mHelpTextWidth;
-    private int mButtonHeight;
-    private int mFolderInfoIconHeight;
+    private static final int INFO_ICON_SIZE = 100;
+    private static final int REQUIRED_ICON_SIZE = 100;
+
+    private enum LayoutStates {
+        NO_CONNECTION,
+        FOLDER_CONTENT,
+        SHOW_HELP
+    }
+    private LayoutStates mLayoutState = LayoutStates.FOLDER_CONTENT;
+
     /**
      * Used to inflate the Workspace from XML.
      *
@@ -55,72 +89,49 @@ public class RemoteFolder extends Folder {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+
+        mLayoutState = (isConnected()) ? LayoutStates.FOLDER_CONTENT : LayoutStates.NO_CONNECTION;
+
         int measureSpec = MeasureSpec.UNSPECIFIED;
 
         mContentScrollView = (ScrollView) findViewById(R.id.scroll_view);
 
         mFolderInfoContainer = findViewById(R.id.folder_info_container);
         mFolderInfoContainer.measure(measureSpec, measureSpec);
-        mFolderInfoContainerHeight = mFolderInfoContainer.getMeasuredHeight();
 
-        mFolderInfo = (ImageView) findViewById(R.id.folder_info);
-        mFolderInfo.measure(measureSpec, measureSpec);
-        mFolderInfoIconHeight = mFolderInfo.getMeasuredHeight();
-        mFolderInfo.setOnClickListener(this);
+        mFolderInfoIcon = (ImageView) findViewById(R.id.folder_info);
+        mFolderInfoIcon.setOnClickListener(this);
 
         mFolderHelpText = (TextView) findViewById(R.id.help_text_view);
         mFolderHelpText.setText(getResources().getString(R.string.recommendations_help_text));
-        mFolderHelpText.measure(measureSpec, measureSpec);
-        mHelpTextHeight = (mFolderHelpText.getLineHeight() * mFolderHelpText.getLineCount()) +
-                mFolderHelpText.getPaddingTop() + mFolderHelpText.getPaddingBottom();
-        mHelpTextWidth = mFolderHelpText.getMeasuredWidth();
+        mFolderHelpText.setMovementMethod(LinkMovementMethod.getInstance());
+
         mFolderHelpText.setVisibility(GONE);
 
-        mCloseInfoButton = (Button) findViewById(R.id.close_info_button);
-        mCloseInfoButton.setText(getResources().getString(R.string.close));
-        mCloseInfoButton.measure(measureSpec, measureSpec);
-        mButtonHeight = mCloseInfoButton.getMeasuredHeight();
-        mCloseInfoButton.setOnClickListener(this);
-    }
-
-    protected int getFolderHeight() {
-        if (mFolderHelpText.getVisibility() == VISIBLE) {
-            mHelpTextHeight = (mFolderHelpText.getLineHeight() * mFolderHelpText.getLineCount()) +
-                    mFolderHelpText.getPaddingTop() + mFolderHelpText.getPaddingBottom();
-
-            int height = getPaddingTop() + getPaddingBottom() + mFolderInfoIconHeight
-                    + mHelpTextHeight + mButtonHeight;
-            return height;
-        } else {
-            int height = getPaddingTop() + getPaddingBottom() + mFolderInfoIconHeight
-                    + getContentAreaHeight();
-            return height;
-
-        }
-    }
-
-    private int getFolderWidth() {
-        if (mFolderHelpText.getVisibility() == VISIBLE) {
-            DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
-            int screenWidth = displayMetrics.widthPixels;
-            int width = Math.min(mHelpTextWidth, screenWidth - getPaddingLeft() - getPaddingRight());
-            return width;
-        } else {
-            int width = getPaddingLeft() + getPaddingRight() + mContent.getDesiredWidth();
-            return width;
-        }
+        mRequiredIcon = (ImageView) findViewById(R.id.required_icon);
+        mRequiredIcon.setImageDrawable(getResources().getDrawable(R.drawable.triangle_icon));
+        mRequiredIcon.setOnClickListener(this);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        // TODO (Tyson): clean this up before merging into main CM branch
-        int width = getFolderWidth();
-        int height = getFolderHeight();
+
+        int width = this.getMeasuredWidth();
+        int height = this.getMeasuredHeight();
+
+        int unspecified = MeasureSpec.UNSPECIFIED;
+
+        DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
+        final int screenWidth = displayMetrics.widthPixels;
+
+        Log.e(TAG, "onMeasure(): start --> width: " + this.getMeasuredWidth() + ", height: " + this.getMeasuredHeight());
+
+
+        // Measure the content
         int contentAreaWidthSpec = MeasureSpec.makeMeasureSpec(getContentAreaWidth(),
                 MeasureSpec.EXACTLY);
         int contentAreaHeightSpec = MeasureSpec.makeMeasureSpec(getContentAreaHeight(),
                 MeasureSpec.EXACTLY);
-
         if (LauncherAppState.isDisableAllApps()) {
             // Don't cap the height of the content to allow scrolling.
             mContent.setFixedSize(getContentAreaWidth(), mContent.getDesiredHeight());
@@ -128,29 +139,80 @@ public class RemoteFolder extends Folder {
             mContent.setFixedSize(getContentAreaWidth(), getContentAreaHeight());
         }
         mContentScrollView.measure(contentAreaWidthSpec, contentAreaHeightSpec);
+        int contentHeight = mContent.getMeasuredHeight();
+        int contentWidth = mContent.getMeasuredWidth();
 
-        if (mFolderHelpText.getVisibility() == VISIBLE) {
-            mHelpTextHeight = (mFolderHelpText.getLineHeight() * mFolderHelpText.getLineCount()) +
-                    mFolderHelpText.getPaddingTop() + mFolderHelpText.getPaddingBottom();
 
-            mFolderHelpText.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
-                    mHelpTextHeight, MeasureSpec.EXACTLY));
-            mFolderInfoContainer.measure(contentAreaWidthSpec,
-                    MeasureSpec.makeMeasureSpec(
-                            mFolderInfoIconHeight + mHelpTextHeight + mButtonHeight, MeasureSpec.EXACTLY));
-            mCloseInfoButton.measure(contentAreaWidthSpec,
-                    MeasureSpec.makeMeasureSpec(mButtonHeight, MeasureSpec.EXACTLY));
+        // Measure our folder info icon and 3rd party required icon
+        mRequiredIcon.measure(MeasureSpec.makeMeasureSpec(REQUIRED_ICON_SIZE, MeasureSpec.EXACTLY),
+                MeasureSpec.makeMeasureSpec(REQUIRED_ICON_SIZE, MeasureSpec.EXACTLY));
+
+        mFolderInfoIcon.measure(MeasureSpec.makeMeasureSpec(INFO_ICON_SIZE, MeasureSpec.EXACTLY),
+                MeasureSpec.makeMeasureSpec(INFO_ICON_SIZE, MeasureSpec.EXACTLY));
+        int folderInfoIconHeight = mFolderInfoIcon.getMeasuredHeight();
+
+        // Determine how to measure the folder name & the info icon
+        mFolderName.measure(unspecified, unspecified);
+        mFolderName.requestLayout();
+        int folderNameHeight = mFolderName.getMeasuredHeight();
+        int folderNameWidth = mFolderName.getMeasuredWidth();
+        mFolderName.measure(MeasureSpec.makeMeasureSpec(folderNameWidth, MeasureSpec.EXACTLY),
+                MeasureSpec.makeMeasureSpec(folderNameHeight, MeasureSpec.EXACTLY));
+
+        int folderNameAndIconWidth = Math.max(folderNameWidth + INFO_ICON_SIZE, getContentAreaWidth());
+        int folderNameAndIconHeight = Math.max(folderInfoIconHeight, folderNameHeight);
+        int folderHelpTextWidth = Math.min(folderNameAndIconWidth, screenWidth - getPaddingLeft() - getPaddingRight());
+
+        // Determine what the help text wants its size to be
+        mFolderHelpText.measure(MeasureSpec.makeMeasureSpec(folderHelpTextWidth, MeasureSpec.AT_MOST), unspecified);
+        mFolderHelpText.requestLayout();
+        int folderHelpTextHeight = mFolderHelpText.getMeasuredHeight();
+        folderHelpTextWidth = mFolderHelpText.getMeasuredWidth();
+
+
+        mFolderInfoContainer.measure(MeasureSpec.makeMeasureSpec(folderNameAndIconWidth, MeasureSpec.EXACTLY),
+                MeasureSpec.makeMeasureSpec(folderNameAndIconHeight, MeasureSpec.EXACTLY));
+        mFolderInfoContainer.requestLayout();
+
+
+        // Make specific changes to the views since we have several different states
+        if (mLayoutState == LayoutStates.FOLDER_CONTENT) {
+
+            height = getPaddingTop() + getPaddingBottom() + folderNameAndIconHeight +
+                    + contentHeight + mRequiredIcon.getMeasuredHeight();
+
+            width = getPaddingLeft() + getPaddingRight()
+                    + Math.max(folderNameAndIconWidth, contentWidth);
+
+            Log.e(TAG, "onMeasure(): FOLDER_CONTENT --> width: " + width + ", height: " + height);
+
+            mFolderHelpText.measure(MeasureSpec.makeMeasureSpec(folderHelpTextWidth, MeasureSpec.EXACTLY),
+                    MeasureSpec.makeMeasureSpec(folderHelpTextHeight, MeasureSpec.EXACTLY));
+
+            mFolderInfoContainer.measure(MeasureSpec.makeMeasureSpec(folderNameAndIconWidth, MeasureSpec.EXACTLY),
+                    MeasureSpec.makeMeasureSpec(folderNameAndIconHeight, MeasureSpec.EXACTLY));
+
+        } else if (mLayoutState == LayoutStates.SHOW_HELP || mLayoutState == LayoutStates.NO_CONNECTION) {
+
+            height = getPaddingTop() + getPaddingBottom() + folderNameAndIconHeight +
+                    + folderHelpTextHeight + mRequiredIcon.getMeasuredHeight();
+
+            width = getPaddingLeft() + getPaddingRight()
+                    + Math.max(folderNameAndIconWidth, contentWidth);
+
+            Log.e(TAG, "onMeasure(): SHOW_HELP or NO_CONNECTION --> width: " + width + ", height: " + height);
+
+            mFolderHelpText.measure(MeasureSpec.makeMeasureSpec(folderHelpTextWidth, MeasureSpec.EXACTLY),
+                    MeasureSpec.makeMeasureSpec(folderHelpTextHeight, MeasureSpec.EXACTLY));
+
+            mFolderInfoContainer.measure(MeasureSpec.makeMeasureSpec(folderNameAndIconWidth, MeasureSpec.EXACTLY),
+                    MeasureSpec.makeMeasureSpec(folderNameAndIconHeight + folderHelpTextHeight, MeasureSpec.EXACTLY));
+
         } else {
-            mHelpTextHeight = 0;
-            mFolderHelpText.measure(contentAreaWidthSpec, MeasureSpec.makeMeasureSpec(
-                    mHelpTextHeight, MeasureSpec.EXACTLY));
-            mFolderInfoContainer.measure(contentAreaWidthSpec,
-                    MeasureSpec.makeMeasureSpec(mFolderInfoIconHeight, MeasureSpec.EXACTLY));
-            mCloseInfoButton.measure(contentAreaWidthSpec,
-                    MeasureSpec.makeMeasureSpec(0, MeasureSpec.EXACTLY));
+            Log.e(TAG, "Invalid layout state! Dimensions may not be correct");
         }
 
-        Log.e(TAG, "onMeasure(), width: " + width +  ", height:" + height);
+        setupContentForItems(width, height);
 
         setMeasuredDimension(width, height);
     }
@@ -165,8 +227,8 @@ public class RemoteFolder extends Folder {
             case R.id.folder_info:
                 toggleInfoPane();
                 break;
-            case R.id.close_info_button:
-                mLauncher.closeFolder();
+            case R.id.required_icon:
+                handleRequiredIconClick();
                 break;
             default:
                 break;
@@ -180,50 +242,224 @@ public class RemoteFolder extends Folder {
     }
 
     private void toggleInfoPane() {
-        if (mFolderHelpText.getVisibility() == VISIBLE) {
-            // info ImageView becomes a close "X" when the help text is showing, handle accordingly
-            mContentScrollView.setVisibility(VISIBLE);
-            mContent.setVisibility(VISIBLE);
-
-            mFolderHelpText.setVisibility(GONE);
-
-            mCloseInfoButton.setVisibility(GONE);
-
-            mFolderInfo.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
-
+        if (mLayoutState == LayoutStates.SHOW_HELP) {
+            mLayoutState = (isConnected() || getItemCount() > 0) ? LayoutStates.FOLDER_CONTENT : LayoutStates.NO_CONNECTION;
         } else {
-            // show the info to the user about remote folders, including the option to disable it
-            mContentScrollView.setVisibility(GONE);
-            mContent.setVisibility(GONE);
-
-            mFolderHelpText.setVisibility(VISIBLE);
-
-            mCloseInfoButton.setVisibility(VISIBLE);
-
-            mFolderInfo.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_clear_normal_holo));
+            mLayoutState = LayoutStates.SHOW_HELP;
         }
-        this.invalidate();
+        showViews();
+    }
+
+    private void handleRequiredIconClick() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.required_icon_link)));
+        mContext.startActivity(intent);
     }
 
     @Override
     public void animateClosed(boolean animate) {
         super.animateClosed(animate);
-        mFolderHelpText.setVisibility(GONE);
-        mCloseInfoButton.setVisibility(GONE);
-        mContentScrollView.setVisibility(VISIBLE);
-        mFolderInfo.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
     }
 
     @Override
     public void animateOpen(Workspace workspace, int[] folderTouch) {
         super.animateOpen(workspace, folderTouch);
+        mLayoutState = (isConnected() || getItemCount() > 0) ? LayoutStates.FOLDER_CONTENT : LayoutStates.NO_CONNECTION;
+        showViews();
+    }
 
-        mFolderHelpText.setText(getResources().getString(R.string.recommendations_help_text));
-        mFolderHelpText.setVisibility(GONE);
-        mCloseInfoButton.setVisibility(GONE);
-        mContentScrollView.setVisibility(VISIBLE);
-        mContent.setVisibility(VISIBLE);
-        mFolderInfo.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
-        this.invalidate();
+    @Override
+    public void onAdd(ShortcutInfo item) {
+        item.setIcon(applyBadgeToShortcutIcon(item));
+        super.onAdd(item);
+
+        // Register each view with our updater for click handling.
+        RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+        updater.registerViewForInteraction(getViewForInfo(item), item.getIntent());
+
+        final int count = getItemCount();
+        Log.e(TAG, "RemoteFolder onAdd(): content size: " + count);
+
+        // No need for an isConnected() check since we just got an item, but don't update if showing help UX
+        if (mLayoutState != LayoutStates.SHOW_HELP) {
+            mLayoutState = LayoutStates.FOLDER_CONTENT;
+            requestLayout();
+        }
+    }
+
+    private boolean isConnected() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnected();
+    }
+
+    private Bitmap applyBadgeToShortcutIcon(ShortcutInfo info) {
+
+        int downloadIconDimens = convertDpToPx(16);     // 24dp height/width in pixels
+        int mainImageDimens = downloadIconDimens * 2;   // double the icon height/width
+
+        // Make sure the badge is scaled to the parent icon, then offset so it looks offset in the corner
+        Bitmap badge = BitmapFactory.decodeResource(getResources(), R.drawable.download_badge);
+        badge = Bitmap.createScaledBitmap(badge, downloadIconDimens, downloadIconDimens, false);
+
+        LauncherAppState app = LauncherAppState.getInstance();
+        IconCache iconCache = app.getIconCache();
+        Bitmap mainImage = Bitmap.createScaledBitmap(info.getIcon(iconCache), mainImageDimens, mainImageDimens, false);
+
+        int offsetX = badge.getWidth() / 2;
+        int offsetY = badge.getHeight() / 2;
+
+        int width = mainImage.getWidth() + (offsetX * 2);
+        int height = mainImage.getHeight()  + (offsetY * 2);
+
+        Bitmap finalImage = Bitmap.createBitmap(width, height, mainImage.getConfig());
+        Canvas canvas = new Canvas(finalImage);
+        canvas.drawBitmap(mainImage, offsetX, offsetY, null);
+        canvas.drawBitmap(badge, canvas.getWidth() - badge.getWidth(), canvas.getHeight() - badge.getHeight(), null);
+
+        mainImage.recycle();
+        badge.recycle();
+
+        return finalImage;
+    }
+
+    private int convertDpToPx(int dp) {
+        return  (int) (getResources().getDisplayMetrics().density * dp + 0.5f);
+    }
+
+    private void showViews() {
+
+        if (getItemCount() == 0) {
+            setupContentForNoItems();
+        }
+
+        if (mLayoutState == LayoutStates.FOLDER_CONTENT) {
+            mContentScrollView.setVisibility(VISIBLE);
+            mContent.setVisibility(VISIBLE);
+            mFolderHelpText.setVisibility(GONE);
+            mFolderInfoIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
+            mRequiredIcon.setVisibility(VISIBLE);
+        } else if (mLayoutState == LayoutStates.NO_CONNECTION) {
+            mFolderHelpText.setText(getResources().getString(R.string.offline_help_text));
+            mFolderHelpText.setVisibility(VISIBLE);
+            mContentScrollView.setVisibility(GONE);
+            mContent.setVisibility(GONE);
+            mFolderInfoIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_info_normal_holo));
+            mRequiredIcon.setVisibility(VISIBLE);
+        } else if (mLayoutState == LayoutStates.SHOW_HELP) {
+            mFolderHelpText.setText(getResources().getString(R.string.recommendations_help_text));
+            mFolderHelpText.setVisibility(VISIBLE);
+            mContentScrollView.setVisibility(GONE);
+            mContent.setVisibility(GONE);
+            mFolderInfoIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_clear_normal_holo));
+            mRequiredIcon.setVisibility(GONE);
+        }
+
+        requestLayout();
+    }
+
+    private void setupContentForNoItems() {
+        setupContentDimensions(MAX_ITEMS);
+        DragLayer.LayoutParams lp = (DragLayer.LayoutParams) getLayoutParams();
+        if (lp == null) {
+            lp = new DragLayer.LayoutParams(0, 0);
+            lp.customPosition = true;
+            setLayoutParams(lp);
+        }
+        centerAboutIcon();
+    }
+
+    private void setupContentForItems(int width, int height) {
+        int count = getItemCount();
+        if (count == 0) {
+            count = MAX_ITEMS;
+        }
+        setupContentDimensions(count);
+        DragLayer.LayoutParams lp = (DragLayer.LayoutParams) getLayoutParams();
+        if (lp == null) {
+            lp = new DragLayer.LayoutParams(0, 0);
+            lp.customPosition = true;
+            setLayoutParams(lp);
+        }
+        centerAboutIcon(width, height);
+    }
+
+    @Override
+    void bind(final FolderInfo info) {
+        super.bind(info);
+
+        final ArrayList<ShortcutInfo> children = info.contents;
+        if (info.isRemote() && children.isEmpty()) {
+            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+            updater.requestSync(getContext(), RemoteFolder.MAX_ITEMS, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                @Override
+                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+                    if (remoteFolderInfoList == null || remoteFolderInfoList.isEmpty()) {
+                        return; // the updater may return null if we should already have valid data
+                    }
+                    children.clear();
+                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getIcon(),
+                                UserHandleCompat.myUserHandle());
+                        children.add(shortcutInfo);
+
+                        View child = mLauncher.createShortcut(R.layout.application, mContent,
+                                shortcutInfo);
+                        remoteFolderInfo.setRecommendationData(child);
+                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
+                                info.screenId, info.cellX, info.cellY);
+                    }
+                    info.contents = children;
+                    bind(info);
+                }
+
+                @Override
+                public void onFailure(String error) {
+                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+                }
+            });
+        }
+    }
+
+    @Override
+    void bind(final FolderInfo info) {
+        super.bind(info);
+
+        final ArrayList<ShortcutInfo> children = info.contents;
+        if (info.isRemote() && children.isEmpty()) {
+            RemoteFolderUpdater updater = RemoteFolderUpdater.getInstance();
+            updater.requestSync(getContext(), RemoteFolder.MAX_ITEMS, new RemoteFolderUpdater.RemoteFolderUpdateListener() {
+                @Override
+                public void onSuccess(List<RemoteFolderUpdater.RemoteFolderInfo> remoteFolderInfoList) {
+                    if (remoteFolderInfoList == null || remoteFolderInfoList.isEmpty()) {
+                        return; // the updater may return null if we should already have valid data
+                    }
+                    children.clear();
+                    for (RemoteFolderUpdater.RemoteFolderInfo remoteFolderInfo : remoteFolderInfoList) {
+                        ShortcutInfo shortcutInfo = new ShortcutInfo(remoteFolderInfo.getIntent(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getTitle(),
+                                remoteFolderInfo.getIcon(),
+                                UserHandleCompat.myUserHandle());
+                        children.add(shortcutInfo);
+
+                        View child = mLauncher.createShortcut(R.layout.application, mContent,
+                                shortcutInfo);
+                        remoteFolderInfo.setRecommendationData(child);
+                        LauncherModel.addOrMoveItemInDatabase(mLauncher, shortcutInfo, info.container,
+                                info.screenId, info.cellX, info.cellY);
+                    }
+                    info.contents = children;
+                    bind(info);
+                }
+
+                @Override
+                public void onFailure(String error) {
+                    Log.e(TAG, "Failed to sync data for the remote folder's shortcuts. Reason: " + error);
+                }
+            });
+        }
     }
 }
