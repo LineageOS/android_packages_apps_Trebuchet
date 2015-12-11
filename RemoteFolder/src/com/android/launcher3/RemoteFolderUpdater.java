@@ -15,7 +15,7 @@ public class RemoteFolderUpdater {
     private static RemoteFolderUpdater sInstance;
 
     public interface RemoteFolderUpdateListener {
-        void onSuccess(List<RemoteFolderInfo> remoteFolderInfoList);
+        void onSuccess(List<RemoteFolderInfo> remoteFolderInfoList, boolean usingCache);
         void onFailure(String error);
     }
 
@@ -52,6 +52,14 @@ public class RemoteFolderUpdater {
      */
     public void registerViewForInteraction(View view, Intent intent) {
         Log.e(TAG, "Couldn't register view for user interaction, RemoteFolderUpdater may not have been properly setup");
+    }
+
+    /**
+     * Return true if the necessary number of items have loaded and was refreshed within the last hour.
+     * @return true if we have enough items with loaded icons
+     */
+    public boolean canUseCache(int requestedSize) {
+        return false;
     }
 
     /**

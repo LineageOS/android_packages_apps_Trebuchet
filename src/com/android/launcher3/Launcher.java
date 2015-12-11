@@ -2465,6 +2465,8 @@ public class Launcher extends Activity
             mLauncherCallbacks.onDestroy();
         }
 
+        mRemoteFolderManager.setRemoteFolder(null);
+
         unregisterReceiver(protectedAppsChangedReceiver);
     }
 
@@ -3244,7 +3246,7 @@ public class Launcher extends Activity
             openFolder(folderIcon, folderTouchXYOffset);
 
             if (info.isRemote()) {
-                mModel.syncRemoteFolder(info, this);
+                RemoteFolderManager.syncRemoteFolder(info, this);
             }
         } else {
             // Find the open folder...
