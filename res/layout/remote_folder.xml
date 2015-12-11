@@ -23,73 +23,62 @@ android:paddingTop="16dp"
 android:paddingStart="@dimen/folder_preview_padding"
 android:paddingEnd="@dimen/folder_preview_padding"
 android:paddingBottom="@dimen/folder_preview_padding"
-android:layout_gravity="center"
+android:layout_gravity="right"
 android:background="@drawable/folder_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/folder_info_container"
-        android:background="@android:color/holo_green_dark">
+        android:id="@+id/folder_info_container">
 
-        <!-- TODO replace background with android:background="@android:color/transparent" -->
+        <ImageView
+            android:id="@+id/folder_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:padding="@dimen/folder_name_padding"
+            android:src="@drawable/ic_launcher_info_normal_holo"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"/>
+
         <com.android.launcher3.FolderEditText
             android:id="@+id/folder_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_orange_dark"
+            android:background="@android:color/transparent"
             android:fontFamily="sans-serif-condensed"
             android:hint="@string/folder_hint_text"
             android:imeOptions="flagNoExtractUi"
-            android:paddingBottom="@dimen/folder_name_padding"
             android:paddingTop="@dimen/folder_name_padding"
-            android:layout_marginStart="@dimen/folder_name_padding"
-            android:layout_marginEnd="@dimen/folder_name_padding"
+            android:paddingBottom="@dimen/folder_name_padding"
+            android:paddingStart="@dimen/folder_name_padding"
+            android:paddingEnd="@dimen/folder_name_padding"
             android:gravity="center_vertical"
             android:singleLine="true"
             android:textColor="@color/workspace_icon_text_color"
             android:textColorHighlight="#ffCCCCCC"
             android:textColorHint="#78ffffff"
             android:textCursorDrawable="@null"
-            android:textSize="18sp"
-            android:layout_alignParentTop="true"
+            android:textSize="20sp"
+            android:layout_alignTop="@id/folder_info"
+            android:layout_toLeftOf="@id/folder_info"
             android:layout_alignParentLeft="true"/>
-
-
-        <ImageView
-            android:id="@+id/folder_info"
-            android:layout_width="@dimen/folder_lock_icon"
-            android:layout_height="@dimen/folder_lock_icon"
-            android:padding="@dimen/folder_name_padding"
-            android:src="@drawable/ic_launcher_info_normal_holo"
-            android:layout_alignTop="@id/folder_name"
-            android:layout_alignParentRight="true"/>
 
         <TextView
             android:id="@+id/help_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/folder_name_padding"
-            android:layout_marginEnd="@dimen/folder_name_padding"
+            android:padding="@dimen/folder_name_padding"
             android:text="@string/recommendations_help_text"
+            android:autoLink="web"
             android:fontFamily="sans-serif-condensed"
             android:textSize="18sp"
+            android:paddingBottom="@dimen/folder_name_padding"
             android:textColor="@color/workspace_icon_text_color"
             android:textColorHighlight="#ffCCCCCC"
             android:textColorHint="#78ffffff"
             android:layout_below="@id/folder_info"
-            android:background="@android:color/holo_purple"
-            />
-
-        <Button
-            android:id="@+id/close_info_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minHeight="@dimen/folder_lock_icon"
-            android:text="@string/close"
-            android:layout_below="@id/help_text_view"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
             />
 
     </RelativeLayout>
@@ -98,15 +87,24 @@ android:background="@drawable/folder_bg">
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@android:color/holo_red_dark">
+        android:layout_gravity="center_horizontal">
 
         <com.android.launcher3.CellLayout
             android:id="@+id/folder_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:cacheColorHint="#ff333333"
-            android:hapticFeedbackEnabled="false"
-            android:background="@android:color/holo_blue_bright"/>
+            android:hapticFeedbackEnabled="false"/>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/required_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:padding="@dimen/folder_name_padding"
+        android:src="@drawable/triangle_icon"
+        android:layout_gravity="right"/>
+
 </com.android.launcher3.RemoteFolder>
