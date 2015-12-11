@@ -74,6 +74,8 @@ import com.android.launcher3.compat.PackageInstallerCompat.PackageInstallInfo;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.settings.SettingsProvider;
 
+import com.android.launcher3.RemoteFolderUpdater;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;

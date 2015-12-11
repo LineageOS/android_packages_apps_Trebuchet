@@ -88,9 +88,9 @@
     <!-- Search Manager doesn't exist -->
     <string name="search_activity_not_found">A search activity could not be found!</string>
 
-    <!-- Featured Apps Strings -->
+    <!-- Featured Apps Strings, for CyanogenOS (but not CyanogenMod) -->
     <string name="recommendations_title">Featured Apps</string>
-    <string name="recommendations_help_text">This is a dynamic folder that will automatically load with recommended and featured apps from us at Cyanogen Inc. If you would not like to receive these awesome offers, simply disable below and the folder will be removed.</string>
-    <string name="disable">DISABLE</string>
-    <string name="close">CLOSE</string>
+    <string name="recommendations_help_text">This is a dynamic folder that automatically loads with recommended and featured apps from us at Cyanogen Inc. If you would not like to receive these awesome offers, close this window and drag it to the top of the home screen.\n\nhttps://m.facebook.com/ads/ad_choices</string>
+    <string name="offline_help_text">Looks like you\'re offline, you need to be online to receive recommended apps and games.</string>
+    <string name="required_icon_link">https://m.facebook.com/ads/ad_choices</string>
 </resources>
