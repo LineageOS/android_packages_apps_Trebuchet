@@ -24,4 +24,13 @@ public class RemoteFolderManager {
      * Called when the remote folder is dropped into the delete area on the workspace.
      */
     public void onFolderDeleted() { }
+
+    /**
+     * Get the original icons (with no badge) to be used for the RemoteFolder's FolderIcon
+     * @param items views currently in the folder
+     * @return an array of drawables for each view
+     */
+    public Drawable[] getDrawablesForFolderIcon(ArrayList<View> items) {
+        return null;
+    }
 }

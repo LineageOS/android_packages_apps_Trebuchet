@@ -77,7 +77,6 @@
     <uses-permission android:name="com.android.launcher3.permission.RECEIVE_FIRST_LOAD_BROADCAST" />
     <uses-permission android:name="cyanogenmod.permission.PROTECTED_APP" />
     <uses-permission android:name="com.cyngn.stats.SEND_ANALYTICS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.android.launcher3.LauncherApplication"
@@ -188,7 +187,7 @@
             android:name="com.android.launcher3.stats.internal.service.AggregationIntentService"
             android:exported="false">
             <intent-filter>
-               <action android:name="com.cyanogenmod.trebuchet.AGGREGATE_AND_TRACK" />
+                <action android:name="com.cyanogenmod.trebuchet.AGGREGATE_AND_TRACK" />
             </intent-filter>
         </service>
 
@@ -263,7 +262,7 @@
             android:readPermission="com.android.launcher3.permission.READ_SETTINGS" />
 
         <meta-data android:name="android.nfc.disable_beam_default"
-                       android:value="true" />
+            android:value="true" />
 
         <meta-data android:name="com.google.android.backup.api_key"
             android:value="@string/backup_api_key" />
