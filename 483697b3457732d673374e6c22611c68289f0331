@@ -1,0 +1,210 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_9f6c979d",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Duplicate from line 71.",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bf69538c",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Weren\u0027t we going to move this to the overlay?",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bf4b93ae",
+        "filename": "res/layout/remote_folder.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "It feels like we\u0027re duplicating a lot of code here that\u0027s not specific to RemoteFolder. Couldn\u0027t we just reuse the regular user_folder.xml, but programatically add our special remote views when it\u0027s created?",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5fc60f19",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Considering your comment here, I feel like these should be in overlay.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 72
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ff683b22",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Is this the final string? I think it would be more important to mention the toggle in home screen settings. Dragging to delete the folder should be intuitive, and if you don\u0027t mention the toggle, they may not realize how to re-enable it.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 320
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_dfd9bff4",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Why is a child null? This seems very unsafe.",
+      "range": {
+        "startLine": 1666,
+        "startChar": 16,
+        "endLine": 1666,
+        "endChar": 54
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5fefef86",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4303,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "We should move this outside of LauncherModel, since we don\u0027t want to make LauncherModel any bigger and more confusing. I would suggest RemoteFolderManager.",
+      "range": {
+        "startLine": 4262,
+        "startChar": 4,
+        "endLine": 4303,
+        "endChar": 5
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_1fe9677f",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Related to my comment in remote_folder.xml, I think we are duplicating a lot of functionality here. Lets discuss simplifying the XML first, then we may be able to simplify here as well.",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ffd6fbc3",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "This same function is in RemoteFolderUpdater. Can we make it a util class instead?",
+      "range": {
+        "startLine": 283,
+        "startChar": 4,
+        "endLine": 287,
+        "endChar": 5
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7ff42b5c",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-12T07:48:41Z",
+      "side": 1,
+      "message": "Already exists in Utilities.java",
+      "range": {
+        "startLine": 319,
+        "startChar": 4,
+        "endLine": 321,
+        "endChar": 5
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
