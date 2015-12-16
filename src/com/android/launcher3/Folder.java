@@ -64,6 +64,7 @@ import android.widget.TextView;
 import com.android.launcher3.FolderInfo.FolderListener;
 import com.android.launcher3.compat.UserHandleCompat;
 import com.android.launcher3.settings.SettingsProvider;
+
 import com.android.launcher3.RemoteFolderUpdater;
 
 import java.util.ArrayList;
