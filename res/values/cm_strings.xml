@@ -71,6 +71,9 @@
     <string name="fast_scroller_type_horizontal">Horizontal</string>
     <string name="fast_scroller_type_vertical">Vertical</string>
 
+    <!-- Drawer search bar -->
+    <string name="app_drawer_search_text">Search bar</string>
+
     <!-- Search Manager doesn't exist -->
     <string name="search_activity_not_found">A search activity could not be found!</string>
 </resources>

@@ -305,6 +305,10 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
         updateBackgroundAndPaddings();
     }
 
+    public void setSearchBarContainerViewVisibility(int visibility) {
+        mSearchBarContainerView.setVisibility(visibility);
+    }
+
     /**
      * Scrolls this list view to the top.
      */
