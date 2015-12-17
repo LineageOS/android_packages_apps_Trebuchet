@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_18274567",
+        "filename": "src/com/android/launcher3/BaseContainerView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 13766
+      },
+      "writtenOn": "2015-12-17T23:28:40Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I understood the difference between scroller and scrubber in this context. Maybe the horizontal scrubber variable should be renamed?",
+      "range": {
+        "startLine": 115,
+        "startChar": 41,
+        "endLine": 115,
+        "endChar": 42
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_382c8946",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 13766
+      },
+      "writtenOn": "2015-12-17T23:28:40Z",
+      "side": 1,
+      "message": "Sorry I added this needless newline in I48711aea2b15bf535815d0e453ac33079af26eca",
+      "range": {
+        "startLine": 300,
+        "startChar": 30,
+        "endLine": 300,
+        "endChar": 31
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_d820ed4c",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13766
+      },
+      "writtenOn": "2015-12-17T23:28:40Z",
+      "side": 1,
+      "message": "This comes from my editor. But apart from that all other files also seem to have trailing newlines",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 434,
+        "endChar": 1
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_f81db10f",
+        "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13766
+      },
+      "writtenOn": "2015-12-17T23:28:40Z",
+      "side": 1,
+      "message": "I gues this should have been here. Now it\u0027s in the same order as in the GUI.",
+      "range": {
+        "startLine": 38,
+        "startChar": 60,
+        "endLine": 38,
+        "endChar": 76
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
