@@ -16,6 +16,24 @@
       "revId": "b6218456c7cc64250999da52b6f431190a27800b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a2906497",
+        "filename": "src/com/android/launcher3/AutoFitTextView.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-17T05:12:22Z",
+      "side": 1,
+      "message": "The super class definition is also public. I\u0027m just routing this method to the AutoFit-specific implementation. It\u0027s essentially the same as the setText method above it, but accepts the pixel size directly instead of doing dimension conversion.",
+      "parentUuid": "df7087c5_e2965c95",
+      "revId": "b6218456c7cc64250999da52b6f431190a27800b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
