@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_4274e899",
+        "filename": "res/layout/remote_folder.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-17T05:00:56Z",
+      "side": 1,
+      "message": "A simple include or merge won\u0027t work easily here, so I just rolled my own version of the layout in order to create that RemoteFolder view",
+      "parentUuid": "3fa0c359_bf4b93ae",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_5fc60f19",
         "filename": "res/values/cm_strings.xml",
         "patchSetId": 6
@@ -64,6 +82,30 @@
       "writtenOn": "2015-12-12T07:48:41Z",
       "side": 1,
       "message": "Considering your comment here, I feel like these should be in overlay.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 72
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a262a4d7",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-17T05:00:56Z",
+      "side": 1,
+      "message": "Only added here to prevent any potential compilation errors when not building with  the overlay",
+      "parentUuid": "3fa0c359_5fc60f19",
       "range": {
         "startLine": 91,
         "startChar": 4,
@@ -116,6 +158,47 @@
         "endLine": 1666,
         "endChar": 54
       },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_629a4cc6",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-17T05:00:56Z",
+      "side": 1,
+      "message": "It was the result in a race condition during onSuccess() of requestSync(). If this is called after clearing a remote folder\u0027s FolderInfo contents but before our new ones have been added, we simply don\u0027t do anything.",
+      "parentUuid": "3fa0c359_dfd9bff4",
+      "range": {
+        "startLine": 1666,
+        "startChar": 16,
+        "endLine": 1666,
+        "endChar": 54
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_62832c58",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4278,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-17T05:00:56Z",
+      "side": 1,
+      "message": "Not using a for loop prevents a ConcurrentModificationException, while still allowing the folderInfo\u0027s listeners to appropriately handle the size change.",
       "revId": "483697b3457732d673374e6c22611c68289f0331",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
