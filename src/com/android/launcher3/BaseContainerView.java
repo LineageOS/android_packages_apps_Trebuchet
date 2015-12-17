@@ -105,32 +105,44 @@ public abstract class BaseContainerView extends LinearLayout implements Insettab
 
     public final void setScroller() {
         Context context = getContext();
-        boolean useHorizontalScroller= SettingsProvider.getBoolean(context,
-                SettingsProvider.SETTINGS_UI_USE_HORIZONTAL_SCRUBBER,
-                R.bool.preferences_interface_use_horizontal_scrubber_default);
-        mUseScrubber = useHorizontalScroller;
-        if (mUseScrubber) {
-            ViewStub stub = (ViewStub) findViewById(R.id.scrubber_container_stub);
-            mScrubberContainerView = stub.inflate();
-            if (mScrubberContainerView == null) {
-                throw new IllegalStateException(
-                        "Layout must contain an id: R.id.scrubber_container");
-            }
-            mScrubber = (BaseRecyclerViewScrubber)
-                    mScrubberContainerView.findViewById(R.id.base_scrubber);
-            BaseRecyclerView recyclerView = getRecyclerView();
-            if (recyclerView != null) {
-                mScrubber.setRecycler(recyclerView);
-                mScrubber
-                        .setScrubberIndicator((TextView) mScrubberContainerView
-                                .findViewById(R.id.scrubberIndicator));
-                mScrubber.updateSections();
+        boolean useScroller = SettingsProvider.getBoolean(context,
+                SettingsProvider.SETTINGS_UI_USE_SCRUBBER,
+                R.bool.preferences_interface_use_scrubber_default);
+
+        if (useScroller) {
+            boolean useHorizontalScroller= SettingsProvider.getBoolean(context,
+                    SettingsProvider.SETTINGS_UI_USE_HORIZONTAL_SCRUBBER,
+                    R.bool.preferences_interface_use_horizontal_scrubber_default);
+            mUseScrubber = useHorizontalScroller;
+            if (mUseScrubber) {
+                ViewStub stub = (ViewStub) findViewById(R.id.scrubber_container_stub);
+                mScrubberContainerView = stub.inflate();
+                if (mScrubberContainerView == null) {
+                    throw new IllegalStateException(
+                            "Layout must contain an id: R.id.scrubber_container");
+                }
+                mScrubber = (BaseRecyclerViewScrubber)
+                        mScrubberContainerView.findViewById(R.id.base_scrubber);
+                BaseRecyclerView recyclerView = getRecyclerView();
+                if (recyclerView != null) {
+                    mScrubber.setRecycler(recyclerView);
+                    mScrubber
+                            .setScrubberIndicator((TextView) mScrubberContainerView
+                                    .findViewById(R.id.scrubberIndicator));
+                    mScrubber.updateSections();
+                }
+            } else {
+                removeView(mScrubberContainerView);
+                BaseRecyclerView recyclerView = getRecyclerView();
+                if (recyclerView != null) {
+                    recyclerView.setUseScrollbar(true);
+                }
             }
         } else {
             removeView(mScrubberContainerView);
             BaseRecyclerView recyclerView = getRecyclerView();
             if (recyclerView != null) {
-                recyclerView.setUseScrollbar(true);
+                recyclerView.setUseScrollbar(false);
             }
         }
     }
