@@ -105,11 +105,14 @@ public abstract class BaseContainerView extends LinearLayout implements Insettab
 
     public final void setScroller() {
         Context context = getContext();
-        boolean useHorizontalScroller= SettingsProvider.getBoolean(context,
+        boolean useScroller = SettingsProvider.getBoolean(context,
+                SettingsProvider.SETTINGS_UI_USE_SCROLLER,
+                R.bool.preferences_interface_use_scroller_default);
+        mUseScrubber = SettingsProvider.getBoolean(context,
                 SettingsProvider.SETTINGS_UI_USE_HORIZONTAL_SCRUBBER,
                 R.bool.preferences_interface_use_horizontal_scrubber_default);
-        mUseScrubber = useHorizontalScroller;
-        if (mUseScrubber) {
+
+        if (useScroller && mUseScrubber) {
             ViewStub stub = (ViewStub) findViewById(R.id.scrubber_container_stub);
             mScrubberContainerView = stub.inflate();
             if (mScrubberContainerView == null) {
@@ -130,7 +133,7 @@ public abstract class BaseContainerView extends LinearLayout implements Insettab
             removeView(mScrubberContainerView);
             BaseRecyclerView recyclerView = getRecyclerView();
             if (recyclerView != null) {
-                recyclerView.setUseScrollbar(true);
+                recyclerView.setUseScrollbar(useScroller);
             }
         }
     }
