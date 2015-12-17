@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_e2965c95",
+        "filename": "src/com/android/launcher3/AutoFitTextView.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-17T05:08:34Z",
+      "side": 1,
+      "message": "any reason why this is opened up to public?",
+      "revId": "b6218456c7cc64250999da52b6f431190a27800b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
