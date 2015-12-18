@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_9bc82f75",
+        "filename": "src/com/android/launcher3/AppDrawerIconView.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-18T06:07:27Z",
+      "side": 1,
+      "message": "It\u0027s used in the view bind and long click of AppDrawerListAdapter.",
+      "parentUuid": "bf659307_d85ead44",
+      "revId": "b6218456c7cc64250999da52b6f431190a27800b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_fbe28b01",
         "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-18T06:02:00Z",
       "side": 1,
       "message": "this is definitely an improvement.  i think we go even go one step further and add a compareTo method to your Bucket class that orders by index first and then name.  Then we can sort the entire array, and make a linear pass to construct mHeaderList.\n\nperhaps extra optimization here doesn\u0027t really do much though...",
+      "revId": "b6218456c7cc64250999da52b6f431190a27800b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_fb3a8b32",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-18T06:07:27Z",
+      "side": 1,
+      "message": "My goal with this was primarily just to remove the recursion. Adding the Bucket class just made it easier to view and understand the code at the time. We could definitely add optimization to many parts of this class, but I was concerned about spending too much time refactoring. I believe you told me not to do a refactor if it was going to be too much work :)\n\nBut I saw unnecessary recursion, and since I had to modify the method anyway, I decided to restructure it.",
+      "parentUuid": "bf659307_fbe28b01",
       "revId": "b6218456c7cc64250999da52b6f431190a27800b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
