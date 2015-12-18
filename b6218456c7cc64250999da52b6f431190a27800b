@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_7ebc29bb",
+        "filename": "src/com/android/launcher3/AppDrawerListAdapter.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-18T08:36:41Z",
+      "side": 1,
+      "message": "fair enough",
+      "parentUuid": "bf659307_fb3a8b32",
+      "revId": "b6218456c7cc64250999da52b6f431190a27800b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_e2965c95",
         "filename": "src/com/android/launcher3/AutoFitTextView.java",
         "patchSetId": 8
