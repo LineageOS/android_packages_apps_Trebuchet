@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_982035fa",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2015-12-18T03:30:04Z",
+      "side": 1,
+      "message": "If you do a git add -p or --patch, you can select what changes you want and ignore the final line conflict of such cases.",
+      "parentUuid": "bf659307_d820ed4c",
+      "range": {
+        "startLine": 434,
+        "startChar": 0,
+        "endLine": 434,
+        "endChar": 1
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_f81db10f",
         "filename": "src/com/android/launcher3/settings/SettingsProvider.java",
         "patchSetId": 2
