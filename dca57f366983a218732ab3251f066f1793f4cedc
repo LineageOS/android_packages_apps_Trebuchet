@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_f87291e3",
+        "filename": "src/com/android/launcher3/widget/WidgetsContainerView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2015-12-18T03:35:28Z",
+      "side": 1,
+      "message": "If the variable name doesn\u0027t suit everyone, feel free to change it here and in the AllAppsContainerView.",
+      "revId": "dca57f366983a218732ab3251f066f1793f4cedc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
