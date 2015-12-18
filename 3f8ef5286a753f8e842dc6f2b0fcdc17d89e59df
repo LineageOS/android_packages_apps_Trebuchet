@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_7893e150",
+        "filename": "src/com/android/launcher3/BaseContainerView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2015-12-18T01:09:19Z",
+      "side": 1,
+      "message": "Scroller is the vertical one, Scrubber is the horizontal one.",
+      "parentUuid": "bf659307_18274567",
+      "range": {
+        "startLine": 115,
+        "startChar": 41,
+        "endLine": 115,
+        "endChar": 42
+      },
+      "revId": "3f8ef5286a753f8e842dc6f2b0fcdc17d89e59df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_382c8946",
         "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
         "patchSetId": 2
