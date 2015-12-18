@@ -136,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_180d0590",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-18T01:46:48Z",
+      "side": 1,
+      "message": "Then we should do the same thing we do for the java overlays and keep them blank.",
+      "parentUuid": "df7087c5_a262a4d7",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 72
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_ff683b22",
         "filename": "res/values/cm_strings.xml",
         "patchSetId": 6
