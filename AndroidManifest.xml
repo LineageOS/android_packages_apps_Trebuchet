@@ -55,6 +55,7 @@
             android:resizeableActivity="true"
             android:resumeWhilePausing="true"
             android:taskAffinity=""
+            android:excludeFromRecents="true"
             android:exported="true"
             android:enabled="true">
             <intent-filter>
