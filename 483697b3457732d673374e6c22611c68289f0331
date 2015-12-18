@@ -307,6 +307,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_78676127",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4278,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2015-12-18T03:21:54Z",
+      "side": 1,
+      "message": "That just clears the ArrayList, but does not notify any listeners. Ideally we would have a removeAll() method, rather than notifying listeners when each individual item is removed.",
+      "parentUuid": "bf659307_58bdbd66",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_5fefef86",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 6
