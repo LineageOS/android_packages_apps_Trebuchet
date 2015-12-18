@@ -289,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_58bdbd66",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4278,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-18T03:20:18Z",
+      "side": 1,
+      "message": "looks like we were using folderInfo.contents.clear() before, is there a reason that doesn\u0027t work?",
+      "parentUuid": "df7087c5_820a0088",
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_5fefef86",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 6
@@ -300,6 +318,30 @@
       "writtenOn": "2015-12-12T07:48:41Z",
       "side": 1,
       "message": "We should move this outside of LauncherModel, since we don\u0027t want to make LauncherModel any bigger and more confusing. I would suggest RemoteFolderManager.",
+      "range": {
+        "startLine": 4262,
+        "startChar": 4,
+        "endLine": 4303,
+        "endChar": 5
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_78c201ec",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 4303,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-18T03:20:18Z",
+      "side": 1,
+      "message": "Agree, if we can minimize changes in LauncherModel it will make future merges with upstream easier.",
+      "parentUuid": "3fa0c359_5fefef86",
       "range": {
         "startLine": 4262,
         "startChar": 4,
@@ -340,6 +382,30 @@
       "writtenOn": "2015-12-18T01:38:14Z",
       "side": 1,
       "message": "I took the time to dig into this, and I must insist that this code is not necessary. The only reason that Folder implements a custom onMeasure is because it attempts to keep a minimum size on the folder. I say \"attempts\" because it doesn\u0027t even accomplish that. The only reason that this was never noticed was because we do not allow empty folders, and once a folder contains only one item, it is turned into the item itself. I believe you may have falsely assumed that the onMeasure Folder code was necessary, but it is not. If we stop attempting to measure ourselves and let LinearLayout handle the measuring itself, then I am confident everything will work fine. If we really truly need to enforce a minimum folder size, then we should be doing this in CellLayout, not Folder. If you need some help understanding my logic, please let me know, and we can do some pair programming.",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 75
+      },
+      "revId": "483697b3457732d673374e6c22611c68289f0331",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_f8adb131",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-18T03:20:18Z",
+      "side": 1,
+      "message": "yes let\u0027s see if we can get rid of this",
+      "parentUuid": "df7087c5_cdc10931",
       "range": {
         "startLine": 110,
         "startChar": 4,
