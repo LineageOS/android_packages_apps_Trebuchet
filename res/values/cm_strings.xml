@@ -88,7 +88,7 @@
     <!-- Search Manager doesn't exist -->
     <string name="search_activity_not_found">A search activity could not be found!</string>
 
-    <!-- Featured Apps Strings, for CyanogenOS (but not CyanogenMod) -->
+    <!-- Featured Apps Strings -->
     <string name="recommendations_title"></string>
     <string name="recommendations_help_text"></string>
     <string name="offline_help_text"></string>

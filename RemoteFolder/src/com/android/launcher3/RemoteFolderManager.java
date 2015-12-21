@@ -33,4 +33,15 @@ public class RemoteFolderManager {
     public Drawable[] getDrawablesForFolderIcon(ArrayList<View> items) {
         return null;
     }
+
+    /**
+     * Called when the app drawer is opened.
+     */
+    public void onAppDrawerOpened() { }
+
+    /**
+     * Called when the info icon is clicked
+     */
+    public void onInfoIconClicked() { }
+
 }
