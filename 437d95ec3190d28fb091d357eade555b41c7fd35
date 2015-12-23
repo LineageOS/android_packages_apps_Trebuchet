@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f7f9b97_bd9de067",
+        "filename": "res/layout/remote_folder.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-23T07:56:58Z",
+      "side": 1,
+      "message": "were we gonna get rid of this file?",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_fd20384c",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-23T07:56:58Z",
+      "side": 1,
+      "message": "Are these whitespace changes coming from your IDE?  We should avoid changing whitespace in unrelated parts of the code because it will cause merge conflicts later on (when we try to cherry pick this to cm13 for instance).\n\nalso this is causing the line to be over 100 char :)",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_1d917453",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-23T07:56:58Z",
+      "side": 1,
+      "message": "any reason not to move this while method to RemoteFolderManager?",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_ddec5cf5",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2015-12-23T07:56:58Z",
+      "side": 1,
+      "message": "i think artem\u0027s proposal was to have onAdd return the view created in Folder.java, then we\u0027ll have a reference to it here.  seems like a small enough change and will be more efficient than iterating to find the view we just added.",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
