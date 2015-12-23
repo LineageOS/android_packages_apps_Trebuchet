@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f7f9b97_7d8e6828",
+        "filename": "res/layout/remote_folder.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-23T08:42:20Z",
+      "side": 1,
+      "message": "No, there are enough differences that I believe we need this file",
+      "parentUuid": "7f7f9b97_bd9de067",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f7f9b97_fd20384c",
         "filename": "src/com/android/launcher3/Folder.java",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-23T07:56:58Z",
       "side": 1,
       "message": "Are these whitespace changes coming from your IDE?  We should avoid changing whitespace in unrelated parts of the code because it will cause merge conflicts later on (when we try to cherry pick this to cm13 for instance).\n\nalso this is causing the line to be over 100 char :)",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_5d9dac57",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-23T08:42:20Z",
+      "side": 1,
+      "message": "I\u0027ll revert this and the other white space code",
+      "parentUuid": "7f7f9b97_fd20384c",
       "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7f7f9b97_9dbca4bc",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 4259,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-23T08:42:20Z",
+      "side": 1,
+      "message": "I can make the change",
+      "parentUuid": "7f7f9b97_1d917453",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f7f9b97_ddec5cf5",
         "filename": "src/com/android/launcher3/RemoteFolder.java",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-23T07:56:58Z",
       "side": 1,
       "message": "i think artem\u0027s proposal was to have onAdd return the view created in Folder.java, then we\u0027ll have a reference to it here.  seems like a small enough change and will be more efficient than iterating to find the view we just added.",
+      "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_fdf8387d",
+        "filename": "src/com/android/launcher3/RemoteFolder.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2015-12-23T08:42:20Z",
+      "side": 1,
+      "message": "So this FolderListener is called when the underlying ShortcutInfo is added to the LauncherModel, which the Folder needs to create the view. I can move the registerViewforInteraction() call to Folder though",
+      "parentUuid": "7f7f9b97_ddec5cf5",
       "revId": "437d95ec3190d28fb091d357eade555b41c7fd35",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
