@@ -35,11 +35,11 @@ public interface ITrackingAction {
      * Creates a new bundle used to tracking events
      *
      * @param trackingId {@link String}
-     * @param category {@link com.android.launcher3.stats.internal.model.TrackingEvent.Category}
+     * @param category {@link EventCategory}
      * @param eventList {@link List}
      * @return {@link List}
      */
-    List<Bundle> createTrackingBundles(String trackingId, TrackingEvent.Category category,
+    List<Bundle> createTrackingBundles(String trackingId, EventCategory category,
                                             List<TrackingEvent> eventList);
 
 }

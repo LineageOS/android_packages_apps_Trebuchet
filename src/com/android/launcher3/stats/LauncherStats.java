@@ -16,6 +16,7 @@
 
 package com.android.launcher3.stats;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
@@ -23,6 +24,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.android.launcher3.LauncherApplication;
 import com.android.launcher3.stats.internal.db.DatabaseHelper;
+import com.android.launcher3.stats.internal.model.EventCategory;
 import com.android.launcher3.stats.internal.model.TrackingEvent;
 
 /**
@@ -41,6 +43,9 @@ public class LauncherStats {
     public static final String ORIGIN_APPDRAWER = "appdrawer";
     public static final String ORIGIN_TREB_LONGPRESS = "trebuchet_longpress";
     public static final String ORIGIN_CHOOSER = "theme_chooser";
+    public static final String ORIGIN_SETTINGS = "settings";
+    public static final String ORIGIN_DRAG_DROP = "drag_drop";
+    public static final String ORIGIN_FOLDER = "folder";
 
     private static void log(String msg) throws IllegalArgumentException {
         if (TextUtils.isEmpty(msg)) {
@@ -101,17 +106,16 @@ public class LauncherStats {
     private static LauncherStats sInstance = null;
 
     // Members
-    private static WriteHandlerThread sHandlerThread = new WriteHandlerThread();
+    private static WriteHandlerThread sHandlerThread;
     private static WriteHandler sWriteHandler;
     private static DatabaseHelper sDatabaseHelper;
-    private LauncherApplication mApplication;
 
     /**
      * Send a message to the handler to store event data
      *
      * @param trackingEvent {@link TrackingEvent}
      */
-    private void sendStoreEventMessage(TrackingEvent trackingEvent) {
+    protected void sendStoreEventMessage(TrackingEvent trackingEvent) {
         log("Sending tracking event to handler: " + trackingEvent);
         Message msg = new Message();
         msg.what = MSG_STORE_EVENT;
@@ -134,32 +138,37 @@ public class LauncherStats {
     }
 
     /**
+     * Used only for overlay extensions
+     */
+    protected LauncherStats() { }
+
+    /**
      * Constructor
      *
-     * @param application {@link LauncherApplication} not null!
+     * @param context {@link Context} not null!
      * @throws IllegalArgumentException {@link IllegalArgumentException}
      */
-    private LauncherStats(LauncherApplication application) throws IllegalArgumentException {
-        if (application == null) {
-            throw new IllegalArgumentException("'application' cannot be null!");
+    private LauncherStats(Context context) throws IllegalArgumentException {
+        if (context == null) {
+            throw new IllegalArgumentException("'context' cannot be null!");
         }
-        mApplication = application;
-        sDatabaseHelper = new DatabaseHelper(application);
+        sDatabaseHelper = new DatabaseHelper(context);
+        sHandlerThread = new WriteHandlerThread();
         sHandlerThread.start();
         sWriteHandler = new WriteHandler();
     }
 
     /**
-     * Creates a singleton instance of the stats utility
+     * Gets a singleton instance of the stats utility
      *
-     * @param application {@link LauncherApplication} not null!
+     * @param context {@link Context} not null!
      * @return {@link LauncherStats}
      * @throws IllegalArgumentException {@link IllegalArgumentException}
      */
-    public static LauncherStats createInstance(LauncherApplication application)
+    public static LauncherStats getInstance(Context context)
             throws IllegalArgumentException {
         if (sInstance == null) {
-            sInstance = new LauncherStats(application);
+            sInstance = new LauncherStats(context);
         }
         return sInstance;
     }
@@ -174,7 +183,7 @@ public class LauncherStats {
         if (TextUtils.isEmpty(pkg)) {
             throw new IllegalArgumentException("'pkg' cannot be null!");
         }
-        TrackingEvent trackingEvent = new TrackingEvent(TrackingEvent.Category.WIDGET_ADD);
+        TrackingEvent trackingEvent = new TrackingEvent(EventCategory.WIDGET_ADD);
         trackingEvent.setMetaData(TrackingEvent.KEY_PACKAGE, pkg);
         sendStoreEventMessage(trackingEvent);
     }
@@ -189,7 +198,7 @@ public class LauncherStats {
         if (TextUtils.isEmpty(pkg)) {
             throw new IllegalArgumentException("'pkg' cannot be null!");
         }
-        TrackingEvent trackingEvent = new TrackingEvent(TrackingEvent.Category.WIDGET_REMOVE);
+        TrackingEvent trackingEvent = new TrackingEvent(EventCategory.WIDGET_REMOVE);
         trackingEvent.setMetaData(TrackingEvent.KEY_PACKAGE, pkg);
         sendStoreEventMessage(trackingEvent);
     }
@@ -208,7 +217,7 @@ public class LauncherStats {
         if (TextUtils.isEmpty(pkg)) {
             throw new IllegalArgumentException("'pkg' cannot be null!");
         }
-        TrackingEvent trackingEvent = new TrackingEvent(TrackingEvent.Category.APP_LAUNCH);
+        TrackingEvent trackingEvent = new TrackingEvent(EventCategory.APP_LAUNCH);
         trackingEvent.setMetaData(TrackingEvent.KEY_ORIGIN, origin);
         trackingEvent.setMetaData(TrackingEvent.KEY_PACKAGE, pkg);
         sendStoreEventMessage(trackingEvent);
@@ -220,7 +229,7 @@ public class LauncherStats {
      * @param origin {@link String} origin of the event
      */
     public void sendSettingsOpenedEvent(String origin) {
-        TrackingEvent trackingEvent = new TrackingEvent(TrackingEvent.Category.SETTINGS_OPEN);
+        TrackingEvent trackingEvent = new TrackingEvent(EventCategory.SETTINGS_OPEN);
         trackingEvent.setMetaData(TrackingEvent.KEY_ORIGIN, origin);
         sendStoreEventMessage(trackingEvent);
     }
@@ -231,7 +240,7 @@ public class LauncherStats {
      * @param origin {@link String} origin of the event
      */
     public void sendWallpaperChangedEvent(String origin) {
-        TrackingEvent trackingEvent = new TrackingEvent(TrackingEvent.Category.WALLPAPER_CHANGE);
+        TrackingEvent trackingEvent = new TrackingEvent(EventCategory.WALLPAPER_CHANGE);
         trackingEvent.setMetaData(TrackingEvent.KEY_ORIGIN, origin);
         sendStoreEventMessage(trackingEvent);
     }

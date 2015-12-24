@@ -29,12 +29,12 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.LauncherApplication;
 import com.android.launcher3.stats.external.StatsUtil;
 import com.android.launcher3.stats.external.TrackingBundle;
 import com.android.launcher3.stats.internal.db.DatabaseHelper;
 import com.android.launcher3.stats.internal.model.CountAction;
 import com.android.launcher3.stats.internal.model.CountOriginByPackageAction;
+import com.android.launcher3.stats.internal.model.EventCategory;
 import com.android.launcher3.stats.internal.model.ITrackingAction;
 import com.android.launcher3.stats.internal.model.TrackingEvent;
 import com.android.launcher3.stats.util.Logger;
@@ -103,7 +103,7 @@ public class AggregationIntentService extends IntentService {
     private void performAggregation() {
 
         // Iterate available categories
-        for (TrackingEvent.Category category : TrackingEvent.Category.values()) {
+        for (EventCategory category : EventCategory.values()) {
 
             // Fetch the events from the database based on the category
             List<TrackingEvent> eventList =
@@ -151,7 +151,7 @@ public class AggregationIntentService extends IntentService {
             return;
         }
         Bundle bundle = TrackingBundle
-                .createTrackingBundle(TRACKING_ID, TrackingEvent.Category.HOMESCREEN_PAGE.name(),
+                .createTrackingBundle(TRACKING_ID, EventCategory.HOMESCREEN_PAGE.name(),
                         "count");
         bundle.putString(TrackingEvent.KEY_VALUE, String.valueOf(pageCount));
         StatsUtil.sendEvent(this, bundle);
@@ -163,7 +163,7 @@ public class AggregationIntentService extends IntentService {
             return;
         }
         Bundle bundle = TrackingBundle
-                .createTrackingBundle(TRACKING_ID, TrackingEvent.Category.WIDGET.name(), "count");
+                .createTrackingBundle(TRACKING_ID, EventCategory.WIDGET.name(), "count");
         bundle.putString(TrackingEvent.KEY_VALUE, String.valueOf(widgetCount));
         StatsUtil.sendEvent(this, bundle);
     }

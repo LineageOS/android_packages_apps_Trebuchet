@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import com.android.launcher3.stats.internal.model.EventCategory;
 import com.android.launcher3.stats.internal.model.TrackingEvent;
 import com.android.launcher3.stats.util.Logger;
 
@@ -77,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @throws IllegalArgumentException {@link IllegalArgumentException}
      */
     public List<TrackingEvent> getTrackingEventsByCategory(int instanceId,
-                                TrackingEvent.Category category) throws IllegalArgumentException {
+                                EventCategory category) throws IllegalArgumentException {
         if (category == null) {
             throw new IllegalArgumentException("'category' cannot be null!");
         }

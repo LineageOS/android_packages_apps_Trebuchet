@@ -40,7 +40,7 @@ public class CountOriginByPackageAction implements ITrackingAction {
     }
 
     @Override
-    public List<Bundle> createTrackingBundles(String trackingId, TrackingEvent.Category category,
+    public List<Bundle> createTrackingBundles(String trackingId, EventCategory category,
                                               List<TrackingEvent> eventList) {
         // Make an origin mapper
         Map<String, Map<String, List<TrackingEvent>>> originEventMap =

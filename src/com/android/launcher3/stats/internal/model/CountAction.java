@@ -42,7 +42,7 @@ public class CountAction implements ITrackingAction {
     }
 
     @Override
-    public List<Bundle> createTrackingBundles(String trackingId, TrackingEvent.Category category,
+    public List<Bundle> createTrackingBundles(String trackingId, EventCategory category,
                                               List<TrackingEvent> eventList) {
 
         Map<String, List<TrackingEvent>> eventPackageMap =

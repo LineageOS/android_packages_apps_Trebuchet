@@ -40,18 +40,8 @@ public class TrackingEvent {
     private static final String TAG = TrackingEvent.class.getSimpleName();
 
     // Members
-    private Category mCategory;
+    private EventCategory mCategory;
     private final Map<String, String> mMetaData = new HashMap<String, String>();
-
-    public enum Category {
-        APP_LAUNCH,
-        WIDGET_ADD,
-        WIDGET_REMOVE,
-        SETTINGS_OPEN,
-        WALLPAPER_CHANGE,
-        HOMESCREEN_PAGE,
-        WIDGET,
-    }
 
     public static final String KEY_ORIGIN = TrackingBundle.KEY_METADATA_ORIGIN;
     public static final String KEY_VALUE = TrackingBundle.KEY_METADATA_VALUE;
@@ -60,10 +50,10 @@ public class TrackingEvent {
     /**
      * Constructor
      *
-     * @param category {@link TrackingEvent.Category}
+     * @param category {@link EventCategory}
      * @throws IllegalArgumentException {@link IllegalArgumentException}
      */
-    public TrackingEvent(Category category) throws IllegalArgumentException {
+    public TrackingEvent(EventCategory category) throws IllegalArgumentException {
         if (category == null) {
             throw new IllegalArgumentException("'category' cannot be null or empty!");
         }
@@ -80,7 +70,7 @@ public class TrackingEvent {
         if (cursor == null) {
             throw new IllegalArgumentException("'cursor' cannot be null!");
         }
-        mCategory = Category.valueOf(cursor.getString(cursor.getColumnIndex(
+        mCategory = EventCategory.valueOf(cursor.getString(cursor.getColumnIndex(
                 TrackingEventContract.EVENT_COLUMN_CATEGORY)));
         String metadata = cursor.getString(cursor.getColumnIndex(
                 TrackingEventContract.EVENT_COLUMN_METADATA));
@@ -101,9 +91,9 @@ public class TrackingEvent {
     /**
      * Get the category
      *
-     * @return {@link TrackingEvent.Category}
+     * @return {@link EventCategory}
      */
-    public Category getCategory() {
+    public EventCategory getCategory() {
         return mCategory;
     }
 
