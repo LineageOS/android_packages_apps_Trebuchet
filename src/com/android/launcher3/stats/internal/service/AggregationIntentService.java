@@ -29,7 +29,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.LauncherApplication;
 import com.android.launcher3.stats.external.StatsUtil;
 import com.android.launcher3.stats.external.TrackingBundle;
 import com.android.launcher3.stats.internal.db.DatabaseHelper;

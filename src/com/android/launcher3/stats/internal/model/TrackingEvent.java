@@ -51,6 +51,14 @@ public class TrackingEvent {
         WALLPAPER_CHANGE,
         HOMESCREEN_PAGE,
         WIDGET,
+
+        // Remote folder specific
+        REMOTE_FOLDER_DISABLED,
+        REMOTE_FOLDER_OPENED,
+        REMOTE_FOLDER_INFO_OPENED,
+        REMOTE_APP_OPENED,
+        REMOTE_APP_INSTALLED,
+        REMOTE_SYNC_TIME
     }
 
     public static final String KEY_ORIGIN = TrackingBundle.KEY_METADATA_ORIGIN;
@@ -60,7 +68,7 @@ public class TrackingEvent {
     /**
      * Constructor
      *
-     * @param category {@link TrackingEvent.Category}
+     * @param category {@link Category}
      * @throws IllegalArgumentException {@link IllegalArgumentException}
      */
     public TrackingEvent(Category category) throws IllegalArgumentException {
@@ -101,7 +109,7 @@ public class TrackingEvent {
     /**
      * Get the category
      *
-     * @return {@link TrackingEvent.Category}
+     * @return {@link Category}
      */
     public Category getCategory() {
         return mCategory;
@@ -200,5 +208,4 @@ public class TrackingEvent {
                 action.toString());
         return bundle;
     }
-
 }
