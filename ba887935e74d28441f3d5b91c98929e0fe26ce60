@@ -128,6 +128,24 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_bec05752",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T06:46:13Z",
+      "side": 1,
+      "message": "I discussed this with Ed, and we decided that it\u0027s okay to leave this in for now. When we port to CM13, I would like to revisit this and see if we can\u0027t remove it.",
+      "parentUuid": "3fce034c_fd3a68cb",
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fce034c_9d51e411",
         "filename": "src/com/android/launcher3/Folder.java",
         "patchSetId": 14
