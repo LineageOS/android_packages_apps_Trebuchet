@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_dee3e3a3",
+        "filename": "RemoteFolder/src/com/android/launcher3/stats/internal/model/EventCategory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2016-01-05T08:26:08Z",
+      "side": 1,
+      "message": "I think my preference would be to leave TrackingEvent.Category where it was and simply add some new entries for the remote metrics.  We will touch fewer files this way and we can avoid putting the generic EventCategory under the RemoteFolder subdir.  Having a few extra labels in there won\u0027t hurt.\n\nAlso it may be slightly more robust in case someone switches back and forth between open and closed source launches, since we read these from a db.",
+      "revId": "93f5bd6e137b2f7ebdf27b97999e997117449237",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

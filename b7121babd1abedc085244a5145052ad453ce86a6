@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_5ed053ca",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2016-01-05T08:26:08Z",
+      "side": 0,
+      "message": "how do we get away with removing this?",
+      "revId": "b7121babd1abedc085244a5145052ad453ce86a6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
