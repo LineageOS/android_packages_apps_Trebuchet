@@ -16,6 +16,24 @@
       "revId": "93f5bd6e137b2f7ebdf27b97999e997117449237",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_bef4d75c",
+        "filename": "RemoteFolder/src/com/android/launcher3/stats/internal/model/EventCategory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T08:30:21Z",
+      "side": 1,
+      "message": "Sure, I can just add them into Trebuchet.",
+      "parentUuid": "3fce034c_dee3e3a3",
+      "revId": "93f5bd6e137b2f7ebdf27b97999e997117449237",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }

@@ -16,6 +16,24 @@
       "revId": "b7121babd1abedc085244a5145052ad453ce86a6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_9eef9b86",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T08:30:21Z",
+      "side": 0,
+      "message": "We don\u0027t. I forgot this is needed for regular shortcuts. I will put it back in.",
+      "parentUuid": "3fce034c_5ed053ca",
+      "revId": "b7121babd1abedc085244a5145052ad453ce86a6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
