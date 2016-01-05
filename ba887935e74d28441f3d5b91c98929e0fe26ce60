@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_5d0dbc35",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderUpdater.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "Please move this method to a utility class. It is not unique to the updater.",
+      "range": {
+        "startLine": 65,
+        "startChar": 5,
+        "endLine": 73,
+        "endChar": 5
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_bd1b8071",
+        "filename": "res/drawable/download_badge.png",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "We can move this to the overlay.",
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_dd18cc76",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "I think we can remove these entirely from Trebuchet now.",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 47
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_7d2758b8",
+        "filename": "res/values/dimens.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "We should be able to move this to the overlay.",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 58
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_5db61cdc",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 952,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "Note: If I merge first, please remove this. Otherwise I will remove in my rebase.",
+      "range": {
+        "startLine": 948,
+        "startChar": 8,
+        "endLine": 952,
+        "endChar": 9
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_fd3a68cb",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "I don\u0027t believe reintroducing this method is the right way to go about this. The bug manifests when DragLayer gives us a size of 0, so I believe the fix should be in DragLayer.",
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_9d51e411",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 1646,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "This null-check should no longer be needed.",
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_183d02bb",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "Why are we setting the background? This is an ImageView; we should be setting the image.",
+      "range": {
+        "startLine": 245,
+        "startChar": 12,
+        "endLine": 245,
+        "endChar": 94
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_1d3df4ba",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "Note: If I merge first, please move this to RemoteFolderManager. Otherwise I will move in my rebase.",
+      "range": {
+        "startLine": 243,
+        "startChar": 8,
+        "endLine": 253,
+        "endChar": 9
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_dd73ec4c",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 14
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-05T03:52:37Z",
+      "side": 1,
+      "message": "Note: If I merge first, please remove this. Otherwise I will remove in my rebase.",
+      "range": {
+        "startLine": 2393,
+        "startChar": 32,
+        "endLine": 2395,
+        "endChar": 33
+      },
+      "revId": "ba887935e74d28441f3d5b91c98929e0fe26ce60",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
