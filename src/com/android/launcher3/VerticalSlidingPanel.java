@@ -332,6 +332,14 @@ public class VerticalSlidingPanel extends ViewGroup {
         }
     }
 
+    @Override
+    protected void onVisibilityChanged(View changedView, int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+        if (mPanelSlideListener != null && visibility == VISIBLE) {
+            mPanelSlideListener.onPanelCollapsed(changedView);
+        }
+    }
+
     /**
      * Set the color used to fade the pane covered by the sliding pane out when the pane
      * will become fully covered in the expanded state.
