@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_a79a8ac2",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-06T03:16:41Z",
+      "side": 1,
+      "message": "is there a reason to not update the database?",
+      "revId": "1a75f660937c99d39110c3f1335ae3bea1a85914",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
