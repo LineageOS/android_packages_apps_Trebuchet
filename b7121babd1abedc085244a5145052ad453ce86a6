@@ -51,6 +51,24 @@
       "revId": "b7121babd1abedc085244a5145052ad453ce86a6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_875e6ee4",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 3247,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-06T04:31:57Z",
+      "side": 0,
+      "message": "Yes, RemoteFolder.animateOpen() calls into the manager who initiates the sync.",
+      "parentUuid": "3fce034c_c79f96b2",
+      "revId": "b7121babd1abedc085244a5145052ad453ce86a6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
