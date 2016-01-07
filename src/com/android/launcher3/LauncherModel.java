@@ -62,6 +62,8 @@ import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.stats.internal.service.AggregationIntentService;
 
+import com.android.launcher3.RemoteFolderUpdater;
+
 import java.lang.ref.WeakReference;
 import java.net.URISyntaxException;
 import java.security.InvalidParameterException;
