@@ -30,6 +30,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -59,7 +60,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     private CheckLongPressHelper mLongPressHelper;
 
     // The number of icons to display in the
-    private static final int NUM_ITEMS_IN_PREVIEW = 4;
+    protected static final int NUM_ITEMS_IN_PREVIEW = 4;
     private static final int CONSUMPTION_ANIMATION_DURATION = 100;
     private static final int DROP_IN_ANIMATION_DURATION = 400;
     private static final int INITIAL_ITEM_ANIMATION_DURATION = 350;
@@ -172,9 +173,9 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                 folderInfo.title));
         Folder folder;
         if (folderInfo.isRemote()) {
-            folder = launcher.getRemoteFolderManager().createRemoteFolder(icon);
+            folder = launcher.getRemoteFolderManager().createRemoteFolder(icon, launcher.getDragLayer());
         } else {
-            folder = Folder.fromXml(launcher);
+            folder = Folder.fromXml(launcher, launcher.getDragLayer());
         }
         folder.setDragController(launcher.getDragController());
         folder.setFolderIcon(icon);
@@ -235,6 +236,11 @@ public class FolderIcon extends FrameLayout implements FolderListener {
 
                 appIcon.setLayoutParams(layoutParams);
             }
+        }
+
+        // Create an overlay badge if this FolderIcon is for a RemoteFolder
+        if (folderInfo.isRemote()) {
+            icon = RemoteFolderManager.addBadgeToFolderIcon(icon);
         }
 
         return icon;
@@ -695,6 +701,17 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         if (mFolder.getItemCount() == 0 && !mAnimating) return;
 
         ArrayList<View> items = mFolder.getItemsInReadingOrder();
+
+        Drawable[] remoteDrawables = null;
+        if (mInfo.isRemote()) {
+            remoteDrawables = mLauncher.getRemoteFolderManager().getDrawablesForFolderIcon(items);
+
+            // Data may be invalid or currently updating, return
+            if (remoteDrawables == null) {
+                return;
+            }
+        }
+
         Drawable d;
         TextView v;
 
@@ -726,12 +743,16 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         }
 
         if (!mAnimating) {
-            for (int i = NUM_ITEMS_IN_PREVIEW; i >= 0; i--) {
+            for (int i = 0; i < NUM_ITEMS_IN_PREVIEW; i++) {
                 d = null;
                 if (i < items.size()) {
                     v = (TextView) items.get(i);
                     if (!mHiddenItems.contains(v.getTag())) {
-                        d = getTopDrawable(v);
+                        if (mInfo.isRemote() && remoteDrawables != null) {
+                            d = remoteDrawables[i];
+                        } else {
+                            d = getTopDrawable(v);
+                        }
                         mParams = computePreviewItemDrawingParams(i, mParams);
                         mParams.drawable = d;
                     }
@@ -831,6 +852,12 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     }
 
     public void onRemove(ShortcutInfo item) {
+        invalidate();
+        requestLayout();
+    }
+
+    @Override
+    public void onRemoveAll() {
         invalidate();
         requestLayout();
     }
