@@ -1,5 +1,9 @@
 package com.android.launcher3;
 
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.ViewGroup;
+
 import java.util.ArrayList;
 
 /**
@@ -14,7 +18,7 @@ public class RemoteFolderManager {
      * @param icon folder icon view on the workspace.
      * @return a view for the remote folder.
      */
-    public Folder createRemoteFolder(final FolderIcon icon) { return null; }
+    public Folder createRemoteFolder(final FolderIcon icon, ViewGroup root) { return null; }
 
     /**
      * Called when Launcher finishes binding items from the model.
@@ -33,6 +37,15 @@ public class RemoteFolderManager {
     public void onFolderDeleted() { }
 
     /**
+     * Get the original icons (with no badge) to be used for the RemoteFolder's FolderIcon
+     * @param items views currently in the folder
+     * @return an array of drawables for each view
+     */
+    public Drawable[] getDrawablesForFolderIcon(ArrayList<View> items) {
+        return null;
+    }
+
+    /**
      * Called when the app drawer is opened.
      */
     public void onAppDrawerOpened() { }
@@ -49,6 +62,15 @@ public class RemoteFolderManager {
     public void onInfoIconClicked() { }
 
     /**
+     * Change the appearance of FolderIcon for our RemoteFolder by adding a badge
+     * @param icon the FolderIcon to update
+     * @return a FolderIcon with an added ImageView
+     */
+    public static FolderIcon addBadgeToFolderIcon(FolderIcon icon) {
+        return icon;
+    }
+
+    /**
      * Called when the view holder is created for the remote header.
      * @param holder remote view holder.
      */
@@ -60,4 +82,5 @@ public class RemoteFolderManager {
      */
     public void onBindViewHolder(final AppDrawerListAdapter.ViewHolder holder,
                                  final AppDrawerListAdapter.AppItemIndexedInfo indexedInfo) { }
+
 }
