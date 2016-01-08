@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_288e6678",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderManager.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "Unused import.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 24
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_086daa97",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderManager.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "I don\u0027t think these need to be exposed to Trebuchet.",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 67
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_e8edbe25",
+        "filename": "res/values/cm_strings.xml",
+        "patchSetId": 18
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "We can remove these, right?",
+      "range": {
+        "startLine": 92,
+        "startChar": 4,
+        "endLine": 95,
+        "endChar": 47
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_88f2fa05",
+        "filename": "res/values/dimens.xml",
+        "patchSetId": 18
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "We can move these to overlay, right?",
+      "range": {
+        "startLine": 109,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 58
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_a8f7b6f5",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "Please undo all these spacing changes. They will only make harder to port to CM13.",
+      "range": {
+        "startLine": 1125,
+        "startChar": 12,
+        "endLine": 1125,
+        "endChar": 32
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_68d9ce81",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "Most of this code is unnecessary. If we remove all from a normal folder, it should be deleted. There is no final item to replace an empty folder.",
+      "range": {
+        "startLine": 1647,
+        "startChar": 4,
+        "endLine": 1659,
+        "endChar": 5
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_28e3c635",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "What\u0027s the point of changing this? I don\u0027t know any class that extends from FolderIcon.",
+      "range": {
+        "startLine": 63,
+        "startChar": 4,
+        "endLine": 63,
+        "endChar": 13
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_68478e1f",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "Is this still necessary? I thought we weren\u0027t showing a badge on items in the folder anymore, only on the folder icon itself. That should mean we can use the regular bitmaps without special logic.",
+      "range": {
+        "startLine": 705,
+        "startChar": 8,
+        "endLine": 713,
+        "endChar": 9
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_88cbdaa3",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T03:22:22Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 49
+      },
+      "revId": "196765937753078a0d75edd67c33fc7433432c74",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
