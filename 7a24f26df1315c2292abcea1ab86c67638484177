@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_bbe85e16",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T09:09:15Z",
+      "side": 1,
+      "message": "You still have a lot of unnecessary whitespace changes. Please remove them, otherwise merging into CM13 will be more difficult.",
+      "revId": "7a24f26df1315c2292abcea1ab86c67638484177",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_5b94da8b",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1657,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-08T09:09:15Z",
+      "side": 1,
+      "message": "I think it\u0027s fine to remove-all from a non-remote folder. But rather than actually removing all, we should just delete the folder. Also, if you want to have a RemoteFolder-specific implementation, it\u0027s better to overwrite this method in RemoteFolder, rather than checking isRemote() and putting the implementation here.",
+      "range": {
+        "startLine": 1649,
+        "startChar": 8,
+        "endLine": 1657,
+        "endChar": 9
+      },
+      "revId": "7a24f26df1315c2292abcea1ab86c67638484177",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
