@@ -88,7 +88,7 @@ public class ShortcutInfo extends ItemInfo {
     /**
      * The application icon.
      */
-    private Bitmap mIcon;
+    Bitmap mIcon;
 
     /**
      * Indicates that the icon is disabled due to safe mode restrictions.
