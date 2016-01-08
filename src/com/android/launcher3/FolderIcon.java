@@ -26,11 +26,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -60,7 +63,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
     private CheckLongPressHelper mLongPressHelper;
 
     // The number of icons to display in the
-    private static final int NUM_ITEMS_IN_PREVIEW = 4;
+    private static final int NUM_ITEMS_IN_PREVIEW = 6;
     private static final int CONSUMPTION_ANIMATION_DURATION = 100;
     private static final int DROP_IN_ANIMATION_DURATION = 400;
     private static final int INITIAL_ITEM_ANIMATION_DURATION = 350;
@@ -710,10 +713,10 @@ public class FolderIcon extends FrameLayout implements FolderListener {
         } else {
             v = (TextView) items.get(0);
             d = getTopDrawable(v);
-            computePreviewDrawingParams(d);
+            if (d != null) computePreviewDrawingParams(d);
         }
 
-        int nItemsInPreview = Math.min(items.size(), NUM_ITEMS_IN_PREVIEW);
+        int ntemsInPreview = Math.min(items.size(), NUM_ITEMS_IN_PREVIEW);
 
         // Hidden folder - don't display Preview
         View folderLock = findViewById(R.id.folder_lock_image);
@@ -738,6 +741,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                     v = (TextView) items.get(i);
                     if (!mHiddenItems.contains(v.getTag())) {
                         d = getTopDrawable(v);
+                        //if (d instanceof Animatable) d = null;//d.getConstantState().newDrawable().mutate();
                         mParams = computePreviewItemDrawingParams(i, mParams);
                         mParams.drawable = d;
                     }
@@ -746,6 +750,7 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                 ImageView appIcon = null;
                 switch(i) {
                     case 0:
+                        Log.e("artem", "d: " + d + " | info: " + ((ShortcutInfo) items.get(i).getTag()));
                         appIcon = (ImageView) findViewById(R.id.app_0);
                         break;
                     case 1:
@@ -756,6 +761,12 @@ public class FolderIcon extends FrameLayout implements FolderListener {
                         break;
                     case 3:
                         appIcon = (ImageView) findViewById(R.id.app_3);
+                        break;
+                    case 4:
+                        appIcon = (ImageView) findViewById(R.id.app_hidden_0);
+                        break;
+                    case 5:
+                        appIcon = (ImageView) findViewById(R.id.app_hidden_1);
                         break;
                 }
 
@@ -843,6 +854,12 @@ public class FolderIcon extends FrameLayout implements FolderListener {
 
     @Override
     public void onRemoveAll() {
+        invalidate();
+        requestLayout();
+    }
+
+    @Override
+    public void onRemoveAll(ArrayList<ShortcutInfo> items) {
         invalidate();
         requestLayout();
     }

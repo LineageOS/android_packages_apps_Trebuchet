@@ -24,6 +24,7 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Region;
+import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.SparseArray;
@@ -118,11 +119,16 @@ public class BubbleTextView extends TextView {
 
     public void applyFromShortcutInfo(ShortcutInfo info, IconCache iconCache,
             boolean setDefaultPadding, boolean promiseStateChanged) {
-        Bitmap b = info.getIcon(iconCache);
         LauncherAppState app = LauncherAppState.getInstance();
 
-        FastBitmapDrawable iconDrawable = Utilities.createIconDrawable(b);
-        iconDrawable.setGhostModeEnabled(info.isDisabled != 0);
+        Drawable iconDrawable;
+        if (info.customDrawable != null) {
+            iconDrawable = info.customDrawable;
+        } else {
+            Bitmap b = info.getIcon(iconCache);
+            iconDrawable = Utilities.createIconDrawable(b);
+            ((FastBitmapDrawable) iconDrawable).setGhostModeEnabled(info.isDisabled != 0);
+        }
 
         setCompoundDrawables(null, iconDrawable, null, null);
         if (setDefaultPadding) {
@@ -144,7 +150,12 @@ public class BubbleTextView extends TextView {
         LauncherAppState app = LauncherAppState.getInstance();
         DeviceProfile grid = app.getDynamicGrid().getDeviceProfile();
 
-        Drawable topDrawable = Utilities.createIconDrawable(info.iconBitmap);
+        Drawable topDrawable;
+        if (info.customDrawable != null) {
+            topDrawable = info.customDrawable;
+        } else {
+            topDrawable = Utilities.createIconDrawable(info.iconBitmap);
+        }
         topDrawable.setBounds(0, 0, grid.allAppsIconSizePx, grid.allAppsIconSizePx);
         setCompoundDrawables(null, topDrawable, null, null);
         setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
@@ -154,7 +165,6 @@ public class BubbleTextView extends TextView {
         }
         setTag(info);
     }
-
 
     @Override
     protected boolean setFrame(int left, int top, int right, int bottom) {
@@ -368,6 +378,24 @@ public class BubbleTextView extends TextView {
     @Override
     protected boolean onSetAlpha(int alpha) {
         return true;
+    }
+
+    /**
+     * Before drawing this view, we check to see if the compound drawable we
+     * intend to show is {@link Animatable}. If it is, we set it here before we draw.
+     * The purpose of this is so that we are the last callback the drawable saves,
+     * so we receive the animation.
+     */
+    @Override
+    protected void onDraw(Canvas canvas) {
+        ItemInfo info = (ItemInfo) getTag();
+        if (info != null &&
+                info.customDrawable != null &&
+                info.customDrawable instanceof Animatable) {
+            setCompoundDrawables(null, info.customDrawable, null, null);
+        }
+
+        super.onDraw(canvas);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.android.launcher3;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -46,6 +44,11 @@ public class RemoteFolderManager {
      * @param apps list of added apps.
      */
     public void onBindAddApps(ArrayList<AppInfo> apps) { }
+
+    /**
+     * Called when launcher loads apps and applies them to the drawer.
+     */
+    public void onSetApps() { }
 
     /**
      * Called when the info icon is clicked
