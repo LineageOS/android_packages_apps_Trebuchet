@@ -21,7 +21,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.provider.Settings;
@@ -34,11 +33,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.SectionIndexer;
-import android.widget.TextView;
 import com.android.launcher3.locale.LocaleSetManager;
 import com.android.launcher3.locale.LocaleUtils;
 import com.android.launcher3.settings.SettingsProvider;
@@ -597,6 +593,11 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             icon.setOnClickListener(mLauncher);
             icon.setOnLongClickListener(this);
             holder.mIconLayout.addView(icon);
+
+            icon.mIcon.setPadding(mDeviceProfile.iconDrawablePaddingPx,
+                    mDeviceProfile.iconDrawablePaddingPx,
+                    mDeviceProfile.iconDrawablePaddingPx,
+                    mDeviceProfile.iconDrawablePaddingPx);
         }
 
         if (viewType == ViewHolder.TYPE_CUSTOM) {
@@ -641,6 +642,10 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
     public void onBindViewHolder(ViewHolder holder, int position) {
         AppItemIndexedInfo indexedInfo = mHeaderList.get(position);
 
+        if (indexedInfo.isRemote()) {
+            mRemoteFolderManager.onBindViewHolder(holder, indexedInfo);
+        }
+
         holder.mHeaderTextView.setVisibility(indexedInfo.isChild ? View.INVISIBLE : View.VISIBLE);
         if (!indexedInfo.isChild) {
             holder.mHeaderTextView.setText(indexedInfo.mStartString);
@@ -674,24 +679,22 @@ public class AppDrawerListAdapter extends RecyclerView.Adapter<AppDrawerListAdap
             } else {
                 icon.setVisibility(View.VISIBLE);
                 AppInfo info = indexedInfo.mInfo.get(i);
-
                 icon.setTag(info);
-                Drawable d = Utilities.createIconDrawable(info.iconBitmap);
+
+                Drawable d;
+                if (info.customDrawable != null) {
+                    d = info.customDrawable;
+                } else {
+                    d = Utilities.createIconDrawable(info.iconBitmap);
+                }
                 d.setBounds(mIconRect);
                 icon.mIcon.setImageDrawable(d);
-                icon.mIcon.setPadding(mDeviceProfile.iconDrawablePaddingPx,
-                        mDeviceProfile.iconDrawablePaddingPx,
-                        mDeviceProfile.iconDrawablePaddingPx,
-                        mDeviceProfile.iconDrawablePaddingPx);
+
                 icon.mLabel.setText(info.title);
                 icon.mLabel.setVisibility(mHideIconLabels ? View.INVISIBLE : View.VISIBLE);
             }
         }
         holder.itemView.setTag(indexedInfo);
-
-        if (indexedInfo.isRemote()) {
-            mRemoteFolderManager.onBindViewHolder(holder, indexedInfo);
-        }
     }
 
     @Override

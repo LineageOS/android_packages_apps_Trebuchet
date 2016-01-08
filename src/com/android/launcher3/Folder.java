@@ -1631,8 +1631,7 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         // If this item is being dragged from this open folder, we have already handled
         // the work associated with removing the item, so we don't have to do anything here.
         if (item == mCurrentDragInfo) return;
-        View v = getViewForInfo(item);
-        mContent.removeView(v);
+        mContent.removeView(getViewForInfo(item));
         if (mState == STATE_ANIMATING) {
             mRearrangeOnClose = true;
         } else {
@@ -1651,16 +1650,21 @@ public class Folder extends LinearLayout implements DragSource, View.OnClickList
         replaceFolderWithFinalItem();
     }
 
-    protected View getViewForInfo(ShortcutInfo item) {
-        for (int j = 0; j < mContent.getCountY(); j++) {
-            for (int i = 0; i < mContent.getCountX(); i++) {
-                View v = mContent.getChildAt(i, j);
-                if (v.getTag() == item) {
-                    return v;
-                }
-            }
+    /**
+     * Update the view tied to this shortcut.
+     * @param info updated info to be applied to view.
+     */
+    public void updateViewForInfo(final ShortcutInfo info) {
+        View v = getViewForInfo(info);
+        if (v != null & v instanceof BubbleTextView) {
+            ((BubbleTextView) v).applyFromShortcutInfo(info, mIconCache, false);
+
+            mItemsInvalidated = true;
         }
-        return null;
+    }
+
+    public View getViewForInfo(ShortcutInfo item) {
+        return mContent.getChildAt(item.cellX, item.cellY);
     }
 
     public void onItemsChanged() {
