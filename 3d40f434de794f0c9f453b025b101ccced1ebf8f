@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_d9bc52bd",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderManager.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-09T05:45:50Z",
+      "side": 1,
+      "message": "No, this is the badge on the outer preview",
+      "parentUuid": "3fce034c_d993f24e",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 5
+      },
+      "revId": "3d40f434de794f0c9f453b025b101ccced1ebf8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fce034c_f9ab4e72",
         "filename": "src/com/android/launcher3/Folder.java",
         "patchSetId": 22
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-09T05:40:36Z",
       "side": 1,
       "message": "Per my earlier comment, should this be removed or actually implemented?",
+      "range": {
+        "startLine": 1648,
+        "startChar": 8,
+        "endLine": 1649,
+        "endChar": 89
+      },
+      "revId": "3d40f434de794f0c9f453b025b101ccced1ebf8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_39cb1654",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-09T05:45:50Z",
+      "side": 1,
+      "message": "This needs to stay in case someone else ends up using this. Nothing is broken, but if someone calls mInfo.removeAll() they should know to remove the folder contents first. RemoteFolder doesn\u0027t persist so we don\u0027t have to worry about that however.",
+      "parentUuid": "3fce034c_f9ab4e72",
       "range": {
         "startLine": 1648,
         "startChar": 8,
