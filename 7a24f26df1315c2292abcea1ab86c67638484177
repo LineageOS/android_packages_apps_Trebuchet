@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fce034c_1e4c00c6",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-09T03:10:07Z",
+      "side": 1,
+      "message": "My IDE keeps doing this, I\u0027ll fix",
+      "parentUuid": "3fce034c_bbe85e16",
+      "revId": "7a24f26df1315c2292abcea1ab86c67638484177",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fce034c_5b94da8b",
         "filename": "src/com/android/launcher3/Folder.java",
         "patchSetId": 19
@@ -30,6 +48,30 @@
       "writtenOn": "2016-01-08T09:09:15Z",
       "side": 1,
       "message": "I think it\u0027s fine to remove-all from a non-remote folder. But rather than actually removing all, we should just delete the folder. Also, if you want to have a RemoteFolder-specific implementation, it\u0027s better to overwrite this method in RemoteFolder, rather than checking isRemote() and putting the implementation here.",
+      "range": {
+        "startLine": 1649,
+        "startChar": 8,
+        "endLine": 1657,
+        "endChar": 9
+      },
+      "revId": "7a24f26df1315c2292abcea1ab86c67638484177",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_9e82304f",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 19
+      },
+      "lineNbr": 1657,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-09T03:10:07Z",
+      "side": 1,
+      "message": "If you look in setupContentForNumItems(), it will remove the folder if the size is 0. I\u0027ll add the override in RemoteFolder so that it doesn\u0027t remove itself; it\u0027s only used before replacing mContent with new data",
+      "parentUuid": "3fce034c_5b94da8b",
       "range": {
         "startLine": 1649,
         "startChar": 8,
