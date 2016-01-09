@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_79dc3e46",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-09T05:18:32Z",
+      "side": 1,
+      "message": "You added the whitespace again...",
+      "revId": "aa58728dd1c008c13b87977d545276c3b74855a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_39e6b618",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 21
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-09T05:18:32Z",
+      "side": 1,
+      "message": "Should we remove this?",
+      "range": {
+        "startLine": 1650,
+        "startChar": 8,
+        "endLine": 1651,
+        "endChar": 89
+      },
+      "revId": "aa58728dd1c008c13b87977d545276c3b74855a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
