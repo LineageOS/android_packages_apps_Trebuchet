@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fce034c_d993f24e",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderManager.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-09T05:40:36Z",
+      "side": 1,
+      "message": "We can remove this too, right?",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 71,
+        "endChar": 5
+      },
+      "revId": "3d40f434de794f0c9f453b025b101ccced1ebf8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fce034c_f9ab4e72",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 22
+      },
+      "lineNbr": 1649,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-09T05:40:36Z",
+      "side": 1,
+      "message": "Per my earlier comment, should this be removed or actually implemented?",
+      "range": {
+        "startLine": 1648,
+        "startChar": 8,
+        "endLine": 1649,
+        "endChar": 89
+      },
+      "revId": "3d40f434de794f0c9f453b025b101ccced1ebf8f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
