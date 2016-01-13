@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_da3f79b3",
+        "filename": "res/layout/folder_icon.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-13T01:04:12Z",
+      "side": 1,
+      "message": "What are these needed for? It might be a good idea to create these hidden views using a RemoteFolderManager helper method, called from FolderIcon",
+      "revId": "1a307c6d20c51decf4abce550a3ccf56b2f1475e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_da68d9bb",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-13T01:04:12Z",
+      "side": 1,
+      "message": "Could this cause problems for vanilla Folders in CM?",
+      "revId": "1a307c6d20c51decf4abce550a3ccf56b2f1475e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_fa6595e2",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-13T01:04:12Z",
+      "side": 1,
+      "message": "Use or remove commented code",
+      "revId": "1a307c6d20c51decf4abce550a3ccf56b2f1475e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_ba5f0d0d",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-13T01:04:12Z",
+      "side": 1,
+      "message": "Remove your test code",
+      "revId": "1a307c6d20c51decf4abce550a3ccf56b2f1475e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
