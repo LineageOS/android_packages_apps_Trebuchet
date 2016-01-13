@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "1fcbff3d_c546be50",
+        "filename": "src/com/android/launcher3/OverviewSettingsPanel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-13T05:16:04Z",
+      "side": 1,
+      "message": "Let me check with Ed on this. I assumed all COS Trebuchets would have it enabled, but it is possible that we may only enable on certain hardware/locations.",
+      "parentUuid": "1fcbff3d_053da6ba",
+      "range": {
+        "startLine": 91,
+        "startChar": 8,
+        "endLine": 94,
+        "endChar": 32
+      },
+      "revId": "d0cb9ae5d52de004ac0e326d5fbe9feb66c2c98c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fcbff3d_053846d1",
         "filename": "src/com/android/launcher3/OverviewSettingsPanel.java",
         "patchSetId": 1
