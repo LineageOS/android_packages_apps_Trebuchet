@@ -25,7 +25,7 @@
         android:id="@+id/search_overlay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff00ff00"
+        android:background="@color/search_overlay_example_background"
         android:visibility="invisible" />
 
     <FrameLayout
@@ -35,5 +35,5 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="36dp"
-        android:background="#ffff0000" />
+        android:background="@color/search_overlay_example_search_box" />
 </FrameLayout>
