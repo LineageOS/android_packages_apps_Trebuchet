@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_80889a1f",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13291
+      },
+      "writtenOn": "2016-01-16T11:58:28Z",
+      "side": 1,
+      "message": "\"example\"",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 51
+      },
+      "revId": "1a91b07e5f889687c54a8090de0eeaab1156dabf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
