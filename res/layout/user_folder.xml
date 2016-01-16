@@ -68,8 +68,8 @@
             android:paddingTop="4dp"
             android:singleLine="true"
             android:textColor="@color/workspace_icon_text_color"
-            android:textColorHighlight="#ffCCCCCC"
-            android:textColorHint="#ff808080"
+            android:textColorHighlight="@color/folder_name_text_color_Highlight"
+            android:textColorHint="@color/folder_name_text_color_Hint"
             android:textSize="14sp" />
 
         <include
