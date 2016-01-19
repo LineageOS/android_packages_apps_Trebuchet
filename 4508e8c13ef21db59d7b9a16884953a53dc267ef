@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_06bfddfb",
+        "filename": "res/layout/launcher_overlay_example.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "This layout is only used for the launcher tests and are never included in user builds so you should not need to theme this.\n\nLets revert this file back to the original since it won\u0027t be used in normal builds",
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_c65f95e3",
+        "filename": "res/layout/overview_panel.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "see my comments in cm_colors.xml about this",
+      "range": {
+        "startLine": 91,
+        "startChar": 50,
+        "endLine": 91,
+        "endChar": 71
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_e66411bc",
+        "filename": "res/layout/overview_panel.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "and this",
+      "range": {
+        "startLine": 105,
+        "startChar": 50,
+        "endLine": 105,
+        "endChar": 68
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_86598dff",
+        "filename": "res/layout/overview_panel.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "and this.",
+      "range": {
+        "startLine": 119,
+        "startChar": 50,
+        "endLine": 119,
+        "endChar": 70
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_a645a919",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "can remove this since the layout these were used in is for testing only",
+      "range": {
+        "startLine": 3,
+        "startChar": 17,
+        "endLine": 3,
+        "endChar": 50
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_8640ad09",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "can remove this since the layout these were used in is for testing only",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_464ac527",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "For consistency, I\u0027d add _color to the end of the name\n\nDon\u0027t forget to change the name in the layouts this is used as well.",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 43
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_26bc5904",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "For consistency, I\u0027d add _color to the end of the name\n\nDon\u0027t forget to change the name in the layouts this is used as well.",
+      "range": {
+        "startLine": 19,
+        "startChar": 17,
+        "endLine": 19,
+        "endChar": 38
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_c636b5b5",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 20,
+        "startChar": 17,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_e63bb199",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-01-19T05:29:06Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 21,
+        "startChar": 17,
+        "endLine": 21,
+        "endChar": 37
+      },
+      "revId": "4508e8c13ef21db59d7b9a16884953a53dc267ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
