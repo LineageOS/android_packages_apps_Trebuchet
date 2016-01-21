@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_705bef86",
+        "filename": "src/com/android/launcher3/BaseRecyclerViewScrubberSection.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-21T06:13:58Z",
+      "side": 1,
+      "message": "Commented code, delete or uncomment before merging.",
+      "revId": "a82b362db884aeed982ccc6bfb42e2fb2e4d1c25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_b061573c",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 4627,
+      "author": {
+        "id": 14267
+      },
+      "writtenOn": "2016-01-21T06:13:58Z",
+      "side": 1,
+      "message": "Commented code, delete or uncomment before merging",
+      "revId": "a82b362db884aeed982ccc6bfb42e2fb2e4d1c25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
