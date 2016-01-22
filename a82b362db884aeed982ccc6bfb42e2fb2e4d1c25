@@ -33,6 +33,29 @@
       "revId": "a82b362db884aeed982ccc6bfb42e2fb2e4d1c25",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_f5058c7b",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-01-22T03:01:28Z",
+      "side": 1,
+      "message": "Whitespace",
+      "range": {
+        "startLine": 392,
+        "startChar": 0,
+        "endLine": 392,
+        "endChar": 8
+      },
+      "revId": "a82b362db884aeed982ccc6bfb42e2fb2e4d1c25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
