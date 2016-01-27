@@ -16,6 +16,24 @@
       "revId": "4eaa0a55f486892baa328d2d7bedf9a486e34043",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_679a4415",
+        "filename": "src/com/android/launcher3/allapps/AllAppsRecyclerView.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-01-27T08:57:46Z",
+      "side": 0,
+      "message": "This flag decided if we would highlight the whole section or just the first item in each section. I discussed this with Ed (the other one) and he confirmed it was introduced by AOSP and not something we explicitly want.",
+      "parentUuid": "1fcbff3d_c703f841",
+      "revId": "4eaa0a55f486892baa328d2d7bedf9a486e34043",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
