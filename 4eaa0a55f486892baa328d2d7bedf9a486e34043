@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_c703f841",
+        "filename": "src/com/android/launcher3/allapps/AllAppsRecyclerView.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2016-01-27T08:53:16Z",
+      "side": 0,
+      "message": "so we removed this flag and some of the code tied to it?  can you explain",
+      "revId": "4eaa0a55f486892baa328d2d7bedf9a486e34043",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_4762a840",
+        "filename": "src/com/android/launcher3/BaseRecyclerViewScrubber.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2016-01-27T08:53:16Z",
+      "side": 1,
+      "message": "what was this added for?",
+      "revId": "df131392e91ab5bc801680aa4d53e87436d2dae7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_075ca07c",
+        "filename": "src/com/android/launcher3/allapps/AllAppsGridAdapter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 10293
+      },
+      "writtenOn": "2016-01-27T08:53:16Z",
+      "side": 1,
+      "message": "update comment?",
+      "revId": "df131392e91ab5bc801680aa4d53e87436d2dae7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
