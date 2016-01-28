@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_7063d8dd",
+        "filename": "src/com/android/launcher3/list/SettingsPinnedHeaderAdapter.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-01-28T05:12:03Z",
+      "side": 1,
+      "message": "Why did you change this?",
+      "range": {
+        "startLine": 172,
+        "startChar": 74,
+        "endLine": 172,
+        "endChar": 76
+      },
+      "revId": "769d349b7968cdbe5a7f75a5db47c8dbd94a71d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
