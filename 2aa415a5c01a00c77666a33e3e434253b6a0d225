@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_769e7064",
+        "filename": "src/com/android/launcher3/FolderIcon.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-01-29T02:02:12Z",
+      "side": 1,
+      "message": "Oops? Missing I",
+      "range": {
+        "startLine": 722,
+        "startChar": 12,
+        "endLine": 722,
+        "endChar": 26
+      },
+      "revId": "2aa415a5c01a00c77666a33e3e434253b6a0d225",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
