@@ -2495,7 +2495,7 @@ public class Launcher extends Activity
         super.onPrepareOptionsMenu(menu);
         if (!isOnCustomContent()) {
             // Close any open folders
-            closeFolder();
+            closeFolder(false);
             // Stop resizing any widgets
             mWorkspace.exitWidgetResizeMode();
             if (!mWorkspace.isInOverviewMode()) {
@@ -3520,12 +3520,16 @@ public class Launcher extends Activity
     }
 
     public void closeFolder() {
+        closeFolder(true);
+    }
+
+    public void closeFolder(boolean animate) {
         Folder folder = mWorkspace != null ? mWorkspace.getOpenFolder() : null;
         if (folder != null) {
             if (folder.isEditingName()) {
                 folder.dismissEditingName();
             }
-            closeFolder(folder);
+            closeFolder(folder, animate);
         }
     }
 
