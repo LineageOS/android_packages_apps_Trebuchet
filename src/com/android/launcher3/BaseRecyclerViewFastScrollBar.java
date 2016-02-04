@@ -47,7 +47,7 @@ public class BaseRecyclerViewFastScrollBar {
     public static class FastScrollFocusApplicator implements FastScrollFocusable {
         private static final int FAST_SCROLL_FOCUS_FADE_IN_DURATION = 175;
         private static final int FAST_SCROLL_FOCUS_FADE_OUT_DURATION = 125;
-        private static final float FAST_SCROLL_FOCUS_MAX_SCALE = 1f;
+        private static final float FAST_SCROLL_FOCUS_MAX_SCALE = 1.15f;
 
         private final View mView;
         private final int mFastScrollMode;
@@ -86,7 +86,7 @@ public class BaseRecyclerViewFastScrollBar {
 
         private FastScrollFocusApplicator(final View v, final int mode) {
             mView = v;
-            mFastScrollMode = mode;
+            mFastScrollMode = mode & ~FAST_SCROLL_FOCUS_SCALABLE; // Globally disable scaling.
         }
 
         public void setFastScrollFocused(boolean focused, boolean animated) {
