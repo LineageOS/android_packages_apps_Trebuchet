@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_051d61bc",
+        "filename": "src/com/android/launcher3/BaseRecyclerViewFastScrollBar.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-05T01:54:58Z",
+      "side": 1,
+      "message": "Either return early from this function or modify the mode on creation, such that it strips out the FOCUSABLE flag. We don\u0027t want to waste time running an animation, even if it visually does nothing.",
+      "range": {
+        "startLine": 94,
+        "startChar": 9,
+        "endLine": 102,
+        "endChar": 13
+      },
+      "revId": "af31774e23578c40243c265a6ccc038297aef7f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
