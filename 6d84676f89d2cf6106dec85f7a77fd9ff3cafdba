@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_d1871761",
+        "filename": "src/com/android/launcher3/DeviceUnlockedReceiver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2016-02-06T07:16:27Z",
+      "side": 1,
+      "message": "copyright",
+      "revId": "6d84676f89d2cf6106dec85f7a77fd9ff3cafdba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_717e636c",
+        "filename": "src/com/android/launcher3/NetworkConnectionReceiver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2016-02-06T07:16:27Z",
+      "side": 1,
+      "message": "same",
+      "revId": "6d84676f89d2cf6106dec85f7a77fd9ff3cafdba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
