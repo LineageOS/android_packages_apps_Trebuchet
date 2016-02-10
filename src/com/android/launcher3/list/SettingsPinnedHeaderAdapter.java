@@ -122,6 +122,18 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                     case 3:
                         updateDynamicGridSizeSettingsItem(stateView, settingSwitch);
                         break;
+                    case 4:
+                        current = SettingsProvider.getBoolean(mContext,
+                                SettingsProvider.SETTINGS_UI_ALLOW_ROTATION,
+                                R.bool.preferences_interface_allow_rotation);
+                        setSettingSwitch(stateView, settingSwitch, current);
+                        break;
+                    case 5:
+                        current = SettingsProvider.getBoolean(mContext,
+                                SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER,
+                                R.bool.preferences_interface_homescreen_remote_folder_default);
+                        setSettingSwitch(stateView, settingSwitch, current);
+                        break;
                     default:
                         hideStates(stateView, settingSwitch);
                 }
@@ -181,12 +193,6 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         current = SettingsProvider.getBoolean(mContext,
                                 SettingsProvider.SETTINGS_UI_GENERAL_ICONS_LARGE,
                                 R.bool.preferences_interface_general_icons_large_default);
-                        setSettingSwitch(stateView, settingSwitch, current);
-                        break;
-                    case 2:
-                        current = SettingsProvider.getBoolean(mContext,
-                                SettingsProvider.SETTINGS_UI_ALLOW_ROTATION,
-                                R.bool.preferences_interface_allow_rotation);
                         setSettingSwitch(stateView, settingSwitch, current);
                         break;
                     default:
@@ -268,6 +274,20 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                         case 3:
                             mLauncher.onClickDynamicGridSizeButton();
                             break;
+<<<<<<< HEAD
+=======
+                        case 4:
+                            onSettingsBooleanChanged(v,
+                                    SettingsProvider.SETTINGS_UI_ALLOW_ROTATION,
+                                    R.bool.preferences_interface_allow_rotation);
+                            break;
+                        case 5:
+                            onSettingsBooleanChanged(v,
+                                    SettingsProvider.SETTINGS_UI_HOMESCREEN_REMOTE_FOLDER,
+                                    R.bool.preferences_interface_homescreen_remote_folder_default);
+                            mLauncher.getRemoteFolderManager().onSettingChanged();
+                            break;
+>>>>>>> 4c4ae03... Trebuchet: Move allow rotation to home settings section
                     }
                     break;
                 case OverviewSettingsPanel.DRAWER_SETTINGS_POSITION:
@@ -325,11 +345,6 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             intent.setClassName(OverviewSettingsPanel.ANDROID_SETTINGS,
                                     OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                             mLauncher.startActivity(intent);
-                            break;
-                        case 2:
-                            onSettingsBooleanChanged(v,
-                                    SettingsProvider.SETTINGS_UI_ALLOW_ROTATION,
-                                    R.bool.preferences_interface_allow_rotation);
                             break;
                     }
             }

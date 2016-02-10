@@ -51,8 +51,7 @@ public class OverviewSettingsPanel {
 
         String[] valuesApp = new String[] {
                 res.getString(R.string.larger_icons_text),
-                res.getString(R.string.protected_app_settings),
-                res.getString(R.string.allow_rotation_title)};
+                res.getString(R.string.protected_app_settings)};
 
         mSettingsAdapter = new SettingsPinnedHeaderAdapter(mLauncher);
         mSettingsAdapter.setHeaders(headers);
@@ -75,6 +74,41 @@ public class OverviewSettingsPanel {
             cursor.addRow(new Object[]{i, values[i]});
         }
         return cursor;
+    }
+
+    private String[] getValuesHome() {
+        Resources res = mLauncher.getResources();
+        ArrayList<String> values = new ArrayList<String>(Arrays.asList(new String[]{
+                res.getString(R.string.home_screen_search_text),
+                res.getString(R.string.icon_labels),
+                res.getString(R.string.scrolling_wallpaper),
+                res.getString(R.string.grid_size_text),
+                res.getString(R.string.allow_rotation_title)}));
+
+        // Add additional external settings.
+        RemoteFolderManager.onInitializeHomeSettings(values, mLauncher);
+
+        String[] valuesArr = new String[values.size()];
+        values.toArray(valuesArr);
+        return valuesArr;
+    }
+
+    private String[] getValuesDrawer() {
+        Resources res = mLauncher.getResources();
+        ArrayList<String> values = new ArrayList<String>(Arrays.asList(new String[]{
+                res.getString(R.string.icon_labels),
+                res.getString(R.string.app_drawer_style),
+                res.getString(R.string.app_drawer_color),
+                res.getString(R.string.fast_scroller),
+                res.getString(R.string.fast_scroller_type),
+                res.getString(R.string.home_screen_search_text)}));
+
+        // Add additional external settings.
+        RemoteFolderManager.onInitializeDrawerSettings(values, mLauncher);
+
+        String[] valuesArr = new String[values.size()];
+        values.toArray(valuesArr);
+        return valuesArr;
     }
 
     public void notifyDataSetInvalidated() {
