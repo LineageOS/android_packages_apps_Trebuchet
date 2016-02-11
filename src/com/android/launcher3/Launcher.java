@@ -274,7 +274,7 @@ public class Launcher extends Activity
     private boolean mHiddenFolderAuth = false;
 
     @Thunk Hotseat mHotseat;
-    private ViewGroup mOverviewPanel;
+    private VerticalSlidingPanel mOverviewPanel;
     private View mDarkPanel;
     OverviewSettingsPanel mOverviewSettingsPanel;
 
@@ -1493,7 +1493,7 @@ public class Launcher extends Activity
         }
 
         // Setup the overview panel
-        mOverviewPanel = (ViewGroup) findViewById(R.id.overview_panel);
+        mOverviewPanel = (VerticalSlidingPanel) findViewById(R.id.overview_panel);
         mOverviewSettingsPanel = new OverviewSettingsPanel(this);
         mOverviewSettingsPanel.initializeAdapter();
 
@@ -1547,20 +1547,19 @@ public class Launcher extends Activity
         });
         defaultScreenButton.setOnTouchListener(getHapticFeedbackTouchListener());
 
-        final VerticalSlidingPanel verticalSlidingPanel = ((VerticalSlidingPanel) mOverviewPanel);
-        verticalSlidingPanel.setPanelSlideListener(new SettingsPanelSlideListener());
-        verticalSlidingPanel.setEnableDragViewTouchEvents(true);
+        mOverviewPanel.setPanelSlideListener(new SettingsPanelSlideListener());
+        mOverviewPanel.setEnableDragViewTouchEvents(true);
 
         View settingsPaneHeader = mOverviewPanel.findViewById(R.id.settings_pane_header);
         if (settingsPaneHeader != null) {
-            verticalSlidingPanel.setDragView(settingsPaneHeader);
+            mOverviewPanel.setDragView(settingsPaneHeader);
             settingsPaneHeader.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (verticalSlidingPanel.isExpanded()) {
-                        verticalSlidingPanel.collapsePane();
+                    if (mOverviewPanel.isExpanded()) {
+                        mOverviewPanel.collapsePane();
                     } else {
-                        verticalSlidingPanel.expandPane();
+                        mOverviewPanel.expandPane();
                     }
                 }
             });
@@ -3128,7 +3127,11 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onClickSettingsButton(v);
         } else {
-            startSettings();
+            if (mOverviewPanel.isExpanded()) {
+                mOverviewPanel.collapsePane();
+            } else {
+                mOverviewPanel.expandPane();
+            }
         }
     }
 
@@ -5202,6 +5205,9 @@ public class Launcher extends Activity
 
             AnimationDrawable frameAnimation = (AnimationDrawable) mAnimatedArrow.getBackground();
             frameAnimation.start();
+
+            LauncherApplication.getLauncherStats().sendSettingsOpenedEvent(
+                    LauncherStats.ORIGIN_TREB_LONGPRESS);
         }
 
         @Override
