@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_c7e0f199",
+        "filename": "src/com/android/launcher3/Folder.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-11T05:03:55Z",
+      "side": 1,
+      "message": "So before it was backwards? Or are they making a change now?",
+      "range": {
+        "startLine": 322,
+        "startChar": 8,
+        "endLine": 322,
+        "endChar": 57
+      },
+      "revId": "0a7a3468e136cff74e45c8ded925b1458474470a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_07004934",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 2413,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-11T05:03:55Z",
+      "side": 1,
+      "message": "Where is this used?",
+      "range": {
+        "startLine": 2411,
+        "startChar": 4,
+        "endLine": 2413,
+        "endChar": 5
+      },
+      "revId": "0a7a3468e136cff74e45c8ded925b1458474470a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
