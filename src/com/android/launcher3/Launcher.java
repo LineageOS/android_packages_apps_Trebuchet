@@ -271,6 +271,7 @@ public class Launcher extends Activity
     private int[] mTmpAddItemCellCoordinates = new int[2];
 
     protected FolderIcon mHiddenFolderIcon;
+    private boolean mHiddenFolderLockStateChanged = false;
     private boolean mHiddenFolderAuth = false;
 
     @Thunk Hotseat mHotseat;
@@ -839,6 +840,7 @@ public class Launcher extends Activity
             mHiddenFolderAuth = resultCode == RESULT_OK;
             if (mHiddenFolderIcon != null && mHiddenFolderAuth) {
                 mHiddenFolderIcon.getFolder().saveHiddenFolderState(true);
+                mHiddenFolderLockStateChanged = true;
             } else {
                 mHiddenFolderAuth = false;
             }
@@ -846,6 +848,7 @@ public class Launcher extends Activity
             mHiddenFolderAuth = resultCode == RESULT_OK;
             if (mHiddenFolderIcon != null && mHiddenFolderAuth) {
                 mHiddenFolderIcon.getFolder().saveHiddenFolderState(false);
+                mHiddenFolderLockStateChanged = true;
             } else {
                 mHiddenFolderAuth = false;
             }
@@ -3541,7 +3544,6 @@ public class Launcher extends Activity
         info.opened = false;
         if (info.hidden) {
             mHiddenFolderAuth = false;
-            mHiddenFolderIcon = null;
         }
 
         ViewGroup parent = (ViewGroup) folder.getParent().getParent();
@@ -3552,11 +3554,13 @@ public class Launcher extends Activity
                 ((CellLayout.LayoutParams) fi.getLayoutParams()).canReorder = true;
             }
         }
-        folder.animateClosed(animate);
+        folder.animateClosed(mHiddenFolderLockStateChanged ? false : animate);
 
         // Notify the accessibility manager that this folder "window" has disappeard and no
         // longer occludeds the workspace items
         getDragLayer().sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+        mHiddenFolderIcon = null;
+        mHiddenFolderLockStateChanged = false;
     }
 
     public boolean onLongClick(View v) {
