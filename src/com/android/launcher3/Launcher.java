@@ -1885,7 +1885,7 @@ public class Launcher extends Activity
         setupSearchBar(this);
         mAppsView.addApps(addedApps);
         tryAndUpdatePredictedApps();
-        mAppsView.reset();
+        mAppsView.onReloadAppDrawer();
         sRemoteFolderManager.onReloadAppDrawer();
     }
 
@@ -5239,8 +5239,7 @@ public class Launcher extends Activity
         if (mIsDrawerSearchBarEnabled) {
             if (mLauncherCallbacks != null
                     && mLauncherCallbacks.getAllAppsSearchBarController() != null) {
-                mAppsView
-                        .setSearchBarController(mLauncherCallbacks.getAllAppsSearchBarController());
+                mAppsView.setSearchBarController(mLauncherCallbacks.getAllAppsSearchBarController());
             } else {
                 mAppsView.setSearchBarController(mAppsView.newDefaultAppSearchController());
             }
