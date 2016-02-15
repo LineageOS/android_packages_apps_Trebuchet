@@ -1862,7 +1862,7 @@ public class Launcher extends Activity
         setupSearchBar(this);
         mAppsView.addApps(addedApps);
         tryAndUpdatePredictedApps();
-        mAppsView.reset();
+        mAppsView.onReloadAppDrawer();
     }
 
     public void reloadWidgetView() {
