@@ -43,6 +43,7 @@ public class ThemeChangedReceiver extends BroadcastReceiver {
             app.recreateWidgetPreviewDb();
             app.getIconCache().flush();
             app.getModel().forceReload();
+            Launcher.sRemoteFolderManager.onThemeChanged();
         }
     }
 
