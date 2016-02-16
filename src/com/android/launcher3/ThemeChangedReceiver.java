@@ -43,6 +43,11 @@ public class ThemeChangedReceiver extends BroadcastReceiver {
             app.recreateWidgetPreviewDb();
             app.getIconCache().flush();
             app.getModel().forceReload();
+
+            // Updates the RemoteFolderManager's icons when neeeded
+            if (Launcher.sRemoteFolderManager != null && components.contains(MODIFIES_ICONS)) {
+                Launcher.sRemoteFolderManager.onThemeChanged();
+            }
         }
     }
 
