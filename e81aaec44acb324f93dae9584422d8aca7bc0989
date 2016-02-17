@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_b82710b7",
+        "filename": "RemoteFolder/src/com/android/launcher3/RemoteFolderManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-17T08:26:04Z",
+      "side": 1,
+      "message": "If this isn\u0027t exposed to Trebuchet, then it\u0027s not needed here.",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 5
+      },
+      "revId": "e81aaec44acb324f93dae9584422d8aca7bc0989",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_18197c78",
+        "filename": "src/com/android/launcher3/ThemeChangedReceiver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-17T08:26:04Z",
+      "side": 1,
+      "message": "This could cause a NPE.",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 59
+      },
+      "revId": "e81aaec44acb324f93dae9584422d8aca7bc0989",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
