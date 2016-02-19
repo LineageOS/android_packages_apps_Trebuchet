@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_e47f1da9",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2866,
+      "author": {
+        "id": 14474
+      },
+      "writtenOn": "2016-02-19T03:54:45Z",
+      "side": 1,
+      "message": "Did you test this? Clicking on the folder does nothing now.",
+      "range": {
+        "startLine": 2864,
+        "startChar": 8,
+        "endLine": 2866,
+        "endChar": 9
+      },
+      "revId": "1de510ee94bf8b7b83c190abb4608a4dae59bb53",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
