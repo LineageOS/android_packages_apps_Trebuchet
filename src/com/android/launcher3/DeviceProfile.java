@@ -160,7 +160,7 @@ public class DeviceProfile {
         }
 
         // Calculate the remaining vars
-        updateAvailableDimensions(dm, res);
+        updateAvailableDimensions(dm, res, isLandscape);
         computeAllAppsButtonSize(context);
 
         // Search Bar
@@ -182,7 +182,7 @@ public class DeviceProfile {
         allAppsButtonVisualSize = (int) (hotseatIconSizePx * (1 - padding));
     }
 
-    private void updateAvailableDimensions(DisplayMetrics dm, Resources res) {
+    private void updateAvailableDimensions(DisplayMetrics dm, Resources res, boolean isLandscape) {
         // Check to see if the icons fit in the new available height.  If not, then we need to
         // shrink the icon size.
         float scale = 1f;
@@ -193,6 +193,9 @@ public class DeviceProfile {
         // We only care about the top and bottom workspace padding, which is not affected by RTL.
         Rect workspacePadding = getWorkspacePadding(false /* isLayoutRtl */);
         int maxHeight = (availableHeightPx - workspacePadding.top - workspacePadding.bottom);
+        if (!isLandscape) { //Include the hotseat and search bar if portrait
+            maxHeight -= (hotseatBarHeightPx + searchBarSpaceHeightPx);
+        }
         if (usedHeight > maxHeight) {
             scale = maxHeight / usedHeight;
             drawablePadding = 0;
