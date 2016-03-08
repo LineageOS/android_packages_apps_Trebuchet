@@ -613,6 +613,11 @@ public class BubbleTextView extends TextView
         // No special functionality here.
     }
 
+    @Override
+    public void reset() {
+        mFastScrollFocusFraction = 0f;
+    }
+
     /**
      * Interface to be implemented by the grand parent to allow click shadow effect.
      */

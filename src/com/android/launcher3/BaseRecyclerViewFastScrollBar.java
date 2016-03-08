@@ -46,6 +46,7 @@ public class BaseRecyclerViewFastScrollBar {
 
         void setFastScrollFocused(boolean focused, boolean animated);
         void setFastScrollDimmed(boolean dimmed, boolean animated);
+        void reset();
     }
 
     /**
@@ -81,6 +82,12 @@ public class BaseRecyclerViewFastScrollBar {
             if (focusable == null) return;
 
             focusable.setFastScrollDimmed(dimmed, animated);
+        }
+
+        public static void reset(final View v) {
+            FastScrollFocusable focusable = getFromView(v);
+            if (focusable == null) return;
+            focusable.reset();
         }
 
         private static FastScrollFocusable getFromView(final View v) {
@@ -161,6 +168,13 @@ public class BaseRecyclerViewFastScrollBar {
             if (mView instanceof FastScrollFocusable) {
                 ((FastScrollFocusable) mView).setFastScrollDimmed(dimmed, animated);
             }
+        }
+
+        @Override
+        public void reset() {
+            mView.setAlpha(1f);
+            mFastScrollDimmed = false;
+            mFastScrollFocused = false;
         }
     }
 
