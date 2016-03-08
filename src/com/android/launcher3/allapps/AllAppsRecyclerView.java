@@ -434,7 +434,10 @@ public class AllAppsRecyclerView extends BaseRecyclerView
 
     private void setSectionFastScrollFocused(int position) {
         if (mPrevFastScrollFocusedSection != null) {
-            for (int i = 0; i < mPrevFastScrollFocusedSection.numApps; i++) {
+            ((AllAppsGridAdapter)getAdapter()).setFocusedSection(mPrevFastScrollFocusedSection);
+            int size = mPrevFastScrollFocusedSection.numApps +
+                    mPrevFastScrollFocusedSection.numOtherViews;
+            for (int i = 0; i < size; i++) {
                 int sectionPosition = position+i;
                 final ViewHolder vh = findViewHolderForAdapterPosition(sectionPosition);
                 if (vh != null &&
@@ -447,6 +450,11 @@ public class AllAppsRecyclerView extends BaseRecyclerView
                 }
             }
         }
+    }
+
+    @Override
+    public void setPreviousSectionFastScrollFocused() {
+        setSectionFastScrollFocused(mPrevFastScrollFocusedPosition);
     }
 
     private void setSectionFastScrollDimmed(int position, boolean dimmed, boolean animate) {

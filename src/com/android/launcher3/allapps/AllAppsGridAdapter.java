@@ -73,6 +73,9 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
 
     private int mGridTheme;
 
+
+    private AlphabeticalAppsList.SectionInfo mFocusedSection;
+
     /**
      * ViewHolder for each icon.
      */
@@ -536,6 +539,8 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         boolean hideIconLabels = SettingsProvider.getBoolean(mLauncher,
                 SettingsProvider.SETTINGS_UI_DRAWER_HIDE_ICON_LABELS,
                 R.bool.preferences_interface_drawer_hide_icon_labels_default);
+        FastScrollFocusApplicator.setFastScrollDimmed(holder.mContent, false, false);
+        FastScrollFocusApplicator.setFastScrollFocused(holder.mContent, false, false);
         switch (holder.getItemViewType()) {
             case ICON_VIEW_TYPE: {
                 AppInfo info = mApps.getAdapterItems().get(position).appInfo;
@@ -545,7 +550,9 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     icon.setTextVisibility(!hideIconLabels);
                 }
                 icon.applyFromApplicationInfo(info);
-                icon.setFastScrollDimmed(mIconsDimmed, !mIconsDimmed);
+                FastScrollFocusApplicator.setFastScrollDimmed(icon, shouldDimPosition(position),
+                        !mIconsDimmed);
+                FastScrollFocusApplicator.setFastScrollFocused(icon, false, !mIconsDimmed);
                 break;
             }
             case PREDICTION_ICON_VIEW_TYPE: {
@@ -556,6 +563,11 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     icon.setTextVisibility(!hideIconLabels);
                 }
                 icon.applyFromApplicationInfo(info);
+                FastScrollFocusApplicator.setFastScrollDimmed(icon, shouldDimPosition(position),
+                        !mIconsDimmed);
+                FastScrollFocusApplicator.setFastScrollFocused(icon, false, !mIconsDimmed);
+
+                mRemoteFolderManager.onBindViewHolder(holder, info);
                 break;
             }
             case EMPTY_SEARCH_VIEW_TYPE:
@@ -576,7 +588,42 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     searchView.setVisibility(View.GONE);
                 }
                 break;
+            case CUSTOM_PREDICTED_APPS_HEADER_VIEW_TYPE: {
+                TextView title = (TextView) holder.mContent.findViewById(R.id.title);
+                title.setTextColor(mAllAppsTextColor);
+                FastScrollFocusApplicator.setFastScrollDimmed(holder.mContent,
+                        shouldDimPosition(position), !mIconsDimmed);
+                FastScrollFocusApplicator.setFastScrollFocused(holder.mContent, false, !mIconsDimmed);
+
+                ViewGroup.MarginLayoutParams lp =
+                        (ViewGroup.MarginLayoutParams) holder.mContent.getLayoutParams();
+                mCustomPredictedAppsHeaderHeight = holder.mContent.getHeight() +
+                        lp.topMargin + lp.bottomMargin;
+                break;
+            }
+            case CUSTOM_PREDICTED_APPS_FOOTER_VIEW_TYPE:
+                ViewGroup.MarginLayoutParams lp =
+                        (ViewGroup.MarginLayoutParams) holder.mContent.getLayoutParams();
+                mCustomPredictedAppsFooterHeight = holder.mContent.getHeight() +
+                        lp.topMargin + lp.bottomMargin;
         }
+    }
+
+    private boolean shouldDimPosition(int position) {
+        if (mFocusedSection != null && mIconsDimmed) {
+            if (position >= mFocusedSection.firstAppItem.position &&
+                    position < mFocusedSection.firstAppItem.position +
+                            mFocusedSection.numApps) {
+                return false;
+            }
+        }
+        return mIconsDimmed;
+    }
+
+    public int getCustomPredictedAppsOffset(int rowIndex) {
+        int offset = mCustomPredictedAppsHeaderHeight;
+        if (rowIndex > 0) offset += mCustomPredictedAppsFooterHeight;
+        return offset;
     }
 
     @Override
@@ -595,6 +642,11 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
             mIconsDimmed = iconsDimmed;
             notifyDataSetChanged();
         }
+    }
+
+    public void setFocusedSection(
+            AlphabeticalAppsList.SectionInfo focusedSection) {
+        mFocusedSection = focusedSection;
     }
 
     public void setGridTheme(int gridTheme) {
