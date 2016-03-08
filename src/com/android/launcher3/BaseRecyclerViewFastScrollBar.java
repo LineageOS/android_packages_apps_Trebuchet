@@ -83,6 +83,13 @@ public class BaseRecyclerViewFastScrollBar {
             focusable.setFastScrollDimmed(dimmed, animated);
         }
 
+        public static void reset(final View v) {
+            FastScrollFocusable focusable = getFromView(v);
+            if (focusable == null) return;
+            focusable.setFastScrollDimmed(false, false);
+            focusable.setFastScrollFocused(false, false);
+        }
+
         private static FastScrollFocusable getFromView(final View v) {
             Object tag = v.getTag(R.id.fast_scroll_focus_applicator_tag);
             if (tag != null) {
