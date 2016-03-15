@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfb3d3c7_48ef3f87",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 848
+      },
+      "writtenOn": "2016-03-15T15:30:28Z",
+      "side": 1,
+      "message": "no",
+      "range": {
+        "startLine": 783,
+        "startChar": 82,
+        "endLine": 783,
+        "endChar": 102
+      },
+      "revId": "d44f407e373067311a0fd07bbdc62c64ddeab833",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
