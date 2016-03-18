@@ -56,6 +56,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
 
 /**
  * The all apps view container.
@@ -624,6 +625,10 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
                     tmpRect.inset(-grid.allAppsIconSizePx / 2, 0);
                     if (ev.getX() < tmpRect.left || ev.getX() > tmpRect.right) {
                         mBoundsCheckLastTouchDownPos.set(x, y);
+                        return true;
+                    }
+                    // Check if the touch is below the recycler view. If yes, ignore the touch
+                    if (ev.getY() > tmpRect.bottom) {
                         return true;
                     }
                 } else {
