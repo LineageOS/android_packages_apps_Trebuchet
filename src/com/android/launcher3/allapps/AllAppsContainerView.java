@@ -626,6 +626,10 @@ public class AllAppsContainerView extends BaseContainerView implements DragSourc
                         mBoundsCheckLastTouchDownPos.set(x, y);
                         return true;
                     }
+                    // Check if the touch is below the recycler view. If yes, ignore the touch
+                    if (ev.getY() > tmpRect.bottom) {
+                        return true;
+                    }
                 } else {
                     // Check if the touch is outside all apps
                     if (ev.getX() < getPaddingLeft() ||
