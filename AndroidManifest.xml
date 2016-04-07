@@ -64,6 +64,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.RECEIVE_LAUNCH_BROADCASTS" />
     <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
     <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.android.launcher3.permission.RECEIVE_LAUNCH_BROADCASTS" />
