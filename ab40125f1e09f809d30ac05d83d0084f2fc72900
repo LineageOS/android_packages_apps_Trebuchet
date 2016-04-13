@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_887093de",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1101,
+      "author": {
+        "id": 9813
+      },
+      "writtenOn": "2016-04-13T19:57:08Z",
+      "side": 1,
+      "message": "might want to comment on the reason this is here (especially since its calling a local override method)",
+      "range": {
+        "startLine": 1101,
+        "startChar": 7,
+        "endLine": 1101,
+        "endChar": 31
+      },
+      "revId": "ab40125f1e09f809d30ac05d83d0084f2fc72900",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
