@@ -513,7 +513,6 @@ public class Launcher extends Activity
         mAppWidgetManager = AppWidgetManagerCompat.getInstance(this);
 
         mAppWidgetHost = new LauncherAppWidgetHost(this, APPWIDGET_HOST_ID);
-        mAppWidgetHost.startListening();
 
         // If we are getting an onCreate, we can actually preempt onResume and unset mPaused here,
         // this also ensures that any synchronous binding below doesn't re-trigger another
@@ -1077,6 +1076,8 @@ public class Launcher extends Activity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onStart();
         }
+        // If AppwidgetService failed to bind in onCreate, this will attempt binding again.
+        onAppWidgetHostReset();
     }
 
     @Override
