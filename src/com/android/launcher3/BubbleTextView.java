@@ -170,12 +170,17 @@ public class BubbleTextView extends TextView
 
     public void applyFromShortcutInfo(ShortcutInfo info, IconCache iconCache,
             boolean promiseStateChanged) {
-        Bitmap b = info.getIcon(iconCache);
+        Drawable iconDrawable;
+        if (info.customDrawable != null) {
+            iconDrawable = info.customDrawable;
+        } else {
+            Bitmap b = info.getIcon(iconCache);
 
-        if (b.getWidth() > mIconSize || b.getHeight() > mIconSize) {
-            b = Bitmap.createScaledBitmap(b, mIconSize, mIconSize, false);
-            info.setIcon(b);
-            info.updateIcon(iconCache);
+            if (b.getWidth() > mIconSize || b.getHeight() > mIconSize) {
+                b = Bitmap.createScaledBitmap(b, mIconSize, mIconSize, true);
+                info.setIcon(b);
+                info.updateIcon(iconCache);
+            }
         }
 
         FastBitmapDrawable iconDrawable = mLauncher.createIconDrawable(b);
