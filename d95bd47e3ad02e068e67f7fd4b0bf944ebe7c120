@@ -22,6 +22,30 @@
       "revId": "d95bd47e3ad02e068e67f7fd4b0bf944ebe7c120",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_a2bc8cdc",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-09T20:08:29Z",
+      "side": 1,
+      "message": "They are ints. When ready from the DB, they default to 0.",
+      "parentUuid": "5faad753_82e070fc",
+      "range": {
+        "startLine": 687,
+        "startChar": 16,
+        "endLine": 689,
+        "endChar": 83
+      },
+      "revId": "d95bd47e3ad02e068e67f7fd4b0bf944ebe7c120",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
