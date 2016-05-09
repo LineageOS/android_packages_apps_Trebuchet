@@ -684,14 +684,18 @@ public class LauncherModel extends BroadcastReceiver
             if (modelItem instanceof ShortcutInfo && item instanceof ShortcutInfo) {
                 ShortcutInfo modelShortcut = (ShortcutInfo) modelItem;
                 ShortcutInfo shortcut = (ShortcutInfo) item;
+                // Shortcuts in a default folder loaded by a default workspace.xml
+                // have null, screenId, cellX, and cellY causing a RuntimeException.
+                // Ignore those fields for shortcuts in folders in this comparison.
+                boolean isInFolder = item.container == LauncherSettings.Favorites.ITEM_TYPE_FOLDER;
                 if (modelShortcut.title.toString().equals(shortcut.title.toString()) &&
                         modelShortcut.intent.filterEquals(shortcut.intent) &&
                         modelShortcut.id == shortcut.id &&
                         modelShortcut.itemType == shortcut.itemType &&
                         modelShortcut.container == shortcut.container &&
-                        modelShortcut.screenId == shortcut.screenId &&
-                        modelShortcut.cellX == shortcut.cellX &&
-                        modelShortcut.cellY == shortcut.cellY &&
+                        (isInFolder || modelShortcut.screenId == shortcut.screenId) &&
+                        (isInFolder || modelShortcut.cellX == shortcut.cellX) &&
+                        (isInFolder || modelShortcut.cellY == shortcut.cellY) &&
                         modelShortcut.spanX == shortcut.spanX &&
                         modelShortcut.spanY == shortcut.spanY &&
                         ((modelShortcut.dropPos == null && shortcut.dropPos == null) ||
