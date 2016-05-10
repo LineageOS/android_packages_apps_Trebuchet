@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_a581f14c",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2457,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_0a5a524e",
+      "range": {
+        "startLine": 2457,
+        "startChar": 56,
+        "endLine": 2457,
+        "endChar": 58
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_c5ff4dff",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2016-05-10T19:13:37Z",
       "side": 1,
       "message": "We should have these on individual lines to keep the style consistent.",
+      "range": {
+        "startLine": 2466,
+        "startChar": 28,
+        "endLine": 2467,
+        "endChar": 73
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_45983dbf",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2467,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_c5ff4dff",
       "range": {
         "startLine": 2466,
         "startChar": 28,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_6593f9a4",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2470,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_e5028909",
+      "range": {
+        "startLine": 2470,
+        "startChar": 28,
+        "endLine": 2470,
+        "endChar": 63
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_4a25aac1",
         "filename": "src/com/android/launcher3/LauncherModel.java",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2016-05-10T19:13:37Z",
       "side": 1,
       "message": "If it\u0027s null, it seems like we have a big problem here.",
+      "range": {
+        "startLine": 2473,
+        "startChar": 32,
+        "endLine": 2473,
+        "endChar": 55
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_0592459f",
+        "filename": "src/com/android/launcher3/LauncherModel.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2473,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_4a25aac1",
       "range": {
         "startLine": 2473,
         "startChar": 32,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_e587e960",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "I just wanted to keep the original algorithm.",
+      "parentUuid": "5faad753_8509552d",
+      "range": {
+        "startLine": 717,
+        "startChar": 8,
+        "endLine": 720,
+        "endChar": 9
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_a50c913b",
         "filename": "src/com/android/launcher3/Utilities.java",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2016-05-10T19:13:37Z",
       "side": 1,
       "message": "... and here.",
+      "range": {
+        "startLine": 738,
+        "startChar": 12,
+        "endLine": 738,
+        "endChar": 64
+      },
+      "revId": "225279ac27a707a35f864c27d7a9b0c05ecbcac0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_857e3569",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-05-10T19:44:36Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "5faad753_a50c913b",
       "range": {
         "startLine": 738,
         "startChar": 12,
