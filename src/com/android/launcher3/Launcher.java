@@ -4509,6 +4509,7 @@ public class Launcher extends Activity
         }
 
         mWorkspace.stripEmptyScreens();
+        bindSearchProviderChanged();
     }
 
     private void sendLoadingCompleteBroadcastIfNecessary() {
