@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_5199d01c",
+        "filename": "src/com/android/launcher3/AutoExpandTextView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-05-17T11:30:58Z",
+      "side": 1,
+      "message": "More elegant: if (!TextUtils.isEmpty(highlightText.mText)) {",
+      "revId": "0939c1eb735bd022314db08a133d80b887fb1ea0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
