@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_7ac0617c",
+        "filename": "src/com/android/launcher3/AutoExpandTextView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-05-17T19:51:46Z",
+      "side": 1,
+      "message": "nit: \u003e 100 chars",
+      "revId": "188f66a2763de2e882563a82a3de9258efd0227c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_3a38a99e",
+        "filename": "src/com/android/launcher3/AutoExpandTextView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2016-05-17T19:51:46Z",
+      "side": 1,
+      "message": "ditto here",
+      "revId": "188f66a2763de2e882563a82a3de9258efd0227c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
