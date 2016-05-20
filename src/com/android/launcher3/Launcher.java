@@ -1921,7 +1921,7 @@ public class Launcher extends Activity
         if (gridSize != size.getValue() || customValuesChanged) {
             SettingsProvider.putInt(this,
                     SettingsProvider.SETTINGS_UI_DYNAMIC_GRID_SIZE, size.getValue());
-            reloadLauncher(false, true);
+            reloadLauncher(true, true);
         }
 
         mOverviewSettingsPanel.notifyDataSetInvalidated();
