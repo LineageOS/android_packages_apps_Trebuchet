@@ -1707,6 +1707,8 @@ public class Workspace extends PagedView
         mWindowToken = getWindowToken();
         computeScroll();
         mDragController.setWindowToken(mWindowToken);
+        if (mLauncher.isAppsViewVisible() && mPageIndicator != null)
+            mPageIndicator.setVisibility(INVISIBLE);
     }
 
     protected void onDetachedFromWindow() {
