@@ -387,9 +387,11 @@ public class DragLayer extends InsettableFrameLayout {
         mTmpXY[1] = 0;
         float scale = getDescendantCoordRelativeToSelf(descendant, mTmpXY);
 
-        r.set(mTmpXY[0], mTmpXY[1],
-                (int) (mTmpXY[0] + scale * descendant.getMeasuredWidth()),
-                (int) (mTmpXY[1] + scale * descendant.getMeasuredHeight()));
+        if (descendant != null) {
+            r.set(mTmpXY[0], mTmpXY[1],
+                    (int) (mTmpXY[0] + scale * descendant.getMeasuredWidth()),
+                    (int) (mTmpXY[1] + scale * descendant.getMeasuredHeight()));
+        }
         return scale;
     }
 
