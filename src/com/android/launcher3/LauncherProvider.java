@@ -47,7 +47,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.os.StrictMode;
-import android.os.SystemProperties;
 import android.os.UserManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -63,6 +62,8 @@ import com.android.launcher3.util.ManagedProfileHeuristic;
 import com.android.launcher3.util.Thunk;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -449,7 +450,8 @@ public class LauncherProvider extends ContentProvider {
     }
 
     private DefaultLayoutParser getDefaultLayoutParser() {
-        String mcc = SystemProperties.get(MCC_PROP_NAME);
+        String mcc = getSystemProperty();
+
         Resources customResources = null;
         if (!TextUtils.isEmpty(mcc)) {
             if (LOGD) Log.d(TAG, "mcc: " + mcc);
@@ -476,12 +478,28 @@ public class LauncherProvider extends ContentProvider {
                     Log.e(TAG, "Failed getting source dir", e);
                 }
 
-                AssetManager assetManager = new AssetManager();
                 if (!TextUtils.isEmpty(publicSrcDir)) {
-                    assetManager.addAssetPath(publicSrcDir);
+                    try {
+                        Class assetManagerClass = Class.forName("android.content.res.AssetManager");
+                        AssetManager assetManager = (AssetManager) assetManagerClass.newInstance();
+
+                        Method addAssetPath = assetManager.getClass().getMethod("addAssetPath", String.class);
+                        addAssetPath.invoke(assetManager, publicSrcDir);
+
+                        customResources = new Resources(assetManager, new DisplayMetrics(),
+                                tempConfiguration);
+                    } catch (ClassNotFoundException e) {
+                        Log.e(TAG, "Unable to find AssetManager", e);
+                    } catch (InstantiationException e) {
+                        Log.e(TAG, "Unable to instantiate AssetManager", e);
+                    } catch (IllegalAccessException e) {
+                        Log.e(TAG, "Unable to access AssetManager", e);
+                    } catch (NoSuchMethodException e) {
+                        Log.e(TAG, "Unable to add asset path to AssetManager", e);
+                    } catch (InvocationTargetException e) {
+                        Log.e(TAG, "Unable to invoke addAssetPath on AssetManager", e);;
+                    }
                 }
-                customResources = new Resources(assetManager, new DisplayMetrics(),
-                        tempConfiguration);
             }
         }
 
@@ -495,6 +513,31 @@ public class LauncherProvider extends ContentProvider {
                 defaultLayout);
     }
 
+    private String getSystemProperty() {
+        String property = null;
+        try {
+            Class systemProperties = getContext().getClassLoader().loadClass("android.os.SystemProperties");
+            Class[] paramTypes= new Class[1];
+            paramTypes[0] = String.class;
+
+            Method getSystemProperty = systemProperties.getMethod("get", paramTypes);
+
+            Object[] params= new Object[1];
+            params[0]= new String(MCC_PROP_NAME);
+
+            property = (String) getSystemProperty.invoke(systemProperties, params);
+        } catch (ClassNotFoundException e) {
+            Log.e(TAG, "Unable to find SystemProperties", e);
+        } catch (NoSuchMethodException e) {
+            Log.e(TAG, "Unable to get SystemProperties", e);
+        } catch (InvocationTargetException e) {
+            Log.e(TAG, "Unable to invoke SystemProperties", e);
+        } catch (IllegalAccessException e) {
+            Log.e(TAG, "Unable to access SystemProperties", e);
+        }
+
+        return property;
+    }
     public void migrateLauncher2Shortcuts() {
         mOpenHelper.migrateLauncher2Shortcuts(mOpenHelper.getWritableDatabase(),
                 Uri.parse(getContext().getString(R.string.old_launcher_provider_uri)));
