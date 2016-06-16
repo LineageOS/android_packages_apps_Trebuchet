@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5faad753_f85df446",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2016-06-16T13:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_c5e05129",
+      "range": {
+        "startLine": 517,
+        "startChar": 19,
+        "endLine": 517,
+        "endChar": 36
+      },
+      "revId": "9d60f57fe80ee2809bd76d51ef24d20ea8c0feaa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5faad753_65d39d61",
         "filename": "src/com/android/launcher3/LauncherProvider.java",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2016-06-15T21:02:51Z",
       "side": 1,
       "message": "Add an extra line after this",
+      "range": {
+        "startLine": 542,
+        "startChar": 4,
+        "endLine": 542,
+        "endChar": 5
+      },
+      "revId": "9d60f57fe80ee2809bd76d51ef24d20ea8c0feaa",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_9856402a",
+        "filename": "src/com/android/launcher3/LauncherProvider.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2016-06-16T13:38:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5faad753_65d39d61",
       "range": {
         "startLine": 542,
         "startChar": 4,
