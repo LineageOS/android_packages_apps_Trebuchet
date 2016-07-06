@@ -22,6 +22,8 @@ import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.settings.SettingsProvider;
 
+import java.io.File;
+
 public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
     public static final String ACTION_SEARCH_BAR_VISIBILITY_CHANGED =
             "cyanogenmod.intent.action.SEARCH_BAR_VISIBILITY_CHANGED";
@@ -373,6 +375,11 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                                     OverviewSettingsPanel.ANDROID_PROTECTED_APPS);
                             mLauncher.startActivity(intent);
                             break;
+                        case 2:
+                            mLauncher.checkPermissionsAndExportDBFile();
+                            mLauncher.emailExportedFile();
+                            break;
+
                     }
             }
 

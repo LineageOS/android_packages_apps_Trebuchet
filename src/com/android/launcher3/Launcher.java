@@ -133,6 +133,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import android.support.v4.content.ContextCompat;
+import android.support.v4.app.ActivityCompat;
+import android.content.pm.PackageManager;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.nio.channels.FileChannel;
+import android.content.ContextWrapper;
+import android.provider.Settings;
+
 /**
  * Default launcher application.
  */
@@ -169,7 +178,8 @@ public class Launcher extends Activity
     private static final int WORKSPACE_BACKGROUND_BLACK = 2;
 
     private static final float BOUNCE_ANIMATION_TENSION = 1.3f;
-
+    private static final String TREBUCHET_DB_TEMP_OUTPUT =
+            Environment.getExternalStorageDirectory().getAbsolutePath();
 
     public static final String LONGPRESS_CHANGE = "wallpaper_changed_by_longpress";
 
@@ -268,6 +278,7 @@ public class Launcher extends Activity
     private DragController mDragController;
     private View mWeightWatcher;
     private DynamicGridSizeFragment mDynamicGridSizeFragment;
+    private int mIsDeveloperOptionsEnabled;
 
     protected static RemoteFolderManager sRemoteFolderManager;
 
@@ -330,6 +341,8 @@ public class Launcher extends Activity
     private boolean mVisible = false;
     private boolean mHasFocus = false;
     private boolean mAttached = false;
+
+    private File mExportedLauncherDB = null;
 
     private LauncherClings mClings;
 
@@ -482,6 +495,80 @@ public class Launcher extends Activity
         }
     };
 
+    final private int PERMISSION_REQUEST_CODE_EXPORT_DB = 1;
+
+    private void requestWriteExternalPermission(){
+        ActivityCompat.requestPermissions(
+            this,
+            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            PERMISSION_REQUEST_CODE_EXPORT_DB
+            );
+    }
+
+    private boolean checkWriteExternalPermission(){
+        int result = ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            );
+        if (result == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // returns true if mIsDeveloperOptionsEnabled was updated else
+    // returns false
+    private boolean updateDeveloperOptions(){
+        int adb = Settings.Global.getInt(
+            getContentResolver(),
+            Settings.Global.DEVELOPMENT_SETTINGS_ENABLED,
+            0
+            );
+        if( adb == mIsDeveloperOptionsEnabled ){
+            return false;
+        } else {
+            mIsDeveloperOptionsEnabled = adb;
+            return true;
+        }
+    }
+    private void deleteExportedLauncerDB() {
+        if ( mExportedLauncherDB != null && mExportedLauncherDB.exists() ) {
+            mExportedLauncherDB.delete();
+        }
+        mExportedLauncherDB = null;
+    }
+    private File exportFile(File inputFile, String outputPath) throws IOException {
+        File outputFolder = new File( outputPath );
+        if( !outputFolder.exists() ) {
+            outputFolder.mkdir();
+        }
+
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        File outputFile = new File(
+            outputPath + File.separator + "launcher_" + timeStamp + ".db"
+            );
+        FileChannel inChannel = null;
+        FileChannel outChannel = null;
+
+        try {
+            inChannel = new FileInputStream(inputFile).getChannel();
+            outChannel = new FileOutputStream(outputFile).getChannel();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            inChannel.transferTo(0, inChannel.size(), outChannel);
+        } finally {
+            if (inChannel != null)
+                inChannel.close();
+            if (outChannel != null)
+                outChannel.close();
+        }
+        return outputFile;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -542,6 +629,7 @@ public class Launcher extends Activity
 
         setContentView(R.layout.launcher);
 
+        updateDeveloperOptions();
         setupViews();
         mDeviceProfile.layout(this);
 
@@ -616,6 +704,48 @@ public class Launcher extends Activity
         IntentFilter searchBarVisibilityFilter = new IntentFilter(
                 SettingsPinnedHeaderAdapter.ACTION_SEARCH_BAR_VISIBILITY_CHANGED);
         registerReceiver(searchBarVisibilityChangedReceiver, searchBarVisibilityFilter);
+    }
+
+    public void checkPermissionsAndExportDBFile(){
+        if( checkWriteExternalPermission() == false) {
+            requestWriteExternalPermission();
+        } else {
+            exportDBFile();
+        }
+    }
+
+    public void exportDBFile() {
+        ContextWrapper c = new ContextWrapper(this);
+        File dbFile = c.getDatabasePath("launcher.db");
+        try {
+            deleteExportedLauncerDB();
+            mExportedLauncherDB = exportFile(
+                                        dbFile,
+                                        TREBUCHET_DB_TEMP_OUTPUT
+                                        );
+        } catch (IOException e) {
+            Toast.makeText(
+                this,
+                getString(R.string.export_db_could_not),
+                Toast.LENGTH_SHORT
+                ).show();
+        }
+    }
+
+    private final int EMAIL_DB_FILE_CODE = 101;
+    public void emailExportedFile() {
+        if( mExportedLauncherDB == null ) {
+            return;
+        }
+        Uri path = Uri.fromFile(mExportedLauncherDB);
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("vnd.android.cursor.dir/email");
+        emailIntent.putExtra(Intent.EXTRA_STREAM, path);
+        emailIntent.putExtra(
+            Intent.EXTRA_SUBJECT,
+            getString(R.string.export_db_email_subject)
+            );
+        startActivityForResult(emailIntent , EMAIL_DB_FILE_CODE);
     }
 
     @Override
@@ -980,7 +1110,11 @@ public class Launcher extends Activity
     @Override
     protected void onActivityResult(
             final int requestCode, final int resultCode, final Intent data) {
-        handleActivityResult(requestCode, resultCode, data);
+        if (requestCode == EMAIL_DB_FILE_CODE) {
+            deleteExportedLauncerDB();
+        } else {
+            handleActivityResult(requestCode, resultCode, data);
+        }
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onActivityResult(requestCode, resultCode, data);
         }
@@ -1005,6 +1139,19 @@ public class Launcher extends Activity
                 // TODO: Show a snack bar with link to settings
                 Toast.makeText(this, getString(R.string.msg_no_phone_permission,
                         getString(R.string.app_name)), Toast.LENGTH_SHORT).show();
+            }
+        } else if (requestCode == PERMISSION_REQUEST_CODE_EXPORT_DB) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                exportDBFile();
+                emailExportedFile();
+            } else {
+                Toast.makeText(
+                    this,
+                    getString(R.string.export_db_could_not) + ". " +
+                             getString(R.string.storage_permission_denied),
+                    Toast.LENGTH_LONG
+                    ).show();
             }
         }
         if (mLauncherCallbacks != null) {
@@ -1217,6 +1364,9 @@ public class Launcher extends Activity
         if (gridFragment != null) {
             ((DynamicGridSizeFragment) gridFragment).setSize();
             unlockScreenOrientation(true);
+        }
+        if( updateDeveloperOptions() && mOverviewSettingsPanel != null){
+            mOverviewSettingsPanel.initializeAdapter();
         }
     }
 
@@ -2387,6 +2537,10 @@ public class Launcher extends Activity
 
         unregisterReceiver(protectedAppsChangedReceiver);
         unregisterReceiver(searchBarVisibilityChangedReceiver);
+    }
+
+    public int getIsDeveloperOptionsEnabled(){
+        return mIsDeveloperOptionsEnabled;
     }
 
     public DragController getDragController() {
