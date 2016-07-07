@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_2a3bc938",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-07-07T14:55:26Z",
+      "side": 1,
+      "message": "Don\u0027t import the whole package. Also, make sure the import order follows the android style rules.",
+      "revId": "c478a2a32d4808c74893375ce007a393ea45f945",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ca4795bc",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-07-07T14:55:26Z",
+      "side": 1,
+      "message": "If the external storage dir isn\u0027t ready, this could be null.",
+      "revId": "c478a2a32d4808c74893375ce007a393ea45f945",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8a13ddb8",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-07-07T14:55:26Z",
+      "side": 1,
+      "message": "Move this up to the top. Also follow the conventions of the class, \"private final\"",
+      "revId": "c478a2a32d4808c74893375ce007a393ea45f945",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ea44d1b9",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1448
+      },
+      "writtenOn": "2016-07-07T14:55:26Z",
+      "side": 1,
+      "message": "I\u0027m not sure the enabling when dev settings are enabled is the right choice. Maybe add a global default setting or cmsetting that is disabled by default and can be overlayed.",
+      "revId": "c478a2a32d4808c74893375ce007a393ea45f945",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
