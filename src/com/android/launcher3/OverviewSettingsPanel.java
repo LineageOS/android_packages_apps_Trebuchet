@@ -38,18 +38,6 @@ public class OverviewSettingsPanel {
                 res.getString(R.string.drawer_settings),
                 res.getString(R.string.app_settings)};
 
-        String[] valuesApp = null;
-
-        if( mLauncher.getIsHiddenMenuOptionEnabled() == false ) {
-            valuesApp = new String[] {
-                res.getString(R.string.larger_icons_text),
-                res.getString(R.string.protected_app_settings)};
-        } else {
-            valuesApp = new String[] {
-                res.getString(R.string.larger_icons_text),
-                res.getString(R.string.protected_app_settings),
-                res.getString(R.string.export_workspace_layout)};
-        }
         mSettingsAdapter = new SettingsPinnedHeaderAdapter(mLauncher);
         mSettingsAdapter.setHeaders(headers);
         mSettingsAdapter.addPartition(false, true);
@@ -61,7 +49,8 @@ public class OverviewSettingsPanel {
                 createCursor(headers[0], getValuesHome()));
         mSettingsAdapter.changeCursor(DRAWER_SETTINGS_POSITION,
                 createCursor(headers[1], getValuesDrawer()));
-        mSettingsAdapter.changeCursor(APP_SETTINGS_POSITION, createCursor(headers[2], valuesApp));
+        mSettingsAdapter.changeCursor(APP_SETTINGS_POSITION,
+                createCursor(headers[2], getValuesApp()));
         mListView.setAdapter(mSettingsAdapter);
     }
 
@@ -103,6 +92,21 @@ public class OverviewSettingsPanel {
 
         // Add additional external settings.
         RemoteFolderManager.onInitializeDrawerSettings(values, mLauncher);
+
+        String[] valuesArr = new String[values.size()];
+        values.toArray(valuesArr);
+        return valuesArr;
+    }
+
+    private String[] getValuesApp() {
+        Resources res = mLauncher.getResources();
+        ArrayList<String> values = new ArrayList<String>(Arrays.asList(new String[]{
+                res.getString(R.string.larger_icons_text),
+                res.getString(R.string.protected_app_settings)}));
+
+        if (mLauncher.getIsHiddenMenuOptionEnabled()) {
+            values.add(res.getString(R.string.export_workspace_layout));
+        }
 
         String[] valuesArr = new String[values.size()];
         values.toArray(valuesArr);
