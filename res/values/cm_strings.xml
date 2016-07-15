@@ -60,6 +60,10 @@
     <!-- Protected apps -->
     <string name="protected_app_settings">Protected apps</string>
 
+    <!-- Wipe applications icons database -->
+    <string name="wipe_icons_db">Force reload app icons</string>
+    <string name="wipe_icons_db_msg">Application icons database wiped</string>
+
     <!-- Developer settings -->
     <string name="export_workspace_layout">Export layout</string>
 

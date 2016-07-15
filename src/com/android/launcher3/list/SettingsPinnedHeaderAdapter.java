@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.launcher3.IconCache;
 import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.OverviewSettingsPanel;
 import com.android.launcher3.R;
@@ -374,10 +376,13 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             mLauncher.startActivity(intent);
                             break;
                         case 2:
+                            wipeIconDb();
+                            mLauncher.reloadLauncher(false, true);
+                            break;
+                        case 3:
                             mLauncher.checkPermissionsAndExportDBFile();
                             mLauncher.emailExportedFile();
                             break;
-
                     }
             }
 
@@ -405,6 +410,15 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
 
         Intent intent = new Intent(ACTION_SEARCH_BAR_VISIBILITY_CHANGED);
         mContext.sendBroadcast(intent);
+    }
+
+    private void wipeIconDb() {
+        LauncherAppState app = LauncherAppState.getInstance();
+        IconCache cache = app.getIconCache();
+        cache.wipe();
+
+        Toast.makeText(mContext, mContext.getString(R.string.wipe_icons_db_msg),
+                Toast.LENGTH_SHORT).show();
     }
 
     private boolean onSettingsBooleanChanged(View v, String key, int res, boolean invert) {
