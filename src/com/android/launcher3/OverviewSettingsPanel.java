@@ -102,7 +102,8 @@ public class OverviewSettingsPanel {
         Resources res = mLauncher.getResources();
         ArrayList<String> values = new ArrayList<String>(Arrays.asList(new String[]{
                 res.getString(R.string.larger_icons_text),
-                res.getString(R.string.protected_app_settings)}));
+                res.getString(R.string.protected_app_settings),
+                res.getString(R.string.wipe_icons_db)}));
 
         if (mLauncher.getIsHiddenMenuOptionEnabled()) {
             values.add(res.getString(R.string.export_workspace_layout));

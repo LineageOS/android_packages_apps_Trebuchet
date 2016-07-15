@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.launcher3.IconCache;
 import com.android.launcher3.InvariantDeviceProfile;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.OverviewSettingsPanel;
 import com.android.launcher3.R;
@@ -374,10 +376,15 @@ public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
                             mLauncher.startActivity(intent);
                             break;
                         case 2:
+                            LauncherAppState app = LauncherAppState.getInstance();
+                            IconCache cache = app.getIconCache();
+                            cache.wipe();
+                            mLauncher.reloadLauncher(false, true);
+                            break;
+                        case 3:
                             mLauncher.checkPermissionsAndExportDBFile();
                             mLauncher.emailExportedFile();
                             break;
-
                     }
             }
 

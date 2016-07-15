@@ -201,6 +201,14 @@ public class IconCache {
     }
 
     /**
+     * Empty out the database (severe).
+     */
+    public synchronized void wipe() {
+        Log.d(TAG, "Wiping application icon database");
+        mIconDb.clearDB(mIconDb.getWritableDatabase());
+    }
+
+    /**
      * Empty out the cache.
      */
     public synchronized void flush() {
@@ -867,7 +875,7 @@ public class IconCache {
             }
         }
 
-        private void clearDB(SQLiteDatabase db) {
+        public void clearDB(SQLiteDatabase db) {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
             onCreate(db);
         }
