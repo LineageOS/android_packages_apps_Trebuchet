@@ -1536,8 +1536,9 @@ public class Workspace extends PagedView
             scheduleUpdate();
             mFinalOffset = Math.max(0f, Math.min(x, 1.0f));
             if (getNumScreensExcludingEmptyAndCustom() != mNumScreens) {
-                if (mNumScreens > 0) {
-                    // Don't animate if we're going from 0 screens
+                if (mNumScreens > 0 && Float.compare(mCurrentOffset, mFinalOffset) != 0) {
+                    // Don't animate if we're going from 0 screens, or if the final offset is the same
+                    // as the current offset
                     animateToFinal();
                 }
                 mNumScreens = getNumScreensExcludingEmptyAndCustom();
