@@ -64,7 +64,7 @@
   <string name="search_activity_not_found">找不到搜尋活動 ！</string>
   <!-- App not available toast text -->
   <string name="app_not_available">應用程式不可用</string>
-  <string name="storage_permission_denied">無法存取裝置。</string>
+  <string name="storage_permission_denied">無法存取儲存空間。</string>
   <string name="export_db_email_subject">區域性的啟動器資料庫</string>
   <string name="export_db_could_not">無法匯出資料庫檔案</string>
 </resources>
