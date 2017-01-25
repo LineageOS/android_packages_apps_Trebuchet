@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_cabc596f",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2017-01-25T11:54:18Z",
+      "side": 1,
+      "message": "name can stay",
+      "revId": "8b4b5fa51768dc54c328619dc3a340ab2394d147",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_4ab0698b",
+        "filename": "src/com/android/launcher3/WallpaperChangedReceiver.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2017-01-25T11:54:18Z",
+      "side": 1,
+      "message": "Appears the fromSelf check still needs to happen",
+      "revId": "8b4b5fa51768dc54c328619dc3a340ab2394d147",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
