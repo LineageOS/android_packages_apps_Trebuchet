@@ -33,7 +33,7 @@
   <string name="grid_size_comfortable">宽松</string>
   <string name="grid_size_cozy">合适</string>
   <string name="grid_size_condensed">紧凑</string>
-  <string name="grid_size_custom">自定义(<xliff:g id="rows">%1$d</xliff:g>\u00d7<xliff:g id="columns">%2$d</xliff:g>)</string>
+  <string name="grid_size_custom">自定义 (<xliff:g id="rows">%1$d</xliff:g>\u00d7<xliff:g id="columns">%2$d</xliff:g>)</string>
   <string name="preferences_interface_homescreen_custom">选择自定义尺寸</string>
   <!-- Dialog -->
   <string name="dialog_confirm">确认</string>
