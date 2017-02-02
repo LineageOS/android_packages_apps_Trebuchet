@@ -48,6 +48,7 @@
   <!-- Protected apps -->
   <string name="protected_app_settings">Aplicaciones protegidas</string>
   <!-- Developer settings -->
+  <string name="export_workspace_layout">Diseño de exportación</string>
   <!-- Drawer settings -->
   <string name="app_drawer_style">Estilo del panel</string>
   <string name="app_drawer_style_compact">Compacto</string>
