@@ -65,4 +65,5 @@
   <!-- App not available toast text -->
   <string name="app_not_available">Aplicación no disponible</string>
   <string name="storage_permission_denied">No se puede acceder al almacenamiento</string>
+  <string name="export_db_could_not">No podría exportar archivo DB</string>
 </resources>
