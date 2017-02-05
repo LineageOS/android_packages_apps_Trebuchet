@@ -48,6 +48,7 @@
   <!-- Protected apps -->
   <string name="protected_app_settings">Các ứng dụng được bảo vệ</string>
   <!-- Developer settings -->
+  <string name="export_workspace_layout">Xuất bố cục</string>
   <!-- Drawer settings -->
   <string name="app_drawer_style">Kiểu ngăn kéo</string>
   <string name="app_drawer_style_compact">Gọn</string>
@@ -64,4 +65,6 @@
   <!-- App not available toast text -->
   <string name="app_not_available">Không sẵn có ứng dụng</string>
   <string name="storage_permission_denied">Không thể truy cập vào bộ lưu trữ</string>
+  <string name="export_db_email_subject">Trình khởi chạy DB cho khu vực</string>
+  <string name="export_db_could_not">Không thể xuất tập tin DB</string>
 </resources>

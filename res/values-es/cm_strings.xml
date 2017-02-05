@@ -48,6 +48,7 @@
   <!-- Protected apps -->
   <string name="protected_app_settings">Aplicaciones protegidas</string>
   <!-- Developer settings -->
+  <string name="export_workspace_layout">Diseño de exportación</string>
   <!-- Drawer settings -->
   <string name="app_drawer_style">Estilo del panel</string>
   <string name="app_drawer_style_compact">Compacto</string>
@@ -64,4 +65,6 @@
   <!-- App not available toast text -->
   <string name="app_not_available">Aplicación no disponible</string>
   <string name="storage_permission_denied">No se puede acceder al almacenamiento</string>
+  <string name="export_db_email_subject">Lanzador de base de datos para la región</string>
+  <string name="export_db_could_not">No podría exportar archivo DB</string>
 </resources>
