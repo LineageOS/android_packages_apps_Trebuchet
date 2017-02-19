@@ -48,9 +48,23 @@
   <!-- Protected apps -->
   <string name="protected_app_settings">Заблоковані програми</string>
   <!-- Developer settings -->
+  <string name="export_workspace_layout">Експортувати розкладку</string>
   <!-- Drawer settings -->
+  <string name="app_drawer_style">Стиль меню</string>
+  <string name="app_drawer_style_compact">Компактний</string>
+  <string name="app_drawer_style_sections">Розділи</string>
+  <string name="app_drawer_color">Колір меню</string>
+  <string name="app_drawer_color_dark">Темний</string>
+  <string name="app_drawer_color_light">Світлий</string>
+  <string name="fast_scroller">Швидка прокрутка</string>
+  <string name="fast_scroller_type">Тип швидкої прокрутки</string>
+  <string name="fast_scroller_type_horizontal">Горизонтальний</string>
   <string name="fast_scroller_type_vertical">Вертикальне</string>
   <!-- Search Manager doesn't exist -->
   <string name="search_activity_not_found">Діяльність з пошуку не виявлена!</string>
   <!-- App not available toast text -->
+  <string name="app_not_available">Додаток недоступний</string>
+  <string name="storage_permission_denied">Неможливо отримати доступ до пам\'яті</string>
+  <string name="export_db_email_subject">БД домашнього екрану</string>
+  <string name="export_db_could_not">Не вдалося експортувати файл бази даних</string>
 </resources>
