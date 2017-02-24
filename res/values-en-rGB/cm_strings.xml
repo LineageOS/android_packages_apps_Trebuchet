@@ -17,10 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
+  <string name="home_screen_settings">HOME SCREEN SETTINGS</string>
+  <string name="drawer_settings">DRAWER SETTINGS</string>
+  <string name="app_settings">APP SETTINGS</string>
   <!-- Settings states -->
+  <string name="setting_state_on">ON</string>
+  <string name="setting_state_off">OFF</string>
+  <string name="setting_state_disabled">DISABLED</string>
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Wallpaper scroll effect -->
   <!-- Dynamic Grid -->
+  <string name="grid_size_text">Grid size</string>
+  <string name="grid_size_cozy">Cozy</string>
+  <string name="preferences_interface_homescreen_custom">Select custom size</string>
   <!-- Dialog -->
   <!-- Home screen search bar -->
   <!-- Larger icons -->
@@ -28,6 +38,7 @@
   <!-- Protected apps -->
   <!-- Developer settings -->
   <!-- Drawer settings -->
+  <string name="app_drawer_color">Drawer colour</string>
   <!-- Search Manager doesn't exist -->
   <!-- App not available toast text -->
 </resources>
