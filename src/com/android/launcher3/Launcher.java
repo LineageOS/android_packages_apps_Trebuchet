@@ -507,7 +507,10 @@ public class Launcher extends Activity
             newSystemUiFlags &= ~(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         if (newSystemUiFlags != oldSystemUiFlags) {
-            getWindow().getDecorView().setSystemUiVisibility(newSystemUiFlags);
+            final int systemUiFlags = newSystemUiFlags;
+            runOnUiThread(() -> {
+                getWindow().getDecorView().setSystemUiVisibility(systemUiFlags);
+            });
         }
     }
 
