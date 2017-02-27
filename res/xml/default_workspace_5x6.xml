@@ -132,6 +132,9 @@
         <favorite
             launcher:packageName="com.android.gallery3d"
             launcher:className="com.android.gallery3d.app.GalleryActivity" />
+        <favorite
+            launcher:packageName="org.codeaurora.gallery"
+            launcher:className="com.android.gallery3d.app.GalleryActivity" />
     </resolve>
 
     <favorite
