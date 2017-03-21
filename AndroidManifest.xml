@@ -121,8 +121,6 @@
             </intent-filter>
         </activity>
 
-        -->
-
         <activity
             android:name="com.android.launcher3.ToggleWeightWatcher"
             android:label="@string/toggle_weight_watcher"
@@ -134,6 +132,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.android.launcher3.MemoryDumpActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:label="@string/debug_memory_activity"
+            android:enabled="@bool/debug_memory_enabled"
+            android:excludeFromRecents="true"
+            android:icon="@mipmap/ic_launcher_home"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.android.launcher3.MemoryTracker"
+            android:enabled="@bool/debug_memory_enabled"
+            >
+        </service>
+
+        -->
 
         <activity
             android:name="com.android.launcher3.WallpaperPickerActivity"
@@ -163,27 +183,6 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-
-        <!-- Debugging tools -->
-        <activity
-            android:name="com.android.launcher3.MemoryDumpActivity"
-            android:theme="@android:style/Theme.NoDisplay"
-            android:label="@string/debug_memory_activity"
-            android:enabled="@bool/debug_memory_enabled"
-            android:excludeFromRecents="true"
-            android:icon="@mipmap/ic_launcher_home"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <service android:name="com.android.launcher3.MemoryTracker"
-            android:enabled="@bool/debug_memory_enabled"
-            >
-        </service>
 
         <receiver
             android:name="com.android.launcher3.WallpaperChangedReceiver">
