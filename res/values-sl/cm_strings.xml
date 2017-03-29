@@ -21,8 +21,8 @@
   <string name="drawer_settings">NASTAVITVE PREDALA</string>
   <string name="app_settings">NASTAVITVE APLIKACIJ</string>
   <!-- Settings states -->
-  <string name="setting_state_on">VKL.</string>
-  <string name="setting_state_off">IZK.</string>
+  <string name="setting_state_on">VKLOPLJENO</string>
+  <string name="setting_state_off">IZKLOPLJENO</string>
   <string name="setting_state_disabled">ONEMOGOČENO</string>
   <!-- Folder titles -->
   <string name="play_folder_title">Predvajaj</string>

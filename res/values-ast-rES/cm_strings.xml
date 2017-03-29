@@ -18,14 +18,23 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
   <string name="home_screen_settings">AXUSTES DE PANTALLA D\'ANICIU</string>
+  <string name="drawer_settings">AXUSTES DEL CAXÓN</string>
+  <string name="app_settings">AXUSTES D\'APLICACIÓN</string>
   <!-- Settings states -->
+  <string name="setting_state_on">SÍ</string>
+  <string name="setting_state_off">NON</string>
+  <string name="setting_state_disabled">DESHABILITÁU</string>
   <!-- Folder titles -->
+  <string name="play_folder_title">Reproducir</string>
   <!-- Wallpaper scroll effect -->
+  <string name="scrolling_wallpaper">Desplazar fondu</string>
   <!-- Dynamic Grid -->
   <string name="grid_size_text">Tamañu del rexáu</string>
   <string name="grid_size_comfortable">Confortable</string>
   <string name="grid_size_cozy">Acoyedor</string>
   <string name="grid_size_condensed">Condensáu</string>
+  <string name="grid_size_custom">Personalizar (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+  <string name="preferences_interface_homescreen_custom">Esbilla\'l tamañu personalizáu</string>
   <!-- Dialog -->
   <string name="dialog_confirm">Confirmar</string>
   <!-- Home screen search bar -->
