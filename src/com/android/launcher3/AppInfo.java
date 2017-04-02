@@ -102,7 +102,10 @@ public class AppInfo extends ItemInfo {
     }
 
     public static int initFlags(LauncherActivityInfoCompat info) {
-        int appFlags = info.getApplicationInfo().flags;
+        return initFlags(info.getApplicationInfo().flags);
+    }
+
+    public static int initFlags(int appFlags) {
         int flags = 0;
         if ((appFlags & android.content.pm.ApplicationInfo.FLAG_SYSTEM) == 0) {
             flags |= DOWNLOADED_FLAG;
