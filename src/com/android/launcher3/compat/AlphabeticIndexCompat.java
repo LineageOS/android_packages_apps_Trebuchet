@@ -5,6 +5,7 @@ import com.android.launcher3.Utilities;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.text.Normalizer;
 import java.util.Locale;
 
 /**
@@ -32,7 +33,9 @@ class BaseAlphabeticIndex {
         if (s.isEmpty()) {
             return UNKNOWN_BUCKET_INDEX;
         }
-        int index = BUCKETS.indexOf(s.substring(0, 1).toUpperCase());
+        String asciiName = Normalizer.normalize(s, Normalizer.Form.NFD)
+            .replaceAll("[^\\p{ASCII}]", "");
+        int index = BUCKETS.indexOf(asciiName.substring(0, 1).toUpperCase());
         if (index != -1) {
             return index;
         }
