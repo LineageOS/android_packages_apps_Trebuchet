@@ -41,6 +41,7 @@ import com.android.launcher3.BaseRecyclerViewFastScrollBar.FastScrollFocusApplic
 import com.android.launcher3.BaseRecyclerViewFastScrollBar.FastScrollFocusable;
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Launcher;
+import com.android.launcher3.ProtectedComponentsHelper;
 import com.android.launcher3.R;
 import com.android.launcher3.RemoteFolderManager;
 import com.android.launcher3.Utilities;
@@ -350,6 +351,12 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     // The name of the market app which handles searches, to be used in the format str
     // below when updating the search-market view.  Only needs to be loaded once.
     private String mMarketAppName;
+    // The name of the package of the market app which handles searches, to be used to
+    // check if the package is protected or not.  Only needs to be loaded once.
+    private String mMarketAppPackageName;
+    // The flags of the market app which handles searches, to be used to check if the
+    // market app is protected or not.  Only needs to be loaded once.
+    private int mMarketAppFlags;
     // The text to show when there is a market app which can handle a specific query, updated
     // each time the search query changes.
     private String mMarketSearchMessage;
@@ -418,6 +425,13 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                 PackageManager.MATCH_DEFAULT_ONLY);
         if (marketInfo != null) {
             mMarketAppName = marketInfo.loadLabel(pm).toString();
+            try {
+                mMarketAppPackageName = marketInfo.activityInfo.packageName;
+                int flags = pm.getApplicationInfo(mMarketAppPackageName, 0).flags;
+                mMarketAppFlags = AppInfo.initFlags(flags);
+            } catch (PackageManager.NameNotFoundException e) {
+                // Don't do anything
+            }
         }
 
         mRemoteFolderManager = launcher.getRemoteFolderManager();
@@ -614,7 +628,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                 break;
             case SEARCH_MARKET_VIEW_TYPE:
                 TextView searchView = (TextView) holder.mContent;
-                if (mMarketSearchIntent != null) {
+                if (showMarketLink()) {
                     searchView.setVisibility(View.VISIBLE);
                     searchView.setContentDescription(mMarketSearchMessage);
                     searchView.setGravity(mApps.hasNoFilteredResults() ? Gravity.CENTER :
@@ -712,5 +726,11 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         Intent marketSearchIntent = new Intent(Intent.ACTION_VIEW);
         marketSearchIntent.setData(marketSearchUri);
         return marketSearchIntent;
+    }
+
+    private boolean showMarketLink() {
+        return mMarketAppPackageName != null &&
+                !ProtectedComponentsHelper.isProtectedPackage(mMarketAppFlags,
+                        mMarketAppPackageName);
     }
 }
