@@ -17,17 +17,49 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
+  <string name="home_screen_settings">PARAMETRAT E EKRANIT HOME</string>
+  <string name="drawer_settings">PARAMETRAT E SIRTARIT</string>
+  <string name="app_settings">PARAMETRAT E APLIKACIONIT</string>
   <!-- Settings states -->
+  <string name="setting_state_on">AKTIV</string>
+  <string name="setting_state_off">INAKTIV</string>
+  <string name="setting_state_disabled">INAKTIV</string>
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Wallpaper scroll effect -->
   <!-- Dynamic Grid -->
+  <string name="grid_size_text">Madhësia e rrjetit koordinativ</string>
+  <string name="grid_size_comfortable">E rehatshme</string>
+  <string name="grid_size_cozy">Komode</string>
+  <string name="grid_size_condensed">E kondensuar</string>
+  <string name="grid_size_custom">E personalizuar (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+  <string name="preferences_interface_homescreen_custom">Zgjidh një madhësi të personalizuar</string>
   <!-- Dialog -->
+  <string name="dialog_confirm">Konfirmo</string>
   <!-- Home screen search bar -->
+  <string name="home_screen_search_text">Shiriti i kërkimit</string>
   <!-- Larger icons -->
+  <string name="larger_icons_text">Ikona më të mëdha</string>
   <!-- Icon labels -->
+  <string name="icon_labels">Emërtimet e ikonave</string>
+  <string name="icon_labels_show">Trego</string>
+  <string name="icon_labels_hide">Fshih</string>
   <!-- Protected apps -->
+  <string name="protected_app_settings">Aplikacionet e mbrojtura</string>
   <!-- Developer settings -->
   <!-- Drawer settings -->
+  <string name="app_drawer_style">Stili i sirtarit</string>
+  <string name="app_drawer_style_compact">Kompakt</string>
+  <string name="app_drawer_style_sections">Me seksione</string>
+  <string name="app_drawer_color">Ngjyra e sirtarit</string>
+  <string name="app_drawer_color_dark">E errët</string>
+  <string name="app_drawer_color_light">E çelur</string>
+  <string name="fast_scroller_type_horizontal">Horizontal</string>
+  <string name="fast_scroller_type_vertical">Vertikal</string>
   <!-- Search Manager doesn't exist -->
   <!-- App not available toast text -->
+  <string name="app_not_available">Aplikacioni nuk është i disponueshëm</string>
+  <string name="storage_permission_denied">Memoria nuk mund të aksesohet</string>
+  <string name="export_db_email_subject">Launcher DB për rajon</string>
+  <string name="export_db_could_not">Skedari DB nuk u eksportua dot</string>
 </resources>

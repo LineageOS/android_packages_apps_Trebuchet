@@ -27,6 +27,7 @@
   <!-- Work folder name -->
   <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
   <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
+  <string name="activity_not_available">L\'aplicación nun ta disponible</string>
   <!-- SafeMode shortcut error string -->
   <!-- SafeMode widget error string -->
   <!-- Widgets -->
@@ -90,6 +91,7 @@
   <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
   <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
   <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
+  <string name="abandoned_clean_this">Desaniciar</string>
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
   <!-- Title for abandoned promise dialog. -->
   <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
