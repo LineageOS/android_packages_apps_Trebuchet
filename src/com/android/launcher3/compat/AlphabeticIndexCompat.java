@@ -35,7 +35,7 @@ class BaseAlphabeticIndex {
         }
         String asciiName = Normalizer.normalize(s, Normalizer.Form.NFD)
             .replaceAll("[^\\p{ASCII}]", "");
-        int index = BUCKETS.indexOf(asciiName.substring(0, 1).toUpperCase());
+        int index = BUCKETS.indexOf(asciiName.length() > 1 ? asciiName.substring(0, 1).toUpperCase() : "");
         if (index != -1) {
             return index;
         }
