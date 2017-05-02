@@ -197,6 +197,9 @@
         <favorite
             launcher:packageName="com.android.chrome"
             launcher:className="com.google.android.apps.chrome.Main" />
+        <favorite
+            launcher:packageName="org.lineageos.jelly"
+            launcher:className="org.lineageos.jelly.MainActivity" />
     </resolve>
 
     <resolve
