@@ -26,7 +26,8 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v7-recyclerview \
-    org.cyanogenmod.platform.internal
+    org.cyanogenmod.platform.internal \
+    tinypinyin
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src) \
     $(call all-proto-files-under, protos)
@@ -68,6 +69,13 @@ include $(CLEAR_VARS)
 
 REMOTE_FOLDER_UPDATER ?= $(LOCAL_PATH)/RemoteFolder
 include $(REMOTE_FOLDER_UPDATER)/Android-prebuilt-libs.mk
+
+include $(BUILD_MULTI_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
+    tinypinyin:lib/tinypinyin-2.0.3.jar
 
 include $(BUILD_MULTI_PREBUILT)
 
