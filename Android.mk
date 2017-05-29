@@ -51,6 +51,8 @@ LOCAL_PACKAGE_NAME := Trebuchet
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Launcher3
 
+LOCAL_CERTIFICATE := platform
+
 LOCAL_AAPT_FLAGS += --rename-manifest-package org.lineageos.trebuchet
 
 LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/AndroidManifest-common.xml
