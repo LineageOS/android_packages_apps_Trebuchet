@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
   <string name="home_screen_settings">DEFINIÇÕES DO ECRÃ INICIAL</string>
-  <string name="drawer_settings">DEFINIÇÕES DA GAVETA DE APLICAÇÕES</string>
+  <string name="drawer_settings">DEFINIÇÕES DO PAINEL DE APLICAÇÕES</string>
   <string name="app_settings">DEFINIÇÕES DA APLICAÇÃO</string>
   <!-- Settings states -->
   <string name="setting_state_on">LIGADO</string>
@@ -50,12 +50,12 @@
   <!-- Developer settings -->
   <string name="export_workspace_layout">Exportar esquema</string>
   <!-- Drawer settings -->
-  <string name="app_drawer_style">Estilo da gaveta de aplicações</string>
+  <string name="app_drawer_style">Estilo do painel de aplicações</string>
   <string name="app_drawer_style_compact">Compacto</string>
   <string name="app_drawer_style_sections">Secções</string>
-  <string name="app_drawer_color">Cor da gaveta de aplicações</string>
-  <string name="app_drawer_color_dark">Escura</string>
-  <string name="app_drawer_color_light">Clara</string>
+  <string name="app_drawer_color">Cor do painel de aplicações</string>
+  <string name="app_drawer_color_dark">Escuro</string>
+  <string name="app_drawer_color_light">Claro</string>
   <string name="fast_scroller">Deslocamento rápido</string>
   <string name="fast_scroller_type">Tipo de deslocamento rápido</string>
   <string name="fast_scroller_type_horizontal">Horizontal</string>

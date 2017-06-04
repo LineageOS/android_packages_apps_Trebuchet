@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
-  <string name="home_screen_settings">AJUSTES DEL INICIO</string>
-  <string name="drawer_settings">AJUSTES DE LAS APLICACIONES</string>
+  <string name="home_screen_settings">AJUSTES DE LA PANTALLA DE INICIO</string>
+  <string name="drawer_settings">AJUSTES DEL CAJÓN DE APLICACIONES</string>
   <string name="app_settings">AJUSTES DE LA APLICACIÓN</string>
   <!-- Settings states -->
   <string name="setting_state_on">ACTIVAR</string>
