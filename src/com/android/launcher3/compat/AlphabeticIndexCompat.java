@@ -8,6 +8,8 @@ import java.lang.reflect.Method;
 import java.text.Normalizer;
 import java.util.Locale;
 
+import com.github.promeg.pinyinhelper.Pinyin;
+
 /**
  * Fallback class to support Alphabetic indexing if not supported by the framework.
  * TODO(winsonc): disable for non-english locales
@@ -122,6 +124,13 @@ public class AlphabeticIndexCompat extends BaseAlphabeticIndex {
      */
     public String computeSectionName(CharSequence cs) {
         String s = Utilities.trim(cs);
+
+        //Determine whether it is Chinese characters;
+        //Changing to pinyin if it's Chinese.
+        if (s.substring(0, 1).matches("[\\u4E00-\\u9FA5]+")) {
+            s = Pinyin.toPinyin(s.charAt(0));
+        }
+
         String sectionName = getBucketLabel(getBucketIndex(s));
         if (Utilities.trim(sectionName).isEmpty()) {
             if (s.length() > 0) {
