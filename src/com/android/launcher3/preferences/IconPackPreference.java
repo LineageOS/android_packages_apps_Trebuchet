@@ -26,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
 
 
@@ -96,6 +97,9 @@ public class IconPackPreference extends Preference {
                 } else {
                     setNone();
                 }
+
+                LauncherAppState app = LauncherAppState.getInstance();
+                app.reloadAllApps();
             }
         });
         builder.show();
