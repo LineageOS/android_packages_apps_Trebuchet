@@ -31,8 +31,8 @@ import android.view.animation.OvershootInterpolator;
 import com.android.launcher3.FocusHelper.PagedFolderKeyEventListener;
 import com.android.launcher3.PageIndicator.PageMarkerResources;
 import com.android.launcher3.Workspace.ItemOperator;
-import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.util.ArrayList;
 import java.util.HashMap;

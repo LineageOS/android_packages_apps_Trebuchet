@@ -48,9 +48,9 @@ import com.android.launcher3.LauncherTransitionable;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.Workspace;
-import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.Thunk;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;

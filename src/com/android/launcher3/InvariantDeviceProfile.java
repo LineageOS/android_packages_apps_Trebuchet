@@ -24,8 +24,8 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.util.ArrayList;
 import java.util.Collections;

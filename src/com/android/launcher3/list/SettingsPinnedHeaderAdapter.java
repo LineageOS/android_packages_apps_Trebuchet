@@ -20,7 +20,7 @@ import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.OverviewSettingsPanel;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.settings.SettingsProvider;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 public class SettingsPinnedHeaderAdapter extends PinnedHeaderListAdapter {
     public static final String ACTION_SEARCH_BAR_VISIBILITY_CHANGED =

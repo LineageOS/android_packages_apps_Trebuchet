@@ -68,9 +68,9 @@ import com.android.launcher3.FolderInfo.FolderListener;
 import com.android.launcher3.UninstallDropTarget.UninstallSource;
 import com.android.launcher3.Workspace.ItemOperator;
 import com.android.launcher3.accessibility.LauncherAccessibilityDelegate.AccessibilityDragSource;
-import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
 import com.android.launcher3.util.UiThreadCircularReveal;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import static cyanogenmod.content.Intent.ACTION_PROTECTED;
 import static cyanogenmod.content.Intent.EXTRA_PROTECTED_COMPONENTS;

@@ -64,9 +64,9 @@ import com.android.launcher3.util.CursorIconInfo;
 import com.android.launcher3.util.LongArrayMap;
 import com.android.launcher3.util.ManagedProfileHeuristic;
 import com.android.launcher3.util.Thunk;
-import cyanogenmod.providers.CMSettings;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
-import com.android.launcher3.settings.SettingsProvider;
+import cyanogenmod.providers.CMSettings;
 
 import java.lang.ref.WeakReference;
 import java.net.URISyntaxException;

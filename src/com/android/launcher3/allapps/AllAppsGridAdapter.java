@@ -45,8 +45,8 @@ import com.android.launcher3.ProtectedComponentsHelper;
 import com.android.launcher3.R;
 import com.android.launcher3.RemoteFolderManager;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.settings.SettingsProvider;
 import com.android.launcher3.util.Thunk;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 import java.util.HashMap;
 import java.util.List;

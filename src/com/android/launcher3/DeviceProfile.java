@@ -31,9 +31,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import com.android.launcher3.settings.SettingsProvider;
 
 import com.android.launcher3.allapps.AllAppsContainerView;
+import com.cyanogenmod.trebuchet.settings.SettingsProvider;
 
 public class DeviceProfile {
     public final InvariantDeviceProfile inv;
