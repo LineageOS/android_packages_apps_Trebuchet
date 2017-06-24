@@ -43,7 +43,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-import com.android.launcher3.settings.SettingsProvider;
+import com.android.trebuchet.settings.SettingsProvider;
 
 public class DynamicGridSizeFragment extends Fragment
         implements NumberPicker.OnValueChangeListener, Dialog.OnDismissListener {

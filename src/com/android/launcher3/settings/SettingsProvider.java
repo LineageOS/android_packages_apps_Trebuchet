@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.launcher3.settings;
+package com.android.trebuchet.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
