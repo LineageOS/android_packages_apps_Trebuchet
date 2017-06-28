@@ -32,7 +32,7 @@ public final class FeatureFlags {
     public static boolean LAUNCHER3_ALL_APPS_PULL_UP = true;
 
     // Feature flag to enable moving the QSB on the 0th screen of the workspace.
-    public static final boolean QSB_ON_FIRST_SCREEN = true;
+    public static final boolean QSB_ON_FIRST_SCREEN = false;
     // When enabled the all-apps icon is not added to the hotseat.
     public static final boolean NO_ALL_APPS_ICON = true;
     // When enabled fling down gesture on the first workspace triggers search.
