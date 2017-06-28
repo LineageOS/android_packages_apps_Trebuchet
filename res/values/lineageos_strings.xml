@@ -18,4 +18,8 @@
     <!-- Application name -->
     <string name="lineageos_app_name" translatable="false">Trebuchet</string>
 
+    <!-- Folder titles -->
+    <string name="google_title" translatable="false">Google</string>
+    <string name="play_folder_title">Play</string>
+
 </resources>
