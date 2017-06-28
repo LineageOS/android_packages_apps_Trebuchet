@@ -24,7 +24,7 @@ public final class BuildConfig {
      * Flag to state if the QSB is on the first screen and placed on the top,
      * this can be overwritten in other launchers with a different value, if needed.
      */
-    public static final boolean QSB_ON_FIRST_SCREEN = true;
+    public static final boolean QSB_ON_FIRST_SCREEN = false;
 
     /**
      * Flag to state if the widget on the top of the first screen should be shown.
