@@ -26,10 +26,10 @@
         launcher:numFolderRows="2"
         launcher:numFolderColumns="3"
         launcher:minAllAppsPredictionColumns="3"
-        launcher:iconSize="48"
+        launcher:iconSize="46"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="3"
-        launcher:hotseatIconSize="48"
+        launcher:hotseatIconSize="46"
         launcher:defaultLayoutId="@xml/default_workspace_3x3"
         />
 
@@ -42,10 +42,10 @@
         launcher:numFolderRows="3"
         launcher:numFolderColumns="3"
         launcher:minAllAppsPredictionColumns="3"
-        launcher:iconSize="48"
+        launcher:iconSize="46"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="3"
-        launcher:hotseatIconSize="48"
+        launcher:hotseatIconSize="46"
         launcher:defaultLayoutId="@xml/default_workspace_3x3"
         />
 
@@ -58,10 +58,10 @@
         launcher:numFolderRows="3"
         launcher:numFolderColumns="4"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="48"
+        launcher:iconSize="46"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="48"
+        launcher:hotseatIconSize="46"
         launcher:defaultLayoutId="@xml/default_workspace_4x4"
         />
 
@@ -74,10 +74,10 @@
         launcher:numFolderRows="3"
         launcher:numFolderColumns="4"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="48"
+        launcher:iconSize="46"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="48"
+        launcher:hotseatIconSize="46"
         launcher:defaultLayoutId="@xml/default_workspace_4x4"
         />
 
@@ -90,31 +90,15 @@
         launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="48"
+        launcher:iconSize="46"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="48"
+        launcher:hotseatIconSize="46"
         launcher:defaultLayoutId="@xml/default_workspace_4x4"
         />
 
     <profile
         launcher:name="Nexus 4"
-        launcher:minWidthDps="359"
-        launcher:minHeightDps="567"
-        launcher:numRows="4"
-        launcher:numColumns="4"
-        launcher:numFolderRows="4"
-        launcher:numFolderColumns="4"
-        launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="60"
-        launcher:iconTextSize="13.0"
-        launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="56"
-        launcher:defaultLayoutId="@xml/default_workspace_4x4"
-        />
-
-    <profile
-        launcher:name="Nexus 5"
         launcher:minWidthDps="335"
         launcher:minHeightDps="567"
         launcher:numRows="4"
@@ -122,10 +106,26 @@
         launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="60"
+        launcher:iconSize="52"
         launcher:iconTextSize="13.0"
         launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="56"
+        launcher:hotseatIconSize="50"
+        launcher:defaultLayoutId="@xml/default_workspace_4x4"
+        />
+
+    <profile
+        launcher:name="Nexus 5"
+        launcher:minWidthDps="359"
+        launcher:minHeightDps="567"
+        launcher:numRows="4"
+        launcher:numColumns="4"
+        launcher:numFolderRows="4"
+        launcher:numFolderColumns="4"
+        launcher:minAllAppsPredictionColumns="4"
+        launcher:iconSize="52"
+        launcher:iconTextSize="13.0"
+        launcher:numHotseatIcons="5"
+        launcher:hotseatIconSize="50"
         launcher:defaultLayoutId="@xml/default_workspace_4x4"
         />
 
@@ -138,10 +138,10 @@
         launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="64"
+        launcher:iconSize="56"
         launcher:iconTextSize="14.4"
         launcher:numHotseatIcons="5"
-        launcher:hotseatIconSize="56"
+        launcher:hotseatIconSize="48"
         launcher:defaultLayoutId="@xml/default_workspace_5x5"
         />
 
@@ -154,10 +154,10 @@
         launcher:numFolderRows="4"
         launcher:numFolderColumns="5"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="72"
+        launcher:iconSize="60"
         launcher:iconTextSize="14.4"
         launcher:numHotseatIcons="7"
-        launcher:hotseatIconSize="60"
+        launcher:hotseatIconSize="48"
         launcher:defaultLayoutId="@xml/default_workspace_5x6"
         />
 
@@ -170,10 +170,10 @@
         launcher:numFolderRows="4"
         launcher:numFolderColumns="5"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="76"
+        launcher:iconSize="64"
         launcher:iconTextSize="14.4"
         launcher:numHotseatIcons="7"
-        launcher:hotseatIconSize="76"
+        launcher:hotseatIconSize="56"
         launcher:defaultLayoutId="@xml/default_workspace_5x6"
         />
 
@@ -186,10 +186,10 @@
         launcher:numFolderRows="6"
         launcher:numFolderColumns="6"
         launcher:minAllAppsPredictionColumns="4"
-        launcher:iconSize="100"
+        launcher:iconSize="80"
         launcher:iconTextSize="20.0"
         launcher:numHotseatIcons="7"
-        launcher:hotseatIconSize="72"
+        launcher:hotseatIconSize="64"
         launcher:defaultLayoutId="@xml/default_workspace_5x6"
         />
 
