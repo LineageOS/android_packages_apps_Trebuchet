@@ -42,7 +42,7 @@ public final class FeatureFlags {
     // When enabled fling down gesture on the first workspace triggers search.
     public static final boolean PULLDOWN_SEARCH = false;
     // When enabled the status bar may show dark icons based on the top of the wallpaper.
-    public static final boolean LIGHT_STATUS_BAR = false;
+    public static final boolean LIGHT_STATUS_BAR = true;
     // When enabled icons are badged with the number of notifications associated with that app.
     public static final boolean BADGE_ICONS = true;
     // When enabled, icons not supporting {@link AdaptiveIconDrawable} will be wrapped in this class.
