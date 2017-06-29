@@ -55,7 +55,7 @@ abstract class BaseFlags {
     // When enabled fling down gesture on the first workspace triggers search.
     public static final boolean PULLDOWN_SEARCH = false;
     // When enabled the status bar may show dark icons based on the top of the wallpaper.
-    public static final boolean LIGHT_STATUS_BAR = false;
+    public static final boolean LIGHT_STATUS_BAR = true;
     // When enabled, icons not supporting {@link AdaptiveIconDrawable} will be wrapped in {@link FixedScaleDrawable}.
     public static final boolean LEGACY_ICON_TREATMENT = true;
     // When enabled, adaptive icons would have shadows baked when being stored to icon cache.
