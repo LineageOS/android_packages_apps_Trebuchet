@@ -45,13 +45,13 @@
     </grid-option>
 
     <grid-option
-        launcher:name="4_by_4"
-        launcher:numRows="4"
+        launcher:name="4_by_5"
+        launcher:numRows="5"
         launcher:numColumns="4"
-        launcher:numFolderRows="3"
+        launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
-        launcher:numHotseatIcons="4"
-        launcher:defaultLayoutId="@xml/default_workspace_4x4" >
+        launcher:numHotseatIcons="5"
+        launcher:defaultLayoutId="@xml/default_workspace_4x5" >
 
         <display-option
             launcher:name="Short Stubby"
