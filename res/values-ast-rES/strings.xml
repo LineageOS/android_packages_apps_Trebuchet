@@ -37,6 +37,7 @@
   <!-- All Apps -->
   <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
   <!-- Loading apps text. [CHAR_LIMIT=50] -->
+  <string name="all_apps_loading_message">Cargando aplicaciones&#8230;</string>
   <!-- No-search-results text. [CHAR_LIMIT=50] -->
   <!-- Search market text.  This is a format string where the first argument is the name of the activity
          handling the search.  The format string does not need to handle both of these arguments. [CHAR_LIMIT=50] -->
@@ -52,12 +53,15 @@
   <!-- Label for the info icon. [CHAR_LIMIT=20] -->
   <!-- Permissions: -->
   <!-- Permission short label -->
+  <string name="permlab_install_shortcut">instalar atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
+  <string name="permlab_read_settings">lleer axustes d\'Aniciu y atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
   <!-- Permission description -->
   <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
+  <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> nun tien permisu pa facer llamaes telefóniques</string>
   <!-- Widgets: -->
   <!-- Text to show user in place of a gadget when we can't display it properly -->
   <!-- Text to show user in place of a gadget when it is not yet initialized. -->
@@ -68,6 +72,7 @@
   <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
   <!-- Clings -->
   <!-- The title text for the workspace cling [CHAR_LIMIT=30] -->
+  <string name="first_run_cling_title">Afáyate</string>
   <!-- The title text for the migration cling [CHAR_LIMIT=30] -->
   <!-- The description of what migration does [CHAR_LIMIT=70] -->
   <!-- The description of the button to migrate apps from another launcher [CHAR_LIMIT=30] -->
@@ -94,6 +99,7 @@
   <string name="abandoned_clean_this">Desaniciar</string>
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
   <!-- Title for abandoned promise dialog. -->
+  <string name="abandoned_promises_title">Esta aplicación nun ta instalada</string>
   <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
     The second "it" refers to the app. -->
   <!-- Strings for accessibility actions -->
