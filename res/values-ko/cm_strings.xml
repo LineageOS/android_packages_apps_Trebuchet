@@ -57,7 +57,7 @@
   <string name="app_drawer_color_dark">어두움</string>
   <string name="app_drawer_color_light">밝음</string>
   <string name="fast_scroller">빠른 스크롤러</string>
-  <string name="fast_scroller_type">바른 스크롤러 유형</string>
+  <string name="fast_scroller_type">빠른 스크롤러 유형</string>
   <string name="fast_scroller_type_horizontal">수평</string>
   <string name="fast_scroller_type_vertical">수직</string>
   <!-- Search Manager doesn't exist -->
