@@ -21,8 +21,8 @@
 
     <!-- Screen 0 -->
     <appwidget
-        launcher:packageName="com.cyanogenmod.lockclock"
-        launcher:className="com.cyanogenmod.lockclock.ClockWidgetProvider"
+        launcher:packageName="com.android.deskclock"
+        launcher:className="com.android.alarmclock.DigitalAppWidgetProvider"
         launcher:screen="0"
         launcher:x="0"
         launcher:y="0"
