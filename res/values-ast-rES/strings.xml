@@ -30,6 +30,7 @@
   <string name="activity_not_available">L\'aplicación nun ta disponible</string>
   <!-- SafeMode shortcut error string -->
   <!-- SafeMode widget error string -->
+  <string name="safemode_widget_error">Deshabilitáronse los widgets nel mou seguru</string>
   <!-- Widgets -->
   <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
   <!-- The format string for the dimensions of a widget in the drawer -->
@@ -37,7 +38,6 @@
   <!-- All Apps -->
   <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
   <!-- Loading apps text. [CHAR_LIMIT=50] -->
-  <string name="all_apps_loading_message">Cargando aplicaciones&#8230;</string>
   <!-- No-search-results text. [CHAR_LIMIT=50] -->
   <!-- Search market text.  This is a format string where the first argument is the name of the activity
          handling the search.  The format string does not need to handle both of these arguments. [CHAR_LIMIT=50] -->
@@ -45,7 +45,6 @@
   <!-- Error message when user has filled a home screen -->
   <!-- Error message when user has filled the hotseat -->
   <!-- All applications label -->
-  <string name="all_apps_button_label">Aplicaciones</string>
   <!-- Label for button in all applications label to go back home (to the workspace / desktop)
          for accessibilty (spoken when the button gets focus). -->
   <!-- Label for delete drop target. [CHAR_LIMIT=20] -->
@@ -61,7 +60,6 @@
   <!-- Permission short label -->
   <!-- Permission description -->
   <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
-  <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> nun tien permisu pa facer llamaes telefóniques</string>
   <!-- Widgets: -->
   <!-- Text to show user in place of a gadget when we can't display it properly -->
   <!-- Text to show user in place of a gadget when it is not yet initialized. -->
@@ -91,12 +89,11 @@
   <!-- Text for widget add button -->
   <!-- Text for wallpaper change button -->
   <!-- Text for settings button -->
-  <string name="settings_button_text">Axustes</string>
   <!-- Strings for settings -->
   <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
   <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
+  <string name="package_state_unknown">Desconozse</string>
   <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
-  <string name="abandoned_clean_this">Desaniciar</string>
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
   <!-- Title for abandoned promise dialog. -->
   <string name="abandoned_promises_title">Esta aplicación nun ta instalada</string>
