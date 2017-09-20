@@ -30,6 +30,7 @@
   <string name="activity_not_available">L\'aplicación nun ta disponible</string>
   <!-- SafeMode shortcut error string -->
   <!-- SafeMode widget error string -->
+  <string name="safemode_widget_error">Deshabilitáronse los widgets nel mou seguru</string>
   <!-- Widgets -->
   <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
   <!-- The format string for the dimensions of a widget in the drawer -->
@@ -44,7 +45,6 @@
   <!-- Error message when user has filled a home screen -->
   <!-- Error message when user has filled the hotseat -->
   <!-- All applications label -->
-  <string name="all_apps_button_label">Aplicaciones</string>
   <!-- Label for button in all applications label to go back home (to the workspace / desktop)
          for accessibilty (spoken when the button gets focus). -->
   <!-- Label for delete drop target. [CHAR_LIMIT=20] -->
@@ -52,8 +52,10 @@
   <!-- Label for the info icon. [CHAR_LIMIT=20] -->
   <!-- Permissions: -->
   <!-- Permission short label -->
+  <string name="permlab_install_shortcut">instalar atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
+  <string name="permlab_read_settings">lleer axustes d\'Aniciu y atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
   <!-- Permission description -->
@@ -68,6 +70,7 @@
   <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
   <!-- Clings -->
   <!-- The title text for the workspace cling [CHAR_LIMIT=30] -->
+  <string name="first_run_cling_title">Afáyate</string>
   <!-- The title text for the migration cling [CHAR_LIMIT=30] -->
   <!-- The description of what migration does [CHAR_LIMIT=70] -->
   <!-- The description of the button to migrate apps from another launcher [CHAR_LIMIT=30] -->
@@ -83,19 +86,18 @@
   <!-- Folder renamed format -->
   <!-- Folder name format -->
   <!-- Debug-only activity name. [DO NOT TRANSLATE] -->
-  <string name="debug_memory_activity">* HPROF</string>
   <!-- Strings for the customization mode -->
   <!-- Text for widget add button -->
   <!-- Text for wallpaper change button -->
   <!-- Text for settings button -->
-  <string name="settings_button_text">Axustes</string>
   <!-- Strings for settings -->
   <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
   <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
+  <string name="package_state_unknown">Desconozse</string>
   <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
-  <string name="abandoned_clean_this">Desaniciar</string>
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
   <!-- Title for abandoned promise dialog. -->
+  <string name="abandoned_promises_title">Esta aplicación nun ta instalada</string>
   <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
     The second "it" refers to the app. -->
   <!-- Strings for accessibility actions -->
