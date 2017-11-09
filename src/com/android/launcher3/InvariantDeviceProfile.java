@@ -18,11 +18,13 @@ package com.android.launcher3;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
+import android.util.Pair;
 import android.util.Xml;
 import android.view.Display;
 import android.view.WindowManager;
@@ -45,6 +47,9 @@ public class InvariantDeviceProfile {
 
     private static final float ICON_SIZE_DEFINED_IN_APP_DP = 48;
 
+    private static final String KEY_GRID_SIZE = "pref_grid_size";
+    private static final String KEY_GRID_CUSTOM = "pref_grid_custom";
+
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
     private static float KNEARESTNEIGHBOR = 3;
@@ -63,6 +68,11 @@ public class InvariantDeviceProfile {
      */
     public int numRows;
     public int numColumns;
+
+    /**
+     * Number of icons per row in the drawer
+     */
+    public int numColumnsDrawer;
 
     /**
      * The minimum number of predicted apps in all apps.
@@ -97,20 +107,22 @@ public class InvariantDeviceProfile {
     public InvariantDeviceProfile() {
     }
 
-    public InvariantDeviceProfile(InvariantDeviceProfile p) {
-        this(p.name, p.minWidthDps, p.minHeightDps, p.numRows, p.numColumns,
+    public InvariantDeviceProfile(Context context, InvariantDeviceProfile p) {
+        this(context, p.name, p.minWidthDps, p.minHeightDps, p.numRows, p.numColumns, p.numColumnsDrawer,
                 p.numFolderRows, p.numFolderColumns, p.minAllAppsPredictionColumns,
                 p.iconSize, p.landscapeIconSize, p.iconTextSize, p.numHotseatIcons,
                 p.defaultLayoutId, p.demoModeLayoutId);
     }
 
-    InvariantDeviceProfile(String n, float w, float h, int r, int c, int fr, int fc, int maapc,
-            float is, float lis, float its, int hs, int dlId, int dmlId) {
+    InvariantDeviceProfile(Context context, String n, float w, float h, int r, int c, int cd,
+                           int fr, int fc, int maapc, float is, float lis, float its, int hs,
+                           int dlId, int dmlId) {
         name = n;
         minWidthDps = w;
         minHeightDps = h;
         numRows = r;
         numColumns = c;
+        numColumnsDrawer = cd;
         numFolderRows = fr;
         numFolderColumns = fc;
         minAllAppsPredictionColumns = maapc;
@@ -120,6 +132,8 @@ public class InvariantDeviceProfile {
         numHotseatIcons = hs;
         defaultLayoutId = dlId;
         demoModeLayoutId = dmlId;
+
+        setGridSize(context);
     }
 
     @TargetApi(23)
@@ -140,11 +154,12 @@ public class InvariantDeviceProfile {
         ArrayList<InvariantDeviceProfile> closestProfiles = findClosestDeviceProfiles(
                 minWidthDps, minHeightDps, getPredefinedDeviceProfiles(context));
         InvariantDeviceProfile interpolatedDeviceProfileOut =
-                invDistWeightedInterpolate(minWidthDps,  minHeightDps, closestProfiles);
+                invDistWeightedInterpolate(context, minWidthDps,  minHeightDps, closestProfiles);
 
         InvariantDeviceProfile closestProfile = closestProfiles.get(0);
         numRows = closestProfile.numRows;
         numColumns = closestProfile.numColumns;
+        numColumnsDrawer = closestProfile.numColumnsDrawer;
         numHotseatIcons = closestProfile.numHotseatIcons;
         defaultLayoutId = closestProfile.defaultLayoutId;
         demoModeLayoutId = closestProfile.demoModeLayoutId;
@@ -200,11 +215,13 @@ public class InvariantDeviceProfile {
                     int numColumns = a.getInt(R.styleable.InvariantDeviceProfile_numColumns, 0);
                     float iconSize = a.getFloat(R.styleable.InvariantDeviceProfile_iconSize, 0);
                     profiles.add(new InvariantDeviceProfile(
+                            context,
                             a.getString(R.styleable.InvariantDeviceProfile_name),
                             a.getFloat(R.styleable.InvariantDeviceProfile_minWidthDps, 0),
                             a.getFloat(R.styleable.InvariantDeviceProfile_minHeightDps, 0),
                             numRows,
                             numColumns,
+                            a.getInt(R.styleable.InvariantDeviceProfile_numColumnsDrawer, numColumns),
                             a.getInt(R.styleable.InvariantDeviceProfile_numFolderRows, numRows),
                             a.getInt(R.styleable.InvariantDeviceProfile_numFolderColumns, numColumns),
                             a.getInt(R.styleable.InvariantDeviceProfile_minAllAppsPredictionColumns, numColumns),
@@ -283,7 +300,7 @@ public class InvariantDeviceProfile {
     }
 
     // Package private visibility for testing.
-    InvariantDeviceProfile invDistWeightedInterpolate(float width, float height,
+    InvariantDeviceProfile invDistWeightedInterpolate(Context context, float width, float height,
                 ArrayList<InvariantDeviceProfile> points) {
         float weights = 0;
 
@@ -294,7 +311,7 @@ public class InvariantDeviceProfile {
 
         InvariantDeviceProfile out = new InvariantDeviceProfile();
         for (int i = 0; i < points.size() && i < KNEARESTNEIGHBOR; ++i) {
-            p = new InvariantDeviceProfile(points.get(i));
+            p = new InvariantDeviceProfile(context, points.get(i));
             float w = weight(width, height, p.minWidthDps, p.minHeightDps, WEIGHT_POWER);
             weights += w;
             out.add(p.multiply(w));
@@ -337,6 +354,16 @@ public class InvariantDeviceProfile {
             return Float.POSITIVE_INFINITY;
         }
         return (float) (WEIGHT_EFFICIENT / Math.pow(d, pow));
+    }
+
+    private void setGridSize(Context context) {
+        SharedPreferences prefs = Utilities.getPrefs(context);
+        String defaultGridSize = Utilities.getGridValue(numColumns, numRows);
+        String properSize = prefs.getString(KEY_GRID_SIZE, defaultGridSize);
+
+        Pair<Integer, Integer> values = Utilities.extractCustomGrid(properSize);
+        numColumns = values.first;
+        numRows = values.second;
     }
 
     /**

@@ -109,6 +109,7 @@
 
         <attr name="numRows" format="integer" />
         <attr name="numColumns" format="integer" />
+        <attr name="numColumnsDrawer" format="integer" />
         <!-- numFolderRows & numFolderColumns defaults to numRows & numColumns, if not specified -->
         <attr name="numFolderRows" format="integer" />
         <attr name="numFolderColumns" format="integer" />

@@ -66,4 +66,9 @@
         android:summaryOff="@string/predictive_apps_summary_off"
         android:defaultValue="true"
         android:persistent="true" />
+
+    <Preference
+        android:key="pref_grid_size"
+        android:title="@string/grid_size_text"
+        android:persistent="true" />
 </PreferenceScreen>
