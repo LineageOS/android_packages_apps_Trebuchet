@@ -14,7 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <!-- Application name -->
     <string name="lineageos_app_name" translatable="false">Trebuchet</string>
 
@@ -29,4 +29,11 @@
     <string name="predictive_apps_title">Predictive apps</string>
     <string name="predictive_apps_summary_on">Your favorite apps will appear at the top of the drawer</string>
     <string name="predictive_apps_summary_off">Your favorite apps won\'t appear at the top of the drawer</string>
+
+    <!-- Grid size -->
+    <string name="grid_size_text">Grid size</string>
+    <string name="grid_size_rows">Rows</string>
+    <string name="grid_size_columns">Columns</string>
+    <string name="grid_size_custom_positive">Set</string>
+    <string name="grid_size_custom_message">Select custom columns and rows count</string>
 </resources>
