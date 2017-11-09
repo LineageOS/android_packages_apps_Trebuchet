@@ -31,4 +31,11 @@
     <string name="icon_shape_circle_name">Circle</string>
     <string name="icon_shape_squircle_name">Squircle</string>
     <string name="icon_shape_teardrop_name">Teardrop</string>
+
+    <!-- Grid size -->
+    <string name="grid_size_text">Grid size</string>
+    <string name="grid_size_rows">Rows</string>
+    <string name="grid_size_columns">Columns</string>
+    <string name="grid_size_custom_positive">Set</string>
+    <string name="grid_size_custom_message">Select custom columns and rows count</string>
 </resources>
