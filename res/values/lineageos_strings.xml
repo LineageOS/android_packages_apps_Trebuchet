@@ -24,4 +24,9 @@
 
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Swipe down to show notifications</string>
+
+    <!-- Predictive apps -->
+    <string name="predictive_apps_title">Predictive apps</string>
+    <string name="predictive_apps_summary_on">Your favorite apps will appear at the top of the drawer</string>
+    <string name="predictive_apps_summary_off">Your favorite apps won\'t appear at the top of the drawer</string>
 </resources>

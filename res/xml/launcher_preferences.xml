@@ -59,4 +59,11 @@
         android:defaultValue="true"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="pref_predictive_apps"
+        android:title="@string/predictive_apps_title"
+        android:summaryOn="@string/predictive_apps_summary_on"
+        android:summaryOff="@string/predictive_apps_summary_off"
+        android:defaultValue="true"
+        android:persistent="true" />
 </PreferenceScreen>
