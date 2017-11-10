@@ -2069,8 +2069,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
                         final LauncherAppWidgetHostView hostView = (LauncherAppWidgetHostView) cell;
                         AppWidgetProviderInfo pInfo = hostView.getAppWidgetInfo();
-                        if (pInfo != null && pInfo.resizeMode != AppWidgetProviderInfo.RESIZE_NONE
-                                && !options.isAccessibleDrag) {
+                        if (pInfo != null && !options.isAccessibleDrag) {
                             onCompleteRunnable = () -> {
                                 if (!isPageInTransition()) {
                                     AppWidgetResizeFrame.showForWidget(hostView, cellLayout);
