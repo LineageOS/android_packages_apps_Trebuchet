@@ -6,7 +6,6 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.appwidget.AppWidgetHostView;
-import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -67,8 +66,6 @@ public class AppWidgetResizeFrame extends AbstractFloatingView implements View.O
     private boolean mRightBorderActive;
     private boolean mTopBorderActive;
     private boolean mBottomBorderActive;
-
-    private int mResizeMode;
 
     private int mRunningHInc;
     private int mRunningVInc;
@@ -134,7 +131,6 @@ public class AppWidgetResizeFrame extends AbstractFloatingView implements View.O
         mWidgetView = widgetView;
         LauncherAppWidgetProviderInfo info = (LauncherAppWidgetProviderInfo)
                 widgetView.getAppWidgetInfo();
-        mResizeMode = info.resizeMode;
         mDragLayer = dragLayer;
 
         mMinHSpan = info.minSpanX;
@@ -142,14 +138,6 @@ public class AppWidgetResizeFrame extends AbstractFloatingView implements View.O
 
         mWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(getContext(),
                 widgetView.getAppWidgetInfo().provider, null);
-
-        if (mResizeMode == AppWidgetProviderInfo.RESIZE_HORIZONTAL) {
-            mDragHandles[INDEX_TOP].setVisibility(GONE);
-            mDragHandles[INDEX_BOTTOM].setVisibility(GONE);
-        } else if (mResizeMode == AppWidgetProviderInfo.RESIZE_VERTICAL) {
-            mDragHandles[INDEX_LEFT].setVisibility(GONE);
-            mDragHandles[INDEX_RIGHT].setVisibility(GONE);
-        }
 
         // When we create the resize frame, we first mark all cells as unoccupied. The appropriate
         // cells (same if not resized, or different) will be marked as occupied when the resize
@@ -160,14 +148,10 @@ public class AppWidgetResizeFrame extends AbstractFloatingView implements View.O
     }
 
     public boolean beginResizeIfPointInRegion(int x, int y) {
-        boolean horizontalActive = (mResizeMode & AppWidgetProviderInfo.RESIZE_HORIZONTAL) != 0;
-        boolean verticalActive = (mResizeMode & AppWidgetProviderInfo.RESIZE_VERTICAL) != 0;
-
-        mLeftBorderActive = (x < mTouchTargetWidth) && horizontalActive;
-        mRightBorderActive = (x > getWidth() - mTouchTargetWidth) && horizontalActive;
-        mTopBorderActive = (y < mTouchTargetWidth + mTopTouchRegionAdjustment) && verticalActive;
-        mBottomBorderActive = (y > getHeight() - mTouchTargetWidth + mBottomTouchRegionAdjustment)
-                && verticalActive;
+        mLeftBorderActive = x < mTouchTargetWidth;
+        mRightBorderActive = x > getWidth() - mTouchTargetWidth;
+        mTopBorderActive = y < mTouchTargetWidth + mTopTouchRegionAdjustment;
+        mBottomBorderActive = y > getHeight() - mTouchTargetWidth + mBottomTouchRegionAdjustment;
 
         boolean anyBordersActive = mLeftBorderActive || mRightBorderActive
                 || mTopBorderActive || mBottomBorderActive;
