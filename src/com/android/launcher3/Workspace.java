@@ -1872,8 +1872,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
 
                         final LauncherAppWidgetHostView hostView = (LauncherAppWidgetHostView) cell;
                         AppWidgetProviderInfo pInfo = hostView.getAppWidgetInfo();
-                        if (pInfo != null && pInfo.resizeMode != AppWidgetProviderInfo.RESIZE_NONE
-                                && !d.accessibleDrag) {
+                        if (pInfo != null && !d.accessibleDrag) {
                             onCompleteRunnable = new Runnable() {
                                 public void run() {
                                     if (!isPageInTransition()) {
