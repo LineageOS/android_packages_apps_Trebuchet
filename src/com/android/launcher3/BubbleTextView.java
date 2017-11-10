@@ -18,6 +18,7 @@ package com.android.launcher3;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -66,6 +67,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
     private static final int DISPLAY_FOLDER = 2;
 
     private static final int[] STATE_PRESSED = new int[] {android.R.attr.state_pressed};
+
+    private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
+    private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
     private final Launcher mLauncher;
     private Drawable mIcon;
@@ -127,6 +131,8 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
     @ViewDebug.ExportedProperty(category = "launcher")
     private boolean mDisableRelayout = false;
 
+    private boolean mShouldShowLabel;
+
     private IconLoadRequest mIconLoadRequest;
 
     public BubbleTextView(Context context) {
@@ -149,19 +155,24 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         mDeferShadowGenerationOnTouch =
                 a.getBoolean(R.styleable.BubbleTextView_deferShadowGeneration, false);
 
+        SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
+
         int display = a.getInteger(R.styleable.BubbleTextView_iconDisplay, DISPLAY_WORKSPACE);
         int defaultIconSize = grid.iconSizePx;
         if (display == DISPLAY_WORKSPACE) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.iconTextSizePx);
             setCompoundDrawablePadding(grid.iconDrawablePaddingPx);
+            mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         } else if (display == DISPLAY_ALL_APPS) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.allAppsIconTextSizePx);
             setCompoundDrawablePadding(grid.allAppsIconDrawablePaddingPx);
             defaultIconSize = grid.allAppsIconSizePx;
+            mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DRAWER_LABELS, true);
         } else if (display == DISPLAY_FOLDER) {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, grid.folderChildTextSizePx);
             setCompoundDrawablePadding(grid.folderChildDrawablePaddingPx);
             defaultIconSize = grid.folderChildIconSizePx;
+            mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         }
         mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
 
@@ -220,7 +231,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver {
         FastBitmapDrawable iconDrawable = DrawableFactory.get(getContext()).newIcon(icon, info);
         iconDrawable.setIsDisabled(info.isDisabled());
         setIcon(iconDrawable);
-        setText(info.title);
+        if (mShouldShowLabel) {
+            setText(info.title);
+        }
         if (info.contentDescription != null) {
             setContentDescription(info.isDisabled()
                     ? getContext().getString(R.string.disabled_app_label, info.contentDescription)
