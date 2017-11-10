@@ -87,6 +87,7 @@ import com.android.launcher3.Workspace.ItemOperator;
 import com.android.launcher3.accessibility.LauncherAccessibilityDelegate;
 import com.android.launcher3.allapps.AllAppsContainerView;
 import com.android.launcher3.allapps.AllAppsTransitionController;
+import com.android.launcher3.allapps.PredictiveAppsProvider;
 import com.android.launcher3.anim.AnimationLayerSet;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.LauncherAppsCompat;
@@ -348,6 +349,8 @@ public class Launcher extends BaseActivity
 
     private RotationPrefChangeHandler mRotationPrefChangeHandler;
 
+    private PredictiveAppsProvider mPredictiveAppsProvider;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -367,6 +370,8 @@ public class Launcher extends BaseActivity
         if (LauncherAppState.PROFILE_STARTUP) {
             Trace.beginSection("Launcher-onCreate");
         }
+
+        mPredictiveAppsProvider = new PredictiveAppsProvider(this);
 
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.preOnCreate();
@@ -487,6 +492,8 @@ public class Launcher extends BaseActivity
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onCreate(savedInstanceState);
         }
+
+        tryAndUpdatePredictedApps();
     }
 
     @Override
@@ -2607,6 +2614,9 @@ public class Launcher extends BaseActivity
                 } else {
                     // Could be launching some bookkeeping activity
                     startActivity(intent, optsBundle);
+                    if (isAllAppsVisible()) {
+                        mPredictiveAppsProvider.updateComponentCount(intent.getComponent());
+                    }
                 }
             } finally {
                 StrictMode.setVmPolicy(oldPolicy);
@@ -2693,6 +2703,9 @@ public class Launcher extends BaseActivity
             } else if (user == null || user.equals(Process.myUserHandle())) {
                 // Could be launching some bookkeeping activity
                 startActivity(intent, optsBundle);
+                if (isAllAppsVisible()) {
+                    mPredictiveAppsProvider.updateComponentCount(intent.getComponent());
+                }
             } else {
                 LauncherAppsCompat.getInstance(this).startActivityForProfile(
                         intent.getComponent(), user, intent.getSourceBounds(), optsBundle);
@@ -3053,12 +3066,20 @@ public class Launcher extends BaseActivity
      * resumed.
      */
     public void tryAndUpdatePredictedApps() {
-        if (mLauncherCallbacks != null) {
-            List<ComponentKeyMapper<AppInfo>> apps = mLauncherCallbacks.getPredictedApps();
-            if (apps != null) {
-                mAppsView.setPredictedApps(apps);
-            }
+        if (!mSharedPrefs.getBoolean("pref_predictive_apps", true)) {
+            mAppsView.setPredictedApps(new ArrayList<>());
+            return;
         }
+
+            List<ComponentKeyMapper<AppInfo>> apps;
+        if (mLauncherCallbacks == null) {
+            apps = mPredictiveAppsProvider.getPredictions();
+            mPredictiveAppsProvider.updateTopPredictedApps();
+        } else {
+            apps = mLauncherCallbacks.getPredictedApps();
+        }
+
+        mAppsView.setPredictedApps(apps);
     }
 
     void lockAllApps() {
