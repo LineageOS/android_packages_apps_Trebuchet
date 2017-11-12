@@ -20,6 +20,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -42,6 +43,7 @@ import com.android.launcher3.FastBitmapDrawable;
 import com.android.launcher3.IconCache;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
+import com.android.launcher3.SettingsActivity;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.model.PackageItemInfo;
@@ -104,7 +106,8 @@ public class LauncherIcons {
         float scale = 1f;
         if (!FeatureFlags.LAUNCHER3_DISABLE_ICON_NORMALIZATION) {
             normalizer = IconNormalizer.getInstance(context);
-            if (Utilities.ATLEAST_OREO && iconAppTargetSdk >= Build.VERSION_CODES.O) {
+            if (Utilities.ATLEAST_OREO && iconAppTargetSdk >= Build.VERSION_CODES.O &&
+                    Utilities.isNotUsingIconPack(context)) {
                 boolean[] outShape = new boolean[1];
                 AdaptiveIconDrawable dr = (AdaptiveIconDrawable)
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();

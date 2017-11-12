@@ -83,4 +83,8 @@
         android:title="@string/drawer_show_labels"
         android:defaultValue="true"
         android:persistent="true" />
+
+    <Preference
+        android:key="pref_icon_pack"
+        android:title="@string/icon_pack_title" />
 </PreferenceScreen>

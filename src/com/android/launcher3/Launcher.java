@@ -42,10 +42,13 @@ import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.ActivityInfo;
+import android.content.pm.LauncherActivityInfo;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -62,6 +65,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.method.TextKeyListener;
 import android.util.Log;
+import android.util.Pair;
 import android.view.Display;
 import android.view.HapticFeedbackConstants;
 import android.view.KeyEvent;
@@ -74,11 +78,17 @@ import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.OvershootInterpolator;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListPopupWindow;
 import android.widget.Toast;
 
 import com.android.launcher3.DropTarget.DragObject;
@@ -103,6 +113,9 @@ import com.android.launcher3.dynamicui.ExtractedColors;
 import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import com.android.launcher3.folder.Folder;
 import com.android.launcher3.folder.FolderIcon;
+import com.android.launcher3.graphics.LauncherIcons;
+import com.android.launcher3.icons.IconPickerActivity;
+import com.android.launcher3.icons.IconsHandler;
 import com.android.launcher3.keyboard.CustomActionsPopup;
 import com.android.launcher3.keyboard.ViewGroupFocusHelper;
 import com.android.launcher3.logging.FileLog;
@@ -120,7 +133,6 @@ import com.android.launcher3.userevent.nano.LauncherLogProto.Action;
 import com.android.launcher3.userevent.nano.LauncherLogProto.ContainerType;
 import com.android.launcher3.userevent.nano.LauncherLogProto.ControlType;
 import com.android.launcher3.util.ActivityResultInfo;
-import com.android.launcher3.util.RunnableWithId;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.ComponentKeyMapper;
 import com.android.launcher3.util.ItemInfoMatcher;
@@ -128,6 +140,7 @@ import com.android.launcher3.util.MultiHashMap;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.util.PackageUserKey;
 import com.android.launcher3.util.PendingRequestArgs;
+import com.android.launcher3.util.RunnableWithId;
 import com.android.launcher3.util.SystemUiController;
 import com.android.launcher3.util.TestingUtils;
 import com.android.launcher3.util.Themes;
@@ -138,7 +151,6 @@ import com.android.launcher3.widget.PendingAddWidgetInfo;
 import com.android.launcher3.widget.WidgetAddFlowHandler;
 import com.android.launcher3.widget.WidgetHostViewLoader;
 import com.android.launcher3.widget.WidgetsContainerView;
-
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -351,6 +363,11 @@ public class Launcher extends BaseActivity
 
     private PredictiveAppsProvider mPredictiveAppsProvider;
 
+    // Icons editor
+    private AlertDialog mIconEditDialog;
+    private EditText mIconEditTitle;
+    private IconsHandler mIconsHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -431,6 +448,8 @@ public class Launcher extends BaseActivity
                 .addAccessibilityStateChangeListener(this);
 
         lockAllApps();
+
+        mIconsHandler = IconCache.getIconsHandler(this);
 
         restoreState(savedInstanceState);
 
@@ -1755,6 +1774,11 @@ public class Launcher extends BaseActivity
             // Reset the widgets view
             if (!alreadyOnHome && mWidgetsView != null) {
                 mWidgetsView.scrollToTop();
+            }
+
+            if (mIconEditDialog != null) {
+                mIconEditDialog.dismiss();
+                mIconEditDialog = null;
             }
 
             if (mLauncherCallbacks != null) {
@@ -3923,6 +3947,84 @@ public class Launcher extends BaseActivity
 
     protected void moveWorkspaceToDefaultScreen() {
         mWorkspace.moveToDefaultScreen(false);
+    }
+
+    public void startEdit(ItemInfo info, ComponentName component) {
+        LauncherActivityInfo app = LauncherAppsCompat.getInstance(this)
+                .resolveActivity(info.getIntent(), info.user);
+        CharSequence label = mIconCache.getCacheEntry(app).title;
+
+        View dialogView = getLayoutInflater().inflate(R.layout.target_edit_dialog, null);
+        ImageView editIcon = (ImageView) dialogView.findViewById(R.id.edit_dialog_icon);
+        mIconEditTitle = (EditText) dialogView.findViewById(R.id.edit_dialog_title);
+        mIconEditTitle.setText(label);
+
+        Bitmap originalIcon = mIconsHandler.getDrawableIconForPackage(component);
+        Bitmap icon;
+        if (info instanceof ShortcutInfo) {
+            icon = ((ShortcutInfo) info).iconBitmap;
+        } else if (info instanceof AppInfo) {
+            icon = ((AppInfo) info).iconBitmap;
+        } else {
+            // Fallback to default icon
+            icon = originalIcon;
+        }
+        editIcon.setImageBitmap(icon);
+
+        Pair<List<String>, List<String>> iconPacks = mIconsHandler.getAllIconPacks();
+        ListPopupWindow listPopup = new ListPopupWindow(this);
+        listPopup.setAdapter(new ArrayAdapter<>(this, R.layout.target_edit_dialog_item,
+                iconPacks.second));
+        listPopup.setWidth(getResources().getDimensionPixelSize(R.dimen.edit_dialog_min_width));
+        listPopup.setAnchorView(editIcon);
+        listPopup.setModal(true);
+        listPopup.setOnItemClickListener(getIconPackClickListener(info, component, label,
+                iconPacks.first));
+
+        editIcon.setOnClickListener(v -> {
+            if (!iconPacks.second.isEmpty()) {
+                listPopup.show();
+            }
+        });
+
+        mIconEditDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.app_edit_drop_target_label)
+                .setView(dialogView)
+                .setOnDismissListener(dialog ->
+                        LauncherAppState.getInstance(this).getModel().forceReload())
+                .setNeutralButton(R.string.icon_pack_reset, (dialog, which) ->
+                        mIconCache.addCustomInfoToDataBase(new BitmapDrawable(getResources(),
+                                originalIcon), info, null))
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    Drawable newIcon = new BitmapDrawable(getResources(), Utilities.ATLEAST_OREO ?
+                            LauncherIcons.createIconBitmap(icon, getApplicationContext()) : icon);
+                    mIconCache.addCustomInfoToDataBase(newIcon, info, mIconEditTitle.getText());
+                })
+                .create();
+
+        // Set background color
+        boolean isDark = Themes.getAttrBoolean(this, R.attr.isMainColorDark);
+        Window dialogWindow = mIconEditDialog.getWindow();
+        if (dialogWindow != null) {
+            dialogWindow.setBackgroundDrawableResource(isDark ?
+                    R.color.dialog_background_dark : R.color.dialog_background_light);
+        }
+        mIconEditDialog.show();
+    }
+
+    private AdapterView.OnItemClickListener getIconPackClickListener(ItemInfo info,
+                                                                     ComponentName componentName,
+                                                                     CharSequence label,
+                                                                     List<String> packs) {
+        return (parent, view, postition, id) -> {
+            Intent intent = new Intent(Launcher.this, IconPickerActivity.class);
+            IconPickerActivity.setItemInfo(info);
+            intent.putExtra(IconPickerActivity.EXTRA_PACKAGE, componentName.getPackageName())
+                    .putExtra(IconPickerActivity.EXTRA_LABEL, label)
+                    .putExtra(IconPickerActivity.EXTRA_ICON_PACK, packs.get(postition));
+            Launcher.this.startActivity(intent);
+            mIconEditDialog.dismiss();
+        };
     }
 
     /**

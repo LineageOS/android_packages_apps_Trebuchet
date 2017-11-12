@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2017 Paranoid Android
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/icons_grid_name_header"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/icon_picker_header_background"
+        android:elevation="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/icons_grid_name_header_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/icons_grid_name_header_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textAppearance="@android:style/TextAppearance.Material.Title"
+            android:textColor="@color/icon_picker_header_foreground" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/icons_grid_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/icons_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icons_grid_name_header"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
