@@ -165,5 +165,9 @@
 
         -->
 
+        <activity android:name=".icons.IconPickerActivity"
+            android:label="@string/icon_pack_picker"
+            android:autoRemoveFromRecents="true"
+            android:theme="@android:style/Theme.DeviceDefault.Settings" />
     </application>
 </manifest>

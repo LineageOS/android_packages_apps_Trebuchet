@@ -40,4 +40,17 @@
     <!-- Hide labels -->
     <string name="desktop_show_labels">Show icon labels on desktop</string>
     <string name="drawer_show_labels">Show icon labels in drawer</string>
+
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Edit</string>
+    <string name="icon_pack_title">Icon pack</string>
+    <string name="icon_pack_picker">Select icon</string>
+    <string name="icon_pack_picker_search">Search icon</string>
+    <string name="icon_pack_suggestions">Suggestions</string>
+    <string name="icon_pack_all_icons">All icons</string>
+    <string name="icon_pack_reset">Reset</string>
+    <string name="icon_pack_system">System (Default)</string>
+
+    <!-- Default icon pack package name. Override to set a default icon pack, use "Default" to use system icons -->
+    <string name="icon_pack_default" translatable="false">Default</string>
 </resources>

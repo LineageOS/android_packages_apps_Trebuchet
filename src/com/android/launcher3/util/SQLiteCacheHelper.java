@@ -89,6 +89,10 @@ public abstract class SQLiteCacheHelper {
 
     protected abstract void onCreateTable(SQLiteDatabase db);
 
+    public SQLiteDatabase getDb() {
+        return mOpenHelper.getWritableDatabase();
+    }
+
     /**
      * A private inner class to prevent direct DB access.
      */

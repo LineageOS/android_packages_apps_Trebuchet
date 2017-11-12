@@ -1,5 +1,6 @@
 package com.android.launcher3.popup;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -95,4 +96,20 @@ public abstract class SystemShortcut extends ItemInfo {
             };
         }
     }
+
+    public static class AppEdit extends SystemShortcut {
+        AppEdit() {
+            super(R.drawable.ic_edit_app_no_shadow, R.string.app_edit_drop_target_label);
+        }
+
+        @Override
+        public View.OnClickListener getOnClickListener(final Launcher launcher,
+                                                       final ItemInfo itemInfo) {
+            return view -> {
+                ComponentName componentName = itemInfo.getTargetComponent();
+                launcher.startEdit(itemInfo, componentName);
+            };
+        }
+    }
+
 }
