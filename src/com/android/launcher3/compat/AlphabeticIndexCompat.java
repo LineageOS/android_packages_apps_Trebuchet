@@ -1,6 +1,7 @@
 package com.android.launcher3.compat;
 
 import android.content.Context;
+import android.text.TextUtils;
 import com.android.launcher3.Utilities;
 
 import java.lang.reflect.Constructor;
@@ -26,23 +27,114 @@ class BaseAlphabeticIndex {
         // Not currently supported
     }
 
+    private String getFirstAlphaNum(String s) {
+        int first = (int) s.charAt(0);
+        switch (first) {
+            case 198:
+                return "A";
+            case 222:
+                return "T";
+            case 223:
+                return "s";
+            case 230:
+                return "a";
+            case 254:
+                return "t";
+            case 306:
+                return "I";
+            case 307:
+                return "i";
+            case 330:
+                return "n";
+            case 331:
+                return "N";
+            case 338:
+                return "O";
+            case 339:
+                return "o";
+            case 405:
+                return "h";
+            case 418:
+                return "O";
+            case 419:
+                return "o";
+            case 422:
+                return "Y";
+            case 425:
+                return "S";
+            case 426:
+                return "s";
+            case 439:
+                return "Z";
+            case 440:
+                return "Z";
+            case 441:
+                return "z";
+            case 442:
+                return "z";
+            case 446:
+                return "t";
+            case 452:
+                return "D";
+            case 453:
+                return "D";
+            case 454:
+                return "d";
+            case 455:
+                return "L";
+            case 456:
+                return "L";
+            case 457:
+                return "l";
+            case 458:
+                return "N";
+            case 459:
+                return "N";
+            case 460:
+                return "n";
+            case 482:
+                return "A";
+            case 483:
+                return "a";
+            case 494:
+                return "Z";
+            case 495:
+                 return "z";
+            case 497:
+                 return "D";
+            case 498:
+                 return "D";
+            case 499:
+                 return "d";
+            case 502:
+                 return "H";
+            case 508:
+                 return "A";
+            case 509:
+                 return "a";
+            case 546:
+                 return "O";
+            case 547:
+                 return "o";
+            default:
+                 String abc123 = Normalizer.normalize(s, Normalizer.Form.NFKD)
+                        .replaceAll("[^0-9A-Za-z]", "");
+                 if (!TextUtils.isEmpty(abc123)) {
+                      return abc123.substring(0, 1);
+                 }
+        }
+        return "-";
+    }
+
     /**
      * Returns the index of the bucket in which the given string should appear.
      */
     protected int getBucketIndex(String s) {
-        if (s.isEmpty()) {
+        if (TextUtils.isEmpty(s)) {
             return UNKNOWN_BUCKET_INDEX;
         }
-        String asciiName = Normalizer.normalize(s, Normalizer.Form.NFD)
-            .replaceAll("[^\\p{ASCII}]", "");
-        if (asciiName.isEmpty()) {
-            return UNKNOWN_BUCKET_INDEX;
-        }
-        int index = BUCKETS.indexOf(asciiName.substring(0, 1).toUpperCase());
-        if (index != -1) {
-            return index;
-        }
-        return UNKNOWN_BUCKET_INDEX;
+        String firstAlphaNum = getFirstAlphaNum(s);
+        return BUCKETS.indexOf(firstAlphaNum.toUpperCase());
     }
 
     /**
