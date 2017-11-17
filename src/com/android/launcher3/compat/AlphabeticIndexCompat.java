@@ -1,6 +1,7 @@
 package com.android.launcher3.compat;
 
 import android.content.Context;
+import android.text.TextUtils;
 import com.android.launcher3.Utilities;
 
 import java.lang.reflect.Constructor;
@@ -26,23 +27,81 @@ class BaseAlphabeticIndex {
         // Not currently supported
     }
 
+    private String getFirstAlphaNum(String s) {
+        int first = (int) s.charAt(0);
+        switch (first) {
+            case 198:
+            case 230:
+            case 482:
+            case 483:
+            case 508:
+            case 509:
+                return "A";
+            case 452:
+            case 453:
+            case 454:
+            case 497:
+            case 498:
+            case 499:
+                return "D";
+            case 405:
+            case 502:
+                return "H";
+            case 306:
+            case 307:
+                return "I";
+            case 455:
+            case 456:
+            case 457:
+                return "L";
+            case 330:
+            case 331:
+            case 458:
+            case 459:
+            case 460:
+                return "N";
+            case 338:
+            case 339:
+            case 418:
+            case 419:
+            case 546:
+            case 547:
+                return "O";
+            case 223:
+            case 425:
+            case 426:
+                return "S";
+            case 222:
+            case 254:
+            case 446:
+                return "T";
+            case 422:
+                return "Y";
+            case 439:
+            case 440:
+            case 441:
+            case 442:
+            case 494:
+            case 495:
+                return "Z";
+            default:
+                String abc123 = Normalizer.normalize(s, Normalizer.Form.NFKD)
+                        .replaceAll("[^0-9A-Za-z]", "");
+                if (!TextUtils.isEmpty(abc123)) {
+                     return abc123.substring(0, 1).toUpperCase();
+                }
+        }
+        return "-";
+    }
+
     /**
      * Returns the index of the bucket in which the given string should appear.
      */
     protected int getBucketIndex(String s) {
-        if (s.isEmpty()) {
+        if (TextUtils.isEmpty(s)) {
             return UNKNOWN_BUCKET_INDEX;
         }
-        String asciiName = Normalizer.normalize(s, Normalizer.Form.NFD)
-            .replaceAll("[^\\p{ASCII}]", "");
-        if (asciiName.isEmpty()) {
-            return UNKNOWN_BUCKET_INDEX;
-        }
-        int index = BUCKETS.indexOf(asciiName.substring(0, 1).toUpperCase());
-        if (index != -1) {
-            return index;
-        }
-        return UNKNOWN_BUCKET_INDEX;
+        return BUCKETS.indexOf(getFirstAlphaNum(s));
     }
 
     /**
