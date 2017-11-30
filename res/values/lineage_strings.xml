@@ -53,4 +53,15 @@
 
     <!-- Default icon pack package name. Override to set a default icon pack, use "Default" to use system icons -->
     <string name="icon_pack_default" translatable="false">Default</string>
+
+    <!-- Preferences -->
+    <string name="settings_category_home">Home screen settings</string>
+    <string name="settings_category_drawer">Drawer settings</string>
+    <string name="settings_category_icons">Icon settings</string>
+    <string name="settings_more">More</string>
+    <string name="settings_rotation_title">Rotation</string>
+    <string name="settings_allow_rotation_desc">Allow using the homescreen in landscape when the device is rotated</string>
+    <string name="settings_icon_shape">Icons shape</string>
+    <string name="settings_icon_badging_desc_on">A bubble will be displayed above the icon when there\'s a notification</string>
+    <string name="settings_icon_badging_desc_off">No bubble will be displayed above the icon when there\'s a notification</string>
 </resources>

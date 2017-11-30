@@ -14,20 +14,13 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <color name="colorAccent">#167c80</color>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/settings_icon_size"
+    android:height="@dimen/settings_icon_size"
+    android:viewportHeight="24.0"
+    android:viewportWidth="24.0">
 
-    <color name="icon_settings_background">#333333</color>
-    <color name="icon_settings_text">#f5f5f5</color>
-
-    <color name="icon_picker_header_background">#37474f</color>
-    <color name="icon_picker_header_foreground">#ffffff</color>
-
-    <color name="dialog_background_light">#ffffff</color>
-    <color name="dialog_background_dark">#424242</color>
-
-    <!-- Settings -->
-    <color name="settings_sheet_background">#f5f5f5</color>
-    <color name="settings_statusbar_dim">#bdbdbd</color>
-    <color name="settings_icons">#424242</color>
-</resources>
+    <path
+        android:fillColor="@color/settings_icons"
+        android:pathData="M19,19V5H5V19H19M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5C3,3.89 3.9,3 5,3H19M11,7H13V11H17V13H13V17H11V13H7V11H11V7Z" />
+</vector>

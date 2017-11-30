@@ -25,6 +25,8 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
+    android-support-design \
+    android-support-v7-appcompat \
     android-support-v7-recyclerview \
     android-support-v7-palette \
     android-support-dynamic-animation
@@ -38,6 +40,8 @@ LOCAL_SRC_FILES := \
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
+    frameworks/support/design/res \
+    frameworks/support/v7/appcompat/res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
@@ -48,6 +52,8 @@ LOCAL_PROTO_JAVA_OUTPUT_PARAMS := enum_style=java
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
+    --extra-packages android.support.design \
+    --extra-packages android.support.v7.appcompat \
     --extra-packages android.support.v7.recyclerview \
 
 LOCAL_SDK_VERSION := current

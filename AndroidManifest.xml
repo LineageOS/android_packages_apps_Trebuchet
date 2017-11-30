@@ -169,5 +169,11 @@
             android:label="@string/icon_pack_picker"
             android:autoRemoveFromRecents="true"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
+
+        <activity
+            android:name=".QuickSettingsActivity"
+            android:autoRemoveFromRecents="true"
+            android:label="@string/settings_button_text"
+            android:theme="@style/QuickSettingsTheme" />
     </application>
 </manifest>

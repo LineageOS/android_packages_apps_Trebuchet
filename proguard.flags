@@ -102,3 +102,13 @@
 -keep interface com.android.launcher3.model.nano.LauncherDumpProto.** {
   *;
 }
+
+-keep class android.support.design.widget.** {
+  *;
+}
+
+-keep interface android.support.design.widget.** {
+ *;
+}
+
+-dontwarn android.support.design.**
