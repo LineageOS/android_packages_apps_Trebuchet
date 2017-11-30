@@ -694,7 +694,7 @@ public final class Utilities {
         SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
         String defaultPack = context.getString(R.string.icon_pack_default);
         String defaultLocalziedPack = context.getString(R.string.icon_pack_system);
-        String currentPack = prefs.getString(SettingsActivity.KEY_ICON_PACK, defaultPack);
+        String currentPack = prefs.getString(QuickSettingsActivity.KEY_ICON_PACK, defaultPack);
 
         return !currentPack.equals(defaultPack) && !currentPack.equals(defaultLocalziedPack);
     }

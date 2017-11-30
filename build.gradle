@@ -14,12 +14,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.protobuf'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
 
     defaultConfig {
         minSdkVersion 23
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -98,12 +98,14 @@ repositories {
     google()
 }
 
-final String SUPPORT_LIBS_VERSION = '26.1.0'
+final String SUPPORT_LIBS_VERSION = '27.0.2'
 dependencies {
     compile "com.android.support:support-v4:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:support-dynamic-animation:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:recyclerview-v7:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:palette-v7:${SUPPORT_LIBS_VERSION}"
+    compile "com.android.support:appcompat-v7:${SUPPORT_LIBS_VERSION}"
+    compile "com.android.support:design:${SUPPORT_LIBS_VERSION}"
     compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
 
     testCompile 'junit:junit:4.12'

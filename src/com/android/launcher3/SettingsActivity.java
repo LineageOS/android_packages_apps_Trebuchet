@@ -30,21 +30,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceGroup;
 import android.provider.Settings;
-import android.util.Pair;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.NumberPicker;
 
 import com.android.launcher3.graphics.IconShapeOverride;
-import com.android.launcher3.icons.IconsHandler;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.util.SettingsObserver;
 import com.android.launcher3.views.ButtonPreference;
@@ -60,26 +53,23 @@ public class SettingsActivity extends Activity {
     /** Hidden field Settings.Secure.ENABLED_NOTIFICATION_LISTENERS */
     private static final String NOTIFICATION_ENABLED_LISTENERS = "enabled_notification_listeners";
 
-    // Grid size
-    private static final String KEY_GRID_SIZE = "pref_grid_size";
-
     // Hide labels
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
-    // Icon pack
-    public static final String KEY_ICON_PACK = "pref_icon_pack";
+    static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (savedInstanceState == null) {
-            // Display the fragment as the main content.
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new LauncherSettingsFragment())
-                    .commit();
-        }
+        LauncherSettingsFragment fragment = new LauncherSettingsFragment();
+        fragment.mShouldRestart = getIntent().getBooleanExtra(EXTRA_SCHEDULE_RESTART, false);
+
+        // Display the fragment as the main content.
+        getFragmentManager().beginTransaction()
+                .replace(android.R.id.content, fragment)
+                .commit();
     }
 
     /**
@@ -93,15 +83,7 @@ public class SettingsActivity extends Activity {
 
         private SharedPreferences mPrefs;
 
-        private Preference mGridPref;
-
         private boolean mShouldRestart = false;
-
-        // Icon pack
-        private Preference mIconPackPref;
-        private String mDefaultIconPack;
-        private IconsHandler mIconsHandler;
-        private PackageManager mPackageManager;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -113,11 +95,14 @@ public class SettingsActivity extends Activity {
             mPrefs = Utilities.getPrefs(getActivity().getApplicationContext());
             mPrefs.registerOnSharedPreferenceChangeListener(this);
 
+            PreferenceGroup homeGroup = (PreferenceGroup) findPreference("category_home");
+            PreferenceGroup iconGroup = (PreferenceGroup) findPreference("category_icons");
+
             // Setup allow rotation preference
             Preference rotationPref = findPreference(Utilities.ALLOW_ROTATION_PREFERENCE_KEY);
             if (getResources().getBoolean(R.bool.allow_rotation)) {
                 // Launcher supports rotation by default. No need to show this setting.
-                getPreferenceScreen().removePreference(rotationPref);
+                homeGroup.removePreference(rotationPref);
             } else {
                 mRotationLockObserver = new SystemDisplayRotationLockObserver(rotationPref, resolver);
 
@@ -132,12 +117,12 @@ public class SettingsActivity extends Activity {
             ButtonPreference iconBadgingPref =
                     (ButtonPreference) findPreference(ICON_BADGING_PREFERENCE_KEY);
             if (!Utilities.ATLEAST_OREO) {
-                getPreferenceScreen().removePreference(
+                homeGroup.removePreference(
                         findPreference(SessionCommitReceiver.ADD_ICON_PREFERENCE_KEY));
-                getPreferenceScreen().removePreference(iconBadgingPref);
+                iconGroup.removePreference(iconBadgingPref);
             } else if (!getResources().getBoolean(R.bool.notification_badging_enabled)
                     || getContext().getSystemService(ActivityManager.class).isLowRamDevice()) {
-                getPreferenceScreen().removePreference(iconBadgingPref);
+                iconGroup.removePreference(iconBadgingPref);
             } else {
                 // Listen to system notification badge settings while this UI is active.
                 mIconBadgingObserver = new IconBadgingObserver(
@@ -150,32 +135,9 @@ public class SettingsActivity extends Activity {
                 if (IconShapeOverride.isSupported(getActivity())) {
                     IconShapeOverride.handlePreferenceUi((ListPreference) iconShapeOverride);
                 } else {
-                    getPreferenceScreen().removePreference(iconShapeOverride);
+                    iconGroup.removePreference(iconShapeOverride);
                 }
             }
-
-            mGridPref = findPreference(KEY_GRID_SIZE);
-            if (mGridPref != null) {
-                mGridPref.setOnPreferenceClickListener(preference -> {
-                    setCustomGridSize();
-                    return true;
-                });
-
-                mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
-            }
-
-            mPrefs = Utilities.getPrefs(getActivity().getApplicationContext());
-            mPrefs.registerOnSharedPreferenceChangeListener(this);
-
-            mIconPackPref = findPreference(KEY_ICON_PACK);
-            mIconPackPref.setOnPreferenceClickListener(preference -> {
-                mIconsHandler.showDialog(getActivity());
-                return true;
-            });
-            mPackageManager = getActivity().getPackageManager();
-            mDefaultIconPack = mPrefs.getString(KEY_ICON_PACK, getString(R.string.icon_pack_default));
-            mIconsHandler = IconCache.getIconsHandler(getActivity().getApplicationContext());
-            updateIconPackEntry();
         }
 
         @Override
@@ -199,88 +161,11 @@ public class SettingsActivity extends Activity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
             switch (key) {
-                case KEY_GRID_SIZE:
-                    mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
-                    mShouldRestart = true;
-                    break;
-                case KEY_ICON_PACK:
-                    updateIconPackEntry();
-                    break;
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
                     mShouldRestart = true;
                     break;
             }
-        }
-
-        @Override
-        public void onPause() {
-            super.onPause();
-            mIconsHandler.hideDialog();
-        }
-
-        private void setCustomGridSize() {
-            int minValue = 3;
-            int maxValue = 9;
-
-            String storedValue = mPrefs.getString(KEY_GRID_SIZE, "4x4");
-            Pair<Integer, Integer> currentValues = Utilities.extractCustomGrid(storedValue);
-
-            LayoutInflater inflater = (LayoutInflater)
-                    getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            if (inflater == null) {
-                return;
-            }
-            View contentView = inflater.inflate(R.layout.dialog_custom_grid, null);
-            NumberPicker columnPicker = (NumberPicker)
-                    contentView.findViewById(R.id.dialog_grid_column);
-            NumberPicker rowPicker = (NumberPicker)
-                    contentView.findViewById(R.id.dialog_grid_row);
-
-            columnPicker.setMinValue(minValue);
-            rowPicker.setMinValue(minValue);
-            columnPicker.setMaxValue(maxValue);
-            rowPicker.setMaxValue(maxValue);
-            columnPicker.setValue(currentValues.first);
-            rowPicker.setValue(currentValues.second);
-
-            new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.grid_size_text)
-                    .setMessage(R.string.grid_size_custom_message)
-                    .setView(contentView)
-                    .setPositiveButton(R.string.grid_size_custom_positive, (dialog, i) -> {
-                        String newValues = Utilities.getGridValue(columnPicker.getValue(),
-                                rowPicker.getValue());
-                        mPrefs.edit().putString(KEY_GRID_SIZE, newValues).apply();
-                    })
-                    .show();
-        }
-
-
-        private String getDefaulGridSize() {
-            InvariantDeviceProfile profile = new InvariantDeviceProfile(getActivity());
-            return Utilities.getGridValue(profile.numColumns, profile.numRows);
-        }
-
-        private void updateIconPackEntry() {
-            ApplicationInfo info = null;
-            String iconPack = mPrefs.getString(KEY_ICON_PACK, mDefaultIconPack);
-            String summary = getString(R.string.icon_pack_system);
-            Drawable icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
-
-            if (!mIconsHandler.isDefaultIconPack()) {
-                try {
-                    info = mPackageManager.getApplicationInfo(iconPack, PackageManager.GET_META_DATA);
-                } catch (PackageManager.NameNotFoundException ignored) {
-                }
-                if (info != null) {
-                    summary = mPackageManager.getApplicationLabel(info).toString();
-                    icon = mPackageManager.getApplicationIcon(info);
-                }
-            }
-
-            mIconPackPref.setSummary(summary);
-            mIconPackPref.setIcon(icon);
         }
 
         private void triggerRestart() {
@@ -314,7 +199,7 @@ public class SettingsActivity extends Activity {
         public void onSettingChanged(boolean enabled) {
             mRotationPref.setEnabled(enabled);
             mRotationPref.setSummary(enabled
-                    ? R.string.allow_rotation_desc : R.string.allow_rotation_blocked_desc);
+                    ? R.string.settings_allow_rotation_desc : R.string.allow_rotation_blocked_desc);
         }
     }
 
