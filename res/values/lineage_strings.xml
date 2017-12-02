@@ -61,4 +61,7 @@
     <!-- Folder titles -->
     <string name="google_title" translatable="false">Google</string>
     <string name="play_folder_title">Play</string>
+
+    <!-- Expand statusbar -->
+    <string name="statusbar_expand">Swipe down to show notifications</string>
 </resources>
