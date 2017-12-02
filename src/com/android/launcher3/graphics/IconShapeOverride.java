@@ -120,7 +120,8 @@ public class IconShapeOverride {
     }
 
     private static String getAppliedValue(Context context) {
-        return getDevicePrefs(context).getString(KEY_PREFERENCE, "");
+        return getDevicePrefs(context).getString(KEY_PREFERENCE,
+                context.getString(R.string.icon_shape_default));
     }
 
     public static void handlePreferenceUi(ListPreference preference) {
