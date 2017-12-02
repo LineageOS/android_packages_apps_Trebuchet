@@ -51,8 +51,11 @@
     <string name="icon_pack_reset">Reset</string>
     <string name="icon_pack_system">System (Default)</string>
 
-    <!-- Default icon pack package name. Override to set a default icon pack, use "Default" to use system icons -->
-    <string name="icon_pack_default" translatable="false">Default</string>
+    <!-- Icon shapes -->
+    <string name="icon_shape_square">Square</string>
+    <string name="icon_shape_circle">Circle</string>
+    <string name="icon_shape_squircle">Squircle</string>
+    <string name="icon_shape_teardrop">Teardrop</string>
 
     <!-- Preferences -->
     <string name="settings_category_home">Home screen settings</string>
