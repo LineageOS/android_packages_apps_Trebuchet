@@ -18,10 +18,16 @@ package com.android.launcher3;
 
 import android.animation.TimeInterpolator;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 
 import com.android.launcher3.util.TouchController;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
  * Detects pinches and animates the Workspace to/from overview mode.
@@ -42,6 +48,8 @@ public class PinchToOverviewListener extends ScaleGestureDetector.SimpleOnScaleG
      */
     private static final float FLING_VELOCITY = 0.003f;
 
+    private static final String PREF_STATUSBAR_EXPAND = "pref_expand_statusbar";
+
     private ScaleGestureDetector mPinchDetector;
     private Launcher mLauncher;
     private Workspace mWorkspace = null;
@@ -56,13 +64,28 @@ public class PinchToOverviewListener extends ScaleGestureDetector.SimpleOnScaleG
     private PinchThresholdManager mThresholdManager;
     private PinchAnimationManager mAnimationManager;
 
+    private GestureDetector mGestureDetector;
+
     public PinchToOverviewListener(Launcher launcher) {
+        SharedPreferences prefs = Utilities.getPrefs(launcher.getApplicationContext());
+
         mLauncher = launcher;
-        mPinchDetector = new ScaleGestureDetector((Context) mLauncher, this);
+        mPinchDetector = new ScaleGestureDetector(launcher, this);
+        mGestureDetector = new GestureDetector(launcher,
+                new GestureDetector.SimpleOnGestureListener() {
+            @Override
+            public boolean onFling(MotionEvent e1, MotionEvent e2, float vX, float vy) {
+                if (prefs.getBoolean(PREF_STATUSBAR_EXPAND, true) && e1.getY() < e2.getY()) {
+                    expandStatusBar(launcher);
+                }
+                return true;
+            }
+        });
     }
 
     public boolean onControllerInterceptTouchEvent(MotionEvent ev) {
         mPinchDetector.onTouchEvent(ev);
+        mGestureDetector.onTouchEvent(ev);
         return mPinchStarted;
     }
 
@@ -211,5 +234,18 @@ public class PinchToOverviewListener extends ScaleGestureDetector.SimpleOnScaleG
         mTimeDelta = System.currentTimeMillis() - mPreviousTimeMillis;
         mPreviousTimeMillis = System.currentTimeMillis();
         return false;
+    }
+
+    private void expandStatusBar(Context context) {
+        try {
+            Object service = context.getSystemService("statusbar");
+            Class<?> manager = Class.forName("android.app.StatusBarManager");
+            Method expand = manager.getMethod("expandNotificationsPanel");
+            expand.invoke(service);
+        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException |
+                InvocationTargetException e) {
+            Log.w("Reflection",
+                    "Can't to invoke android.app.StatusBarManager$expandNotificationsPanel");
+        }
     }
 }
