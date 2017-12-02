@@ -63,7 +63,8 @@ public class UiFactory {
             return new TouchController[] {
                     launcher.getDragController(),
                     new OverviewToAllAppsTouchController(launcher),
-                    new LauncherTaskViewController(launcher)};
+                    new LauncherTaskViewController(launcher),
+                    new SwipeDownListener(launcher)};
         }
         if (launcher.getDeviceProfile().isVerticalBarLayout()) {
             return new TouchController[] {
