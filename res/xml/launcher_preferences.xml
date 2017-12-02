@@ -53,4 +53,10 @@
         android:defaultValue=""
         android:persistent="false" />
 
+    <SwitchPreference
+        android:key="pref_expand_statusbar"
+        android:title="@string/statusbar_expand"
+        android:defaultValue="true"
+        android:persistent="true" />
+
 </PreferenceScreen>
