@@ -25,4 +25,10 @@
     <string name="msg_minus_one_on_left">When you swipe right from main home screen</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">When you swipe left from main home screen</string>
+
+    <!-- Icon shapes -->
+    <string name="icon_shape_square_name">Square</string>
+    <string name="icon_shape_circle_name">Circle</string>
+    <string name="icon_shape_squircle_name">Squircle</string>
+    <string name="icon_shape_teardrop_name">Teardrop</string>
 </resources>

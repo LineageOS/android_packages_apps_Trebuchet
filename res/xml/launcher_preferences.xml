@@ -53,9 +53,9 @@
         android:key="pref_override_icon_shape"
         android:title="@string/icon_shape_override_label"
         android:summary="%s"
-        android:entries="@array/icon_shape_override_paths_names"
-        android:entryValues="@array/icon_shape_override_paths_values"
-        android:defaultValue=""
+        android:entries="@array/icon_shape_entries"
+        android:entryValues="@array/icon_shape_paths"
+        android:defaultValue="@string/icon_shape_default"
         android:persistent="false" />
 
 </PreferenceScreen>

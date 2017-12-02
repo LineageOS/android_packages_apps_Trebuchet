@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Default icon pack package name. Override to set a default icon pack, use "Default" to use system icons -->
+    <string name="icon_pack_default" translatable="false">Default</string>
+
+    <string name="icon_shape_default" translatable="false">@string/mask_path_circle</string>
+
+    <!-- Masks names -->
+    <string-array name="icon_shape_entries" translatable="false">
+        <item>@string/icon_shape_circle_name</item>
+        <item>@string/icon_shape_square_name</item>
+        <item>@string/icon_shape_squircle_name</item>
+        <item>@string/icon_shape_teardrop_name</item>
+    </string-array>
+
+    <!-- Mask paths references -->
+    <string-array name="icon_shape_paths" translatable="false">
+        <item>@string/mask_path_circle</item>
+        <item>@string/mask_path_square</item>
+        <item>@string/mask_path_squircle</item>
+        <item>@string/mask_path_teardrop</item>
+    </string-array>
+
+    <!-- Circle: default -->
+    <string name="mask_path_circle" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
+    <!-- Rounded square -->
+    <string name="mask_path_square" translatable="false">"M 50 0 L 50 0 L 19.2 0 C 12.4794 0 9.11905 0 6.55211 1.30792 C 4.29417 2.4584 2.4584 4.29417 1.30792 6.55211 C 0 9.11905 0 12.4794 0 19.2 L 0 80.8C 0 87.5206 0 90.8809 1.30792 93.4479 C 2.4584 95.7058 4.29417 97.5416 6.55211 98.6921 C 9.11905 100 12.4794 100 19.2 100 L 80.8 100 C 87.5206 100 90.8809 100 93.4479 98.6921 C 95.7058 97.5416 97.5416 95.7058 98.6921 93.4479 C 100 90.8809 100 87.5206 100 80.8 L 100 19.2 C 100 12.4794 100 9.11905 98.6921 6.55211 C 97.5416 4.29417 95.7058 2.4584 93.4479 1.30792 C 90.8809 0 87.5206 0 80.8 0Z"</string>
+    <!-- Straight square: disabled -->
+    <string name="mask_path_straight_square" translatable="false">"M50,0L100,0 100,100 0,100 0,0z"</string>
+    <!-- Squircle -->
+    <string name="mask_path_squircle" translatable="false">"M50,0 C10,0 0,10 0,50 0,90 10,100 50,100 90,100 100,90 100,50 100,10 90,0 50,0 Z"</string>
+    <!-- Teardrop -->
+    <string name="mask_path_teardrop" translatable="false">"M50,0A50,50,0,0 1 100,50 L100,85 A15,15,0,0 1 85,100 L50,100 A50,50,0,0 1 50,0z"</string>
+</resources>
