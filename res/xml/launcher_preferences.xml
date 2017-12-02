@@ -72,9 +72,9 @@
         android:title="@string/settings_category_icons">
 
         <ListPreference
-            android:defaultValue=""
-            android:entries="@array/icon_shape_override_paths_names"
-            android:entryValues="@array/icon_shape_override_paths_values"
+            android:defaultValue="@string/icon_shape_default"
+            android:entries="@array/icon_shape_entries"
+            android:entryValues="@array/icon_shape_paths"
             android:icon="@drawable/ic_settings_shape"
             android:key="pref_override_icon_shape"
             android:persistent="false"
