@@ -112,3 +112,7 @@
 }
 
 -dontwarn android.support.design.**
+
+-keep class com.android.launcher3.graphics.** {
+ *;
+}
