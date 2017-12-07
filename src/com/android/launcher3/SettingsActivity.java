@@ -21,6 +21,7 @@ import static com.android.launcher3.states.RotationHelper.getAllowRotationDefaul
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -110,7 +111,8 @@ public class SettingsActivity extends Activity {
                 getPreferenceScreen().removePreference(
                         findPreference(SessionCommitReceiver.ADD_ICON_PREFERENCE_KEY));
                 getPreferenceScreen().removePreference(iconBadgingPref);
-            } else if (!getResources().getBoolean(R.bool.notification_badging_enabled)) {
+            } else if (!getResources().getBoolean(R.bool.notification_badging_enabled)
+                    || getContext().getSystemService(ActivityManager.class).isLowRamDevice()) {
                 getPreferenceScreen().removePreference(iconBadgingPref);
             } else {
                 // Listen to system notification badge settings while this UI is active.
