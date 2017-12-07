@@ -22,6 +22,7 @@ import static com.android.launcher3.states.RotationHelper.getAllowRotationDefaul
 import static com.android.launcher3.util.SecureSettingsObserver.newNotificationSettingsObserver;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ComponentName;
@@ -199,7 +200,8 @@ public class SettingsActivity extends Activity
             switch (preference.getKey()) {
                 case NOTIFICATION_DOTS_PREFERENCE_KEY:
                     if (!Utilities.ATLEAST_OREO ||
-                            !getResources().getBoolean(R.bool.notification_dots_enabled)) {
+                            !getResources().getBoolean(R.bool.notification_dots_enabled) ||
+                            getContext().getSystemService(ActivityManager.class).isLowRamDevice()) {
                         return false;
                     }
 
