@@ -63,7 +63,7 @@ abstract class BaseFlags {
     // When enabled, app discovery will be enabled if service is implemented
     public static final boolean DISCOVERY_ENABLED = true;
     // When enabled, the qsb will be moved to the hotseat.
-    public static final boolean QSB_IN_HOTSEAT = true;
+    public static final boolean QSB_IN_HOTSEAT = false;
 
     // Features to control Launcher3Go behavior
     public static final boolean GO_DISABLE_WIDGETS = false;
