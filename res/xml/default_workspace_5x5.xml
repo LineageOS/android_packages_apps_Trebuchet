@@ -21,8 +21,8 @@
 
     <!-- Screen 0 -->
     <appwidget
-        launcher:packageName="com.android.deskclock"
-        launcher:className="com.android.alarmclock.DigitalAppWidgetProvider"
+        launcher:packageName="org.lineageos.lockclock"
+        launcher:className="org.lineageos.lockclock.ClockWidgetProvider"
         launcher:screen="0"
         launcher:x="0"
         launcher:y="0"
