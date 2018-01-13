@@ -30,11 +30,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.launcher3.graphics.IconShapeOverride;
@@ -56,6 +60,8 @@ public class SettingsActivity extends Activity {
     // Hide labels
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
+
+    static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
 
@@ -130,6 +136,12 @@ public class SettingsActivity extends Activity {
                 mIconBadgingObserver.register(NOTIFICATION_BADGING, NOTIFICATION_ENABLED_LISTENERS);
             }
 
+            SwitchPreference feedIntegration = (SwitchPreference)
+                    findPreference(KEY_FEED_INTEGRATION);
+            if (!hasPackageInstalled(LauncherTab.SEARCH_PACKAGE)) {
+                homeGroup.removePreference(feedIntegration);
+            }
+
             Preference iconShapeOverride = findPreference(IconShapeOverride.KEY_PREFERENCE);
             if (iconShapeOverride != null) {
                 if (IconShapeOverride.isSupported(getActivity())) {
@@ -178,6 +190,16 @@ public class SettingsActivity extends Activity {
             AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             manager.set(AlarmManager.RTC, java.lang.System.currentTimeMillis() + 1, pi);
             java.lang.System.exit(0);
+        }
+
+        private boolean hasPackageInstalled(String pkgName) {
+            try {
+                ApplicationInfo ai = getContext().getPackageManager()
+                        .getApplicationInfo(pkgName, 0);
+                return ai.enabled;
+            } catch (PackageManager.NameNotFoundException e) {
+                return false;
+            }
         }
     }
 

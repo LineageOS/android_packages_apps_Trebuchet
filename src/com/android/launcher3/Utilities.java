@@ -699,4 +699,8 @@ public final class Utilities {
         return !currentPack.equals(defaultPack) && !currentPack.equals(defaultLocalziedPack);
     }
 
+    static boolean hasFeedIntegration(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_FEED_INTEGRATION, false);
+    }
 }
