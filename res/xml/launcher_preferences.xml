@@ -33,6 +33,13 @@
             android:title="@string/statusbar_expand" />
 
         <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_settings_feed"
+            android:key="pref_feed_integration"
+            android:persistent="true"
+            android:title="@string/settings_feed" />
+
+        <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_add_shortcut"
             android:key="pref_add_icon_to_home"
