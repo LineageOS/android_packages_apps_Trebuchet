@@ -23,10 +23,10 @@
 
     <!-- Masks names -->
     <string-array name="icon_shape_entries" translatable="false">
-        <item>@string/icon_shape_circle</item>
-        <item>@string/icon_shape_square</item>
-        <item>@string/icon_shape_squircle</item>
-        <item>@string/icon_shape_teardrop</item>
+        <item>@string/icon_shape_circle_name</item>
+        <item>@string/icon_shape_square_name</item>
+        <item>@string/icon_shape_squircle_name</item>
+        <item>@string/icon_shape_teardrop_name</item>
     </string-array>
 
     <!-- Mask paths references -->
