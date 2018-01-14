@@ -52,10 +52,10 @@
     <string name="icon_pack_system">System (Default)</string>
 
     <!-- Icon shapes -->
-    <string name="icon_shape_square">Square</string>
-    <string name="icon_shape_circle">Circle</string>
-    <string name="icon_shape_squircle">Squircle</string>
-    <string name="icon_shape_teardrop">Teardrop</string>
+    <string name="icon_shape_square_name">Square</string>
+    <string name="icon_shape_circle_name">Circle</string>
+    <string name="icon_shape_squircle_name">Squircle</string>
+    <string name="icon_shape_teardrop_name">Teardrop</string>
 
     <!-- Preferences -->
     <string name="settings_category_home">Home screen settings</string>
