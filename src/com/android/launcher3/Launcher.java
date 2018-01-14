@@ -4201,6 +4201,11 @@ public class Launcher extends BaseActivity
 
                 mFeedIntegrationEnabled = isFeedIntegrationEnabled();
                 mLauncherTab.updateLauncherTab(mFeedIntegrationEnabled);
+
+                if (mLauncherTab.getClient() == null) {
+                    return;
+                }
+
                 if (mFeedIntegrationEnabled) {
                     mLauncherTab.getClient().onAttachedToWindow();
                 } else {
