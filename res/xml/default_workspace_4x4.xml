@@ -95,8 +95,8 @@
 
     <!-- Screen 1 -->
     <appwidget
-        launcher:packageName="com.cyanogenmod.eleven"
-        launcher:className="com.cyanogenmod.eleven.appwidgets.AppWidgetLarge"
+        launcher:packageName="org.lineageos.eleven"
+        launcher:className="org.lineageos.eleven.appwidgets.AppWidgetLarge"
         launcher:screen="1"
         launcher:x="0"
         launcher:y="0"
@@ -120,8 +120,8 @@
     </resolve>
 
     <favorite
-        launcher:packageName="com.cyanogenmod.eleven"
-        launcher:className="com.cyanogenmod.eleven.ui.activities.HomeActivity"
+        launcher:packageName="org.lineageos.eleven"
+        launcher:className="org.lineageos.eleven.ui.activities.HomeActivity"
         launcher:screen="1"
         launcher:x="2"
         launcher:y="-1" />
