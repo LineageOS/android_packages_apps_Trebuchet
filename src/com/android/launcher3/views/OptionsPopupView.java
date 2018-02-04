@@ -200,7 +200,7 @@ public class OptionsPopupView extends ArrowPopup<Launcher>
                 resDrawable,
                 IGNORE,
                 OptionsPopupView::startWallpaperPicker));
-        if (!WidgetsModel.GO_DISABLE_WIDGETS) {
+        if (!WidgetsModel.GO_DISABLE_WIDGETS && Utilities.isWorkspaceEditAllowed(launcher)) {
             options.add(new OptionItem(launcher,
                     R.string.widget_button_text,
                     R.drawable.ic_widget,
