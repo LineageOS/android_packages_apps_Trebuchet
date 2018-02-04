@@ -207,7 +207,7 @@ public class OptionsPopupView<T extends Context & ActivityContext> extends Arrow
                 R.drawable.ic_palette,
                 IGNORE,
                 OptionsPopupView::startWallpaperPicker));
-        if (WIDGETS_ENABLED) {
+        if (WIDGETS_ENABLED && Utilities.isWorkspaceEditAllowed(launcher)) {
             options.add(new OptionItem(launcher,
                     R.string.widget_button_text,
                     R.drawable.ic_widget,
