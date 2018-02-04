@@ -1091,6 +1091,8 @@ public class Launcher extends BaseActivity
             mLauncherCallbacks.onResume();
         }
 
+        mWidgetsButton.setVisibility(Utilities.isWorkspaceEditAllowed(getApplicationContext()) ?
+                View.VISIBLE : View.GONE);
     }
 
     @Override
