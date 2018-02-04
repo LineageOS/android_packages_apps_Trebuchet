@@ -883,4 +883,9 @@ public final class Utilities {
             return mSize;
         }
     }
+
+    public static boolean isWorkspaceEditAllowed(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_EDIT, true);
+    }
 }
