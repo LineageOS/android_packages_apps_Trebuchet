@@ -88,6 +88,8 @@ public class InvariantDeviceProfile {
 
     private static final float ICON_SIZE_DEFINED_IN_APP_DP = 48;
 
+    public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
+
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
     private static final float KNEARESTNEIGHBOR = 3;

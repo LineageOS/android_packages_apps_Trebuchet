@@ -133,6 +133,7 @@ public abstract class SystemShortcut<T extends Context & ActivityContext> extend
 
         @Override
         public void onClick(View view) {
+            if (!Utilities.isWorkspaceEditAllowed(mTarget.getApplicationContext())) return;
             AbstractFloatingView.closeAllOpenViews(mTarget);
             WidgetsBottomSheet widgetsBottomSheet =
                     (WidgetsBottomSheet) mTarget.getLayoutInflater().inflate(
