@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "283eeb43_6b247890",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2018-02-04T19:05:34Z",
+      "side": 1,
+      "message": "27.0.3 is out btw",
+      "range": {
+        "startLine": 18,
+        "startChar": 23,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "cb9b690b80364bfd12fd8af62832a17769dad393",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
