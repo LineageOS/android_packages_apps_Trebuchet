@@ -703,4 +703,9 @@ public final class Utilities {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_FEED_INTEGRATION, false);
     }
+
+    public static boolean isWorkspaceEditAllowed(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
+    }
 }

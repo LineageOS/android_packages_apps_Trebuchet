@@ -31,7 +31,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -62,6 +61,7 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
+    public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
 
