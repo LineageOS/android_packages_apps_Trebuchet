@@ -37,6 +37,7 @@ import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
 import com.android.launcher3.ShortcutInfo;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.accessibility.DragViewStateAnnouncer;
 import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.Thunk;
@@ -407,7 +408,15 @@ public class DragController implements DragDriver.EventListener, TouchController
      * Call this from a drag source view.
      */
     public boolean onControllerInterceptTouchEvent(MotionEvent ev) {
+        boolean isEditDisabled = !Utilities.isWorkspaceEditAllowed(
+                mLauncher.getApplicationContext());
+
         if (mOptions != null && mOptions.isAccessibleDrag) {
+            return false;
+        }
+
+        if (isEditDisabled) {
+            cancelDrag();
             return false;
         }
 

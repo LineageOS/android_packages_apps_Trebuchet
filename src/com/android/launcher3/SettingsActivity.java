@@ -81,6 +81,8 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
+    public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +102,7 @@ public class SettingsActivity extends Activity {
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class LauncherSettingsFragment extends PreferenceFragment 
+    public static class LauncherSettingsFragment extends PreferenceFragment
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private IconBadgingObserver mIconBadgingObserver;

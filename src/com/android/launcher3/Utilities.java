@@ -619,4 +619,9 @@ public final class Utilities {
         msg.setAsynchronous(true);
         handler.sendMessage(msg);
     }
+
+    public static boolean isWorkspaceEditAllowed(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
+    }
 }
