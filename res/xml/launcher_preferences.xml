@@ -14,6 +14,15 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="true"
+        android:icon="@drawable/ic_settings_edit"
+        android:key="pref_workspace_edit"
+        android:persistent="true"
+        android:title="@string/settings_edit_allow_title"
+        android:summaryOn="@string/settings_edit_allow_summary_on"
+        android:summaryOff="@string/settings_edit_allow_summary_off" />
+
     <PreferenceCategory
         android:key="category_home"
         android:title="@string/settings_category_home">

@@ -34,6 +34,7 @@ import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherAnimUtils;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.anim.PropertyListBuilder;
 import com.android.launcher3.anim.RoundedRectRevealOutlineProvider;
 import com.android.launcher3.dragndrop.DragOptions;
@@ -110,6 +111,8 @@ public class ShortcutsItemView extends PopupItemView implements View.OnLongClick
         if (!mLauncher.isDraggingEnabled()) return false;
         // Return early if an item is already being dragged (e.g. when long-pressing two shortcuts)
         if (mLauncher.getDragController().isDragging()) return false;
+        // Return early if workspace edit is disabled
+        if (!Utilities.isWorkspaceEditAllowed(mLauncher.getApplicationContext())) return false;
 
         // Long clicked on a shortcut.
         DeepShortcutView sv = (DeepShortcutView) v.getParent();
