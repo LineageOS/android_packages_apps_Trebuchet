@@ -162,7 +162,7 @@ public class OptionsPopupView extends ArrowPopup
         options.add(new OptionItem(resString, resDrawable,
                 IGNORE,
                 OptionsPopupView::startWallpaperPicker));
-        if (!WidgetsModel.GO_DISABLE_WIDGETS) {
+        if (!WidgetsModel.GO_DISABLE_WIDGETS && Utilities.isWorkspaceEditAllowed(launcher)) {
             options.add(new OptionItem(R.string.widget_button_text, R.drawable.ic_widget,
                     LAUNCHER_WIDGETSTRAY_BUTTON_TAP_OR_LONGPRESS,
                     OptionsPopupView::onWidgetsClicked));

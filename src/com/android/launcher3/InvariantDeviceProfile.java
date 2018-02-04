@@ -83,6 +83,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_ICON_PATH_REF = "pref_icon_shape_path";
+    public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
 
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
