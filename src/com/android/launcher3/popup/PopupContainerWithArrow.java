@@ -666,6 +666,8 @@ public class PopupContainerWithArrow<T extends BaseDraggingActivity> extends Arr
             if (!ItemLongClickListener.canStartDrag(mLauncher)) return false;
             // Return early if not the correct view
             if (!(v.getParent() instanceof DeepShortcutView)) return false;
+            // Return early if workspace edit is disabled
+            if (!Utilities.isWorkspaceEditAllowed(mLauncher.getApplicationContext())) return false;
 
             // Long clicked on a shortcut.
             DeepShortcutView sv = (DeepShortcutView) v.getParent();
