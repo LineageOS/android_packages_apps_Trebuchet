@@ -24,7 +24,7 @@
     <!-- Masks names -->
     <string-array name="icon_shape_entries" translatable="false">
         <item>@string/icon_shape_circle_name</item>
-        <item>@string/icon_shape_square_name</item>
+        <item>@string/icon_shape_super_ellipse_name</item>
         <item>@string/icon_shape_squircle_name</item>
         <item>@string/icon_shape_teardrop_name</item>
     </string-array>
@@ -32,14 +32,16 @@
     <!-- Mask paths references -->
     <string-array name="icon_shape_paths" translatable="false">
         <item>@string/mask_path_circle</item>
-        <item>@string/mask_path_square</item>
+        <item>@string/mask_path_super_ellipse</item>
         <item>@string/mask_path_squircle</item>
         <item>@string/mask_path_teardrop</item>
     </string-array>
 
     <!-- Circle: default -->
     <string name="mask_path_circle" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
-    <!-- Rounded square -->
+    <!-- Super ellipse -->
+    <string name="mask_path_super_ellipse" translatable="false">"M 50 0 L 50 0 L 19.2 0 C 12.4794 0 9.11905 0 6.55211 1.30792 C 4.29417 2.4584 2.4584 4.29417 1.30792 6.55211 C 0 9.11905 0 12.4794 0 19.2 L 0 80.8C 0 87.5206 0 90.8809 1.30792 93.4479 C 2.4584 95.7058 4.29417 97.5416 6.55211 98.6921 C 9.11905 100 12.4794 100 19.2 100 L 80.8 100 C 87.5206 100 90.8809 100 93.4479 98.6921 C 95.7058 97.5416 97.5416 95.7058 98.6921 93.4479 C 100 90.8809 100 87.5206 100 80.8 L 100 19.2 C 100 12.4794 100 9.11905 98.6921 6.55211 C 97.5416 4.29417 95.7058 2.4584 93.4479 1.30792 C 90.8809 0 87.5206 0 80.8 0Z"</string>
+    <!-- Rounded square: disabled -->
     <string name="mask_path_square" translatable="false">"M50,0L92,0C96.42,0 100,4.58 100 8L100,92C100, 96.42 96.42 100 92 100L8 100C4.58, 100 0 96.42 0 92L0 8 C 0 4.42 4.42 0 8 0L50 0Z"</string>
     <!-- Straight square: disabled -->
     <string name="mask_path_straight_square" translatable="false">"M50,0L100,0 100,100 0,100 0,0z"</string>
