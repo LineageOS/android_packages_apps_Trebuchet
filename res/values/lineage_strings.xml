@@ -52,7 +52,7 @@
     <string name="icon_pack_system">System (Default)</string>
 
     <!-- Icon shapes -->
-    <string name="icon_shape_square_name">Square</string>
+    <string name="icon_shape_super_ellipse_name">Super ellipse</string>
     <string name="icon_shape_circle_name">Circle</string>
     <string name="icon_shape_squircle_name">Squircle</string>
     <string name="icon_shape_teardrop_name">Teardrop</string>
