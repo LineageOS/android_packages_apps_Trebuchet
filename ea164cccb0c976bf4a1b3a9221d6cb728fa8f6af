@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edef565_63962d51",
+        "filename": "res/values/lineage_adaptive_icons.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2018-02-12T10:47:29Z",
+      "side": 1,
+      "message": "?",
+      "revId": "ea164cccb0c976bf4a1b3a9221d6cb728fa8f6af",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
