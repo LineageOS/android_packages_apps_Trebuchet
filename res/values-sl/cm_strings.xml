@@ -25,7 +25,7 @@
   <string name="setting_state_off">IZKLOPLJENO</string>
   <string name="setting_state_disabled">ONEMOGOČENO</string>
   <!-- Folder titles -->
-  <string name="play_folder_title">Predvajaj</string>
+  <string name="play_folder_title">Play</string>
   <!-- Wallpaper scroll effect -->
   <string name="scrolling_wallpaper">Pomakni sliko ozadja</string>
   <!-- Dynamic Grid -->
