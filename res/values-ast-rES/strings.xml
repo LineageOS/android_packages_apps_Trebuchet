@@ -24,8 +24,10 @@
   <!-- Work folder name -->
   <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
   <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
+  <string name="activity_not_available">L\'aplicación nun ta disponible</string>
   <!-- SafeMode shortcut error string -->
   <!-- SafeMode widget error string -->
+  <string name="safemode_widget_error">Deshabilitáronse los widgets nel mou seguru</string>
   <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
   <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
   <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
@@ -55,8 +57,10 @@
   <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
   <!-- Permissions: -->
   <!-- Permission short label -->
+  <string name="permlab_install_shortcut">instalar atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
+  <string name="permlab_read_settings">lleer axustes d\'Aniciu y atayos</string>
   <!-- Permission description -->
   <!-- Permission short label -->
   <!-- Permission description -->
@@ -104,9 +108,11 @@
   <!-- Option to change the shape of the home screen icons to a teardrop. This represents the name of the shape similar to a circle with with the bottom right corner pushed out like a square [CHAR LIMIT=50] -->
   <!-- Message shown in the progress dialog when the icon shape override is being applied [CHAR LIMIT=100]-->
   <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
+  <string name="package_state_unknown">Desconozse</string>
   <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
   <!-- Title for abandoned promise dialog. -->
+  <string name="abandoned_promises_title">Esta aplicación nun ta instalada</string>
   <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
     The second "it" refers to the app. -->
   <!-- Title for an app which is being downloaded. -->
