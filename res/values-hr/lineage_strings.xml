@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Poništi</string>
   <string name="icon_pack_system">Sustav (zadano)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superelipsa</string>
   <string name="icon_shape_circle_name">Krug</string>
   <string name="icon_shape_squircle_name">Zaobljeni kvadrat</string>
   <string name="icon_shape_teardrop_name">Suza</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Kružić će se prikazati iznad ikone kad imate neku obavijest</string>
   <string name="settings_icon_badging_desc_off">Kružić se neće prikazati ka iznad ikone imate neku obavijest</string>
   <string name="settings_feed">Omogući integraciju s feedom</string>
+  <string name="settings_edit_allow_title">Dopusti uređivanje</string>
+  <string name="settings_edit_allow_summary_on">Ikone i widgeti se mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
+  <string name="settings_edit_allow_summary_off">Ikone i widgeti se ne mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
+  <string name="settings_edit_widgets_error">Nije moguće dodavati widgete na početni zaslon</string>
 </resources>

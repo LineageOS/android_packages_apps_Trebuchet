@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">重置</string>
   <string name="icon_pack_system">系统（默认）</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">超椭圆</string>
   <string name="icon_shape_circle_name">圆形</string>
   <string name="icon_shape_squircle_name">圆角矩形</string>
   <string name="icon_shape_teardrop_name">泪珠形</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">当有通知时，在图标上显示气泡</string>
   <string name="settings_icon_badging_desc_off">没有通知时，也在图标上显示气泡</string>
   <string name="settings_feed">启用 Feed 集成</string>
+  <string name="settings_edit_allow_title">允许编辑</string>
+  <string name="settings_edit_allow_summary_on">可以在桌面上添加、删除和移动图标以及小部件</string>
+  <string name="settings_edit_allow_summary_off">不能在桌面上添加、删除和移动图标以及小部件</string>
+  <string name="settings_edit_widgets_error">无法将小部件添加到主屏幕中</string>
 </resources>

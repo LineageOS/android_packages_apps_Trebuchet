@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Thiết lập lại</string>
   <string name="icon_pack_system">Hệ thống (Mặc định)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Siêu hình elip</string>
   <string name="icon_shape_circle_name">Vòng tròn</string>
   <string name="icon_shape_squircle_name">Vuông bo tròn</string>
   <string name="icon_shape_teardrop_name">Giọt nước</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Một bong bóng sẽ được hiển thị trên biểu tượng khi có thông báo</string>
   <string name="settings_icon_badging_desc_off">Không có bong bóng nào được hiển thị phía trên biểu tượng khi có thông báo</string>
   <string name="settings_feed">Bật tích hợp nguồn cấp dữ liệu</string>
+  <string name="settings_edit_allow_title">Cho phép chỉnh sửa</string>
+  <string name="settings_edit_allow_summary_on">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
+  <string name="settings_edit_allow_summary_off">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
+  <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
 </resources>

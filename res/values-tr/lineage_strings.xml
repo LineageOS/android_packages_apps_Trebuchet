@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Sıfırla</string>
   <string name="icon_pack_system">Sistem (Varsayılan)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Süper elips</string>
   <string name="icon_shape_circle_name">Daire</string>
   <string name="icon_shape_squircle_name">Yuvarlatılmış kare</string>
   <string name="icon_shape_teardrop_name">Gözyaşı</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenir</string>
   <string name="settings_icon_badging_desc_off">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenmez</string>
   <string name="settings_feed">Yayın entegrasyonunu etkinleştir</string>
+  <string name="settings_edit_allow_title">Düzenlemeye izin ver</string>
+  <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
+  <string name="settings_edit_allow_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
+  <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>
 </resources>

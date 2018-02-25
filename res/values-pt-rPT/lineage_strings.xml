@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Repor</string>
   <string name="icon_pack_system">Sistema (Padrão)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Super elipse</string>
   <string name="icon_shape_circle_name">Círculo</string>
   <string name="icon_shape_squircle_name">Quadrado arredondado</string>
   <string name="icon_shape_teardrop_name">Lágrima</string>
@@ -55,5 +56,11 @@
   <string name="settings_rotation_title">Rotação</string>
   <string name="settings_allow_rotation_desc">Permitir a utilização do ecrã inicial em modo paisagem quando o dispositivo for rodado</string>
   <string name="settings_icon_shape">Formato dos ícones</string>
+  <string name="settings_icon_badging_desc_on">Será mostrada uma bola acima do ícone quando houver uma notificação</string>
+  <string name="settings_icon_badging_desc_off">Não será mostrada uma bola acima do ícone quando houver uma notificação</string>
   <string name="settings_feed">Ativar integração do feed</string>
+  <string name="settings_edit_allow_title">Permitir edições</string>
+  <string name="settings_edit_allow_summary_on">Ícones e widgets podem ser adicionados, removidos e movidos no ecrã inicial</string>
+  <string name="settings_edit_allow_summary_off">Ícones e widgets não podem ser adicionados, removidos e movidos no ecrã inicial</string>
+  <string name="settings_edit_widgets_error">Não é possível adicionar widgets ao ecrã inicial</string>
 </resources>

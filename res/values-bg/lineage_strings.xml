@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Начално състояние</string>
   <string name="icon_pack_system">Система по подразбиране</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Супер елипса</string>
   <string name="icon_shape_circle_name">Кръг</string>
   <string name="icon_shape_squircle_name">Скуайър</string>
   <string name="icon_shape_teardrop_name">Сълза</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Индикацията ще се покажие над иконата, когато е налице уведомяване</string>
   <string name="settings_icon_badging_desc_off">Индикацията няма да се покажие над иконата, когато е налице уведомяване</string>
   <string name="settings_feed">Разреши емисия интеграция</string>
+  <string name="settings_edit_allow_title">Разреши редактиране</string>
+  <string name="settings_edit_allow_summary_on">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
+  <string name="settings_edit_allow_summary_off">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
+  <string name="settings_edit_widgets_error">Невъзможно е да се добавят джаджи към началния екран</string>
 </resources>

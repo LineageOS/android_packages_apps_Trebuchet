@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Resetovať</string>
   <string name="icon_pack_system">Systémové (predvolené)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Super elipsa</string>
   <string name="icon_shape_circle_name">Kruh</string>
   <string name="icon_shape_squircle_name">Zaoblený štvorec</string>
   <string name="icon_shape_teardrop_name">Slza</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Ak sa vyskytne upozornenie, nad ikonou sa zobrazí bublina</string>
   <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
   <string name="settings_feed">Povoliť integráciu kanála</string>
+  <string name="settings_edit_allow_title">Povoliť úpravy</string>
+  <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
+  <string name="settings_edit_allow_summary_off">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
+  <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
 </resources>

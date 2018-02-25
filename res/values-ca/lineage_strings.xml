@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Reestableix</string>
   <string name="icon_pack_system">Sistema (Per defecte)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Súper el·lipse</string>
   <string name="icon_shape_circle_name">Rodones</string>
   <string name="icon_shape_squircle_name">Vores arrodonides</string>
   <string name="icon_shape_teardrop_name">Llàgrima</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Es mostrarà una bombolla sobre de la icona quan hi hagi una notificació</string>
   <string name="settings_icon_badging_desc_off">No es mostrarà cap bombolla sobre de la icona quan hi hagi una notificació</string>
   <string name="settings_feed">Activa la integració del mur</string>
+  <string name="settings_edit_allow_title">Permet editar</string>
+  <string name="settings_edit_allow_summary_on">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
+  <string name="settings_edit_allow_summary_off">Les icones i els widgets no poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
+  <string name="settings_edit_widgets_error">No es possible afegir widgets a la pantalla d\'inici</string>
 </resources>

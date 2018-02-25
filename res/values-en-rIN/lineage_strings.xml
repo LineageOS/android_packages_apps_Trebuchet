@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Reset</string>
   <string name="icon_pack_system">System (Default)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Super ellipse</string>
   <string name="icon_shape_circle_name">Circle</string>
   <string name="icon_shape_squircle_name">Squircle</string>
   <string name="icon_shape_teardrop_name">Teardrop</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">A bubble will be displayed above the icon when there\'s a notification</string>
   <string name="settings_icon_badging_desc_off">No bubble will be displayed above the icon when there\'s a notification</string>
   <string name="settings_feed">Enable feed integration</string>
+  <string name="settings_edit_allow_title">Allow edit</string>
+  <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
+  <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
+  <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
 </resources>

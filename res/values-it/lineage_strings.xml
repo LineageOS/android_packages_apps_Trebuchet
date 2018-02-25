@@ -18,11 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Scorri verso il basso per mostrare le notifiche</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">App preferite</string>
+  <string name="predictive_apps_summary_on">Le tue app preferite appariranno in cima al drawer delle app</string>
+  <string name="predictive_apps_summary_off">Le tue app preferite non appariranno in cima al drawer delle app</string>
   <!-- Grid size -->
+  <string name="grid_size_text">Dimensione griglia</string>
+  <string name="grid_size_rows">Righe</string>
+  <string name="grid_size_columns">Colonne</string>
+  <string name="grid_size_custom_positive">Imposta</string>
+  <string name="grid_size_custom_message">Imposta una dimensione personalizzata di righe e colonne</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Mostra nomi icone nella schermata home</string>
+  <string name="drawer_show_labels">Mostra nomi icone nel drawer</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Modifica</string>
+  <string name="icon_pack_title">Pacchetto icone</string>
+  <string name="icon_pack_picker">Seleziona Icona</string>
+  <string name="icon_pack_picker_search">Cerca icona</string>
+  <string name="icon_pack_suggestions">Suggerimenti</string>
+  <string name="icon_pack_all_icons">Tutte le icone</string>
+  <string name="icon_pack_reset">Reimposta</string>
+  <string name="icon_pack_system">Sistema (predefinito)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superellisse</string>
+  <string name="icon_shape_circle_name">Cerchio</string>
+  <string name="icon_shape_squircle_name">Supercerchio</string>
+  <string name="icon_shape_teardrop_name">Goccia</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Impostazioni schermata iniziale</string>
+  <string name="settings_category_drawer">Impostazioni drawer</string>
+  <string name="settings_category_icons">Impostazioni icone</string>
+  <string name="settings_more">Altro</string>
+  <string name="settings_rotation_title">Rotazione</string>
+  <string name="settings_allow_rotation_desc">Consenti la visualizzazione orizzontale della schermata home quando il dispositivo viene ruotato</string>
+  <string name="settings_icon_shape">Forma delle icone</string>
+  <string name="settings_icon_badging_desc_on">Una bolla apparirà sopra l\'icona quando ci sarà una notifica</string>
+  <string name="settings_icon_badging_desc_off">La bolla non apparirà sopra l\'icona quando ci sarà una notifica</string>
+  <string name="settings_feed">Attiva integrazione feed</string>
+  <string name="settings_edit_allow_title">Consenti modifiche</string>
+  <string name="settings_edit_allow_summary_on">É possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
+  <string name="settings_edit_allow_summary_off">Non é possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
+  <string name="settings_edit_widgets_error">Non é possibile aggiungere widget alla schermata home</string>
 </resources>

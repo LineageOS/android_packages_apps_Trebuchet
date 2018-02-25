@@ -58,4 +58,5 @@
   <string name="settings_icon_badging_desc_on">알림이 있을 때 아이콘 위에 물방울을 띄웁니다.</string>
   <string name="settings_icon_badging_desc_off">알림이 있어도 아이콘 위에 물방울을 띄우지 않습니다.</string>
   <string name="settings_feed">피드 통합 사용</string>
+  <string name="settings_edit_allow_title">편집 허용</string>
 </resources>

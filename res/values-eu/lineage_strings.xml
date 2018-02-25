@@ -18,11 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Pasatu hatza behera jakinarazpenak erakusteko</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">Aplikazio prediktiboak</string>
+  <string name="predictive_apps_summary_on">Zure gogoko aplikazioak tiraderaren goialdean agertuko dira</string>
+  <string name="predictive_apps_summary_off">Zure gogoko aplikazioak ez dira tiraderaren goialdean agertuko</string>
   <!-- Grid size -->
+  <string name="grid_size_text">Sareta-tamaina</string>
+  <string name="grid_size_rows">Errenkadak</string>
+  <string name="grid_size_columns">Zutabeak</string>
+  <string name="grid_size_custom_positive">Ezarri</string>
+  <string name="grid_size_custom_message">Hautatu zutabe eta errenkada kopuru pertsonalak</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Erakutsi ikonoen etiketa mahaigainean</string>
+  <string name="drawer_show_labels">Erakutsi ikonoen etiketak tiraderan</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Editatu</string>
+  <string name="icon_pack_title">Ikono multzoa</string>
+  <string name="icon_pack_picker">Hautatu ikonoa</string>
+  <string name="icon_pack_picker_search">Bilatu ikonoa</string>
+  <string name="icon_pack_suggestions">Iradokizunak</string>
+  <string name="icon_pack_all_icons">Ikono guztiak</string>
+  <string name="icon_pack_reset">Berrezarri</string>
+  <string name="icon_pack_system">Sistema (lehenetsia)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superelipsea</string>
+  <string name="icon_shape_circle_name">Zirkularra</string>
+  <string name="icon_shape_squircle_name">Karratzirkulua</string>
+  <string name="icon_shape_teardrop_name">Malkoa</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Hasiera pantailako ezarpenak</string>
+  <string name="settings_category_drawer">Tiraderaren ezarpenak</string>
+  <string name="settings_category_icons">Ikonoen ezarpenak</string>
+  <string name="settings_more">Gehiago</string>
+  <string name="settings_rotation_title">Biraketa</string>
+  <string name="settings_allow_rotation_desc">Baimendu hasiera pantaila horizontalean erabiltzea gailua biratuta dagoenean</string>
+  <string name="settings_icon_shape">Ikonoen forma</string>
+  <string name="settings_icon_badging_desc_on">Bunbuilo bat erakutsiko da ikonoaren gainean jakinarazpen bat dagoenean</string>
+  <string name="settings_icon_badging_desc_off">Ez da bunbuilorik erakutsiko ikonoaren gainean jakinarazpen bat dagoenean</string>
+  <string name="settings_feed">Gaitu jarioen integrazioa</string>
+  <string name="settings_edit_allow_title">Baimendu editatzea</string>
+  <string name="settings_edit_allow_summary_on">Ikonoak eta trepetak hasieran pantailan gehitu, kendu daitezke eta lekuz aldatu daitezke</string>
+  <string name="settings_edit_allow_summary_off">Ezin daitezke ikonoak eta trepetak hasieran pantailan gehitu, kendu edo lekuz aldatu</string>
+  <string name="settings_edit_widgets_error">Ezin dira trepetak hasiera pantailara gehitu</string>
 </resources>

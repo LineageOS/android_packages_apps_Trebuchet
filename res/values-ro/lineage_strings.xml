@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Resetaţi</string>
   <string name="icon_pack_system">Sistem (Implicit)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Super elipsă</string>
   <string name="icon_shape_circle_name">Cerc</string>
   <string name="icon_shape_squircle_name">Pătrat rotunjit</string>
   <string name="icon_shape_teardrop_name">Lacrimă</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Un balon va fi afișat deasupra pictogramei unde se află o notificare</string>
   <string name="settings_icon_badging_desc_off">Niciun balon nu va fi afișat deasupra pictogramei unde se află o notificare</string>
   <string name="settings_feed">Activați integrarea în feed</string>
+  <string name="settings_edit_allow_title">Permite editare</string>
+  <string name="settings_edit_allow_summary_on">Iconițele și widget-urile pot fi adăugate, eliminate sau mutate pe homescreen</string>
+  <string name="settings_edit_allow_summary_off">Iconițele și widget-urile nu pot fi adăugate, eliminate sau mutate pe homescreen</string>
+  <string name="settings_edit_widgets_error">Nu este posibil să adăugați widget-uri pe homescreen</string>
 </resources>

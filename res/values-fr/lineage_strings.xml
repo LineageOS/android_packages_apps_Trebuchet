@@ -18,11 +18,16 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Lecture</string>
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
+  <string name="grid_size_text">Taille de la grille</string>
+  <string name="grid_size_rows">Lignes</string>
+  <string name="grid_size_columns">Colonnes</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
   <!-- Icon shapes -->
   <!-- Preferences -->
+  <string name="settings_rotation_title">Rotation</string>
 </resources>

@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">重設</string>
   <string name="icon_pack_system">系統 (預設)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">超橢圓</string>
   <string name="icon_shape_circle_name">圓形</string>
   <string name="icon_shape_squircle_name">圓角方形</string>
   <string name="icon_shape_teardrop_name">水滴形</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">有通知時，圖示上方會顯示小圓點</string>
   <string name="settings_icon_badging_desc_off">有通知時，圖示上方不會顯示小圓點</string>
   <string name="settings_feed">啟用 Feed 整合</string>
+  <string name="settings_edit_allow_title">允許編輯</string>
+  <string name="settings_edit_allow_summary_on">圖示和小工具可以在主畫面上新增、刪除和移動</string>
+  <string name="settings_edit_allow_summary_off">圖示和小工具無法在主畫面上新增、刪除和移動</string>
+  <string name="settings_edit_widgets_error">無法將小工具新增至主畫面</string>
 </resources>

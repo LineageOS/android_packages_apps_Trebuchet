@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Ponastavi</string>
   <string name="icon_pack_system">Sistemsko (privzeto)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superelipsa</string>
   <string name="icon_shape_circle_name">Krog</string>
   <string name="icon_shape_squircle_name">Zaobljen kvadrat</string>
   <string name="icon_shape_teardrop_name">Solza</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Mehurček bo prikazan nad ikono, ko je prisotno obvestilo</string>
   <string name="settings_icon_badging_desc_off">Mehurček ne bo prikazan nad ikono, ko je prisotno obvestilo</string>
   <string name="settings_feed">Omogoči vdelavo vira</string>
+  <string name="settings_edit_allow_title">Dovoli urejanje</string>
+  <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
+  <string name="settings_edit_allow_summary_off">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
+  <string name="settings_edit_widgets_error">Dodajanje pripomočkov na domači zaslon ni mogoče</string>
 </resources>
