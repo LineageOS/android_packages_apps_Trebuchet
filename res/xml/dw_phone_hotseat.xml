@@ -39,7 +39,14 @@
         <favorite launcher:uri="mmsto:" />
     </resolve>
 
-    <!-- All Apps -->
+    <resolve
+        launcher:container="-101"
+        launcher:screen="2"
+        launcher:x="2"
+        launcher:y="0" >
+        <favorite
+            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_CONTACTS;end" />
+    </resolve>
 
     <resolve
         launcher:container="-101"
