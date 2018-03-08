@@ -38,11 +38,25 @@
   <string name="icon_pack_title">Paczka ikon</string>
   <string name="icon_pack_picker">Wybierz ikonę</string>
   <string name="icon_pack_picker_search">Wyszukaj ikonę</string>
+  <string name="icon_pack_suggestions">Sugestie</string>
+  <string name="icon_pack_all_icons">Wszystkie ikony</string>
+  <string name="icon_pack_reset">Przywróć</string>
+  <string name="icon_pack_system">Systemowe (Domyślne)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superelipsa</string>
   <string name="icon_shape_circle_name">Okrągły</string>
   <string name="icon_shape_squircle_name">Zaokrąglony kwadrat</string>
   <!-- Preferences -->
   <string name="settings_category_home">Ustawienia ekranu głównego</string>
   <string name="settings_category_drawer">Ustawienia szuflady</string>
   <string name="settings_category_icons">Ustawienia ikon</string>
+  <string name="settings_more">Więcej</string>
+  <string name="settings_rotation_title">Obrót</string>
+  <string name="settings_icon_shape">Kształt ikon</string>
+  <string name="settings_icon_badging_desc_on">Bąble nad ikoną będą wyświetlane jeśli są powiadomienia</string>
+  <string name="settings_icon_badging_desc_off">Bąble nad ikoną nie będą wyświetlane jeśli nie ma powiadomień</string>
+  <string name="settings_feed">Włącz integrację z feed</string>
+  <string name="settings_edit_allow_title">Zezwalaj na edycję</string>
+  <string name="settings_edit_allow_summary_on">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>
+  <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
 </resources>

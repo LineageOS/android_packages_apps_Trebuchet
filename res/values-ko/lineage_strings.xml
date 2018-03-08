@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">초기화</string>
   <string name="icon_pack_system">시스템 (기본값)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">초타원</string>
   <string name="icon_shape_circle_name">원형</string>
   <string name="icon_shape_squircle_name">둥근 사각형</string>
   <string name="icon_shape_teardrop_name">물방울</string>
@@ -59,4 +60,7 @@
   <string name="settings_icon_badging_desc_off">알림이 있어도 아이콘 위에 물방울을 띄우지 않습니다.</string>
   <string name="settings_feed">피드 통합 사용</string>
   <string name="settings_edit_allow_title">편집 허용</string>
+  <string name="settings_edit_allow_summary_on">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 있도록 허용합니다.</string>
+  <string name="settings_edit_allow_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
+  <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
 </resources>

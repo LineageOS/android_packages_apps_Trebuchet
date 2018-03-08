@@ -18,7 +18,6 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
-  <string name="play_folder_title">Lecture</string>
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
@@ -27,7 +26,12 @@
   <string name="grid_size_columns">Colonnes</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
+  <string name="icon_pack_reset">Réinitialiser</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_circle_name">Cercle</string>
+  <string name="icon_shape_teardrop_name">Larme</string>
   <!-- Preferences -->
+  <string name="settings_more">Plus</string>
   <string name="settings_rotation_title">Rotation</string>
+  <string name="settings_icon_shape">Forme des icônes</string>
 </resources>

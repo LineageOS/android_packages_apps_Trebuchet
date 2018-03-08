@@ -18,11 +18,15 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Покрени</string>
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
+  <string name="grid_size_rows">Редови</string>
+  <string name="grid_size_custom_positive">Постави</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Измени</string>
   <!-- Icon shapes -->
   <!-- Preferences -->
 </resources>

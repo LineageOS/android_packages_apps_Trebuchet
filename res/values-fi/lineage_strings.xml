@@ -18,11 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Toista</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Pyyhkäise alas näyttääksesi ilmoitukset</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">Suosikkisovellukset</string>
+  <string name="predictive_apps_summary_on">Suosikkisovelluksesi tulevat sovellusvalikon yläriville näkyviin</string>
+  <string name="predictive_apps_summary_off">Suosikkisovelluksesi eivät tule sovellusvalikon yläriville näkyviin</string>
   <!-- Grid size -->
+  <string name="grid_size_text">Ruudukon koko</string>
+  <string name="grid_size_rows">Rivit</string>
+  <string name="grid_size_columns">Sarakkeet</string>
+  <string name="grid_size_custom_positive">Aseta</string>
+  <string name="grid_size_custom_message">Muokkaa rivien ja sarakkeiden määrää</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Näytä kuvakkeiden tekstit työpöydällä</string>
+  <string name="drawer_show_labels">Näytä kuvakkeiden tekstit valikossa</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Muokkaa</string>
+  <string name="icon_pack_title">Kuvakepaketti</string>
+  <string name="icon_pack_picker">Valitse kuvake</string>
+  <string name="icon_pack_picker_search">Hae kuvake</string>
+  <string name="icon_pack_suggestions">Ehdotukset</string>
+  <string name="icon_pack_all_icons">Kaikki kuvakkeet</string>
+  <string name="icon_pack_reset">Palauta oletukset</string>
+  <string name="icon_pack_system">Järjestelmän oletusarvo</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superellipsi</string>
+  <string name="icon_shape_circle_name">Ympyrä</string>
+  <string name="icon_shape_squircle_name">Ympyräneliö</string>
+  <string name="icon_shape_teardrop_name">Pisara</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Kotinäytön asetukset</string>
+  <string name="settings_category_drawer">Sovellusvalikon asetukset</string>
+  <string name="settings_category_icons">Kuvakeasetukset</string>
+  <string name="settings_more">Lisää</string>
+  <string name="settings_rotation_title">Kierto</string>
+  <string name="settings_allow_rotation_desc">Sallii aloitusnäytön käyttämisen vaaka-tilassa kun laite on käännettynä</string>
+  <string name="settings_icon_shape">Kuvakkeiden muoto</string>
+  <string name="settings_icon_badging_desc_on">Kupla tulee kuvakkeen yläpuolella kun ilmoitus tulee</string>
+  <string name="settings_icon_badging_desc_off">Ei kuplaa kuvakkeen yläpuolella kun ilmoitus tulee</string>
+  <string name="settings_feed">Ota syöte käyttöön</string>
+  <string name="settings_edit_allow_title">Salli muokkaaminen</string>
+  <string name="settings_edit_allow_summary_on">Kuvakkeet ja widgetit voi lisätä, poistaa tai siirtää kotinäytöllä</string>
+  <string name="settings_edit_allow_summary_off">Kuvakkeita ja widgettejä ei voi lisätä, poistaa tai siirtää kotinäytöllä</string>
+  <string name="settings_edit_widgets_error">Kotinäytölle ei ole mahdollista lisätä widgettejä</string>
 </resources>

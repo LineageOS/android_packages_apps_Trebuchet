@@ -20,7 +20,13 @@
   <!-- Folder titles -->
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
+  <string name="predictive_apps_summary_on">Aplikasi kesukaan anda akan muncul di atas panel</string>
+  <string name="predictive_apps_summary_off">Aplikasi kesukaan anda tidak akan muncul di atas panel</string>
   <!-- Grid size -->
+  <string name="grid_size_text">Ukuran grid</string>
+  <string name="grid_size_rows">Baris</string>
+  <string name="grid_size_columns">Kolom</string>
+  <string name="grid_size_custom_positive">Atur</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
   <!-- Icon shapes -->

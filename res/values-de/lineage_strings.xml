@@ -20,13 +20,19 @@
   <!-- Folder titles -->
   <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Nach unten wischen, um Benachrichtigungen anzuzeigen</string>
   <!-- Predictive apps -->
   <string name="predictive_apps_title">App-Vorschläge</string>
+  <string name="predictive_apps_summary_on">Ihre Lieblings-Apps werden am oberen Rand der App-Übersicht angezeigt</string>
+  <string name="predictive_apps_summary_off">Ihre Lieblings-Apps werden nicht am oberen Rand der App-Übersicht angezeigt</string>
   <!-- Grid size -->
   <string name="grid_size_text">Rastergröße</string>
   <string name="grid_size_rows">Zeilen</string>
   <string name="grid_size_columns">Spalten</string>
+  <string name="grid_size_custom_positive">Übernehmen</string>
+  <string name="grid_size_custom_message">Benutzerdefinierte Spalten- und Zeilenanzahl auswählen</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
   <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
   <!-- Custom icons -->
   <string name="app_edit_drop_target_label">Bearbeiten</string>
@@ -38,15 +44,23 @@
   <string name="icon_pack_reset">Zurücksetzen</string>
   <string name="icon_pack_system">System (Standard)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superellipse</string>
   <string name="icon_shape_circle_name">Kreis</string>
   <string name="icon_shape_squircle_name">Squircle</string>
   <string name="icon_shape_teardrop_name">Tropfen</string>
   <!-- Preferences -->
   <string name="settings_category_home">Startbildschirm-Einstellungen</string>
+  <string name="settings_category_drawer">Einstellungen für die App-Übersicht</string>
   <string name="settings_category_icons">Symboleinstellungen</string>
   <string name="settings_more">Mehr</string>
   <string name="settings_rotation_title">Bildschirmausrichtung</string>
   <string name="settings_allow_rotation_desc">Erlaubt die Verwendung des Startbildschirms im Querformat, wenn das Gerät gedreht wird</string>
   <string name="settings_icon_shape">Symbolform</string>
+  <string name="settings_icon_badging_desc_on">Eine Blase wird über dem Symbol angezeigt, wenn eine Benachrichtigung ansteht</string>
+  <string name="settings_icon_badging_desc_off">Es wird keine Blase über dem Symbol angezeigt, wenn eine Benachrichtigung ansteht</string>
   <string name="settings_feed">Feed-Integration aktivieren</string>
+  <string name="settings_edit_allow_title">Bearbeiten zulassen</string>
+  <string name="settings_edit_allow_summary_on">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+  <string name="settings_edit_allow_summary_off">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
+  <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
 </resources>
