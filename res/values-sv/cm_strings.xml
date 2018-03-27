@@ -64,4 +64,5 @@
   <string name="search_activity_not_found">Kunde inte hitta en sökaktivitet!</string>
   <!-- App not available toast text -->
   <string name="app_not_available">Appen är inte tillgänglig</string>
+  <string name="export_db_could_not">Kunde inte exportera DB fil</string>
 </resources>
