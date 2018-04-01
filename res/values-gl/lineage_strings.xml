@@ -18,11 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Reproducir</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Esvarar cara abaixo para ver as notificacións</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">Aplicacións preditivas</string>
+  <string name="predictive_apps_summary_on">As túas aplicacións favoritas aparecerán na parte superior da gabeta</string>
+  <string name="predictive_apps_summary_off">As túas aplicacións favoritas non aparecerán na parte superior da gabeta</string>
   <!-- Grid size -->
+  <string name="grid_size_text">Tamaño da grella</string>
+  <string name="grid_size_rows">Filas</string>
+  <string name="grid_size_columns">Columnas</string>
+  <string name="grid_size_custom_positive">Definir</string>
+  <string name="grid_size_custom_message">Selecciona un número de filas e columnas personalizado</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Amosar as etiquetas das iconas no escritorio</string>
+  <string name="drawer_show_labels">Amosar as etiquetas das iconas na gabeta</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Editar</string>
+  <string name="icon_pack_title">Paquete de iconas</string>
+  <string name="icon_pack_picker">Seleccionar icona</string>
+  <string name="icon_pack_picker_search">Pescudar icona</string>
+  <string name="icon_pack_suggestions">Suxestións</string>
+  <string name="icon_pack_all_icons">Tódalas iconas</string>
+  <string name="icon_pack_reset">Restabelecer</string>
+  <string name="icon_pack_system">Sistema (Predefinido)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Super elipse</string>
+  <string name="icon_shape_circle_name">Círculo</string>
+  <string name="icon_shape_squircle_name">Cantos redondeados</string>
+  <string name="icon_shape_teardrop_name">Bágoas</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Axustes da pantalla principal</string>
+  <string name="settings_category_drawer">Axustes da gabeta</string>
+  <string name="settings_category_icons">Axustes das iconas</string>
+  <string name="settings_more">Máis</string>
+  <string name="settings_rotation_title">Rotación</string>
+  <string name="settings_allow_rotation_desc">Permitir usar a pantalla principal en modo horizontal cando o dispositivo rote</string>
+  <string name="settings_icon_shape">Forma das iconas</string>
+  <string name="settings_icon_badging_desc_on">Amosarase unha burbulla sobre a icona cando haxa unha notificación</string>
+  <string name="settings_icon_badging_desc_off">Non se amosará unha burbulla sobre a icona cando haxa unha notificación</string>
+  <string name="settings_feed">Activar a integración de fontes</string>
+  <string name="settings_edit_allow_title">Permitir editar</string>
+  <string name="settings_edit_allow_summary_on">Iconas e widgets pódense engadir, eliminar e mover na pantalla de inicio</string>
+  <string name="settings_edit_allow_summary_off">Iconas e widgets no se poden engadir, eliminar e mover na pantalla de inicio</string>
+  <string name="settings_edit_widgets_error">Non é posíbel engadir widgets á pantalla de inicio</string>
 </resources>

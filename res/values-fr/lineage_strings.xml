@@ -18,20 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Glisser vers le bas pour afficher les notifications</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">Applications prédictives</string>
+  <string name="predictive_apps_summary_on">Vos applications préférées apparaîtront en haut du tiroir</string>
+  <string name="predictive_apps_summary_off">Vos applications préférées n\'apparaîtront pas en haut du tiroir</string>
   <!-- Grid size -->
   <string name="grid_size_text">Taille de la grille</string>
   <string name="grid_size_rows">Lignes</string>
   <string name="grid_size_columns">Colonnes</string>
+  <string name="grid_size_custom_positive">Appliquer</string>
+  <string name="grid_size_custom_message">Sélectionnez un nombre de lignes et de colonnes personnalisé</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Afficher le libellé des icônes sur le bureau</string>
+  <string name="drawer_show_labels">Afficher le libellé des icônes dans le tiroir</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Modifier</string>
+  <string name="icon_pack_title">Pack d\'icônes</string>
+  <string name="icon_pack_picker">Sélectionnez l\'icône</string>
+  <string name="icon_pack_picker_search">Rechercher une icône</string>
+  <string name="icon_pack_suggestions">Suggestions</string>
+  <string name="icon_pack_all_icons">Toutes les icônes</string>
   <string name="icon_pack_reset">Réinitialiser</string>
+  <string name="icon_pack_system">Système (par défaut)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superellipse</string>
   <string name="icon_shape_circle_name">Cercle</string>
+  <string name="icon_shape_squircle_name">Carrercle</string>
   <string name="icon_shape_teardrop_name">Larme</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Paramètres de l\'écran d\'accueil</string>
+  <string name="settings_category_drawer">Paramètres du tiroir</string>
+  <string name="settings_category_icons">Paramètres des icônes</string>
   <string name="settings_more">Plus</string>
   <string name="settings_rotation_title">Rotation</string>
+  <string name="settings_allow_rotation_desc">Autoriser l\'utilisation de l\'écran d\'accueil en mode paysage</string>
   <string name="settings_icon_shape">Forme des icônes</string>
+  <string name="settings_icon_badging_desc_on">Une bulle s’affichera au-dessus de l’icône en cas de notification</string>
+  <string name="settings_icon_badging_desc_off">Aucune bulle ne s’affichera au-dessus de l’icône en cas de notification</string>
+  <string name="settings_feed">Activer l\'intégration de flux</string>
+  <string name="settings_edit_allow_title">Autoriser les modifications</string>
+  <string name="settings_edit_allow_summary_on">Autoriser l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
+  <string name="settings_edit_allow_summary_off">Empêcher l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
+  <string name="settings_edit_widgets_error">Impossible d\'ajouter des widgets sur l\'écran d\'accueil</string>
 </resources>

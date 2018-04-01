@@ -46,6 +46,7 @@
   <string name="icon_shape_super_ellipse_name">Superelipsa</string>
   <string name="icon_shape_circle_name">Okrągły</string>
   <string name="icon_shape_squircle_name">Zaokrąglony kwadrat</string>
+  <string name="icon_shape_teardrop_name">Łezka</string>
   <!-- Preferences -->
   <string name="settings_category_home">Ustawienia ekranu głównego</string>
   <string name="settings_category_drawer">Ustawienia szuflady</string>

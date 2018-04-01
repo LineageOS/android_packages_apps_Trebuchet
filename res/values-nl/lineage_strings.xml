@@ -18,11 +18,24 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
+  <string name="grid_size_rows">Rijen</string>
+  <string name="grid_size_columns">Kolommen</string>
+  <string name="grid_size_custom_positive">Instellen</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Bewerken</string>
+  <string name="icon_pack_title">Pictogrampakket</string>
+  <string name="icon_pack_picker">Pictogram selecteren</string>
+  <string name="icon_pack_picker_search">Pictogram zoeken</string>
+  <string name="icon_pack_suggestions">Suggesties</string>
+  <string name="icon_pack_all_icons">Alle pictogrammen</string>
+  <string name="icon_pack_reset">Opnieuw instellen</string>
+  <string name="icon_pack_system">Systeem (standaard)</string>
   <!-- Icon shapes -->
   <!-- Preferences -->
+  <string name="settings_more">Meer</string>
 </resources>

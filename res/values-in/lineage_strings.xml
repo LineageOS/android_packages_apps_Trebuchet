@@ -19,6 +19,7 @@
   <!-- Application name -->
   <!-- Folder titles -->
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
   <!-- Predictive apps -->
   <string name="predictive_apps_summary_on">Aplikasi kesukaan anda akan muncul di atas panel</string>
   <string name="predictive_apps_summary_off">Aplikasi kesukaan anda tidak akan muncul di atas panel</string>
@@ -29,6 +30,21 @@
   <string name="grid_size_custom_positive">Atur</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Sunting</string>
+  <string name="icon_pack_title">Paket ikon</string>
+  <string name="icon_pack_picker">Pilih ikon</string>
+  <string name="icon_pack_picker_search">Telusuri ikon</string>
+  <string name="icon_pack_suggestions">Saran</string>
+  <string name="icon_pack_all_icons">Semua ikon</string>
+  <string name="icon_pack_reset">Setel ulang</string>
+  <string name="icon_pack_system">Sistem (Bawaan)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_circle_name">Lingkaran</string>
   <!-- Preferences -->
+  <string name="settings_category_icons">Setelan ikon</string>
+  <string name="settings_rotation_title">Rotasi</string>
+  <string name="settings_icon_shape">Bentuk ikon</string>
+  <string name="settings_icon_badging_desc_on">Gelembung akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
+  <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
+  <string name="settings_edit_allow_title">Izinkan sunting</string>
 </resources>

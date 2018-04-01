@@ -44,7 +44,7 @@
   <string name="icon_pack_reset">Restablecer</string>
   <string name="icon_pack_system">Sistema (predefinidos)</string>
   <!-- Icon shapes -->
-  <string name="icon_shape_super_ellipse_name">Súper elipse</string>
+  <string name="icon_shape_super_ellipse_name">Superelipse</string>
   <string name="icon_shape_circle_name">Círculo</string>
   <string name="icon_shape_squircle_name">Cuadrado con bordes redondos</string>
   <string name="icon_shape_teardrop_name">Lágrima</string>

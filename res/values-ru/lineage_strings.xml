@@ -18,7 +18,7 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
-  <string name="play_folder_title">Игры</string>
+  <string name="play_folder_title">Сервисы Play</string>
   <!-- Expand statusbar -->
   <string name="statusbar_expand">Смахните вниз для показа уведомлений</string>
   <!-- Predictive apps -->
@@ -44,6 +44,7 @@
   <string name="icon_pack_reset">Сбросить</string>
   <string name="icon_pack_system">Системный (по умолчанию)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Суперэллипс</string>
   <string name="icon_shape_circle_name">Круг</string>
   <string name="icon_shape_squircle_name">Округлый квадрат</string>
   <string name="icon_shape_teardrop_name">Каплевидная</string>
@@ -58,4 +59,8 @@
   <string name="settings_icon_badging_desc_on">Над значком будет отображаться пузырь когда приходит уведомление</string>
   <string name="settings_icon_badging_desc_off">Над значком не будет отображаться пузырь когда приходит уведомление</string>
   <string name="settings_feed">Включить интеграцию с лентой</string>
+  <string name="settings_edit_allow_title">Разрешить редактирование</string>
+  <string name="settings_edit_allow_summary_on">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
+  <string name="settings_edit_allow_summary_off">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
+  <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
 </resources>
