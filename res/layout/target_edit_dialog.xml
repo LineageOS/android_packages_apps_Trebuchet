@@ -30,7 +30,7 @@
         android:background="?android:selectableItemBackground"
         android:foreground="@drawable/ic_icon_change"
         android:scaleType="fitCenter"
-        tools:src="@mipmap/ic_launcher_home" />
+        tools:src="@mipmap/ic_launcher" />
 
     <EditText
         android:id="@+id/edit_dialog_title"
