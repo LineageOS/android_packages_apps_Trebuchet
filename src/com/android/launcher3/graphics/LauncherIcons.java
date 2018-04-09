@@ -20,7 +20,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Intent.ShortcutIconResource;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -43,7 +42,6 @@ import com.android.launcher3.FastBitmapDrawable;
 import com.android.launcher3.IconCache;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
-import com.android.launcher3.SettingsActivity;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.model.PackageItemInfo;
@@ -76,7 +74,8 @@ public class LauncherIcons {
             if (resources != null) {
                 final int id = resources.getIdentifier(iconRes.resourceName, null, null);
                 return createIconBitmap(resources.getDrawableForDensity(
-                        id, LauncherAppState.getIDP(context).fillResIconDpi), context);
+                        id, LauncherAppState.getIDP(context).fillResIconDpi, context.getTheme()),
+                        context);
             }
         } catch (Exception e) {
             // Icon not found.
@@ -113,8 +112,7 @@ public class LauncherIcons {
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();
                 dr.setBounds(0, 0, 1, 1);
                 scale = normalizer.getScale(icon, null, dr.getIconMask(), outShape);
-                if (FeatureFlags.LEGACY_ICON_TREATMENT &&
-                        !outShape[0]){
+                if (FeatureFlags.LEGACY_ICON_TREATMENT && !outShape[0]) {
                     Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
                     if (wrappedIcon != icon) {
                         icon = wrappedIcon;
@@ -167,8 +165,7 @@ public class LauncherIcons {
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();
                 dr.setBounds(0, 0, 1, 1);
                 scale = normalizer.getScale(icon, iconBounds, dr.getIconMask(), outShape);
-                if (Utilities.ATLEAST_OREO && FeatureFlags.LEGACY_ICON_TREATMENT &&
-                        !outShape[0]) {
+                if (FeatureFlags.LEGACY_ICON_TREATMENT && !outShape[0]) {
                     Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
                     if (wrappedIcon != icon) {
                         icon = wrappedIcon;
@@ -216,6 +213,15 @@ public class LauncherIcons {
      */
     public static Bitmap createIconBitmap(Drawable icon, Context context) {
         float scale = 1f;
+
+        if (FeatureFlags.LEGACY_ICON_TREATMENT && Utilities.ATLEAST_OREO &&
+                !(icon instanceof AdaptiveIconDrawable)) {
+            Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
+            if (wrappedIcon != icon) {
+                icon = wrappedIcon;
+            }
+        }
+
         if (FeatureFlags.ADAPTIVE_ICON_SHADOW && Utilities.ATLEAST_OREO &&
                 icon instanceof AdaptiveIconDrawable) {
             scale = ShadowGenerator.getScaleForBounds(new RectF(0, 0, 0, 0));
@@ -298,7 +304,7 @@ public class LauncherIcons {
      * shrink the legacy icon and set it as foreground. Use color drawable as background to
      * create AdaptiveIconDrawable.
      */
-    static Drawable wrapToAdaptiveIconDrawable(Context context, Drawable drawable, float scale) {
+    public static Drawable wrapToAdaptiveIconDrawable(Context context, Drawable drawable, float scale) {
         if (!(FeatureFlags.LEGACY_ICON_TREATMENT && Utilities.ATLEAST_OREO)) {
             return drawable;
         }
