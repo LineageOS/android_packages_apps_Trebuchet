@@ -34,7 +34,7 @@ abstract class BaseFlags {
     // When enabled allows to use any point on the fast scrollbar to start dragging.
     public static final boolean LAUNCHER3_DIRECT_SCROLL = true;
     // When enabled the promise icon is visible in all apps while installation an app.
-    public static final boolean LAUNCHER3_PROMISE_APPS_IN_ALL_APPS = false;
+    public static final boolean LAUNCHER3_PROMISE_APPS_IN_ALL_APPS = true;
     // When enabled allows use of spring motions on the icons.
     public static final boolean LAUNCHER3_SPRING_ICONS = true;
 
