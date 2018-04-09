@@ -34,6 +34,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -281,11 +282,13 @@ public class IconsHandler {
         if (packageName == null) {
             packageName = mIconPackPackageName;
         }
-        int id = getIdentifier(packageName, drawableName, currentIconPack);
 
-        return id > 0 ?
-                (!currentIconPack ? mOriginalIconPackRes : mCurrentIconPackRes).getDrawable(id) :
-                null;
+        final int id = getIdentifier(packageName, drawableName, currentIconPack);
+        if (id <= 0) {
+            return null;
+        }
+
+        return (!currentIconPack ? mOriginalIconPackRes : mCurrentIconPackRes).getDrawable(id);
     }
 
     private Bitmap loadBitmap(String drawableName) {
@@ -296,7 +299,7 @@ public class IconsHandler {
         return null;
     }
 
-    private Bitmap getDefaultAppDrawable(ComponentName componentName) {
+    private Bitmap getDefaultAppDrawable(ComponentName componentName, boolean isDefaultIconPack) {
         Drawable drawable = null;
         try {
             drawable = mPackageManager.getActivityIcon(componentName);
@@ -306,7 +309,8 @@ public class IconsHandler {
         if (drawable == null) {
             return null;
         }
-        if (drawable instanceof BitmapDrawable) {
+
+        if (!isDefaultIconPack && drawable instanceof BitmapDrawable) {
             return generateBitmap(((BitmapDrawable) drawable).getBitmap());
         }
 
@@ -350,7 +354,7 @@ public class IconsHandler {
 
     public Bitmap getDrawableIconForPackage(ComponentName componentName) {
         if (isDefaultIconPack()) {
-            return getDefaultAppDrawable(componentName);
+            return getDefaultAppDrawable(componentName, true);
         }
 
         // sth FUKY here
@@ -360,8 +364,6 @@ public class IconsHandler {
         if (drawable != null && drawable instanceof BitmapDrawable) {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
             cacheStoreDrawable(componentName.toString(), bitmap);
-            if (bitmap == null) {
-            }
             return bitmap;
         }
 
@@ -370,7 +372,7 @@ public class IconsHandler {
             return cachedIcon;
         }
 
-        return getDefaultAppDrawable(componentName);
+        return getDefaultAppDrawable(componentName, false);
     }
 
     private Bitmap generateBitmap(Bitmap defaultBitmap) {
