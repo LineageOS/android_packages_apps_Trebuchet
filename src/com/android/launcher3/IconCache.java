@@ -411,7 +411,7 @@ public class IconCache {
         if (entry == null || entry.isLowResIcon || entry.icon == null) {
             entry = new CacheEntry();
             }
-        entry.icon = ((BitmapDrawable) icon).getBitmap();
+        entry.icon = Utilities.getBitmapFromDrawable(icon);
         entry.title = title != null ? title : app.getLabel();
         entry.contentDescription = mUserManager.getBadgedLabelForUser(entry.title, app.getUser());
         mCache.put(key, entry);

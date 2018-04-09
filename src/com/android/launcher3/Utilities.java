@@ -28,10 +28,15 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.AdaptiveIconDrawable;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.DeadObjectException;
@@ -576,6 +581,35 @@ public final class Utilities {
             } catch (Exception e) { }
         }
         return true;
+    }
+
+    public static Bitmap getBitmapFromDrawable(Drawable drawable) {
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        } else if (Utilities.ATLEAST_OREO && drawable instanceof AdaptiveIconDrawable) {
+            final Drawable background = ((AdaptiveIconDrawable) drawable).getBackground();
+            final Drawable foreground = ((AdaptiveIconDrawable) drawable).getForeground();
+
+            final Drawable[] drawables = new Drawable[2];
+            drawables[0] = background;
+            drawables[1] = foreground;
+
+            final LayerDrawable layerDrawable = new LayerDrawable(drawables);
+
+            final int width = layerDrawable.getIntrinsicWidth();
+            final int height = layerDrawable.getIntrinsicHeight();
+
+            final Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+            final Canvas canvas = new Canvas(bitmap);
+
+            layerDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+            layerDrawable.draw(canvas);
+
+            return bitmap;
+        }
+
+        return null;
     }
 
     public static void closeSilently(Closeable c) {
