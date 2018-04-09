@@ -107,7 +107,7 @@ public class LauncherIcons {
         if (!FeatureFlags.LAUNCHER3_DISABLE_ICON_NORMALIZATION) {
             normalizer = IconNormalizer.getInstance(context);
             if (Utilities.ATLEAST_OREO && iconAppTargetSdk >= Build.VERSION_CODES.O &&
-                    Utilities.isNotUsingIconPack(context)) {
+                    !Utilities.isUsingIconPack(context)) {
                 boolean[] outShape = new boolean[1];
                 AdaptiveIconDrawable dr = (AdaptiveIconDrawable)
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();

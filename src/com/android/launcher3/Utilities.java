@@ -690,13 +690,15 @@ public final class Utilities {
                 GRID_VALUE_SEPARATOR, rows);
     }
 
-    public static boolean isNotUsingIconPack(Context context) {
+    public static boolean isUsingIconPack(Context context) {
         SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
         String defaultPack = context.getString(R.string.icon_pack_default);
-        String defaultLocalziedPack = context.getString(R.string.icon_pack_system);
+        String defaultLocalizedPack = context.getString(R.string.icon_pack_system);
         String currentPack = prefs.getString(QuickSettingsActivity.KEY_ICON_PACK, defaultPack);
 
-        return !currentPack.equals(defaultPack) && !currentPack.equals(defaultLocalziedPack);
+        // if our current icon pack does not equal to the default or localized default icon pack,
+        // assume we are using an icon pack
+        return !(currentPack.equals(defaultPack) || currentPack.equals(defaultLocalizedPack));
     }
 
     static boolean hasFeedIntegration(Context context) {
