@@ -710,4 +710,9 @@ public final class Utilities {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
     }
+
+    public static boolean isAdaptiveIconForced(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS, false);
+    }
 }
