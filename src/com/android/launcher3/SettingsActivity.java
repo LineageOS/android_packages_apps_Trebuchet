@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -62,6 +63,7 @@ public class SettingsActivity extends Activity {
 
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
+    public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
 
@@ -142,6 +144,16 @@ public class SettingsActivity extends Activity {
                 homeGroup.removePreference(feedIntegration);
             }
 
+            SwitchPreference iconAdaptiveOverride = (SwitchPreference)
+                    findPreference(KEY_FORCE_ADAPTIVE_ICONS);
+            if (iconAdaptiveOverride != null) {
+                iconAdaptiveOverride.setOnPreferenceChangeListener((preference, newValue) -> {
+                    // Clear the icon cache.
+                    LauncherAppState.getInstance(getContext()).getIconCache().clear();
+                    return true;
+                });
+            }
+
             Preference iconShapeOverride = findPreference(IconShapeOverride.KEY_PREFERENCE);
             if (iconShapeOverride != null) {
                 if (IconShapeOverride.isSupported(getActivity())) {
@@ -175,6 +187,7 @@ public class SettingsActivity extends Activity {
             switch (key) {
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
+                case KEY_FORCE_ADAPTIVE_ICONS:
                     mShouldRestart = true;
                     break;
             }

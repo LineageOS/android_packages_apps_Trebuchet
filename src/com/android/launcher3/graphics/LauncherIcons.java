@@ -112,7 +112,7 @@ public class LauncherIcons {
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();
                 dr.setBounds(0, 0, 1, 1);
                 scale = normalizer.getScale(icon, null, dr.getIconMask(), outShape);
-                if (FeatureFlags.LEGACY_ICON_TREATMENT && !outShape[0]) {
+                if (Utilities.isAdaptiveIconForced(context) && !outShape[0]) {
                     Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
                     if (wrappedIcon != icon) {
                         icon = wrappedIcon;
@@ -165,7 +165,7 @@ public class LauncherIcons {
                         context.getDrawable(R.drawable.adaptive_icon_drawable_wrapper).mutate();
                 dr.setBounds(0, 0, 1, 1);
                 scale = normalizer.getScale(icon, iconBounds, dr.getIconMask(), outShape);
-                if (FeatureFlags.LEGACY_ICON_TREATMENT && !outShape[0]) {
+                if (Utilities.isAdaptiveIconForced(context) && !outShape[0]) {
                     Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
                     if (wrappedIcon != icon) {
                         icon = wrappedIcon;
@@ -214,7 +214,7 @@ public class LauncherIcons {
     public static Bitmap createIconBitmap(Drawable icon, Context context) {
         float scale = 1f;
 
-        if (FeatureFlags.LEGACY_ICON_TREATMENT && Utilities.ATLEAST_OREO &&
+        if (Utilities.isAdaptiveIconForced(context) && Utilities.ATLEAST_OREO &&
                 !(icon instanceof AdaptiveIconDrawable)) {
             Drawable wrappedIcon = wrapToAdaptiveIconDrawable(context, icon, scale);
             if (wrappedIcon != icon) {
@@ -305,7 +305,7 @@ public class LauncherIcons {
      * create AdaptiveIconDrawable.
      */
     public static Drawable wrapToAdaptiveIconDrawable(Context context, Drawable drawable, float scale) {
-        if (!(FeatureFlags.LEGACY_ICON_TREATMENT && Utilities.ATLEAST_OREO)) {
+        if (!(Utilities.isAdaptiveIconForced(context) && Utilities.ATLEAST_OREO)) {
             return drawable;
         }
 

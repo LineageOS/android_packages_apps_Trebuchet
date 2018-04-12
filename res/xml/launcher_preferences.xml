@@ -97,6 +97,15 @@
             android:summary="%s"
             android:title="@string/settings_icon_shape" />
 
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_settings_force_adaptive"
+            android:key="pref_icon_force_adaptive"
+            android:persistent="true"
+            android:summaryOn="@string/settings_icon_force_adaptive_desc_on"
+            android:summaryOff="@string/settings_icon_force_adaptive_desc_off"
+            android:title="@string/settings_icon_force_adaptive_title" />
+
         <com.android.launcher3.views.ButtonPreference
             android:key="pref_icon_badging"
             android:title="@string/icon_badging_title"
