@@ -370,7 +370,7 @@ public class IconCache {
         if (entry == null) {
             entry = new CacheEntry();
             entry.icon = LauncherIcons.createBadgedIconBitmap(getFullResIcon(app), app.getUser(),
-                    mContext,  app.getApplicationInfo().targetSdkVersion);
+                    mContext, Build.VERSION_CODES.O);
         }
         entry.title = app.getLabel();
         entry.contentDescription = mUserManager.getBadgedLabelForUser(entry.title, app.getUser());
@@ -571,7 +571,7 @@ public class IconCache {
                 if (info != null) {
                     entry.icon = LauncherIcons.createBadgedIconBitmap(
                             getFullResIcon(info), info.getUser(), mContext,
-                            infoProvider.get().getApplicationInfo().targetSdkVersion);
+                            Build.VERSION_CODES.O);
                 } else {
                     if (usePackageIcon) {
                         CacheEntry packageEntry = getEntryForPackageLocked(
@@ -677,7 +677,8 @@ public class IconCache {
                     // Load the full res icon for the application, but if useLowResIcon is set, then
                     // only keep the low resolution icon instead of the larger full-sized icon
                     Bitmap icon = LauncherIcons.createBadgedIconBitmap(
-                            appInfo.loadIcon(mPackageManager), user, mContext, appInfo.targetSdkVersion);
+                            appInfo.loadIcon(mPackageManager), user, mContext,
+                            Build.VERSION_CODES.O);
                     if (mInstantAppResolver.isInstantApp(appInfo)) {
                         icon = LauncherIcons.badgeWithDrawable(icon,
                                 mContext.getDrawable(R.drawable.ic_instant_app_badge), mContext);

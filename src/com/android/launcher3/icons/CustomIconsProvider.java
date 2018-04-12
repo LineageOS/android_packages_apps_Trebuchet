@@ -38,6 +38,11 @@ public class CustomIconsProvider extends IconProvider {
 
     @Override
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
+        // if we are not using any icon pack, load application icon directly
+        if (Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext)) {
+            return mContext.getPackageManager().getApplicationIcon(info.getApplicationInfo());
+        }
+
         final Bitmap bm = mHandler.getDrawableIconForPackage(info.getComponentName());
         if (bm == null) {
             return info.getIcon(iconDpi);
