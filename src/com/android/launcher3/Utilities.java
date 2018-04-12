@@ -742,4 +742,9 @@ public final class Utilities {
         int hours = calendar.get(Calendar.HOUR_OF_DAY);
         return hours > SUGGESTIONS_DAY_START && hours < SUGGESTIONS_DAY_END;
     }
+
+    public static boolean isAdaptiveIconForced(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS, false);
+    }
 }
