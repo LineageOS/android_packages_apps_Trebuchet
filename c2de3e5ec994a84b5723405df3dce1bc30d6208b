@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "456c1545_8a556571",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2018-04-12T19:54:23Z",
+      "side": 1,
+      "message": "3.1.1",
+      "range": {
+        "startLine": 8,
+        "startChar": 50,
+        "endLine": 8,
+        "endChar": 55
+      },
+      "revId": "c2de3e5ec994a84b5723405df3dce1bc30d6208b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "846f862f_81708314",
+        "filename": "build.gradle",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2018-04-12T19:54:23Z",
+      "side": 1,
+      "message": "can be removed since AS 3.1, uses latest build tools depending on gradle plugin",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 30
+      },
+      "revId": "c2de3e5ec994a84b5723405df3dce1bc30d6208b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
