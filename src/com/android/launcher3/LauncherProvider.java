@@ -34,6 +34,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteFullException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.database.sqlite.SQLiteStatement;
@@ -194,7 +195,18 @@ public class LauncherProvider extends ContentProvider {
             throw new RuntimeException("Error: attempting to add item without specifying an id");
         }
         helper.checkId(table, values);
-        return db.insert(table, nullColumnHack, values);
+
+        long inserted;
+        try {
+            inserted = db.insert(table, nullColumnHack, values);
+        } catch (SQLiteFullException e) {
+            Log.e(TAG, "Could not insert database entry", e);
+            inserted = 0L;
+        }
+        if (Utilities.IS_DEBUG_DEVICE && inserted < 0) {
+            Log.d(TAG, "Could not insert database entry", new RuntimeException());
+        }
+        return inserted;
     }
 
     private void reloadLauncherIfExternal() {
@@ -357,7 +369,13 @@ public class LauncherProvider extends ContentProvider {
 
         addModifiedTime(values);
         SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-        int count = db.update(args.table, values, args.where, args.args);
+        int count;
+        try {
+            count = db.update(args.table, values, args.where, args.args);
+        } catch (SQLiteFullException e) {
+            Log.e(TAG, "Could not update database", e);
+            count = 0;
+        }
         if (count > 0) notifyListeners();
 
         reloadLauncherIfExternal();
