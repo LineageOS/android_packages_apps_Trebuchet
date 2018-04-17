@@ -475,7 +475,7 @@ public class Launcher extends BaseActivity
             // Pages bound synchronously.
             mWorkspace.setCurrentPage(currentScreen);
 
-            setWorkspaceLoading(true);
+            setWorkspaceLoading(false);
         }
 
         // For handling default keys
