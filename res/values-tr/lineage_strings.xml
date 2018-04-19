@@ -20,7 +20,7 @@
   <!-- Folder titles -->
   <string name="play_folder_title">Oynat</string>
   <!-- Expand statusbar -->
-  <string name="statusbar_expand">Bildirimleri göstermek için aşağı hızlıca kaydırın</string>
+  <string name="statusbar_expand">Bildirimleri göstermek için aşağı kaydırın</string>
   <!-- Predictive apps -->
   <string name="predictive_apps_title">Tahmini uygulamalar</string>
   <string name="predictive_apps_summary_on">En sevdiğiniz uygulamalar çekmecenin üstünde görünecek</string>

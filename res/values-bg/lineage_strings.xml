@@ -23,8 +23,8 @@
   <string name="statusbar_expand">Плъзнете надолу за да видите съобщенията</string>
   <!-- Predictive apps -->
   <string name="predictive_apps_title">Предсказуеми приложения</string>
-  <string name="predictive_apps_summary_on">Любимите ви приложения ще се появи в горната част</string>
-  <string name="predictive_apps_summary_off">Любимите си приложения няма да се появи в горната част</string>
+  <string name="predictive_apps_summary_on">Любимите ви приложения ще бъдат показани в горната част на менюто</string>
+  <string name="predictive_apps_summary_off">Любимите ви приложения няма да се показват в горната част на менюто</string>
   <!-- Grid size -->
   <string name="grid_size_text">Размер на мрежата</string>
   <string name="grid_size_rows">Редове</string>
