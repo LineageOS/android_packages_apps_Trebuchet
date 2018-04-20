@@ -5,7 +5,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.1'
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.3'
     }
 }
@@ -40,10 +40,12 @@ android {
             testApplicationId 'org.lineageos.trebuchet.tests'
         }
 
+        /*
         l3go {
             applicationId 'com.android.launcher3'
             testApplicationId 'com.android.launcher3.tests'
         }
+        */
     }
     sourceSets {
         main {
@@ -69,6 +71,7 @@ android {
             proto.srcDirs 'protos/'
         }
 
+        /*
         aospAndroidTest {
             manifest.srcFile "tests/AndroidManifest.xml"
         }
@@ -84,6 +87,7 @@ android {
         l3goAndroidTest {
             manifest.srcFile "tests/AndroidManifest.xml"
         }
+        */
     }
 
     compileOptions {
@@ -98,7 +102,7 @@ repositories {
     google()
 }
 
-final String SUPPORT_LIBS_VERSION = '27.0.2'
+final String SUPPORT_LIBS_VERSION = '27.1.1'
 dependencies {
     compile "com.android.support:support-v4:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:support-dynamic-animation:${SUPPORT_LIBS_VERSION}"
