@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Process;
+import android.util.Log;
 
 import com.android.launcher3.AppInfo;
 import com.android.launcher3.Utilities;
@@ -17,6 +18,8 @@ import java.util.List;
 import java.util.Set;
 
 public class PredictiveAppsProvider {
+    private static final String TAG = "PredictiveAppsProvider";
+
     private static final int NUM_PREDICTIVE_APPS_TO_HOLD = 9; // since we can't have more than 9 columns
 
     private static final String PREDICTIVE_APPS_KEY = "predictive_apps";
@@ -29,6 +32,11 @@ public class PredictiveAppsProvider {
     }
 
     public void updateComponentCount(ComponentName component) {
+        if (component == null) {
+            Log.w(TAG, "Can not update component count because component is null!");
+            return;
+        }
+
         String key = buildComponentString(component);
         long current = mPrefs.getLong(key, 0);
 
