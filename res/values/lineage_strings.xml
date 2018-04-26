@@ -72,4 +72,10 @@
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+
+    <!-- Protected apps -->
+    <string name="protected_apps_manager_name">Protected apps</string>
+    <string name="protected_apps_auth_manager">Unlock to manage the protected apps</string>
+    <string name="protected_apps_loading">Loading\u2026</string>
+    <string name="protected_apps_no_lock_error">Please set up a secure lock screen to restrict access</string>
 </resources>

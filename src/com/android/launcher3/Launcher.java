@@ -2512,6 +2512,7 @@ public class Launcher extends BaseActivity
             PromiseAppInfo promiseAppInfo = (PromiseAppInfo) item;
             intent = promiseAppInfo.getMarketIntent();
         } else {
+            // TODO LINEAGE: check if protected
             intent = item.getIntent();
         }
         if (intent == null) {
