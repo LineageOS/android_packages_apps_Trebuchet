@@ -175,5 +175,11 @@
             android:autoRemoveFromRecents="true"
             android:label="@string/settings_button_text"
             android:theme="@style/QuickSettingsTheme" />
+
+        <activity
+            android:name=".protect.ProtectedManagerActivity"
+            android:label="@string/protected_apps_manager_name"
+            android:theme="@android:style/Theme.DeviceDefault.Settings"
+            android:autoRemoveFromRecents="true" />
     </application>
 </manifest>

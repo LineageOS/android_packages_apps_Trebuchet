@@ -19,6 +19,8 @@ import android.view.View;
 import android.widget.NumberPicker;
 
 import com.android.launcher3.icons.IconsHandler;
+import com.android.launcher3.protect.ProtectedAppsAdapter;
+import com.android.launcher3.protect.ProtectedManagerActivity;
 
 public class QuickSettingsActivity extends AppCompatActivity {
     private static final String KEY_GRID_SIZE = "pref_grid_size";
@@ -79,6 +81,16 @@ public class QuickSettingsActivity extends AppCompatActivity {
                 });
 
                 mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
+            }
+
+            Preference protectedApps = findPreference("pref_protected_apps");
+            if (protectedApps != null) {
+                protectedApps.setOnPreferenceClickListener(preference -> {
+                    Intent intent = new Intent(getActivity(), ProtectedManagerActivity.class);
+                    getActivity().startActivity(intent);
+                    getActivity().finish();
+                    return true;
+                });
             }
 
             Preference more = findPreference("pref_more");

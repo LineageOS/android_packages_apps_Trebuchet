@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 Google Inc.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 the LineageOS project.
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,6 +22,11 @@
         android:persistent="true"
         android:icon="@drawable/ic_settings_grid"
         android:title="@string/grid_size_text" />
+
+    <Preference
+        android:key="pref_protected_apps"
+        android:title="@string/protected_apps_manager_name"
+        android:icon="@drawable/ic_settings_trust" />
 
     <Preference
         android:key="pref_icon_pack"
