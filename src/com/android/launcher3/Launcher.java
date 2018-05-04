@@ -3095,19 +3095,18 @@ public class Launcher extends BaseActivity
      * resumed.
      */
     public void tryAndUpdatePredictedApps() {
-        if (!mSharedPrefs.getBoolean("pref_predictive_apps", true)) {
-            mAppsView.setPredictedApps(new ArrayList<>());
-            return;
+        List<ComponentKeyMapper<AppInfo>> apps = null;
+        if (mSharedPrefs.getBoolean("pref_predictive_apps", true)) {
+            if (mLauncherCallbacks == null) {
+                apps = mPredictiveAppsProvider.getPredictions();
+            } else {
+                apps = mLauncherCallbacks.getPredictedApps();
+            }
         }
 
-            List<ComponentKeyMapper<AppInfo>> apps;
-        if (mLauncherCallbacks == null) {
-            apps = mPredictiveAppsProvider.getPredictions();
-        } else {
-            apps = mLauncherCallbacks.getPredictedApps();
+        if (apps != null) {
+            mAppsView.setPredictedApps(apps);
         }
-
-        mAppsView.setPredictedApps(apps);
     }
 
     void lockAllApps() {

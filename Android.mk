@@ -17,6 +17,14 @@
 LOCAL_PATH := $(call my-dir)
 
 #
+# Prebuilt Google Feed library
+#
+include $(CLEAR_VARS)
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
+    libGoogleFeed:libs/libGoogleFeed.jar
+include $(BUILD_MULTI_PREBUILT)
+
+#
 # Build rule for Launcher3 app.
 #
 include $(CLEAR_VARS)
@@ -29,7 +37,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-appcompat \
     android-support-v7-recyclerview \
     android-support-v7-palette \
-    android-support-dynamic-animation
+    android-support-dynamic-animation \
+    libGoogleFeed
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, src) \
