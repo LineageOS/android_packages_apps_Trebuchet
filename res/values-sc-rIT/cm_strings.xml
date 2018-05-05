@@ -18,6 +18,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Application name -->
   <!-- Settings states -->
+  <string name="setting_state_on">ALLUTU</string>
+  <string name="setting_state_off">ISTUDADU</string>
+  <string name="setting_state_disabled">DISABILITADU</string>
   <!-- Folder titles -->
   <!-- Wallpaper scroll effect -->
   <!-- Dynamic Grid -->
@@ -28,6 +31,7 @@
   <!-- Protected apps -->
   <!-- Developer settings -->
   <!-- Drawer settings -->
+  <string name="app_drawer_color_dark">Iscuru</string>
   <!-- Search Manager doesn't exist -->
   <!-- App not available toast text -->
 </resources>
