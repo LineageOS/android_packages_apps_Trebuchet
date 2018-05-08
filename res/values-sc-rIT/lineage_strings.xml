@@ -21,8 +21,12 @@
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
+  <string name="grid_size_custom_positive">Cunfigura</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">Modìfica</string>
+  <string name="icon_pack_reset">Reseta</string>
+  <string name="icon_pack_system">Sistema (Predefinidu)</string>
   <!-- Icon shapes -->
   <!-- Preferences -->
 </resources>

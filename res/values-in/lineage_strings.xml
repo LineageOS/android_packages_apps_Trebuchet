@@ -21,13 +21,13 @@
   <!-- Expand statusbar -->
   <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
   <!-- Predictive apps -->
-  <string name="predictive_apps_summary_on">Aplikasi kesukaan anda akan muncul di atas panel</string>
-  <string name="predictive_apps_summary_off">Aplikasi kesukaan anda tidak akan muncul di atas panel</string>
+  <string name="predictive_apps_summary_on">Aplikasi favorit anda akan muncul di atas panel</string>
+  <string name="predictive_apps_summary_off">Aplikasi favorit anda tidak akan muncul di atas panel</string>
   <!-- Grid size -->
   <string name="grid_size_text">Ukuran grid</string>
   <string name="grid_size_rows">Baris</string>
   <string name="grid_size_columns">Kolom</string>
-  <string name="grid_size_custom_positive">Atur</string>
+  <string name="grid_size_custom_positive">Setel</string>
   <!-- Hide labels -->
   <!-- Custom icons -->
   <string name="app_edit_drop_target_label">Sunting</string>
@@ -39,7 +39,7 @@
   <string name="icon_pack_reset">Setel ulang</string>
   <string name="icon_pack_system">Sistem (Bawaan)</string>
   <!-- Icon shapes -->
-  <string name="icon_shape_circle_name">Lingkaran</string>
+  <string name="icon_shape_circle_name">Bulat</string>
   <!-- Preferences -->
   <string name="settings_category_icons">Setelan ikon</string>
   <string name="settings_rotation_title">Rotasi</string>

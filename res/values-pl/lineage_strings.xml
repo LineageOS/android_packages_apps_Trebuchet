@@ -18,6 +18,7 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
   <string name="statusbar_expand">Przesuń w dół, aby zobaczyć powiadomienia</string>
   <!-- Predictive apps -->
@@ -53,11 +54,13 @@
   <string name="settings_category_icons">Ustawienia ikon</string>
   <string name="settings_more">Więcej</string>
   <string name="settings_rotation_title">Obrót</string>
+  <string name="settings_allow_rotation_desc">Pozwala na korzystanie z ekranu głównego w orientacji poziomej po obróceniu urządzenia</string>
   <string name="settings_icon_shape">Kształt ikon</string>
   <string name="settings_icon_badging_desc_on">Bąble nad ikoną będą wyświetlane jeśli są powiadomienia</string>
   <string name="settings_icon_badging_desc_off">Bąble nad ikoną nie będą wyświetlane jeśli nie ma powiadomień</string>
   <string name="settings_feed">Włącz integrację z feed</string>
   <string name="settings_edit_allow_title">Zezwalaj na edycję</string>
   <string name="settings_edit_allow_summary_on">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>
+  <string name="settings_edit_allow_summary_off">Ikon i widżetów nie można dodawać, usuwać i przenosić na ekranie głównym</string>
   <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
 </resources>

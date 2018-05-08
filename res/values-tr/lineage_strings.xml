@@ -26,7 +26,7 @@
   <string name="predictive_apps_summary_on">En sevdiğiniz uygulamalar çekmecenin üstünde görünecek</string>
   <string name="predictive_apps_summary_off">En sevdiğiniz uygulamalar çekmecenin üstünde görünmeyecek</string>
   <!-- Grid size -->
-  <string name="grid_size_text">Izgara boyutu</string>
+  <string name="grid_size_text">Klavuz boyutu</string>
   <string name="grid_size_rows">Satırlar</string>
   <string name="grid_size_columns">Sütunlar</string>
   <string name="grid_size_custom_positive">Ayarla</string>

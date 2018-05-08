@@ -18,11 +18,49 @@
 <resources>
   <!-- Application name -->
   <!-- Folder titles -->
+  <string name="play_folder_title">Play</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">下にスワイプして通知を表示</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">よく使うアプリ</string>
+  <string name="predictive_apps_summary_on">お気に入りのアプリがドロワーの上部に表示されます</string>
+  <string name="predictive_apps_summary_off">お気に入りのアプリはドロワーの上部に表示されません</string>
   <!-- Grid size -->
+  <string name="grid_size_text">グリッドの大きさ</string>
+  <string name="grid_size_rows">列数</string>
+  <string name="grid_size_columns">列</string>
+  <string name="grid_size_custom_positive">セット</string>
+  <string name="grid_size_custom_message">カスタムの列と行を選択</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">デスクトップ上でアイコンラベルを表示</string>
+  <string name="drawer_show_labels">ドロワーでアイコンラベルを表示</string>
   <!-- Custom icons -->
+  <string name="app_edit_drop_target_label">編集</string>
+  <string name="icon_pack_title">アイコンパック</string>
+  <string name="icon_pack_picker">アイコンの選択</string>
+  <string name="icon_pack_picker_search">アイコンを検索</string>
+  <string name="icon_pack_suggestions">おすすめ</string>
+  <string name="icon_pack_all_icons">ずべてのアイコン</string>
+  <string name="icon_pack_reset">リセット</string>
+  <string name="icon_pack_system">システム(デフォルト)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">スーパー楕円形</string>
+  <string name="icon_shape_circle_name">円形</string>
+  <string name="icon_shape_squircle_name">角丸四角形</string>
+  <string name="icon_shape_teardrop_name">涙形</string>
   <!-- Preferences -->
+  <string name="settings_category_home">ホーム画面の設定</string>
+  <string name="settings_category_drawer">ドロワーの設定</string>
+  <string name="settings_category_icons">アイコンの設定</string>
+  <string name="settings_more">さらに表示</string>
+  <string name="settings_rotation_title">回転</string>
+  <string name="settings_allow_rotation_desc">端末を回転させたとき、ホーム画面の回転を許可します</string>
+  <string name="settings_icon_shape">アイコンの形</string>
+  <string name="settings_icon_badging_desc_on">通知があるときバブルがアイコン上に表示されます</string>
+  <string name="settings_icon_badging_desc_off">通知があるときでもバブルをアイコン上に表示しません</string>
+  <string name="settings_feed">フィードの統合を有効にする</string>
+  <string name="settings_edit_allow_title">編集を許可</string>
+  <string name="settings_edit_allow_summary_on">アイコンやウィジェットの追加、削除や移動を許可します</string>
+  <string name="settings_edit_allow_summary_off">アイコンやウィジェットの追加、削除や移動を許可しません</string>
+  <string name="settings_edit_widgets_error">ウィジェットをホーム画面に追加できません</string>
 </resources>
