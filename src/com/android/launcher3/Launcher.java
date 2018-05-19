@@ -509,6 +509,7 @@ public class Launcher extends BaseActivity
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_USER_PRESENT); // When the device wakes up + keyguard is gone
+        filter.addAction(Intent.ACTION_HEADSET_PLUG); // Change suggestions when headset is plugged in
         registerReceiver(mReceiver, filter);
         mShouldFadeInScrim = true;
 
@@ -1596,6 +1597,9 @@ public class Launcher extends BaseActivity
                 // ACTION_USER_PRESENT is sent after onStart/onResume. This covers the case where
                 // the user unlocked and the Launcher is not in the foreground.
                 mShouldFadeInScrim = false;
+            } else if (Intent.ACTION_HEADSET_PLUG.equals(action)) {
+                // We propose the user different suggestions when headset is plugged in
+                tryAndUpdatePredictedApps();
             }
         }
     };
@@ -3131,7 +3135,6 @@ public class Launcher extends BaseActivity
             List<ComponentKeyMapper<AppInfo>> apps;
         if (mLauncherCallbacks == null) {
             apps = mPredictiveAppsProvider.getPredictions();
-            mPredictiveAppsProvider.updateTopPredictedApps();
         } else {
             apps = mLauncherCallbacks.getPredictedApps();
         }

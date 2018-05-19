@@ -32,6 +32,8 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.DeadObjectException;
@@ -58,6 +60,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Locale;
@@ -131,6 +134,9 @@ public final class Utilities {
     private static final String GRID_VALUE_SEPARATOR = "x";
     private static final int GRID_ROW_VALUE_DEFAULT = 4;
     private static final int GRID_COLUMN_VALUE_DEFAULT = 5;
+
+    private static final int SUGGESTIONS_DAY_START = 5;
+    private static final int SUGGESTIONS_DAY_END = 21;
 
     public static boolean isPropertyEnabled(String propertyName) {
         return Log.isLoggable(propertyName, Log.VERBOSE);
@@ -709,5 +715,31 @@ public final class Utilities {
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
+    }
+
+    public static boolean hasHeadset(Context context) {
+        AudioManager manager = context.getSystemService(AudioManager.class);
+        if (manager == null) {
+            return false;
+        }
+
+        AudioDeviceInfo[] devices = manager.getDevices(AudioManager.GET_DEVICES_OUTPUTS);
+        for (AudioDeviceInfo device : devices) {
+            switch (device.getType()) {
+                case AudioDeviceInfo.TYPE_BLUETOOTH_A2DP:
+                case AudioDeviceInfo.TYPE_USB_HEADSET:
+                case AudioDeviceInfo.TYPE_WIRED_HEADPHONES:
+                case AudioDeviceInfo.TYPE_WIRED_HEADSET:
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean isDayTime() {
+        Calendar calendar = Calendar.getInstance();
+        int hours = calendar.get(Calendar.HOUR_OF_DAY);
+        return hours > SUGGESTIONS_DAY_START && hours < SUGGESTIONS_DAY_END;
     }
 }
