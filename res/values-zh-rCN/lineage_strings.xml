@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">更改图标形状</string>
   <string name="settings_icon_badging_desc_on">当有通知时，在图标上显示气泡</string>
   <string name="settings_icon_badging_desc_off">没有通知时，也在图标上显示气泡</string>
+  <string name="settings_icon_force_adaptive_title">强制自适应图标</string>
+  <string name="settings_icon_force_adaptive_desc_on">自定义形状的图标将加上边框</string>
+  <string name="settings_icon_force_adaptive_desc_off">自定义形状的图标将没有边框</string>
   <string name="settings_feed">启用 Feed 集成</string>
   <string name="settings_edit_allow_title">允许编辑</string>
   <string name="settings_edit_allow_summary_on">可以在桌面上添加、删除和移动图标以及小部件</string>

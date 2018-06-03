@@ -32,8 +32,8 @@
   <string name="grid_size_custom_positive">Nastavi</string>
   <string name="grid_size_custom_message">Izberi število stolpcev in vrstic po meri</string>
   <!-- Hide labels -->
-  <string name="desktop_show_labels">Prikaz oznak ikon na namizju</string>
-  <string name="drawer_show_labels">Prikaz oznak ikon v predalu</string>
+  <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
+  <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
   <!-- Custom icons -->
   <string name="app_edit_drop_target_label">Uredi</string>
   <string name="icon_pack_title">Paket ikon</string>
@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Oblika ikon</string>
   <string name="settings_icon_badging_desc_on">Mehurček bo prikazan nad ikono, ko je prisotno obvestilo</string>
   <string name="settings_icon_badging_desc_off">Mehurček ne bo prikazan nad ikono, ko je prisotno obvestilo</string>
+  <string name="settings_icon_force_adaptive_title">Vsili prilagodljive ikone</string>
+  <string name="settings_icon_force_adaptive_desc_on">Ikone z obliko po meri bodo uokvirjene</string>
+  <string name="settings_icon_force_adaptive_desc_off">Ikone z obliko po meri ne bodo uokvirjene</string>
   <string name="settings_feed">Omogoči vdelavo vira</string>
   <string name="settings_edit_allow_title">Dovoli urejanje</string>
   <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>

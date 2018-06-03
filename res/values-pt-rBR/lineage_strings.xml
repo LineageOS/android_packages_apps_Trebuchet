@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Formato dos ícones</string>
   <string name="settings_icon_badging_desc_on">Será exibida uma bolha acima do ícone quando houver uma notificação</string>
   <string name="settings_icon_badging_desc_off">Não será exibida uma bolha acima do ícone quando houver uma notificação</string>
+  <string name="settings_icon_force_adaptive_title">Forçar ícones adaptáveis</string>
+  <string name="settings_icon_force_adaptive_desc_on">Os ícones com uma forma personalizada serão agrupados</string>
+  <string name="settings_icon_force_adaptive_desc_off">Os ícones com uma forma personalizada não serão agrupados</string>
   <string name="settings_feed">Ativar integração do feed</string>
   <string name="settings_edit_allow_title">Permitir edições</string>
   <string name="settings_edit_allow_summary_on">Ícones e widgets podem ser adicionados, removidos e movidos na tela inicial</string>

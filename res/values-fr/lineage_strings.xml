@@ -58,6 +58,7 @@
   <string name="settings_icon_shape">Forme des icônes</string>
   <string name="settings_icon_badging_desc_on">Une bulle s’affichera au-dessus de l’icône en cas de notification</string>
   <string name="settings_icon_badging_desc_off">Aucune bulle ne s’affichera au-dessus de l’icône en cas de notification</string>
+  <string name="settings_icon_force_adaptive_title">Forcer les icônes adaptatives</string>
   <string name="settings_feed">Activer l\'intégration de flux</string>
   <string name="settings_edit_allow_title">Autoriser les modifications</string>
   <string name="settings_edit_allow_summary_on">Autoriser l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>

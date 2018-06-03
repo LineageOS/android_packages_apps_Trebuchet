@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">變更圖示形狀</string>
   <string name="settings_icon_badging_desc_on">有通知時，圖示上方會顯示小圓點</string>
   <string name="settings_icon_badging_desc_off">有通知時，圖示上方不會顯示小圓點</string>
+  <string name="settings_icon_force_adaptive_title">強制自適應圖示</string>
+  <string name="settings_icon_force_adaptive_desc_on">自訂形狀的圖示將加上邊框</string>
+  <string name="settings_icon_force_adaptive_desc_off">自訂形狀的圖示將不會被加上邊框</string>
   <string name="settings_feed">啟用 Feed 整合</string>
   <string name="settings_edit_allow_title">允許編輯</string>
   <string name="settings_edit_allow_summary_on">圖示和小工具可以在主畫面上新增、刪除和移動</string>

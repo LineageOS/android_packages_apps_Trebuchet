@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Ikonoen forma</string>
   <string name="settings_icon_badging_desc_on">Bunbuilo bat erakutsiko da ikonoaren gainean jakinarazpen bat dagoenean</string>
   <string name="settings_icon_badging_desc_off">Ez da bunbuilorik erakutsiko ikonoaren gainean jakinarazpen bat dagoenean</string>
+  <string name="settings_icon_force_adaptive_title">Behartu ikono moldagarriak</string>
+  <string name="settings_icon_force_adaptive_desc_on">Forma desberdin bat duten ikonoak kutxa batean sartuko dira</string>
+  <string name="settings_icon_force_adaptive_desc_off">Forma desberdin bat duten ikonoak ez dira kutxa batean sartuko</string>
   <string name="settings_feed">Gaitu jarioen integrazioa</string>
   <string name="settings_edit_allow_title">Baimendu editatzea</string>
   <string name="settings_edit_allow_summary_on">Ikonoak eta trepetak hasieran pantailan gehitu, kendu daitezke eta lekuz aldatu daitezke</string>

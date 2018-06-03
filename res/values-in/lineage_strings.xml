@@ -28,7 +28,9 @@
   <string name="grid_size_rows">Baris</string>
   <string name="grid_size_columns">Kolom</string>
   <string name="grid_size_custom_positive">Setel</string>
+  <string name="grid_size_custom_message">Pilih jumlah kolom dan baris khusus</string>
   <!-- Hide labels -->
+  <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
   <!-- Custom icons -->
   <string name="app_edit_drop_target_label">Sunting</string>
   <string name="icon_pack_title">Paket ikon</string>
@@ -40,11 +42,16 @@
   <string name="icon_pack_system">Sistem (Bawaan)</string>
   <!-- Icon shapes -->
   <string name="icon_shape_circle_name">Bulat</string>
+  <string name="icon_shape_squircle_name">Kotak melengkung</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Setelan layar utama</string>
   <string name="settings_category_icons">Setelan ikon</string>
+  <string name="settings_more">Lainnya</string>
   <string name="settings_rotation_title">Rotasi</string>
   <string name="settings_icon_shape">Bentuk ikon</string>
   <string name="settings_icon_badging_desc_on">Gelembung akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
   <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
   <string name="settings_edit_allow_title">Izinkan sunting</string>
+  <string name="settings_edit_allow_summary_on">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
+  <string name="settings_edit_allow_summary_off">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
 </resources>

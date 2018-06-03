@@ -22,6 +22,7 @@
   <!-- Expand statusbar -->
   <!-- Predictive apps -->
   <!-- Grid size -->
+  <string name="grid_size_text">Rastergrootte</string>
   <string name="grid_size_rows">Rijen</string>
   <string name="grid_size_columns">Kolommen</string>
   <string name="grid_size_custom_positive">Instellen</string>
@@ -36,6 +37,10 @@
   <string name="icon_pack_reset">Opnieuw instellen</string>
   <string name="icon_pack_system">Systeem (standaard)</string>
   <!-- Icon shapes -->
+  <string name="icon_shape_super_ellipse_name">Superellips</string>
+  <string name="icon_shape_circle_name">Cirkel</string>
+  <string name="icon_shape_squircle_name">Squircle</string>
+  <string name="icon_shape_teardrop_name">Druppel</string>
   <!-- Preferences -->
   <string name="settings_more">Meer</string>
 </resources>

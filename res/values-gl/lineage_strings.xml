@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Forma das iconas</string>
   <string name="settings_icon_badging_desc_on">Amosarase unha burbulla sobre a icona cando haxa unha notificación</string>
   <string name="settings_icon_badging_desc_off">Non se amosará unha burbulla sobre a icona cando haxa unha notificación</string>
+  <string name="settings_icon_force_adaptive_title">Forzar iconas adaptables</string>
+  <string name="settings_icon_force_adaptive_desc_on">Os iconas cunha forma personalizada serán encaixados</string>
+  <string name="settings_icon_force_adaptive_desc_off">Os iconas cunha forma personalizada non serán encaixados</string>
   <string name="settings_feed">Activar a integración de fontes</string>
   <string name="settings_edit_allow_title">Permitir editar</string>
   <string name="settings_edit_allow_summary_on">Iconas e widgets pódense engadir, eliminar e mover na pantalla de inicio</string>

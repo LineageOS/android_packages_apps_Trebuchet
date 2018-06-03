@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Forma delle icone</string>
   <string name="settings_icon_badging_desc_on">Una bolla apparirà sopra l\'icona quando ci sarà una notifica</string>
   <string name="settings_icon_badging_desc_off">La bolla non apparirà sopra l\'icona quando ci sarà una notifica</string>
+  <string name="settings_icon_force_adaptive_title">Forza icone adattive</string>
+  <string name="settings_icon_force_adaptive_desc_on">Le icone con una forma personalizzata saranno contornate</string>
+  <string name="settings_icon_force_adaptive_desc_off">Le icone con una forma personalizzata non saranno contornate</string>
   <string name="settings_feed">Attiva integrazione feed</string>
   <string name="settings_edit_allow_title">Consenti modifiche</string>
   <string name="settings_edit_allow_summary_on">É possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>

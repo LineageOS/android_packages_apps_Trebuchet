@@ -46,7 +46,7 @@
   <!-- Icon shapes -->
   <string name="icon_shape_super_ellipse_name">Süper elips</string>
   <string name="icon_shape_circle_name">Daire</string>
-  <string name="icon_shape_squircle_name">Yuvarlatılmış kare</string>
+  <string name="icon_shape_squircle_name">Köşeli kare</string>
   <string name="icon_shape_teardrop_name">Gözyaşı</string>
   <!-- Preferences -->
   <string name="settings_category_home">Ana ekran ayarları</string>
@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Simge şekli</string>
   <string name="settings_icon_badging_desc_on">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenir</string>
   <string name="settings_icon_badging_desc_off">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenmez</string>
+  <string name="settings_icon_force_adaptive_title">Simgeleri uyarlamaya zorla</string>
+  <string name="settings_icon_force_adaptive_desc_on">Özel bir şekle sahip simgeler kutulu olacak</string>
+  <string name="settings_icon_force_adaptive_desc_off">Özel bir şekle sahip simgeler kutulu olmayacak</string>
   <string name="settings_feed">Yayın entegrasyonunu etkinleştir</string>
   <string name="settings_edit_allow_title">Düzenlemeye izin ver</string>
   <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>

@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Forma de les icones</string>
   <string name="settings_icon_badging_desc_on">Es mostrarà una bombolla sobre de la icona quan hi hagi una notificació</string>
   <string name="settings_icon_badging_desc_off">No es mostrarà cap bombolla sobre de la icona quan hi hagi una notificació</string>
+  <string name="settings_icon_force_adaptive_title">Força les icones adaptatives</string>
+  <string name="settings_icon_force_adaptive_desc_on">Les icones amb una forma personalitzada estaran encaixades</string>
+  <string name="settings_icon_force_adaptive_desc_off">Les icones amb una forma personalitzada no estaran encaixades</string>
   <string name="settings_feed">Activa la integració del mur</string>
   <string name="settings_edit_allow_title">Permet editar</string>
   <string name="settings_edit_allow_summary_on">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>

@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Zmena tvaru ikon</string>
   <string name="settings_icon_badging_desc_on">Ak sa vyskytne upozornenie, nad ikonou sa zobrazí bublina</string>
   <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
+  <string name="settings_icon_force_adaptive_title">Vynútenie adaptívnych ikon</string>
+  <string name="settings_icon_force_adaptive_desc_on">Vlastné tvarované ikony budú zarámované</string>
+  <string name="settings_icon_force_adaptive_desc_off">Vlastné tvarované ikony nebudú zarámované</string>
   <string name="settings_feed">Povoliť integráciu kanála</string>
   <string name="settings_edit_allow_title">Povoliť úpravy</string>
   <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>

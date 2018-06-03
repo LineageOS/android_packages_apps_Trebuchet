@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Σχήμα εικονιδίων</string>
   <string name="settings_icon_badging_desc_on">Θα εμφανίζεται μια φούσκα πάνω από το εικονίδιο όταν υπάρχει ειδοποίηση</string>
   <string name="settings_icon_badging_desc_off">Δεν θα εμφανίζεται μια φούσκα πάνω από το εικονίδιο όταν υπάρχει ειδοποίηση</string>
+  <string name="settings_icon_force_adaptive_title">Εξαναγκασμός προσαρμοστικών εικονιδίων</string>
+  <string name="settings_icon_force_adaptive_desc_on">Τα εικονίδια με προσαρμοσμένο σχήμα θα αφομοιώνονται με τα υπόλοιπα</string>
+  <string name="settings_icon_force_adaptive_desc_off">Τα εικονίδια με προσαρμοσμένο σχήμα δεν θα αφομοιώνονται με τα υπόλοιπα</string>
   <string name="settings_feed">Ενεργοποίηση ενσωμάτωσης ροής</string>
   <string name="settings_edit_allow_title">Να επιτρέπεται η επεξεργασία</string>
   <string name="settings_edit_allow_summary_on">Εικονίδια και widget μπορούν να προστεθούν, να αφαιρεθούν και να μετακινηθούν στην αρχική οθόνη</string>
