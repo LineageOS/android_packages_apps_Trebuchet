@@ -7,6 +7,7 @@ import android.os.UserHandle;
 import android.util.Log;
 
 import com.android.launcher3.AppInfo;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.discovery.suggestions.SuggestionCandidate;
 import com.android.launcher3.discovery.suggestions.SuggestionsDatabaseHelper;
 import com.android.launcher3.util.ComponentKey;
@@ -31,6 +32,11 @@ public class PredictiveAppsProvider {
     public void updateComponentCount(ComponentName component) {
         if (component == null) {
             Log.w(TAG, "Can not update component count because component is null!");
+            return;
+        }
+
+        if (!Utilities.arePredictiveAppsEnabled(mContext)) {
+            // Don't log when predictive apps are disabled
             return;
         }
 

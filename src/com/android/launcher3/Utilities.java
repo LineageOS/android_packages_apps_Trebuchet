@@ -747,4 +747,9 @@ public final class Utilities {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS, false);
     }
+
+    public static boolean arePredictiveAppsEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SettingsActivity.KEY_PREDICTIVE_APPS, false);
+    }
 }

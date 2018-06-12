@@ -62,6 +62,7 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
+    static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
 
