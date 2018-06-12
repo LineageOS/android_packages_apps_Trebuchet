@@ -49,6 +49,7 @@ public class LauncherAppsCompatVO extends LauncherAppsCompatVL {
         super(context);
     }
 
+    @Nullable
     @Override
     public ApplicationInfo getApplicationInfo(String packageName, int flags, UserHandle user) {
         try {
@@ -147,6 +148,7 @@ public class LauncherAppsCompatVO extends LauncherAppsCompatVL {
         }
     }
 
+    @Nullable
     public static PinItemRequest getPinItemRequest(Intent intent) {
         Parcelable extra = intent.getParcelableExtra(LauncherApps.EXTRA_PIN_ITEM_REQUEST);
         return extra instanceof PinItemRequest ? (PinItemRequest) extra : null;

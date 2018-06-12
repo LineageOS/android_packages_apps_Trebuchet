@@ -65,6 +65,7 @@ public abstract class LauncherAppsCompat {
 
     public abstract List<LauncherActivityInfo> getActivityList(String packageName,
             UserHandle user);
+    @Nullable
     public abstract LauncherActivityInfo resolveActivity(Intent intent,
             UserHandle user);
     public abstract void startActivityForProfile(ComponentName component, UserHandle user,

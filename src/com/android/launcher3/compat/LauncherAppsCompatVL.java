@@ -56,6 +56,7 @@ public class LauncherAppsCompatVL extends LauncherAppsCompat {
         return mLauncherApps.getActivityList(packageName, user);
     }
 
+    @Nullable
     @Override
     public LauncherActivityInfo resolveActivity(Intent intent, UserHandle user) {
         return mLauncherApps.resolveActivity(intent, user);
@@ -67,6 +68,7 @@ public class LauncherAppsCompatVL extends LauncherAppsCompat {
         mLauncherApps.startMainActivity(component, user, sourceBounds, opts);
     }
 
+    @Nullable
     @Override
     public ApplicationInfo getApplicationInfo(String packageName, int flags, UserHandle user) {
         final boolean isPrimaryUser = Process.myUserHandle().equals(user);
