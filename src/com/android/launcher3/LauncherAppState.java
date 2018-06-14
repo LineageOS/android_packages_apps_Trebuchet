@@ -83,9 +83,17 @@ public class LauncherAppState {
     }
 
     private LauncherAppState(Context context) {
-        if (getLocalProvider(context) == null) {
-            throw new RuntimeException(
-                    "Initializing LauncherAppState in the absence of LauncherProvider");
+        try {
+            if (getLocalProvider(context) == null) {
+                throw new RuntimeException(
+                        "Initializing LauncherAppState in the absence of LauncherProvider");
+            }
+        }
+        catch (NoSuchMethodError ex)
+        {
+            if (context == null) {
+                throw new IllegalStateException("initializing LauncherAppState without app context");
+            }
         }
         Log.v(Launcher.TAG, "LauncherAppState initiated");
         Preconditions.assertUIThread();
@@ -155,7 +163,10 @@ public class LauncherAppState {
     }
 
     LauncherModel setLauncher(Launcher launcher) {
-        getLocalProvider(mContext).setLauncherProviderChangeListener(launcher);
+        try {
+            getLocalProvider(mContext).setLauncherProviderChangeListener(launcher);
+        }
+        catch (NoSuchMethodError er){}
         mModel.initialize(launcher);
         return mModel;
     }

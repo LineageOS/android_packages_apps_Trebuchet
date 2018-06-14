@@ -340,8 +340,7 @@ public class WidgetPreviewLoader {
         int previewWidth;
         int previewHeight;
 
-        if (widgetPreviewExists && drawable.getIntrinsicWidth() > 0
-                && drawable.getIntrinsicHeight() > 0) {
+        if (widgetPreviewExists && drawable.getIntrinsicWidth() > 0 && drawable.getIntrinsicHeight() > 0) {
             previewWidth = drawable.getIntrinsicWidth();
             previewHeight = drawable.getIntrinsicHeight();
         } else {

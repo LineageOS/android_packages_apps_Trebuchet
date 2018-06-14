@@ -14,32 +14,40 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.protobuf'
 
 android {
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    signingConfigs {
+        android {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('D:/Users/Administrator/Desktop/TREBUCHET/APK/shared.jks')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 27
     buildToolsVersion '27.0.3'
-
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
-
+        versionCode 8010006
+        versionName "8.1.0.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.android
     }
     buildTypes {
         debug {
             minifyEnabled false
         }
     }
-
     flavorDimensions "trebuchet"
-
     productFlavors {
         trebuchet {
             dimension "trebuchet"
-            applicationId 'org.lineageos.trebuchet'
-            testApplicationId 'org.lineageos.trebuchet.tests'
+            applicationId 'com.lineageport.trebuchet'
+            testApplicationId 'com.lineageport.trebuchet.tests'
         }
-
         /*
         l3go {
             applicationId 'com.android.launcher3'
@@ -89,7 +97,6 @@ android {
         }
         */
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -111,9 +118,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:${SUPPORT_LIBS_VERSION}"
     compile "com.android.support:design:${SUPPORT_LIBS_VERSION}"
     compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
-
     testCompile 'junit:junit:4.12'
-    androidTestCompile "org.mockito:mockito-core:1.10.19"
+    androidTestCompile 'org.mockito:mockito-core:1.10.19'
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
     androidTestCompile 'com.android.support.test:runner:1.0.1'

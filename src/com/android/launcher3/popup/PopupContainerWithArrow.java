@@ -867,7 +867,9 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         if (mOpenCloseAnimator != null) {
             Outline outline = new Outline();
             getOutlineProvider().getOutline(this, outline);
-            outline.getRect(mEndRect);
+            try {
+                outline.getRect(mEndRect);
+            } catch (NoSuchMethodError er){}
             mOpenCloseAnimator.cancel();
         }
         mIsOpen = false;

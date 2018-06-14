@@ -718,10 +718,12 @@ public final class Utilities {
     }
 
     public static boolean hasHeadset(Context context) {
-        AudioManager manager = context.getSystemService(AudioManager.class);
+        AudioManager manager = (AudioManager)context.getSystemService(context.AUDIO_SERVICE);
         if (manager == null) {
             return false;
         }
+
+        if (!ATLEAST_MARSHMALLOW) return (manager.isWiredHeadsetOn() || manager.isBluetoothA2dpOn());
 
         AudioDeviceInfo[] devices = manager.getDevices(AudioManager.GET_DEVICES_OUTPUTS);
         for (AudioDeviceInfo device : devices) {

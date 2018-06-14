@@ -27,7 +27,7 @@ LOCAL_MIN_SDK_VERSION := 21
 
 LOCAL_PACKAGE_NAME := TrebuchetTests
 
-LOCAL_AAPT_FLAGS += --rename-manifest-package org.lineageos.trebuchet.tests
+LOCAL_AAPT_FLAGS += --rename-manifest-package com.lineageport.trebuchet.tests
 
 LOCAL_INSTRUMENTATION_FOR := Trebuchet
 

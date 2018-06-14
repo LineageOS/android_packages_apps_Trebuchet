@@ -34,8 +34,13 @@ public class UserManagerCompatVN extends UserManagerCompatVM {
     }
 
     @Override
-    public boolean isUserUnlocked(UserHandle user) {
-        return mUserManager.isUserUnlocked(user);
+    public boolean isUserUnlocked(UserHandle user)
+    {
+        try {
+            return mUserManager.isUserUnlocked(user);
+        } catch (SecurityException ex) {
+            return false;
+        }
     }
 }
 

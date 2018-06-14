@@ -61,7 +61,7 @@
         <!-- Note: we are reusing/repurposing a system attribute for search layout, because of a
          platform bug, which prevents using custom attributes in <include> tag -->
         <include
-            layout="@layout/search_container_all_apps"
+            layout="?android:attr/keyboardLayout"
             android:id="@id/search_container_all_apps" />
 
         <include layout="@layout/all_apps_fast_scroller" />

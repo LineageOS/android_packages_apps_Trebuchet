@@ -150,7 +150,7 @@ public class SettingsActivity extends Activity {
             if (iconAdaptiveOverride != null) {
                 iconAdaptiveOverride.setOnPreferenceChangeListener((preference, newValue) -> {
                     // Clear the icon cache.
-                    LauncherAppState.getInstance(getContext()).getIconCache().clear();
+                    LauncherAppState.getInstance(Utilities.ATLEAST_MARSHMALLOW?getContext():getActivity().getApplicationContext()).getIconCache().clear();
                     return true;
                 });
             }
@@ -208,8 +208,11 @@ public class SettingsActivity extends Activity {
 
         private boolean hasPackageInstalled(String pkgName) {
             try {
-                ApplicationInfo ai = getContext().getPackageManager()
-                        .getApplicationInfo(pkgName, 0);
+                ApplicationInfo ai;
+                if (Utilities.ATLEAST_MARSHMALLOW) {
+                    ai = getContext().getPackageManager().getApplicationInfo(pkgName, 0);
+                }
+                else ai = getActivity().getPackageManager().getApplicationInfo(pkgName, 0);;
                 return ai.enabled;
             } catch (PackageManager.NameNotFoundException e) {
                 return false;
