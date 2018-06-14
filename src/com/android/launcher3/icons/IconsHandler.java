@@ -336,8 +336,9 @@ public class IconsHandler {
             }
         }
 
-        return generateBitmap(Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888));
+        return generateBitmap((drawable instanceof BitmapDrawable) ?
+                ((BitmapDrawable) drawable).getBitmap() :
+                Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888));
     }
 
     public void switchIconPacks(String packageName) {
