@@ -22,7 +22,7 @@
   <!-- Expand statusbar -->
   <string name="statusbar_expand">下にスワイプして通知を表示</string>
   <!-- Predictive apps -->
-  <string name="predictive_apps_title">よく使うアプリ</string>
+  <string name="predictive_apps_title">よく使用するアプリ</string>
   <string name="predictive_apps_summary_on">お気に入りのアプリがドロワーの上部に表示されます</string>
   <string name="predictive_apps_summary_off">お気に入りのアプリはドロワーの上部に表示されません</string>
   <!-- Grid size -->
@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">アイコンの形</string>
   <string name="settings_icon_badging_desc_on">通知があるときバブルがアイコン上に表示されます</string>
   <string name="settings_icon_badging_desc_off">通知があるときでもバブルをアイコン上に表示しません</string>
+  <string name="settings_icon_force_adaptive_title">アダプティブアイコンを強制する</string>
+  <string name="settings_icon_force_adaptive_desc_on">カスタムシェイプアイコンが四角くなります</string>
+  <string name="settings_icon_force_adaptive_desc_off">カスタムシェイプアイコンを四角くしません</string>
   <string name="settings_feed">フィードの統合を有効にする</string>
   <string name="settings_edit_allow_title">編集を許可</string>
   <string name="settings_edit_allow_summary_on">アイコンやウィジェットの追加、削除や移動を許可します</string>
