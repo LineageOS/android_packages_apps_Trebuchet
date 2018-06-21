@@ -300,6 +300,10 @@ public class IconCache {
             while (c.moveToNext()) {
                 String cn = c.getString(indexComponent);
                 ComponentName component = ComponentName.unflattenFromString(cn);
+                if (component == null) {
+                    continue;
+                }
+
                 PackageInfo info = pkgInfoMap.get(component.getPackageName());
                 if (info == null) {
                     if (!ignorePackages.contains(component.getPackageName())) {
@@ -389,9 +393,12 @@ public class IconCache {
     }
 
     CacheEntry getCacheEntry(LauncherActivityInfo app) {
+        if (app == null) {
+            return null;
+        }
         final ComponentKey key = new ComponentKey(app.getComponentName(), app.getUser());
         return mCache.get(key);
-        }
+    }
 
     public void clearIconDataBase() {
         mIconDb.clearDB();
@@ -399,6 +406,10 @@ public class IconCache {
 
     public void addCustomInfoToDataBase(Drawable icon, ItemInfo info, CharSequence title) {
         LauncherActivityInfo app = mLauncherApps.resolveActivity(info.getIntent(), info.user);
+        if (app == null) {
+            return;
+        }
+
         final ComponentKey key = new ComponentKey(app.getComponentName(), app.getUser());
         CacheEntry entry = mCache.get(key);
         PackageInfo packageInfo = null;
@@ -410,7 +421,7 @@ public class IconCache {
         // We can't reuse the entry if the high-res icon is not present.
         if (entry == null || entry.isLowResIcon || entry.icon == null) {
             entry = new CacheEntry();
-            }
+        }
         entry.icon = ((BitmapDrawable) icon).getBitmap();
         entry.title = title != null ? title : app.getLabel();
         entry.contentDescription = mUserManager.getBadgedLabelForUser(entry.title, app.getUser());
@@ -418,12 +429,12 @@ public class IconCache {
 
         Bitmap lowResIcon = generateLowResIcon(entry.icon);
         ContentValues values = newContentValues(entry.icon, lowResIcon, entry.title.toString(),
-        app.getApplicationInfo().packageName);
+                app.getApplicationInfo().packageName);
         if (packageInfo != null) {
             addIconToDB(values, app.getComponentName(), packageInfo,
                     mUserManager.getSerialNumberForUser(app.getUser()));
-            }
         }
+    }
 
     /**
      * Updates {@param values} to contain versioning information and adds it to the DB.

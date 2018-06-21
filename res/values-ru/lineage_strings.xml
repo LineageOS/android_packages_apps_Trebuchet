@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Форма значков</string>
   <string name="settings_icon_badging_desc_on">Над значком будет отображаться пузырь когда приходит уведомление</string>
   <string name="settings_icon_badging_desc_off">Над значком не будет отображаться пузырь когда приходит уведомление</string>
+  <string name="settings_icon_force_adaptive_title">Использовать адаптивные значки</string>
+  <string name="settings_icon_force_adaptive_desc_on">Значки нестандартной формы будут на подложке</string>
+  <string name="settings_icon_force_adaptive_desc_off">Значки нестандартной формы будут без подложки</string>
   <string name="settings_feed">Включить интеграцию с лентой</string>
   <string name="settings_edit_allow_title">Разрешить редактирование</string>
   <string name="settings_edit_allow_summary_on">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>

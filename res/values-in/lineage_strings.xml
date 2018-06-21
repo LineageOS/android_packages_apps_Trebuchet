@@ -21,6 +21,7 @@
   <!-- Expand statusbar -->
   <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
   <!-- Predictive apps -->
+  <string name="predictive_apps_title">Aplikasi prediktif</string>
   <string name="predictive_apps_summary_on">Aplikasi favorit anda akan muncul di atas panel</string>
   <string name="predictive_apps_summary_off">Aplikasi favorit anda tidak akan muncul di atas panel</string>
   <!-- Grid size -->
@@ -51,7 +52,11 @@
   <string name="settings_icon_shape">Bentuk ikon</string>
   <string name="settings_icon_badging_desc_on">Gelembung akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
   <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
+  <string name="settings_icon_force_adaptive_title">Paksa ikon adaptif</string>
+  <string name="settings_icon_force_adaptive_desc_on">Ikon dengan bentuk khusus akan diberi kotak</string>
+  <string name="settings_icon_force_adaptive_desc_off">Ikon dengan bentuk khusus tidak akan diberi kotak</string>
   <string name="settings_edit_allow_title">Izinkan sunting</string>
   <string name="settings_edit_allow_summary_on">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
   <string name="settings_edit_allow_summary_off">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
+  <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
 </resources>
