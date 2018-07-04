@@ -30,9 +30,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -61,7 +58,6 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
-    static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
@@ -139,11 +135,6 @@ public class SettingsActivity extends Activity {
                 mIconBadgingObserver.register(NOTIFICATION_BADGING, NOTIFICATION_ENABLED_LISTENERS);
             }
 
-            SwitchPreference feedIntegration = (SwitchPreference)
-                    findPreference(KEY_FEED_INTEGRATION);
-            if (!hasPackageInstalled(LauncherTab.SEARCH_PACKAGE)) {
-                homeGroup.removePreference(feedIntegration);
-            }
 
             SwitchPreference iconAdaptiveOverride = (SwitchPreference)
                     findPreference(KEY_FORCE_ADAPTIVE_ICONS);
@@ -204,16 +195,6 @@ public class SettingsActivity extends Activity {
             AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             manager.set(AlarmManager.RTC, java.lang.System.currentTimeMillis() + 1, pi);
             java.lang.System.exit(0);
-        }
-
-        private boolean hasPackageInstalled(String pkgName) {
-            try {
-                ApplicationInfo ai = getContext().getPackageManager()
-                        .getApplicationInfo(pkgName, 0);
-                return ai.enabled;
-            } catch (PackageManager.NameNotFoundException e) {
-                return false;
-            }
         }
     }
 

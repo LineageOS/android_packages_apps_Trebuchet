@@ -707,11 +707,6 @@ public final class Utilities {
         return !(currentPack.equals(defaultPack) || currentPack.equals(defaultLocalizedPack));
     }
 
-    static boolean hasFeedIntegration(Context context) {
-        SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(SettingsActivity.KEY_FEED_INTEGRATION, false);
-    }
-
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
