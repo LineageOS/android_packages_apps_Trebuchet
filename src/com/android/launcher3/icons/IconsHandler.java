@@ -215,8 +215,8 @@ public class IconsHandler {
             Resources res = mPackageManager.getResourcesForApplication(packageName);
             mCurrentIconPackRes = res;
             int resource = res.getIdentifier("drawable", "xml", packageName);
-            if (resource < 0) {
-                return;
+            if (resource <= 0) {
+                throw new NameNotFoundException("Could not get identifier for drawable.xml");
             }
             xpp = res.getXml(resource);
             int eventType = xpp.getEventType();
@@ -234,7 +234,7 @@ public class IconsHandler {
             }
         } catch (NameNotFoundException | XmlPullParserException | IOException e) {
             Log.i(TAG, "Error parsing drawable.xml for package " + packageName +
-                    " trying appfilter now");
+                    ", trying appfilter now");
             // fallback onto appfilter if drawable xml fails
             loadIconPack(packageName, true);
         }
