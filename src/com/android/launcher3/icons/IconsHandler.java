@@ -34,13 +34,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Process;
 import android.os.UserHandle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -65,6 +65,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -98,7 +99,6 @@ public class IconsHandler {
 
     private AlertDialog mAlertDialog;
     private Context mContext;
-    private IconCache mIconCache;
     private PackageManager mPackageManager;
     private String mDefaultIconPack;
 
@@ -293,7 +293,7 @@ public class IconsHandler {
 
     private Bitmap loadBitmap(String drawableName) {
         Drawable bitmap = loadDrawable(null, drawableName, true);
-        if (bitmap != null && bitmap instanceof BitmapDrawable) {
+        if (bitmap instanceof BitmapDrawable) {
             return ((BitmapDrawable) bitmap).getBitmap();
         }
         return null;
@@ -348,7 +348,7 @@ public class IconsHandler {
         String localizedDefault = mContext.getString(R.string.icon_pack_system);
         if (packageName.equals(mDefaultIconPack) || packageName.equals(localizedDefault) ||
                 mIconPacks.containsKey(packageName)) {
-            new IconPackLoader(packageName).execute();
+            new IconPackLoader(this, packageName).execute();
         }
     }
 
@@ -361,7 +361,7 @@ public class IconsHandler {
 
         String drawableName = mAppFilterDrawables.get(componentName.toString());
         Drawable drawable = loadDrawable(null, drawableName, false);
-        if (drawable != null && drawable instanceof BitmapDrawable) {
+        if (drawable instanceof BitmapDrawable) {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
             cacheStoreDrawable(componentName.toString(), bitmap);
             return bitmap;
@@ -502,7 +502,7 @@ public class IconsHandler {
 
     public void showDialog(Activity activity) {
         loadAvailableIconPacks();
-        final IconAdapter adapter = new IconAdapter(mContext, mIconPacks);
+        final IconAdapter adapter = new IconAdapter(mContext, mIconPacks, mDefaultIconPack);
         AlertDialog.Builder builder = new AlertDialog.Builder(activity)
                 .setTitle(R.string.icon_pack_title)
                 .setAdapter(adapter, (dialog, position) -> {
@@ -548,21 +548,31 @@ public class IconsHandler {
         LayoutInflater mLayoutInflater;
         String mCurrentIconPack;
 
-        IconAdapter(Context context, Map<String, IconPackInfo> supportedPackages) {
+        IconAdapter(Context context, Map<String, IconPackInfo> supportedPackages,
+                    String defaultIconPack) {
             mLayoutInflater = LayoutInflater.from(context);
             mSupportedPackages = new ArrayList<>(supportedPackages.values());
             Collections.sort(mSupportedPackages, (lhs, rhs) ->
                     lhs.label.toString().compareToIgnoreCase(rhs.label.toString()));
 
-            Resources res = context.getResources();
-
-            Drawable icon = res.getDrawable(android.R.mipmap.sym_def_app_icon);
-            String defaultLabel = res.getString(R.string.icon_pack_system);
+            Drawable icon = ContextCompat.getDrawable(context, android.R.mipmap.sym_def_app_icon);
+            String defaultLabel = context.getString(R.string.icon_pack_system);
 
             mSupportedPackages.add(0, new IconPackInfo(defaultLabel, icon, defaultLabel));
             mCurrentIconPack = Utilities.getPrefs(context.getApplicationContext())
-                    .getString(QuickSettingsActivity.KEY_ICON_PACK,
-                            res.getString(R.string.icon_pack_default));
+                    .getString(QuickSettingsActivity.KEY_ICON_PACK, defaultIconPack);
+        }
+
+        private static class ViewHolder {
+            final TextView titleView;
+            final ImageView iconView;
+            final RadioButton radioView;
+
+            private ViewHolder(View view) {
+                titleView = view.findViewById(R.id.title);
+                iconView = view.findViewById(R.id.icon);
+                radioView = view.findViewById(R.id.radio);
+            }
         }
 
         @Override
@@ -582,41 +592,57 @@ public class IconsHandler {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            final ViewHolder viewHolder;
             if (convertView == null) {
                 convertView = mLayoutInflater.inflate(R.layout.target_edit_iconpack_chooser, null);
+                viewHolder = new ViewHolder(convertView);
+                convertView.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) convertView.getTag();
             }
-            IconPackInfo info = mSupportedPackages.get(position);
-            TextView txtView = (TextView) convertView.findViewById(R.id.title);
-            txtView.setText(info.label);
-            ImageView imgView = (ImageView) convertView.findViewById(R.id.icon);
-            imgView.setImageDrawable(info.icon);
-            RadioButton radioButton = (RadioButton) convertView.findViewById(R.id.radio);
-            radioButton.setChecked(info.packageName.equals(mCurrentIconPack));
+
+            final IconPackInfo info = mSupportedPackages.get(position);
+
+            viewHolder.titleView.setText(info.label);
+            viewHolder.iconView.setImageDrawable(info.icon);
+            viewHolder.radioView.setChecked(info.packageName.equals(mCurrentIconPack));
+
             return convertView;
         }
     }
 
-    private class IconPackLoader extends AsyncTask<Void, Void, Void> {
-        private String mIconPackPackageName;
+    private static class IconPackLoader extends AsyncTask<Void, Void, Void> {
+        private final WeakReference<IconsHandler> mIconsHandlerReference;
+        private final IconCache mIconCache;
+        private final String mIconPackPackageName;
 
-        private IconPackLoader(String packageName) {
+        private IconPackLoader(IconsHandler iconsHandler, String packageName) {
+            mIconsHandlerReference = new WeakReference<>(iconsHandler);
             mIconPackPackageName = packageName;
-            mIconCache = LauncherAppState.getInstance(mContext).getIconCache();
+            mIconCache = LauncherAppState.getInstance(iconsHandler.mContext).getIconCache();
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
-            loadIconPack(mIconPackPackageName, false);
+            final IconsHandler iconsHandler = mIconsHandlerReference.get();
+            if (iconsHandler != null) {
+                iconsHandler.loadIconPack(mIconPackPackageName, false);
+            }
             return null;
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
-            Utilities.getPrefs(mContext.getApplicationContext()).edit()
+            final IconsHandler iconsHandler = mIconsHandlerReference.get();
+            if (iconsHandler == null) {
+                return;
+            }
+
+            Utilities.getPrefs(iconsHandler.mContext.getApplicationContext()).edit()
                     .putString(QuickSettingsActivity.KEY_ICON_PACK, mIconPackPackageName).apply();
             mIconCache.clearIconDataBase();
             mIconCache.flush();
-            LauncherAppState.getInstance(mContext).getModel().forceReload();
+            LauncherAppState.getInstance(iconsHandler.mContext).getModel().forceReload();
         }
     }
 }
