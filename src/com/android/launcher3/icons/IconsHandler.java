@@ -215,7 +215,7 @@ public class IconsHandler {
             Resources res = mPackageManager.getResourcesForApplication(packageName);
             mCurrentIconPackRes = res;
             int resource = res.getIdentifier("drawable", "xml", packageName);
-            if (resource < 0) {
+            if (resource <= 0) {
                 return;
             }
             xpp = res.getXml(resource);
