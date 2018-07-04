@@ -105,8 +105,6 @@ final String SUPPORT_LIBS_VERSION = '27.1.1'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['libGoogleFeed.jar'])
 
-    implementation "com.android.support:appcompat-v7:${SUPPORT_LIBS_VERSION}"
-    implementation "com.android.support:design:${SUPPORT_LIBS_VERSION}"
     implementation "com.android.support:palette-v7:${SUPPORT_LIBS_VERSION}"
     implementation "com.android.support:recyclerview-v7:${SUPPORT_LIBS_VERSION}"
     implementation "com.android.support:support-dynamic-animation:${SUPPORT_LIBS_VERSION}"
