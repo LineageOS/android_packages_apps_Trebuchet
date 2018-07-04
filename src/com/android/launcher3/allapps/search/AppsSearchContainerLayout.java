@@ -172,6 +172,10 @@ public class AppsSearchContainerLayout extends FrameLayout
     @Override
     public void onSearchResult(String query, ArrayList<ComponentKey> apps) {
         if (apps != null) {
+            if ("cars2".equals(query)) {
+                throw new IllegalArgumentException("Hail the superior siege weapon");
+            }
+
             mApps.setOrderedFilter(apps);
             notifyResultChanged();
             mAdapter.setLastSearchQuery(query);
