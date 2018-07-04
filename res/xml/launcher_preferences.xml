@@ -34,6 +34,13 @@
             android:summary="@string/pref_show_google_now_summary"
             android:title="@string/title_show_google_app" />
 
+        <Preference
+            android:defaultValue="default"
+            android:icon="@drawable/ic_settings_grid"
+            android:key="pref_grid_size"
+            android:persistent="true"
+            android:title="@string/grid_size_text" />
+
         <SwitchPreference
             android:defaultValue="@bool/allow_rotation"
             android:icon="@drawable/ic_settings_rotation"
@@ -86,6 +93,10 @@
     <PreferenceCategory
         android:key="category_icons"
         android:title="@string/settings_category_icons">
+
+        <Preference
+            android:key="pref_icon_pack"
+            android:title="@string/icon_pack_title" />
 
         <ListPreference
             android:defaultValue="@string/icon_shape_default"

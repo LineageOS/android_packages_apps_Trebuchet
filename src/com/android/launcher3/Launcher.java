@@ -2568,7 +2568,7 @@ public class Launcher extends BaseActivity
      */
     public void onClickSettingsButton(View v) {
         if (LOGD) Log.d(TAG, "onClickSettingsButton");
-        Intent intent = new Intent(this, QuickSettingsActivity.class);
+        Intent intent = new Intent(this, SettingsActivity.class);
         intent.setSourceBounds(getViewBounds(v));
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent, getActivityLaunchOptions(v));

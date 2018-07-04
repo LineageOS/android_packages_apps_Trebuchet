@@ -30,6 +30,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -37,8 +40,13 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.util.Pair;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.NumberPicker;
 
 import com.android.launcher3.graphics.IconShapeOverride;
+import com.android.launcher3.icons.IconsHandler;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.searchlauncher.SearchLauncherCallbacks;
 import com.android.launcher3.util.SettingsObserver;
@@ -60,8 +68,10 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
     public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
+    public static final String KEY_ICON_PACK = "pref_icon_pack";
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
+    private static final String KEY_GRID_SIZE = "pref_grid_size";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
@@ -90,6 +100,13 @@ public class SettingsActivity extends Activity {
 
         private SharedPreferences mPrefs;
 
+        private Preference mGridPref;
+        private Preference mIconPackPref;
+
+        private IconsHandler mIconsHandler;
+        private PackageManager mPackageManager;
+
+        private String mDefaultIconPack;
         private boolean mShouldRestart = false;
 
         @Override
@@ -161,6 +178,33 @@ public class SettingsActivity extends Activity {
                     iconGroup.removePreference(iconShapeOverride);
                 }
             }
+
+            mIconPackPref = iconGroup.findPreference(KEY_ICON_PACK);
+            mIconPackPref.setOnPreferenceClickListener(preference -> {
+                mIconsHandler.showDialog(getActivity());
+                return true;
+            });
+
+            mPackageManager = getActivity().getPackageManager();
+            mDefaultIconPack = mPrefs.getString(KEY_ICON_PACK, getString(R.string.icon_pack_default));
+            mIconsHandler = IconCache.getIconsHandler(getActivity().getApplicationContext());
+            updateIconPackEntry();
+
+            mGridPref = homeGroup.findPreference(KEY_GRID_SIZE);
+            if (mGridPref != null) {
+                mGridPref.setOnPreferenceClickListener(preference -> {
+                    setCustomGridSize();
+                    return true;
+                });
+
+                mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
+            }
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+            mIconsHandler.hideDialog();
         }
 
         @Override
@@ -184,10 +228,15 @@ public class SettingsActivity extends Activity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
             switch (key) {
+                case KEY_GRID_SIZE:
+                    mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
                 case KEY_FORCE_ADAPTIVE_ICONS:
                     mShouldRestart = true;
+                    break;
+                case KEY_ICON_PACK:
+                    updateIconPackEntry();
                     break;
             }
         }
@@ -202,6 +251,69 @@ public class SettingsActivity extends Activity {
             AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             manager.set(AlarmManager.RTC, java.lang.System.currentTimeMillis() + 1, pi);
             java.lang.System.exit(0);
+        }
+
+        private void setCustomGridSize() {
+            int minValue = 3;
+            int maxValue = 9;
+
+            String storedValue = mPrefs.getString(KEY_GRID_SIZE, "4x5");
+            Pair<Integer, Integer> currentValues = Utilities.extractCustomGrid(storedValue);
+
+            LayoutInflater inflater = (LayoutInflater)
+                    getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            if (inflater == null) {
+                return;
+            }
+            View contentView = inflater.inflate(R.layout.dialog_custom_grid, null);
+            NumberPicker columnPicker = (NumberPicker)
+                    contentView.findViewById(R.id.dialog_grid_column);
+            NumberPicker rowPicker = (NumberPicker)
+                    contentView.findViewById(R.id.dialog_grid_row);
+
+            columnPicker.setMinValue(minValue);
+            rowPicker.setMinValue(minValue);
+            columnPicker.setMaxValue(maxValue);
+            rowPicker.setMaxValue(maxValue);
+            columnPicker.setValue(currentValues.first);
+            rowPicker.setValue(currentValues.second);
+
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.grid_size_text)
+                    .setView(contentView)
+                    .setPositiveButton(R.string.grid_size_custom_positive, (dialog, i) -> {
+                        String newValues = Utilities.getGridValue(columnPicker.getValue(),
+                                rowPicker.getValue());
+                        mPrefs.edit().putString(KEY_GRID_SIZE, newValues).apply();
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+        }
+
+        private String getDefaulGridSize() {
+            InvariantDeviceProfile profile = new InvariantDeviceProfile(getActivity());
+            return Utilities.getGridValue(profile.numColumns, profile.numRows);
+        }
+
+        private void updateIconPackEntry() {
+            ApplicationInfo info = null;
+            String iconPack = mPrefs.getString(KEY_ICON_PACK, mDefaultIconPack);
+            String summary = getString(R.string.icon_pack_system);
+            Drawable icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
+
+            if (!mIconsHandler.isDefaultIconPack()) {
+                try {
+                    info = mPackageManager.getApplicationInfo(iconPack, PackageManager.GET_META_DATA);
+                } catch (PackageManager.NameNotFoundException ignored) {
+                }
+                if (info != null) {
+                    summary = mPackageManager.getApplicationLabel(info).toString();
+                    icon = mPackageManager.getApplicationIcon(info);
+                }
+            }
+
+            mIconPackPref.setSummary(summary);
+            mIconPackPref.setIcon(icon);
         }
     }
 
