@@ -368,10 +368,6 @@ public class Launcher extends BaseActivity
     private EditText mIconEditTitle;
     private IconsHandler mIconsHandler;
 
-    // Feed integration
-    private LauncherTab mLauncherTab;
-    private boolean mFeedIntegrationEnabled;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (DEBUG_STRICT_MODE) {
@@ -499,9 +495,6 @@ public class Launcher extends BaseActivity
         // On large interfaces, or on devices that a user has specifically enabled screen rotation,
         // we want the screen to auto-rotate based on the current orientation
         setOrientation();
-
-        mFeedIntegrationEnabled = isFeedIntegrationEnabled();
-        mLauncherTab = new LauncherTab(this, mFeedIntegrationEnabled);
 
         setContentView(mLauncherView);
 
@@ -1085,9 +1078,6 @@ public class Launcher extends BaseActivity
         if (shouldShowDiscoveryBounce()) {
             mAllAppsController.showDiscoveryBounce();
         }
-        if (mFeedIntegrationEnabled) {
-            mLauncherTab.getClient().onResume();
-        }
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onResume();
         }
@@ -1110,10 +1100,6 @@ public class Launcher extends BaseActivity
         // debounce excess onHide calls.
         if (mWorkspace.getCustomContentCallbacks() != null) {
             mWorkspace.getCustomContentCallbacks().onHide();
-        }
-
-        if (mFeedIntegrationEnabled) {
-            mLauncherTab.getClient().onPause();
         }
 
         if (mLauncherCallbacks != null) {
@@ -1627,11 +1613,6 @@ public class Launcher extends BaseActivity
         super.onAttachedToWindow();
 
         FirstFrameAnimatorHelper.initializeDrawListener(getWindow().getDecorView());
-
-        if (mFeedIntegrationEnabled) {
-            mLauncherTab.getClient().onAttachedToWindow();
-        }
-
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onAttachedToWindow();
         }
@@ -1640,11 +1621,6 @@ public class Launcher extends BaseActivity
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-
-
-        if (mFeedIntegrationEnabled) {
-            mLauncherTab.getClient().onDetachedFromWindow();
-        }
 
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onDetachedFromWindow();
@@ -1811,10 +1787,6 @@ public class Launcher extends BaseActivity
                 mIconEditDialog = null;
             }
 
-            if (mFeedIntegrationEnabled) {
-                mLauncherTab.getClient().hideOverlay(true);
-            }
-
             if (mLauncherCallbacks != null) {
                 mLauncherCallbacks.onHomeIntent();
             }
@@ -1925,10 +1897,6 @@ public class Launcher extends BaseActivity
         LauncherAnimUtils.onDestroyActivity();
 
         clearPendingBinds();
-
-        if (mFeedIntegrationEnabled) {
-            mLauncherTab.getClient().onDestroy();
-        }
 
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onDestroy();
@@ -4179,10 +4147,6 @@ public class Launcher extends BaseActivity
         return super.onKeyShortcut(keyCode, event);
     }
 
-    private boolean isFeedIntegrationEnabled() {
-        return Utilities.hasFeedIntegration(this);
-    }
-
     public static CustomAppWidget getCustomAppWidget(String name) {
         return sCustomAppWidgets.get(name);
     }
@@ -4206,24 +4170,6 @@ public class Launcher extends BaseActivity
             if (Utilities.ALLOW_ROTATION_PREFERENCE_KEY.equals(key)) {
                 // Recreate the activity so that it initializes the rotation preference again.
                 recreate();
-            }
-            if (SettingsActivity.KEY_FEED_INTEGRATION.equals(key)) {
-                if (mLauncherTab == null) {
-                    return;
-                }
-
-                mFeedIntegrationEnabled = isFeedIntegrationEnabled();
-                mLauncherTab.updateLauncherTab(mFeedIntegrationEnabled);
-
-                if (mLauncherTab.getClient() == null) {
-                    return;
-                }
-
-                if (mFeedIntegrationEnabled) {
-                    mLauncherTab.getClient().onAttachedToWindow();
-                } else {
-                    mLauncherTab.getClient().onDestroy();
-                }
             }
         }
     }
