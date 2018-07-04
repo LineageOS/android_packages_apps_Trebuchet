@@ -26,7 +26,6 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:colorEdgeEffect">#FF757575</item>
         <item name="android:keyboardLayout">@layout/search_container_all_apps</item>
-        <item name="android:colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="BaseLauncherThemeWithCustomAttrs" parent="@style/BaseLauncherTheme">
