@@ -367,7 +367,7 @@ public class UserEventDispatcher {
 
     public void logDeepShortcutsOpen(View icon) {
         LogContainerProvider provider = getLaunchProviderRecursive(icon);
-        if (icon == null || !(icon.getTag() instanceof ItemInfo)) {
+        if (icon == null || !(icon.getTag() instanceof ItemInfo) || provider == null) {
             return;
         }
         ItemInfo info = (ItemInfo) icon.getTag();
