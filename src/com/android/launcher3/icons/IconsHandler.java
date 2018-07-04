@@ -53,8 +53,8 @@ import android.widget.TextView;
 
 import com.android.launcher3.IconCache;
 import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.QuickSettingsActivity;
 import com.android.launcher3.R;
+import com.android.launcher3.SettingsActivity;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.graphics.LauncherIcons;
 
@@ -111,7 +111,7 @@ public class IconsHandler {
         mDefaultIconPack = context.getString(R.string.icon_pack_default);
 
         SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
-        String iconPack = prefs.getString(QuickSettingsActivity.KEY_ICON_PACK, mDefaultIconPack);
+        String iconPack = prefs.getString(SettingsActivity.KEY_ICON_PACK, mDefaultIconPack);
         loadAvailableIconPacks();
         loadIconPack(iconPack, false);
     }
@@ -508,7 +508,7 @@ public class IconsHandler {
                 .setAdapter(adapter, (dialog, position) -> {
                     String selected = adapter.getItem(position);
                     String current = Utilities.getPrefs(mContext.getApplicationContext())
-                            .getString(QuickSettingsActivity.KEY_ICON_PACK, mDefaultIconPack);
+                            .getString(SettingsActivity.KEY_ICON_PACK, mDefaultIconPack);
                     if (!selected.equals(current)) {
                         switchIconPacks(selected);
                     }
@@ -560,7 +560,7 @@ public class IconsHandler {
 
             mSupportedPackages.add(0, new IconPackInfo(defaultLabel, icon, defaultLabel));
             mCurrentIconPack = Utilities.getPrefs(context.getApplicationContext())
-                    .getString(QuickSettingsActivity.KEY_ICON_PACK, defaultIconPack);
+                    .getString(SettingsActivity.KEY_ICON_PACK, defaultIconPack);
         }
 
         private static class ViewHolder {
@@ -640,7 +640,7 @@ public class IconsHandler {
             }
 
             Utilities.getPrefs(iconsHandler.mContext.getApplicationContext()).edit()
-                    .putString(QuickSettingsActivity.KEY_ICON_PACK, mIconPackPackageName).apply();
+                    .putString(SettingsActivity.KEY_ICON_PACK, mIconPackPackageName).apply();
             mIconCache.clearIconDataBase();
             mIconCache.flush();
             LauncherAppState.getInstance(iconsHandler.mContext).getModel().forceReload();
