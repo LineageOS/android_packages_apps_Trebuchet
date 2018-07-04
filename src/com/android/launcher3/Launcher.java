@@ -3090,6 +3090,10 @@ public class Launcher extends BaseActivity
         }
     }
 
+    public List<ComponentKeyMapper<AppInfo>> getPredictiveAppsList() {
+        return mPredictiveAppsProvider.getPredictions();
+    }
+
     /**
      * Updates the set of predicted apps if it hasn't been updated since the last time Launcher was
      * resumed.
@@ -3100,14 +3104,7 @@ public class Launcher extends BaseActivity
             return;
         }
 
-            List<ComponentKeyMapper<AppInfo>> apps;
-        if (mLauncherCallbacks == null) {
-            apps = mPredictiveAppsProvider.getPredictions();
-        } else {
-            apps = mLauncherCallbacks.getPredictedApps();
-        }
-
-        mAppsView.setPredictedApps(apps);
+        mAppsView.setPredictedApps(getPredictiveAppsList());
     }
 
     void lockAllApps() {

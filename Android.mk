@@ -17,6 +17,14 @@
 LOCAL_PATH := $(call my-dir)
 
 #
+# Prebuilt Launcher client library Libraries
+#
+include $(CLEAR_VARS)
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
+    libLauncherClient:libs/launcher_client.jar
+include $(BUILD_MULTI_PREBUILT)
+
+#
 # Build rule for Launcher3 app.
 #
 include $(CLEAR_VARS)
@@ -29,7 +37,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-appcompat \
     android-support-v7-recyclerview \
     android-support-v7-palette \
-    android-support-dynamic-animation
+    android-support-dynamic-animation \
+    libLauncherClient
 
 LOCAL_SRC_FILES := \
     $(call all-java-files-under, src) \

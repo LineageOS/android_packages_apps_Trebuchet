@@ -40,6 +40,7 @@ import android.provider.Settings;
 
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.notification.NotificationListener;
+import com.android.launcher3.searchlauncher.SearchLauncherCallbacks;
 import com.android.launcher3.util.SettingsObserver;
 import com.android.launcher3.views.ButtonPreference;
 
@@ -58,6 +59,7 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
+    public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
@@ -135,6 +137,11 @@ public class SettingsActivity extends Activity {
                 mIconBadgingObserver.register(NOTIFICATION_BADGING, NOTIFICATION_ENABLED_LISTENERS);
             }
 
+            SwitchPreference minusOne = (SwitchPreference) findPreference(KEY_MINUS_ONE);
+            if (!Utilities.hasPackageInstalled(getContext(),
+                    SearchLauncherCallbacks.SEARCH_PACKAGE)) {
+                homeGroup.removePreference(minusOne);
+            }
 
             SwitchPreference iconAdaptiveOverride = (SwitchPreference)
                     findPreference(KEY_FORCE_ADAPTIVE_ICONS);
