@@ -29,6 +29,8 @@ include $(BUILD_MULTI_PREBUILT)
 #
 include $(CLEAR_VARS)
 
+LOCAL_USE_AAPT2 := true
+
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
@@ -55,17 +57,15 @@ LOCAL_PROTOC_OPTIMIZE_TYPE := nano
 LOCAL_PROTOC_FLAGS := --proto_path=$(LOCAL_PATH)/protos/ --proto_path=$(LOCAL_PATH)/proto_overrides/
 LOCAL_PROTO_JAVA_OUTPUT_PARAMS := enum_style=java
 
-LOCAL_AAPT_FLAGS := \
-    --auto-add-overlay \
-    --extra-packages android.support.v7.recyclerview \
-
 LOCAL_SDK_VERSION := current
 LOCAL_MIN_SDK_VERSION := 23
 LOCAL_PACKAGE_NAME := Trebuchet
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3
 
-LOCAL_AAPT_FLAGS += --rename-manifest-package org.lineageos.trebuchet
+LOCAL_AAPT_FLAGS := \
+    --auto-add-overlay \
+    --rename-manifest-package org.lineageos.trebuchet
 
 LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/AndroidManifest-common.xml
 
@@ -77,6 +77,8 @@ include $(BUILD_PACKAGE)
 # Build rule for Launcher3 Go app for Android Go devices.
 #
 include $(CLEAR_VARS)
+
+LOCAL_USE_AAPT2 := true
 
 LOCAL_MODULE_TAGS := optional
 
@@ -104,17 +106,15 @@ LOCAL_PROTOC_OPTIMIZE_TYPE := nano
 LOCAL_PROTOC_FLAGS := --proto_path=$(LOCAL_PATH)/protos/ --proto_path=$(LOCAL_PATH)/proto_overrides/
 LOCAL_PROTO_JAVA_OUTPUT_PARAMS := enum_style=java
 
-LOCAL_AAPT_FLAGS := \
-    --auto-add-overlay \
-    --extra-packages android.support.v7.recyclerview \
-
 LOCAL_SDK_VERSION := current
 LOCAL_MIN_SDK_VERSION := 21
 LOCAL_PACKAGE_NAME := TrebuchetGo
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3Go Trebuchet
 
-LOCAL_AAPT_FLAGS += --rename-manifest-package org.lineageos.trebuchet
+LOCAL_AAPT_FLAGS := \
+    --auto-add-overlay \
+    --rename-manifest-package org.lineageos.trebuchet
 
 LOCAL_FULL_LIBS_MANIFEST_FILES := \
     $(LOCAL_PATH)/AndroidManifest.xml \
