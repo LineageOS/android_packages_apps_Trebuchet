@@ -3991,8 +3991,8 @@ public class Launcher extends BaseActivity
         CharSequence label = mIconCache.getCacheEntry(app).title;
 
         View dialogView = getLayoutInflater().inflate(R.layout.target_edit_dialog, null);
-        ImageView editIcon = (ImageView) dialogView.findViewById(R.id.edit_dialog_icon);
-        mIconEditTitle = (EditText) dialogView.findViewById(R.id.edit_dialog_title);
+        ImageView editIcon = dialogView.findViewById(R.id.edit_dialog_icon);
+        mIconEditTitle = dialogView.findViewById(R.id.edit_dialog_title);
         mIconEditTitle.setText(label);
 
         Bitmap originalIcon = mIconsHandler.getDrawableIconForPackage(component);
@@ -4007,21 +4007,29 @@ public class Launcher extends BaseActivity
         }
         editIcon.setImageBitmap(icon);
 
-        Pair<List<String>, List<String>> iconPacks = mIconsHandler.getAllIconPacks();
-        ListPopupWindow listPopup = new ListPopupWindow(this);
-        listPopup.setAdapter(new ArrayAdapter<>(this, R.layout.target_edit_dialog_item,
-                iconPacks.second));
-        listPopup.setWidth(getResources().getDimensionPixelSize(R.dimen.edit_dialog_min_width));
-        listPopup.setAnchorView(editIcon);
-        listPopup.setModal(true);
-        listPopup.setOnItemClickListener(getIconPackClickListener(info, component, label,
-                iconPacks.first));
+        final Pair<List<String>, List<String>> iconPacks = mIconsHandler.getAllIconPacks();
+        final Drawable editIconForeground;
 
-        editIcon.setOnClickListener(v -> {
-            if (!iconPacks.second.isEmpty()) {
-                listPopup.show();
-            }
-        });
+        // if no custom icon packs are installed, disallow icon editing
+        if (iconPacks.second.isEmpty()) {
+            editIconForeground = null;
+            editIcon.setEnabled(false);
+        } else {
+            editIconForeground = getDrawable(R.drawable.ic_icon_change);
+            editIcon.setEnabled(true);
+
+            ListPopupWindow listPopup = new ListPopupWindow(this);
+            listPopup.setAdapter(new ArrayAdapter<>(this, R.layout.target_edit_dialog_item,
+                    iconPacks.second));
+            listPopup.setWidth(getResources().getDimensionPixelSize(R.dimen.edit_dialog_min_width));
+            listPopup.setAnchorView(editIcon);
+            listPopup.setModal(true);
+            listPopup.setOnItemClickListener(getIconPackClickListener(info, component, label,
+                    iconPacks.first));
+
+            editIcon.setOnClickListener(v -> listPopup.show());
+        }
+        editIcon.setForeground(editIconForeground);
 
         mIconEditDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.app_edit_drop_target_label)
