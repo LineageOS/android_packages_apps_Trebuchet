@@ -1,3 +1,17 @@
+# Keep classes that may be inflated from XML.
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+
+# Keep annotated classes or class members.
+-keep @android.support.annotation.Keep class *
+-keepclassmembers class * {
+    @android.support.annotation.Keep *;
+}
+
 -keep,allowshrinking,allowoptimization class com.android.launcher3.** {
   *;
 }

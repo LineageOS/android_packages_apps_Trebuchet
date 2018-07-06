@@ -15,10 +15,14 @@
      limitations under the License.
 -->
 <resources>
-    <style name="ChooseIconTheme" parent="android:style/Theme.DeviceDefault.Settings">
+    <style name="ChooseIconTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="android:colorBackground">@color/icon_settings_background</item>
     </style>
 
     <style name="TextAppearance.Switch" parent="@android:style/TextAppearance.Material.Title" />
+
+    <style name="SettingsTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
 
 </resources>
