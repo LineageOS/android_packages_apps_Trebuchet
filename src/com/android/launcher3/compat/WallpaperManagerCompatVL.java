@@ -15,6 +15,7 @@
  */
 package com.android.launcher3.compat;
 
+import android.Manifest;
 import android.app.WallpaperInfo;
 import android.app.WallpaperManager;
 import android.app.job.JobInfo;
@@ -38,6 +39,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.ParcelFileDescriptor;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.graphics.Palette;
 import android.util.Log;
 import android.util.Pair;
@@ -214,7 +216,8 @@ public class WallpaperManagerCompatVL extends WallpaperManagerCompat {
                 // For live wallpaper, extract colors from thumbnail
                 drawable = info.loadThumbnail(getPackageManager());
             } else {
-                if (Utilities.ATLEAST_NOUGAT) {
+                if (Utilities.ATLEAST_NOUGAT && ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     try (ParcelFileDescriptor fd = wm.getWallpaperFile(FLAG_SYSTEM)) {
                         BitmapRegionDecoder decoder = BitmapRegionDecoder
                                 .newInstance(fd.getFileDescriptor(), false);
