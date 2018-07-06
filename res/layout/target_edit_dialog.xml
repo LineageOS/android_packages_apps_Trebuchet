@@ -28,7 +28,6 @@
         android:layout_gravity="bottom"
         android:layout_marginEnd="16dp"
         android:background="?android:selectableItemBackground"
-        android:foreground="@drawable/ic_icon_change"
         android:scaleType="fitCenter"
         tools:src="@mipmap/ic_launcher" />
 
