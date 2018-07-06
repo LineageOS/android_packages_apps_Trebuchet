@@ -34,9 +34,11 @@ LOCAL_USE_AAPT2 := true
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
+    android-support-v14-preference \
     android-support-v4 \
     android-support-v7-recyclerview \
     android-support-v7-palette \
+    android-support-v7-preference \
     android-support-dynamic-animation \
     libGoogleFeed
 
@@ -49,6 +51,8 @@ LOCAL_SRC_FILES := \
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
+    prebuilts/sdk/current/support/v14/preference/res \
+    prebuilts/sdk/current/support/v7/preference/res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
@@ -83,9 +87,11 @@ LOCAL_USE_AAPT2 := true
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
+    android-support-v14-preference \
     android-support-v4 \
     android-support-v7-recyclerview \
     android-support-v7-palette \
+    android-support-v7-preference \
     android-support-dynamic-animation
 
 LOCAL_SRC_FILES := \
@@ -98,6 +104,8 @@ LOCAL_SRC_FILES := \
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/go/res \
     $(LOCAL_PATH)/res \
+    prebuilts/sdk/current/support/v14/preference/res \
+    prebuilts/sdk/current/support/v7/preference/res \
     prebuilts/sdk/current/support/v7/recyclerview/res \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags

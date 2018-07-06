@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2015 Google Inc.
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Google Inc.
+     Copyright (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,8 +15,8 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v14.preference.SwitchPreference
         android:defaultValue="true"
         android:icon="@drawable/ic_settings_edit"
         android:key="pref_workspace_edit"
@@ -23,39 +25,39 @@
         android:summaryOn="@string/settings_edit_allow_summary_on"
         android:title="@string/settings_edit_allow_title" />
 
-    <PreferenceCategory
+    <android.support.v7.preference.PreferenceCategory
         android:key="category_home"
         android:title="@string/settings_category_home">
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_feed"
             android:key="pref_enable_minus_one"
             android:summary="@string/pref_show_google_now_summary"
             android:title="@string/title_show_google_app" />
 
-        <Preference
+        <android.support.v7.preference.Preference
             android:defaultValue="default"
             android:icon="@drawable/ic_settings_grid"
             android:key="pref_grid_size"
             android:persistent="true"
             android:title="@string/grid_size_text" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="@bool/allow_rotation"
             android:icon="@drawable/ic_settings_rotation"
             android:key="pref_allowRotation"
             android:persistent="true"
             android:title="@string/settings_rotation_title" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_swipe_down"
             android:key="pref_expand_statusbar"
             android:persistent="true"
             android:title="@string/statusbar_expand" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_add_shortcut"
             android:key="pref_add_icon_to_home"
@@ -63,17 +65,17 @@
             android:summary="@string/auto_add_shortcuts_description"
             android:title="@string/auto_add_shortcuts_label" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_label_workspace"
             android:key="pref_desktop_show_labels"
             android:persistent="true"
             android:title="@string/desktop_show_labels" />
-    </PreferenceCategory>
+    </android.support.v7.preference.PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/settings_category_drawer">
+    <android.support.v7.preference.PreferenceCategory android:title="@string/settings_category_drawer">
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_predictive"
             android:key="pref_predictive_apps"
@@ -82,23 +84,23 @@
             android:summaryOn="@string/predictive_apps_summary_on"
             android:title="@string/predictive_apps_title" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_label_drawer"
             android:key="pref_drawer_show_labels"
             android:persistent="true"
             android:title="@string/drawer_show_labels" />
-    </PreferenceCategory>
+    </android.support.v7.preference.PreferenceCategory>
 
-    <PreferenceCategory
+    <android.support.v7.preference.PreferenceCategory
         android:key="category_icons"
         android:title="@string/settings_category_icons">
 
-        <Preference
+        <android.support.v7.preference.Preference
             android:key="pref_icon_pack"
             android:title="@string/icon_pack_title" />
 
-        <ListPreference
+        <android.support.v7.preference.ListPreference
             android:defaultValue="@string/icon_shape_default"
             android:entries="@array/icon_shape_entries"
             android:entryValues="@array/icon_shape_paths"
@@ -108,7 +110,7 @@
             android:summary="%s"
             android:title="@string/settings_icon_shape" />
 
-        <SwitchPreference
+        <android.support.v14.preference.SwitchPreference
             android:defaultValue="false"
             android:icon="@drawable/ic_settings_force_adaptive"
             android:key="pref_icon_force_adaptive"
@@ -130,5 +132,5 @@
                     android:value="notification_badging" />
             </intent>
         </com.android.launcher3.views.ButtonPreference>
-    </PreferenceCategory>
-</PreferenceScreen>
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>
