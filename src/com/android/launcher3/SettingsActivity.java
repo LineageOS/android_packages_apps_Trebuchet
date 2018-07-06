@@ -40,6 +40,7 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -299,7 +300,7 @@ public class SettingsActivity extends Activity {
             ApplicationInfo info = null;
             String iconPack = mPrefs.getString(KEY_ICON_PACK, mDefaultIconPack);
             String summary = getString(R.string.icon_pack_system);
-            Drawable icon = getResources().getDrawable(android.R.mipmap.sym_def_app_icon);
+            Drawable icon = ContextCompat.getDrawable(getActivity(), android.R.mipmap.sym_def_app_icon);
 
             if (!mIconsHandler.isDefaultIconPack()) {
                 try {
