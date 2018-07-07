@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc00b5ba_132bbd6d",
+        "filename": "src/com/android/launcher3/compat/WallpaperManagerCompatVL.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2018-07-07T08:08:16Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 219,
+        "startChar": 100,
+        "endLine": 219,
+        "endChar": 102
+      },
+      "revId": "5d0ad57fa9e399b9b85d06f8b3e2280d1f1b02de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
