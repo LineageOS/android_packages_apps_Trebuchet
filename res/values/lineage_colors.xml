@@ -15,8 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <color name="colorAccent">#167c80</color>
-
     <color name="icon_settings_background">#333333</color>
     <color name="icon_settings_text">#f5f5f5</color>
 

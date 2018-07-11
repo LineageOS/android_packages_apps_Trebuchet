@@ -16,14 +16,12 @@
 -->
 <resources>
     <style name="ChooseIconTheme" parent="android:style/Theme.DeviceDefault.Settings">
-        <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/icon_settings_background</item>
     </style>
 
     <style name="TextAppearance.Switch" parent="@android:style/TextAppearance.Material.Title" />
 
     <style name="QuickSettingsTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:backgroundDimEnabled">true</item>

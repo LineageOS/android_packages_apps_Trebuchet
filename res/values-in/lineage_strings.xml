@@ -46,6 +46,7 @@
   <string name="icon_shape_squircle_name">Kotak melengkung</string>
   <!-- Preferences -->
   <string name="settings_category_home">Setelan layar utama</string>
+  <string name="settings_category_drawer">Setelan panel</string>
   <string name="settings_category_icons">Setelan ikon</string>
   <string name="settings_more">Lainnya</string>
   <string name="settings_rotation_title">Rotasi</string>
