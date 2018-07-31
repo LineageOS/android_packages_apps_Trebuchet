@@ -175,6 +175,7 @@ import com.android.quickstep.views.FloatingTaskView;
 import com.android.quickstep.views.OverviewActionsView;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskView;
+import com.android.systemui.plugins.shared.LauncherOverlayManager;
 import com.android.systemui.shared.system.ActivityManagerWrapper;
 import com.android.systemui.unfold.RemoteUnfoldSharedComponent;
 import com.android.systemui.unfold.UnfoldSharedComponent;
@@ -232,6 +233,11 @@ public class QuickstepLauncher extends Launcher {
     private SafeCloseable mViewCapture;
 
     private boolean mEnableWidgetDepth;
+
+    @Override
+    protected LauncherOverlayManager getDefaultOverlay() {
+        return new OverlayCallbackImpl(this);
+    }
 
     @Override
     protected void setupViews() {
