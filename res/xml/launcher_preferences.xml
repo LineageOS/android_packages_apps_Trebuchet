@@ -59,6 +59,12 @@
         launcher:logIdOff="616" />
 
     <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_enable_minus_one"
+        android:summary="@string/pref_show_google_now_summary"
+        android:title="@string/title_show_google_app" />
+
+    <SwitchPreference
         android:key="pref_desktop_show_labels"
         android:title="@string/desktop_show_labels"
         android:defaultValue="true"
