@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018-2023 The LineageOS Project
+<!-- Copyright (C) 2018 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,9 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
-
-    <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
-         returns duplicate labels for some reasons. -->
-    <bool name="config_appsListSortSections">false</bool>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 </resources>
