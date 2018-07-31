@@ -3097,11 +3097,7 @@ public class Launcher extends BaseActivity
     public void tryAndUpdatePredictedApps() {
         List<ComponentKeyMapper<AppInfo>> apps = null;
         if (mSharedPrefs.getBoolean("pref_predictive_apps", true)) {
-            if (mLauncherCallbacks == null) {
-                apps = mPredictiveAppsProvider.getPredictions();
-            } else {
-                apps = mLauncherCallbacks.getPredictedApps();
-            }
+            apps = mPredictiveAppsProvider.getPredictions();
         }
 
         if (apps != null) {
