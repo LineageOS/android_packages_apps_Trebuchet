@@ -76,6 +76,7 @@ import com.android.quickstep.SysUINavigationMode.Mode;
 import com.android.quickstep.SystemUiProxy;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskView;
+import com.android.systemui.plugins.shared.LauncherOverlayManager;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -92,6 +93,11 @@ public class QuickstepLauncher extends BaseQuickstepLauncher {
      */
     public static final AsyncCommand SET_SHELF_HEIGHT = (context, arg1, arg2) ->
             SystemUiProxy.INSTANCE.get(context).setShelfHeight(arg1 != 0, arg2);
+
+    @Override
+    protected LauncherOverlayManager getDefaultOverlay() {
+        return new OverlayCallbackImpl(this);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
