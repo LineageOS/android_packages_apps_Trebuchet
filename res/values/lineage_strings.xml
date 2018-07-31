@@ -25,6 +25,13 @@
     <string name="settings_lock_layout_summary_off">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
 
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Show Google app</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">When you swipe right from main home screen</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">When you swipe left from main home screen</string>
+
     <!-- Folder titles -->
     <string name="google_folder_title" translatable="false">Google</string>
 
