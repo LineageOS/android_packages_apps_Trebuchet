@@ -145,6 +145,8 @@ allprojects {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['libGoogleFeed.jar'])
+
     implementation "androidx.dynamicanimation:dynamicanimation:${ANDROID_X_VERSION}"
     implementation "androidx.recyclerview:recyclerview:${ANDROID_X_VERSION}"
     implementation "androidx.preference:preference:${ANDROID_X_VERSION}"
