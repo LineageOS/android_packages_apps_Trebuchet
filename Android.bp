@@ -133,6 +133,13 @@ java_library {
     min_sdk_version: min_launcher3_sdk_version,
 }
 
+java_import {
+    name: "libGoogleFeed",
+    jars: [
+        "libs/libGoogleFeed.jar",
+    ],
+}
+
 // Library with all the dependencies for building Launcher3
 android_library {
     name: "Launcher3ResLib",
@@ -165,6 +172,7 @@ android_library {
         "com_android_wm_shell_flags_lib",
         "android.appwidget.flags-aconfig-java",
         "com.android.window.flags.window-aconfig-java",
+        "libGoogleFeed",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
