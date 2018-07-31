@@ -118,6 +118,8 @@ repositories {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['libGoogleFeed.jar'])
+
     implementation "com.android.support:support-v4:${SUPPORT_LIBS_VERSION}"
     implementation "com.android.support:support-dynamic-animation:${SUPPORT_LIBS_VERSION}"
     implementation "com.android.support:recyclerview-v7:${SUPPORT_LIBS_VERSION}"

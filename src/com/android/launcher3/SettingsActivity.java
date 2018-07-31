@@ -36,6 +36,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
@@ -43,6 +44,8 @@ import android.widget.Adapter;
 import android.widget.ListView;
 
 import com.android.launcher3.graphics.IconShapeOverride;
+import com.android.launcher3.lineage.LineageLauncherCallbacks;
+import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.util.ListViewHighlighter;
 import com.android.launcher3.util.SettingsObserver;
@@ -65,6 +68,8 @@ public class SettingsActivity extends Activity {
     private static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     private static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
+
+    public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +141,12 @@ public class SettingsActivity extends Activity {
             } else {
                 // Initialize the UI once
                 rotationPref.setDefaultValue(getAllowRotationDefaultValue());
+
+                SwitchPreference minusOne = (SwitchPreference) findPreference(KEY_MINUS_ONE);
+                if (!LineageUtils.hasPackageInstalled(getActivity(),
+                        LineageLauncherCallbacks.SEARCH_PACKAGE)) {
+                    getPreferenceScreen().removePreference(minusOne);
+                }
             }
         }
 
