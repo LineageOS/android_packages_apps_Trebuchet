@@ -72,6 +72,9 @@ public class SettingsActivity extends FragmentActivity
 
     public static final String KEY_TRUST_APPS = "pref_trust_apps";
 
+    private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
+    private static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -213,6 +216,9 @@ public class SettingsActivity extends FragmentActivity
                     // Show if plugins are enabled or flag UI is enabled.
                     return FeatureFlags.showFlagTogglerUi(getContext()) ||
                             PluginManagerWrapper.hasPlugins(getContext());
+
+                case KEY_MINUS_ONE:
+                    return LineageUtils.isPackageEnabled(getActivity(), SEARCH_PACKAGE);
 
                 case KEY_TRUST_APPS:
                     preference.setOnPreferenceClickListener(p -> {
