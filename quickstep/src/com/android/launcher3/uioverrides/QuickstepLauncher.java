@@ -80,6 +80,7 @@ import com.android.quickstep.TaskUtils;
 import com.android.quickstep.util.QuickstepOnboardingPrefs;
 import com.android.quickstep.views.RecentsView;
 import com.android.quickstep.views.TaskView;
+import com.android.systemui.plugins.shared.LauncherOverlayManager;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -99,6 +100,11 @@ public class QuickstepLauncher extends BaseQuickstepLauncher {
 
     private FixedContainerItems mAllAppsPredictions;
     private HotseatPredictionController mHotseatPredictionController;
+
+    @Override
+    protected LauncherOverlayManager getDefaultOverlay() {
+        return new OverlayCallbackImpl(this);
+    }
 
     @Override
     protected void setupViews() {
