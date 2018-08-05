@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Force adaptive icons</string>
   <string name="settings_icon_force_adaptive_desc_on">Icons with a custom shape will be boxed</string>
   <string name="settings_icon_force_adaptive_desc_off">Icons with a custom shape will not be boxed</string>
-  <string name="settings_feed">Enable feed integration</string>
   <string name="settings_edit_allow_title">Allow edit</string>
   <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
   <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
   <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

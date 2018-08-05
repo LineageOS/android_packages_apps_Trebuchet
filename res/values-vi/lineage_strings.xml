@@ -58,9 +58,17 @@
   <string name="settings_icon_shape">Hình dạng biểu tượng</string>
   <string name="settings_icon_badging_desc_on">Một bong bóng sẽ được hiển thị trên biểu tượng khi có thông báo</string>
   <string name="settings_icon_badging_desc_off">Không có bong bóng nào được hiển thị phía trên biểu tượng khi có thông báo</string>
-  <string name="settings_feed">Bật tích hợp nguồn cấp dữ liệu</string>
+  <string name="settings_icon_force_adaptive_title">Buộc sử dụng biểu tượng tự thích ứng</string>
+  <string name="settings_icon_force_adaptive_desc_on">Biểu tượng với một hình dạng tùy chỉnh sẽ được đóng hộp</string>
+  <string name="settings_icon_force_adaptive_desc_off">Biểu tượng với một hình dạng tùy chỉnh sẽ không được đóng hộp</string>
   <string name="settings_edit_allow_title">Cho phép chỉnh sửa</string>
   <string name="settings_edit_allow_summary_on">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
   <string name="settings_edit_allow_summary_off">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
   <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_left">Khi bạn trượt sang trái từ màn hình chính</string>
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_right">Khi bạn trượt sang phải từ màn hình chính</string>
 </resources>

@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Forzar iconas adaptables</string>
   <string name="settings_icon_force_adaptive_desc_on">Os iconas cunha forma personalizada serán encaixados</string>
   <string name="settings_icon_force_adaptive_desc_off">Os iconas cunha forma personalizada non serán encaixados</string>
-  <string name="settings_feed">Activar a integración de fontes</string>
   <string name="settings_edit_allow_title">Permitir editar</string>
   <string name="settings_edit_allow_summary_on">Iconas e widgets pódense engadir, eliminar e mover na pantalla de inicio</string>
   <string name="settings_edit_allow_summary_off">Iconas e widgets no se poden engadir, eliminar e mover na pantalla de inicio</string>
   <string name="settings_edit_widgets_error">Non é posíbel engadir widgets á pantalla de inicio</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

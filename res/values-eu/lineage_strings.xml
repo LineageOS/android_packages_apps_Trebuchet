@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Behartu ikono moldagarriak</string>
   <string name="settings_icon_force_adaptive_desc_on">Forma desberdin bat duten ikonoak kutxa batean sartuko dira</string>
   <string name="settings_icon_force_adaptive_desc_off">Forma desberdin bat duten ikonoak ez dira kutxa batean sartuko</string>
-  <string name="settings_feed">Gaitu jarioen integrazioa</string>
   <string name="settings_edit_allow_title">Baimendu editatzea</string>
   <string name="settings_edit_allow_summary_on">Ikonoak eta trepetak hasieran pantailan gehitu, kendu daitezke eta lekuz aldatu daitezke</string>
   <string name="settings_edit_allow_summary_off">Ezin daitezke ikonoak eta trepetak hasieran pantailan gehitu, kendu edo lekuz aldatu</string>
   <string name="settings_edit_widgets_error">Ezin dira trepetak hasiera pantailara gehitu</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

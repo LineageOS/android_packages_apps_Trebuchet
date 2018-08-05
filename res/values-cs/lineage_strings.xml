@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Vynutit adaptivní ikony</string>
   <string name="settings_icon_force_adaptive_desc_on">Vlastní tvarované ikony budou zarámované</string>
   <string name="settings_icon_force_adaptive_desc_off">Vlastní tvarované ikony nebudou zarámované</string>
-  <string name="settings_feed">Povolit integraci kanálu</string>
   <string name="settings_edit_allow_title">Povolit úpravy</string>
   <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
   <string name="settings_edit_allow_summary_off">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
   <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

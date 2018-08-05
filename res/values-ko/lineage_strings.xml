@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">어댑티브 아이콘 강제 사용</string>
   <string name="settings_icon_force_adaptive_desc_on">아이콘을 특정 모양으로 둘러쌉니다.</string>
   <string name="settings_icon_force_adaptive_desc_off">아이콘을 특정 모양으로 둘러싸지 않습니다.</string>
-  <string name="settings_feed">피드 통합 사용</string>
   <string name="settings_edit_allow_title">편집 허용</string>
   <string name="settings_edit_allow_summary_on">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 있도록 허용합니다.</string>
   <string name="settings_edit_allow_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
   <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

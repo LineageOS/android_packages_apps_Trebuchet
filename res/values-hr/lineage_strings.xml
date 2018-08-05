@@ -58,9 +58,11 @@
   <string name="settings_icon_shape">Oblik ikona</string>
   <string name="settings_icon_badging_desc_on">Kružić će se prikazati iznad ikone kad imate neku obavijest</string>
   <string name="settings_icon_badging_desc_off">Kružić se neće prikazati ka iznad ikone imate neku obavijest</string>
-  <string name="settings_feed">Omogući integraciju s feedom</string>
   <string name="settings_edit_allow_title">Dopusti uređivanje</string>
   <string name="settings_edit_allow_summary_on">Ikone i widgeti se mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
   <string name="settings_edit_allow_summary_off">Ikone i widgeti se ne mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
   <string name="settings_edit_widgets_error">Nije moguće dodavati widgete na početni zaslon</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

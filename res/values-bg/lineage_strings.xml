@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Използвайте адаптивни икони</string>
   <string name="settings_icon_force_adaptive_desc_on">Икони с нестандартна форма ще бъдат върху субстрата</string>
   <string name="settings_icon_force_adaptive_desc_off">Икони с нестандартна форма няма бъдат върху субстрата</string>
-  <string name="settings_feed">Разреши емисия интеграция</string>
   <string name="settings_edit_allow_title">Разреши редактиране</string>
   <string name="settings_edit_allow_summary_on">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
   <string name="settings_edit_allow_summary_off">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
   <string name="settings_edit_widgets_error">Невъзможно е да се добавят джаджи към началния екран</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

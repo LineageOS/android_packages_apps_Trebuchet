@@ -58,9 +58,11 @@
   <string name="settings_icon_shape">Kuvakkeiden muoto</string>
   <string name="settings_icon_badging_desc_on">Kupla tulee kuvakkeen yläpuolella kun ilmoitus tulee</string>
   <string name="settings_icon_badging_desc_off">Ei kuplaa kuvakkeen yläpuolella kun ilmoitus tulee</string>
-  <string name="settings_feed">Ota syöte käyttöön</string>
   <string name="settings_edit_allow_title">Salli muokkaaminen</string>
   <string name="settings_edit_allow_summary_on">Kuvakkeet ja widgetit voi lisätä, poistaa tai siirtää kotinäytöllä</string>
   <string name="settings_edit_allow_summary_off">Kuvakkeita ja widgettejä ei voi lisätä, poistaa tai siirtää kotinäytöllä</string>
   <string name="settings_edit_widgets_error">Kotinäytölle ei ole mahdollista lisätä widgettejä</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

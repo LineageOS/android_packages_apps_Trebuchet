@@ -61,9 +61,11 @@
   <string name="settings_icon_force_adaptive_title">Forcer les icônes adaptatives</string>
   <string name="settings_icon_force_adaptive_desc_on">Encadrer les icônes ayant une forme personnalisée</string>
   <string name="settings_icon_force_adaptive_desc_off">Ne pas encadrer les icônes ayant une forme personnalisée</string>
-  <string name="settings_feed">Activer l\'intégration de flux</string>
   <string name="settings_edit_allow_title">Autoriser les modifications</string>
   <string name="settings_edit_allow_summary_on">Autoriser l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
   <string name="settings_edit_allow_summary_off">Empêcher l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
   <string name="settings_edit_widgets_error">Impossible d\'ajouter des widgets sur l\'écran d\'accueil</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>
