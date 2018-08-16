@@ -66,6 +66,9 @@
   <string name="settings_edit_allow_summary_off">Ezin daitezke ikonoak eta trepetak hasieran pantailan gehitu, kendu edo lekuz aldatu</string>
   <string name="settings_edit_widgets_error">Ezin dira trepetak hasiera pantailara gehitu</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Erakutsi Google aplikazioa</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_left">Hasiera pantailatik hatza ezkerrera pasatzean</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_right">Hasiera pantailatik hatza eskuinera pasatzean</string>
 </resources>

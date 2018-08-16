@@ -146,6 +146,7 @@
   <!-- Accessibility description for the shortcuts menu shown for an app. -->
   <!-- Accessibility description when the shortcuts menu has notifications as well as shortcuts. -->
   <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
+  <string name="action_dismiss_notification">Wfftio</string>
   <!-- Accessibility confirmation for notification being dismissed. -->
-  <string name="notification_dismissed">Diddymwyd yr hysbysiad</string>
+  <string name="notification_dismissed">Cafodd yr hysbysiad ei wfftio</string>
 </resources>

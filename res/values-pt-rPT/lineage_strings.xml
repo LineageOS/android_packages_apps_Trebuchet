@@ -66,6 +66,9 @@
   <string name="settings_edit_allow_summary_off">Ícones e widgets não podem ser adicionados, removidos e movidos no ecrã inicial</string>
   <string name="settings_edit_widgets_error">Não é possível adicionar widgets ao ecrã inicial</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Mostrar aplicação Google</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_left">Ao deslizar para a esquerda no ecrã principal</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_right">Ao deslizar para a direita no ecrã principal</string>
 </resources>

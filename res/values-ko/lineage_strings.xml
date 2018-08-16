@@ -66,6 +66,7 @@
   <string name="settings_edit_allow_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
   <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Google 앱 표시</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>
