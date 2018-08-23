@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Kształt ikon</string>
   <string name="settings_icon_badging_desc_on">Bąble nad ikoną będą wyświetlane jeśli są powiadomienia</string>
   <string name="settings_icon_badging_desc_off">Bąble nad ikoną nie będą wyświetlane jeśli nie ma powiadomień</string>
+  <string name="settings_icon_force_adaptive_title">Wymuś adaptacje ikon</string>
+  <string name="settings_icon_force_adaptive_desc_on">Kształt niestandardowych ikon będzie wymuszany</string>
+  <string name="settings_icon_force_adaptive_desc_off">Kształt niestandardowych ikon nie będzie wymuszany</string>
   <string name="settings_feed">Włącz integrację z feed</string>
   <string name="settings_edit_allow_title">Zezwalaj na edycję</string>
   <string name="settings_edit_allow_summary_on">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>

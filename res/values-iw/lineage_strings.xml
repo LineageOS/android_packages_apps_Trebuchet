@@ -58,6 +58,7 @@
   <string name="settings_icon_shape">צורת סמלים</string>
   <string name="settings_icon_badging_desc_on">תוצג בועה מעל הסמל כשישנן התראות חדשות</string>
   <string name="settings_icon_badging_desc_off">לא תוצג בועה מעל הסמל כשישנן התראות חדשות</string>
+  <string name="settings_icon_force_adaptive_title">כפה סמלים מותאמים</string>
   <string name="settings_feed">אפשר שילוב בתזרים</string>
   <string name="settings_edit_allow_title">אפשר עריכה</string>
   <string name="settings_edit_allow_summary_on">ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>

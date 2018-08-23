@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Symbolform</string>
   <string name="settings_icon_badging_desc_on">Eine Blase wird über dem Symbol angezeigt, wenn eine Benachrichtigung ansteht</string>
   <string name="settings_icon_badging_desc_off">Es wird keine Blase über dem Symbol angezeigt, wenn eine Benachrichtigung ansteht</string>
+  <string name="settings_icon_force_adaptive_title">Adaptive Symbole erzwingen</string>
+  <string name="settings_icon_force_adaptive_desc_on">Symbole mit benutzerdefinierter Form werden eingerahmt</string>
+  <string name="settings_icon_force_adaptive_desc_off">Symbole mit benutzerdefinierter Form werden nicht eingerahmt</string>
   <string name="settings_feed">Feed-Integration aktivieren</string>
   <string name="settings_edit_allow_title">Bearbeiten zulassen</string>
   <string name="settings_edit_allow_summary_on">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>

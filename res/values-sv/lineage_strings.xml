@@ -20,6 +20,7 @@
   <!-- Folder titles -->
   <string name="play_folder_title">Spela upp</string>
   <!-- Expand statusbar -->
+  <string name="statusbar_expand">Svep nedåt för att visa notiser</string>
   <!-- Predictive apps -->
   <!-- Grid size -->
   <string name="grid_size_text">Rutnätsstorlek</string>
@@ -35,9 +36,14 @@
   <string name="icon_pack_suggestions">Förslag</string>
   <string name="icon_pack_all_icons">Alla ikoner</string>
   <string name="icon_pack_reset">Återställ</string>
+  <string name="icon_pack_system">Systemstandard</string>
   <!-- Icon shapes -->
   <string name="icon_shape_circle_name">Cirkel</string>
+  <string name="icon_shape_teardrop_name">Droppe</string>
   <!-- Preferences -->
+  <string name="settings_category_home">Hemskärmsinställningar</string>
+  <string name="settings_category_drawer">Inställningar för applistan</string>
+  <string name="settings_category_icons">Ikoninställningar</string>
   <string name="settings_more">Mer</string>
   <string name="settings_rotation_title">Rotation</string>
 </resources>

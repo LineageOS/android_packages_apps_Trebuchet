@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Změna tvaru ikon</string>
   <string name="settings_icon_badging_desc_on">Při obdržení upozornění se nad ikonou zobrazí bublina</string>
   <string name="settings_icon_badging_desc_off">Při obdržení upozornění se nad ikonou nezobrazí bublina</string>
+  <string name="settings_icon_force_adaptive_title">Vynutit adaptivní ikony</string>
+  <string name="settings_icon_force_adaptive_desc_on">Vlastní tvarované ikony budou zarámované</string>
+  <string name="settings_icon_force_adaptive_desc_off">Vlastní tvarované ikony nebudou zarámované</string>
   <string name="settings_feed">Povolit integraci kanálu</string>
   <string name="settings_edit_allow_title">Povolit úpravy</string>
   <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>

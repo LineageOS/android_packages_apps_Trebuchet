@@ -58,6 +58,9 @@
   <string name="settings_icon_shape">Форма на иконите</string>
   <string name="settings_icon_badging_desc_on">Индикацията ще се покажие над иконата, когато е налице уведомяване</string>
   <string name="settings_icon_badging_desc_off">Индикацията няма да се покажие над иконата, когато е налице уведомяване</string>
+  <string name="settings_icon_force_adaptive_title">Използвайте адаптивни икони</string>
+  <string name="settings_icon_force_adaptive_desc_on">Икони с нестандартна форма ще бъдат върху субстрата</string>
+  <string name="settings_icon_force_adaptive_desc_off">Икони с нестандартна форма няма бъдат върху субстрата</string>
   <string name="settings_feed">Разреши емисия интеграция</string>
   <string name="settings_edit_allow_title">Разреши редактиране</string>
   <string name="settings_edit_allow_summary_on">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
