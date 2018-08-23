@@ -61,7 +61,6 @@
     <string name="settings_category_home">Home screen settings</string>
     <string name="settings_category_drawer">Drawer settings</string>
     <string name="settings_category_icons">Icon settings</string>
-    <string name="settings_more">More</string>
     <string name="settings_rotation_title">Rotation</string>
     <string name="settings_allow_rotation_desc">Allow using the homescreen in landscape when the device is rotated</string>
     <string name="settings_icon_shape">Icons shape</string>

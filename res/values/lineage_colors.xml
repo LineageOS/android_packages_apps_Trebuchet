@@ -29,6 +29,5 @@
     <!-- Settings -->
     <color name="settings_sheet_background">#f5f5f5</color>
     <color name="settings_statusbar_dim">#bdbdbd</color>
-    <color name="settings_quick_icons">#424242</color>
     <color name="settings_icons">#424242</color>
 </resources>
