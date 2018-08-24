@@ -177,7 +177,7 @@ public class SettingsActivity extends Activity {
             }
 
             SwitchPreference minusOne = (SwitchPreference) findPreference(KEY_MINUS_ONE);
-            if (!Utilities.hasPackageInstalled(getContext(),
+            if (!Utilities.hasPackageInstalled(Utilities.ATLEAST_MARSHMALLOW?getContext():getActivity().getApplicationContext(),
                     SearchLauncherCallbacks.SEARCH_PACKAGE)) {
                 homeGroup.removePreference(minusOne);
             }
