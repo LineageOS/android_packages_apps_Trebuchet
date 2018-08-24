@@ -175,5 +175,11 @@
             android:label="@string/icon_pack_picker"
             android:autoRemoveFromRecents="true"
             android:theme="@android:style/Theme.DeviceDefault.Settings" />
+
+        <activity
+            android:name=".protect.ProtectedManagerActivity"
+            android:label="@string/protected_apps_manager_name"
+            android:theme="@android:style/Theme.DeviceDefault.Settings"
+            android:autoRemoveFromRecents="true" />
     </application>
 </manifest>

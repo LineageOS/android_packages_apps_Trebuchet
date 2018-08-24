@@ -48,6 +48,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.NumberPicker;
 
+import com.android.launcher3.protect.ProtectedManagerActivity;
+
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.icons.IconsHandler;
 import com.android.launcher3.notification.NotificationListener;
@@ -154,6 +156,16 @@ public class SettingsActivity extends Activity {
                 mIconBadgingObserver = new IconBadgingObserver(
                         iconBadgingPref, resolver, getFragmentManager());
                 mIconBadgingObserver.register(NOTIFICATION_BADGING, NOTIFICATION_ENABLED_LISTENERS);
+            }
+
+            Preference protectedApps = findPreference("pref_protected_apps");
+            if (protectedApps != null) {
+                protectedApps.setOnPreferenceClickListener(preference -> {
+                    Intent intent = new Intent(getActivity(), ProtectedManagerActivity.class);
+                    getActivity().startActivity(intent);
+                    getActivity().finish();
+                    return true;
+                });
             }
 
             mIconPackPref = findPreference(KEY_ICON_PACK);

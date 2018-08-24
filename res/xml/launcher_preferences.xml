@@ -23,6 +23,11 @@
         android:summaryOn="@string/settings_edit_allow_summary_on"
         android:title="@string/settings_edit_allow_title" />
 
+    <Preference
+        android:key="pref_protected_apps"
+        android:title="@string/protected_apps_manager_name"
+        android:icon="@drawable/ic_settings_trust" />
+
     <PreferenceCategory
         android:key="category_home"
         android:title="@string/settings_category_home">

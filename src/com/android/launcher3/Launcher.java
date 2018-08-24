@@ -26,6 +26,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.ActivityOptions;
 import android.app.AlertDialog;
+import android.app.KeyguardManager;
 import android.app.SearchManager;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
@@ -127,6 +128,8 @@ import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.pageindicators.PageIndicator;
 import com.android.launcher3.popup.PopupContainerWithArrow;
 import com.android.launcher3.popup.PopupDataProvider;
+import com.android.launcher3.protect.ProtectedDatabaseHelper;
+import com.android.launcher3.protect.ProtectedManagerActivity;
 import com.android.launcher3.shortcuts.DeepShortcutManager;
 import com.android.launcher3.userevent.nano.LauncherLogProto;
 import com.android.launcher3.userevent.nano.LauncherLogProto.Action;
@@ -193,6 +196,10 @@ public class Launcher extends BaseActivity
     private static final int REQUEST_PERMISSION_CALL_PHONE = 14;
 
     private static final float BOUNCE_ANIMATION_TENSION = 1.3f;
+
+    private View protectPending_view;
+    private Intent protectPending_intent;
+    private ItemInfo protectPending_item;
 
     /**
      * IntentStarter uses request codes starting with this. This must be greater than all activity
@@ -703,6 +710,13 @@ public class Launcher extends BaseActivity
             return;
         }
         mPendingActivityResult = null;
+
+        if (requestCode == ProtectedManagerActivity.REQUEST_AUTH_CODE) {
+            if (resultCode == RESULT_OK) {
+                startApp(protectPending_view, protectPending_intent, protectPending_item);
+            }
+            return;
+        }
 
         // Reset the startActivity waiting flag
         final PendingRequestArgs requestArgs = mPendingRequestArgs;
@@ -2477,15 +2491,28 @@ public class Launcher extends BaseActivity
         startAppShortcutOrInfoActivity(v);
     }
 
-    private void startAppShortcutOrInfoActivity(View v) {
-        ItemInfo item = (ItemInfo) v.getTag();
-        Intent intent;
-        if (item instanceof PromiseAppInfo) {
-            PromiseAppInfo promiseAppInfo = (PromiseAppInfo) item;
-            intent = promiseAppInfo.getMarketIntent();
-        } else {
-            intent = item.getIntent();
+    private void authenticateApp() {
+        String title;
+        try {title = (String) getPackageManager().getApplicationLabel(getPackageManager().getApplicationInfo(protectPending_intent.getComponent().getPackageName(), PackageManager.GET_META_DATA));}
+        catch (PackageManager.NameNotFoundException e) {title = "";}
+        String message = getString(R.string.protected_apps_auth_app)+' '+title;
+
+        KeyguardManager manager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
+        if (manager == null) {
+            finish();
+            return;
         }
+
+        Intent intent = manager.createConfirmDeviceCredentialIntent(title, message);
+        if (intent == null) {
+            Toast.makeText(this, R.string.protected_apps_no_lock_error, Toast.LENGTH_LONG)
+                    .show();
+            return;
+        }
+        startActivityForResult(intent, ProtectedManagerActivity.REQUEST_AUTH_CODE);
+    }
+
+    private void startApp(View v, Intent intent, ItemInfo item) {
         if (intent == null) {
             throw new IllegalArgumentException("Input must have a valid intent");
         }
@@ -2496,6 +2523,26 @@ public class Launcher extends BaseActivity
             mWaitingForResume = (BubbleTextView) v;
             mWaitingForResume.setStayPressed(true);
         }
+    }
+
+    private void startAppShortcutOrInfoActivity(View v) {
+        ItemInfo item = (ItemInfo) v.getTag();
+        Intent intent;
+        if (item instanceof PromiseAppInfo) {
+            PromiseAppInfo promiseAppInfo = (PromiseAppInfo) item;
+            intent = promiseAppInfo.getMarketIntent();
+        } else {
+            ProtectedDatabaseHelper mDbHelper = ProtectedDatabaseHelper.getInstance(v.getContext());
+            intent = item.getIntent();
+            if (mDbHelper.isPackageProtected(intent.getComponent().getPackageName())) {
+                protectPending_view = v;
+                protectPending_intent = intent;
+                protectPending_item = item;
+                authenticateApp();
+                return;
+            }
+        }
+        startApp(v, intent, item);
     }
 
     /**

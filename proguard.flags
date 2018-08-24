@@ -116,3 +116,7 @@
 -keep class com.android.launcher3.graphics.** {
  *;
 }
+
+-keep class com.android.launcher3.protect.** {
+ *;
+}

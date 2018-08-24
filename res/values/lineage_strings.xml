@@ -74,6 +74,13 @@
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
 
+    <!-- Protected apps -->
+    <string name="protected_apps_manager_name">Protected apps</string>
+    <string name="protected_apps_auth_manager">Unlock to manage the protected apps</string>
+    <string name="protected_apps_auth_app">Unlock to access</string>
+    <string name="protected_apps_loading">Loading\u2026</string>
+    <string name="protected_apps_no_lock_error">Please set up a secure lock screen to restrict access</string>
+
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Show Google app</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
