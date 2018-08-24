@@ -32,13 +32,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-<<<<<<< HEAD
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-=======
->>>>>>> pr/8
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
