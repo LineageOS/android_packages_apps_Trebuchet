@@ -238,8 +238,8 @@ public class IconPickerActivity extends Activity {
             if (holder.getItemViewType() != TYPE_MATCHING_HEADER
                     && holder.getItemViewType() != TYPE_ALL_HEADER) {
                 boolean drawablesMatching = holder.getItemViewType() == TYPE_MATCHING_ICONS;
-                final List<String> drawables = drawablesMatching ?
-                        mMatchingDrawables : mAllDrawables;
+                final List<String> drawables = new ArrayList<>(drawablesMatching ?
+                        mMatchingDrawables : mAllDrawables);
                 if (holder.getAdapterPosition() >= drawables.size()) {
                     return;
                 }
