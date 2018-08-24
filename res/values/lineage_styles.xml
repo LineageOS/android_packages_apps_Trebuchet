@@ -16,7 +16,6 @@
 -->
 <resources>
     <style name="ChooseIconTheme" parent="android:style/Theme.DeviceDefault.Settings">
-        <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/icon_settings_background</item>
     </style>
 
