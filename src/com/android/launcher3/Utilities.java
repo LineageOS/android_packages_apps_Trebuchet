@@ -707,11 +707,6 @@ public final class Utilities {
         return !(currentPack.equals(defaultPack) || currentPack.equals(defaultLocalizedPack));
     }
 
-    static boolean hasFeedIntegration(Context context) {
-        SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(SettingsActivity.KEY_FEED_INTEGRATION, false);
-    }
-
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_WORKSPACE_EDIT, true);
@@ -753,5 +748,14 @@ public final class Utilities {
     public static boolean arePredictiveAppsEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_PREDICTIVE_APPS, false);
+    }
+
+    public static boolean hasPackageInstalled(Context context, String pkgName) {
+        try {
+            ApplicationInfo ai = context.getPackageManager().getApplicationInfo(pkgName, 0);
+            return ai.enabled;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }

@@ -61,9 +61,14 @@
   <string name="settings_icon_force_adaptive_title">Simgeleri uyarlamaya zorla</string>
   <string name="settings_icon_force_adaptive_desc_on">Özel bir şekle sahip simgeler kutulu olacak</string>
   <string name="settings_icon_force_adaptive_desc_off">Özel bir şekle sahip simgeler kutulu olmayacak</string>
-  <string name="settings_feed">Yayın entegrasyonunu etkinleştir</string>
   <string name="settings_edit_allow_title">Düzenlemeye izin ver</string>
   <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
   <string name="settings_edit_allow_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
   <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Google uygulamasını göster</string>
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_left">Ana ekrandan sola kaydırdığınızda</string>
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_right">Ana ekrandan sağa kaydırdığınızda</string>
 </resources>

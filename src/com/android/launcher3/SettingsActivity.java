@@ -32,10 +32,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+<<<<<<< HEAD
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+=======
+>>>>>>> pr/8
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -51,6 +54,7 @@ import android.widget.NumberPicker;
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.icons.IconsHandler;
 import com.android.launcher3.notification.NotificationListener;
+import com.android.launcher3.searchlauncher.SearchLauncherCallbacks;
 import com.android.launcher3.util.SettingsObserver;
 import com.android.launcher3.views.ButtonPreference;
 
@@ -69,7 +73,7 @@ public class SettingsActivity extends Activity {
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
-    static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
+    public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
@@ -94,7 +98,7 @@ public class SettingsActivity extends Activity {
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class LauncherSettingsFragment extends PreferenceFragment 
+    public static class LauncherSettingsFragment extends PreferenceFragment
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
         private SystemDisplayRotationLockObserver mRotationLockObserver;
@@ -175,10 +179,10 @@ public class SettingsActivity extends Activity {
                 mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaulGridSize()));
             }
 
-            SwitchPreference feedIntegration = (SwitchPreference)
-                    findPreference(KEY_FEED_INTEGRATION);
-            if (!hasPackageInstalled(LauncherTab.SEARCH_PACKAGE)) {
-                homeGroup.removePreference(feedIntegration);
+            SwitchPreference minusOne = (SwitchPreference) findPreference(KEY_MINUS_ONE);
+            if (!Utilities.hasPackageInstalled(getContext(),
+                    SearchLauncherCallbacks.SEARCH_PACKAGE)) {
+                homeGroup.removePreference(minusOne);
             }
 
             SwitchPreference iconAdaptiveOverride = (SwitchPreference)
@@ -322,19 +326,6 @@ public class SettingsActivity extends Activity {
             AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             manager.set(AlarmManager.RTC, java.lang.System.currentTimeMillis() + 1, pi);
             java.lang.System.exit(0);
-        }
-
-        private boolean hasPackageInstalled(String pkgName) {
-            try {
-                ApplicationInfo ai;
-                if (Utilities.ATLEAST_MARSHMALLOW) {
-                    ai = getContext().getPackageManager().getApplicationInfo(pkgName, 0);
-                }
-                else ai = getActivity().getPackageManager().getApplicationInfo(pkgName, 0);;
-                return ai.enabled;
-            } catch (PackageManager.NameNotFoundException e) {
-                return false;
-            }
         }
     }
 

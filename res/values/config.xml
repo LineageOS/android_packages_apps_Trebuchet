@@ -154,4 +154,5 @@
     <item type="id" name="search_container_hotseat" />
     <item type="id" name="search_container_all_apps" />
 
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
 </resources>

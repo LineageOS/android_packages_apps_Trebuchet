@@ -61,9 +61,14 @@
   <string name="settings_icon_force_adaptive_title">Vsili prilagodljive ikone</string>
   <string name="settings_icon_force_adaptive_desc_on">Ikone z obliko po meri bodo uokvirjene</string>
   <string name="settings_icon_force_adaptive_desc_off">Ikone z obliko po meri ne bodo uokvirjene</string>
-  <string name="settings_feed">Omogoči vdelavo vira</string>
   <string name="settings_edit_allow_title">Dovoli urejanje</string>
   <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
   <string name="settings_edit_allow_summary_off">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
   <string name="settings_edit_widgets_error">Dodajanje pripomočkov na domači zaslon ni mogoče</string>
+  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Pokaži Google aplikacijo</string>
+  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_left">Ko potegnete levo od glavnega domačega zaslona</string>
+  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+  <string name="msg_minus_one_on_right">Ko potegnete desno od glavnega domačega zaslona</string>
 </resources>
