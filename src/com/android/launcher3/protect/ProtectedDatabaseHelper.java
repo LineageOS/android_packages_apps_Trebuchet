@@ -21,6 +21,8 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     private static final String CMD_DELETE_PKG = "DELETE FROM %1$s WHERE %2$s = \'%3$s\'";
     private SQLiteDatabase db;
 
+    private boolean checkTimeout = false;
+
     private static ProtectedDatabaseHelper sInstance = null;
 
     private ProtectedDatabaseHelper(Context context) {
@@ -30,11 +32,18 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     public static ProtectedDatabaseHelper getInstance(Context context) {
         if (sInstance == null) {
             sInstance = new ProtectedDatabaseHelper(context);
-            sInstance.setIdleConnectionTimeout(Long.MAX_VALUE);
+            try {sInstance.setIdleConnectionTimeout(Long.MAX_VALUE);}
+            catch (java.lang.NoSuchMethodError e){sInstance.checkTimeout=true;}
             sInstance.db = sInstance.getWritableDatabase();
         }
+        else sInstance.checkTimeout();
 
         return sInstance;
+    }
+
+    public void checkTimeout() {
+        if (checkTimeout && !db.isOpen())
+            db = getWritableDatabase();
     }
 
     @Override
@@ -47,6 +56,7 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void addApp(@NonNull String packageName) {
+        sInstance.checkTimeout();
         if (isPackageProtected(packageName)) {
             return;
         }
@@ -58,6 +68,7 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void removeApp(@NonNull String packageName) {
+        sInstance.checkTimeout();
         if (!isPackageProtected(packageName)) {
             return;
         }
@@ -66,6 +77,7 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public boolean isPackageProtected(@NonNull String packageName) {
+        sInstance.checkTimeout();
         String query = String.format(CMD_LOOK_FOR_PKG, TABLE_NAME, KEY_PKGNAME, packageName);
         Cursor cursor = db.rawQuery(query, null);
         boolean result = cursor.getCount() != 0;
