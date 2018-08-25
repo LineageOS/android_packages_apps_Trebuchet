@@ -19,6 +19,7 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
             "(%2$s INTEGER PRIMARY KEY AUTOINCREMENT, %3$s TEXT);";
     private static final String CMD_LOOK_FOR_PKG = "SELECT * FROM %1$s WHERE %2$s = \'%3$s\'";
     private static final String CMD_DELETE_PKG = "DELETE FROM %1$s WHERE %2$s = \'%3$s\'";
+    private SQLiteDatabase db;
 
     private static ProtectedDatabaseHelper sInstance = null;
 
@@ -29,6 +30,8 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
     public static ProtectedDatabaseHelper getInstance(Context context) {
         if (sInstance == null) {
             sInstance = new ProtectedDatabaseHelper(context);
+            sInstance.setIdleConnectionTimeout(Long.MAX_VALUE);
+            sInstance.db = sInstance.getWritableDatabase();
         }
 
         return sInstance;
@@ -48,12 +51,10 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
             return;
         }
 
-        SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put(KEY_PKGNAME, packageName);
         db.insert(TABLE_NAME, null, values);
-        db.close();
     }
 
     public void removeApp(@NonNull String packageName) {
@@ -61,19 +62,15 @@ public final class ProtectedDatabaseHelper extends SQLiteOpenHelper {
             return;
         }
 
-        SQLiteDatabase db = getWritableDatabase();
         db.execSQL(String.format(CMD_DELETE_PKG, TABLE_NAME, KEY_PKGNAME, packageName));
-        db.close();
     }
 
     public boolean isPackageProtected(@NonNull String packageName) {
         String query = String.format(CMD_LOOK_FOR_PKG, TABLE_NAME, KEY_PKGNAME, packageName);
-        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         boolean result = cursor.getCount() != 0;
 
         cursor.close();
-        db.close();
 
         return result;
     }
