@@ -76,6 +76,7 @@ public class SettingsActivity extends Activity {
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
+    public static final String KEY_THEME_DARK = "pref_theme_dark";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
     private static final String KEY_GRID_SIZE = "pref_grid_size";
@@ -310,6 +311,7 @@ public class SettingsActivity extends Activity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
             switch (key) {
+                case KEY_THEME_DARK:
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
                 case KEY_FORCE_ADAPTIVE_ICONS:

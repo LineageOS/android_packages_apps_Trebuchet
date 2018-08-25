@@ -403,7 +403,8 @@ public class Launcher extends BaseActivity
 
         WallpaperColorInfo wallpaperColorInfo = WallpaperColorInfo.getInstance(this);
         wallpaperColorInfo.setOnThemeChangeListener(this);
-        overrideTheme(wallpaperColorInfo.isDark(), wallpaperColorInfo.supportsDarkText());
+        boolean isDark = Utilities.getPrefs(this).getBoolean(SettingsActivity.KEY_THEME_DARK, false);
+        overrideTheme(isDark, wallpaperColorInfo.supportsDarkText());
 
         super.onCreate(savedInstanceState);
 
@@ -4057,7 +4058,7 @@ public class Launcher extends BaseActivity
                 .create();
 
         // Set background color
-        boolean isDark = Themes.getAttrBoolean(this, R.attr.isMainColorDark);
+        boolean isDark = Utilities.getPrefs(this).getBoolean(SettingsActivity.KEY_THEME_DARK, false);
         Window dialogWindow = mIconEditDialog.getWindow();
         if (dialogWindow != null) {
             dialogWindow.setBackgroundDrawableResource(isDark ?

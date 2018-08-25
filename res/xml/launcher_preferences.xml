@@ -79,6 +79,15 @@
     <PreferenceCategory android:title="@string/settings_category_drawer">
 
         <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_settings_theme"
+            android:key="pref_theme_dark"
+            android:persistent="true"
+            android:summaryOff="@string/theme_summary_light"
+            android:summaryOn="@string/theme_summary_dark"
+            android:title="@string/settings_theme_dark" />
+
+        <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_settings_predictive"
             android:key="pref_predictive_apps"

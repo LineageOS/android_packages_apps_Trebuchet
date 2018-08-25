@@ -57,6 +57,10 @@
     <string name="icon_shape_squircle_name">Squircle</string>
     <string name="icon_shape_teardrop_name">Teardrop</string>
 
+    <!-- Dark/Light theme -->
+    <string name="theme_summary_light">Using light theme</string>
+    <string name="theme_summary_dark">Using dark theme</string>
+
     <!-- Preferences -->
     <string name="settings_category_home">Home screen settings</string>
     <string name="settings_category_drawer">Drawer settings</string>
@@ -73,6 +77,7 @@
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+    <string name="settings_theme_dark">Dark theme</string>
 
     <!-- Protected apps -->
     <string name="protected_apps_manager_name">Protected apps</string>
