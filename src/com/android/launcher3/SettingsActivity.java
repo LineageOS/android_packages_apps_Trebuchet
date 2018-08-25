@@ -112,6 +112,7 @@ public class SettingsActivity extends Activity {
         private IconsHandler mIconsHandler;
         private PackageManager mPackageManager;
         private Preference mIconPackPref;
+        private Preference mDarkThemePref;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -169,6 +170,8 @@ public class SettingsActivity extends Activity {
                 });
             }
 
+            mDarkThemePref = findPreference(KEY_THEME_DARK);
+            updatDarkThemeEntry();
             mIconPackPref = findPreference(KEY_ICON_PACK);
             mIconPackPref.setOnPreferenceClickListener(preference -> {
                 mIconsHandler.showDialog(getActivity());
@@ -239,6 +242,13 @@ public class SettingsActivity extends Activity {
 
             mIconPackPref.setSummary(summary);
             mIconPackPref.setIcon(icon);
+        }
+
+        private void updatDarkThemeEntry() {
+            String darkThemeMode = mPrefs.getString(KEY_THEME_DARK, "null");
+            if ("true".equals(darkThemeMode)) mDarkThemePref.setSummary(R.string.darktheme_full_desc);
+            else if ("false".equals(darkThemeMode)) mDarkThemePref.setSummary(R.string.darktheme_drawer_desc);
+            else mDarkThemePref.setSummary(R.string.darktheme_off_desc);
         }
 
         private void setCustomGridSize() {
@@ -312,6 +322,7 @@ public class SettingsActivity extends Activity {
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
             switch (key) {
                 case KEY_THEME_DARK:
+                    updatDarkThemeEntry();
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
                 case KEY_FORCE_ADAPTIVE_ICONS:

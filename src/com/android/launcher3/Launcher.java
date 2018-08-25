@@ -403,7 +403,10 @@ public class Launcher extends BaseActivity
 
         WallpaperColorInfo wallpaperColorInfo = WallpaperColorInfo.getInstance(this);
         wallpaperColorInfo.setOnThemeChangeListener(this);
-        boolean isDark = Utilities.getPrefs(this).getBoolean(SettingsActivity.KEY_THEME_DARK, false);
+
+        String darkThemeMode = Utilities.getPrefs(this).getString(SettingsActivity.KEY_THEME_DARK, "null");
+        Boolean isDark=null; if ("true".equals(darkThemeMode)) isDark=true; else if ("false".equals(darkThemeMode)) isDark=false;
+
         overrideTheme(isDark, wallpaperColorInfo.supportsDarkText());
 
         super.onCreate(savedInstanceState);
@@ -529,11 +532,17 @@ public class Launcher extends BaseActivity
         recreate();
     }
 
-    protected void overrideTheme(boolean isDark, boolean supportsDarkText) {
-        if (isDark) {
-            setTheme(R.style.LauncherThemeDark);
-        } else if (supportsDarkText) {
-            setTheme(R.style.LauncherThemeDarkText);
+    protected void overrideTheme(Boolean isDark, boolean supportsDarkText) {
+        if (isDark == null) {
+            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkText);
+        }
+        else if (isDark == false) {
+            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkPartialDarkText);
+            else setTheme(R.style.LauncherThemeDarkPartial);
+        }
+        else {
+            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkDarkText);
+            else setTheme(R.style.LauncherThemeDark);
         }
     }
 
@@ -4058,7 +4067,8 @@ public class Launcher extends BaseActivity
                 .create();
 
         // Set background color
-        boolean isDark = Utilities.getPrefs(this).getBoolean(SettingsActivity.KEY_THEME_DARK, false);
+        String darkThemeMode = Utilities.getPrefs(this).getString(SettingsActivity.KEY_THEME_DARK, "null");
+        boolean isDark = "true".equals(darkThemeMode);
         Window dialogWindow = mIconEditDialog.getWindow();
         if (dialogWindow != null) {
             dialogWindow.setBackgroundDrawableResource(isDark ?

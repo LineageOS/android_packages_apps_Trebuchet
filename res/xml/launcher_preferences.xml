@@ -78,13 +78,14 @@
 
     <PreferenceCategory android:title="@string/settings_category_drawer">
 
-        <SwitchPreference
-            android:defaultValue="false"
+        <ListPreference
+            android:defaultValue="@string/darktheme_off"
+            android:entries="@array/darktheme_entries"
+            android:entryValues="@array/darktheme_values"
             android:icon="@drawable/ic_settings_theme"
             android:key="pref_theme_dark"
             android:persistent="true"
-            android:summaryOff="@string/theme_summary_light"
-            android:summaryOn="@string/theme_summary_dark"
+            android:summary="%s"
             android:title="@string/settings_theme_dark" />
 
         <SwitchPreference
