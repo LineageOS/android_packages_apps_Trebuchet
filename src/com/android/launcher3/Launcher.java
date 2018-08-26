@@ -403,11 +403,7 @@ public class Launcher extends BaseActivity
 
         WallpaperColorInfo wallpaperColorInfo = WallpaperColorInfo.getInstance(this);
         wallpaperColorInfo.setOnThemeChangeListener(this);
-
-        String darkThemeMode = Utilities.getPrefs(this).getString(SettingsActivity.KEY_THEME_DARK, "null");
-        Boolean isDark=null; if ("true".equals(darkThemeMode)) isDark=true; else if ("false".equals(darkThemeMode)) isDark=false;
-
-        overrideTheme(isDark, wallpaperColorInfo.supportsDarkText());
+        overrideTheme(wallpaperColorInfo);
 
         super.onCreate(savedInstanceState);
 
@@ -532,17 +528,17 @@ public class Launcher extends BaseActivity
         recreate();
     }
 
-    protected void overrideTheme(Boolean isDark, boolean supportsDarkText) {
-        if (isDark == null) {
-            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkText);
-        }
-        else if (isDark == false) {
-            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkPartialDarkText);
-            else setTheme(R.style.LauncherThemeDarkPartial);
-        }
+    public void overrideTheme(WallpaperColorInfo wallpaperColorInfo) {
+        SharedPreferences mPrefs = Utilities.getPrefs(this);
+        boolean supportsDarkText = wallpaperColorInfo.supportsDarkText();
+        String darkThemeMode = mPrefs.getString(SettingsActivity.KEY_THEME_DARK, this.getString(R.string.darktheme_auto));
+
+        if (darkThemeMode.equals(this.getString(R.string.darktheme_off))) {if (supportsDarkText) setTheme(R.style.LauncherThemeDarkText);}
+        else if (darkThemeMode.equals(this.getString(R.string.darktheme_drawer))) setTheme(supportsDarkText?R.style.LauncherThemeDarkPartialDarkText:R.style.LauncherThemeDarkPartial);
+        else if (darkThemeMode.equals(this.getString(R.string.darktheme_full))) setTheme(supportsDarkText?R.style.LauncherThemeDarkDarkText:R.style.LauncherThemeDark);
         else {
-            if (supportsDarkText) setTheme(R.style.LauncherThemeDarkDarkText);
-            else setTheme(R.style.LauncherThemeDark);
+            if (wallpaperColorInfo.isDark()) setTheme(R.style.LauncherThemeDark);
+            else if (supportsDarkText) setTheme(R.style.LauncherThemeDarkText);
         }
     }
 
@@ -4067,8 +4063,9 @@ public class Launcher extends BaseActivity
                 .create();
 
         // Set background color
-        String darkThemeMode = Utilities.getPrefs(this).getString(SettingsActivity.KEY_THEME_DARK, "null");
-        boolean isDark = "true".equals(darkThemeMode);
+        String darkThemeMode = Utilities.getPrefs(this).getString(SettingsActivity.KEY_THEME_DARK, getString(R.string.darktheme_auto));
+        boolean isDark = (darkThemeMode.equals(getString(R.string.darktheme_auto)) || darkThemeMode.equals(getString(R.string.darktheme_full))) ?
+                Themes.getAttrBoolean(this, R.attr.isMainColorDark) : false;
         Window dialogWindow = mIconEditDialog.getWindow();
         if (dialogWindow != null) {
             dialogWindow.setBackgroundDrawableResource(isDark ?

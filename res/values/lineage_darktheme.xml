@@ -16,16 +16,19 @@
 -->
 <resources>
 
-    <string name="darktheme_off">"null"</string>
-    <string name="darktheme_drawer">"false"</string>
-    <string name="darktheme_full">"true"</string>
+    <string name="darktheme_auto">"auto"</string>
+    <string name="darktheme_off">"off"</string>
+    <string name="darktheme_drawer">"drawer"</string>
+    <string name="darktheme_full">"full"</string>
 
-    <string name="darktheme_off_desc">"Light theme"</string>
-    <string name="darktheme_drawer_desc">"Dark theme (drawer only)"</string>
-    <string name="darktheme_full_desc">"Dark theme"</string>
+    <string name="darktheme_auto_desc">"Automatic"</string>
+    <string name="darktheme_off_desc">"Disabled (Light theme)"</string>
+    <string name="darktheme_drawer_desc">"Enabled (drawer only)"</string>
+    <string name="darktheme_full_desc">"Enabled (full)"</string>
 
     <!-- Masks names -->
     <string-array name="darktheme_entries" translatable="false">
+        <item><string>"Auto"</string></item>
         <item><string>"Disabled"</string></item>
         <item><string>"Drawer"</string></item>
         <item><string>"Full"</string></item>
@@ -33,6 +36,7 @@
 
     <!-- Mask paths references -->
     <string-array name="darktheme_values" translatable="false">
+        <item>@string/darktheme_auto</item>
         <item>@string/darktheme_off</item>
         <item>@string/darktheme_drawer</item>
         <item>@string/darktheme_full</item>

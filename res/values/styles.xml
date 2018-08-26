@@ -83,6 +83,7 @@
     <style name="LauncherThemeDarkPartial" parent="@style/LauncherTheme">
         <item name="android:textColorSecondary">#FFFFFFFF</item>
         <item name="android:textColorTertiary">#FF989898</item>
+        <item name="android:textColorHint">#FF999999</item>
         <item name="android:colorControlHighlight">#A0FFFFFF</item>
         <item name="android:colorPrimary">#E6303030</item>
         <item name="allAppsScrimColor">#7A212121</item>

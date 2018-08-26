@@ -76,7 +76,7 @@ public class SettingsActivity extends Activity {
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
     public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
-    public static final String KEY_THEME_DARK = "pref_theme_dark";
+    public static final String KEY_THEME_DARK = "pref_ui_darktheme";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
     private static final String KEY_GRID_SIZE = "pref_grid_size";
@@ -245,10 +245,13 @@ public class SettingsActivity extends Activity {
         }
 
         private void updatDarkThemeEntry() {
-            String darkThemeMode = mPrefs.getString(KEY_THEME_DARK, "null");
-            if ("true".equals(darkThemeMode)) mDarkThemePref.setSummary(R.string.darktheme_full_desc);
-            else if ("false".equals(darkThemeMode)) mDarkThemePref.setSummary(R.string.darktheme_drawer_desc);
-            else mDarkThemePref.setSummary(R.string.darktheme_off_desc);
+            Context context = getActivity().getApplicationContext();
+            String darkThemeMode = mPrefs.getString(KEY_THEME_DARK, context.getString(R.string.darktheme_auto));
+
+            if (darkThemeMode.equals(context.getString(R.string.darktheme_off))) mDarkThemePref.setSummary(R.string.darktheme_off_desc);
+            else if (darkThemeMode.equals(context.getString(R.string.darktheme_drawer))) mDarkThemePref.setSummary(R.string.darktheme_drawer_desc);
+            else if (darkThemeMode.equals(context.getString(R.string.darktheme_full))) mDarkThemePref.setSummary(R.string.darktheme_full_desc);
+            else mDarkThemePref.setSummary(R.string.darktheme_auto_desc);
         }
 
         private void setCustomGridSize() {

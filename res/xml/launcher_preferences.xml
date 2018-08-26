@@ -79,11 +79,11 @@
     <PreferenceCategory android:title="@string/settings_category_drawer">
 
         <ListPreference
-            android:defaultValue="@string/darktheme_off"
+            android:defaultValue="@string/darktheme_auto"
             android:entries="@array/darktheme_entries"
             android:entryValues="@array/darktheme_values"
             android:icon="@drawable/ic_settings_theme"
-            android:key="pref_theme_dark"
+            android:key="pref_ui_darktheme"
             android:persistent="true"
             android:summary="%s"
             android:title="@string/settings_theme_dark" />
