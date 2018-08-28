@@ -75,7 +75,7 @@ public class SettingsActivity extends Activity {
     public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     static final String KEY_PREDICTIVE_APPS = "pref_predictive_apps";
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
-    public static final String KEY_FORCE_ADAPTIVE_ICONS = "pref_icon_force_adaptive";
+    public static final String KEY_ADAPTIVE_ICONS = "pref_icon_adaptive";
     public static final String KEY_THEME_DARK = "pref_ui_darktheme";
 
     static final String EXTRA_SCHEDULE_RESTART = "extraScheduleRestart";
@@ -113,6 +113,7 @@ public class SettingsActivity extends Activity {
         private PackageManager mPackageManager;
         private Preference mIconPackPref;
         private Preference mDarkThemePref;
+        private ListPreference mAdaptiveIconsPref;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -198,10 +199,11 @@ public class SettingsActivity extends Activity {
                 homeGroup.removePreference(minusOne);
             }
 
-            SwitchPreference iconAdaptiveOverride = (SwitchPreference)
-                    findPreference(KEY_FORCE_ADAPTIVE_ICONS);
-            if (iconAdaptiveOverride != null) {
-                iconAdaptiveOverride.setOnPreferenceChangeListener((preference, newValue) -> {
+            mAdaptiveIconsPref = (ListPreference)
+                    findPreference(KEY_ADAPTIVE_ICONS);
+            updatAdaptiveIconsEntry();
+            if (mAdaptiveIconsPref != null) {
+                mAdaptiveIconsPref.setOnPreferenceChangeListener((preference, newValue) -> {
                     // Clear the icon cache.
                     LauncherAppState.getInstance(Utilities.ATLEAST_MARSHMALLOW?getContext():getActivity().getApplicationContext()).getIconCache().clear();
                     return true;
@@ -211,9 +213,6 @@ public class SettingsActivity extends Activity {
             Preference iconShapeOverride = findPreference(IconShapeOverride.KEY_PREFERENCE);
             if (iconShapeOverride != null) {
                 if (IconShapeOverride.isSupported(getActivity())) {
-                    if (iconAdaptiveOverride!=null && Utilities.getDevicePrefs(getContext()).getString(IconShapeOverride.KEY_PREFERENCE,
-                            getContext().getString(R.string.icon_shape_default)).equals(getContext().getString(R.string.mask_path_none)))
-                        iconAdaptiveOverride.setEnabled(false);
                     IconShapeOverride.handlePreferenceUi((ListPreference) iconShapeOverride);
                 } else {
                     iconGroup.removePreference(iconShapeOverride);
@@ -255,6 +254,15 @@ public class SettingsActivity extends Activity {
             else if (darkThemeMode.equals(context.getString(R.string.darktheme_drawer))) mDarkThemePref.setSummary(R.string.darktheme_drawer_desc);
             else if (darkThemeMode.equals(context.getString(R.string.darktheme_full))) mDarkThemePref.setSummary(R.string.darktheme_full_desc);
             else mDarkThemePref.setSummary(R.string.darktheme_auto_desc);
+        }
+
+        private void updatAdaptiveIconsEntry() {
+            Context context = getActivity().getApplicationContext();
+            String adaptiveIconsMode = mPrefs.getString(KEY_ADAPTIVE_ICONS, context.getString(R.string.icon_adaptive_default));
+
+            if (adaptiveIconsMode.equals(context.getString(R.string.icon_adaptive_disabled))) mAdaptiveIconsPref.setSummary(R.string.settings_icon_adaptive_desc_disabled);
+            else if (adaptiveIconsMode.equals(context.getString(R.string.icon_adaptive_force))) mAdaptiveIconsPref.setSummary(R.string.settings_icon_force_adaptive_desc_on);
+            else mAdaptiveIconsPref.setSummary(R.string.settings_icon_force_adaptive_desc_off);
         }
 
         private void setCustomGridSize() {
@@ -331,7 +339,10 @@ public class SettingsActivity extends Activity {
                     updatDarkThemeEntry();
                 case KEY_SHOW_DESKTOP_LABELS:
                 case KEY_SHOW_DRAWER_LABELS:
-                case KEY_FORCE_ADAPTIVE_ICONS:
+                    mShouldRestart = true;
+                    break;
+                case KEY_ADAPTIVE_ICONS:
+                    updatAdaptiveIconsEntry();
                     mShouldRestart = true;
                     break;
                 case KEY_GRID_SIZE:

@@ -742,7 +742,12 @@ public final class Utilities {
 
     public static boolean isAdaptiveIconForced(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS, false);
+        return prefs.getString(SettingsActivity.KEY_ADAPTIVE_ICONS, context.getString(R.string.icon_adaptive_default)).equals(context.getString(R.string.icon_adaptive_force));
+    }
+
+    public static boolean isAdaptiveIconDisabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getString(SettingsActivity.KEY_ADAPTIVE_ICONS, context.getString(R.string.icon_adaptive_default)).equals(context.getString(R.string.icon_adaptive_disabled));
     }
 
     public static boolean arePredictiveAppsEnabled(Context context) {

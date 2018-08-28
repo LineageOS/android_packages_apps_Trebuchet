@@ -71,8 +71,7 @@ public class CustomIconsProvider extends IconProvider {
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
         // if we are not using any icon pack, load application icon directly
         Drawable legacyIcon = null;
-        if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) &&
-                Utilities.getDevicePrefs(mContext).getString(IconShapeOverride.KEY_PREFERENCE, mContext.getString(R.string.mask_path_circle)).equals(mContext.getString(R.string.mask_path_none)))
+        if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) && Utilities.isAdaptiveIconDisabled(mContext))
             legacyIcon = getLegacyIcon(info.getComponentName().getPackageName(), iconDpi);
 
         if (Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext)) {

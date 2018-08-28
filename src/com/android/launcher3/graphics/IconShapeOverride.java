@@ -156,9 +156,6 @@ public class IconShapeOverride {
         public boolean onPreferenceChange(Preference preference, Object o) {
             String newValue = (String) o;
             if (!getAppliedValue(mContext).equals(newValue)) {
-                SwitchPreference adaptivePref = (SwitchPreference) preference.getParent().findPreference(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS);
-                if (newValue.equals(mContext.getString(R.string.mask_path_none))) {adaptivePref.setChecked(false); adaptivePref.setEnabled(false);}
-                else if (getAppliedValue(mContext).equals(mContext.getString(R.string.mask_path_none))) adaptivePref.setEnabled(true);
                 // Value has changed
                 ProgressDialog.show(mContext,
                         null /* title */,

@@ -123,14 +123,15 @@
             android:summary="%s"
             android:title="@string/settings_icon_shape" />
 
-        <SwitchPreference
-            android:defaultValue="false"
+        <ListPreference
+            android:defaultValue="@string/icon_adaptive_default"
+            android:entries="@array/icon_adaptive_entries"
+            android:entryValues="@array/icon_adaptive_paths"
             android:icon="@drawable/ic_settings_force_adaptive"
-            android:key="pref_icon_force_adaptive"
+            android:key="pref_icon_adaptive"
             android:persistent="true"
-            android:summaryOff="@string/settings_icon_force_adaptive_desc_off"
-            android:summaryOn="@string/settings_icon_force_adaptive_desc_on"
-            android:title="@string/settings_icon_force_adaptive_title" />
+            android:summary="%s"
+            android:title="@string/settings_icon_adaptive_title" />
 
         <com.android.launcher3.views.ButtonPreference
             android:icon="@drawable/ic_settings_notification"
