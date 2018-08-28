@@ -376,6 +376,29 @@ public class IconsHandler {
         return getDefaultAppDrawable(componentName, false);
     }
 
+    public Bitmap getThemedDrawableIconForPackage(ComponentName componentName) {
+        if (isDefaultIconPack()) {
+            return getDefaultAppDrawable(componentName, true);
+        }
+
+        // sth FUKY here
+
+        String drawableName = mAppFilterDrawables.get(componentName.toString());
+        Drawable drawable = loadDrawable(null, drawableName, false);
+        if (drawable instanceof BitmapDrawable) {
+            Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+            cacheStoreDrawable(componentName.toString(), bitmap);
+            return bitmap;
+        }
+
+        Bitmap cachedIcon = cacheGetDrawable(componentName.toString());
+        if (cachedIcon != null) {
+            return cachedIcon;
+        }
+
+        return null;
+    }
+
     private Bitmap generateBitmap(Bitmap defaultBitmap) {
         if (mBackImages.isEmpty()) {
             return defaultBitmap;
