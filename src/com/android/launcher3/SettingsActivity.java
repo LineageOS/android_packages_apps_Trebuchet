@@ -211,6 +211,9 @@ public class SettingsActivity extends Activity {
             Preference iconShapeOverride = findPreference(IconShapeOverride.KEY_PREFERENCE);
             if (iconShapeOverride != null) {
                 if (IconShapeOverride.isSupported(getActivity())) {
+                    if (iconAdaptiveOverride!=null && Utilities.getDevicePrefs(getContext()).getString(IconShapeOverride.KEY_PREFERENCE,
+                            getContext().getString(R.string.icon_shape_default)).equals(getContext().getString(R.string.mask_path_none)))
+                        iconAdaptiveOverride.setEnabled(false);
                     IconShapeOverride.handlePreferenceUi((ListPreference) iconShapeOverride);
                 } else {
                     iconGroup.removePreference(iconShapeOverride);

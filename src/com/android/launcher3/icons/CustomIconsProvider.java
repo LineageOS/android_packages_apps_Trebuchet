@@ -18,13 +18,22 @@ package com.android.launcher3.icons;
 
 import android.content.Context;
 import android.content.pm.LauncherActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.android.launcher3.IconCache;
 import com.android.launcher3.IconProvider;
+import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.graphics.IconShapeOverride;
+import com.android.launcher3.util.ResourceHack;
+
+import org.xmlpull.v1.XmlPullParser;
 
 public class CustomIconsProvider extends IconProvider {
     private Context mContext;
@@ -36,10 +45,38 @@ public class CustomIconsProvider extends IconProvider {
         mHandler = IconCache.getIconsHandler(context);
     }
 
+    public Drawable getLegacyIcon(String packageName, int iconDpi) {
+        try {
+            PackageManager mPackageManager = mContext.getPackageManager();
+            Resources resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);
+            AssetManager assets = resourcesForApplication.getAssets();
+            XmlResourceParser parseXml = assets.openXmlResourceParser("AndroidManifest.xml");
+            Drawable legacyIcon = null;
+            resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
+            int eventType;
+            while ((eventType = parseXml.nextToken()) != XmlPullParser.END_DOCUMENT)
+                if (eventType == XmlPullParser.START_TAG && parseXml.getName().equals("application"))
+                    for (int i = 0; i < parseXml.getAttributeCount(); i++)
+                        if (parseXml.getAttributeName(i).equals("icon"))
+                            legacyIcon = resourcesForApplication.getDrawableForDensity(Integer.parseInt(parseXml.getAttributeValue(i).substring(1)), iconDpi);
+            parseXml.close();
+            return legacyIcon;
+        } catch (Exception ex) {
+            android.util.Log.w("getLegacyIcon", ex);
+        }
+        return null;
+    }
+
     @Override
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
         // if we are not using any icon pack, load application icon directly
+        Drawable legacyIcon = null;
+        if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) && !Utilities.isUsingIconPack(mContext) &&
+                Utilities.getDevicePrefs(mContext).getString(IconShapeOverride.KEY_PREFERENCE, mContext.getString(R.string.mask_path_circle)).equals(mContext.getString(R.string.mask_path_none)))
+            legacyIcon = getLegacyIcon(info.getComponentName().getPackageName(), iconDpi);
+
         if (Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext)) {
+            if (legacyIcon!=null) return legacyIcon;
             return mContext.getPackageManager().getApplicationIcon(info.getApplicationInfo());
         }
 

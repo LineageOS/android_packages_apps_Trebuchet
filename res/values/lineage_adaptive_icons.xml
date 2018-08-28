@@ -23,6 +23,7 @@
 
     <!-- Masks names -->
     <string-array name="icon_shape_entries" translatable="false">
+        <item>@string/icon_shape_none_name</item>
         <item>@string/icon_shape_circle_name</item>
         <item>@string/icon_shape_super_ellipse_name</item>
         <item>@string/icon_shape_squircle_name</item>
@@ -31,12 +32,15 @@
 
     <!-- Mask paths references -->
     <string-array name="icon_shape_paths" translatable="false">
+        <item>@string/mask_path_none</item>
         <item>@string/mask_path_circle</item>
         <item>@string/mask_path_super_ellipse</item>
         <item>@string/mask_path_squircle</item>
         <item>@string/mask_path_teardrop</item>
     </string-array>
 
+    <!-- Disabled -->
+    <string name="mask_path_none" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0,"</string>
     <!-- Circle: default -->
     <string name="mask_path_circle" translatable="false">"M50 0A50 50,0,1,1,50 100A50 50,0,1,1,50 0"</string>
     <!-- Super ellipse -->

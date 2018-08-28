@@ -27,6 +27,7 @@ import android.os.SystemClock;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SwitchPreference;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
@@ -34,6 +35,7 @@ import android.util.Log;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.LauncherModel;
 import com.android.launcher3.R;
+import com.android.launcher3.SettingsActivity;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.util.LooperExecutor;
 
@@ -154,6 +156,9 @@ public class IconShapeOverride {
         public boolean onPreferenceChange(Preference preference, Object o) {
             String newValue = (String) o;
             if (!getAppliedValue(mContext).equals(newValue)) {
+                SwitchPreference adaptivePref = (SwitchPreference) preference.getParent().findPreference(SettingsActivity.KEY_FORCE_ADAPTIVE_ICONS);
+                if (newValue.equals(mContext.getString(R.string.mask_path_none))) {adaptivePref.setChecked(false); adaptivePref.setEnabled(false);}
+                else if (getAppliedValue(mContext).equals(mContext.getString(R.string.mask_path_none))) adaptivePref.setEnabled(true);
                 // Value has changed
                 ProgressDialog.show(mContext,
                         null /* title */,
