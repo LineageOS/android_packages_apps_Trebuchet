@@ -212,11 +212,11 @@ public class SettingsActivity extends Activity {
 
             Preference iconShapeOverride = findPreference(IconShapeOverride.KEY_PREFERENCE);
             if (iconShapeOverride != null) {
-                if (IconShapeOverride.isSupported(getActivity())) {
-                    IconShapeOverride.handlePreferenceUi((ListPreference) iconShapeOverride);
-                } else {
+                //if (IconShapeOverride.isSupported(getActivity())) {
+                IconShapeOverride.handlePreferenceUi((ListPreference) iconShapeOverride);
+                /*} else {
                     iconGroup.removePreference(iconShapeOverride);
-                }
+                }*/
             }
         }
 

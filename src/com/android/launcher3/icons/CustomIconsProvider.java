@@ -28,9 +28,9 @@ import android.graphics.drawable.Drawable;
 
 import com.android.launcher3.IconCache;
 import com.android.launcher3.IconProvider;
-import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.graphics.IconShapeOverride;
+import com.android.launcher3.util.DrawableHack;
 import com.android.launcher3.util.ResourceHack;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -67,21 +67,66 @@ public class CustomIconsProvider extends IconProvider {
         return null;
     }
 
+    public Drawable getRoundIconBackport(String packageName, int iconDpi) {
+        int resId = 0;
+        Drawable legacyIcon = null;
+        PackageManager mPackageManager = mContext.getPackageManager();
+        Resources resourcesForApplication = null;
+        try {resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);}
+        catch (PackageManager.NameNotFoundException e) {return null;}
+        AssetManager assets = resourcesForApplication.getAssets();
+
+        try (XmlResourceParser parseXml = assets.openXmlResourceParser("AndroidManifest.xml")) {
+            String attribute = null;
+            int eventType;
+            while ((eventType = parseXml.nextToken()) != XmlPullParser.END_DOCUMENT) {
+                if (eventType == XmlPullParser.START_TAG && parseXml.getName().equals("application"))
+                    for (int i = 0; i < parseXml.getAttributeCount(); i++) {
+                        attribute = parseXml.getAttributeName(i);
+                        if (resId == 0 && attribute.equals("icon"))
+                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                        else if (attribute.equals("roundIcon")) {
+                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                            break;
+                        }
+                    }
+                if (resId!=0 && attribute.equals("roundIcon")) break;
+            }
+        } catch (Exception ex) {
+            android.util.Log.w("getLegacyIcon", ex);
+        }
+        if (resId!=0) try {
+            resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 26);
+            try {
+                legacyIcon = resourcesForApplication.getDrawableForDensity(resId, iconDpi);
+            } catch (Resources.NotFoundException e) {
+                Object drawableInflater = DrawableHack.getDrawableInflater(resourcesForApplication);
+                XmlPullParser parser = resourcesForApplication.getXml(resId);
+                legacyIcon = DrawableHack.inflateFromXml(drawableInflater, parser);
+            }
+        } catch (Exception e) {}
+        if (resId!=0 && legacyIcon==null) try{resourcesForApplication=ResourceHack.setResSdk(resourcesForApplication, android.os.Build.VERSION.SDK_INT);} catch (Exception e){}
+        return legacyIcon;
+    }
+
     @Override
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
         // if we are not using any icon pack, load application icon directly
-        Drawable legacyIcon = null;
+        Drawable portedIcon = null;
         if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) && Utilities.isAdaptiveIconDisabled(mContext))
-            legacyIcon = getLegacyIcon(info.getComponentName().getPackageName(), iconDpi);
+            portedIcon = getLegacyIcon(info.getComponentName().getPackageName(), iconDpi);
+        if (((Utilities.ATLEAST_OREO && !IconShapeOverride.isSupported(mContext)) || (!Utilities.ATLEAST_OREO)) && !Utilities.isAdaptiveIconDisabled(mContext))
+            portedIcon = getRoundIconBackport(info.getComponentName().getPackageName(), iconDpi);
 
         if (Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext)) {
-            if (legacyIcon!=null) return legacyIcon;
+            if (portedIcon!=null) return portedIcon;
             return mContext.getPackageManager().getApplicationIcon(info.getApplicationInfo());
         }
+        else if (!Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext) && portedIcon!=null) return portedIcon;
 
         final Bitmap bm = mHandler.getThemedDrawableIconForPackage(info.getComponentName());
         if (bm == null) {
-            return (legacyIcon!=null) ? legacyIcon : info.getIcon(iconDpi);
+            return (portedIcon!=null) ? portedIcon : info.getIcon(iconDpi);
         }
 
         return new BitmapDrawable(mContext.getResources(), bm);

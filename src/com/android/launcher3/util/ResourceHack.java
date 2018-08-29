@@ -1,5 +1,6 @@
 package com.android.launcher3.util;
 
+import android.arch.core.util.Function;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import com.android.launcher3.Utilities;

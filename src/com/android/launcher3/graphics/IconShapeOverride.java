@@ -85,9 +85,9 @@ public class IconShapeOverride {
         if (TextUtils.isEmpty(path)) {
             return;
         }
-        if (!isSupported(context)) {
+        /*if (!isSupported(context)) {
             return;
-        }
+        }*/
 
         // magic
         try {
@@ -200,7 +200,7 @@ public class IconShapeOverride {
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             PendingIntent pi = PendingIntent.getActivity(mContext, RESTART_REQUEST_CODE,
                     homeIntent, PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_ONE_SHOT);
-            mContext.getSystemService(AlarmManager.class).setExact(
+            ((AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE)).setExact(
                     AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime() + 50, pi);
 
             // Kill process

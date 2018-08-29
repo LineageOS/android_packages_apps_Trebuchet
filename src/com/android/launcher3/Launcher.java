@@ -4045,7 +4045,8 @@ public class Launcher extends BaseActivity
 
             editIcon.setOnClickListener(v -> listPopup.show());
         }
-        editIcon.setForeground(editIconForeground);
+        if (Utilities.ATLEAST_MARSHMALLOW) editIcon.setForeground(editIconForeground);
+        else editIcon.setBackground(editIconForeground);
 
         mIconEditDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.app_edit_drop_target_label)
