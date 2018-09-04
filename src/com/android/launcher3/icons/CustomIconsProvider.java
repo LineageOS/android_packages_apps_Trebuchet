@@ -16,6 +16,7 @@
  */
 package com.android.launcher3.icons;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.LauncherActivityInfo;
 import android.content.pm.PackageManager;
@@ -23,12 +24,18 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
+import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.android.launcher3.IconCache;
 import com.android.launcher3.IconProvider;
+import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.compat.AdaptiveIconDrawableCompat;
+import com.android.launcher3.compat.FixedScaleDrawableCompat;
+import com.android.launcher3.graphics.IconNormalizer;
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.util.DrawableHack;
 import com.android.launcher3.util.ResourceHack;
@@ -109,6 +116,29 @@ public class CustomIconsProvider extends IconProvider {
         return legacyIcon;
     }
 
+    @SuppressLint("RestrictedApi")
+    public Drawable wrapToAdaptiveIconBackport(Drawable drawable) {
+        if (Utilities.ATLEAST_OREO || !(Utilities.isAdaptiveIconForced(mContext))) {
+            return drawable;
+        }
+
+        float scale;
+        boolean[] outShape = new boolean[1];
+        AdaptiveIconDrawableCompat iconWrapper = new AdaptiveIconDrawableCompat(new ColorDrawable(mContext.getResources().getColor(R.color.legacy_icon_background)), new FixedScaleDrawableCompat(), Utilities.ATLEAST_MARSHMALLOW);
+        try {
+            if (!(drawable instanceof AdaptiveIconDrawableCompat) && (!Utilities.ATLEAST_OREO || !(drawable instanceof AdaptiveIconDrawable))) {
+                scale = IconNormalizer.getInstance(mContext).getScale(drawable, null, iconWrapper.getIconMask(), outShape);
+                FixedScaleDrawableCompat fsd = ((FixedScaleDrawableCompat) iconWrapper.getForeground());
+                fsd.setDrawable(drawable);
+                fsd.setScale(scale);
+                return (Drawable) iconWrapper;
+            }
+        } catch (Exception e) {
+            return drawable;
+        }
+        return drawable;
+    }
+
     @Override
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
         // if we are not using any icon pack, load application icon directly
@@ -122,13 +152,13 @@ public class CustomIconsProvider extends IconProvider {
             if (portedIcon!=null) return portedIcon;
             return mContext.getPackageManager().getApplicationIcon(info.getApplicationInfo());
         }
-        else if (!Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext) && portedIcon!=null) return portedIcon;
+        else if (!Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext) && portedIcon!=null) return wrapToAdaptiveIconBackport(portedIcon);
 
         final Bitmap bm = mHandler.getThemedDrawableIconForPackage(info.getComponentName());
         if (bm == null) {
-            return (portedIcon!=null) ? portedIcon : info.getIcon(iconDpi);
+            return wrapToAdaptiveIconBackport((portedIcon!=null) ? portedIcon : info.getIcon(iconDpi));
         }
 
-        return new BitmapDrawable(mContext.getResources(), bm);
+        return wrapToAdaptiveIconBackport(new BitmapDrawable(mContext.getResources(), bm));
     }
 }
