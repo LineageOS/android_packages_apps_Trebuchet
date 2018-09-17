@@ -662,7 +662,8 @@ public class DragView extends View {
         }
 
         public void animateToPos(float value) {
-            mSpring.animateToFinalPosition(Utilities.boundToRange(value, -mDelta, mDelta));
+            try {mSpring.animateToFinalPosition(Utilities.boundToRange(value, -mDelta, mDelta));}
+            catch (java.lang.UnsupportedOperationException e){}
         }
     }
 

@@ -320,6 +320,16 @@ public class DeviceProfile {
     }
 
     /**
+     * Adjusts the profile so that the icons in app drawer have wider padding.
+     */
+    private void adjustVerticalBarLayoutLabels() {
+        int topBottomPadding = allAppsIconDrawablePaddingPx * (isVerticalBarLayout() ? 2 : 1);
+        allAppsCellHeightPx = allAppsIconSizePx + allAppsIconDrawablePaddingPx
+                + Utilities.calculateTextHeight(allAppsIconTextSizePx)
+                + topBottomPadding * 2;
+    }
+
+    /**
      * Determine the exact visual footprint of the all apps button, taking into account scaling
      * and internal padding of the drawable.
      */
@@ -370,8 +380,9 @@ public class DeviceProfile {
         allAppsCellHeightPx = getCellSize().y;
 
         if (isVerticalBarLayout()) {
-            // Always hide the Workspace text with vertical bar layout.
-            adjustToHideWorkspaceLabels();
+            // Adjusts text padding instead of hiding icon labels with vertical bar layout.
+            adjustVerticalBarLayoutLabels();
+            iconDrawablePaddingPx = cellYPadding;
         }
 
         // Hotseat

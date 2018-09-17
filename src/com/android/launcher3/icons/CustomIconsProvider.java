@@ -116,7 +116,6 @@ public class CustomIconsProvider extends IconProvider {
         return legacyIcon;
     }
 
-    @SuppressLint("RestrictedApi")
     public Drawable wrapToAdaptiveIconBackport(Drawable drawable) {
         if (Utilities.ATLEAST_OREO || !(Utilities.isAdaptiveIconForced(mContext))) {
             return drawable;
