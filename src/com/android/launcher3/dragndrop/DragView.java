@@ -54,6 +54,7 @@ import com.android.launcher3.LauncherModel;
 import com.android.launcher3.LauncherSettings;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.compat.AdaptiveIconDrawableCompat;
 import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.compat.ShortcutConfigActivityInfo;
 import com.android.launcher3.config.FeatureFlags;
@@ -191,9 +192,8 @@ public class DragView extends View {
      * Initialize {@code #mIconDrawable} if the item can be represented using
      * an {@link AdaptiveIconDrawable} or {@link FolderAdaptiveIcon}.
      */
-    @TargetApi(Build.VERSION_CODES.O)
     public void setItemInfo(final ItemInfo info) {
-        if (!(FeatureFlags.LAUNCHER3_SPRING_ICONS && Utilities.ATLEAST_OREO)) {
+        if (!(FeatureFlags.LAUNCHER3_SPRING_ICONS)) {
             return;
         }
         if (info.itemType != LauncherSettings.Favorites.ITEM_TYPE_APPLICATION &&
@@ -210,7 +210,7 @@ public class DragView extends View {
                 Object[] outObj = new Object[1];
                 final Drawable dr = getFullDrawable(info, appState, outObj);
 
-                if (dr instanceof AdaptiveIconDrawable) {
+                if (dr instanceof AdaptiveIconDrawableCompat || (Utilities.ATLEAST_OREO && dr instanceof AdaptiveIconDrawable)) {
                     int w = mBitmap.getWidth();
                     int h = mBitmap.getHeight();
                     int blurMargin = (int) mLauncher.getResources()
@@ -226,30 +226,36 @@ public class DragView extends View {
 
                     Utilities.scaleRectAboutCenter(bounds,
                             IconNormalizer.getInstance(mLauncher).getScale(dr, null, null, null));
-                    AdaptiveIconDrawable adaptiveIcon = (AdaptiveIconDrawable) dr;
+                    Drawable adaptiveIcon = dr;
 
                     // Shrink very tiny bit so that the clip path is smaller than the original bitmap
                     // that has anti aliased edges and shadows.
                     Rect shrunkBounds = new Rect(bounds);
                     Utilities.scaleRectAboutCenter(shrunkBounds, 0.98f);
                     adaptiveIcon.setBounds(shrunkBounds);
-                    final Path mask = adaptiveIcon.getIconMask();
+                    final Path mask = (adaptiveIcon instanceof AdaptiveIconDrawableCompat) ?
+                            ((AdaptiveIconDrawableCompat)adaptiveIcon).getIconMask() :
+                            ((AdaptiveIconDrawable)adaptiveIcon).getIconMask();
 
                     mTranslateX = new SpringFloatValue(DragView.this,
-                            w * AdaptiveIconDrawable.getExtraInsetFraction());
+                            w * AdaptiveIconDrawableCompat.getExtraInsetFraction());
                     mTranslateY = new SpringFloatValue(DragView.this,
-                            h * AdaptiveIconDrawable.getExtraInsetFraction());
+                            h * AdaptiveIconDrawableCompat.getExtraInsetFraction());
 
                     bounds.inset(
-                            (int) (-bounds.width() * AdaptiveIconDrawable.getExtraInsetFraction()),
-                            (int) (-bounds.height() * AdaptiveIconDrawable.getExtraInsetFraction())
+                            (int) (-bounds.width() * AdaptiveIconDrawableCompat.getExtraInsetFraction()),
+                            (int) (-bounds.height() * AdaptiveIconDrawableCompat.getExtraInsetFraction())
                     );
-                    mBgSpringDrawable = adaptiveIcon.getBackground();
+                    mBgSpringDrawable = (adaptiveIcon instanceof AdaptiveIconDrawableCompat) ?
+                            ((AdaptiveIconDrawableCompat)adaptiveIcon).getBackground() :
+                            ((AdaptiveIconDrawable)adaptiveIcon).getBackground();
                     if (mBgSpringDrawable == null) {
                         mBgSpringDrawable = new ColorDrawable(Color.TRANSPARENT);
                     }
                     mBgSpringDrawable.setBounds(bounds);
-                    mFgSpringDrawable = adaptiveIcon.getForeground();
+                    mFgSpringDrawable = (adaptiveIcon instanceof AdaptiveIconDrawableCompat) ?
+                            ((AdaptiveIconDrawableCompat)adaptiveIcon).getForeground() :
+                            ((AdaptiveIconDrawable)adaptiveIcon).getForeground();
                     if (mFgSpringDrawable == null) {
                         mFgSpringDrawable = new ColorDrawable(Color.TRANSPARENT);
                     }
@@ -262,7 +268,7 @@ public class DragView extends View {
                             mScaledMaskPath = mask;
 
                             // Do not draw the background in case of folder as its translucent
-                            mDrawBitmap = !(dr instanceof FolderAdaptiveIcon);
+                            mDrawBitmap = (Utilities.ATLEAST_OREO ? !(dr instanceof FolderAdaptiveIcon) : !(dr instanceof FolderAdaptiveIconVL));
 
                             if (info.isDisabled()) {
                                 FastBitmapDrawable d = new FastBitmapDrawable(null);
@@ -339,8 +345,9 @@ public class DragView extends View {
                         appState.getInvariantDeviceProfile().fillResIconDpi);
             }
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_FOLDER) {
-            FolderAdaptiveIcon icon =  FolderAdaptiveIcon.createFolderAdaptiveIcon(
-                    mLauncher, info.id, new Point(mBitmap.getWidth(), mBitmap.getHeight()));
+            Drawable icon =  (Utilities.ATLEAST_OREO) ?
+                    FolderAdaptiveIcon.createFolderAdaptiveIcon(mLauncher, info.id, new Point(mBitmap.getWidth(), mBitmap.getHeight())) :
+                    FolderAdaptiveIconVL.createFolderAdaptiveIcon(mLauncher, info.id, new Point(mBitmap.getWidth(), mBitmap.getHeight()));
             if (icon == null) {
                 return null;
             }
@@ -358,7 +365,6 @@ public class DragView extends View {
      * badge. When dragged from workspace or folder, it may contain app AND/OR work profile badge
      **/
 
-    @TargetApi(Build.VERSION_CODES.O)
     private Drawable getBadge(ItemInfo info, LauncherAppState appState, Object obj) {
         int iconSize = appState.getInvariantDeviceProfile().iconBitmapSize;
         if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT) {
@@ -371,10 +377,13 @@ public class DragView extends View {
 
             float badgeSize = mLauncher.getResources().getDimension(R.dimen.profile_badge_size);
             float insetFraction = (iconSize - badgeSize) / iconSize;
-            return new InsetDrawable(new FastBitmapDrawable(badge),
-                    insetFraction, insetFraction, 0, 0);
+            return (!Utilities.ATLEAST_OREO) ?
+                    new InsetDrawable(new FastBitmapDrawable(badge),
+                    insetFraction, insetFraction, 0, 0) :
+                    new InsetDrawable(new FastBitmapDrawable(badge),
+                            (int)(iconSize-badgeSize), (int)(iconSize-badgeSize), 0, 0);
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_FOLDER) {
-            return ((FolderAdaptiveIcon) obj).getBadge();
+            return (Utilities.ATLEAST_OREO ? ((FolderAdaptiveIcon) obj).getBadge() : ((FolderAdaptiveIconVL) obj).getBadge());
         } else {
             return mLauncher.getPackageManager()
                     .getUserBadgedIcon(new FixedSizeEmptyDrawable(iconSize), info.user);
