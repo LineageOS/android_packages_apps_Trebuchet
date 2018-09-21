@@ -22,6 +22,7 @@ import android.content.res.Resources.Theme;
 import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.graphics.drawable.DrawableWrapper;
 import android.util.AttributeSet;
@@ -64,6 +65,13 @@ public class FixedScaleDrawableCompat extends DrawableWrapper {
         mScaleY = LEGACY_ICON_SCALE;
     }
 
+    public FixedScaleDrawableCompat(Drawable drawable, float mScaleX, float mScaleY) {
+        super(new ColorDrawable());
+        setDrawable(drawable);
+        this.mScaleX = mScaleY;
+        this.mScaleY = mScaleY;
+    }
+
     @Override
     public void draw(Canvas canvas) {
         int saveCount = canvas.save(Canvas.MATRIX_SAVE_FLAG);
@@ -71,6 +79,11 @@ public class FixedScaleDrawableCompat extends DrawableWrapper {
                 getBounds().exactCenterX(), getBounds().exactCenterY());
         super.draw(canvas);
         canvas.restoreToCount(saveCount);
+    }
+
+    @Override
+    public ConstantState getConstantState() {
+        return new FixedScaleDrawableConstantState(getDrawable(), mScaleX, mScaleY);
     }
 
     @Override
@@ -98,5 +111,29 @@ public class FixedScaleDrawableCompat extends DrawableWrapper {
 
     public void setDrawable(@Nullable Drawable dr) {
         setWrappedDrawable(dr);
+    }
+
+    public static class FixedScaleDrawableConstantState extends ConstantState {
+
+        Drawable wrappedDrawable;
+        public float mScaleX, mScaleY;
+
+        public FixedScaleDrawableConstantState(Drawable wrappedDrawable, float mScaleX, float mScaleY) {
+            this.wrappedDrawable = wrappedDrawable;
+            this.mScaleX = mScaleY;
+            this.mScaleY = mScaleY;
+        }
+
+        @NonNull
+        @Override
+        public Drawable newDrawable() {
+            try{return new FixedScaleDrawableCompat(wrappedDrawable.getConstantState().newDrawable(), mScaleX, mScaleY);}
+            catch (Exception e) {return new FixedScaleDrawableCompat(wrappedDrawable.mutate(), mScaleX, mScaleY);}
+        }
+
+        @Override
+        public int getChangingConfigurations() {
+            return 0;
+        }
     }
 }

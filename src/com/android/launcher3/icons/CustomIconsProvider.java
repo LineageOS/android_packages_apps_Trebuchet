@@ -19,6 +19,7 @@ package com.android.launcher3.icons;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.LauncherActivityInfo;
+import android.content.pm.LauncherApps;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
@@ -28,15 +29,21 @@ import android.graphics.drawable.AdaptiveIconDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.LayerDrawable;
+import android.util.Log;
 
 import com.android.launcher3.IconCache;
 import com.android.launcher3.IconProvider;
+import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
+import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.compat.AdaptiveIconDrawableCompat;
 import com.android.launcher3.compat.FixedScaleDrawableCompat;
 import com.android.launcher3.graphics.IconNormalizer;
 import com.android.launcher3.graphics.IconShapeOverride;
+import com.android.launcher3.shortcuts.ShortcutInfoCompat;
 import com.android.launcher3.util.DrawableHack;
 import com.android.launcher3.util.ResourceHack;
 
@@ -114,6 +121,46 @@ public class CustomIconsProvider extends IconProvider {
         } catch (Exception e) {}
         if (resId!=0 && legacyIcon==null) try{resourcesForApplication=ResourceHack.setResSdk(resourcesForApplication, android.os.Build.VERSION.SDK_INT);} catch (Exception e){}
         return legacyIcon;
+    }
+
+    public static Drawable getDeepShortcutIconBackport(int resId, Resources resourcesForApplication) {
+        Drawable icon = null;
+        Drawable legacyIcon = null;
+        Context mContext = LauncherAppState.getInstanceNoCreate().getContext();
+        XmlPullParser parser;
+        if (resId!=0 && resourcesForApplication != null) try {
+            resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
+            try {legacyIcon = resourcesForApplication.getDrawableForDensity(resId, LauncherAppState.getInstanceNoCreate().getInvariantDeviceProfile().fillResIconDpi);}
+            catch (Exception e){}
+            if (legacyIcon != null && legacyIcon instanceof AdaptiveIconDrawableCompat) {ResourceHack.setResSdk(resourcesForApplication, 26);return legacyIcon;}
+            else if (legacyIcon != null && Utilities.isAdaptiveIconDisabled(mContext)) return legacyIcon;
+            ResourceHack.setResSdk(resourcesForApplication, 26);
+            //icon = resourcesForApplication.getDrawableForDensity(resId, LauncherAppState.getInstanceNoCreate().getInvariantDeviceProfile().fillResIconDpi);
+            try{
+                Object drawableInflater = DrawableHack.getDrawableInflater(resourcesForApplication);
+                resourcesForApplication.flushLayoutCache();
+                parser = resourcesForApplication.getXml(resId);
+                icon = DrawableHack.inflateFromXml(drawableInflater, parser);
+            } catch (Exception e){return legacyIcon;}
+            if (icon == null) {ResourceHack.setResSdk(resourcesForApplication, 25);return legacyIcon;}
+            if (icon instanceof AdaptiveIconDrawableCompat && ((AdaptiveIconDrawableCompat)icon).missingLayer != null) try {
+                if (legacyIcon == null) return null;
+                if (legacyIcon instanceof LayerDrawable) ((LayerDrawable)legacyIcon).getDrawable(0).mutate().setAlpha(0);
+
+                AdaptiveIconDrawableCompat.ChildDrawable layer = ((AdaptiveIconDrawableCompat)icon).missingLayer;
+                layer.mDrawable = new FixedScaleDrawableCompat();
+                float scale = IconNormalizer.getInstance(mContext).getScale(legacyIcon, null, ((AdaptiveIconDrawableCompat)icon).getIconMask(), new boolean[1]);
+                ((FixedScaleDrawableCompat)layer.mDrawable).setDrawable(legacyIcon);
+                ((FixedScaleDrawableCompat)layer.mDrawable).setScale(scale*1.8F);
+                layer.mDrawable.setCallback((AdaptiveIconDrawableCompat)icon);
+                ((AdaptiveIconDrawableCompat)icon).mLayerState.mChildrenChangingConfigurations |= layer.mDrawable.getChangingConfigurations();
+                ((AdaptiveIconDrawableCompat)icon).addLayer(((AdaptiveIconDrawableCompat)icon).missingLayerIndex, layer);
+                ((AdaptiveIconDrawableCompat)icon).missingLayer = null;
+            }
+            catch (Exception e) {return null;}
+        } catch (Exception e) {Log.e("ERRORE!","",e);}
+        if (resId!=0 && legacyIcon==null && icon==null) try{resourcesForApplication=ResourceHack.setResSdk(resourcesForApplication, 25);} catch (Exception e){}
+        return icon!=null?icon:legacyIcon;
     }
 
     public Drawable wrapToAdaptiveIconBackport(Drawable drawable) {

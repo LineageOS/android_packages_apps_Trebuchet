@@ -128,7 +128,7 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
     /**
      * State variable that maintains the {@link ChildDrawable} array.
      */
-    LayerState mLayerState;
+    public LayerState mLayerState;
 
     private Shader mLayersShader;
     private Bitmap mLayersBitmap;
@@ -260,7 +260,7 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
      * @param index The index of the layer.
      * @param layer The layer to add.
      */
-    private void addLayer(int index, @NonNull ChildDrawable layer) {
+    public void addLayer(int index, @NonNull ChildDrawable layer) {
         mLayerState.mChildren[index] = layer;
         mLayerState.invalidateCache();
     }
@@ -494,6 +494,9 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
         return mTransparentRegion;
     }
 
+    public ChildDrawable missingLayer = null;
+    public int missingLayerIndex;
+
     /**
      * Inflates child layers using the specified parser.
      */
@@ -546,12 +549,16 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
                 }
 
                 // We found a child drawable. Take ownership.
-                layer.mDrawable = Drawable.createFromXmlInner(r, parser, attrs, theme);
+                try {layer.mDrawable = Drawable.createFromXmlInner(r, parser, attrs, theme);
                 layer.mDrawable.setCallback(this);
                 state.mChildrenChangingConfigurations |=
-                        layer.mDrawable.getChangingConfigurations();
+                        layer.mDrawable.getChangingConfigurations();}
+                catch (UnsupportedOperationException e) {
+                    missingLayer = layer;
+                    missingLayerIndex = childIndex;
+                }
             }
-            addLayer(childIndex, layer);
+            if (layer.mDrawable != null) addLayer(childIndex, layer);
         }
     }
 
@@ -916,7 +923,7 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
         return theme.obtainStyledAttributes(set, attrs, 0, 0);
     }
 
-    static class ChildDrawable {
+    public static class ChildDrawable {
         public Drawable mDrawable;
         public int[] mThemeAttrs;
         public int mDensity = DisplayMetrics.DENSITY_DEFAULT;
@@ -964,7 +971,7 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
         }
     }
 
-    static class LayerState extends ConstantState {
+    public static class LayerState extends ConstantState {
         private int[] mThemeAttrs;
 
         final static int N_CHILDREN = 2;
@@ -980,7 +987,7 @@ public class AdaptiveIconDrawableCompat extends Drawable implements Drawable.Cal
         int mOpacityOverride = PixelFormat.UNKNOWN;
 
         int mChangingConfigurations;
-        int mChildrenChangingConfigurations;
+        public int mChildrenChangingConfigurations;
 
         private boolean mCheckedOpacity;
         private int mOpacity;

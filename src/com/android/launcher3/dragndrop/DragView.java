@@ -340,9 +340,12 @@ public class DragView extends View {
             if (si.isEmpty()) {
                 return null;
             } else {
-                outObj[0] = si.get(0);
-                return sm.getShortcutIconDrawable(si.get(0),
-                        appState.getInvariantDeviceProfile().fillResIconDpi);
+                if (Utilities.isShortcutBackportEnabled()) outObj[0] = si.get(0);
+                /*TODO: Find out why i need this horrible fix*/
+                else for(ShortcutInfoCompat sh_info : si) if (sh_info.getId().equals(key.getId())) {outObj[0]=sh_info; break;}
+                return Utilities.isShortcutBackportEnabled() ?
+                        sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi) :
+                        sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi).getConstantState().newDrawable();
             }
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_FOLDER) {
             Drawable icon =  (Utilities.ATLEAST_OREO) ?
@@ -377,7 +380,7 @@ public class DragView extends View {
 
             float badgeSize = mLauncher.getResources().getDimension(R.dimen.profile_badge_size);
             float insetFraction = (iconSize - badgeSize) / iconSize;
-            return (!Utilities.ATLEAST_OREO) ?
+            return (Utilities.ATLEAST_OREO) ?
                     new InsetDrawable(new FastBitmapDrawable(badge),
                     insetFraction, insetFraction, 0, 0) :
                     new InsetDrawable(new FastBitmapDrawable(badge),

@@ -750,6 +750,10 @@ public final class Utilities {
         return prefs.getString(SettingsActivity.KEY_ADAPTIVE_ICONS, context.getString(R.string.icon_adaptive_default)).equals(context.getString(R.string.icon_adaptive_disabled));
     }
 
+    public static boolean isShortcutBackportEnabled() {
+        return Utilities.ATLEAST_NOUGAT_MR1;
+    }
+
     public static boolean arePredictiveAppsEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(SettingsActivity.KEY_PREDICTIVE_APPS, false);

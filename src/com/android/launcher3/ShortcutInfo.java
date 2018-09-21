@@ -131,6 +131,8 @@ public class ShortcutInfo extends ItemInfoWithIcon {
      */
     private int mInstallProgress;
 
+    public boolean useNativeShortcut = true;
+
     public ShortcutInfo() {
         itemType = LauncherSettings.BaseLauncherColumns.ITEM_TYPE_SHORTCUT;
     }
@@ -160,6 +162,7 @@ public class ShortcutInfo extends ItemInfoWithIcon {
     public ShortcutInfo(ShortcutInfoCompat shortcutInfo, Context context) {
         user = shortcutInfo.getUserHandle();
         itemType = LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT;
+        useNativeShortcut = shortcutInfo.useNative();
         updateFromDeepShortcutInfo(shortcutInfo, context);
     }
 

@@ -27,6 +27,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.InflateException;
 
 import java.io.IOException;
@@ -156,9 +157,31 @@ public final class DrawableInflaterVL {
                 return new AnimationDrawable();
             case "bitmap":
                 return new BitmapDrawable();
+            case "inset":
+                return getPrivateConstructor(InsetDrawable.class);
+            case "layer-list":
+                return getPrivateConstructor(LayerDrawable.class);
+            case "transition":
+                return getPrivateConstructor(TransitionDrawable.class);
+            case "ripple":
+                return getPrivateConstructor(RippleDrawable.class);
+            case "scale":
+                return getPrivateConstructor(ScaleDrawable.class);
+            case "clip":
+                return getPrivateConstructor(ClipDrawable.class);
+            case "nine-patch":
+                return getPrivateConstructor(NinePatchDrawable.class);
             default:
                 return null;
         }
+    }
+
+    public Drawable getPrivateConstructor(Class c) {
+        try {Constructor constructor = c.getConstructor();
+        constructor.setAccessible(true);
+        return (Drawable) (constructor.newInstance());}
+        catch (Exception e){
+            Log.e("Reflection error: ","error accessing drawable constructor: ",e); return null;}
     }
 
     @NonNull

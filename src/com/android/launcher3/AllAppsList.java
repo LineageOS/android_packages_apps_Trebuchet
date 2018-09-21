@@ -28,6 +28,8 @@ import android.util.Log;
 
 import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.compat.PackageInstallerCompat;
+import com.android.launcher3.shortcuts.DeepShortcutManager;
+import com.android.launcher3.shortcuts.ShortcutInfoCompat;
 import com.android.launcher3.util.FlagOp;
 import com.android.launcher3.util.ItemInfoMatcher;
 
@@ -174,6 +176,11 @@ public class AllAppsList {
      * Add and remove icons for this package which has been updated.
      */
     public void updatePackage(Context context, String packageName, UserHandle user) {
+        List<ShortcutInfoCompat> queryForPinnedShortcuts = DeepShortcutManager.getInstance(context).queryForPinnedShortcuts(packageName, user);
+        if (!queryForPinnedShortcuts.isEmpty()) {
+            LauncherAppState.getInstanceNoCreate().getModel().updatePinnedShortcuts(packageName, queryForPinnedShortcuts, user);
+        }
+
         final LauncherAppsCompat launcherApps = LauncherAppsCompat.getInstance(context);
         final List<LauncherActivityInfo> matches = launcherApps.getActivityList(packageName,
                 user);

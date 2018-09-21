@@ -41,6 +41,9 @@ import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.compat.UserManagerCompat;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.graphics.LauncherIcons;
+import com.android.launcher3.shortcuts.DeepShortcutManager;
+import com.android.launcher3.shortcuts.backport.DeepShortcutManagerBackport;
+import com.android.launcher3.shortcuts.backport.ShortcutCache;
 import com.android.launcher3.util.FlagOp;
 import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.LongArrayMap;
@@ -90,6 +93,11 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
         FlagOp flagOp = FlagOp.NO_OP;
         final HashSet<String> packageSet = new HashSet<>(Arrays.asList(packages));
         ItemInfoMatcher matcher = ItemInfoMatcher.ofPackages(packageSet, mUser);
+        ShortcutCache shortcutCache = null;
+        DeepShortcutManager deepShortcutManager = DeepShortcutManager.getInstance(context);
+        if (deepShortcutManager instanceof DeepShortcutManagerBackport) {
+            shortcutCache = ((DeepShortcutManagerBackport) deepShortcutManager).getShortcutCache();
+        }
         switch (mOp) {
             case OP_ADD: {
                 for (int i = 0; i < N; i++) {
@@ -99,13 +107,15 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                         appsList.removePackage(packages[i], Process.myUserHandle());
                     }
                     appsList.addPackage(context, packages[i], mUser);
-
+                    if (shortcutCache != null) shortcutCache.parsePackage(context, packages[i]);
                     // Automatically add homescreen icon for work profile apps for below O device.
                     if (!Utilities.ATLEAST_OREO && !Process.myUserHandle().equals(mUser)) {
                         SessionCommitReceiver.queueAppIconAddition(context, packages[i], mUser);
                     }
                 }
                 flagOp = FlagOp.removeFlag(ShortcutInfo.FLAG_DISABLED_NOT_AVAILABLE);
+                //Fixes shortcuts not available immediately after installing app
+                LauncherAppState.getInstance(app.getContext()).getModel().forceReload();
                 break;
             }
             case OP_UPDATE:
@@ -114,6 +124,10 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                     iconCache.updateIconsForPkg(packages[i], mUser);
                     appsList.updatePackage(context, packages[i], mUser);
                     app.getWidgetCache().removePackage(packages[i], mUser);
+                    if (shortcutCache != null) {
+                        shortcutCache.removePackage(packages[i]);
+                        shortcutCache.parsePackage(context, packages[i]);
+                    }
                 }
                 // Since package was just updated, the target must be available now.
                 flagOp = FlagOp.removeFlag(ShortcutInfo.FLAG_DISABLED_NOT_AVAILABLE);
@@ -121,6 +135,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
             case OP_REMOVE: {
                 for (int i = 0; i < N; i++) {
                     iconCache.removeIconsForPkg(packages[i], mUser);
+                    if (shortcutCache != null) shortcutCache.parsePackage(context, packages[i]);
                 }
                 // Fall through
             }
@@ -129,6 +144,7 @@ public class PackageUpdatedTask extends BaseModelUpdateTask {
                     if (DEBUG) Log.d(TAG, "mAllAppsList.removePackage " + packages[i]);
                     appsList.removePackage(packages[i], mUser);
                     app.getWidgetCache().removePackage(packages[i], mUser);
+                    if (shortcutCache != null) shortcutCache.removePackage(packages[i]);
                 }
                 flagOp = FlagOp.addFlag(ShortcutInfo.FLAG_DISABLED_NOT_AVAILABLE);
                 break;
