@@ -340,10 +340,10 @@ public class DragView extends View {
             if (si.isEmpty()) {
                 return null;
             } else {
-                if (Utilities.isShortcutBackportEnabled()) outObj[0] = si.get(0);
+                if (Utilities.isShortcutBackportDisabled()) outObj[0] = si.get(0);
                 /*TODO: Find out why i need this horrible fix*/
                 else for(ShortcutInfoCompat sh_info : si) if (sh_info.getId().equals(key.getId())) {outObj[0]=sh_info; break;}
-                return Utilities.isShortcutBackportEnabled() ?
+                return Utilities.isShortcutBackportDisabled() ?
                         sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi) :
                         sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi).getConstantState().newDrawable();
             }

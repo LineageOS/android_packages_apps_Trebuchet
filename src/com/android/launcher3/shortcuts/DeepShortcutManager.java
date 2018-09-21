@@ -46,7 +46,7 @@ public abstract class DeepShortcutManager {
         DeepShortcutManager deepShortcutManager;
         synchronized (sInstanceLock) {
             if (sInstance == null) {
-                if (Utilities.isShortcutBackportEnabled())
+                if (Utilities.isShortcutBackportDisabled())
                     sInstance = new DeepShortcutManagerNative(context.getApplicationContext());
                 else
                     sInstance = new DeepShortcutManagerBackport(context.getApplicationContext());

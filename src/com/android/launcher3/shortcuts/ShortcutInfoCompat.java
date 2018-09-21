@@ -154,7 +154,7 @@ public class ShortcutInfoCompat {
     }
 
     public boolean useNative() {
-        return Utilities.isShortcutBackportEnabled() && mShortcutInfo != null;
+        return Utilities.isShortcutBackportDisabled() && mShortcutInfo != null;
     }
 
     @Override
