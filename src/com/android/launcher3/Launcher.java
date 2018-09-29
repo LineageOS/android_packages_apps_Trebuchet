@@ -2688,7 +2688,7 @@ public class Launcher extends BaseActivity
                 StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder().detectAll()
                         .penaltyLog().build());
 
-                if (info instanceof ShortcutInfo && ((ShortcutInfo) info).useNativeShortcut) {
+                if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT && info instanceof ShortcutInfo && ((ShortcutInfo) info).useNativeShortcut) {
                     String id = ((ShortcutInfo) info).getDeepShortcutId();
                     String packageName = intent.getPackage();
                     DeepShortcutManager.getInstance(this).startShortcut(
