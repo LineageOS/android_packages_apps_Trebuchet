@@ -325,7 +325,7 @@ public class DragView extends View {
                     .resolveActivity(info.getIntent(), info.user);
             outObj[0] = activityInfo;
             return (activityInfo != null) ? appState.getIconCache()
-                    .getFullResIcon(activityInfo, false) : null;
+                    .getFullResIcon(activityInfo, false).mutate() : null;
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT) {
             if (info instanceof PendingAddShortcutInfo) {
                 ShortcutConfigActivityInfo activityInfo =
@@ -343,9 +343,8 @@ public class DragView extends View {
                 if (Utilities.isShortcutBackportDisabled()) outObj[0] = si.get(0);
                 /*TODO: Find out why i need this horrible fix*/
                 else for(ShortcutInfoCompat sh_info : si) if (sh_info.getId().equals(key.getId())) {outObj[0]=sh_info; break;}
-                return Utilities.isShortcutBackportDisabled() ?
-                        sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi) :
-                        sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi).getConstantState().newDrawable();
+                Drawable icon = sm.getShortcutIconDrawable((ShortcutInfoCompat)outObj[0], appState.getInvariantDeviceProfile().fillResIconDpi);
+                return (!Utilities.isShortcutBackportDisabled() && icon instanceof AdaptiveIconDrawableCompat) ? icon.getConstantState().newDrawable() : icon;
             }
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_FOLDER) {
             Drawable icon =  (Utilities.ATLEAST_OREO) ?
