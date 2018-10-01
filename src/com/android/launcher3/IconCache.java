@@ -85,6 +85,7 @@ public class IconCache {
         public CharSequence title = "";
         public CharSequence contentDescription = "";
         public boolean isLowResIcon;
+        public boolean isCustom=false;
     }
 
     private static IconsHandler sIconsHandler;
@@ -102,6 +103,7 @@ public class IconCache {
     private final InstantAppResolver mInstantAppResolver;
     private final int mIconDpi;
     @Thunk final IconDB mIconDb;
+    private boolean firstErrorRebuiltDb = false;
 
     @Thunk final Handler mWorkerHandler;
 
@@ -382,7 +384,7 @@ public class IconCache {
 
         Bitmap lowResIcon = generateLowResIcon(entry.icon);
         ContentValues values = newContentValues(entry.icon, lowResIcon, entry.title.toString(),
-                app.getApplicationInfo().packageName);
+                app.getApplicationInfo().packageName, entry.isCustom);
         addIconToDB(values, app.getComponentName(), info, userSerial);
     }
 
@@ -412,6 +414,7 @@ public class IconCache {
 
         final ComponentKey key = new ComponentKey(app.getComponentName(), app.getUser());
         CacheEntry entry = mCache.get(key);
+        entry.isCustom = true;
         PackageInfo packageInfo = null;
         try {
             packageInfo = mPackageManager.getPackageInfo(
@@ -429,11 +432,15 @@ public class IconCache {
 
         Bitmap lowResIcon = generateLowResIcon(entry.icon);
         ContentValues values = newContentValues(entry.icon, lowResIcon, entry.title.toString(),
-                app.getApplicationInfo().packageName);
+                app.getApplicationInfo().packageName, entry.isCustom);
         if (packageInfo != null) {
             addIconToDB(values, app.getComponentName(), packageInfo,
                     mUserManager.getSerialNumberForUser(app.getUser()));
         }
+    }
+
+    public boolean isCustomIcon(LauncherActivityInfo info) {
+        return getCacheEntry(info).isCustom;
     }
 
     /**
@@ -591,6 +598,7 @@ public class IconCache {
                             if (DEBUG) Log.d(TAG, "using package default icon for " +
                                     componentName.toShortString());
                             entry.icon = packageEntry.icon;
+                            entry.isCustom = packageEntry.isCustom;
                             entry.title = packageEntry.title;
                             entry.contentDescription = packageEntry.contentDescription;
                         }
@@ -703,7 +711,7 @@ public class IconCache {
                     // Add the icon in the DB here, since these do not get written during
                     // package updates.
                     ContentValues values =
-                            newContentValues(icon, lowResIcon, entry.title.toString(), packageName);
+                            newContentValues(icon, lowResIcon, entry.title.toString(), packageName, entry.isCustom);
                     addIconToDB(values, cacheKey.componentName, info,
                             mUserManager.getSerialNumberForUser(user));
 
@@ -724,16 +732,34 @@ public class IconCache {
     private boolean getEntryFromDB(ComponentKey cacheKey, CacheEntry entry, boolean lowRes) {
         Cursor c = null;
         try {
-            c = mIconDb.query(
+            try {
+                c = mIconDb.query(
                 new String[]{lowRes ? IconDB.COLUMN_ICON_LOW_RES : IconDB.COLUMN_ICON,
-                        IconDB.COLUMN_LABEL},
+                        IconDB.COLUMN_LABEL, IconDB.COLUMN_BOOL_CUSTOMICON},
                 IconDB.COLUMN_COMPONENT + " = ? AND " + IconDB.COLUMN_USER + " = ?",
                 new String[]{cacheKey.componentName.flattenToString(),
                         Long.toString(mUserManager.getSerialNumberForUser(cacheKey.user))});
+            }
+            catch (SQLiteException e){
+                if (e.getMessage().contains("no such column") && !firstErrorRebuiltDb) {
+                    firstErrorRebuiltDb = true;
+                    mIconDb.clearDB();
+                }
+                return false;
+            }
             if (c.moveToNext()) {
                 entry.icon = loadIconNoResize(c, 0, lowRes ? mLowResOptions : null);
                 entry.isLowResIcon = lowRes;
                 entry.title = c.getString(1);
+                try {
+                    entry.isCustom = c.getInt(2)!=0;
+                }catch (IllegalStateException e){
+                    if (!firstErrorRebuiltDb) {
+                        firstErrorRebuiltDb = true;
+                        mIconDb.clearDB();
+                    }
+                    return false;
+                }
                 if (entry.title == null) {
                     entry.title = "";
                     entry.contentDescription = "";
@@ -839,6 +865,7 @@ public class IconCache {
         private final static String COLUMN_VERSION = "version";
         private final static String COLUMN_ICON = "icon";
         private final static String COLUMN_ICON_LOW_RES = "icon_low_res";
+        private final static String COLUMN_BOOL_CUSTOMICON = "icon_custom";
         private final static String COLUMN_LABEL = "label";
         private final static String COLUMN_SYSTEM_STATE = "system_state";
 
@@ -859,6 +886,7 @@ public class IconCache {
                     COLUMN_ICON_LOW_RES + " BLOB, " +
                     COLUMN_LABEL + " TEXT, " +
                     COLUMN_SYSTEM_STATE + " TEXT, " +
+                    COLUMN_BOOL_CUSTOMICON + " INTEGER, " +
                     "PRIMARY KEY (" + COLUMN_COMPONENT + ", " + COLUMN_USER + ") " +
                     ");");
         }
@@ -871,13 +899,14 @@ public class IconCache {
     }
 
     private ContentValues newContentValues(Bitmap icon, Bitmap lowResIcon, String label,
-            String packageName) {
+            String packageName, boolean isCustom) {
         ContentValues values = new ContentValues();
         values.put(IconDB.COLUMN_ICON, Utilities.flattenBitmap(icon));
         values.put(IconDB.COLUMN_ICON_LOW_RES, Utilities.flattenBitmap(lowResIcon));
 
         values.put(IconDB.COLUMN_LABEL, label);
         values.put(IconDB.COLUMN_SYSTEM_STATE, mIconProvider.getIconSystemState(packageName));
+        values.put(IconDB.COLUMN_BOOL_CUSTOMICON, isCustom?1:0);
 
         return values;
     }

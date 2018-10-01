@@ -4054,8 +4054,7 @@ public class Launcher extends BaseActivity
                 .setOnDismissListener(dialog ->
                         LauncherAppState.getInstance(this).getModel().forceReload())
                 .setNeutralButton(R.string.icon_pack_reset, (dialog, which) ->
-                        mIconCache.addCustomInfoToDataBase(new BitmapDrawable(getResources(),
-                                originalIcon), info, null))
+                        mIconCache.updateIconsForPkg(component.getPackageName(), info.user))
                 .setPositiveButton(android.R.string.ok, (dialog, which) -> {
                     Drawable newIcon = new BitmapDrawable(getResources(), Utilities.ATLEAST_OREO ?
                             LauncherIcons.createIconBitmap(icon, getApplicationContext()) : icon);

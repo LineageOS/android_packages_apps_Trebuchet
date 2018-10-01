@@ -324,7 +324,7 @@ public class DragView extends View {
             LauncherActivityInfo activityInfo = LauncherAppsCompat.getInstance(mLauncher)
                     .resolveActivity(info.getIntent(), info.user);
             outObj[0] = activityInfo;
-            return (activityInfo != null) ? appState.getIconCache()
+            return (activityInfo != null && !appState.getIconCache().isCustomIcon(activityInfo)) ? appState.getIconCache()
                     .getFullResIcon(activityInfo, false).mutate() : null;
         } else if (info.itemType == LauncherSettings.Favorites.ITEM_TYPE_DEEP_SHORTCUT) {
             if (info instanceof PendingAddShortcutInfo) {

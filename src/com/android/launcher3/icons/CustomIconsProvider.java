@@ -205,6 +205,8 @@ public class CustomIconsProvider extends IconProvider {
             return wrapToAdaptiveIconBackport((portedIcon!=null) ? portedIcon : info.getIcon(iconDpi));
         }
 
-        return wrapToAdaptiveIconBackport(new BitmapDrawable(mContext.getResources(), bm));
+        return (bm.sameAs(Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), bm.getConfig()))) ?
+                wrapToAdaptiveIconBackport(Utilities.isAdaptiveIconDisabled(mContext)?getLegacyIcon(info.getComponentName().getPackageName(), iconDpi):getRoundIconBackport(info.getComponentName().getPackageName(), iconDpi)) :
+                wrapToAdaptiveIconBackport(new BitmapDrawable(mContext.getResources(), bm));
     }
 }
