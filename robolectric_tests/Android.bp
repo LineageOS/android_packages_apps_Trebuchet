@@ -55,7 +55,7 @@ android_robolectric_test {
         "SystemUISharedLib",
     ],
     robolectric_prebuilt_version: "4.5.1",
-    instrumentation_for: "Launcher3",
+    instrumentation_for: "Trebuchet",
 
     test_options: {
         timeout: 36000,
