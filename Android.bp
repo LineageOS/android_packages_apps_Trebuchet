@@ -145,7 +145,7 @@ android_library {
 // Build rule for Launcher3 app.
 //
 android_app {
-    name: "Launcher3",
+    name: "Trebuchet",
 
     static_libs: [
         "Launcher3CommonDepsLib",

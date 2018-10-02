@@ -19,6 +19,7 @@
 -->
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.android.launcher3">
     <uses-sdk android:targetSdkVersion="29" android:minSdkVersion="26"/>
     <!--
@@ -37,7 +38,8 @@
         android:theme="@style/AppTheme"
         android:largeHeap="@bool/config_largeHeap"
         android:restoreAnyVersion="true"
-        android:supportsRtl="true" >
+        android:supportsRtl="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
         <!--
         Main launcher activity. When extending only change the name, and keep all the
