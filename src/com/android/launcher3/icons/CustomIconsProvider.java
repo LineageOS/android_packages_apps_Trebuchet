@@ -59,56 +59,74 @@ public class CustomIconsProvider extends IconProvider {
         mHandler = IconCache.getIconsHandler(context);
     }
 
-    public Drawable getLegacyIcon(String packageName, int iconDpi) {
+    private int inflateIconId(Resources resourcesForApplication, String activityName, boolean roundIcon) {
+        int resId = 0;
+        int resIdGlobal = 0;
+        String activityString;
+        AssetManager assets = resourcesForApplication.getAssets();
+        try (XmlResourceParser parseXml = assets.openXmlResourceParser("AndroidManifest.xml")) {
+            String attribute = null;
+            int eventType;
+            while ((eventType = parseXml.nextToken()) != XmlPullParser.END_DOCUMENT) {
+                boolean activityFound = false;
+                String tagName = parseXml.getName();
+                if (activityName!=null && !activityName.isEmpty() && eventType == XmlPullParser.START_TAG && tagName.equals("activity"))
+                    for (int i = 0; i < parseXml.getAttributeCount(); i++) {
+                        attribute = parseXml.getAttributeName(i);
+                        if (attribute.equals("name")) {
+                            activityString = parseXml.getAttributeValue(i);
+                            if (activityString!=null && !activityString.isEmpty() && activityName.endsWith(activityString)) activityFound = true;
+                            else activityFound = false;
+                        }
+                        else if ((!roundIcon || resId == 0) && attribute.equals("icon"))
+                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                        else if (roundIcon && attribute.equals("roundIcon")) {
+                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                        }
+                    }
+                else if (eventType == XmlPullParser.START_TAG && tagName.equals("application"))
+                    for (int i = 0; i < parseXml.getAttributeCount(); i++) {
+                        attribute = parseXml.getAttributeName(i);
+                        if ((!roundIcon || resIdGlobal == 0) && attribute.equals("icon"))
+                            resIdGlobal = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                        else if (roundIcon && attribute.equals("roundIcon")) {
+                            resIdGlobal = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
+                            break;
+                        }
+                    }
+                if (resId!=0 && activityFound) break;
+                else if (resId!=0 && !activityFound) resId=0;
+            }
+        } catch (Exception ex) {
+            android.util.Log.e("CustomIconsProvider", "Error parsing xml", ex);
+        }
+        if (resId==0) resId=resIdGlobal;
+        return resId;
+    }
+
+    public Drawable getLegacyIcon(String packageName, String activityName, int iconDpi) {
         try {
             PackageManager mPackageManager = mContext.getPackageManager();
             Resources resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);
-            AssetManager assets = resourcesForApplication.getAssets();
-            XmlResourceParser parseXml = assets.openXmlResourceParser("AndroidManifest.xml");
-            Drawable legacyIcon = null;
-            resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
-            int eventType;
-            while ((eventType = parseXml.nextToken()) != XmlPullParser.END_DOCUMENT)
-                if (eventType == XmlPullParser.START_TAG && parseXml.getName().equals("application"))
-                    for (int i = 0; i < parseXml.getAttributeCount(); i++)
-                        if (parseXml.getAttributeName(i).equals("icon"))
-                            legacyIcon = resourcesForApplication.getDrawableForDensity(Integer.parseInt(parseXml.getAttributeValue(i).substring(1)), iconDpi);
-            parseXml.close();
-            return legacyIcon;
-        } catch (Exception ex) {
-            android.util.Log.w("getLegacyIcon", ex);
-        }
+
+            int resId = inflateIconId(resourcesForApplication, activityName, false);
+            if (resId!=0) {
+                resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
+                return resourcesForApplication.getDrawableForDensity(resId, iconDpi);
+            }
+        } catch (Exception ex) {}
         return null;
     }
 
-    public Drawable getRoundIconBackport(String packageName, int iconDpi) {
-        int resId = 0;
+    public Drawable getRoundIconBackport(String packageName, String activityName, int iconDpi) {
         Drawable legacyIcon = null;
         PackageManager mPackageManager = mContext.getPackageManager();
         Resources resourcesForApplication = null;
         try {resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);}
         catch (PackageManager.NameNotFoundException e) {return null;}
-        AssetManager assets = resourcesForApplication.getAssets();
 
-        try (XmlResourceParser parseXml = assets.openXmlResourceParser("AndroidManifest.xml")) {
-            String attribute = null;
-            int eventType;
-            while ((eventType = parseXml.nextToken()) != XmlPullParser.END_DOCUMENT) {
-                if (eventType == XmlPullParser.START_TAG && parseXml.getName().equals("application"))
-                    for (int i = 0; i < parseXml.getAttributeCount(); i++) {
-                        attribute = parseXml.getAttributeName(i);
-                        if (resId == 0 && attribute.equals("icon"))
-                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
-                        else if (attribute.equals("roundIcon")) {
-                            resId = Integer.parseInt(parseXml.getAttributeValue(i).substring(1));
-                            break;
-                        }
-                    }
-                if (resId!=0 && attribute.equals("roundIcon")) break;
-            }
-        } catch (Exception ex) {
-            android.util.Log.w("getLegacyIcon", ex);
-        }
+        int resId = inflateIconId(resourcesForApplication, activityName, true);
+
         if (resId!=0) try {
             resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 26);
             try {
@@ -158,7 +176,7 @@ public class CustomIconsProvider extends IconProvider {
                 ((AdaptiveIconDrawableCompat)icon).missingLayer = null;
             }
             catch (Exception e) {return null;}
-        } catch (Exception e) {Log.e("ERRORE!","",e);}
+        } catch (Exception e) {Log.e("CustomIconsProvider","Error creating shortcut icon", e);}
         if (resId!=0 && legacyIcon==null && icon==null) try{resourcesForApplication=ResourceHack.setResSdk(resourcesForApplication, 25);} catch (Exception e){}
         return icon!=null?icon:legacyIcon;
     }
@@ -187,26 +205,28 @@ public class CustomIconsProvider extends IconProvider {
 
     @Override
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
-        // if we are not using any icon pack, load application icon directly
         Drawable portedIcon = null;
         if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) && Utilities.isAdaptiveIconDisabled(mContext))
-            portedIcon = getLegacyIcon(info.getComponentName().getPackageName(), iconDpi);
+            portedIcon = getLegacyIcon(info.getComponentName().getPackageName(), info.getName(), iconDpi);
         if (((Utilities.ATLEAST_OREO && !IconShapeOverride.isSupported(mContext)) || (!Utilities.ATLEAST_OREO)) && !Utilities.isAdaptiveIconDisabled(mContext))
-            portedIcon = getRoundIconBackport(info.getComponentName().getPackageName(), iconDpi);
+            portedIcon = getRoundIconBackport(info.getComponentName().getPackageName(), info.getName(), iconDpi);
 
         if (Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext)) {
             if (portedIcon!=null) return portedIcon;
+            try {
+                Drawable icon = mContext.getPackageManager().getActivityIcon(info.getComponentName());
+                if (icon!=null) return icon;
+            }
+            catch (Exception e) {Log.e("CustomIconsProvider", "Icon not found for activity: "+info.getName(), e);}
             return mContext.getPackageManager().getApplicationIcon(info.getApplicationInfo());
         }
         else if (!Utilities.ATLEAST_OREO && !Utilities.isUsingIconPack(mContext) && portedIcon!=null) return wrapToAdaptiveIconBackport(portedIcon);
 
         final Bitmap bm = mHandler.getThemedDrawableIconForPackage(info.getComponentName());
-        if (bm == null) {
+        if (bm == null || bm.sameAs(Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), bm.getConfig()))) {
             return wrapToAdaptiveIconBackport((portedIcon!=null) ? portedIcon : info.getIcon(iconDpi));
         }
 
-        return (bm.sameAs(Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), bm.getConfig()))) ?
-                wrapToAdaptiveIconBackport(Utilities.isAdaptiveIconDisabled(mContext)?getLegacyIcon(info.getComponentName().getPackageName(), iconDpi):getRoundIconBackport(info.getComponentName().getPackageName(), iconDpi)) :
-                wrapToAdaptiveIconBackport(new BitmapDrawable(mContext.getResources(), bm));
+        return wrapToAdaptiveIconBackport(new BitmapDrawable(mContext.getResources(), bm));
     }
 }
