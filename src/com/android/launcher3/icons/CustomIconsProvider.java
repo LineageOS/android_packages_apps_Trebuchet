@@ -104,17 +104,38 @@ public class CustomIconsProvider extends IconProvider {
         return resId;
     }
 
-    public Drawable getLegacyIcon(String packageName, String activityName, int iconDpi) {
+    public Drawable getLegacyIcon(LauncherActivityInfo info, int iconDpi) {
+        String packageName = info.getComponentName().getPackageName();
+        String activityName = info.getName();
+
+        PackageManager mPackageManager = null;
+        Resources resourcesForApplication = null;
         try {
-            PackageManager mPackageManager = mContext.getPackageManager();
-            Resources resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);
+            mPackageManager = mContext.getPackageManager();
+            resourcesForApplication = mPackageManager.getResourcesForApplication(packageName);
 
             int resId = inflateIconId(resourcesForApplication, activityName, false);
             if (resId!=0) {
                 resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
                 return resourcesForApplication.getDrawableForDensity(resId, iconDpi);
             }
-        } catch (Exception ex) {}
+            else {
+                resId = mContext.getPackageManager().getActivityInfo(info.getComponentName(), PackageManager.GET_SHARED_LIBRARY_FILES).icon;
+                if (resId == 0) resId = info.getApplicationInfo().icon;
+                if (resId == 0) return null;
+                resourcesForApplication = ResourceHack.setResSdk(resourcesForApplication, 25);
+                Drawable legacyIcon = resourcesForApplication.getDrawableForDensity(resId, iconDpi, null);
+                //This is necessary for some reason
+                if (legacyIcon == null) throw new Exception();
+                return legacyIcon;
+            }
+        } catch (Exception ex) {
+            if (resourcesForApplication!=null) try{
+                resourcesForApplication=ResourceHack.setResSdk(resourcesForApplication, android.os.Build.VERSION.SDK_INT);
+                resourcesForApplication.flushLayoutCache();
+            }catch (Exception e){}
+            Log.e("CustomIconsProvider", "Failure retrieving legacy icon for activity: "+info.getName());
+        }
         return null;
     }
 
@@ -207,7 +228,7 @@ public class CustomIconsProvider extends IconProvider {
     public Drawable getIcon(LauncherActivityInfo info, int iconDpi, boolean flattenDrawable) {
         Drawable portedIcon = null;
         if (Utilities.ATLEAST_OREO && IconShapeOverride.isSupported(mContext) && Utilities.isAdaptiveIconDisabled(mContext))
-            portedIcon = getLegacyIcon(info.getComponentName().getPackageName(), info.getName(), iconDpi);
+            portedIcon = getLegacyIcon(info, iconDpi);
         if (((Utilities.ATLEAST_OREO && !IconShapeOverride.isSupported(mContext)) || (!Utilities.ATLEAST_OREO)) && !Utilities.isAdaptiveIconDisabled(mContext))
             portedIcon = getRoundIconBackport(info.getComponentName().getPackageName(), info.getName(), iconDpi);
 

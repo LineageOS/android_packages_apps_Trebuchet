@@ -41,7 +41,7 @@ public class ResourceHack {
         }
         if(Utilities.ATLEAST_OREO) {
             setConfigurationMethod().invoke(res.getAssets(), Integer.valueOf(res.getConfiguration().mcc), Integer.valueOf(res.getConfiguration().mnc),
-                    res.getConfiguration().locale.toLanguageTag(), Integer.valueOf(res.getConfiguration().orientation), Integer.valueOf(res.getConfiguration().touchscreen),
+                    res.getConfiguration().getLocales().get(0).toLanguageTag(), Integer.valueOf(res.getConfiguration().orientation), Integer.valueOf(res.getConfiguration().touchscreen),
                     Integer.valueOf(res.getConfiguration().densityDpi), Integer.valueOf(res.getConfiguration().keyboard), Integer.valueOf(res.getConfiguration().keyboardHidden),
                     Integer.valueOf(res.getConfiguration().navigation), Integer.valueOf(width), Integer.valueOf(height), Integer.valueOf(res.getConfiguration().smallestScreenWidthDp),
                     Integer.valueOf(res.getConfiguration().screenWidthDp), Integer.valueOf(res.getConfiguration().screenHeightDp), Integer.valueOf(res.getConfiguration().screenLayout),
