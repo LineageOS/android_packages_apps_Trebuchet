@@ -53,21 +53,27 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
 
     // A normal icon
     public static final int VIEW_TYPE_ICON = 1 << 1;
+    // A prediction icon
+    public static final int VIEW_TYPE_PREDICTION_ICON = 1 << 2;
     // The message shown when there are no filtered results
-    public static final int VIEW_TYPE_EMPTY_SEARCH = 1 << 2;
+    public static final int VIEW_TYPE_EMPTY_SEARCH = 1 << 3;
     // The message to continue to a market search when there are no filtered results
-    public static final int VIEW_TYPE_SEARCH_MARKET = 1 << 3;
+    public static final int VIEW_TYPE_SEARCH_MARKET = 1 << 4;
 
     // We use various dividers for various purposes.  They share enough attributes to reuse layouts,
     // but differ in enough attributes to require different view types
 
     // A divider that separates the apps list and the search market button
-    public static final int VIEW_TYPE_ALL_APPS_DIVIDER = 1 << 4;
-    public static final int VIEW_TYPE_WORK_TAB_FOOTER = 1 << 5;
+    public static final int VIEW_TYPE_ALL_APPS_DIVIDER = 1 << 5;
+    // The divider that separates prediction icons from the app list
+    public static final int VIEW_TYPE_PREDICTION_DIVIDER = 1 << 6;
+    public static final int VIEW_TYPE_WORK_TAB_FOOTER = 1 << 7;
 
     // Common view type masks
     public static final int VIEW_TYPE_MASK_DIVIDER = VIEW_TYPE_ALL_APPS_DIVIDER;
     public static final int VIEW_TYPE_MASK_ICON = VIEW_TYPE_ICON;
+    public static final int VIEW_TYPE_MASK_HAS_SPRINGS = VIEW_TYPE_MASK_ICON
+            | VIEW_TYPE_PREDICTION_DIVIDER;
 
 
     public interface BindViewCallback {
@@ -179,7 +185,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     private final GridLayoutManager mGridLayoutMgr;
     private final GridSpanSizer mGridSizer;
 
-    private final int mAppsPerRow;
+    private int mAppsPerRow;
 
     private BindViewCallback mBindViewCallback;
     private OnFocusChangeListener mIconFocusListener;
@@ -215,6 +221,18 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         return (viewType & viewTypeMask) != 0;
     }
 
+    /**
+     * Sets the number of apps per row.
+     */
+    public void setNumAppsPerRow(int appsPerRow) {
+        mAppsPerRow = appsPerRow;
+        mGridLayoutMgr.setSpanCount(appsPerRow);
+    }
+
+    public int getNumAppsPerRow() {
+        return mAppsPerRow;
+    }
+
     public void setIconFocusListener(OnFocusChangeListener focusListener) {
         mIconFocusListener = focusListener;
     }
@@ -247,6 +265,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case VIEW_TYPE_ICON:
+            case VIEW_TYPE_PREDICTION_ICON:
                 BubbleTextView icon = (BubbleTextView) mLayoutInflater.inflate(
                         R.layout.all_apps_icon, parent, false);
                 icon.setOnClickListener(ItemClickHandler.INSTANCE);
@@ -270,6 +289,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
                     }
                 });
                 return new ViewHolder(searchMarketView);
+            case VIEW_TYPE_PREDICTION_DIVIDER:
             case VIEW_TYPE_ALL_APPS_DIVIDER:
                 return new ViewHolder(mLayoutInflater.inflate(
                         R.layout.all_apps_divider, parent, false));
@@ -285,6 +305,7 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         switch (holder.getItemViewType()) {
             case VIEW_TYPE_ICON:
+            case VIEW_TYPE_PREDICTION_ICON:
                 AppInfo info = mApps.getAdapterItems().get(position).appInfo;
                 BubbleTextView icon = (BubbleTextView) holder.itemView;
                 icon.reset();
@@ -338,5 +359,4 @@ public class AllAppsGridAdapter extends RecyclerView.Adapter<AllAppsGridAdapter.
         AlphabeticalAppsList.AdapterItem item = mApps.getAdapterItems().get(position);
         return item.viewType;
     }
-
 }
