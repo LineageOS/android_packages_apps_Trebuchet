@@ -51,6 +51,8 @@ abstract class BaseFlags {
 
     // When enabled shows a work profile tab in all apps
     public static final boolean ALL_APPS_TABS_ENABLED = true;
+    // When enabled prediction row is rendered as it's own custom view
+    public static final boolean ALL_APPS_PREDICTION_ROW_VIEW = true;
 
     // When true, overview shows screenshots in the orientation they were taken rather than
     // trying to make them fit the orientation the device is in.
