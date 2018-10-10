@@ -78,6 +78,8 @@ public class SettingsActivity extends Activity {
 
     public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     private static final String KEY_GRID_SIZE = "pref_grid_size";
+    private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
+    private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -243,9 +245,15 @@ public class SettingsActivity extends Activity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-            if (KEY_GRID_SIZE.equals(key)) {
-                mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaultGridSize()));
-                mShouldRestart = true;
+            switch (key) {
+                case KEY_GRID_SIZE:
+                    mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaultGridSize()));
+                    mShouldRestart = true;
+                    break;
+                case KEY_SHOW_DESKTOP_LABELS:
+                case KEY_SHOW_DRAWER_LABELS:
+                    mShouldRestart = true;
+                    break;
             }
         }
 
