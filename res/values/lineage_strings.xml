@@ -27,4 +27,8 @@
 
     <!-- Folder titles -->
     <string name="google_folder_title" translatable="false">Google</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Show icon labels on desktop</string>
+    <string name="drawer_show_labels">Show icon labels in drawer</string>
 </resources>
