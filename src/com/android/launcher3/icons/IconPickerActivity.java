@@ -247,7 +247,7 @@ public class IconPickerActivity extends Activity {
                     Drawable icon = mIconsHandler.loadDrawable(mIconPackPackageName,
                             drawables.get(holder.getAdapterPosition()), true);
                     if (icon != null) {
-                        mIconCache.addCustomInfoToDataBase(icon, sItemInfo, mCurrentPackageLabel);
+                        mIconCache.addCustomInfoToDataBase(icon, sItemInfo, mCurrentPackageLabel, true);
                     }
                     IconPickerActivity.this.finish();
                 });

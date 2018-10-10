@@ -231,6 +231,32 @@ public class IconCache {
     }
 
     /**
+     * Updates the entry related to the given activity in memory and persistent DB.
+     */
+    public synchronized void updateIconForActivity(Intent intent, UserHandle user) {
+        String packageName = intent.getPackage();
+        LauncherActivityInfo app = LauncherAppsCompat.getInstance(mContext).resolveActivity(intent, user);
+        if (app==null) {
+            updateIconsForPkg(packageName, user);
+            return;
+        }
+
+        removeIconForActivity(intent.getComponent(), user);
+        try {
+            if (app==null) {
+                updateIconsForPkg(packageName, user);
+                return;
+            }
+            PackageInfo info = mPackageManager.getPackageInfo(packageName,
+                    PackageManager.GET_UNINSTALLED_PACKAGES);
+            long userSerial = mUserManager.getSerialNumberForUser(user);
+            addIconToDBAndMemCache(app, info, userSerial, false /*replace existing*/);
+        } catch (NameNotFoundException e) {
+            Log.d(TAG, "Package not found", e);
+        }
+    }
+
+    /**
      * Removes the entries related to the given package in memory and persistent DB.
      */
     public synchronized void removeIconsForPkg(String packageName, UserHandle user) {
@@ -240,6 +266,18 @@ public class IconCache {
                 IconDB.COLUMN_COMPONENT + " LIKE ? AND " + IconDB.COLUMN_USER + " = ?",
                 new String[]{packageName + "/%", Long.toString(userSerial)});
     }
+
+    /**
+     * Removes the entry related to the given activity in memory and persistent DB.
+     */
+    public synchronized void removeIconForActivity(ComponentName component, UserHandle user) {
+        remove(component, user);
+        long userSerial = mUserManager.getSerialNumberForUser(user);
+        mIconDb.delete(
+                IconDB.COLUMN_COMPONENT + " = ? AND " + IconDB.COLUMN_USER + " = ?",
+                new String[]{component.flattenToString(), Long.toString(userSerial)});
+    }
+
 
     public void updateDbIcons(Set<String> ignorePackagesForMainUser) {
         // Remove all active icon update tasks.
@@ -407,6 +445,10 @@ public class IconCache {
     }
 
     public void addCustomInfoToDataBase(Drawable icon, ItemInfo info, CharSequence title) {
+        addCustomInfoToDataBase(icon, info, title, false);
+    }
+
+    public void addCustomInfoToDataBase(Drawable icon, ItemInfo info, CharSequence title, boolean themed) {
         LauncherActivityInfo app = mLauncherApps.resolveActivity(info.getIntent(), info.user);
         if (app == null) {
             return;
@@ -414,7 +456,7 @@ public class IconCache {
 
         final ComponentKey key = new ComponentKey(app.getComponentName(), app.getUser());
         CacheEntry entry = mCache.get(key);
-        entry.isCustom = true;
+        if (themed) entry.isCustom = true;
         PackageInfo packageInfo = null;
         try {
             packageInfo = mPackageManager.getPackageInfo(
