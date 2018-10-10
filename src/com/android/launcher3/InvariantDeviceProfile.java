@@ -28,6 +28,8 @@ import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -61,7 +63,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class InvariantDeviceProfile {
+public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener {
 
     public static final String TAG = "IDP";
     // We do not need any synchronization for this variable as its only written on UI thread.
@@ -78,6 +80,8 @@ public class InvariantDeviceProfile {
     public static final int CHANGE_FLAG_GRID = 1 << 0;
     public static final int CHANGE_FLAG_ICON_PARAMS = 1 << 1;
 
+    public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
+    public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_ICON_PATH_REF = "pref_icon_shape_path";
 
     // Constants that affects the interpolation curve between statically defined device profile
@@ -137,6 +141,8 @@ public class InvariantDeviceProfile {
     private ConfigMonitor mConfigMonitor;
     private OverlayMonitor mOverlayMonitor;
 
+    private Context mContext;
+
     @VisibleForTesting
     public InvariantDeviceProfile() {}
 
@@ -163,10 +169,14 @@ public class InvariantDeviceProfile {
 
     @TargetApi(23)
     private InvariantDeviceProfile(Context context) {
+        mContext = context;
+
+        SharedPreferences prefs = Utilities.getPrefs(context);
+        prefs.registerOnSharedPreferenceChangeListener(this);
         String gridName = getCurrentGridName(context);
         String newGridName = initGrid(context, gridName);
         if (!newGridName.equals(gridName)) {
-            Utilities.getPrefs(context).edit().putString(KEY_IDP_GRID_NAME, newGridName).apply();
+            prefs.edit().putString(KEY_IDP_GRID_NAME, newGridName).apply();
         }
         Utilities.getPrefs(context).edit()
                 .putInt(KEY_MIGRATION_SRC_HOTSEAT_COUNT, numHotseatIcons)
@@ -185,6 +195,13 @@ public class InvariantDeviceProfile {
         String newName = initGrid(context, gridName);
         if (newName == null || !newName.equals(gridName)) {
             throw new IllegalArgumentException("Unknown grid name");
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        if (KEY_SHOW_DESKTOP_LABELS.equals(key) || KEY_SHOW_DRAWER_LABELS.equals(key)) {
+            apply(mContext, CHANGE_FLAG_ICON_PARAMS);
         }
     }
 
