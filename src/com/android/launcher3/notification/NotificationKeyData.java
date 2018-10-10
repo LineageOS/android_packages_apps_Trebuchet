@@ -20,6 +20,8 @@ import android.app.Notification;
 import android.service.notification.StatusBarNotification;
 import android.support.annotation.NonNull;
 
+import com.android.launcher3.Utilities;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +44,7 @@ public class NotificationKeyData {
 
     public static NotificationKeyData fromNotification(StatusBarNotification sbn) {
         Notification notif = sbn.getNotification();
-        return new NotificationKeyData(sbn.getKey(), notif.getShortcutId(), notif.number);
+        return new NotificationKeyData(sbn.getKey(), Utilities.ATLEAST_OREO ? notif.getShortcutId() : null, notif.number);
     }
 
     public static List<String> extractKeysOnly(@NonNull List<NotificationKeyData> notificationKeys) {

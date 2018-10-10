@@ -32,12 +32,14 @@ import android.util.Log;
 import android.util.Pair;
 
 import com.android.launcher3.LauncherModel;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.util.PackageUserKey;
 import com.android.launcher3.util.SettingsObserver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -49,7 +51,6 @@ import static com.android.launcher3.SettingsActivity.NOTIFICATION_BADGING;
  * as well and when this service first connects. An instance of NotificationListener,
  * and its methods for getting notifications, can be obtained via {@link #getInstanceIfConnected()}.
  */
-@TargetApi(Build.VERSION_CODES.O)
 public class NotificationListener extends NotificationListenerService {
 
     public static final String TAG = "NotificationListener";
@@ -247,7 +248,7 @@ public class NotificationListener extends NotificationListenerService {
     private List<StatusBarNotification> filterNotifications(
             StatusBarNotification[] notifications) {
         if (notifications == null) return null;
-        Set<Integer> removedNotifications = new ArraySet<>();
+        Set<Integer> removedNotifications = new HashSet<>();
         for (int i = 0; i < notifications.length; i++) {
             if (shouldBeFilteredOut(notifications[i])) {
                 removedNotifications.add(i);
@@ -264,15 +265,17 @@ public class NotificationListener extends NotificationListenerService {
     }
 
     private boolean shouldBeFilteredOut(StatusBarNotification sbn) {
-        getCurrentRanking().getRanking(sbn.getKey(), mTempRanking);
-        if (!mTempRanking.canShowBadge()) {
-            return true;
-        }
         Notification notification = sbn.getNotification();
-        if (mTempRanking.getChannel().getId().equals(NotificationChannel.DEFAULT_CHANNEL_ID)) {
-            // Special filtering for the default, legacy "Miscellaneous" channel.
-            if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0) {
+        if (Utilities.ATLEAST_OREO) {
+            getCurrentRanking().getRanking(sbn.getKey(), mTempRanking);
+            if (!mTempRanking.canShowBadge()) {
                 return true;
+            }
+            if (mTempRanking.getChannel().getId().equals(NotificationChannel.DEFAULT_CHANNEL_ID)) {
+                // Special filtering for the default, legacy "Miscellaneous" channel.
+                if ((notification.flags & Notification.FLAG_ONGOING_EVENT) != 0) {
+                    return true;
+                }
             }
         }
         boolean isGroupHeader = (notification.flags & Notification.FLAG_GROUP_SUMMARY) != 0;

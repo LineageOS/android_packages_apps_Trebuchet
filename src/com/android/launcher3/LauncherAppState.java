@@ -139,7 +139,7 @@ public class LauncherAppState {
                     mContext.getContentResolver()) {
                 @Override
                 public void onSettingChanged(boolean isNotificationBadgingEnabled) {
-                    if (isNotificationBadgingEnabled) {
+                    if (isNotificationBadgingEnabled && Utilities.ATLEAST_NOUGAT) {
                         NotificationListener.requestRebind(new ComponentName(
                                 mContext, NotificationListener.class));
                     }
