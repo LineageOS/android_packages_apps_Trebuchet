@@ -38,4 +38,8 @@
     <string name="grid_size_columns">Columns</string>
     <string name="grid_size_custom_positive">Set</string>
     <string name="grid_size_custom_message">Select custom columns and rows count</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Show icon labels on desktop</string>
+    <string name="drawer_show_labels">Show icon labels in drawer</string>
 </resources>
