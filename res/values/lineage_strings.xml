@@ -38,4 +38,8 @@
     <string name="trust_apps_help">Help</string>
     <string name="trust_apps_info_hidden">Hidden apps and their widgets are hidden from the drawer</string>
     <string name="trust_apps_info_protected">Protected apps require authentication to be opened from the launcher</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Show icon labels on desktop</string>
+    <string name="drawer_show_labels">Show icon labels in drawer</string>
 </resources>
