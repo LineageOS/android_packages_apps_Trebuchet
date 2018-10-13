@@ -66,6 +66,7 @@
   <string name="settings_edit_allow_summary_off">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
   <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Google App anzeigen</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

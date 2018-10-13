@@ -68,7 +68,7 @@
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
   <string name="title_show_google_app">显示 Google 应用</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_left">当您从主桌面向左滑动时</string>
+  <string name="msg_minus_one_on_left">当您从主屏幕向右滑动时</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_right">当您从主桌面向右滑动时</string>
+  <string name="msg_minus_one_on_right">当您从主屏幕向左滑动时</string>
 </resources>

@@ -68,7 +68,5 @@
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
   <string name="title_show_google_app">Zobraziť Google aplikácie</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_left">Keď potiahnutí prstom vľavo na hlavnej obrazovke</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_right">Keď potiahnutí prstom vpravo na hlavnej obrazovke</string>
 </resources>

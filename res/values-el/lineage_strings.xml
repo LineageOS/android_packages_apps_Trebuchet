@@ -68,7 +68,7 @@
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
   <string name="title_show_google_app">Εμφάνιση εφαρμογής Google</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_left">Όταν σύρετε προς τα αριστερά από την κύρια αρχική οθόνη</string>
+  <string name="msg_minus_one_on_left">Όταν σύρετε προς τα δεξιά από την κύρια αρχική οθόνη</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_right">Όταν σύρετε προς τα δεξιά από την κύρια αρχική οθόνη</string>
+  <string name="msg_minus_one_on_right">Όταν σύρετε προς τα αριστερά από την κύρια αρχική οθόνη</string>
 </resources>

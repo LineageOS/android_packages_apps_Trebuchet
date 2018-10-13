@@ -44,7 +44,7 @@
   <string name="settings_category_home">Hemskärmsinställningar</string>
   <string name="settings_category_drawer">Inställningar för applistan</string>
   <string name="settings_category_icons">Ikoninställningar</string>
-  <string name="settings_more">Mer</string>
+  <string name="settings_more">Fler</string>
   <string name="settings_rotation_title">Rotation</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->

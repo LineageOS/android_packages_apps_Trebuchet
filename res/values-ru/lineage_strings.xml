@@ -20,7 +20,7 @@
   <!-- Folder titles -->
   <string name="play_folder_title">Сервисы Play</string>
   <!-- Expand statusbar -->
-  <string name="statusbar_expand">Смахните вниз для показа уведомлений</string>
+  <string name="statusbar_expand">Свайп вниз для показа уведомлений</string>
   <!-- Predictive apps -->
   <string name="predictive_apps_title">Предиктивные приложения</string>
   <string name="predictive_apps_summary_on">Ваши любимые приложения будут отображены на верху меню</string>
@@ -68,7 +68,7 @@
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
   <string name="title_show_google_app">Показать приложение Google</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_left">При свайпе влево от главного экрана</string>
+  <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-  <string name="msg_minus_one_on_right">При свайпе вправо от главного экрана</string>
+  <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
 </resources>

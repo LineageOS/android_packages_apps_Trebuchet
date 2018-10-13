@@ -66,6 +66,7 @@
   <string name="settings_edit_allow_summary_off">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
   <string name="settings_edit_widgets_error">Невъзможно е да се добавят джаджи към началния екран</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Покажи Google апликацията</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

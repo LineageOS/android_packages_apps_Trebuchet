@@ -66,6 +66,7 @@
   <string name="settings_edit_allow_summary_off">Iconas e widgets no se poden engadir, eliminar e mover na pantalla de inicio</string>
   <string name="settings_edit_widgets_error">Non é posíbel engadir widgets á pantalla de inicio</string>
   <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+  <string name="title_show_google_app">Amosar a aplicación Google Now</string>
   <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
   <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>
