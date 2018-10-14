@@ -51,10 +51,13 @@
   <!-- Permissions: -->
   <!-- Permission short label -->
   <!-- Permission description -->
+  <string name="permdesc_install_shortcut">Mae\'n caniatáu i ap ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
   <!-- Permission short label -->
   <!-- Permission description -->
+  <string name="permdesc_read_settings">Mae\'n caniatáu i\'r ap ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
   <!-- Permission short label -->
   <!-- Permission description -->
+  <string name="permdesc_write_settings">Mae\'n caniatáu i\'r ap newid y gosodiadau a llwybrau byr yn Cartref.</string>
   <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
   <!-- Widgets: -->
   <!-- Text to show user in place of a gadget when we can't display it properly -->
@@ -83,9 +86,11 @@
   <!-- Strings for the customization mode -->
   <!-- Text for widget add button -->
   <!-- Text for wallpaper change button -->
+  <string name="wallpaper_button_text">Papurau wal</string>
   <!-- Text for settings button -->
   <!-- Strings for settings -->
   <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
+  <string name="allow_rotation_title">Caniatáu troi</string>
   <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
   <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
   <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
