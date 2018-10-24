@@ -187,7 +187,7 @@ public class SearchLauncherCallbacks implements LauncherCallbacks, OnSharedPrefe
 
     @Override
     public boolean shouldMoveToDefaultScreenOnHomeIntent() {
-        return false;
+        return true;
     }
 
     @Override
