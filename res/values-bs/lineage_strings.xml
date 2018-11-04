@@ -16,16 +16,16 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <!-- Expand statusbar -->
-  <!-- Predictive apps -->
-  <!-- Grid size -->
-  <!-- Hide labels -->
-  <!-- Custom icons -->
-  <!-- Icon shapes -->
-  <!-- Preferences -->
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <!-- Expand statusbar -->
+    <!-- Predictive apps -->
+    <!-- Grid size -->
+    <!-- Hide labels -->
+    <!-- Custom icons -->
+    <!-- Icon shapes -->
+    <!-- Preferences -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

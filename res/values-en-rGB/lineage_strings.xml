@@ -16,56 +16,56 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Expand statusbar -->
-  <string name="statusbar_expand">Swipe down to show notifications</string>
-  <!-- Predictive apps -->
-  <string name="predictive_apps_title">Predictive apps</string>
-  <string name="predictive_apps_summary_on">Your favourite apps will appear at the top of the drawer</string>
-  <string name="predictive_apps_summary_off">Your favourite apps won\'t appear at the top of the drawer</string>
-  <!-- Grid size -->
-  <string name="grid_size_text">Grid size</string>
-  <string name="grid_size_rows">Rows</string>
-  <string name="grid_size_columns">Columns</string>
-  <string name="grid_size_custom_positive">Set</string>
-  <string name="grid_size_custom_message">Select custom columns and rows count</string>
-  <!-- Hide labels -->
-  <string name="desktop_show_labels">Show icon labels on desktop</string>
-  <string name="drawer_show_labels">Show icon labels in drawer</string>
-  <!-- Custom icons -->
-  <string name="app_edit_drop_target_label">Edit</string>
-  <string name="icon_pack_title">Icon pack</string>
-  <string name="icon_pack_picker">Select icon</string>
-  <string name="icon_pack_picker_search">Search icon</string>
-  <string name="icon_pack_suggestions">Suggestions</string>
-  <string name="icon_pack_all_icons">All icons</string>
-  <string name="icon_pack_reset">Reset</string>
-  <string name="icon_pack_system">System (Default)</string>
-  <!-- Icon shapes -->
-  <string name="icon_shape_super_ellipse_name">Super ellipse</string>
-  <string name="icon_shape_circle_name">Circle</string>
-  <string name="icon_shape_squircle_name">Squircle</string>
-  <string name="icon_shape_teardrop_name">Teardrop</string>
-  <!-- Preferences -->
-  <string name="settings_category_home">Home screen settings</string>
-  <string name="settings_category_drawer">Drawer settings</string>
-  <string name="settings_category_icons">Icon settings</string>
-  <string name="settings_more">More</string>
-  <string name="settings_rotation_title">Rotation</string>
-  <string name="settings_allow_rotation_desc">Allow using the homescreen in landscape when the device is rotated</string>
-  <string name="settings_icon_shape">Icons shape</string>
-  <string name="settings_icon_badging_desc_on">A bubble will be displayed above the icon when there\'s a notification</string>
-  <string name="settings_icon_badging_desc_off">No bubble will be displayed above the icon when there\'s a notification</string>
-  <string name="settings_icon_force_adaptive_title">Force adaptive icons</string>
-  <string name="settings_icon_force_adaptive_desc_on">Icons with a custom shape will be boxed</string>
-  <string name="settings_icon_force_adaptive_desc_off">Icons with a custom shape will not be boxed</string>
-  <string name="settings_edit_allow_title">Allow edit</string>
-  <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
-  <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
-  <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <string name="play_folder_title">Play</string>
+    <!-- Expand statusbar -->
+    <string name="statusbar_expand">Swipe down to show notifications</string>
+    <!-- Predictive apps -->
+    <string name="predictive_apps_title">Predictive apps</string>
+    <string name="predictive_apps_summary_on">Your favourite apps will appear at the top of the drawer</string>
+    <string name="predictive_apps_summary_off">Your favourite apps won\'t appear at the top of the drawer</string>
+    <!-- Grid size -->
+    <string name="grid_size_text">Grid size</string>
+    <string name="grid_size_rows">Rows</string>
+    <string name="grid_size_columns">Columns</string>
+    <string name="grid_size_custom_positive">Set</string>
+    <string name="grid_size_custom_message">Select custom columns and rows count</string>
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Show icon labels on desktop</string>
+    <string name="drawer_show_labels">Show icon labels in drawer</string>
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Edit</string>
+    <string name="icon_pack_title">Icon pack</string>
+    <string name="icon_pack_picker">Select icon</string>
+    <string name="icon_pack_picker_search">Search icon</string>
+    <string name="icon_pack_suggestions">Suggestions</string>
+    <string name="icon_pack_all_icons">All icons</string>
+    <string name="icon_pack_reset">Reset</string>
+    <string name="icon_pack_system">System (Default)</string>
+    <!-- Icon shapes -->
+    <string name="icon_shape_super_ellipse_name">Super ellipse</string>
+    <string name="icon_shape_circle_name">Circle</string>
+    <string name="icon_shape_squircle_name">Squircle</string>
+    <string name="icon_shape_teardrop_name">Teardrop</string>
+    <!-- Preferences -->
+    <string name="settings_category_home">Home screen settings</string>
+    <string name="settings_category_drawer">Drawer settings</string>
+    <string name="settings_category_icons">Icon settings</string>
+    <string name="settings_more">More</string>
+    <string name="settings_rotation_title">Rotation</string>
+    <string name="settings_allow_rotation_desc">Allow using the homescreen in landscape when the device is rotated</string>
+    <string name="settings_icon_shape">Icons shape</string>
+    <string name="settings_icon_badging_desc_on">A bubble will be displayed above the icon when there\'s a notification</string>
+    <string name="settings_icon_badging_desc_off">No bubble will be displayed above the icon when there\'s a notification</string>
+    <string name="settings_icon_force_adaptive_title">Force adaptive icons</string>
+    <string name="settings_icon_force_adaptive_desc_on">Icons with a custom shape will be boxed</string>
+    <string name="settings_icon_force_adaptive_desc_off">Icons with a custom shape will not be boxed</string>
+    <string name="settings_edit_allow_title">Allow edit</string>
+    <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
+    <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
+    <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

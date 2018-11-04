@@ -16,20 +16,20 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <string name="play_folder_title">Покрени</string>
-  <!-- Expand statusbar -->
-  <!-- Predictive apps -->
-  <!-- Grid size -->
-  <string name="grid_size_rows">Редови</string>
-  <string name="grid_size_custom_positive">Постави</string>
-  <!-- Hide labels -->
-  <!-- Custom icons -->
-  <string name="app_edit_drop_target_label">Измени</string>
-  <!-- Icon shapes -->
-  <!-- Preferences -->
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <string name="play_folder_title">Покрени</string>
+    <!-- Expand statusbar -->
+    <!-- Predictive apps -->
+    <!-- Grid size -->
+    <string name="grid_size_rows">Редови</string>
+    <string name="grid_size_custom_positive">Постави</string>
+    <!-- Hide labels -->
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Измени</string>
+    <!-- Icon shapes -->
+    <!-- Preferences -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

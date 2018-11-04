@@ -18,129 +18,129 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- General -->
-  <!-- Application name -->
-  <!-- Default folder name -->
-  <!-- Work folder name -->
-  <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
-  <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
-  <!-- SafeMode shortcut error string -->
-  <!-- SafeMode widget error string -->
-  <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
-  <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
-  <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
-  <!-- Widgets -->
-  <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
-  <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
-  <!-- The format string for the dimensions of a widget in the drawer -->
-  <!-- There is a special version of this format string for Farsi -->
-  <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
-  <!-- Message to tell the user to press and hold a widget/icon to add it  -->
-  <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
-  <!-- All Apps -->
-  <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
-  <!-- Loading apps text. [CHAR_LIMIT=50] -->
-  <!-- No-search-results text. [CHAR_LIMIT=50] -->
-  <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
-  <!-- Popup items -->
-  <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
-  <!-- Drag and drop -->
-  <!-- Error message when user has filled a home screen -->
-  <!-- Error message when user has filled the hotseat -->
-  <!-- All applications label -->
-  <!-- Label for button in all applications label to go back home (to the workspace / desktop)
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Default folder name -->
+    <!-- Work folder name -->
+    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
+    <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
+    <!-- SafeMode shortcut error string -->
+    <!-- SafeMode widget error string -->
+    <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
+    <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
+    <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
+    <!-- Widgets -->
+    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
+    <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
+    <!-- The format string for the dimensions of a widget in the drawer -->
+    <!-- There is a special version of this format string for Farsi -->
+    <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
+    <!-- Message to tell the user to press and hold a widget/icon to add it  -->
+    <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
+    <!-- All Apps -->
+    <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
+    <!-- Loading apps text. [CHAR_LIMIT=50] -->
+    <!-- No-search-results text. [CHAR_LIMIT=50] -->
+    <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
+    <!-- Popup items -->
+    <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
+    <!-- Drag and drop -->
+    <!-- Error message when user has filled a home screen -->
+    <!-- Error message when user has filled the hotseat -->
+    <!-- All applications label -->
+    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
          for accessibilty (spoken when the button gets focus). -->
-  <!-- Label for remove drop target. [CHAR_LIMIT=20] -->
-  <!-- Label for uninstall drop target. [CHAR_LIMIT=20]-->
-  <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
-  <!-- Permissions: -->
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
-  <!-- Widgets: -->
-  <!-- Text to show user in place of a gadget when we can't display it properly -->
-  <!-- Text to show user in place of a gadget when it is not yet initialized. -->
-  <!-- Text to inform the user that they can't uninstall a system application -->
-  <!-- Default folder title -->
-  <!-- Accessibility -->
-  <!-- The format string for when an app is temporarily disabled. -->
-  <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
-  <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
-  <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
-  <!-- Folder accessibility -->
-  <!-- The format string for when a folder is opened, speaks the dimensions -->
-  <!-- Instruction that clicking outside will close folder -->
-  <!-- Instruction that clicking outside will commit folder rename -->
-  <!-- Indication that folder closed -->
-  <!-- Folder renamed format -->
-  <!-- Folder name format -->
-  <!-- Strings for the customization mode -->
-  <!-- Text for widget add button -->
-  <!-- Text for wallpaper change button -->
-  <!-- Text for settings button -->
-  <!-- Message shown when a feature is disabled by the administrator -->
-  <!-- Text for custom accessibility action to go to the overview mode, where users can look and change the overall UI of the launcher. -->
-  <!-- Strings for settings -->
-  <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
-  <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
-  <!-- Text explaining that rotation is disabled in Display settings. 'Display' refers to the Display section in system settings [CHAR LIMIT=100] -->
-  <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
-  <!-- Text to indicate that the system icon badging setting is on [CHAR LIMIT=100] -->
-  <!-- Text to indicate that the system icon badging setting is off [CHAR LIMIT=100] -->
-  <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
-  <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
-  <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
-  <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=40] -->
-  <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
-  <!-- Developer setting to change the shape of icons on home screen. [CHAR LIMIT=50] -->
-  <!-- Option to not change the icon shape on home screen and use the system default setting instead. [CHAR LIMIT=50] -->
-  <!-- Option to change the shape of the home screen icons to a square. [CHAR LIMIT=50] -->
-  <!-- Option to change the shape of the home screen icons to a squircle. This represents the name of the shape somewhere between a circle and a square. [CHAR LIMIT=50] -->
-  <!-- Option to change the shape of the home screen icons to a circle. [CHAR LIMIT=50] -->
-  <!-- Option to change the shape of the home screen icons to a teardrop. This represents the name of the shape similar to a circle with with the bottom right corner pushed out like a square [CHAR LIMIT=50] -->
-  <!-- Message shown in the progress dialog when the icon shape override is being applied [CHAR LIMIT=100]-->
-  <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
-  <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
-  <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
-  <!-- Title for abandoned promise dialog. -->
-  <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
+    <!-- Label for remove drop target. [CHAR_LIMIT=20] -->
+    <!-- Label for uninstall drop target. [CHAR_LIMIT=20]-->
+    <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
+    <!-- Permissions: -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
+    <!-- Widgets: -->
+    <!-- Text to show user in place of a gadget when we can't display it properly -->
+    <!-- Text to show user in place of a gadget when it is not yet initialized. -->
+    <!-- Text to inform the user that they can't uninstall a system application -->
+    <!-- Default folder title -->
+    <!-- Accessibility -->
+    <!-- The format string for when an app is temporarily disabled. -->
+    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
+    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
+    <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
+    <!-- Folder accessibility -->
+    <!-- The format string for when a folder is opened, speaks the dimensions -->
+    <!-- Instruction that clicking outside will close folder -->
+    <!-- Instruction that clicking outside will commit folder rename -->
+    <!-- Indication that folder closed -->
+    <!-- Folder renamed format -->
+    <!-- Folder name format -->
+    <!-- Strings for the customization mode -->
+    <!-- Text for widget add button -->
+    <!-- Text for wallpaper change button -->
+    <!-- Text for settings button -->
+    <!-- Message shown when a feature is disabled by the administrator -->
+    <!-- Text for custom accessibility action to go to the overview mode, where users can look and change the overall UI of the launcher. -->
+    <!-- Strings for settings -->
+    <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
+    <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
+    <!-- Text explaining that rotation is disabled in Display settings. 'Display' refers to the Display section in system settings [CHAR LIMIT=100] -->
+    <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
+    <!-- Text to indicate that the system icon badging setting is on [CHAR LIMIT=100] -->
+    <!-- Text to indicate that the system icon badging setting is off [CHAR LIMIT=100] -->
+    <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
+    <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
+    <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
+    <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=40] -->
+    <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
+    <!-- Developer setting to change the shape of icons on home screen. [CHAR LIMIT=50] -->
+    <!-- Option to not change the icon shape on home screen and use the system default setting instead. [CHAR LIMIT=50] -->
+    <!-- Option to change the shape of the home screen icons to a square. [CHAR LIMIT=50] -->
+    <!-- Option to change the shape of the home screen icons to a squircle. This represents the name of the shape somewhere between a circle and a square. [CHAR LIMIT=50] -->
+    <!-- Option to change the shape of the home screen icons to a circle. [CHAR LIMIT=50] -->
+    <!-- Option to change the shape of the home screen icons to a teardrop. This represents the name of the shape similar to a circle with with the bottom right corner pushed out like a square [CHAR LIMIT=50] -->
+    <!-- Message shown in the progress dialog when the icon shape override is being applied [CHAR LIMIT=100]-->
+    <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
+    <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
+    <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
+    <!-- Title for abandoned promise dialog. -->
+    <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
     The second "it" refers to the app. -->
-  <!-- Title for an app which is being downloaded. -->
-  <!-- Title for an app whose download has been started. -->
-  <!-- Strings for widgets & more in the popup container/bottom sheet -->
-  <!-- Title for a bottom sheet that shows widgets for a particular app -->
-  <!-- Strings for accessibility actions -->
-  <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation for item added to workspace. -->
-  <!-- Accessibility confirmation for item removed. -->
-  <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility description to move item to empty cell. -->
-  <!-- Accessibility description to move item inside a folder. -->
-  <!-- Accessibility description to move item to the hotseat. -->
-  <!-- Accessibility confirmation for item move. -->
-  <!-- Accessibility description to move item into an existing folder. -->
-  <!-- Accessibility description to move item into an existing folder containing an app. -->
-  <!-- Accessibility confirmation for item added to folder. -->
-  <!-- Accessibility description to create folder with another item. -->
-  <!-- Accessibility confirmation for folder created. -->
-  <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move an homescreen to the left. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move an homescreen to the right. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation when a screen was moved. -->
-  <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation for widget resize. -->
-  <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
-  <!-- Accessibility description for the shortcuts menu shown for an app. -->
-  <!-- Accessibility description when the shortcuts menu has notifications as well as shortcuts. -->
-  <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation for notification being dismissed. -->
+    <!-- Title for an app which is being downloaded. -->
+    <!-- Title for an app whose download has been started. -->
+    <!-- Strings for widgets & more in the popup container/bottom sheet -->
+    <!-- Title for a bottom sheet that shows widgets for a particular app -->
+    <!-- Strings for accessibility actions -->
+    <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation for item added to workspace. -->
+    <!-- Accessibility confirmation for item removed. -->
+    <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility description to move item to empty cell. -->
+    <!-- Accessibility description to move item inside a folder. -->
+    <!-- Accessibility description to move item to the hotseat. -->
+    <!-- Accessibility confirmation for item move. -->
+    <!-- Accessibility description to move item into an existing folder. -->
+    <!-- Accessibility description to move item into an existing folder containing an app. -->
+    <!-- Accessibility confirmation for item added to folder. -->
+    <!-- Accessibility description to create folder with another item. -->
+    <!-- Accessibility confirmation for folder created. -->
+    <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to move an homescreen to the left. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to move an homescreen to the right. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation when a screen was moved. -->
+    <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation for widget resize. -->
+    <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Accessibility description for the shortcuts menu shown for an app. -->
+    <!-- Accessibility description when the shortcuts menu has notifications as well as shortcuts. -->
+    <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation for notification being dismissed. -->
 </resources>

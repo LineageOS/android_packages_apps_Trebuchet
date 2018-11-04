@@ -16,57 +16,59 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Expand statusbar -->
-  <string name="statusbar_expand">Llisca avall per mostrar les notificacions</string>
-  <!-- Predictive apps -->
-  <string name="predictive_apps_title">Aplicacions predictives</string>
-  <string name="predictive_apps_summary_on">Les teves aplicacions preferides apareixeran a la part de dalt del calaix</string>
-  <string name="predictive_apps_summary_off">Les teves aplicacions preferides no apareixeran a la part de dalt del calaix</string>
-  <!-- Grid size -->
-  <string name="grid_size_text">Mida de la graella</string>
-  <string name="grid_size_rows">Files</string>
-  <string name="grid_size_columns">Columnes</string>
-  <string name="grid_size_custom_positive">Estableix</string>
-  <string name="grid_size_custom_message">Selecciona un nombre de files i columnes personalitzat</string>
-  <!-- Hide labels -->
-  <string name="desktop_show_labels">Mostra les etiquetes de les icones a l\'escriptori</string>
-  <string name="drawer_show_labels">Mostra les etiquetes de les icones al calaix</string>
-  <!-- Custom icons -->
-  <string name="app_edit_drop_target_label">Edita</string>
-  <string name="icon_pack_title">Paquet d\'icones</string>
-  <string name="icon_pack_picker">Selecciona icona</string>
-  <string name="icon_pack_picker_search">Cerca una icona</string>
-  <string name="icon_pack_suggestions">Suggeriments</string>
-  <string name="icon_pack_all_icons">Totes les icones</string>
-  <string name="icon_pack_reset">Reestableix</string>
-  <string name="icon_pack_system">Sistema (Per defecte)</string>
-  <!-- Icon shapes -->
-  <string name="icon_shape_super_ellipse_name">Súper el·lipse</string>
-  <string name="icon_shape_circle_name">Rodones</string>
-  <string name="icon_shape_squircle_name">Vores arrodonides</string>
-  <string name="icon_shape_teardrop_name">Llàgrima</string>
-  <!-- Preferences -->
-  <string name="settings_category_home">Configuració de la pantalla inicial</string>
-  <string name="settings_category_drawer">Configuració del calaix</string>
-  <string name="settings_category_icons">Configuració d\'icones</string>
-  <string name="settings_more">Més</string>
-  <string name="settings_rotation_title">Rotació</string>
-  <string name="settings_allow_rotation_desc">Permet utilitzar la pantalla d\'inici en mode horitzontal quan el dispositiu es gira</string>
-  <string name="settings_icon_shape">Forma de les icones</string>
-  <string name="settings_icon_badging_desc_on">Es mostrarà una bombolla sobre de la icona quan hi hagi una notificació</string>
-  <string name="settings_icon_badging_desc_off">No es mostrarà cap bombolla sobre de la icona quan hi hagi una notificació</string>
-  <string name="settings_icon_force_adaptive_title">Força les icones adaptatives</string>
-  <string name="settings_icon_force_adaptive_desc_on">Les icones amb una forma personalitzada estaran encaixades</string>
-  <string name="settings_icon_force_adaptive_desc_off">Les icones amb una forma personalitzada no estaran encaixades</string>
-  <string name="settings_edit_allow_title">Permet editar</string>
-  <string name="settings_edit_allow_summary_on">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
-  <string name="settings_edit_allow_summary_off">Les icones i els widgets no poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
-  <string name="settings_edit_widgets_error">No es possible afegir widgets a la pantalla d\'inici</string>
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <string name="play_folder_title">Play</string>
+    <!-- Expand statusbar -->
+    <string name="statusbar_expand">Llisca avall per mostrar les notificacions</string>
+    <!-- Predictive apps -->
+    <string name="predictive_apps_title">Aplicacions predictives</string>
+    <string name="predictive_apps_summary_on">Les teves aplicacions preferides apareixeran a la part de dalt del calaix</string>
+    <string name="predictive_apps_summary_off">Les teves aplicacions preferides no apareixeran a la part de dalt del calaix</string>
+    <!-- Grid size -->
+    <string name="grid_size_text">Mida de la graella</string>
+    <string name="grid_size_rows">Files</string>
+    <string name="grid_size_columns">Columnes</string>
+    <string name="grid_size_custom_positive">Estableix</string>
+    <string name="grid_size_custom_message">Selecciona un nombre de files i columnes personalitzat</string>
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Mostra les etiquetes de les icones a l\'escriptori</string>
+    <string name="drawer_show_labels">Mostra les etiquetes de les icones al calaix</string>
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Edita</string>
+    <string name="icon_pack_title">Paquet d\'icones</string>
+    <string name="icon_pack_picker">Selecciona icona</string>
+    <string name="icon_pack_picker_search">Cerca una icona</string>
+    <string name="icon_pack_suggestions">Suggeriments</string>
+    <string name="icon_pack_all_icons">Totes les icones</string>
+    <string name="icon_pack_reset">Reestableix</string>
+    <string name="icon_pack_system">Sistema (Per defecte)</string>
+    <!-- Icon shapes -->
+    <string name="icon_shape_super_ellipse_name">Súper el·lipse</string>
+    <string name="icon_shape_circle_name">Rodones</string>
+    <string name="icon_shape_squircle_name">Vores arrodonides</string>
+    <string name="icon_shape_teardrop_name">Llàgrima</string>
+    <!-- Preferences -->
+    <string name="settings_category_home">Configuració de la pantalla inicial</string>
+    <string name="settings_category_drawer">Configuració del calaix</string>
+    <string name="settings_category_icons">Configuració d\'icones</string>
+    <string name="settings_more">Més</string>
+    <string name="settings_rotation_title">Rotació</string>
+    <string name="settings_allow_rotation_desc">Permet utilitzar la pantalla d\'inici en mode horitzontal quan el dispositiu es gira</string>
+    <string name="settings_icon_shape">Forma de les icones</string>
+    <string name="settings_icon_badging_desc_on">Es mostrarà una bombolla sobre de la icona quan hi hagi una notificació</string>
+    <string name="settings_icon_badging_desc_off">No es mostrarà cap bombolla sobre de la icona quan hi hagi una notificació</string>
+    <string name="settings_icon_force_adaptive_title">Força les icones adaptatives</string>
+    <string name="settings_icon_force_adaptive_desc_on">Les icones amb una forma personalitzada estaran encaixades</string>
+    <string name="settings_icon_force_adaptive_desc_off">Les icones amb una forma personalitzada no estaran encaixades</string>
+    <string name="settings_edit_allow_title">Permet editar</string>
+    <string name="settings_edit_allow_summary_on">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
+    <string name="settings_edit_allow_summary_off">Les icones i els widgets no poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
+    <string name="settings_edit_widgets_error">No es possible afegir widgets a la pantalla d\'inici</string>
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Quan feu lliscar el dit cap a la dreta des de la pantalla principal d\'inici</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Quan feu lliscar el dit cap a l\'esquerra des de la pantalla principal d\'inici</string>
 </resources>

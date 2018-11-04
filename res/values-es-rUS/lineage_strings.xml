@@ -16,57 +16,59 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <string name="play_folder_title">Reproducir</string>
-  <!-- Expand statusbar -->
-  <string name="statusbar_expand">Deslizar abajo para las notificaciones</string>
-  <!-- Predictive apps -->
-  <string name="predictive_apps_title">Aplicaciones predictivas</string>
-  <string name="predictive_apps_summary_on">Las aplicaciones favoritas aparecerán en la parte superior del cajón</string>
-  <string name="predictive_apps_summary_off">Las aplicaciones favoritas no aparecerán en la parte superior del cajón</string>
-  <!-- Grid size -->
-  <string name="grid_size_text">Tamaño de la cuadrícula</string>
-  <string name="grid_size_rows">Filas</string>
-  <string name="grid_size_columns">Columnas</string>
-  <string name="grid_size_custom_positive">Establecer</string>
-  <string name="grid_size_custom_message">Seleccionar número de columnas y filas personalizadas</string>
-  <!-- Hide labels -->
-  <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
-  <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
-  <!-- Custom icons -->
-  <string name="app_edit_drop_target_label">Editar</string>
-  <string name="icon_pack_title">Paquete de iconos</string>
-  <string name="icon_pack_picker">Seleccionar icono</string>
-  <string name="icon_pack_picker_search">Buscar icono</string>
-  <string name="icon_pack_suggestions">Sugerencias</string>
-  <string name="icon_pack_all_icons">Todos los iconos</string>
-  <string name="icon_pack_reset">Restablecer</string>
-  <string name="icon_pack_system">Sistema (predefinidos)</string>
-  <!-- Icon shapes -->
-  <string name="icon_shape_super_ellipse_name">Superelipse</string>
-  <string name="icon_shape_circle_name">Círculo</string>
-  <string name="icon_shape_squircle_name">Cuadrado con bordes redondos</string>
-  <string name="icon_shape_teardrop_name">Lágrima</string>
-  <!-- Preferences -->
-  <string name="settings_category_home">Ajustes de la pantalla de inicio</string>
-  <string name="settings_category_drawer">Ajustes del cajón</string>
-  <string name="settings_category_icons">Ajustes de icono</string>
-  <string name="settings_more">Más</string>
-  <string name="settings_rotation_title">Rotación</string>
-  <string name="settings_allow_rotation_desc">Permite utilizar la pantalla de inicio en forma horizontal al rotar el dispositivo</string>
-  <string name="settings_icon_shape">Forma de los iconos</string>
-  <string name="settings_icon_badging_desc_on">Aparecerá una burbuja encima del icono cuando haya una notificación</string>
-  <string name="settings_icon_badging_desc_off">No aparecerá una burbuja encima del icono cuando haya una notificación</string>
-  <string name="settings_icon_force_adaptive_title">Forzar iconos adaptables</string>
-  <string name="settings_icon_force_adaptive_desc_on">Los iconos con una forma personalizada serán encajonados</string>
-  <string name="settings_icon_force_adaptive_desc_off">Los iconos con una forma personalizada no serán encajonados</string>
-  <string name="settings_edit_allow_title">Permitir la edición</string>
-  <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, quitar y mover en la pantalla de inicio</string>
-  <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, quitar o mover en la pantalla de inicio</string>
-  <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <string name="title_show_google_app">Mostrar aplicación de Google</string>
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <string name="play_folder_title">Reproducir</string>
+    <!-- Expand statusbar -->
+    <string name="statusbar_expand">Deslizar abajo para las notificaciones</string>
+    <!-- Predictive apps -->
+    <string name="predictive_apps_title">Aplicaciones predictivas</string>
+    <string name="predictive_apps_summary_on">Las aplicaciones favoritas aparecerán en la parte superior del cajón</string>
+    <string name="predictive_apps_summary_off">Las aplicaciones favoritas no aparecerán en la parte superior del cajón</string>
+    <!-- Grid size -->
+    <string name="grid_size_text">Tamaño de la cuadrícula</string>
+    <string name="grid_size_rows">Filas</string>
+    <string name="grid_size_columns">Columnas</string>
+    <string name="grid_size_custom_positive">Establecer</string>
+    <string name="grid_size_custom_message">Seleccionar número de columnas y filas personalizadas</string>
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
+    <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Editar</string>
+    <string name="icon_pack_title">Paquete de iconos</string>
+    <string name="icon_pack_picker">Seleccionar icono</string>
+    <string name="icon_pack_picker_search">Buscar icono</string>
+    <string name="icon_pack_suggestions">Sugerencias</string>
+    <string name="icon_pack_all_icons">Todos los iconos</string>
+    <string name="icon_pack_reset">Restablecer</string>
+    <string name="icon_pack_system">Sistema (predefinidos)</string>
+    <!-- Icon shapes -->
+    <string name="icon_shape_super_ellipse_name">Superelipse</string>
+    <string name="icon_shape_circle_name">Círculo</string>
+    <string name="icon_shape_squircle_name">Cuadrado con bordes redondos</string>
+    <string name="icon_shape_teardrop_name">Lágrima</string>
+    <!-- Preferences -->
+    <string name="settings_category_home">Ajustes de la pantalla de inicio</string>
+    <string name="settings_category_drawer">Ajustes del cajón</string>
+    <string name="settings_category_icons">Ajustes de icono</string>
+    <string name="settings_more">Más</string>
+    <string name="settings_rotation_title">Rotación</string>
+    <string name="settings_allow_rotation_desc">Permite utilizar la pantalla de inicio en forma horizontal al rotar el dispositivo</string>
+    <string name="settings_icon_shape">Forma de los iconos</string>
+    <string name="settings_icon_badging_desc_on">Aparecerá una burbuja encima del icono cuando haya una notificación</string>
+    <string name="settings_icon_badging_desc_off">No aparecerá una burbuja encima del icono cuando haya una notificación</string>
+    <string name="settings_icon_force_adaptive_title">Forzar iconos adaptables</string>
+    <string name="settings_icon_force_adaptive_desc_on">Los iconos con una forma personalizada serán encajonados</string>
+    <string name="settings_icon_force_adaptive_desc_off">Los iconos con una forma personalizada no serán encajonados</string>
+    <string name="settings_edit_allow_title">Permitir la edición</string>
+    <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, quitar y mover en la pantalla de inicio</string>
+    <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, quitar o mover en la pantalla de inicio</string>
+    <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Mostrar aplicación de Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Al deslizar a la derecha desde la pantalla principal</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Al deslizar a la izquierda desde la pantalla principal</string>
 </resources>

@@ -16,57 +16,59 @@
      limitations under the License.
 -->
 <resources>
-  <!-- Application name -->
-  <!-- Folder titles -->
-  <string name="play_folder_title">Prehrať</string>
-  <!-- Expand statusbar -->
-  <string name="statusbar_expand">Potiahnutím dolu zobraziť upozornenia</string>
-  <!-- Predictive apps -->
-  <string name="predictive_apps_title">Prediktívne aplikácie</string>
-  <string name="predictive_apps_summary_on">Obľúbené aplikácie sa zobrazia v hornej časti ponuky</string>
-  <string name="predictive_apps_summary_off">Obľúbené aplikácie sa nezobrazia v hornej časti ponuky</string>
-  <!-- Grid size -->
-  <string name="grid_size_text">Veľkosť mriežky</string>
-  <string name="grid_size_rows">Riadkov</string>
-  <string name="grid_size_columns">Stĺpcov</string>
-  <string name="grid_size_custom_positive">Nastaviť</string>
-  <string name="grid_size_custom_message">Zvoľte počet stĺpcov a riadkov</string>
-  <!-- Hide labels -->
-  <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
-  <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
-  <!-- Custom icons -->
-  <string name="app_edit_drop_target_label">Editovať</string>
-  <string name="icon_pack_title">Balíček ikon</string>
-  <string name="icon_pack_picker">Výber ikony</string>
-  <string name="icon_pack_picker_search">Hľadať ikonu</string>
-  <string name="icon_pack_suggestions">Návrhy</string>
-  <string name="icon_pack_all_icons">Všetky ikony</string>
-  <string name="icon_pack_reset">Resetovať</string>
-  <string name="icon_pack_system">Systémové (predvolené)</string>
-  <!-- Icon shapes -->
-  <string name="icon_shape_super_ellipse_name">Super elipsa</string>
-  <string name="icon_shape_circle_name">Kruh</string>
-  <string name="icon_shape_squircle_name">Zaoblený štvorec</string>
-  <string name="icon_shape_teardrop_name">Slza</string>
-  <!-- Preferences -->
-  <string name="settings_category_home">Nastavenia domovskej obrazovky</string>
-  <string name="settings_category_drawer">Nastavenia ponuky</string>
-  <string name="settings_category_icons">Nastavenia ikon</string>
-  <string name="settings_more">Viac</string>
-  <string name="settings_rotation_title">Otáčanie</string>
-  <string name="settings_allow_rotation_desc">Povoliť otáčanie domovskej obrazovky pri otočení zariadenia za šírku</string>
-  <string name="settings_icon_shape">Zmena tvaru ikon</string>
-  <string name="settings_icon_badging_desc_on">Ak sa vyskytne upozornenie, nad ikonou sa zobrazí bublina</string>
-  <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
-  <string name="settings_icon_force_adaptive_title">Vynútenie adaptívnych ikon</string>
-  <string name="settings_icon_force_adaptive_desc_on">Vlastné tvarované ikony budú zarámované</string>
-  <string name="settings_icon_force_adaptive_desc_off">Vlastné tvarované ikony nebudú zarámované</string>
-  <string name="settings_edit_allow_title">Povoliť úpravy</string>
-  <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
-  <string name="settings_edit_allow_summary_off">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
-  <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
-  <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-  <string name="title_show_google_app">Zobraziť Google aplikácie</string>
-  <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-  <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Application name -->
+    <!-- Folder titles -->
+    <string name="play_folder_title">Prehrať</string>
+    <!-- Expand statusbar -->
+    <string name="statusbar_expand">Potiahnutím dolu zobraziť upozornenia</string>
+    <!-- Predictive apps -->
+    <string name="predictive_apps_title">Prediktívne aplikácie</string>
+    <string name="predictive_apps_summary_on">Obľúbené aplikácie sa zobrazia v hornej časti ponuky</string>
+    <string name="predictive_apps_summary_off">Obľúbené aplikácie sa nezobrazia v hornej časti ponuky</string>
+    <!-- Grid size -->
+    <string name="grid_size_text">Veľkosť mriežky</string>
+    <string name="grid_size_rows">Riadkov</string>
+    <string name="grid_size_columns">Stĺpcov</string>
+    <string name="grid_size_custom_positive">Nastaviť</string>
+    <string name="grid_size_custom_message">Zvoľte počet stĺpcov a riadkov</string>
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
+    <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
+    <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Editovať</string>
+    <string name="icon_pack_title">Balíček ikon</string>
+    <string name="icon_pack_picker">Výber ikony</string>
+    <string name="icon_pack_picker_search">Hľadať ikonu</string>
+    <string name="icon_pack_suggestions">Návrhy</string>
+    <string name="icon_pack_all_icons">Všetky ikony</string>
+    <string name="icon_pack_reset">Resetovať</string>
+    <string name="icon_pack_system">Systémové (predvolené)</string>
+    <!-- Icon shapes -->
+    <string name="icon_shape_super_ellipse_name">Super elipsa</string>
+    <string name="icon_shape_circle_name">Kruh</string>
+    <string name="icon_shape_squircle_name">Zaoblený štvorec</string>
+    <string name="icon_shape_teardrop_name">Slza</string>
+    <!-- Preferences -->
+    <string name="settings_category_home">Nastavenia domovskej obrazovky</string>
+    <string name="settings_category_drawer">Nastavenia ponuky</string>
+    <string name="settings_category_icons">Nastavenia ikon</string>
+    <string name="settings_more">Viac</string>
+    <string name="settings_rotation_title">Otáčanie</string>
+    <string name="settings_allow_rotation_desc">Povoliť otáčanie domovskej obrazovky pri otočení zariadenia za šírku</string>
+    <string name="settings_icon_shape">Zmena tvaru ikon</string>
+    <string name="settings_icon_badging_desc_on">Ak sa vyskytne upozornenie, nad ikonou sa zobrazí bublina</string>
+    <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
+    <string name="settings_icon_force_adaptive_title">Vynútenie adaptívnych ikon</string>
+    <string name="settings_icon_force_adaptive_desc_on">Vlastné tvarované ikony budú zarámované</string>
+    <string name="settings_icon_force_adaptive_desc_off">Vlastné tvarované ikony nebudú zarámované</string>
+    <string name="settings_edit_allow_title">Povoliť úpravy</string>
+    <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
+    <string name="settings_edit_allow_summary_off">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
+    <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Zobraziť Google aplikácie</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Pri potiahnutí prstom vpravo na hlavnej obrazovke</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Pri potiahnutí prstom vľavo na hlavnej obrazovke</string>
 </resources>
