@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22e3413a_284361bc",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-12T20:03:45Z",
+      "side": 1,
+      "message": "ActivityManager.isLowRamDeviceStatic()",
+      "range": {
+        "startLine": 120,
+        "startChar": 23,
+        "endLine": 120,
+        "endChar": 92
+      },
+      "revId": "2e443df794cd5db8bb4adcaa1812fddb42d55b6a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
