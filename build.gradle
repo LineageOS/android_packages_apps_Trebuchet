@@ -22,7 +22,6 @@ android {
         android {
             keyAlias 'android'
             keyPassword 'android'
-            storeFile file('D:/Users/Administrator/Desktop/TREBUCHET/APK/shared.jks')
             storePassword 'android'
         }
     }

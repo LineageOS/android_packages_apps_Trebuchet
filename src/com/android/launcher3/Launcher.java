@@ -2540,7 +2540,7 @@ public class Launcher extends BaseActivity
         } else {
             ProtectedDatabaseHelper mDbHelper = ProtectedDatabaseHelper.getInstance(v.getContext());
             intent = item.getIntent();
-            if (mDbHelper.isPackageProtected(intent.getComponent().getPackageName())) {
+            if (intent != null && intent.getComponent() != null && mDbHelper.isPackageProtected(intent.getComponent().getPackageName())) {
                 protectPending_view = v;
                 protectPending_intent = intent;
                 protectPending_item = item;
