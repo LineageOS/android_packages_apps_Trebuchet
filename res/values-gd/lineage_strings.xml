@@ -18,14 +18,57 @@
 <resources>
     <!-- Application name -->
     <!-- Folder titles -->
+    <string name="play_folder_title">Cluich</string>
     <!-- Expand statusbar -->
+    <string name="statusbar_expand">Grad-shlaighd sìos gus na brathan a shealltainn</string>
     <!-- Predictive apps -->
+    <string name="predictive_apps_title">Aplacaidean ro-innseach</string>
+    <string name="predictive_apps_summary_on">Nochdaidh na h-aplacaidean as fhearr leat air barr an drathair</string>
+    <string name="predictive_apps_summary_off">Cha nochd na h-aplacaidean as fhearr leat air barr an drathair</string>
     <!-- Grid size -->
+    <string name="grid_size_text">Meud a’ ghriod</string>
+    <string name="grid_size_rows">Ràghan</string>
+    <string name="grid_size_columns">Colbhan</string>
+    <string name="grid_size_custom_positive">Suidhich</string>
+    <string name="grid_size_custom_message">Tagh àireamh gnàthaichte de cholbhan is ràghan</string>
     <!-- Hide labels -->
+    <string name="desktop_show_labels">Seall leubailean nan ìomhaigheagan air an deasg</string>
+    <string name="drawer_show_labels">Seall leubailean nan ìomhaigheagan san drathair</string>
     <!-- Custom icons -->
+    <string name="app_edit_drop_target_label">Deasaich</string>
+    <string name="icon_pack_title">Pacaid ìomhaigheagan</string>
+    <string name="icon_pack_picker">Tagh ìomhaigheag</string>
+    <string name="icon_pack_picker_search">Lorg ìomhaigheag</string>
+    <string name="icon_pack_suggestions">Molaidhean</string>
+    <string name="icon_pack_all_icons">Na h-uile ìomhaigheag</string>
+    <string name="icon_pack_reset">Ath-shuidhich</string>
+    <string name="icon_pack_system">An siostam (bun-roghainn)</string>
     <!-- Icon shapes -->
+    <string name="icon_shape_super_ellipse_name">Os-eileaps</string>
+    <string name="icon_shape_circle_name">Cearcall</string>
+    <string name="icon_shape_squircle_name">Ceàrnach bog</string>
+    <string name="icon_shape_teardrop_name">Deur</string>
     <!-- Preferences -->
+    <string name="settings_category_home">Roghainnean na sgrìn dachaigh</string>
+    <string name="settings_category_drawer">Roghainnean an drathair</string>
+    <string name="settings_category_icons">Roghainnean nan ìomhaigheagan</string>
+    <string name="settings_more">Barrachd</string>
+    <string name="settings_rotation_title">Cuairteachadh</string>
+    <string name="settings_allow_rotation_desc">Ceadaich dreach-tìre air an sgrìn dachaigh nuair a thèid an uidheam a chuairteachadh</string>
+    <string name="settings_icon_shape">Cumadh nan ìomhaigheagan</string>
+    <string name="settings_icon_badging_desc_on">Nochdaidh builgean air an ìomhaigheag nuair a bhios brath ann</string>
+    <string name="settings_icon_badging_desc_off">Cha nochd builgean air an ìomhaigheag nuair a bhios brath ann</string>
+    <string name="settings_icon_force_adaptive_title">Sparr co-fhreagradh air na h-ìomhaigheagan</string>
+    <string name="settings_icon_force_adaptive_desc_on">Cuir bogsa air ìomhaigheagan le cumadh gnàthaichte</string>
+    <string name="settings_icon_force_adaptive_desc_off">Na cuir bogsa air ìomhaigheagan le cumadh gnàthaichte</string>
+    <string name="settings_edit_allow_title">Ceadaich deasachadh</string>
+    <string name="settings_edit_allow_summary_on">Gabhaidh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn-dhachaigh</string>
+    <string name="settings_edit_allow_summary_off">Cha ghabh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn-dhachaigh</string>
+    <string name="settings_edit_widgets_error">Cha ghabh widgets a chur ris an sgrìn-dhachaigh</string>
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Seall aplacaid Google</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Le grad-shlaighdeadh gu deas on phrìomh sgrìn-dhachaigh</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Le grad-shlaighdeadh gu clì on phrìomh sgrìn-dhachaigh</string>
 </resources>
