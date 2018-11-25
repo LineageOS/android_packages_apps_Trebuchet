@@ -150,7 +150,8 @@
     <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
     The second "it" refers to the app. -->
     <string name="abandoned_promise_explanation">L\'aplicación d\'esti iconu nun ta instalada.
-        Pues desanicialu o guetar l\'aplicación ya instalala a mano.</string>
+        Pues desanicialu o guetar l\'aplicación ya instalala a mano.
+    </string>
     <!-- Title for an app which is being downloaded. -->
     <!-- Title for an app whose download has been started. -->
     <!-- Strings for widgets & more in the popup container/bottom sheet -->
