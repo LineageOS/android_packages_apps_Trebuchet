@@ -19,10 +19,14 @@
     <!-- Application name -->
     <!-- Folder titles -->
     <!-- Expand statusbar -->
+    <string name="statusbar_expand">Llusga i lawr i ddangos hysbysiadau</string>
     <!-- Predictive apps -->
+    <string name="predictive_apps_summary_on">Bydd dy hoff apiau yn ymddangos ar frig y drôr</string>
+    <string name="predictive_apps_summary_off">Ni fydd dy hoff apiau yn ymddangos ar frig y drôr</string>
     <!-- Grid size -->
     <!-- Hide labels -->
     <!-- Custom icons -->
+    <string name="icon_pack_suggestions">Awgrymiadau</string>
     <!-- Icon shapes -->
     <!-- Preferences -->
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->

@@ -32,6 +32,7 @@
     <string name="grid_size_custom_message">Pilih jumlah kolom dan baris khusus</string>
     <!-- Hide labels -->
     <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
+    <string name="drawer_show_labels">Sembunyikan label ikon di panel</string>
     <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Sunting</string>
     <string name="icon_pack_title">Paket ikon</string>
