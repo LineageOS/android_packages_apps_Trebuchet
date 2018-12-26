@@ -30,6 +30,8 @@ import android.appwidget.AppWidgetProviderInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -58,6 +60,8 @@ import com.android.launcher3.graphics.FragmentWithPreview;
  * AppWidgetManager directly, so that it keeps working in that case.
  */
 public class QsbContainerView extends FrameLayout {
+    private static final String QSB_PROVIDER_CLASS
+            = "com.google.android.googlequicksearchbox.SearchWidgetProvider";
 
     public static final String SEARCH_PROVIDER_SETTINGS_KEY = "SEARCH_PROVIDER_PACKAGE_NAME";
 
@@ -148,6 +152,26 @@ public class QsbContainerView extends FrameLayout {
         super.setPadding(left, top, right, bottom);
     }
 
+    public static void updateDefaultLayout(Context context, AppWidgetProviderInfo info) {
+        ComponentName provider = info.provider;
+        if (QSB_PROVIDER_CLASS.equals(provider.getClassName())) {
+            try {
+                ActivityInfo activityInfo =
+                    context.getPackageManager().getReceiverInfo(provider,
+                        PackageManager.GET_META_DATA);
+                Bundle metaData = activityInfo.metaData;
+                int resId = metaData.getInt(
+                    "com.google.android.gsa.searchwidget.alt_initial_layout_cqsb", -1);
+                if (resId != -1) {
+                    info.initialLayout = resId;
+                }
+            } catch (Exception e) {
+                // Ignore the exception since if any exceptions happen
+                //  the original initialyLayout would be used.
+            }
+        }
+    }
+
     /**
      * A fragment to display the QSB.
      */
@@ -198,6 +222,11 @@ public class QsbContainerView extends FrameLayout {
                 return getDefaultView(container, false /* show setup icon */);
             }
             Bundle opts = createBindOptions();
+            // round quick search bar
+            opts.putString("attached-launcher-identifier",
+                    getActivity().getPackageName());
+            opts.putString("requested-widget-style", "cqsb");
+
             Context context = getContext();
             AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
 
