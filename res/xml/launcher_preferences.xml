@@ -24,62 +24,74 @@
         android:summaryOn="@string/settings_edit_allow_summary_on"
         android:summaryOff="@string/settings_edit_allow_summary_off" />
 
-    <com.android.launcher3.views.ButtonPreference
-        android:key="pref_icon_badging"
-        android:title="@string/icon_badging_title"
-        android:persistent="false"
-        android:widgetLayout="@layout/notification_pref_warning" >
-        <intent android:action="android.settings.NOTIFICATION_SETTINGS">
-            <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
-            <extra
-                android:name=":settings:fragment_args_key"
-                android:value="notification_badging" />
-        </intent>
-    </com.android.launcher3.views.ButtonPreference>
+    <PreferenceCategory
+        android:key="category_home"
+        android:title="@string/settings_category_home">
 
-    <SwitchPreference
-        android:key="pref_add_icon_to_home"
-        android:title="@string/auto_add_shortcuts_label"
-        android:summary="@string/auto_add_shortcuts_description"
-        android:defaultValue="true"
-        android:persistent="true" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="pref_enable_minus_one"
+            android:summary="@string/pref_show_google_now_summary"
+            android:title="@string/title_show_google_app" />
 
-    <SwitchPreference
-        android:key="pref_allowRotation"
-        android:title="@string/allow_rotation_title"
-        android:summary="@string/allow_rotation_desc"
-        android:defaultValue="@bool/allow_rotation"
-        android:persistent="true" />
+        <SwitchPreference
+            android:key="pref_allowRotation"
+            android:title="@string/allow_rotation_title"
+            android:defaultValue="@bool/allow_rotation"
+            android:persistent="true" />
 
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="pref_enable_minus_one"
-        android:summary="@string/pref_show_google_now_summary"
-        android:title="@string/title_show_google_app" />
+        <Preference
+            android:key="pref_grid_size"
+            android:title="@string/grid_size_text"
+            android:persistent="true" />
 
-    <ListPreference
-        android:key="pref_override_icon_shape"
-        android:title="@string/icon_shape_override_label"
-        android:summary="%s"
-        android:entries="@array/icon_shape_entries"
-        android:entryValues="@array/icon_shape_paths"
-        android:defaultValue="@string/icon_shape_default"
-        android:persistent="false" />
+        <SwitchPreference
+            android:key="pref_add_icon_to_home"
+            android:title="@string/auto_add_shortcuts_label"
+            android:summary="@string/auto_add_shortcuts_description"
+            android:defaultValue="true"
+            android:persistent="true" />
 
-    <Preference
-        android:key="pref_grid_size"
-        android:title="@string/grid_size_text"
-        android:persistent="true" />
+        <SwitchPreference
+            android:key="pref_desktop_show_labels"
+            android:title="@string/desktop_show_labels"
+            android:defaultValue="true"
+            android:persistent="true" />
+    </PreferenceCategory>
 
-    <SwitchPreference
-        android:key="pref_desktop_show_labels"
-        android:title="@string/desktop_show_labels"
-        android:defaultValue="true"
-        android:persistent="true" />
+    <PreferenceCategory android:title="@string/settings_category_drawer">
 
-    <SwitchPreference
-        android:key="pref_drawer_show_labels"
-        android:title="@string/drawer_show_labels"
-        android:defaultValue="true"
-        android:persistent="true" />
+        <SwitchPreference
+            android:key="pref_drawer_show_labels"
+            android:title="@string/drawer_show_labels"
+            android:defaultValue="true"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_icons"
+        android:title="@string/settings_category_icons">
+
+        <ListPreference
+            android:key="pref_override_icon_shape"
+            android:title="@string/icon_shape_override_label"
+            android:summary="%s"
+            android:entries="@array/icon_shape_entries"
+            android:entryValues="@array/icon_shape_paths"
+            android:defaultValue="@string/icon_shape_default"
+            android:persistent="false" />
+
+        <com.android.launcher3.views.ButtonPreference
+            android:key="pref_icon_badging"
+            android:title="@string/icon_badging_title"
+            android:persistent="false"
+            android:widgetLayout="@layout/notification_pref_warning" >
+            <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+                <!-- This extra highlights the "Allow icon badges" field in Notification settings -->
+                <extra
+                    android:name=":settings:fragment_args_key"
+                    android:value="notification_badging" />
+            </intent>
+        </com.android.launcher3.views.ButtonPreference>
+    </PreferenceCategory>
 </PreferenceScreen>

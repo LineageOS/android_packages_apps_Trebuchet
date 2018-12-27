@@ -19,6 +19,11 @@
 
     <!-- Settings -->
 
+    <!-- Categories -->
+    <string name="settings_category_home">Home screen settings</string>
+    <string name="settings_category_drawer">Drawer settings</string>
+    <string name="settings_category_icons">Icons settings</string>
+
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Show Google app</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
@@ -48,6 +53,10 @@
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+
+    <!-- Icon badging -->
+    <string name="settings_icon_badging_desc_on">A bubble will be displayed above the icon when there\'s a notification</string>
+    <string name="settings_icon_badging_desc_off">No bubble will be displayed above the icon when there\'s a notification</string>
 
     <!-- Folder titles -->
     <string name="google_title" translatable="false">Google</string>
