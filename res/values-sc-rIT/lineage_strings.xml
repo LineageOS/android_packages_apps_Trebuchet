@@ -18,13 +18,22 @@
 <resources>
     <!-- Application name -->
     <!-- Folder titles -->
+    <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <!-- Predictive apps -->
     <!-- Grid size -->
+    <string name="grid_size_text">Mannària de sa grìllia</string>
+    <string name="grid_size_rows">Rigas</string>
+    <string name="grid_size_columns">Colunnas</string>
     <string name="grid_size_custom_positive">Cunfigura</string>
     <!-- Hide labels -->
     <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Modìfica</string>
+    <string name="icon_pack_title">Pachete de iconas</string>
+    <string name="icon_pack_picker">Ischerta s\'icona</string>
+    <string name="icon_pack_picker_search">Chirca un\'icona</string>
+    <string name="icon_pack_suggestions">Impòsitos</string>
+    <string name="icon_pack_all_icons">Totu sas iconas</string>
     <string name="icon_pack_reset">Reseta</string>
     <string name="icon_pack_system">Sistema (Predefinidu)</string>
     <!-- Icon shapes -->
