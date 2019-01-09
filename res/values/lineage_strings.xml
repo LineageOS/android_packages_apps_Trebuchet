@@ -22,7 +22,7 @@
     <!-- Categories -->
     <string name="settings_category_home">Home screen settings</string>
     <string name="settings_category_drawer">Drawer settings</string>
-    <string name="settings_category_icons">Icons settings</string>
+    <string name="settings_category_icons">Icon settings</string>
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Show Google app</string>
