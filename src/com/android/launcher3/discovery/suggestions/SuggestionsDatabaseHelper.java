@@ -117,17 +117,18 @@ public class SuggestionsDatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_NIGHT_COUNTER, candidate.getNightCounter());
         values.put(KEY_HEADSET_COUNTER, candidate.getHeadsetCounter());
 
-        SQLiteDatabase db = getWritableDatabase();
-        if (shouldUpdate) {
-            String[] arguments = new String[] {
-                    candidate.getPackageName(), candidate.getClassName()
-            };
-            db.update(TABLE_NAME, values, QUERY_FILTER, arguments);
-        } else {
-            db.insert(TABLE_NAME, null, values);
+        try (SQLiteDatabase db = getWritableDatabase()) {
+            if (shouldUpdate) {
+                String[] arguments = new String[] {
+                        candidate.getPackageName(), candidate.getClassName()
+                };
+                db.update(TABLE_NAME, values, QUERY_FILTER, arguments);
+            } else {
+                db.insert(TABLE_NAME, null, values);
+            }
+        } catch (SQLiteFullException sfe) {
+            // prevent crash
         }
-
-        db.close();
     }
 
     @NonNull
