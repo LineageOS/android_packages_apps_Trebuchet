@@ -22,6 +22,7 @@
     <!-- Application name -->
     <!-- Default folder name -->
     <!-- Work folder name -->
+    <string name="work_folder_name">ئىش</string>
     <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
     <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
     <!-- SafeMode shortcut error string -->
@@ -147,6 +148,7 @@
     <!-- Accessibility confirmation for notification being dismissed. -->
     <!-- Label of tab to indicate personal apps -->
     <!-- Label of tab to indicate work apps -->
+    <string name="all_apps_work_tab">ئىش</string>
     <!-- This string is in the work profile tab when a user has All Apps open on their phone. This is a label for a toggle to turn the work profile on and off. "Work profile" means a separate profile on a user's phone that's specifically for their work apps and managed by their company. "Work" is used as an adjective.-->
     <!-- Title of an overlay in All Apps. This overlay is letting a user know about their work profile, which is managed by their employer. "Work apps" are apps in a user's work profile.-->
     <!-- Text in an overlay in All Apps. This overlay is letting a user know about their work profile, which is managed by their employer.-->
