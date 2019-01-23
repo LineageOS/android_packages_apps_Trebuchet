@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4f405e2_a2a7d983",
+        "filename": "src/com/android/launcher3/lineage/hidden/HiddenAppsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-01-23T20:09:00Z",
+      "side": 1,
+      "message": "either make use of the old API or stick to the newer one if you want to preserve retro-compatibilty",
+      "revId": "528bd0c7b332ef09954e1431e0384c747bbca4cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
