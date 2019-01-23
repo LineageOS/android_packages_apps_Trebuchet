@@ -64,4 +64,10 @@
 
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Swipe down to show notifications</string>
+
+    <!-- Hidden apps -->
+    <string name="hidden_apps_manager_name">Hidden apps</string>
+    <string name="hidden_apps_auth_manager">Unlock to manage the hidden apps</string>
+    <string name="protected_apps_loading">Loading\u2026</string>
+    <string name="hidden_apps_no_lock_error">Please set up a secure lock screen to restrict app access</string>
 </resources>
