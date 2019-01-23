@@ -16,6 +16,24 @@
       "revId": "528bd0c7b332ef09954e1431e0384c747bbca4cd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "754bc8bf_517a067d",
+        "filename": "src/com/android/launcher3/lineage/hidden/HiddenAppsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2019-01-23T20:17:45Z",
+      "side": 1,
+      "message": "Old one is deprecated in api24+, and the new one is unavailable in api23- and we have minsdk set to 21",
+      "parentUuid": "c4f405e2_a2a7d983",
+      "revId": "528bd0c7b332ef09954e1431e0384c747bbca4cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
