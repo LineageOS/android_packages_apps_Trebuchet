@@ -114,6 +114,7 @@ import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.icons.IconCache;
 import com.android.launcher3.keyboard.CustomActionsPopup;
 import com.android.launcher3.keyboard.ViewGroupFocusHelper;
+import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.logger.LauncherAtom;
 import com.android.launcher3.logging.FileLog;
 import com.android.launcher3.logging.StatsLogManager;
@@ -1074,6 +1075,13 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         if (!mDeferOverlayCallbacks) {
             mOverlayManager.onActivityPaused(this);
         }
+    }
+
+    public void startActivitySafelyAuth(View v, Intent intent, ItemInfo item,
+            String sourceContainer) {
+        LineageUtils.showLockScreen(this, getString(R.string.trust_apps_manager_name), () -> {
+            startActivitySafely(v, intent, item, sourceContainer);
+        });
     }
 
     class LauncherOverlayCallbacksImpl implements LauncherOverlayCallbacks {
