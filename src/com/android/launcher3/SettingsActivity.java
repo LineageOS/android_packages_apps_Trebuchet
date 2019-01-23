@@ -54,6 +54,7 @@ import android.widget.NumberPicker;
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.lineage.LineageLauncherCallbacks;
 import com.android.launcher3.lineage.LineageUtils;
+import com.android.launcher3.lineage.hidden.HiddenAppsActivity;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.util.ListViewHighlighter;
 import com.android.launcher3.util.SettingsObserver;
@@ -132,6 +133,8 @@ public class SettingsActivity extends Activity {
 
             PreferenceCategory homeGroup = (PreferenceCategory)
                     findPreference("category_home");
+            PreferenceCategory drawerGroup = (PreferenceCategory)
+                    findPreference("category_drawer");
             PreferenceCategory iconGroup = (PreferenceCategory)
                     findPreference("category_icons");
 
@@ -185,6 +188,15 @@ public class SettingsActivity extends Activity {
                 });
 
                 mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaultGridSize()));
+            }
+
+            Preference hiddenApps = drawerGroup.findPreference("pref_hidden_apps");
+            if (hiddenApps != null) {
+                hiddenApps.setOnPreferenceClickListener(preference -> {
+                    Intent intent = new Intent(getActivity(), HiddenAppsActivity.class);
+                    startActivity(intent);
+                    return true;
+                });
             }
         }
 
