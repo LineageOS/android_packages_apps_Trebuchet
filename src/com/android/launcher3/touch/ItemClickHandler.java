@@ -26,6 +26,7 @@ import static com.android.launcher3.model.AppLaunchTracker.CONTAINER_ALL_APPS;
 
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.LauncherApps;
@@ -55,6 +56,7 @@ import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.compat.PackageInstallerCompat;
 import com.android.launcher3.folder.Folder;
 import com.android.launcher3.folder.FolderIcon;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.views.FloatingIconView;
 import com.android.launcher3.widget.PendingAppWidgetHostView;
@@ -267,6 +269,15 @@ public class ItemClickHandler {
             // Preload the icon to reduce latency b/w swapping the floating view with the original.
             FloatingIconView.fetchIcon(launcher, v, item, true /* isOpening */);
         }
-        launcher.startActivitySafely(v, intent, item, sourceContainer);
+
+        TrustDatabaseHelper db = TrustDatabaseHelper.getInstance(launcher);
+        ComponentName cn = item.getTargetComponent();
+        boolean isProtected = cn != null && db.isPackageProtected(cn.getPackageName());
+
+        if (isProtected) {
+            launcher.startActivitySafelyAuth(v, intent, item, sourceContainer);
+        } else {
+            launcher.startActivitySafely(v, intent, item, sourceContainer);
+        }
     }
 }
