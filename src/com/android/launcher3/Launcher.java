@@ -143,6 +143,7 @@ import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.icons.BitmapRenderer;
 import com.android.launcher3.icons.IconCache;
 import com.android.launcher3.keyboard.ViewGroupFocusHelper;
+import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.logger.LauncherAtom;
 import com.android.launcher3.logger.LauncherAtom.ContainerInfo;
 import com.android.launcher3.logger.LauncherAtom.WorkspaceContainer;
@@ -2115,6 +2116,12 @@ public class Launcher extends StatefulActivity<LauncherState>
             addOnResumeCallback(() -> btv.setStayPressed(false));
         }
         return success;
+    }
+
+    public void startActivitySafelyAuth(View v, Intent intent, ItemInfo item) {
+        LineageUtils.showLockScreen(this, getString(R.string.trust_apps_manager_name), () -> {
+            startActivitySafely(v, intent, item);
+        });
     }
 
     boolean isHotseatLayout(View layout) {
