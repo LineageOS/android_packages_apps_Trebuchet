@@ -47,6 +47,7 @@ import com.android.launcher3.WorkspaceItemInfo;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.folder.Folder;
 import com.android.launcher3.folder.FolderIcon;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 import com.android.launcher3.testing.TestProtocol;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.views.FloatingIconView;
@@ -264,6 +265,14 @@ public class ItemClickHandler {
             // Preload the icon to reduce latency b/w swapping the floating view with the original.
             FloatingIconView.fetchIcon(launcher, v, item, true /* isOpening */);
         }
-        launcher.startActivitySafely(v, intent, item, sourceContainer);
+
+        TrustDatabaseHelper db = TrustDatabaseHelper.getInstance(launcher);
+        boolean isProtected = db.isPackageProtected(item.getTargetComponent().getPackageName());
+
+        if (isProtected) {
+            launcher.startActivitySafelyAuth(v, intent, item, sourceContainer);
+        } else {
+            launcher.startActivitySafely(v, intent, item, sourceContainer);
+        }
     }
 }
