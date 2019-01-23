@@ -69,6 +69,5 @@
                 android:name="com.android.launcher3.grid.control"
                 android:value="${packageName}.grid_control" />
         </activity>
-
     </application>
 </manifest>
