@@ -52,6 +52,24 @@
       "revId": "528bd0c7b332ef09954e1431e0384c747bbca4cd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7106c2b6_ffdd383d",
+        "filename": "src/com/android/launcher3/lineage/hidden/HiddenAppsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2019-01-26T14:03:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd30ce28_6e7e011f",
+      "revId": "528bd0c7b332ef09954e1431e0384c747bbca4cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
