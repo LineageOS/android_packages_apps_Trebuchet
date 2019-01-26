@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b3fed3b_57ba2947",
+        "filename": "src/com/android/launcher3/lineage/hidden/db/HiddenDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-01-26T20:27:30Z",
+      "side": 1,
+      "message": "Will this ever be used?",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "a1289fad38e0e61e9c8d5c363cad54bbf76f2803",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
