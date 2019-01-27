@@ -13,24 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.hidden;
+package com.android.launcher3.lineage.trust;
 
 import android.content.ComponentName;
 import android.content.Context;
 
 import com.android.launcher3.AppFilter;
-import com.android.launcher3.lineage.hidden.db.HiddenDatabaseHelper;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
 @SuppressWarnings("unused")
 public class HiddenAppsFilter extends AppFilter {
-    private HiddenDatabaseHelper mDbHelper;
+    private TrustDatabaseHelper mDbHelper;
 
     public HiddenAppsFilter(Context context) {
         if (context == null) {
             throw new IllegalArgumentException("Context must not be null!");
         }
 
-        mDbHelper = HiddenDatabaseHelper.getInstance(context);
+        mDbHelper = TrustDatabaseHelper.getInstance(context);
     }
 
     @Override

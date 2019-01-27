@@ -25,8 +25,11 @@ import static com.android.launcher3.Launcher.REQUEST_RECONFIGURE_APPWIDGET;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Process;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
@@ -44,9 +47,12 @@ import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.compat.AppWidgetManagerCompat;
 import com.android.launcher3.folder.Folder;
 import com.android.launcher3.folder.FolderIcon;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.widget.PendingAppWidgetHostView;
 import com.android.launcher3.widget.WidgetAddFlowHandler;
+
+import java.util.List;
 
 /**
  * Class for handling clicks on workspace and all-apps items
@@ -227,6 +233,14 @@ public class ItemClickHandler {
                 intent.setPackage(null);
             }
         }
-        launcher.startActivitySafely(v, intent, item);
+
+        TrustDatabaseHelper db = TrustDatabaseHelper.getInstance(launcher);
+        boolean isProtected = db.isPackageProtected(item.getTargetComponent().getPackageName());
+
+        if (isProtected) {
+            launcher.startActivitySafelyAuth(v, intent, item);
+        } else {
+            launcher.startActivitySafely(v, intent, item);
+        }
     }
 }

@@ -13,23 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.hidden.db;
+package com.android.launcher3.lineage.trust.db;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 
-public class HiddenComponent {
-    @NonNull private final String mPackageName;
-    @NonNull private final Drawable mIcon;
-    @NonNull private final String mLabel;
-    private boolean mIsHidden;
+public class TrustComponent {
+    @NonNull
+    private final String mPackageName;
+    @NonNull
+    private final Drawable mIcon;
+    @NonNull
+    private final String mLabel;
 
-    public HiddenComponent(@NonNull String packageName, @NonNull Drawable icon,
-                    @NonNull String label, boolean isHidden) {
+    private boolean mIsHidden;
+    private boolean mIsProtected;
+
+    public TrustComponent(@NonNull String packageName, @NonNull Drawable icon,
+                          @NonNull String label, boolean isHidden, boolean isProtected) {
         mPackageName = packageName;
         mIcon = icon;
         mLabel = label;
         mIsHidden = isHidden;
+        mIsProtected = isProtected;
     }
 
     @NonNull
@@ -51,17 +57,25 @@ public class HiddenComponent {
         return mIsHidden;
     }
 
+    public boolean isProtected() {
+        return mIsProtected;
+    }
+
     public void invertVisibility() {
         mIsHidden = !mIsHidden;
     }
 
+    public void invertProtection() {
+        mIsProtected = !mIsProtected;
+    }
+
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof HiddenComponent)) {
+        if (!(other instanceof TrustComponent)) {
             return false;
         }
 
-        HiddenComponent otherComponent = (HiddenComponent) other;
+        TrustComponent otherComponent = (TrustComponent) other;
         return otherComponent.getPackageName().equals(mPackageName) &&
                 otherComponent.isHidden() == mIsHidden;
     }
@@ -69,5 +83,10 @@ public class HiddenComponent {
     @Override
     public int hashCode() {
         return mPackageName.hashCode() + (mIsHidden ? 1 : 0);
+    }
+
+    public enum Kind {
+        HIDDEN,
+        PROTECTED,
     }
 }

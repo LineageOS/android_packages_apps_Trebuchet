@@ -145,6 +145,6 @@
   public <init>(...);
 }
 
--keep class com.android.launcher3.lineage.hidden.** {
+-keep class com.android.launcher3.lineage.trust.** {
  *;
 }
