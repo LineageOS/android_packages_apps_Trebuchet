@@ -105,8 +105,8 @@
         </activity>
 
         <activity
-            android:name=".lineage.hidden.HiddenAppsActivity"
-            android:label="@string/hidden_apps_manager_name"
+            android:name=".lineage.trust.TrustAppsActivity"
+            android:label="@string/trust_apps_manager_name"
             android:theme="@android:style/Theme.DeviceDefault.Settings"
             android:autoRemoveFromRecents="true" />
 

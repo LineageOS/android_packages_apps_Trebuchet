@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.hidden;
+package com.android.launcher3.lineage.trust;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -27,6 +29,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -35,23 +39,29 @@ import android.widget.Toast;
 
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
-import com.android.launcher3.lineage.hidden.db.HiddenComponent;
-import com.android.launcher3.lineage.hidden.db.HiddenDatabaseHelper;
+import com.android.launcher3.Utilities;
+import com.android.launcher3.lineage.trust.db.TrustComponent;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
 import java.util.List;
 
-public class HiddenAppsActivity extends Activity implements
-        HiddenAppsAdapter.Listener,
-        LoadHiddenComponentsTask.Callback,
-        UpdateItemVisibilityTask.UpdateCallback {
+import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.HIDDEN;
+import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.PROTECTED;
+
+public class TrustAppsActivity extends Activity implements
+        TrustAppsAdapter.Listener,
+        LoadTrustComponentsTask.Callback,
+        UpdateItemTask.UpdateCallback {
+
     private static final int REQUEST_AUTH_CODE = 92;
+    private static final String KEY_TRUST_ONBOARDING = "pref_trust_onboarding";
 
     private RecyclerView mRecyclerView;
     private LinearLayout mLoadingView;
     private ProgressBar mProgressBar;
 
-    private HiddenDatabaseHelper mDbHelper;
-    private HiddenAppsAdapter mAdapter;
+    private TrustDatabaseHelper mDbHelper;
+    private TrustAppsAdapter mAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstance) {
@@ -67,8 +77,8 @@ public class HiddenAppsActivity extends Activity implements
         mLoadingView = findViewById(R.id.hidden_apps_loading);
         mProgressBar = findViewById(R.id.hidden_apps_progress_bar);
 
-        mAdapter = new HiddenAppsAdapter(this);
-        mDbHelper = HiddenDatabaseHelper.getInstance(this);
+        mAdapter = new TrustAppsAdapter(this);
+        mDbHelper = TrustDatabaseHelper.getInstance(this);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -91,18 +101,34 @@ public class HiddenAppsActivity extends Activity implements
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_trust_apps, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public void onItemChanged(@NonNull HiddenComponent component) {
-        new UpdateItemVisibilityTask(mDbHelper, this).execute(component);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+            return true;
+        } else if (id == R.id.menu_trust_help) {
+            showOnBoarding(true);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onHiddenItemChanged(@NonNull TrustComponent component) {
+        new UpdateItemTask(mDbHelper, this, HIDDEN).execute(component);
+    }
+
+    @Override
+    public void onProtectedItemChanged(@NonNull TrustComponent component) {
+        new UpdateItemTask(mDbHelper, this, PROTECTED).execute(component);
     }
 
     @Override
@@ -119,7 +145,7 @@ public class HiddenAppsActivity extends Activity implements
     }
 
     @Override
-    public void onLoadCompleted(List<HiddenComponent> result) {
+    public void onLoadCompleted(List<TrustComponent> result) {
         mLoadingView.setVisibility(View.GONE);
         mRecyclerView.setVisibility(View.VISIBLE);
         mAdapter.update(result);
@@ -133,8 +159,8 @@ public class HiddenAppsActivity extends Activity implements
             throw new NullPointerException("No KeyguardManager found!");
         }
 
-        String title = getString(R.string.hidden_apps_manager_name);
-        String message = getString(R.string.hidden_apps_auth_manager);
+        String title = getString(R.string.trust_apps_manager_name);
+        String message = getString(R.string.trust_apps_auth_manager);
         Intent intent = manager.createConfirmDeviceCredentialIntent(title, message);
 
         if (intent != null) {
@@ -142,7 +168,7 @@ public class HiddenAppsActivity extends Activity implements
             return;
         }
 
-        Toast.makeText(this, R.string.hidden_apps_no_lock_error,
+        Toast.makeText(this, R.string.trust_apps_no_lock_error,
                 Toast.LENGTH_LONG).show();
         finish();
     }
@@ -150,6 +176,24 @@ public class HiddenAppsActivity extends Activity implements
     private void showUi() {
         mLoadingView.setVisibility(View.VISIBLE);
 
-        new LoadHiddenComponentsTask(mDbHelper, getPackageManager(), this).execute();
+        showOnBoarding(false);
+
+        new LoadTrustComponentsTask(mDbHelper, getPackageManager(), this).execute();
+    }
+
+    private void showOnBoarding(boolean forceShow) {
+        SharedPreferences preferenceManager = Utilities.getPrefs(this);
+        if (!forceShow && preferenceManager.getBoolean(KEY_TRUST_ONBOARDING, false)) {
+            return;
+        }
+
+        preferenceManager.edit()
+                .putBoolean(KEY_TRUST_ONBOARDING, true)
+                .apply();
+
+        new AlertDialog.Builder(this)
+                .setView(R.layout.dialog_trust_welcome)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 }

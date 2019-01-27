@@ -54,7 +54,7 @@ import android.widget.NumberPicker;
 import com.android.launcher3.graphics.IconShapeOverride;
 import com.android.launcher3.lineage.LineageLauncherCallbacks;
 import com.android.launcher3.lineage.LineageUtils;
-import com.android.launcher3.lineage.hidden.HiddenAppsActivity;
+import com.android.launcher3.lineage.trust.TrustAppsActivity;
 import com.android.launcher3.notification.NotificationListener;
 import com.android.launcher3.util.ListViewHighlighter;
 import com.android.launcher3.util.SettingsObserver;
@@ -190,10 +190,10 @@ public class SettingsActivity extends Activity {
                 mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaultGridSize()));
             }
 
-            Preference hiddenApps = drawerGroup.findPreference("pref_hidden_apps");
-            if (hiddenApps != null) {
-                hiddenApps.setOnPreferenceClickListener(preference -> {
-                    Intent intent = new Intent(getActivity(), HiddenAppsActivity.class);
+            Preference trustApps = drawerGroup.findPreference("pref_trust_apps");
+            if (trustApps != null) {
+                trustApps.setOnPreferenceClickListener(preference -> {
+                    Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
                     startActivity(intent);
                     return true;
                 });

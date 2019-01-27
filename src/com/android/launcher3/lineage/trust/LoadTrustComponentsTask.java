@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.hidden;
+package com.android.launcher3.lineage.trust;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,16 +23,16 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.NonNull;
 
-import com.android.launcher3.lineage.hidden.db.HiddenComponent;
-import com.android.launcher3.lineage.hidden.db.HiddenDatabaseHelper;
+import com.android.launcher3.lineage.trust.db.TrustComponent;
+import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class LoadHiddenComponentsTask extends AsyncTask<Void, Integer, List<HiddenComponent>> {
+public class LoadTrustComponentsTask extends AsyncTask<Void, Integer, List<TrustComponent>> {
     @NonNull
-    private HiddenDatabaseHelper mDbHelper;
+    private TrustDatabaseHelper mDbHelper;
 
     @NonNull
     private PackageManager mPackageManager;
@@ -40,17 +40,17 @@ public class LoadHiddenComponentsTask extends AsyncTask<Void, Integer, List<Hidd
     @NonNull
     private Callback mCallback;
 
-    LoadHiddenComponentsTask(@NonNull HiddenDatabaseHelper dbHelper,
-                             @NonNull PackageManager packageManager,
-                             @NonNull Callback callback) {
+    LoadTrustComponentsTask(@NonNull TrustDatabaseHelper dbHelper,
+                            @NonNull PackageManager packageManager,
+                            @NonNull Callback callback) {
         mDbHelper = dbHelper;
         mPackageManager = packageManager;
         mCallback = callback;
     }
 
     @Override
-    protected List<HiddenComponent> doInBackground(Void... voids) {
-        List<HiddenComponent> list = new ArrayList<>();
+    protected List<TrustComponent> doInBackground(Void... voids) {
+        List<TrustComponent> list = new ArrayList<>();
 
         Intent filter = new Intent(Intent.ACTION_MAIN, null);
         filter.addCategory(Intent.CATEGORY_LAUNCHER);
@@ -68,8 +68,9 @@ public class LoadHiddenComponentsTask extends AsyncTask<Void, Integer, List<Hidd
                                 PackageManager.GET_META_DATA)).toString();
                 Drawable icon = app.loadIcon(mPackageManager);
                 boolean isHidden = mDbHelper.isPackageHidden(pkgName);
+                boolean isProtected = mDbHelper.isPackageProtected(pkgName);
 
-                list.add(new HiddenComponent(pkgName, icon, label, isHidden));
+                list.add(new TrustComponent(pkgName, icon, label, isHidden, isProtected));
 
                 publishProgress(Math.round(i * 100f / numPackages));
             } catch (PackageManager.NameNotFoundException ignored) {
@@ -91,12 +92,12 @@ public class LoadHiddenComponentsTask extends AsyncTask<Void, Integer, List<Hidd
     }
 
     @Override
-    protected void onPostExecute(List<HiddenComponent> hiddenComponents) {
-        mCallback.onLoadCompleted(hiddenComponents);
+    protected void onPostExecute(List<TrustComponent> trustComponents) {
+        mCallback.onLoadCompleted(trustComponents);
     }
 
     interface Callback {
         void onLoadListProgress(int progress);
-        void onLoadCompleted(List<HiddenComponent> result);
+        void onLoadCompleted(List<TrustComponent> result);
     }
 }
