@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1045e077_b31d505d",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-01-27T15:38:29Z",
+      "side": 1,
+      "message": "Yep, one more hack.\nItemInfo is parcelable, but making it parcelable casts the object to ItemInfo, loosing the data needed to handle shortcuts ( ShortcutInfo )\nHence one more local variable.",
+      "range": {
+        "startLine": 849,
+        "startChar": 0,
+        "endLine": 849,
+        "endChar": 29
+      },
+      "revId": "b9a28a2a4e00e24c0c3a90f7e2db5b15e1b4ceef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
