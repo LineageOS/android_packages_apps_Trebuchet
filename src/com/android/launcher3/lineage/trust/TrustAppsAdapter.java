@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.hidden;
+package com.android.launcher3.lineage.trust;
 
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.AnimatedVectorDrawable;
@@ -29,20 +29,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.launcher3.R;
-import com.android.launcher3.lineage.hidden.db.HiddenComponent;
+import com.android.launcher3.lineage.trust.db.TrustComponent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class HiddenAppsAdapter extends RecyclerView.Adapter<HiddenAppsAdapter.ViewHolder> {
-    private List<HiddenComponent> mList = new ArrayList<>();
+class TrustAppsAdapter extends RecyclerView.Adapter<TrustAppsAdapter.ViewHolder> {
+    private List<TrustComponent> mList = new ArrayList<>();
     private Listener mListener;
 
-    HiddenAppsAdapter(Listener listener) {
+    TrustAppsAdapter(Listener listener) {
         mListener = listener;
     }
 
-    public void update(List<HiddenComponent> list) {
+    public void update(List<TrustComponent> list) {
         DiffUtil.DiffResult result = DiffUtil.calculateDiff(new Callback(mList, list));
         mList = list;
         result.dispatchUpdatesTo(this);
@@ -66,64 +66,102 @@ class HiddenAppsAdapter extends RecyclerView.Adapter<HiddenAppsAdapter.ViewHolde
     }
 
     public interface Listener {
-        void onItemChanged(@NonNull HiddenComponent component);
+        void onHiddenItemChanged(@NonNull TrustComponent component);
+
+        void onProtectedItemChanged(@NonNull TrustComponent component);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView mIconView;
         private TextView mLabelView;
-        private ImageView mLockView;
+        private ImageView mHiddenView;
+        private ImageView mProtectedView;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             mIconView = itemView.findViewById(R.id.item_hidden_app_icon);
             mLabelView = itemView.findViewById(R.id.item_hidden_app_title);
-            mLockView = itemView.findViewById(R.id.item_hidden_app_switch);
+            mHiddenView = itemView.findViewById(R.id.item_hidden_app_switch);
+            mProtectedView = itemView.findViewById(R.id.item_protected_app_switch);
         }
 
-        void bind(HiddenComponent component) {
+        void bind(TrustComponent component) {
             mIconView.setImageDrawable(component.getIcon());
             mLabelView.setText(component.getLabel());
-            mLockView.setImageResource(component.isHidden() ?
-                    R.drawable.ic_hidden_locked : R.drawable.ic_hidden_unlocked);
 
-            itemView.setOnClickListener(v -> {
+            mHiddenView.setImageResource(component.isHidden() ?
+                    R.drawable.ic_hidden_locked : R.drawable.ic_hidden_unlocked);
+            mProtectedView.setImageResource(component.isProtected() ?
+                    R.drawable.ic_protected_locked : R.drawable.ic_protected_unlocked);
+
+            mHiddenView.setOnClickListener(v -> {
                 component.invertVisibility();
 
-                mLockView.setImageResource(component.isHidden() ?
+                mHiddenView.setImageResource(component.isHidden() ?
                         R.drawable.avd_hidden_lock : R.drawable.avd_hidden_unlock);
-                AnimatedVectorDrawable avd  = (AnimatedVectorDrawable) mLockView.getDrawable();
+                AnimatedVectorDrawable avd = (AnimatedVectorDrawable) mHiddenView.getDrawable();
 
                 int position = getAdapterPosition();
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
                     avd.registerAnimationCallback(new Animatable2.AnimationCallback() {
                         @Override
                         public void onAnimationEnd(Drawable drawable) {
-                            updateList(position, component);
+                            updateHiddenList(position, component);
                         }
                     });
                     avd.start();
                 } else {
                     avd.start();
-                    updateList(position, component);
+                    updateHiddenList(position, component);
+                }
+            });
+
+            mProtectedView.setOnClickListener(v -> {
+                component.invertProtection();
+
+                mProtectedView.setImageResource(component.isProtected() ?
+                        R.drawable.avd_protected_lock : R.drawable.avd_protected_unlock);
+                AnimatedVectorDrawable avd = (AnimatedVectorDrawable) mProtectedView.getDrawable();
+
+                int position = getAdapterPosition();
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                    avd.registerAnimationCallback(new Animatable2.AnimationCallback() {
+                        @Override
+                        public void onAnimationEnd(Drawable drawable) {
+                            updateProtectedList(position, component);
+                        }
+                    });
+                    avd.start();
+                } else {
+                    avd.start();
+                    updateProtectedList(position, component);
                 }
             });
         }
 
-        private void updateList(int position, HiddenComponent component) {
-            mListener.onItemChanged(component);
+        private void updateHiddenList(int position, TrustComponent component) {
+            mListener.onHiddenItemChanged(component);
+            updateList(position, component);
+        }
+
+        private void updateProtectedList(int position, TrustComponent component) {
+            mListener.onProtectedItemChanged(component);
+            updateList(position, component);
+        }
+
+        private void updateList(int position, TrustComponent component) {
             mList.set(position, component);
             notifyItemChanged(position);
         }
     }
 
     private static class Callback extends DiffUtil.Callback {
-        List<HiddenComponent> mOldList;
-        List<HiddenComponent> mNewList;
+        List<TrustComponent> mOldList;
+        List<TrustComponent> mNewList;
 
-        public Callback(List<HiddenComponent> oldList,
-                        List<HiddenComponent> newList) {
+        public Callback(List<TrustComponent> oldList,
+                        List<TrustComponent> newList) {
             mOldList = oldList;
             mNewList = newList;
         }

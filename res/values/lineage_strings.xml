@@ -65,9 +65,13 @@
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Swipe down to show notifications</string>
 
-    <!-- Hidden apps -->
-    <string name="hidden_apps_manager_name">Hidden apps</string>
-    <string name="hidden_apps_auth_manager">Unlock to manage the hidden apps</string>
-    <string name="protected_apps_loading">Loading\u2026</string>
-    <string name="hidden_apps_no_lock_error">Please set up a secure lock screen to restrict app access</string>
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Hidden &amp; Protected apps</string>
+    <string name="trust_apps_auth_manager">Unlock to manage the hidden and protected apps</string>
+    <string name="trust_apps_auth_open_app">Authenticate to open %1$s</string>
+    <string name="trust_apps_loading">Loading\u2026</string>
+    <string name="trust_apps_no_lock_error">Please set up a secure lock screen to restrict app access</string>
+    <string name="trust_apps_help">Help</string>
+    <string name="trust_apps_info_hidden">Hidden apps and their widgets are hidden from the drawer</string>
+    <string name="trust_apps_info_protected">Protected apps require authentication to be opened from the launcher</string>
 </resources>

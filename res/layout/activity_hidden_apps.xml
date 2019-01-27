@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/protected_apps_loading"
+            android:text="@string/trust_apps_loading"
             android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
