@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ecfc42a_d2d0cd1e",
+        "filename": "src/com/android/launcher3/Launcher.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-01-27T15:00:53Z",
+      "side": 1,
+      "message": "This is the only /hacky/ part about the whole code, but view isn\u0027t parcelable thus can\u0027t be passed via intent",
+      "revId": "0752a29f2bbeb1264e0743c9262efeabfab49c3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
