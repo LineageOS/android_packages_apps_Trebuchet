@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a9df77b7_3f66969d",
+        "filename": "quickstep/src/com/android/launcher3/uioverrides/StatusBarTouchController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-01T23:09:51Z",
+      "side": 1,
+      "message": "And I think I got action wrong",
+      "parentUuid": "fd0497a3_332cc9c0",
+      "revId": "8cd8c0cf97570043243caaf6e3c5a9182169002d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "146e5bc6_52bcec2b",
         "filename": "src/com/android/launcher3/touch/TouchEventTranslator.java",
         "patchSetId": 3
@@ -30,6 +48,23 @@
       "writtenOn": "2019-02-01T22:55:12Z",
       "side": 1,
       "message": "I think I\u0027ll convert this to a for loop",
+      "revId": "8cd8c0cf97570043243caaf6e3c5a9182169002d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e5e0b4e_6f433c3e",
+        "filename": "src/com/android/launcher3/touch/TouchEventTranslator.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-01T23:09:51Z",
+      "side": 1,
+      "message": "ditto",
       "revId": "8cd8c0cf97570043243caaf6e3c5a9182169002d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
