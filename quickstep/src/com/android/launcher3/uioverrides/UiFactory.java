@@ -64,7 +64,7 @@ public class UiFactory {
                     launcher.getDragController(),
                     new OverviewToAllAppsTouchController(launcher),
                     new LauncherTaskViewController(launcher),
-                    new SwipeDownListener(launcher)};
+                    new StatusBarTouchController(launcher)};
         }
         if (launcher.getDeviceProfile().isVerticalBarLayout()) {
             return new TouchController[] {
@@ -72,13 +72,13 @@ public class UiFactory {
                     new OverviewToAllAppsTouchController(launcher),
                     new LandscapeEdgeSwipeController(launcher),
                     new LauncherTaskViewController(launcher),
-                    new SwipeDownListener(launcher)};
+                    new StatusBarTouchController(launcher)};
         } else {
             return new TouchController[] {
                     launcher.getDragController(),
                     new PortraitStatesTouchController(launcher),
                     new LauncherTaskViewController(launcher),
-                    new SwipeDownListener(launcher)};
+                    new StatusBarTouchController(launcher)};
         }
     }
 
