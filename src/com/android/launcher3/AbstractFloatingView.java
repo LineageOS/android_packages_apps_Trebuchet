@@ -52,6 +52,7 @@ public abstract class AbstractFloatingView extends LinearLayout implements Touch
             TYPE_WIDGETS_FULL_SHEET,
             TYPE_ON_BOARD_POPUP,
             TYPE_DISCOVERY_BOUNCE,
+            TYPE_STATUS_BAR_SWIPE_DOWN_DISALLOW,
 
             TYPE_QUICKSTEP_PREVIEW,
             TYPE_TASK_MENU,
@@ -66,6 +67,7 @@ public abstract class AbstractFloatingView extends LinearLayout implements Touch
     public static final int TYPE_WIDGETS_FULL_SHEET = 1 << 4;
     public static final int TYPE_ON_BOARD_POPUP = 1 << 5;
     public static final int TYPE_DISCOVERY_BOUNCE = 1 << 6;
+    public static final int TYPE_STATUS_BAR_SWIPE_DOWN_DISALLOW = 1 << 10;
 
     // Popups related to quickstep UI
     public static final int TYPE_QUICKSTEP_PREVIEW = 1 << 7;
@@ -75,7 +77,7 @@ public abstract class AbstractFloatingView extends LinearLayout implements Touch
     public static final int TYPE_ALL = TYPE_FOLDER | TYPE_ACTION_POPUP
             | TYPE_WIDGETS_BOTTOM_SHEET | TYPE_WIDGET_RESIZE_FRAME | TYPE_WIDGETS_FULL_SHEET
             | TYPE_QUICKSTEP_PREVIEW | TYPE_ON_BOARD_POPUP | TYPE_DISCOVERY_BOUNCE | TYPE_TASK_MENU
-            | TYPE_OPTIONS_POPUP;
+            | TYPE_OPTIONS_POPUP | TYPE_STATUS_BAR_SWIPE_DOWN_DISALLOW;
 
     // Type of popups which should be kept open during launcher rebind
     public static final int TYPE_REBIND_SAFE = TYPE_WIDGETS_FULL_SHEET

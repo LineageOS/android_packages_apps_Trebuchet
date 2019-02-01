@@ -136,6 +136,10 @@ public final class Utilities {
         return Log.isLoggable(propertyName, Log.VERBOSE);
     }
 
+    public interface Consumer<T> {
+        void accept(T t);
+    }
+
     /**
      * Given a coordinate relative to the descendant, find the coordinate in a parent view's
      * coordinates.
