@@ -57,12 +57,6 @@
             android:title="@string/desktop_show_labels"
             android:defaultValue="true"
             android:persistent="true" />
-
-        <SwitchPreference
-            android:key="pref_expand_statusbar"
-            android:title="@string/statusbar_expand"
-            android:defaultValue="true"
-            android:persistent="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
