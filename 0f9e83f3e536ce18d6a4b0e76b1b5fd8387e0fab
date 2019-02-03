@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c42d3b59_3907d308",
+        "filename": "quickstep/src/com/android/launcher3/uioverrides/StatusBarTouchController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-02-03T19:34:27Z",
+      "side": 1,
+      "message": "@Override?\n(Here and below)",
+      "parentUuid": "",
+      "revId": "0f9e83f3e536ce18d6a4b0e76b1b5fd8387e0fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "222cd627_52f41a7f",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2019-02-03T19:34:27Z",
+      "side": 1,
+      "message": "Why not put this interface into TouchEventTranslator?",
+      "revId": "0f9e83f3e536ce18d6a4b0e76b1b5fd8387e0fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
