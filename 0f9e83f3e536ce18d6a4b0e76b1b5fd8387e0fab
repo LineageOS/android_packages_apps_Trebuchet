@@ -20,6 +20,24 @@
     },
     {
       "key": {
+        "uuid": "a7590c2a_40956a06",
+        "filename": "quickstep/src/com/android/launcher3/uioverrides/StatusBarTouchController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-03T19:36:58Z",
+      "side": 1,
+      "message": "Right, overridde isn\u0027t carried over in smali",
+      "parentUuid": "c42d3b59_3907d308",
+      "revId": "0f9e83f3e536ce18d6a4b0e76b1b5fd8387e0fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "222cd627_52f41a7f",
         "filename": "src/com/android/launcher3/Utilities.java",
         "patchSetId": 8
@@ -34,6 +52,24 @@
       "revId": "0f9e83f3e536ce18d6a4b0e76b1b5fd8387e0fab",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8371b4a7_2fca0842",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-03T19:36:58Z",
+      "side": 1,
+      "message": "It\u0027s where Google put it, I\u0027ll keep it there",
+      "parentUuid": "222cd627_52f41a7f",
+      "revId": "0f9e83f3e536ce18d6a4b0e76b1b5fd8387e0fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
