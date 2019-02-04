@@ -115,6 +115,7 @@ public class TouchEventTranslator {
 
     private TouchEventTranslator put(int id, int index, float x, float y, long ms, MotionEvent ev) {
         int action;
+        boolean isInitialDown = mFingers.size() == 0;
         checkFingerExistence(id, false);
         mFingers.put(id, new PointF(x, y));
         int n = mFingers.size();
@@ -128,7 +129,6 @@ public class TouchEventTranslator {
             mCache.put(n, new Pair<>(properties, coords));
         }
 
-        boolean isInitialDown = mFingers.size() == 0;
         action = isInitialDown ?
                 MotionEvent.ACTION_DOWN :
                 MotionEvent.ACTION_POINTER_DOWN | (index << MotionEvent.ACTION_POINTER_INDEX_SHIFT);
@@ -144,9 +144,9 @@ public class TouchEventTranslator {
 
     private TouchEventTranslator lift(int id, int index, MotionEvent ev) {
         int action;
+        boolean isFinalUp = mFingers.size() == 1;
         checkFingerExistence(id, true);
 
-        boolean isFinalUp = mFingers.size() == 1;
         action = isFinalUp ?
                 MotionEvent.ACTION_UP :
                 MotionEvent.ACTION_POINTER_UP | (index << MotionEvent.ACTION_POINTER_INDEX_SHIFT);
