@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b6715e3f_7afb467f",
+        "filename": "src/com/android/launcher3/lineage/trust/TrustAppsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-04T21:15:36Z",
+      "side": 1,
+      "message": "\\n\\n",
+      "revId": "c9dd10128389c8457d0e574a707d6a512f219f73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f4d04d4_c3546a21",
+        "filename": "src/com/android/launcher3/lineage/trust/TrustAppsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-04T21:15:36Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "c9dd10128389c8457d0e574a707d6a512f219f73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23ec8568_6bb21b79",
+        "filename": "src/com/android/launcher3/lineage/trust/TrustAppsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-02-04T21:15:36Z",
+      "side": 1,
+      "message": "s/null/new LinearLayout()/",
+      "revId": "c9dd10128389c8457d0e574a707d6a512f219f73",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
