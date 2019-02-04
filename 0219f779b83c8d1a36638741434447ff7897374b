@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fef386aa_7039db80",
+        "filename": "src/com/android/launcher3/touch/TouchEventTranslator.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-02-04T13:44:33Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 135,
+        "startChar": 12,
+        "endLine": 135,
+        "endChar": 105
+      },
+      "revId": "0219f779b83c8d1a36638741434447ff7897374b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5006f7ed_4e7d2b59",
+        "filename": "src/com/android/launcher3/touch/TouchEventTranslator.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-02-04T13:44:33Z",
+      "side": 1,
+      "message": "100 chars",
+      "range": {
+        "startLine": 155,
+        "startChar": 12,
+        "endLine": 155,
+        "endChar": 103
+      },
+      "revId": "0219f779b83c8d1a36638741434447ff7897374b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
