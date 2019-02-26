@@ -49,5 +49,6 @@
     <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
-    <string name="statusbar_expand">Llusga i lawr i ddangos hysbysiadau</string>
+    <string name="statusbar_expand">Llusgo i lawr i ddangos hysbysiadau</string>
+    <!-- Trust apps -->
 </resources>

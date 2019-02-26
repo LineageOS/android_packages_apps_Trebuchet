@@ -53,4 +53,5 @@
     <string name="play_folder_title">播放</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">向下滑动以查看通知</string>
+    <!-- Trust apps -->
 </resources>

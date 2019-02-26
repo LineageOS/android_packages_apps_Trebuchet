@@ -50,4 +50,5 @@
     <string name="play_folder_title">Reproducir</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Deslizar abajo para las notificaciones</string>
+    <!-- Trust apps -->
 </resources>

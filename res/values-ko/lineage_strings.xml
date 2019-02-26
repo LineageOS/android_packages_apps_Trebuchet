@@ -50,4 +50,5 @@
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">아래로 스와이프하여 알림 열기</string>
+    <!-- Trust apps -->
 </resources>

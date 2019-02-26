@@ -50,4 +50,5 @@
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Deslizar para baixo para ver as notificações</string>
+    <!-- Trust apps -->
 </resources>

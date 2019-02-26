@@ -50,4 +50,5 @@
     <string name="play_folder_title">Toista</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Pyyhkäise alas näyttääksesi ilmoitukset</string>
+    <!-- Trust apps -->
 </resources>

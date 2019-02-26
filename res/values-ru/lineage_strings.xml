@@ -53,4 +53,5 @@
     <string name="play_folder_title">Сервисы Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Свайп вниз для показа уведомлений</string>
+    <!-- Trust apps -->
 </resources>

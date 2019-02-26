@@ -53,4 +53,5 @@
     <string name="play_folder_title">Oynat</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Bildirimleri göstermek için aşağı kaydırın</string>
+    <!-- Trust apps -->
 </resources>

@@ -39,4 +39,5 @@
     <string name="play_folder_title">Spela upp</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Svep nedåt för att visa notiser</string>
+    <!-- Trust apps -->
 </resources>

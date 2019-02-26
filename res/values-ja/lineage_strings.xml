@@ -50,4 +50,5 @@
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">下にスワイプして通知を表示</string>
+    <!-- Trust apps -->
 </resources>

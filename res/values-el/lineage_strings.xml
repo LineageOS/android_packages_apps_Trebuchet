@@ -53,4 +53,13 @@
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Σύρετε προς τα κάτω για εμφάνιση ειδοποιήσων</string>
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Κρυφές &amp; προστατευόμενες εφαρμογές</string>
+    <string name="trust_apps_auth_manager">Ξεκλειδώστε για να διαχειριστείτε τις κρυφές και προστατευόμενες εφαρμογές</string>
+    <string name="trust_apps_auth_open_app">Απαιτείται έλεγχος ταυτότητας για να ανοίξετε το \"%1$s\"</string>
+    <string name="trust_apps_loading">Φόρτωση\u2026</string>
+    <string name="trust_apps_no_lock_error">Μπορείτε να ορίσετε ένα ασφαλές κλείδωμα οθόνης για να περιορίσετε την πρόσβαση στις εφαρμογές</string>
+    <string name="trust_apps_help">Βοήθεια</string>
+    <string name="trust_apps_info_hidden">Οι κρυφές εφαρμογές και widgets τους αποκρύπτονται από το συρτάρι</string>
+    <string name="trust_apps_info_protected">Οι προστατευόμενες εφαρμογές απαιτούν έλεγχο ταυτότητας για να ανοιχτούν από την αρχική σελίδα η το συρτάρι</string>
 </resources>

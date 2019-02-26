@@ -53,4 +53,5 @@
     <string name="play_folder_title">Play</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Poteg dol za prikaz obvestil</string>
+    <!-- Trust apps -->
 </resources>

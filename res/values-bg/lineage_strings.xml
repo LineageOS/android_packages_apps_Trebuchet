@@ -24,8 +24,11 @@
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Покажи Google апликацията</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Когато плъзнете надясно от главното меню</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Когато плъзнете наляво от главното меню</string>
     <!-- Icon shapes -->
+    <string name="icon_shape_square_name">Квадрат</string>
     <string name="icon_shape_circle_name">Кръг</string>
     <string name="icon_shape_squircle_name">Скуайър</string>
     <string name="icon_shape_teardrop_name">Сълза</string>
@@ -50,4 +53,5 @@
     <string name="play_folder_title">Възпроизвеждане</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Плъзнете надолу за да видите съобщенията</string>
+    <!-- Trust apps -->
 </resources>

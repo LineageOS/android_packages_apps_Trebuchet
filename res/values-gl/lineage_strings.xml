@@ -24,8 +24,11 @@
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Amosar a aplicación Google Now</string>
     <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Cando deslizas cara á dereita dende a pantalla de inicio</string>
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Cando esvaras cara á esquerda dende a pantalla de inicio</string>
     <!-- Icon shapes -->
+    <string name="icon_shape_square_name">Cadrado</string>
     <string name="icon_shape_circle_name">Círculo</string>
     <string name="icon_shape_squircle_name">Cantos redondeados</string>
     <string name="icon_shape_teardrop_name">Bágoas</string>
@@ -50,4 +53,5 @@
     <string name="play_folder_title">Reproducir</string>
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Esvarar cara abaixo para ver as notificacións</string>
+    <!-- Trust apps -->
 </resources>
