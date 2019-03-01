@@ -18,211 +18,113 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- General -->
-    <!-- Application name -->
-    <!-- Default folder name -->
-    <!-- Work folder name -->
+    <string name="app_name">Launcher3</string>
     <string name="work_folder_name">Gwaith</string>
-    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
     <string name="activity_not_found">Dyw\'r ap heb ei osod.</string>
-    <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
     <string name="activity_not_available">Ap ddim ar gael</string>
-    <!-- SafeMode shortcut error string -->
     <string name="safemode_shortcut_error">Mae\'r ap a lawrlwythwyd wedi\'i analluogi ym Modd Diogel</string>
-    <!-- SafeMode widget error string -->
     <string name="safemode_widget_error">Mae teclynnau wedi\'u hanalluogi ym Modd Diogel</string>
-    <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
-    <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
+    <string name="shortcut_not_available">Llwybr byr ddim ar gael</string>
     <string name="home_screen">Sgrin gartref</string>
-    <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
-    <!-- Widgets -->
-    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
+    <string name="custom_actions">Gweithredoedd addasu</string>
     <string name="long_press_widget_to_add">Cyffyrdda a dal dy fys ar declyn i\'w symud.</string>
-    <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
-    <!-- The format string for the dimensions of a widget in the drawer -->
-    <!-- There is a special version of this format string for Farsi -->
+    <string name="long_accessible_way_to_add">Rho dariad dwbl a dal dy gyffwrdd i godi teclyn i fyny neu ddefnyddio gweithredoedd addasu.</string>
     <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
-    <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
     <string name="widget_accessible_dims_format">%1$d o led, %2$d o uchder</string>
-    <!-- Message to tell the user to press and hold a widget/icon to add it  -->
-    <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
+    <string name="add_item_request_drag_hint">Cyffyrdda a dal i\'w osod â llaw</string>
     <string name="place_automatically">Ychwanegu\'n awtomatig</string>
-    <!-- All Apps -->
-    <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
     <string name="all_apps_search_bar_hint">Chwilio apiau</string>
-    <!-- Loading apps text. [CHAR_LIMIT=50] -->
-    <string name="all_apps_loading_message">Yn llwytho apiau&#8230;</string>
-    <!-- No-search-results text. [CHAR_LIMIT=50] -->
-    <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
-    <!-- Popup items -->
-    <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
+    <string name="all_apps_loading_message">Yn llwytho apiau…</string>
+    <string name="all_apps_no_search_results">Ni chanfuwyd apiau yn cydweddu â \"<xliff:g id="query" example="Android">%1$s</xliff:g>\"</string>
+    <string name="all_apps_search_market_message">Chwilio am ragor o apiau</string>
     <string name="notifications_header">Hysbysiadau</string>
-    <!-- Drag and drop -->
-    <!-- Error message when user has filled a home screen -->
     <string name="out_of_space">Does dim rhagor o le ar y sgrin gartref hon.</string>
-    <!-- Error message when user has filled the hotseat -->
     <string name="hotseat_out_of_space">Does dim rhagor o le yn y blwch ffefrynnau</string>
-    <!-- All applications label -->
     <string name="all_apps_button_label">Rhestr apiau</string>
-    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
-         for accessibilty (spoken when the button gets focus). -->
     <string name="all_apps_home_button_label">Cartref</string>
-    <!-- Label for remove drop target. [CHAR_LIMIT=20] -->
     <string name="remove_drop_target_label">Tynnu</string>
-    <!-- Label for uninstall drop target. [CHAR_LIMIT=20]-->
     <string name="uninstall_drop_target_label">Dadosod</string>
-    <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
-    <string name="app_info_drop_target_label">Gwybodaeth ap</string>
-    <!-- Permissions: -->
-    <!-- Permission short label -->
+    <string name="app_info_drop_target_label">Gwybodaeth am yr ap</string>
     <string name="permlab_install_shortcut">gosod llwybrau byr</string>
-    <!-- Permission description -->
     <string name="permdesc_install_shortcut">Mae\'n caniatáu i ap ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
-    <!-- Permission short label -->
     <string name="permlab_read_settings">darllen llwybrau byr a gosodiadau Cartref</string>
-    <!-- Permission description -->
     <string name="permdesc_read_settings">Mae\'n caniatáu i\'r ap ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
-    <!-- Permission short label -->
     <string name="permlab_write_settings">ysgrifennu llwybrau byr a gosodiadau Cartref</string>
-    <!-- Permission description -->
     <string name="permdesc_write_settings">Mae\'n caniatáu i\'r ap newid y gosodiadau a llwybrau byr yn Cartref.</string>
-    <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
     <string name="msg_no_phone_permission">Dyw <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> ddim yn cael gwneud galwadau.</string>
-    <!-- Widgets: -->
-    <!-- Text to show user in place of a gadget when we can't display it properly -->
     <string name="gadget_error_text">Problem wrth lwytho\'r teclyn</string>
-    <!-- Text to show user in place of a gadget when it is not yet initialized. -->
     <string name="gadget_setup_text">Gosod</string>
-    <!-- Text to inform the user that they can't uninstall a system application -->
     <string name="uninstall_system_app_text">Mae hwn yn ap system a ni ellir ei ddadosod.</string>
-    <!-- Default folder title -->
     <string name="folder_hint_text">Ffolder Dienw</string>
-    <!-- Accessibility -->
-    <!-- The format string for when an app is temporarily disabled. -->
-    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
+    <string name="disabled_app_label">Analluogwyd <xliff:g id="app_name" example="Messenger">%1$s</xliff:g></string>
     <string name="default_scroll_format">Tudalen %1$d o %2$d</string>
-    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
     <string name="workspace_scroll_format">Sgrin gartref %1$d o %2$d</string>
-    <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
-    <!-- Folder accessibility -->
-    <!-- The format string for when a folder is opened, speaks the dimensions -->
+    <string name="workspace_new_page">Tudalen sgrin gartref newydd</string>
     <string name="folder_opened">Agorwyd ffolder, <xliff:g id="width" example="5">%1$d</xliff:g> wrth <xliff:g id="height" example="3">%2$d</xliff:g></string>
-    <!-- Instruction that clicking outside will close folder -->
-    <!-- Instruction that clicking outside will commit folder rename -->
-    <!-- Indication that folder closed -->
+    <string name="folder_tap_to_close">Tapia i gau\'r ffolder</string>
+    <string name="folder_tap_to_rename">Tapia i gadw ailenwi</string>
     <string name="folder_closed">Caewyd y ffolder</string>
-    <!-- Folder renamed format -->
     <string name="folder_renamed">Ailenwyd y ffolder i <xliff:g id="name" example="Games">%1$s</xliff:g></string>
-    <!-- Folder name format -->
     <string name="folder_name_format">Ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
-    <!-- Strings for the customization mode -->
-    <!-- Text for widget add button -->
     <string name="widget_button_text">Teclynnau</string>
-    <!-- Text for wallpaper change button -->
     <string name="wallpaper_button_text">Papurau wal</string>
-    <!-- Text for settings button -->
-    <!-- Message shown when a feature is disabled by the administrator -->
-    <!-- Text for custom accessibility action to go to the overview mode, where users can look and change the overall UI of the launcher. -->
+    <string name="settings_button_text">Gosodiadau cartref</string>
+    <string name="msg_disabled_by_admin">Analluogwyd gan dy weinyddwr</string>
     <string name="accessibility_action_overview">Trosolwg</string>
-    <!-- Strings for settings -->
-    <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
     <string name="allow_rotation_title">Caniatáu troi\'r sgrin gartref</string>
-    <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
-    <!-- Text explaining that rotation is disabled in Display settings. 'Display' refers to the Display section in system settings [CHAR LIMIT=100] -->
-    <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
-    <!-- Text to indicate that the system icon badging setting is on [CHAR LIMIT=100] -->
+    <string name="allow_rotation_desc">Pan gaiff y ffôn ei throi</string>
+    <string name="allow_rotation_blocked_desc">Dyw gosodiad cyfredol y dangosydd ddim yn caniatáu cylchdroi</string>
+    <string name="icon_badging_title">Dotiau hysbysiadau</string>
     <string name="icon_badging_desc_on">Ymlaen</string>
-    <!-- Text to indicate that the system icon badging setting is off [CHAR LIMIT=100] -->
     <string name="icon_badging_desc_off">I ffwrdd</string>
-    <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
-    <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
-    <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
-    <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=40] -->
+    <string name="title_missing_notification_access">Angen mynediad at hysbysiadau</string>
+    <string name="msg_missing_notification_access">I ddangos Dotiau Hysbysiadau, tro hysbysiadau apiau ymlaen ar gyfer <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <string name="title_change_settings">Newid gosodiadau</string>
     <string name="auto_add_shortcuts_label">Ychwanegu eicon i\'r sgrin gartref</string>
-    <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
     <string name="auto_add_shortcuts_description">Ar gyfer apiau newydd</string>
-    <!-- Developer setting to change the shape of icons on home screen. [CHAR LIMIT=50] -->
-    <!-- Option to not change the icon shape on home screen and use the system default setting instead. [CHAR LIMIT=50] -->
-    <!-- Option to change the shape of the home screen icons to a square. [CHAR LIMIT=50] -->
-    <!-- Option to change the shape of the home screen icons to a squircle. This represents the name of the shape somewhere between a circle and a square. [CHAR LIMIT=50] -->
-    <!-- Option to change the shape of the home screen icons to a circle. [CHAR LIMIT=50] -->
-    <!-- Option to change the shape of the home screen icons to a teardrop. This represents the name of the shape similar to a circle with with the bottom right corner pushed out like a square [CHAR LIMIT=50] -->
-    <!-- Message shown in the progress dialog when the icon shape override is being applied [CHAR LIMIT=100]-->
+    <string name="icon_shape_override_label">Newid siâp eiconau</string>
+    <string name="icon_shape_system_default">Defnyddio rhagosodiad y system</string>
+    <string name="icon_shape_square">Sgwâr</string>
+    <string name="icon_shape_squircle">Sgwylch</string>
+    <string name="icon_shape_circle">Cylch</string>
+    <string name="icon_shape_teardrop">Deigryn</string>
     <string name="icon_shape_override_progress">Yn rhoi newidiadau siâp eicon ar waith</string>
-    <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
     <string name="package_state_unknown">Anhysybys</string>
-    <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
     <string name="abandoned_clean_this">Tynnu</string>
-    <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
     <string name="abandoned_search">Chwilio</string>
-    <!-- Title for abandoned promise dialog. -->
     <string name="abandoned_promises_title">Dyw\'r ap hwn heb ei osod</string>
-    <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
-    The second "it" refers to the app. -->
     <string name="abandoned_promise_explanation">Dyw\'r ap ar gyfer yr eicon hwn heb ei osod. 
 Mae\'n bosib i ti ei dynnu neu i chwilio am a gosod yr ap dy hun.    </string>
-    <!-- Title for an app which is being downloaded. -->
     <string name="app_downloading_title"><xliff:g id="name" example="Messenger">%1$s</xliff:g> yn lawrlwytho, <xliff:g id="progress" example="30%">%2$s</xliff:g> yn gyflawn</string>
-    <!-- Title for an app whose download has been started. -->
     <string name="app_waiting_download_title"><xliff:g id="name" example="Messenger">%1$s</xliff:g> yn disgwyl i\'w osod</string>
-    <!-- Strings for widgets & more in the popup container/bottom sheet -->
-    <!-- Title for a bottom sheet that shows widgets for a particular app -->
     <string name="widgets_bottom_sheet_title">Teclynnau <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
-    <!-- Strings for accessibility actions -->
-    <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
     <string name="action_add_to_workspace">Ychwanegu i\'r sgrin gartref</string>
-    <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
     <string name="action_move_here">Symud yr eitem yma</string>
-    <!-- Accessibility confirmation for item added to workspace. -->
     <string name="item_added_to_workspace">Ychwanegwyd yr item i\'r sgrin gartref</string>
-    <!-- Accessibility confirmation for item removed. -->
     <string name="item_removed">Tynnwyd yr eitem</string>
-    <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
     <string name="action_move">Symud eitem</string>
-    <!-- Accessibility description to move item to empty cell. -->
     <string name="move_to_empty_cell">Symud i res <xliff:g id="number" example="1">%1$s</xliff:g>, colofn <xliff:g id="number" example="1">%2$s</xliff:g></string>
-    <!-- Accessibility description to move item inside a folder. -->
     <string name="move_to_position">Symud i leoliad <xliff:g id="number" example="1">%1$s</xliff:g></string>
-    <!-- Accessibility description to move item to the hotseat. -->
     <string name="move_to_hotseat_position">Symud i leoliad ffefrynnau <xliff:g id="number" example="1">%1$s</xliff:g></string>
-    <!-- Accessibility confirmation for item move. -->
     <string name="item_moved">Symudwyd yr eitem</string>
-    <!-- Accessibility description to move item into an existing folder. -->
     <string name="add_to_folder">Ychwanegu i\'r ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
-    <!-- Accessibility description to move item into an existing folder containing an app. -->
     <string name="add_to_folder_with_app">Ychwanegu i ffolder gyda <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
-    <!-- Accessibility confirmation for item added to folder. -->
     <string name="added_to_folder">Ychwanegwyd yr eitem i\'r ffolder</string>
-    <!-- Accessibility description to create folder with another item. -->
     <string name="create_folder_with">Creu ffolder gyda: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
-    <!-- Accessibility confirmation for folder created. -->
     <string name="folder_created">Crëwyd y ffolder</string>
-    <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
     <string name="action_move_to_workspace">Symud i\'r sgrin Gartref</string>
-    <!-- Accessibility action to move an homescreen to the left. [CHAR_LIMIT=30] -->
     <string name="action_move_screen_left">Symud y sgrin i\'r chwith</string>
-    <!-- Accessibility action to move an homescreen to the right. [CHAR_LIMIT=30] -->
     <string name="action_move_screen_right">Symud y sgrin i\'r dde</string>
-    <!-- Accessibility confirmation when a screen was moved. -->
     <string name="screen_moved">Symudwyd y sgrin</string>
-    <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
     <string name="action_resize">Ailfeintio</string>
-    <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_width">Cynyddu\'r lled</string>
-    <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_height">Cynyddu\'r taldra</string>
-    <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_width">Lleihau\'r lled</string>
-    <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_height">Lleihau\'r taldra</string>
-    <!-- Accessibility confirmation for widget resize. -->
     <string name="widget_resized">Wedi newid maint y teclyn i <xliff:g id="number" example="2">%1$s</xliff:g> o led a <xliff:g id="number" example="1">%2$s</xliff:g> o daldra</string>
-    <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
     <string name="action_deep_shortcut">Llwybrau Byr</string>
-    <!-- Accessibility description for the shortcuts menu shown for an app. -->
-    <!-- Accessibility description when the shortcuts menu has notifications as well as shortcuts. -->
-    <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
-    <string name="action_dismiss_notification">Wfftio</string>
-    <!-- Accessibility confirmation for notification being dismissed. -->
-    <string name="notification_dismissed">Cafodd yr hysbysiad ei wfftio</string>
+    <string name="shortcuts_menu_description"><xliff:g id="number_of_shortcuts" example="3">%1$d</xliff:g> llwybr byr ar gyfer <xliff:g id="app_name" example="Messenger">%2$s</xliff:g></string>
+    <string name="shortcuts_menu_with_notifications_description"><xliff:g id="number_of_shortcuts" example="3">%1$d</xliff:g> llwybr byr a <xliff:g id="number_of_notifications" example="3">%2$d</xliff:g> hysbysiad ar gyfer <xliff:g id="app_name" example="Messenger">%3$s</xliff:g></string>
+    <string name="action_dismiss_notification">Diystyru</string>
+    <string name="notification_dismissed">Cafodd yr hysbysiad ei ddiystyru</string>
 </resources>

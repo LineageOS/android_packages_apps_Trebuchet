@@ -16,24 +16,17 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Aplikasi prediktif</string>
     <string name="predictive_apps_summary_on">Aplikasi favorit anda akan muncul di atas panel</string>
     <string name="predictive_apps_summary_off">Aplikasi favorit anda tidak akan muncul di atas panel</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Ukuran grid</string>
     <string name="grid_size_rows">Baris</string>
     <string name="grid_size_columns">Kolom</string>
     <string name="grid_size_custom_positive">Setel</string>
     <string name="grid_size_custom_message">Pilih jumlah kolom dan baris khusus</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
     <string name="drawer_show_labels">Sembunyikan label ikon di panel</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Sunting</string>
     <string name="icon_pack_title">Paket ikon</string>
     <string name="icon_pack_picker">Pilih ikon</string>
@@ -42,11 +35,9 @@
     <string name="icon_pack_all_icons">Semua ikon</string>
     <string name="icon_pack_reset">Setel ulang</string>
     <string name="icon_pack_system">Sistem (Bawaan)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_circle_name">Bulat</string>
     <string name="icon_shape_squircle_name">Kotak melengkung</string>
     <string name="icon_shape_teardrop_name">Tetesan Air</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Setelan layar utama</string>
     <string name="settings_category_drawer">Setelan panel</string>
     <string name="settings_category_icons">Setelan ikon</string>
@@ -63,10 +54,7 @@
     <string name="settings_edit_allow_summary_on">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_allow_summary_off">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Tampilkan aplikasi Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ketika Anda mengusap ke kanan dari layar utama</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ketika Anda mengusap ke kiri dari layar utama</string>
 </resources>

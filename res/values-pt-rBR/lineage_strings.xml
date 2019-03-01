@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Deslizar para baixo para ver as notificações</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Aplicativos favoritos</string>
     <string name="predictive_apps_summary_on">Os seus aplicativos favoritos serão exibidos na parte superior da gaveta</string>
     <string name="predictive_apps_summary_off">Os seus aplicativos favoritos não serão exibidos na parte superior da gaveta</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Tamanho da grade</string>
     <string name="grid_size_rows">Linhas</string>
     <string name="grid_size_columns">Colunas</string>
     <string name="grid_size_custom_positive">Definir</string>
     <string name="grid_size_custom_message">Selecionar o número de colunas e linhas</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
     <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de aplicativos</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Editar</string>
     <string name="icon_pack_title">Pacote de ícones</string>
     <string name="icon_pack_picker">Selecionar ícone</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Todos os ícones</string>
     <string name="icon_pack_reset">Redefinir</string>
     <string name="icon_pack_system">Sistema (Padrão)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Super elipse</string>
     <string name="icon_shape_circle_name">Círculo</string>
     <string name="icon_shape_squircle_name">Quadrado arredondado</string>
     <string name="icon_shape_teardrop_name">Lágrima</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Configurações da tela inicial</string>
     <string name="settings_category_drawer">Configurações da gaveta</string>
     <string name="settings_category_icons">Configurações dos ícones</string>
@@ -65,10 +56,7 @@
     <string name="settings_edit_allow_summary_on">Ícones e widgets podem ser adicionados, removidos e movidos na tela inicial</string>
     <string name="settings_edit_allow_summary_off">Ícones e widgets não podem ser adicionados, removidos e movidos na tela inicial</string>
     <string name="settings_edit_widgets_error">Não é possível adicionar widgets à tela inicial</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Mostrar app do Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ao deslizar para a direita na tela inicial</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda na tela inicial</string>
 </resources>

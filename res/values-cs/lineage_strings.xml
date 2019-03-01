@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Přehrát</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Posunutím dolů zobrazit oznámení</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Prediktivní aplikace</string>
     <string name="predictive_apps_summary_on">Vaše oblíbená aplikace se zobrazí v horní části menu aplikací</string>
     <string name="predictive_apps_summary_off">Vaše oblíbená aplikace se nezobrazí v horní části menu aplikací</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Velikost mřížky</string>
     <string name="grid_size_rows">Řádky</string>
     <string name="grid_size_columns">Sloupce</string>
     <string name="grid_size_custom_positive">Nastavit</string>
     <string name="grid_size_custom_message">Vyberte počet sloupců a řádků</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Změnit</string>
     <string name="icon_pack_title">Balíček ikon</string>
     <string name="icon_pack_picker">Vybrat ikonu</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Všechny ikony</string>
     <string name="icon_pack_reset">Resetovat</string>
     <string name="icon_pack_system">Systémové (výchozí)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Super elipsa</string>
     <string name="icon_shape_circle_name">Kruh</string>
     <string name="icon_shape_squircle_name">Zaoblený čtverec</string>
     <string name="icon_shape_teardrop_name">Slza</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Nastavení domovské obrazovky</string>
     <string name="settings_category_drawer">Nastavení menu aplikací</string>
     <string name="settings_category_icons">Nastavení ikon</string>
@@ -65,8 +56,7 @@
     <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_allow_summary_off">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Zobrazit aplikaci Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Při gestu vpravo z hlavní plochy</string>
+    <string name="msg_minus_one_on_right">Při gestu vlevo z hlavní plochy</string>
 </resources>

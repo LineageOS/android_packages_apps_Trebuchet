@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Сервисы Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Свайп вниз для показа уведомлений</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Предиктивные приложения</string>
     <string name="predictive_apps_summary_on">Ваши любимые приложения будут отображены на верху меню</string>
     <string name="predictive_apps_summary_off">Ваши любимые приложения не будут отображены на верху меню</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Размер сетки</string>
     <string name="grid_size_rows">Строки</string>
     <string name="grid_size_columns">Столбцы</string>
     <string name="grid_size_custom_positive">Установить</string>
     <string name="grid_size_custom_message">Выберите количество столбцов и строк</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Отображать подписи значков на рабочем столе</string>
     <string name="drawer_show_labels">Отображать подписи значков в меню</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Изменить</string>
     <string name="icon_pack_title">Набор значков</string>
     <string name="icon_pack_picker">Выбрать значок</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Все значки</string>
     <string name="icon_pack_reset">Сбросить</string>
     <string name="icon_pack_system">Системный (по умолчанию)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Суперэллипс</string>
     <string name="icon_shape_circle_name">Круг</string>
     <string name="icon_shape_squircle_name">Округлый квадрат</string>
     <string name="icon_shape_teardrop_name">Каплевидная</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Настройки главного экрана</string>
     <string name="settings_category_drawer">Настройки меню</string>
     <string name="settings_category_icons">Настройки значков</string>
@@ -65,10 +56,7 @@
     <string name="settings_edit_allow_summary_on">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_allow_summary_off">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Показать приложение Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
 </resources>

@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">إسحب لأسفل لعرض الإشعارات</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">التطبيقات المقترحة</string>
     <string name="predictive_apps_summary_on">تطبيقاتك المفضلة سوف تظهر في أعلى درج التطبيقات</string>
     <string name="predictive_apps_summary_off">تطبيقاتك المفضلة لن تظهر في أعلى درج التطبيقات</string>
-    <!-- Grid size -->
     <string name="grid_size_text">حجم الشبكة</string>
     <string name="grid_size_rows">الصفوف</string>
     <string name="grid_size_columns">الأعمدة</string>
     <string name="grid_size_custom_positive">تعيين</string>
     <string name="grid_size_custom_message">حدد عدد مخصص لكل من الأعمدة والصفوف</string>
-    <!-- Hide labels -->
-    <string name="desktop_show_labels">إظهار تسميات الرموز على سطح المكتب</string>
-    <string name="drawer_show_labels">إظهار تسميات الرموز في درج التطبيقات</string>
-    <!-- Custom icons -->
+    <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
+    <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
     <string name="app_edit_drop_target_label">تعديل</string>
     <string name="icon_pack_title">حزمة الرموز</string>
     <string name="icon_pack_picker">إختيار رمز</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">جميع الرموز</string>
     <string name="icon_pack_reset">إعادة تعيين</string>
     <string name="icon_pack_system">النظام (الإفتراضي)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">بيضوية فائقة</string>
     <string name="icon_shape_circle_name">دائرة</string>
     <string name="icon_shape_squircle_name">دائري مربّع</string>
     <string name="icon_shape_teardrop_name">دمعي</string>
-    <!-- Preferences -->
     <string name="settings_category_home">إعدادات الشاشة الرئيسية</string>
     <string name="settings_category_drawer">إعدادات درج التطبيقات</string>
     <string name="settings_category_icons">إعدادات الرموز</string>
@@ -65,10 +56,7 @@
     <string name="settings_edit_allow_summary_on">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_allow_summary_off">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">أظهر تطبيق Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">عند التمرير يساراً من الشاشة الرئيسية للهاتف</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">عند التمرير يميناً من الشاشة الرئيسية للهاتف</string>
 </resources>

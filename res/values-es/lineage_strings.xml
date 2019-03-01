@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Reproducir</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Deslize hacia abajo para mostrar las notificaciones</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Aplicaciones predictivas</string>
     <string name="predictive_apps_summary_on">Las aplicaciones favoritas aparecerán en la parte superior del cajón</string>
     <string name="predictive_apps_summary_off">Las aplicaciones favoritas no aparecerán en la parte superior del cajón</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Tamaño de la cuadrícula</string>
     <string name="grid_size_rows">Filas</string>
     <string name="grid_size_columns">Columnas</string>
     <string name="grid_size_custom_positive">Establecer</string>
     <string name="grid_size_custom_message">Seleccione un número personalizado de columnas y filas</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Editar</string>
     <string name="icon_pack_title">Pack de iconos</string>
     <string name="icon_pack_picker">Seleccionar icono</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Todos los iconos</string>
     <string name="icon_pack_reset">Restablecer</string>
     <string name="icon_pack_system">Sistema (Defecto)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Superelipse</string>
     <string name="icon_shape_circle_name">Círculo</string>
     <string name="icon_shape_squircle_name">Esquinas redondeadas</string>
     <string name="icon_shape_teardrop_name">Lágrima</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Ajustes de la pantalla de inicio</string>
     <string name="settings_category_drawer">Ajustes del cajón</string>
     <string name="settings_category_icons">Ajustes de iconos</string>
@@ -62,7 +53,4 @@
     <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Phát</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Trượt xuống để hiển thị thông báo</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Ứng dụng tiên đoán</string>
     <string name="predictive_apps_summary_on">Ứng dụng yêu thích của bạn sẽ xuất hiện ở đầu ngăn kéo</string>
     <string name="predictive_apps_summary_off">Ứng dụng yêu thích của bạn sẽ không xuất hiện ở đầu ngăn kéo</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Kích thước lưới</string>
     <string name="grid_size_rows">Hàng</string>
     <string name="grid_size_columns">Cột</string>
     <string name="grid_size_custom_positive">Đặt</string>
     <string name="grid_size_custom_message">Chọn cột và số hàng tùy chỉnh</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Sửa</string>
     <string name="icon_pack_title">Gói biểu tượng</string>
     <string name="icon_pack_picker">Chọn biểu tượng</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Tất cả biểu tượng</string>
     <string name="icon_pack_reset">Thiết lập lại</string>
     <string name="icon_pack_system">Hệ thống (Mặc định)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Siêu hình elip</string>
     <string name="icon_shape_circle_name">Vòng tròn</string>
     <string name="icon_shape_squircle_name">Vuông bo tròn</string>
     <string name="icon_shape_teardrop_name">Giọt nước</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Cài đặt màn hình chính</string>
     <string name="settings_category_drawer">Cài đặt ngăn kéo</string>
     <string name="settings_category_icons">Cài đặt biểu tượng</string>
@@ -65,8 +56,7 @@
     <string name="settings_edit_allow_summary_on">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_allow_summary_off">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
+    <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
 </resources>
