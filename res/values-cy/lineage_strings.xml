@@ -16,23 +16,16 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
-    <string name="statusbar_expand">Llusga i lawr i ddangos hysbysiadau</string>
-    <!-- Predictive apps -->
+    <string name="statusbar_expand">Llusgo i lawr i ddangos hysbysiadau</string>
     <string name="predictive_apps_summary_on">Bydd dy hoff apiau yn ymddangos ar frig y drôr</string>
     <string name="predictive_apps_summary_off">Ni fydd dy hoff apiau yn ymddangos ar frig y drôr</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Maint grid</string>
     <string name="grid_size_rows">Rhesi</string>
     <string name="grid_size_columns">Colofnau</string>
     <string name="grid_size_custom_positive">Gosod</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Golygu</string>
     <string name="icon_pack_title">Pecyn eiconau</string>
     <string name="icon_pack_picker">Dewisa eicon</string>
@@ -41,9 +34,7 @@
     <string name="icon_pack_all_icons">Pob eicon</string>
     <string name="icon_pack_reset">Ailosod</string>
     <string name="icon_pack_system">System (Rhagosodiad)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_circle_name">Cylch</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Gosodiadau\'r sgrin gartref</string>
     <string name="settings_category_drawer">Gosodiadau\'r drôr</string>
     <string name="settings_category_icons">Gosodiadau eiconau</string>
@@ -59,10 +50,7 @@
     <string name="settings_edit_allow_summary_on">Gellir ychwanegu, tynnu a symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_edit_allow_summary_off">Ni ellir ychwanegu, tynnu na symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_edit_widgets_error">Nid yw\'n bosib ychwanegu teclynnau i\'r sgrin gartref</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Dangos ap Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Pan rwyt yn llusgo i\'r dde o\'r brif sgrin gartref</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Pan rwyt yn llusgo i\'r chwith o\'r brif sgrin gartref</string>
 </resources>

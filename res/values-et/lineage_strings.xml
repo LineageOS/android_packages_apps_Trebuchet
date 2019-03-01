@@ -16,16 +16,45 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
-    <!-- Expand statusbar -->
-    <!-- Predictive apps -->
-    <!-- Grid size -->
-    <!-- Hide labels -->
-    <!-- Custom icons -->
-    <!-- Icon shapes -->
-    <!-- Preferences -->
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="play_folder_title">Play</string>
+    <string name="predictive_apps_title">Ennustavad rakendused</string>
+    <string name="predictive_apps_summary_on">Sinu lemmikrakendused ilmuvad sahtli ülalosas</string>
+    <string name="predictive_apps_summary_off">Sinu lemmikrakendused ei ilmu sahtli ülalosas</string>
+    <string name="grid_size_text">Ruudustiku suurus</string>
+    <string name="grid_size_rows">Ridu</string>
+    <string name="grid_size_columns">Veergusid</string>
+    <string name="grid_size_custom_positive">Määra</string>
+    <string name="desktop_show_labels">Näita töölaual ikoonisilte</string>
+    <string name="drawer_show_labels">Näita sahtlis ikoonisilte</string>
+    <string name="app_edit_drop_target_label">Muuda</string>
+    <string name="icon_pack_title">Ikoonipakk</string>
+    <string name="icon_pack_picker">Vali ikoon</string>
+    <string name="icon_pack_picker_search">Otsi ikooni</string>
+    <string name="icon_pack_suggestions">Soovitused</string>
+    <string name="icon_pack_all_icons">Kõik ikoonid</string>
+    <string name="icon_pack_reset">Lähtesta</string>
+    <string name="icon_pack_system">Süsteem (vaikesäte)</string>
+    <string name="icon_shape_super_ellipse_name">Superellips</string>
+    <string name="icon_shape_circle_name">Ring</string>
+    <string name="icon_shape_squircle_name">Ümarruut</string>
+    <string name="icon_shape_teardrop_name">Tilk</string>
+    <string name="settings_category_home">Avaekraani sätted</string>
+    <string name="settings_category_drawer">Sahtli sätted</string>
+    <string name="settings_category_icons">Ikooni sätted</string>
+    <string name="settings_more">Rohkem</string>
+    <string name="settings_rotation_title">Pööramine</string>
+    <string name="settings_allow_rotation_desc">Lubab kasutada avaekraani horisontaalselt, kui seadet pöörata</string>
+    <string name="settings_icon_shape">Ikoonide kuju</string>
+    <string name="settings_icon_badging_desc_on">Märguande puhul kuvatakse mull ikooni kohal</string>
+    <string name="settings_icon_badging_desc_off">Märguande saamisel ei kuvata mulli ikooni kohal</string>
+    <string name="settings_icon_force_adaptive_title">Sunni adaptiivsed ikoonid</string>
+    <string name="settings_icon_force_adaptive_desc_on">Kohandatud kujuga ikoonid asetatakse kasti</string>
+    <string name="settings_icon_force_adaptive_desc_off">Kohandatud kujuga ikoone ei asetata kasti</string>
+    <string name="settings_edit_allow_title">Luba redigeerimine</string>
+    <string name="settings_edit_allow_summary_on">Avaekraani ikoone ja vidinaid saab lisada, eemaldada ja liigutada</string>
+    <string name="settings_edit_allow_summary_off">Avaekraani ikoone ja vidinaid ei saa lisada, eemaldada ega liigutada</string>
+    <string name="settings_edit_widgets_error">Vidinate lisamine avaekraanile pole võimalik</string>
+    <string name="title_show_google_app">Kuva Google\'i rakendus</string>
+    <string name="msg_minus_one_on_left">Kui viipad põhiliselt avakuvalt paremale</string>
+    <string name="msg_minus_one_on_right">Kui viipad põhiliselt avakuvalt vasakule</string>
 </resources>

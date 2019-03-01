@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">아래로 스와이프하여 알림 열기</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">앱 추천</string>
     <string name="predictive_apps_summary_on">앱 서랍의 위쪽에 자주 사용하는 앱을 표시합니다.</string>
     <string name="predictive_apps_summary_off">앱 서랍의 위쪽에 자주 사용하는 앱을 표시하지 않습니다.</string>
-    <!-- Grid size -->
     <string name="grid_size_text">격자 크기</string>
     <string name="grid_size_rows">행</string>
     <string name="grid_size_columns">열</string>
     <string name="grid_size_custom_positive">설정</string>
     <string name="grid_size_custom_message">사용자 지정 열 및 행 수</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">홈 화면에 아이콘 이름 표시</string>
     <string name="drawer_show_labels">앱 서랍에 아이콘 이름 표시</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">편집</string>
     <string name="icon_pack_title">아이콘 팩</string>
     <string name="icon_pack_picker">아이콘 선택</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">모든 아이콘</string>
     <string name="icon_pack_reset">초기화</string>
     <string name="icon_pack_system">시스템 (기본값)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">초타원</string>
     <string name="icon_shape_circle_name">원형</string>
     <string name="icon_shape_squircle_name">둥근 사각형</string>
     <string name="icon_shape_teardrop_name">물방울</string>
-    <!-- Preferences -->
     <string name="settings_category_home">홈 화면 설정</string>
     <string name="settings_category_drawer">앱 서랍 설정</string>
     <string name="settings_category_icons">아이콘 설정</string>
@@ -65,8 +56,5 @@
     <string name="settings_edit_allow_summary_on">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 있도록 허용합니다.</string>
     <string name="settings_edit_allow_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
     <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google 앱 표시</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>

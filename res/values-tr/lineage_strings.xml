@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Oynat</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Bildirimleri göstermek için aşağı kaydırın</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">Tahmini uygulamalar</string>
     <string name="predictive_apps_summary_on">En sevdiğiniz uygulamalar çekmecenin üstünde görünecek</string>
     <string name="predictive_apps_summary_off">En sevdiğiniz uygulamalar çekmecenin üstünde görünmeyecek</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Klavuz boyutu</string>
     <string name="grid_size_rows">Satırlar</string>
     <string name="grid_size_columns">Sütunlar</string>
     <string name="grid_size_custom_positive">Ayarla</string>
     <string name="grid_size_custom_message">Özel sütun ve satır sayısını seçin</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Ana ekranda simge etiketlerini göster</string>
     <string name="drawer_show_labels">Çekmecede simge etiketlerini göster</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">Düzenle</string>
     <string name="icon_pack_title">Simge paketi</string>
     <string name="icon_pack_picker">Simge seçin</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">Tüm simgeler</string>
     <string name="icon_pack_reset">Sıfırla</string>
     <string name="icon_pack_system">Sistem (Varsayılan)</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">Süper elips</string>
     <string name="icon_shape_circle_name">Daire</string>
     <string name="icon_shape_squircle_name">Köşeli kare</string>
     <string name="icon_shape_teardrop_name">Gözyaşı</string>
-    <!-- Preferences -->
     <string name="settings_category_home">Ana ekran ayarları</string>
     <string name="settings_category_drawer">Çekmece ayarları</string>
     <string name="settings_category_icons">Simge ayarları</string>
@@ -65,10 +56,7 @@
     <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
     <string name="settings_edit_allow_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
     <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google uygulamasını göster</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ana ekrandan sağa kaydırdığınızda</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ana ekrandan sola kaydırdığınızda</string>
 </resources>
