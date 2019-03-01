@@ -16,25 +16,18 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Folder titles -->
     <string name="play_folder_title">הפעל</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">החלק למטה כדי להציג התראות</string>
-    <!-- Predictive apps -->
     <string name="predictive_apps_title">חוזה יישומים</string>
     <string name="predictive_apps_summary_on">היישומים המועדפים עליך יופיעו בחלק העליון של המגירת יישומים</string>
     <string name="predictive_apps_summary_off">היישומים המועדפים עליך לא יופיעו בחלק העליון של המגירת יישומים</string>
-    <!-- Grid size -->
     <string name="grid_size_text">גודל רשת</string>
     <string name="grid_size_rows">שורות</string>
     <string name="grid_size_columns">עמודות</string>
     <string name="grid_size_custom_positive">הגדר</string>
     <string name="grid_size_custom_message">התאם אישית את מספר השורות והעמודות</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">הצג תוויות סמלים במסך הבית</string>
     <string name="drawer_show_labels">הצג תוויות סמלים במגירת היישומים</string>
-    <!-- Custom icons -->
     <string name="app_edit_drop_target_label">ערוך</string>
     <string name="icon_pack_title">חבילת סמלים</string>
     <string name="icon_pack_picker">בחר סמל</string>
@@ -43,12 +36,10 @@
     <string name="icon_pack_all_icons">כל הסמלים</string>
     <string name="icon_pack_reset">איפוס</string>
     <string name="icon_pack_system">ברירת המחדל של המערכת</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_super_ellipse_name">מעוגל מאוד</string>
     <string name="icon_shape_circle_name">עיגול</string>
     <string name="icon_shape_squircle_name">ריבוע מעוגל</string>
     <string name="icon_shape_teardrop_name">דמעה</string>
-    <!-- Preferences -->
     <string name="settings_category_home">הגדרות מסך הבית</string>
     <string name="settings_category_drawer">הגדרות מגירת היישומים</string>
     <string name="settings_category_icons">הגדרות סמלים</string>
@@ -63,8 +54,5 @@
     <string name="settings_edit_allow_summary_on">ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_edit_allow_summary_off">לא ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_edit_widgets_error">אין אפשרות להוסיף יישומונים למסך הבית</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">הצג את חיפוש Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
 </resources>
