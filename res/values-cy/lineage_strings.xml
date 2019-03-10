@@ -18,12 +18,14 @@
 <resources>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Llusgo i lawr i ddangos hysbysiadau</string>
+    <string name="predictive_apps_title">Apiau daroganol</string>
     <string name="predictive_apps_summary_on">Bydd dy hoff apiau yn ymddangos ar frig y drôr</string>
     <string name="predictive_apps_summary_off">Ni fydd dy hoff apiau yn ymddangos ar frig y drôr</string>
     <string name="grid_size_text">Maint grid</string>
     <string name="grid_size_rows">Rhesi</string>
     <string name="grid_size_columns">Colofnau</string>
     <string name="grid_size_custom_positive">Gosod</string>
+    <string name="grid_size_custom_message">Dewisa nifer dy hun o golofnau a rhesi</string>
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
     <string name="app_edit_drop_target_label">Golygu</string>
@@ -34,7 +36,10 @@
     <string name="icon_pack_all_icons">Pob eicon</string>
     <string name="icon_pack_reset">Ailosod</string>
     <string name="icon_pack_system">System (Rhagosodiad)</string>
+    <string name="icon_shape_super_ellipse_name">Elips anhygoel</string>
     <string name="icon_shape_circle_name">Cylch</string>
+    <string name="icon_shape_squircle_name">Sgwylch</string>
+    <string name="icon_shape_teardrop_name">Deigryn</string>
     <string name="settings_category_home">Gosodiadau\'r sgrin gartref</string>
     <string name="settings_category_drawer">Gosodiadau\'r drôr</string>
     <string name="settings_category_icons">Gosodiadau eiconau</string>
@@ -44,6 +49,7 @@
     <string name="settings_icon_shape">Siâp eiconau</string>
     <string name="settings_icon_badging_desc_on">Caiff swigen ei dangos dros yr eicon pan fydd hysbysiad</string>
     <string name="settings_icon_badging_desc_off">Ni chaiff swigen ei dangos dros yr eicon pan fydd hysbysiad</string>
+    <string name="settings_icon_force_adaptive_title">Gorfodi eiconau ymaddasol</string>
     <string name="settings_icon_force_adaptive_desc_on">Caiff eiconau gyda siapiau unigryw eu rhoi mewn sgwâr</string>
     <string name="settings_icon_force_adaptive_desc_off">Ni chaiff eiconau gyda siapiau unigryw eu rhoi mewn sgwâr</string>
     <string name="settings_edit_allow_title">Caniatáu golygu</string>
