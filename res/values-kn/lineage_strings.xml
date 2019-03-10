@@ -15,18 +15,26 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <!-- Icon shapes -->
-    <!-- Grid size -->
-    <!-- Hide labels -->
-    <!-- Edit workspace -->
-    <!-- Icon badging -->
-    <!-- Folder titles -->
-    <!-- Expand statusbar -->
-    <!-- Trust apps -->
+    <string name="settings_category_home">ತವರು ಪರದೆಯ ಆಯ್ಕೆಗಳು</string>
+    <string name="settings_category_drawer">ಡ್ರಾಯರ್ನ ಆಯ್ಕೆಗಳು</string>
+    <string name="settings_category_icons">ಚಿಹ್ನೆಯ ಆಯ್ಕೆಗಳು</string>
+    <string name="title_show_google_app">ಗೂಗಲ್ ಆಪ್ ತೋರಿಸು</string>
+    <string name="icon_shape_circle_name">ವೃತ್ತ</string>
+    <string name="icon_shape_squircle_name">ಚೌವೃತ್ತ</string>
+    <string name="icon_shape_teardrop_name">ಕಂಬನಿ</string>
+    <string name="grid_size_text">ಜಾಲರಿ ಗಾತ್ರ</string>
+    <string name="grid_size_rows">ಅಡ್ಡ ಸಾಲುಗಳು</string>
+    <string name="grid_size_columns">ಲಂಬ ಸಾಲುಗಳು</string>
+    <string name="grid_size_custom_positive">ಸ್ಥಾಪಿಸು</string>
+    <string name="grid_size_custom_message">ವಯಕ್ತಿಕ ಅಡ್ಡ ಮತ್ತು ಲಂಬ ಸಾಲುಗಳ ಎಣಿಕೆ ಆಯ್ಕೆಮಾಡು</string>
+    <string name="desktop_show_labels">ಮುಖ್ಯ ಪರದೆಯಲ್ಲಿ ಚಿಹ್ನೆಗಳ ಹೆಸರುಗಳನ್ನು ತೋರಿಸು</string>
+    <string name="drawer_show_labels">ಡ್ರಾಯರ್ನಲ್ಲಿ ಚಿಹ್ನೆಗಳ ಹೆಸರುಗಳನ್ನು ತೋರಿಸು</string>
+    <string name="settings_edit_allow_title">ಸಂಪಾದನೆ ಅನುಮತಿಸು</string>
+    <string name="settings_edit_allow_summary_on">ಮುಖ್ಯ ಪರದೆಯ ಮೇಲೆ ಚಿಹ್ನೆಗಳು ಮತ್ತು ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಕೆ, ತೆಗೆಯುವಿಕೆ ಮತ್ತು ಸ್ಥಳಾಂತರ ಮಾಡಬಹುದು</string>
+    <string name="settings_edit_allow_summary_off">ತವರುಪರದೆಯ ಮೇಲೆ ಚಿಹ್ನೆಗಳು ಮತ್ತು ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಕೆ, ತೆಗೆಯುವಿಕೆ ಮತ್ತು ಸ್ಥಳಾಂತರ ಆಗುವುದಿಲ್ಲ</string>
+    <string name="settings_edit_widgets_error">ಮುಖ್ಯ ಪರದೆಗೆ ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="settings_icon_badging_desc_on">ಸೂಚನೆಯಿರುವಾಗ ಚಿಹ್ನೆಯ ಮೇಲೆ ಒಂದು ಗುಳ್ಳೆಯನ್ನು ಪ್ರದರ್ಶಿಸಲಾಗವುದು</string>
+    <string name="settings_icon_badging_desc_off">ಸೂಚನೆಯಿರುವಾಗ ಚಿಹ್ನೆಯ ಮೇಲೆ ಯಾವುದೇ ಗುಳ್ಳೆಯನ್ನು ಪ್ರದರ್ಶಿಸುವುದಿಲ್ಲ</string>
+    <string name="play_folder_title">ಆಡಿಸು</string>
+    <string name="statusbar_expand">ಸೂಚನೆಗಳನ್ನು ತೋರಿಸಲು ಕೆಳಮುಖವಾಗಿ ಸೆಳೆ</string>
 </resources>

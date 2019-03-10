@@ -15,21 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <!-- Icon shapes -->
-    <!-- Grid size -->
     <string name="grid_size_rows">Редови</string>
     <string name="grid_size_custom_positive">Постави</string>
-    <!-- Hide labels -->
-    <!-- Edit workspace -->
-    <!-- Icon badging -->
-    <!-- Folder titles -->
     <string name="play_folder_title">Покрени</string>
-    <!-- Expand statusbar -->
-    <!-- Trust apps -->
 </resources>

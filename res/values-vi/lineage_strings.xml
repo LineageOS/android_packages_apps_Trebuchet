@@ -15,43 +15,29 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Cài đặt màn hình chính</string>
     <string name="settings_category_drawer">Cài đặt ngăn kéo</string>
     <string name="settings_category_icons">Cài đặt biểu tượng</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">Vuông</string>
     <string name="icon_shape_circle_name">Vòng tròn</string>
     <string name="icon_shape_squircle_name">Vuông bo tròn</string>
     <string name="icon_shape_teardrop_name">Giọt nước</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Kích thước lưới</string>
     <string name="grid_size_rows">Hàng</string>
     <string name="grid_size_columns">Cột</string>
     <string name="grid_size_custom_positive">Đặt</string>
     <string name="grid_size_custom_message">Chọn cột và số hàng tùy chỉnh</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Cho phép chỉnh sửa</string>
     <string name="settings_edit_allow_summary_on">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_allow_summary_off">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Một bong bóng sẽ được hiển thị trên biểu tượng khi có thông báo</string>
     <string name="settings_icon_badging_desc_off">Không có bong bóng nào được hiển thị phía trên biểu tượng khi có thông báo</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Phát</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Trượt xuống để hiển thị thông báo</string>
-    <!-- Trust apps -->
 </resources>

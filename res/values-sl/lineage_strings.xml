@@ -15,43 +15,37 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Nastavitve domačega zaslona</string>
     <string name="settings_category_drawer">Nastavitve predala</string>
     <string name="settings_category_icons">Nastavitve ikon</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Pokaži Google aplikacijo</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ko potegnete desno od glavnega domačega zaslona</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ko potegnete levo od glavnega domačega zaslona</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">Kvadrat</string>
     <string name="icon_shape_circle_name">Krog</string>
     <string name="icon_shape_squircle_name">Zaobljen kvadrat</string>
     <string name="icon_shape_teardrop_name">Solza</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Velikost mreže</string>
     <string name="grid_size_rows">Vrstice</string>
     <string name="grid_size_columns">Stolpci</string>
     <string name="grid_size_custom_positive">Nastavi</string>
     <string name="grid_size_custom_message">Izberi število stolpcev in vrstic po meri</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
     <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Dovoli urejanje</string>
     <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_edit_allow_summary_off">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_edit_widgets_error">Dodajanje pripomočkov na domači zaslon ni mogoče</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Mehurček bo prikazan nad ikono, ko je prisotno obvestilo</string>
     <string name="settings_icon_badging_desc_off">Mehurček ne bo prikazan nad ikono, ko je prisotno obvestilo</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Poteg dol za prikaz obvestil</string>
-    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Skrite in zaščitene aplikacije</string>
+    <string name="trust_apps_auth_manager">Odklenite za upravljanje skritih in zaščitenih aplikacij</string>
+    <string name="trust_apps_auth_open_app">Overite za odprtje %1$s</string>
+    <string name="trust_apps_loading">Nalaganje \u2026</string>
+    <string name="trust_apps_no_lock_error">Nastavite varni zaklenjen zaslon, da omejite dostop do aplikacij</string>
+    <string name="trust_apps_help">Pomoč</string>
+    <string name="trust_apps_info_hidden">Skrite aplikacije in njihovi pripomočki so skriti iz predala</string>
+    <string name="trust_apps_info_protected">Zaščitene aplikacije zahtevajo overitev za odpiranje iz zaganjalnika</string>
 </resources>

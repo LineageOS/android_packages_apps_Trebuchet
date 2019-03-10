@@ -15,43 +15,37 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">主畫面設定</string>
     <string name="settings_category_drawer">清單設定</string>
     <string name="settings_category_icons">圖示設定</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">顯示 Google 應用程式</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">當在主畫面向右滑動時</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">當在主畫面向左滑動時</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">方形</string>
     <string name="icon_shape_circle_name">圓形</string>
     <string name="icon_shape_squircle_name">圓角方形</string>
     <string name="icon_shape_teardrop_name">水滴形</string>
-    <!-- Grid size -->
     <string name="grid_size_text">網格大小</string>
     <string name="grid_size_rows">行</string>
     <string name="grid_size_columns">列</string>
     <string name="grid_size_custom_positive">設定</string>
     <string name="grid_size_custom_message">選擇自訂的列和行數</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">在桌面上顯示圖示標籤</string>
     <string name="drawer_show_labels">在清單中顯示圖示標籤</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">允許編輯</string>
     <string name="settings_edit_allow_summary_on">圖示和小工具可以在主畫面上新增、刪除和移動</string>
     <string name="settings_edit_allow_summary_off">圖示和小工具無法在主畫面上新增、刪除和移動</string>
     <string name="settings_edit_widgets_error">無法將小工具新增至主畫面</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">有通知時，圖示上方會顯示小圓點</string>
     <string name="settings_icon_badging_desc_off">有通知時，圖示上方不會顯示小圓點</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">開始</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">向下滑動以顯示通知</string>
-    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">隱藏與受保護應用程式</string>
+    <string name="trust_apps_auth_manager">解鎖以管理隱藏和受保護的應用程式</string>
+    <string name="trust_apps_auth_open_app">進行身份驗證以開啟 %1$s</string>
+    <string name="trust_apps_loading">載入中\u2026</string>
+    <string name="trust_apps_no_lock_error">請設定安全鎖定畫面以限制應用程式存取權限</string>
+    <string name="trust_apps_help">說明</string>
+    <string name="trust_apps_info_hidden">隱藏的應用程式及其小工具隱藏在清單中</string>
+    <string name="trust_apps_info_protected">受保護的應用程式需要從啟動器開啟身份驗證</string>
 </resources>

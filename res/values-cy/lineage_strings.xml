@@ -15,40 +15,37 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Gosodiadau\'r sgrin gartref</string>
     <string name="settings_category_drawer">Gosodiadau\'r drôr</string>
     <string name="settings_category_icons">Gosodiadau eiconau</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Dangos ap Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Pan rwyt yn llusgo i\'r dde o\'r brif sgrin gartref</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Pan rwyt yn llusgo i\'r chwith o\'r brif sgrin gartref</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">Sgwâr</string>
     <string name="icon_shape_circle_name">Cylch</string>
-    <!-- Grid size -->
+    <string name="icon_shape_squircle_name">Sgwylch</string>
+    <string name="icon_shape_teardrop_name">Deigryn</string>
     <string name="grid_size_text">Maint grid</string>
     <string name="grid_size_rows">Rhesi</string>
     <string name="grid_size_columns">Colofnau</string>
     <string name="grid_size_custom_positive">Gosod</string>
-    <!-- Hide labels -->
+    <string name="grid_size_custom_message">Dewisa nifer dy hun o golofnau a rhesi</string>
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Caniatáu golygu</string>
     <string name="settings_edit_allow_summary_on">Gellir ychwanegu, tynnu a symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_edit_allow_summary_off">Ni ellir ychwanegu, tynnu na symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_edit_widgets_error">Nid yw\'n bosib ychwanegu teclynnau i\'r sgrin gartref</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Caiff swigen ei dangos dros yr eicon pan fydd hysbysiad</string>
     <string name="settings_icon_badging_desc_off">Ni chaiff swigen ei dangos dros yr eicon pan fydd hysbysiad</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Llusgo i lawr i ddangos hysbysiadau</string>
-    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Apiau Cudd ac wedi\'u Gwarchod</string>
+    <string name="trust_apps_auth_manager">Datglo i reoli apiau cudd ac apiau wedi\'u gwarchod</string>
+    <string name="trust_apps_auth_open_app">Dilysu i agor %1$s</string>
+    <string name="trust_apps_loading">Yn llwytho\u2026</string>
+    <string name="trust_apps_no_lock_error">Gosoda sgrin cloi ddiogel i rwystro mynediad at apiau</string>
+    <string name="trust_apps_help">Cymorth</string>
+    <string name="trust_apps_info_hidden">Mae apiau cudd a\'u teclynnau wedi\'u cuddio o\'r drôr</string>
+    <string name="trust_apps_info_protected">Mae ar apiau wedi\'u gwarchod angen dilysiad er mwyn eu hagor o\'r lansiwr</string>
 </resources>

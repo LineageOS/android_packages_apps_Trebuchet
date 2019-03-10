@@ -15,40 +15,26 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Nastavenia domovskej obrazovky</string>
     <string name="settings_category_drawer">Nastavenia ponuky</string>
     <string name="settings_category_icons">Nastavenia ikon</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Zobraziť Google aplikácie</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <!-- Icon shapes -->
     <string name="icon_shape_circle_name">Kruh</string>
     <string name="icon_shape_squircle_name">Zaoblený štvorec</string>
     <string name="icon_shape_teardrop_name">Slza</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Veľkosť mriežky</string>
     <string name="grid_size_rows">Riadkov</string>
     <string name="grid_size_columns">Stĺpcov</string>
     <string name="grid_size_custom_positive">Nastaviť</string>
     <string name="grid_size_custom_message">Zvoľte počet stĺpcov a riadkov</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
     <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Povoliť úpravy</string>
     <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_edit_allow_summary_off">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Ak sa vyskytne upozornenie, nad ikonou sa zobrazí bublina</string>
     <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Prehrať</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Potiahnutím dolu zobraziť upozornenia</string>
-    <!-- Trust apps -->
 </resources>

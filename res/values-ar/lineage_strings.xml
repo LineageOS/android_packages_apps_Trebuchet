@@ -15,43 +15,37 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">إعدادات الشاشة الرئيسية</string>
     <string name="settings_category_drawer">إعدادات درج التطبيقات</string>
     <string name="settings_category_icons">إعدادات الرموز</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">أظهر تطبيق Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">عند السحب لليمين من الشاشة الرئيسية الاساسية</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">عند السحب لليسار من الشاشة الرئيسية الأساسية</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">مربع</string>
     <string name="icon_shape_circle_name">دائرة</string>
     <string name="icon_shape_squircle_name">دائري مربّع</string>
     <string name="icon_shape_teardrop_name">دمعي</string>
-    <!-- Grid size -->
     <string name="grid_size_text">حجم الشبكة</string>
     <string name="grid_size_rows">الصفوف</string>
     <string name="grid_size_columns">الأعمدة</string>
     <string name="grid_size_custom_positive">تعيين</string>
     <string name="grid_size_custom_message">حدد عدد مخصص لكل من الأعمدة والصفوف</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
     <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">السماح بالتحرير</string>
     <string name="settings_edit_allow_summary_on">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_allow_summary_off">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">سيتم عرض فقاعة فوق الرمز عندما يكون هناك إشعار</string>
     <string name="settings_icon_badging_desc_off">لن يتم عرض فقاعة فوق الرمز عندما يكون هناك إشعار</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">إسحب لأسفل لعرض الإشعارات</string>
-    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">التطبيقات المخفية و المحمية</string>
+    <string name="trust_apps_auth_manager">إفتح لإدارة التطبيقات المخفية والمحمية</string>
+    <string name="trust_apps_auth_open_app">المصادقة لفتح %1$s</string>
+    <string name="trust_apps_loading">جارٍ التحميل</string>
+    <string name="trust_apps_no_lock_error">يرجى إعداد شاشة قفل آمنة لتقييد الوصول إلى التطبيق</string>
+    <string name="trust_apps_help">مساعدة</string>
+    <string name="trust_apps_info_hidden">يتم إخفاء التطبيقات المخفية وعناصرها من الدرج</string>
+    <string name="trust_apps_info_protected">تتطلب التطبيقات المحمية فتح المصادقة من المشغِّل</string>
 </resources>

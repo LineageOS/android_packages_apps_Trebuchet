@@ -15,43 +15,37 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Ana ekran ayarları</string>
     <string name="settings_category_drawer">Çekmece ayarları</string>
     <string name="settings_category_icons">Simge ayarları</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google uygulamasını göster</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ana ekrandan sağa kaydırdığınızda</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ana ekrandan sola kaydırdığınızda</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">Kare</string>
     <string name="icon_shape_circle_name">Daire</string>
     <string name="icon_shape_squircle_name">Köşeli kare</string>
     <string name="icon_shape_teardrop_name">Gözyaşı</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Klavuz boyutu</string>
     <string name="grid_size_rows">Satırlar</string>
     <string name="grid_size_columns">Sütunlar</string>
     <string name="grid_size_custom_positive">Ayarla</string>
     <string name="grid_size_custom_message">Özel sütun ve satır sayısını seçin</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Ana ekranda simge etiketlerini göster</string>
     <string name="drawer_show_labels">Çekmecede simge etiketlerini göster</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Düzenlemeye izin ver</string>
     <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
     <string name="settings_edit_allow_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
     <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenir</string>
     <string name="settings_icon_badging_desc_off">Bir bildirim olduğunda, simgenin üstünde bir baloncuk görüntülenmez</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Oynat</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Bildirimleri göstermek için aşağı kaydırın</string>
-    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Gizli ve Korunan uygulamalar</string>
+    <string name="trust_apps_auth_manager">Gizli ve korunan uygulamaları yönetmek için kilidi açın</string>
+    <string name="trust_apps_auth_open_app">%1$s uygulamasının açılması için kimlik doğrula</string>
+    <string name="trust_apps_loading">Yükleniyor\u2026</string>
+    <string name="trust_apps_no_lock_error">Uygulama erişimini kısıtlamak için lütfen güvenli bir kilit ekranı ayarlayın</string>
+    <string name="trust_apps_help">Yardım</string>
+    <string name="trust_apps_info_hidden">Gizli uygulamalar ve widget\'ları uygulama menüsünde görünmeyecek</string>
+    <string name="trust_apps_info_protected">Korunan uygulamaların başlatıcıdan açılması için kimlik doğrulama gerekir</string>
 </resources>

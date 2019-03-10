@@ -15,40 +15,28 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Ustawienia ekranu głównego</string>
     <string name="settings_category_drawer">Ustawienia szuflady</string>
     <string name="settings_category_icons">Ustawienia ikon</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Pokaż aplikację Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
-    <!-- Icon shapes -->
+    <string name="msg_minus_one_on_right">Gdy przesuniesz w lewo od ekranu głównego</string>
+    <string name="icon_shape_square_name">Kwadrat</string>
     <string name="icon_shape_circle_name">Okrągły</string>
     <string name="icon_shape_squircle_name">Zaokrąglony kwadrat</string>
     <string name="icon_shape_teardrop_name">Łezka</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Rozmiar siatki</string>
     <string name="grid_size_rows">Wiersze</string>
     <string name="grid_size_columns">Kolumny</string>
     <string name="grid_size_custom_positive">Ustaw</string>
     <string name="grid_size_custom_message">Ustaw własną liczbę kolumn i wierszy</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Pokaż etykiety ikon na pulpicie</string>
     <string name="drawer_show_labels">Pokaż etykiety ikon w szufladzie</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Zezwalaj na edycję</string>
     <string name="settings_edit_allow_summary_on">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_edit_allow_summary_off">Ikon i widżetów nie można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Bąble nad ikoną będą wyświetlane jeśli są powiadomienia</string>
     <string name="settings_icon_badging_desc_off">Bąble nad ikoną nie będą wyświetlane jeśli nie ma powiadomień</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Play</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Przesuń w dół, aby zobaczyć powiadomienia</string>
-    <!-- Trust apps -->
 </resources>

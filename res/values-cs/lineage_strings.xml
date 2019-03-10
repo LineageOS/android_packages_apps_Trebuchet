@@ -15,43 +15,29 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Application name -->
-    <!-- Settings -->
-    <!-- Categories -->
     <string name="settings_category_home">Nastavení domovské obrazovky</string>
     <string name="settings_category_drawer">Nastavení menu aplikací</string>
     <string name="settings_category_icons">Nastavení ikon</string>
-    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Zobrazit aplikaci Google</string>
-    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Při gestu tažení vpravo z hlavní domovské obrazovky</string>
-    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Při gestu tažení vlevo z hlavní domovské obrazovky</string>
-    <!-- Icon shapes -->
     <string name="icon_shape_square_name">Čtverec</string>
     <string name="icon_shape_circle_name">Kruh</string>
     <string name="icon_shape_squircle_name">Zaoblený čtverec</string>
     <string name="icon_shape_teardrop_name">Slza</string>
-    <!-- Grid size -->
     <string name="grid_size_text">Velikost mřížky</string>
     <string name="grid_size_rows">Řádky</string>
     <string name="grid_size_columns">Sloupce</string>
     <string name="grid_size_custom_positive">Nastavit</string>
     <string name="grid_size_custom_message">Vyberte počet sloupců a řádků</string>
-    <!-- Hide labels -->
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
-    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Povolit úpravy</string>
     <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_allow_summary_off">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
-    <!-- Icon badging -->
     <string name="settings_icon_badging_desc_on">Při obdržení upozornění se nad ikonou zobrazí bublina</string>
     <string name="settings_icon_badging_desc_off">Při obdržení upozornění se nad ikonou nezobrazí bublina</string>
-    <!-- Folder titles -->
     <string name="play_folder_title">Přehrát</string>
-    <!-- Expand statusbar -->
     <string name="statusbar_expand">Posunutím dolů zobrazit oznámení</string>
-    <!-- Trust apps -->
 </resources>
