@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">HASIERA-PANTAILAREN EZARPENAK</string>
-  <string name="drawer_settings">TIRADERAREN EZARPENAK</string>
-  <string name="app_settings">APLIKAZIOAREN EZARPENAK</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">BAI</string>
-  <string name="setting_state_off">EZ</string>
-  <string name="setting_state_disabled">EZGAITUTA</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Korritu horma-papera</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Sarearen tamaina</string>
-  <string name="grid_size_comfortable">Arrunta</string>
-  <string name="grid_size_cozy">Erosoa</string>
-  <string name="grid_size_condensed">Trinkotua</string>
-  <string name="grid_size_custom">Pertsonalizatua (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Hautatu tamaina pertsonalizatua</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Berretsi</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Bilaketa-barra</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Ikono handiak</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Ikonoen etiketak</string>
-  <string name="icon_labels_show">Erakutsi</string>
-  <string name="icon_labels_hide">Ezkutatu</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Babesturiko aplikazioak</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Esportatu diseinua</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Tiraderaren estiloa</string>
-  <string name="app_drawer_style_compact">Konpaktua</string>
-  <string name="app_drawer_style_sections">Sekzioak</string>
-  <string name="app_drawer_color">Tiraderaren kolorea</string>
-  <string name="app_drawer_color_dark">Iluna</string>
-  <string name="app_drawer_color_light">Argia</string>
-  <string name="fast_scroller">Korritze azkarra</string>
-  <string name="fast_scroller_type">Korritze azkar mota</string>
-  <string name="fast_scroller_type_horizontal">Horizontala</string>
-  <string name="fast_scroller_type_vertical">Bertikala</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Ezin izan da bilaketa aktibitaterik aurkitu!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Aplikazioa ez dago eskuragarri</string>
-  <string name="storage_permission_denied">Ezin da biltegiratzea atzitu</string>
-  <string name="export_db_email_subject">Eskualdearen abiarazle DBa</string>
-  <string name="export_db_could_not">Ezin izan da DB fitxategia esportatu</string>
+    <string name="home_screen_settings">HASIERA-PANTAILAREN EZARPENAK</string>
+    <string name="drawer_settings">TIRADERAREN EZARPENAK</string>
+    <string name="app_settings">APLIKAZIOAREN EZARPENAK</string>
+    <string name="setting_state_on">BAI</string>
+    <string name="setting_state_off">EZ</string>
+    <string name="setting_state_disabled">EZGAITUTA</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Korritu horma-papera</string>
+    <string name="grid_size_text">Sarearen tamaina</string>
+    <string name="grid_size_comfortable">Arrunta</string>
+    <string name="grid_size_cozy">Erosoa</string>
+    <string name="grid_size_condensed">Trinkotua</string>
+    <string name="grid_size_custom">Pertsonalizatua (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Hautatu tamaina pertsonalizatua</string>
+    <string name="dialog_confirm">Berretsi</string>
+    <string name="home_screen_search_text">Bilaketa-barra</string>
+    <string name="larger_icons_text">Ikono handiak</string>
+    <string name="icon_labels">Ikonoen etiketak</string>
+    <string name="icon_labels_show">Erakutsi</string>
+    <string name="icon_labels_hide">Ezkutatu</string>
+    <string name="protected_app_settings">Babesturiko aplikazioak</string>
+    <string name="export_workspace_layout">Esportatu diseinua</string>
+    <string name="app_drawer_style">Tiraderaren estiloa</string>
+    <string name="app_drawer_style_compact">Konpaktua</string>
+    <string name="app_drawer_style_sections">Sekzioak</string>
+    <string name="app_drawer_color">Tiraderaren kolorea</string>
+    <string name="app_drawer_color_dark">Iluna</string>
+    <string name="app_drawer_color_light">Argia</string>
+    <string name="fast_scroller">Korritze azkarra</string>
+    <string name="fast_scroller_type">Korritze azkar mota</string>
+    <string name="fast_scroller_type_horizontal">Horizontala</string>
+    <string name="fast_scroller_type_vertical">Bertikala</string>
+    <string name="search_activity_not_found">Ezin izan da bilaketa aktibitaterik aurkitu!</string>
+    <string name="app_not_available">Aplikazioa ez dago eskuragarri</string>
+    <string name="storage_permission_denied">Ezin da biltegiratzea atzitu</string>
+    <string name="export_db_email_subject">Eskualdearen abiarazle DBa</string>
+    <string name="export_db_could_not">Ezin izan da DB fitxategia esportatu</string>
 </resources>

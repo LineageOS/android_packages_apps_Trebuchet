@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">HOME SCREEN SETTINGS</string>
-  <string name="drawer_settings">DRAWER SETTINGS</string>
-  <string name="app_settings">APP SETTINGS</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">ON</string>
-  <string name="setting_state_off">OFF</string>
-  <string name="setting_state_disabled">DISABLED</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Scroll wallpaper</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Grid size</string>
-  <string name="grid_size_comfortable">Comfortable</string>
-  <string name="grid_size_cozy">Cozy</string>
-  <string name="grid_size_condensed">Condensed</string>
-  <string name="grid_size_custom">Custom (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Select custom size</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Confirm</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Search bar</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Larger icons</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Icon labels</string>
-  <string name="icon_labels_show">Show</string>
-  <string name="icon_labels_hide">Hide</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Protected apps</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Export layout</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Drawer style</string>
-  <string name="app_drawer_style_compact">Compact</string>
-  <string name="app_drawer_style_sections">Sections</string>
-  <string name="app_drawer_color">Drawer color</string>
-  <string name="app_drawer_color_dark">Dark</string>
-  <string name="app_drawer_color_light">Light</string>
-  <string name="fast_scroller">Fast scroller</string>
-  <string name="fast_scroller_type">Fast scroller type</string>
-  <string name="fast_scroller_type_horizontal">Horizontal</string>
-  <string name="fast_scroller_type_vertical">Vertical</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">A search activity could not be found!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">App not available</string>
-  <string name="storage_permission_denied">Can\'t access storage</string>
-  <string name="export_db_email_subject">Launcher DB for region</string>
-  <string name="export_db_could_not">Could not export DB file</string>
+    <string name="home_screen_settings">HOME SCREEN SETTINGS</string>
+    <string name="drawer_settings">DRAWER SETTINGS</string>
+    <string name="app_settings">APP SETTINGS</string>
+    <string name="setting_state_on">ON</string>
+    <string name="setting_state_off">OFF</string>
+    <string name="setting_state_disabled">DISABLED</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Scroll wallpaper</string>
+    <string name="grid_size_text">Grid size</string>
+    <string name="grid_size_comfortable">Comfortable</string>
+    <string name="grid_size_cozy">Cozy</string>
+    <string name="grid_size_condensed">Condensed</string>
+    <string name="grid_size_custom">Custom (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Select custom size</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="home_screen_search_text">Search bar</string>
+    <string name="larger_icons_text">Larger icons</string>
+    <string name="icon_labels">Icon labels</string>
+    <string name="icon_labels_show">Show</string>
+    <string name="icon_labels_hide">Hide</string>
+    <string name="protected_app_settings">Protected apps</string>
+    <string name="export_workspace_layout">Export layout</string>
+    <string name="app_drawer_style">Drawer style</string>
+    <string name="app_drawer_style_compact">Compact</string>
+    <string name="app_drawer_style_sections">Sections</string>
+    <string name="app_drawer_color">Drawer color</string>
+    <string name="app_drawer_color_dark">Dark</string>
+    <string name="app_drawer_color_light">Light</string>
+    <string name="fast_scroller">Fast scroller</string>
+    <string name="fast_scroller_type">Fast scroller type</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertical</string>
+    <string name="search_activity_not_found">A search activity could not be found!</string>
+    <string name="app_not_available">App not available</string>
+    <string name="storage_permission_denied">Can\'t access storage</string>
+    <string name="export_db_email_subject">Launcher DB for region</string>
+    <string name="export_db_could_not">Could not export DB file</string>
 </resources>

@@ -18,108 +18,84 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- General -->
-  <!-- URI used to import old favorites. [DO NOT TRANSLATE] -->
-  <!-- Permission to receive the com.android.launcher3.action.LAUNCH intent. [DO NOT TRANSLATE] -->
-  <!-- Permission to receive the com.android.launcher3.action.FIRST_LOAD_COMPLETE intent. [DO NOT TRANSLATE] -->
-  <!-- Application name -->
-  <!-- Default folder name -->
-  <!-- Work folder name -->
-  <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
-  <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
-  <!-- SafeMode shortcut error string -->
-  <!-- SafeMode widget error string -->
-  <!-- Widgets -->
-  <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
-  <!-- The format string for the dimensions of a widget in the drawer -->
-  <!-- There is a special version of this format string for Farsi -->
-  <!-- All Apps -->
-  <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
-  <!-- Loading apps text. [CHAR_LIMIT=50] -->
-  <!-- No-search-results text. [CHAR_LIMIT=50] -->
-  <!-- Search market text.  This is a format string where the first argument is the name of the activity
-         handling the search.  The format string does not need to handle both of these arguments. [CHAR_LIMIT=50] -->
-  <!-- Drag and drop -->
-  <!-- Error message when user has filled a home screen -->
-  <!-- Error message when user has filled the hotseat -->
-  <!-- All applications label -->
-  <!-- Label for button in all applications label to go back home (to the workspace / desktop)
-         for accessibilty (spoken when the button gets focus). -->
-  <!-- Label for delete drop target. [CHAR_LIMIT=20] -->
-  <!-- Label for uninstall drop target. [CHAR_LIMIT=20]-->
-  <!-- Label for the info icon. [CHAR_LIMIT=20] -->
-  <!-- Permissions: -->
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <string name="permdesc_install_shortcut">Mae\'n caniatáu i ap ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <string name="permdesc_read_settings">Mae\'n caniatáu i\'r ap ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
-  <!-- Permission short label -->
-  <!-- Permission description -->
-  <string name="permdesc_write_settings">Mae\'n caniatáu i\'r ap newid y gosodiadau a llwybrau byr yn Cartref.</string>
-  <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
-  <!-- Widgets: -->
-  <!-- Text to show user in place of a gadget when we can't display it properly -->
-  <!-- Text to show user in place of a gadget when it is not yet initialized. -->
-  <!-- Text to inform the user that they can't uninstall a system application -->
-  <!-- Default folder title -->
-  <!-- Accessibility -->
-  <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
-  <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
-  <!-- Clings -->
-  <!-- The title text for the workspace cling [CHAR_LIMIT=30] -->
-  <!-- The title text for the migration cling [CHAR_LIMIT=30] -->
-  <!-- The description of what migration does [CHAR_LIMIT=70] -->
-  <!-- The description of the button to migrate apps from another launcher [CHAR_LIMIT=30] -->
-  <!-- The description of the button to use the default launcher layout [CHAR_LIMIT=30] -->
-  <!-- The title text for workspace longpress action [CHAR_LIMIT=40] -->
-  <!-- The description of how to use the workspace [CHAR_LIMIT=70] -->
-  <!-- The description of the button to dismiss the cling [CHAR_LIMIT=30] -->
-  <!-- Folder accessibility -->
-  <!-- The format string for when a folder is opened, speaks the dimensions -->
-  <!-- Instruction that clicking outside will close folder -->
-  <!-- Instruction that clicking outside will commit folder rename -->
-  <!-- Indication that folder closed -->
-  <!-- Folder renamed format -->
-  <!-- Folder name format -->
-  <!-- Strings for the customization mode -->
-  <!-- Text for widget add button -->
-  <!-- Text for wallpaper change button -->
-  <string name="wallpaper_button_text">Papurau wal</string>
-  <!-- Text for settings button -->
-  <!-- Strings for settings -->
-  <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
-  <string name="allow_rotation_title">Caniatáu troi</string>
-  <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
-  <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
-  <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
-  <!-- Title for abandoned promise dialog. -->
-  <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
-    The second "it" refers to the app. -->
-  <!-- Strings for accessibility actions -->
-  <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation for item added to workspace. -->
-  <!-- Accessibility confirmation for item removed. -->
-  <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility description to move item to empty cell. -->
-  <!-- Accessibility description to move item inside a folder. -->
-  <!-- Accessibility description to move item to the hotseat. -->
-  <!-- Accessibility confirmation for item move. -->
-  <!-- Accessibility description to move item into an existing folder. -->
-  <!-- Accessibility description to move item into an existing folder containing an app. -->
-  <!-- Accessibility confirmation for item added to folder. -->
-  <!-- Accessibility description to create folder with another item. -->
-  <!-- Accessibility confirmation for folder created. -->
-  <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move an homescreen to the left. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to move an homescreen to the right. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation when a screen was moved. -->
-  <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
-  <!-- Accessibility confirmation for widget resize. -->
+    <string name="app_name">Launcher3</string>
+    <string name="work_folder_name">Gwaith</string>
+    <string name="activity_not_found">Dyw\'r ap heb ei osod.</string>
+    <string name="activity_not_available">Ap ddim ar gael</string>
+    <string name="safemode_shortcut_error">Mae\'r ap a lawrlwythwyd wedi\'i analluogi ym Modd Diogel</string>
+    <string name="safemode_widget_error">Mae teclynnau wedi\'u hanalluogi ym Modd Diogel</string>
+    <string name="long_press_widget_to_add">Cyffyrdda a dal dy fys ar declyn i\'w symud.</string>
+    <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <string name="all_apps_search_bar_hint">Chwilio Apiau</string>
+    <string name="all_apps_loading_message">Yn llwytho apiau…</string>
+    <string name="all_apps_no_search_results">Ni chanfuwyd apiau yn cydweddu â \"<xliff:g id="query" example="Android">%1$s</xliff:g>\"</string>
+    <string name="all_apps_search_market_message">Mynd i <xliff:g id="query" example="Play Store">%1$s</xliff:g></string>
+    <string name="out_of_space">Does dim rhagor o le ar y sgrin gartref hon.</string>
+    <string name="hotseat_out_of_space">Does dim rhagor o le yn y blwch ffefrynnau</string>
+    <string name="all_apps_button_label">Apiau</string>
+    <string name="all_apps_home_button_label">Cartref</string>
+    <string name="delete_target_label">Tynnu</string>
+    <string name="delete_target_uninstall_label">Dadosod</string>
+    <string name="info_target_label">Gwybodaeth am yr ap</string>
+    <string name="permlab_install_shortcut">gosod llwybrau byr</string>
+    <string name="permdesc_install_shortcut">Mae\'n caniatáu i ap ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
+    <string name="permlab_read_settings">darllen llwybrau byr a gosodiadau Cartref</string>
+    <string name="permdesc_read_settings">Mae\'n caniatáu i\'r ap ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
+    <string name="permlab_write_settings">ysgrifennu llwybrau byr a gosodiadau Cartref</string>
+    <string name="permdesc_write_settings">Mae\'n caniatáu i\'r ap newid y gosodiadau a llwybrau byr yn Cartref.</string>
+    <string name="msg_no_phone_permission">Dyw <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> ddim yn cael gwneud galwadau.</string>
+    <string name="gadget_error_text">Problem wrth lwytho\'r teclyn</string>
+    <string name="gadget_setup_text">Gosod</string>
+    <string name="uninstall_system_app_text">Mae hwn yn ap system a ni ellir ei ddadosod.</string>
+    <string name="folder_hint_text">Ffolder Dienw</string>
+    <string name="default_scroll_format">Tudalen %1$d o %2$d</string>
+    <string name="workspace_scroll_format">Sgrin gartref %1$d o %2$d</string>
+    <string name="first_run_cling_title">Croeso</string>
+    <string name="migration_cling_title">Copïo dy eiconau apiau</string>
+    <string name="migration_cling_description">Mewnforio dy eiconau a ffolderi o dy hen sgriniau Cartref?</string>
+    <string name="migration_cling_copy_apps">COPÏO EICONAU</string>
+    <string name="migration_cling_use_default">DECHRAU FFRES</string>
+    <string name="workspace_cling_longpress_title">Papurau waliau, teclynnau, a gosodiadau</string>
+    <string name="workspace_cling_longpress_description">Cyffyrdda a dal y cefndir i\'w addasu</string>
+    <string name="workspace_cling_longpress_dismiss">DEALL YN IAWN</string>
+    <string name="folder_opened">Agorwyd ffolder, <xliff:g id="width" example="5">%1$d</xliff:g> wrth <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <string name="folder_tap_to_close">Cyffyrdda i gau\'r ffolder</string>
+    <string name="folder_tap_to_rename">Cyffyrdda i gadw\'r enw newydd</string>
+    <string name="folder_closed">Caewyd y ffolder</string>
+    <string name="folder_renamed">Ailenwyd y ffolder i <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="folder_name_format">Ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="widget_button_text">Teclynnau</string>
+    <string name="wallpaper_button_text">Papurau wal</string>
+    <string name="settings_button_text">Gosodiadau</string>
+    <string name="allow_rotation_title">Caniatáu troi</string>
+    <string name="package_state_unknown">Anhysybys</string>
+    <string name="abandoned_clean_this">Tynnu</string>
+    <string name="abandoned_search">Chwilio</string>
+    <string name="abandoned_promises_title">Dyw\'r ap hwn heb ei osod</string>
+    <string name="abandoned_promise_explanation">Dyw\'r ap ar gyfer yr eicon hwn heb ei osod. 
+Mae\'n bosib i ti ei dynnu neu i chwilio am a gosod yr ap dy hun.    </string>
+    <string name="action_add_to_workspace">Ychwanegu i\'r sgrin Gartref</string>
+    <string name="action_move_here">Symud yr eitem yma</string>
+    <string name="item_added_to_workspace">Ychwanegwyd yr item i\'r sgrin gartref</string>
+    <string name="item_removed">Tynnwyd yr eitem</string>
+    <string name="action_move">Symud eitem</string>
+    <string name="move_to_empty_cell">Symud i res <xliff:g id="number" example="1">%1$s</xliff:g>, colofn <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="move_to_position">Symud i leoliad <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="move_to_hotseat_position">Symud i leoliad ffefrynnau <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="item_moved">Symudwyd yr eitem</string>
+    <string name="add_to_folder">Ychwanegu i\'r ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="add_to_folder_with_app">Ychwanegu i ffolder gyda <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="added_to_folder">Ychwanegwyd yr eitem i\'r ffolder</string>
+    <string name="create_folder_with">Creu ffolder gyda: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <string name="folder_created">Crëwyd y ffolder</string>
+    <string name="action_move_to_workspace">Symud i\'r sgrin Gartref</string>
+    <string name="action_move_screen_left">Symud y sgrin i\'r chwith</string>
+    <string name="action_move_screen_right">Symud y sgrin i\'r dde</string>
+    <string name="screen_moved">Symudwyd y sgrin</string>
+    <string name="action_resize">Ailfeintio</string>
+    <string name="action_increase_width">Cynyddu\'r lled</string>
+    <string name="action_increase_height">Cynyddu\'r taldra</string>
+    <string name="action_decrease_width">Lleihau\'r lled</string>
+    <string name="action_decrease_height">Lleihau\'r taldra</string>
+    <string name="widget_resized">Wedi newid maint y teclyn i <xliff:g id="number" example="2">%1$s</xliff:g> o led a <xliff:g id="number" example="1">%2$s</xliff:g> o daldra</string>
 </resources>

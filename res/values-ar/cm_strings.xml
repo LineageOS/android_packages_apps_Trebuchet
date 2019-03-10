@@ -16,52 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">إعدادات الشاشة الرئيسية</string>
-  <string name="drawer_settings">إعدادات أداة السحب</string>
-  <string name="app_settings">إعدادات التطبيق</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">تشغيل</string>
-  <string name="setting_state_off">إيقاف</string>
-  <string name="setting_state_disabled">معطل</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">تشغيل</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">تمرير خلفية الشاشة</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">حجم الشبكة</string>
-  <string name="grid_size_comfortable">مريح</string>
-  <string name="grid_size_cozy">مريح</string>
-  <string name="grid_size_condensed">مكثف</string>
-  <string name="grid_size_custom">مخصص (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">حدد حجم مخصص</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">تأكيد</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">شريط البحث</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">أيقونات أكبر</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">تسميات الأيقونة</string>
-  <string name="icon_labels_show">إظهار</string>
-  <string name="icon_labels_hide">إخفاء</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">التطبيقات المحمية</string>
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">نمط الرسام</string>
-  <string name="app_drawer_style_compact">ضغط</string>
-  <string name="app_drawer_style_sections">الأقسام</string>
-  <string name="app_drawer_color">لون الرسام</string>
-  <string name="app_drawer_color_dark">داكن</string>
-  <string name="app_drawer_color_light">فاتح</string>
-  <string name="fast_scroller">ممرر سريع</string>
-  <string name="fast_scroller_type">نوع ممرر سريع</string>
-  <string name="fast_scroller_type_horizontal">أفقي</string>
-  <string name="fast_scroller_type_vertical">رأسي</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">لا يمكن العثور على نشاط بحثي!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">التطبيق غير متاح</string>
-  <string name="storage_permission_denied">لا يمكن الوصول إلى المخزن</string>
+    <string name="home_screen_settings">إعدادات الشاشة الرئيسية</string>
+    <string name="drawer_settings">إعدادات أداة السحب</string>
+    <string name="app_settings">إعدادات التطبيق</string>
+    <string name="setting_state_on">تشغيل</string>
+    <string name="setting_state_off">إيقاف</string>
+    <string name="setting_state_disabled">معطل</string>
+    <string name="play_folder_title">تشغيل</string>
+    <string name="scrolling_wallpaper">تمرير خلفية الشاشة</string>
+    <string name="grid_size_text">حجم الشبكة</string>
+    <string name="grid_size_comfortable">مريح</string>
+    <string name="grid_size_cozy">مريح</string>
+    <string name="grid_size_condensed">مكثف</string>
+    <string name="grid_size_custom">مخصص (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">حدد حجم مخصص</string>
+    <string name="dialog_confirm">تأكيد</string>
+    <string name="home_screen_search_text">شريط البحث</string>
+    <string name="larger_icons_text">أيقونات أكبر</string>
+    <string name="icon_labels">تسميات الأيقونة</string>
+    <string name="icon_labels_show">إظهار</string>
+    <string name="icon_labels_hide">إخفاء</string>
+    <string name="protected_app_settings">التطبيقات المحمية</string>
+    <string name="export_workspace_layout">تصدير التخطيط</string>
+    <string name="app_drawer_style">نمط الرسام</string>
+    <string name="app_drawer_style_compact">ضغط</string>
+    <string name="app_drawer_style_sections">الأقسام</string>
+    <string name="app_drawer_color">لون الرسام</string>
+    <string name="app_drawer_color_dark">داكن</string>
+    <string name="app_drawer_color_light">فاتح</string>
+    <string name="fast_scroller">ممرر سريع</string>
+    <string name="fast_scroller_type">نوع ممرر سريع</string>
+    <string name="fast_scroller_type_horizontal">أفقي</string>
+    <string name="fast_scroller_type_vertical">رأسي</string>
+    <string name="search_activity_not_found">لا يمكن العثور على نشاط بحثي!</string>
+    <string name="app_not_available">التطبيق غير متاح</string>
+    <string name="storage_permission_denied">لا يمكن الوصول إلى المخزن</string>
+    <string name="export_db_email_subject">مُشغل DB للمنطقة</string>
+    <string name="export_db_could_not">لا يمكن تصدير ملف DB</string>
 </resources>

@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">KEZDŐKÉPERNYŐ BEÁLLÍTÁSOK</string>
-  <string name="drawer_settings">ALKALMAZÁSKÉPERNYŐ BEÁLLÍTÁSOK</string>
-  <string name="app_settings">ALKALMAZÁS BEÁLLÍTÁSAI</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">BE</string>
-  <string name="setting_state_off">KI</string>
-  <string name="setting_state_disabled">LETILTVA</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Háttérkép görgetése</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Rácsméret</string>
-  <string name="grid_size_comfortable">Kényelmes</string>
-  <string name="grid_size_cozy">Hangulatos</string>
-  <string name="grid_size_condensed">Tömörített</string>
-  <string name="grid_size_custom">Egyéni (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Válassza ki az egyéni méretet</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Megerősítés</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Keresési sáv</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Nagyobb ikonok</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Ikon feliratok</string>
-  <string name="icon_labels_show">Megjelenítés</string>
-  <string name="icon_labels_hide">Elrejtés</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Védett alkalmazások</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Elrendezés exportálása</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Alkalmazásindító stílusa</string>
-  <string name="app_drawer_style_compact">Kompakt</string>
-  <string name="app_drawer_style_sections">Szakaszok</string>
-  <string name="app_drawer_color">Alkalmazásindító színe</string>
-  <string name="app_drawer_color_dark">Sötét</string>
-  <string name="app_drawer_color_light">Világos</string>
-  <string name="fast_scroller">Gyors görgető</string>
-  <string name="fast_scroller_type">Gyors görgető típusa</string>
-  <string name="fast_scroller_type_horizontal">Vízszintes</string>
-  <string name="fast_scroller_type_vertical">Függőleges</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Keresési tevékenység nem található!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Alkalmazás nem elérhető</string>
-  <string name="storage_permission_denied">Tárhely elérése sikertelen</string>
-  <string name="export_db_email_subject">Adatbázis indító régióhoz</string>
-  <string name="export_db_could_not">Nem sikerült exportálni az adatbázis fájlt</string>
+    <string name="home_screen_settings">KEZDŐKÉPERNYŐ BEÁLLÍTÁSOK</string>
+    <string name="drawer_settings">ALKALMAZÁSKÉPERNYŐ BEÁLLÍTÁSOK</string>
+    <string name="app_settings">ALKALMAZÁS BEÁLLÍTÁSAI</string>
+    <string name="setting_state_on">BE</string>
+    <string name="setting_state_off">KI</string>
+    <string name="setting_state_disabled">LETILTVA</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Háttérkép görgetése</string>
+    <string name="grid_size_text">Rácsméret</string>
+    <string name="grid_size_comfortable">Kényelmes</string>
+    <string name="grid_size_cozy">Hangulatos</string>
+    <string name="grid_size_condensed">Tömörített</string>
+    <string name="grid_size_custom">Egyéni (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Válassza ki az egyéni méretet</string>
+    <string name="dialog_confirm">Megerősítés</string>
+    <string name="home_screen_search_text">Keresési sáv</string>
+    <string name="larger_icons_text">Nagyobb ikonok</string>
+    <string name="icon_labels">Ikon feliratok</string>
+    <string name="icon_labels_show">Megjelenítés</string>
+    <string name="icon_labels_hide">Elrejtés</string>
+    <string name="protected_app_settings">Védett alkalmazások</string>
+    <string name="export_workspace_layout">Elrendezés exportálása</string>
+    <string name="app_drawer_style">Alkalmazásindító stílusa</string>
+    <string name="app_drawer_style_compact">Kompakt</string>
+    <string name="app_drawer_style_sections">Szakaszok</string>
+    <string name="app_drawer_color">Alkalmazásindító színe</string>
+    <string name="app_drawer_color_dark">Sötét</string>
+    <string name="app_drawer_color_light">Világos</string>
+    <string name="fast_scroller">Gyors görgető</string>
+    <string name="fast_scroller_type">Gyors görgető típusa</string>
+    <string name="fast_scroller_type_horizontal">Vízszintes</string>
+    <string name="fast_scroller_type_vertical">Függőleges</string>
+    <string name="search_activity_not_found">Keresési tevékenység nem található!</string>
+    <string name="app_not_available">Alkalmazás nem elérhető</string>
+    <string name="storage_permission_denied">Tárhely elérése sikertelen</string>
+    <string name="export_db_email_subject">Adatbázis indító régióhoz</string>
+    <string name="export_db_could_not">Nem sikerült exportálni az adatbázis fájlt</string>
 </resources>

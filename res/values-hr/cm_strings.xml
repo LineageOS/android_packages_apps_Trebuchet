@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">POSTAVKE POČETNOG ZASLONA</string>
-  <string name="drawer_settings">POSTAVKE LADICE</string>
-  <string name="app_settings">POSTAVKE APLIKACIJA</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">UKLJUČENO</string>
-  <string name="setting_state_off">ISKLJUČENO</string>
-  <string name="setting_state_disabled">ONEMOGUĆENO</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Sviraj</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Klizanje pozadine</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Veličina rešetke</string>
-  <string name="grid_size_comfortable">Udoban</string>
-  <string name="grid_size_cozy">Udobno</string>
-  <string name="grid_size_condensed">Kondenzirano</string>
-  <string name="grid_size_custom">Prilagođeno (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Odabir prilagođene veličine</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Potvrdi</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Traka za pretraživanje</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Veće ikone</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Oznake ikona</string>
-  <string name="icon_labels_show">Pokaži</string>
-  <string name="icon_labels_hide">Sakrij</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Zaštićene aplikacije</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Izvezi raspored</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Stil ladice</string>
-  <string name="app_drawer_style_compact">Kompaktno</string>
-  <string name="app_drawer_style_sections">Sekcije</string>
-  <string name="app_drawer_color">Boja ladice</string>
-  <string name="app_drawer_color_dark">Tamno</string>
-  <string name="app_drawer_color_light">Svijetlo</string>
-  <string name="fast_scroller">Brzi skroler</string>
-  <string name="fast_scroller_type">Vrsta brzog skrolera</string>
-  <string name="fast_scroller_type_horizontal">Vodoravno</string>
-  <string name="fast_scroller_type_vertical">Okomito</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Aktivnosti pretraživanja nije moguće pronaći.</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Aplikacija nije dostupna</string>
-  <string name="storage_permission_denied">Ne mogu pristupiti pohrani</string>
-  <string name="export_db_email_subject">Pokretač DB za regiju</string>
-  <string name="export_db_could_not">Nije moguć Izvoz DB datoteke</string>
+    <string name="home_screen_settings">POSTAVKE POČETNOG ZASLONA</string>
+    <string name="drawer_settings">POSTAVKE LADICE</string>
+    <string name="app_settings">POSTAVKE APLIKACIJA</string>
+    <string name="setting_state_on">UKLJUČENO</string>
+    <string name="setting_state_off">ISKLJUČENO</string>
+    <string name="setting_state_disabled">ONEMOGUĆENO</string>
+    <string name="play_folder_title">Sviraj</string>
+    <string name="scrolling_wallpaper">Klizanje pozadine</string>
+    <string name="grid_size_text">Veličina rešetke</string>
+    <string name="grid_size_comfortable">Udoban</string>
+    <string name="grid_size_cozy">Udobno</string>
+    <string name="grid_size_condensed">Kondenzirano</string>
+    <string name="grid_size_custom">Prilagođeno (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Odabir prilagođene veličine</string>
+    <string name="dialog_confirm">Potvrdi</string>
+    <string name="home_screen_search_text">Traka za pretraživanje</string>
+    <string name="larger_icons_text">Veće ikone</string>
+    <string name="icon_labels">Oznake ikona</string>
+    <string name="icon_labels_show">Pokaži</string>
+    <string name="icon_labels_hide">Sakrij</string>
+    <string name="protected_app_settings">Zaštićene aplikacije</string>
+    <string name="export_workspace_layout">Izvezi raspored</string>
+    <string name="app_drawer_style">Stil ladice</string>
+    <string name="app_drawer_style_compact">Kompaktno</string>
+    <string name="app_drawer_style_sections">Sekcije</string>
+    <string name="app_drawer_color">Boja ladice</string>
+    <string name="app_drawer_color_dark">Tamno</string>
+    <string name="app_drawer_color_light">Svijetlo</string>
+    <string name="fast_scroller">Brzi skroler</string>
+    <string name="fast_scroller_type">Vrsta brzog skrolera</string>
+    <string name="fast_scroller_type_horizontal">Vodoravno</string>
+    <string name="fast_scroller_type_vertical">Okomito</string>
+    <string name="search_activity_not_found">Aktivnosti pretraživanja nije moguće pronaći.</string>
+    <string name="app_not_available">Aplikacija nije dostupna</string>
+    <string name="storage_permission_denied">Ne mogu pristupiti pohrani</string>
+    <string name="export_db_email_subject">Pokretač DB za regiju</string>
+    <string name="export_db_could_not">Nije moguć Izvoz DB datoteke</string>
 </resources>
