@@ -15,14 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="icon_shape_circle_name">Cirkel</string>
-    <string name="icon_shape_squircle_name">Squircle</string>
-    <string name="icon_shape_teardrop_name">Druppel</string>
-    <string name="grid_size_text">Rastergrootte</string>
-    <string name="grid_size_rows">Rijen</string>
-    <string name="grid_size_columns">Kolommen</string>
-    <string name="grid_size_custom_positive">Instellen</string>
-    <string name="settings_edit_allow_title">Bewerken toestaan</string>
-    <string name="play_folder_title">Play</string>
-    <string name="trust_apps_help">Help</string>
+    <string name="icon_shape_square_name">Kvadrat</string>
+    <string name="trust_apps_loading">Učitavanje\u2026</string>
+    <string name="trust_apps_help">Pomoć</string>
 </resources>

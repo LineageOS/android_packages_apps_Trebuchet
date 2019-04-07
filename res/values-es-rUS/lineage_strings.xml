@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Ajustes del cajón</string>
     <string name="settings_category_icons">Ajustes de icono</string>
     <string name="title_show_google_app">Mostrar aplicación de Google</string>
+    <string name="msg_minus_one_on_left">Al deslizar a la derecha desde la pantalla principal</string>
+    <string name="msg_minus_one_on_right">Al deslizar a la izquierda desde la pantalla principal</string>
+    <string name="icon_shape_square_name">Cuadrado</string>
     <string name="icon_shape_circle_name">Círculo</string>
     <string name="icon_shape_squircle_name">Cuadrado con bordes redondos</string>
     <string name="icon_shape_teardrop_name">Lágrima</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">No aparecerá una burbuja encima del icono cuando haya una notificación</string>
     <string name="play_folder_title">Reproducir</string>
     <string name="statusbar_expand">Deslizar abajo para las notificaciones</string>
+    <string name="trust_apps_manager_name">Aplicaciones ocultas y protegidas</string>
+    <string name="trust_apps_auth_manager">Desbloquear para administrar las aplicaciones ocultas y protegidas</string>
+    <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
+    <string name="trust_apps_loading">Cargando\u2026</string>
+    <string name="trust_apps_no_lock_error">Por favor, configura una pantalla de bloqueo segura para restringir el acceso a la aplicación</string>
+    <string name="trust_apps_help">Ayuda</string>
+    <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets se ocultan del cajón</string>
+    <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren que la autenticación se abra desde el lanzador</string>
 </resources>

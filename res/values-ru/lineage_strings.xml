@@ -47,4 +47,5 @@
     <string name="trust_apps_no_lock_error">Пожалуйста, установите блокировку экрана для ограничения доступа к приложениям</string>
     <string name="trust_apps_help">Помощь</string>
     <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты скрыты из меню</string>
+    <string name="trust_apps_info_protected">Для открытия защищенных приложений из лаунчера требуется аутентификация</string>
 </resources>

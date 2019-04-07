@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Configuració del calaix</string>
     <string name="settings_category_icons">Configuració d\'icones</string>
     <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
+    <string name="msg_minus_one_on_left">Quan feu lliscar el dit cap a la dreta des de la pantalla principal d\'inici</string>
+    <string name="msg_minus_one_on_right">Quan feu lliscar el dit cap a l\'esquerra des de la pantalla principal d\'inici</string>
+    <string name="icon_shape_square_name">Quadrades</string>
     <string name="icon_shape_circle_name">Rodones</string>
     <string name="icon_shape_squircle_name">Vores arrodonides</string>
     <string name="icon_shape_teardrop_name">Llàgrima</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">No es mostrarà cap bombolla sobre de la icona quan hi hagi una notificació</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Llisca avall per mostrar les notificacions</string>
+    <string name="trust_apps_manager_name">Aplicacions amagades i protegides</string>
+    <string name="trust_apps_auth_manager">Desbloqueja per gestionar les aplicacions amagades i protegides</string>
+    <string name="trust_apps_auth_open_app">Autentifica per obrir %1$s</string>
+    <string name="trust_apps_loading">S\'està carregant\u2026</string>
+    <string name="trust_apps_no_lock_error">Si us plau configura un bloqueig de pantalla segur per a restringir l\'accés a aplicacions</string>
+    <string name="trust_apps_help">Ajuda</string>
+    <string name="trust_apps_info_hidden">Les aplicacions amagades i els seus widgets s\'amagaran del calaix</string>
+    <string name="trust_apps_info_protected">Les aplicacions protegides requeriran autentificació per poder ser obertes des del llançador</string>
 </resources>

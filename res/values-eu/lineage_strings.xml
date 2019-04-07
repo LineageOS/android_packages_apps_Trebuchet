@@ -40,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Ez da bunbuilorik erakutsiko ikonoaren gainean jakinarazpen bat dagoenean</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Pasatu hatza behera jakinarazpenak erakusteko</string>
+    <string name="trust_apps_manager_name">Ezkutatutako eta babestutako aplikazioak</string>
+    <string name="trust_apps_auth_manager">Desblokeatu ezkutatutako eta babestutako aplikazioak kudeatzeko</string>
+    <string name="trust_apps_auth_open_app">Identifikatu %1$s irekitzeko</string>
+    <string name="trust_apps_loading">Kargatzen\u2026</string>
+    <string name="trust_apps_no_lock_error">Ezarri pantaila-blokeo segurua aplikaziora sarbidea murrizteko</string>
+    <string name="trust_apps_help">Laguntza</string>
+    <string name="trust_apps_info_hidden">Ezkutatutako aplikazioak eta bere trepetak ez dira tiraderan ikusten</string>
+    <string name="trust_apps_info_protected">Babestutako aplikazioek autentifikazioa eskatzen dute abiarazletik irekitzeko</string>
 </resources>

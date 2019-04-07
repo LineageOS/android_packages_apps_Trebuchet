@@ -38,4 +38,12 @@
     <string name="settings_icon_badging_desc_on">Märguande puhul kuvatakse mull ikooni kohal</string>
     <string name="settings_icon_badging_desc_off">Märguande saamisel ei kuvata mulli ikooni kohal</string>
     <string name="play_folder_title">Play</string>
+    <string name="trust_apps_manager_name">Peidetud ja kaitstud rakendused</string>
+    <string name="trust_apps_auth_manager">Lukusta lahti peidetud ja kaitstud rakenduste haldamiseks</string>
+    <string name="trust_apps_auth_open_app">Autendi %1$s avamiseks</string>
+    <string name="trust_apps_loading">Laadimine\u2026</string>
+    <string name="trust_apps_no_lock_error">Palun seadista turvaline lukustuskuva, et piirata rakendustele juurdepääsu</string>
+    <string name="trust_apps_help">Abi</string>
+    <string name="trust_apps_info_hidden">Peidetud rakendused ja nende vidinad on sahtlist peidetud</string>
+    <string name="trust_apps_info_protected">Kaitstud rakendused vajavad käivitajast avamiseks autentimist</string>
 </resources>

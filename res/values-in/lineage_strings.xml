@@ -36,4 +36,5 @@
     <string name="settings_icon_badging_desc_on">Gelembung akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
     <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
     <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
+    <string name="trust_apps_loading">Memuat\u2026</string>
 </resources>

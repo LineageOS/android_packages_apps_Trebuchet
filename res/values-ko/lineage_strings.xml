@@ -38,5 +38,8 @@
     <string name="settings_icon_badging_desc_off">알림이 있어도 아이콘 위에 물방울을 띄우지 않습니다.</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">아래로 스와이프하여 알림 열기</string>
+    <string name="trust_apps_manager_name">숨겨지거나 보호된 앱</string>
+    <string name="trust_apps_loading">불러오는 중\u2026</string>
     <string name="trust_apps_help">도움말</string>
+    <string name="trust_apps_info_hidden">숨겨진 앱과 해당 앱의 위젯은 앱 서랍에서 숨겨집니다.</string>
 </resources>

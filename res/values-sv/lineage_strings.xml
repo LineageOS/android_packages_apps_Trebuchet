@@ -18,6 +18,7 @@
     <string name="settings_category_home">Hemskärmsinställningar</string>
     <string name="settings_category_drawer">Inställningar för applistan</string>
     <string name="settings_category_icons">Ikoninställningar</string>
+    <string name="icon_shape_square_name">Fyrkant</string>
     <string name="icon_shape_circle_name">Cirkel</string>
     <string name="icon_shape_teardrop_name">Droppe</string>
     <string name="grid_size_text">Rutnätsstorlek</string>
@@ -26,4 +27,7 @@
     <string name="grid_size_custom_positive">Ställ in</string>
     <string name="play_folder_title">Spela upp</string>
     <string name="statusbar_expand">Svep nedåt för att visa notiser</string>
+    <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
+    <string name="trust_apps_loading">Laddar\u2026</string>
+    <string name="trust_apps_help">Hjälp</string>
 </resources>

@@ -19,6 +19,7 @@
     <string name="settings_category_drawer">Ustawienia szuflady</string>
     <string name="settings_category_icons">Ustawienia ikon</string>
     <string name="title_show_google_app">Pokaż aplikację Google</string>
+    <string name="msg_minus_one_on_left">Gdy przesuniesz w prawo od ekranu głównego</string>
     <string name="msg_minus_one_on_right">Gdy przesuniesz w lewo od ekranu głównego</string>
     <string name="icon_shape_square_name">Kwadrat</string>
     <string name="icon_shape_circle_name">Okrągły</string>
@@ -39,4 +40,9 @@
     <string name="settings_icon_badging_desc_off">Bąble nad ikoną nie będą wyświetlane jeśli nie ma powiadomień</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Przesuń w dół, aby zobaczyć powiadomienia</string>
+    <string name="trust_apps_auth_manager">Odblokuj, aby zarządzać ukrytymi i chronionymi aplikacjami</string>
+    <string name="trust_apps_auth_open_app">Uwierzytelnij, aby otworzyć %1$s</string>
+    <string name="trust_apps_loading">Ładowanie\u2026</string>
+    <string name="trust_apps_info_hidden">Ukryte aplikacje i ich widżety są ukryte z szuflady aplikacji</string>
+    <string name="trust_apps_info_protected">Chronione aplikacje wymagają uwierzytelniania, aby mogły zostać uruchomione z poziomu ekranu głównego</string>
 </resources>
