@@ -196,7 +196,8 @@ public class WidgetsFullSheet extends BaseWidgetSheet
 
     @Override
     protected boolean isOfType(int type) {
-        return (type & TYPE_WIDGETS_FULL_SHEET) != 0;
+        return (type & TYPE_WIDGETS_FULL_SHEET) != 0 ||
+                (type & TYPE_STATUS_BAR_SWIPE_DOWN_DISALLOW) != 0;
     }
 
     @Override
