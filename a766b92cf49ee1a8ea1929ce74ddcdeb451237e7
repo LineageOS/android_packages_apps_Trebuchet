@@ -22,6 +22,30 @@
       "revId": "a766b92cf49ee1a8ea1929ce74ddcdeb451237e7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af05e8a3_aa6b9fc1",
+        "filename": "src/com/android/launcher3/util/ConfigMonitor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2019-05-07T22:55:45Z",
+      "side": 1,
+      "message": "Builds fine without it here, and it\u0027s not in original upstream patch either.\n\nhttps://source.codeaurora.org/quic/la/platform/packages/apps/Launcher3/commit/?h\u003dandroid-9.0.0_r37\u0026id\u003df2b97f8cd833234515505d3c280fba4a3b41026f",
+      "parentUuid": "f84c1212_e642dac5",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "a766b92cf49ee1a8ea1929ce74ddcdeb451237e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
