@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f84c1212_e642dac5",
+        "filename": "src/com/android/launcher3/util/ConfigMonitor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2019-05-07T22:47:50Z",
+      "side": 1,
+      "message": "import android.os.Process; ?",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "a766b92cf49ee1a8ea1929ce74ddcdeb451237e7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
