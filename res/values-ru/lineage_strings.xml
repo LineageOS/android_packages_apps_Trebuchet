@@ -47,8 +47,8 @@
     <string name="settings_rotation_title">Поворот экрана</string>
     <string name="settings_allow_rotation_desc">Разрешить поворот рабочего стола когда устройство в альбомной ориентации</string>
     <string name="settings_icon_shape">Форма значков</string>
-    <string name="settings_icon_badging_desc_on">Над значком будет отображаться пузырь когда приходит уведомление</string>
-    <string name="settings_icon_badging_desc_off">Над значком не будет отображаться пузырь когда приходит уведомление</string>
+    <string name="settings_icon_badging_desc_on">При появлении уведомления над значком будет отображаться пузырек</string>
+    <string name="settings_icon_badging_desc_off">При появлении уведомления над значком не будет отображаться пузырек</string>
     <string name="settings_icon_force_adaptive_title">Использовать адаптивные значки</string>
     <string name="settings_icon_force_adaptive_desc_on">Значки нестандартной формы будут на подложке</string>
     <string name="settings_icon_force_adaptive_desc_off">Значки нестандартной формы будут без подложки</string>
