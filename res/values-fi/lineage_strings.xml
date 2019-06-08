@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Sovellusvalikon asetukset</string>
     <string name="settings_category_icons">Kuvakeasetukset</string>
     <string name="title_show_google_app">Näytä Google-sovellus</string>
+    <string name="msg_minus_one_on_left">Kun pyyhkäiset oikealle pääkotinäytöltä</string>
+    <string name="msg_minus_one_on_right">Kun pyyhkäiset vasemmalle pääkotinäytöltä</string>
+    <string name="icon_shape_square_name">Neliö</string>
     <string name="icon_shape_circle_name">Ympyrä</string>
     <string name="icon_shape_squircle_name">Ympyräneliö</string>
     <string name="icon_shape_teardrop_name">Pisara</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Ei kuplaa kuvakkeen yläpuolella kun ilmoitus tulee</string>
     <string name="play_folder_title">Toista</string>
     <string name="statusbar_expand">Pyyhkäise alas näyttääksesi ilmoitukset</string>
+    <string name="trust_apps_manager_name">Piilotetut &amp; suojatut sovellukset</string>
+    <string name="trust_apps_auth_manager">Avaa hallitaksesi piilotettuja ja suojattuja sovelluksia</string>
+    <string name="trust_apps_auth_open_app">Todenna avataksesi %1$s</string>
+    <string name="trust_apps_loading">Ladataan\u2026</string>
+    <string name="trust_apps_no_lock_error">Aseta turvallinen näytön lukitus rajataksesi pääsyä sovelluksiin</string>
+    <string name="trust_apps_help">Ohje</string>
+    <string name="trust_apps_info_hidden">Piilotetut sovellukset ja niiden widgetit piilotetaan valikosta</string>
+    <string name="trust_apps_info_protected">Suojatut sovellukset tarvitsevat todennuksen jotta ne voidaan avata</string>
 </resources>

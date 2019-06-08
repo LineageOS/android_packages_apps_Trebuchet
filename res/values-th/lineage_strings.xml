@@ -16,6 +16,7 @@
 -->
 <resources>
     <string name="settings_category_home">การตั้งค่าหน้าจอ</string>
+    <string name="settings_category_drawer">การตั้งค่าลิ้นชัก</string>
     <string name="settings_category_icons">ตั้งค่าไอคอน</string>
     <string name="title_show_google_app">แสดงแอป Google</string>
     <string name="msg_minus_one_on_left">เมื่อคุณปัดนิ้วไปทางขวาจากหน้าจอหลัก</string>
@@ -28,10 +29,15 @@
     <string name="grid_size_rows">แถว</string>
     <string name="grid_size_columns">คอลัมน์</string>
     <string name="grid_size_custom_positive">ตั้ง</string>
+    <string name="grid_size_custom_message">เลือกจำนวนคอลัมน์และแถวที่กำหนดเอง</string>
+    <string name="desktop_show_labels">แสดงป้ายชื่อไอคอนในบนเดสก์ทอป</string>
+    <string name="drawer_show_labels">แสดงป้ายชื่อไอคอนในที่วางแอป</string>
     <string name="settings_edit_allow_title">อนุญาต</string>
     <string name="settings_edit_allow_summary_on">ไอคอนและวิดเจ็ต จะสามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_edit_allow_summary_off">ไอคอนและวิดเจ็ต จะไม่สามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_edit_widgets_error">ไม่สามารถที่จะเพิ่ม วิดเจ็ต บนหน้าจอหลักได้</string>
+    <string name="settings_icon_badging_desc_on">จะมีวงกลมปรากฏขึ้นเหนือไอคอนเมื่อมีการแจ้งเตือน</string>
+    <string name="settings_icon_badging_desc_off">จะไม่มีวงกลมปรากฏขึ้นเหนือไอคอนเมื่อมีการแจ้งเตือน</string>
     <string name="play_folder_title">เล่น</string>
     <string name="statusbar_expand">ปัดลงเพื่อแสดงการแจ้งเตือน</string>
     <string name="trust_apps_manager_name">แอพที่ถูกซ่อน &amp; ป้องกัน</string>

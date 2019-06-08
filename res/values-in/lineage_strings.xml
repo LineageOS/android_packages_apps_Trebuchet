@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Setelan panel</string>
     <string name="settings_category_icons">Setelan ikon</string>
     <string name="title_show_google_app">Tampilkan aplikasi Google</string>
+    <string name="msg_minus_one_on_left">Ketika Anda mengusap ke kanan dari layar utama</string>
+    <string name="msg_minus_one_on_right">Ketika Anda mengusap ke kiri dari layar utama</string>
+    <string name="icon_shape_square_name">Kotak</string>
     <string name="icon_shape_circle_name">Bulat</string>
     <string name="icon_shape_squircle_name">Kotak melengkung</string>
     <string name="icon_shape_teardrop_name">Tetesan Air</string>
@@ -37,4 +40,7 @@
     <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
     <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
     <string name="trust_apps_loading">Memuat\u2026</string>
+    <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar aman untuk membatasi akses aplikasi</string>
+    <string name="trust_apps_help">Bantuan</string>
+    <string name="trust_apps_info_protected">Aplikasi yang dilindungi memerlukan otentikasi untuk dibuka dari peluncur</string>
 </resources>

@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Nastavenia ponuky</string>
     <string name="settings_category_icons">Nastavenia ikon</string>
     <string name="title_show_google_app">Zobraziť Google aplikácie</string>
+    <string name="msg_minus_one_on_left">Pri potiahnutí prstom vpravo na hlavnej obrazovke</string>
+    <string name="msg_minus_one_on_right">Pri potiahnutí prstom vľavo na hlavnej obrazovke</string>
+    <string name="icon_shape_square_name">Štvorec</string>
     <string name="icon_shape_circle_name">Kruh</string>
     <string name="icon_shape_squircle_name">Zaoblený štvorec</string>
     <string name="icon_shape_teardrop_name">Slza</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Ak sa vyskytne upozornenie, nad ikonou sa nezobrazí bublina</string>
     <string name="play_folder_title">Prehrať</string>
     <string name="statusbar_expand">Potiahnutím dolu zobraziť upozornenia</string>
+    <string name="trust_apps_manager_name">Skryté &amp; chránené aplikácie</string>
+    <string name="trust_apps_auth_manager">Pre správu skrytých a chránených aplikácií odomknite</string>
+    <string name="trust_apps_auth_open_app">Pre otvorenie %1$s potvrďte svoju totožnosť</string>
+    <string name="trust_apps_loading">Nahrávanie\u2026</string>
+    <string name="trust_apps_no_lock_error">Prosím nastavte zabezpečenie obrazovky aby ste mohli spravovať prístup k aplikáciám</string>
+    <string name="trust_apps_help">Pomocník</string>
+    <string name="trust_apps_info_hidden">Skryté aplikácie a ich widgety se nezobrazujú v zozname aplikácií</string>
+    <string name="trust_apps_info_protected">Chránené aplikácie vyžadujú pre otvorenie zo spúšťača overenie</string>
 </resources>

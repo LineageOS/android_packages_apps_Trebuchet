@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">Paramètres du tiroir</string>
     <string name="settings_category_icons">Paramètres des icônes</string>
     <string name="title_show_google_app">Afficher l\'application Google</string>
+    <string name="msg_minus_one_on_left">Lors d\'un balayage vers la droite sur l\'écran d\'accueil principal</string>
+    <string name="msg_minus_one_on_right">Lors d\'un balayage vers la gauche sur l\'écran d\'accueil principal</string>
+    <string name="icon_shape_square_name">Carré</string>
     <string name="icon_shape_circle_name">Cercle</string>
     <string name="icon_shape_squircle_name">Carrercle</string>
     <string name="icon_shape_teardrop_name">Larme</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Aucune bulle ne s’affichera au-dessus de l’icône en cas de notification</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Glisser vers le bas pour afficher les notifications</string>
+    <string name="trust_apps_manager_name">Applications cachées &amp; protégées</string>
+    <string name="trust_apps_auth_manager">Déverrouiller pour gérer les applications cachées et protégées</string>
+    <string name="trust_apps_auth_open_app">S’authentifier pour ouvrir %1$s</string>
+    <string name="trust_apps_loading">Chargement\u2026</string>
+    <string name="trust_apps_no_lock_error">Veuillez configurer un écran de verrouillage pour restreindre l\'accès aux applications</string>
+    <string name="trust_apps_help">Aide</string>
+    <string name="trust_apps_info_hidden">Les applications cachées et leurs widgets sont cachés du tiroir</string>
+    <string name="trust_apps_info_protected">Les applications protégées nécessitent une authentification pour être ouvertes depuis le lanceur</string>
 </resources>

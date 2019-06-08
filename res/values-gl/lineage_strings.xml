@@ -40,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Non se amosará unha burbulla sobre a icona cando haxa unha notificación</string>
     <string name="play_folder_title">Reproducir</string>
     <string name="statusbar_expand">Esvarar cara abaixo para ver as notificacións</string>
+    <string name="trust_apps_manager_name">Aplicacións ocultas e protexidas</string>
+    <string name="trust_apps_auth_manager">Desbloquear para xestionar as aplicacións ocultas e protexidas</string>
+    <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
+    <string name="trust_apps_loading">Cargando\u2026</string>
+    <string name="trust_apps_no_lock_error">Por favor, configura un bloqueo de pantalla para restrinxir o acceso ás aplicacións</string>
+    <string name="trust_apps_help">Axuda</string>
+    <string name="trust_apps_info_hidden">As aplicacións ocultas e os seus widgets están ocultos na gabeta</string>
+    <string name="trust_apps_info_protected">Requírese autenticación para abrir as aplicacións protexidas dende o lanzador</string>
 </resources>
