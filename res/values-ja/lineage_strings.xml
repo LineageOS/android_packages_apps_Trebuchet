@@ -19,6 +19,9 @@
     <string name="settings_category_drawer">ドロワーの設定</string>
     <string name="settings_category_icons">アイコンの設定</string>
     <string name="title_show_google_app">Google アプリを表示</string>
+    <string name="msg_minus_one_on_left">メインホーム画面から右にスワイプする時</string>
+    <string name="msg_minus_one_on_right">メインホーム画面から左にスワイプする時</string>
+    <string name="icon_shape_square_name">四角</string>
     <string name="icon_shape_circle_name">円形</string>
     <string name="icon_shape_squircle_name">角丸四角形</string>
     <string name="icon_shape_teardrop_name">涙形</string>
@@ -37,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">通知があるときでもバブルをアイコン上に表示しません</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">下にスワイプして通知を表示</string>
+    <string name="trust_apps_manager_name">非表示 &amp; 保護アプリ</string>
+    <string name="trust_apps_auth_manager">ロック解除して非表示と保護アプリを管理する</string>
+    <string name="trust_apps_auth_open_app">認証して %1$s を開く</string>
+    <string name="trust_apps_loading">読み込み中\u2026</string>
+    <string name="trust_apps_no_lock_error">アプリのアクセスを制限するためにロック画面の保護をセットアップして下さい</string>
+    <string name="trust_apps_help">ヘルプ</string>
+    <string name="trust_apps_info_hidden">非表示アプリとそのウィジェットはドロワーから非表示になります</string>
+    <string name="trust_apps_info_protected">保護アプリはランチャーから開くのに認証が必要です</string>
 </resources>
