@@ -24,5 +24,6 @@
     <string name="grid_size_custom_positive">Instellen</string>
     <string name="settings_edit_allow_title">Bewerken toestaan</string>
     <string name="play_folder_title">Play</string>
+    <string name="trust_apps_manager_name">Verborgen en Beveiligde apps</string>
     <string name="trust_apps_help">Help</string>
 </resources>

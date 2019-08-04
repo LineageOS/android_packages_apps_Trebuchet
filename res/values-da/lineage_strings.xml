@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_edit_widgets_error">Det er ikke muligt at tilføje widgets til hjemmeskærmen</string>
+    <string name="statusbar_expand">Stryg nedad, for at vise notifikationer</string>
     <string name="trust_apps_manager_name">Skjulte &amp; Beskyttede apps</string>
     <string name="trust_apps_auth_manager">Oplås for at håndtere de skjulte og beskyttede apps</string>
     <string name="trust_apps_auth_open_app">Godkend for at åbne %1$s</string>
