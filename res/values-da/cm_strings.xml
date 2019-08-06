@@ -31,7 +31,7 @@
     <string name="grid_size_custom">Brugerdefineret (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
     <string name="preferences_interface_homescreen_custom">Vælg brugerdefineret størrelse</string>
     <string name="dialog_confirm">Bekræft</string>
-    <string name="home_screen_search_text">Søgelinje</string>
+    <string name="home_screen_search_text">Søgebjælke</string>
     <string name="larger_icons_text">Større ikoner</string>
     <string name="icon_labels">Ikontekster</string>
     <string name="icon_labels_show">Vis</string>
@@ -48,7 +48,7 @@
     <string name="fast_scroller_type">Hurtig scrollertype</string>
     <string name="fast_scroller_type_horizontal">Vandret</string>
     <string name="fast_scroller_type_vertical">Lodret</string>
-    <string name="search_activity_not_found">En funktion til søgning findes ikke!</string>
+    <string name="search_activity_not_found">En søgningsaktivitet kunne ikke findes!</string>
     <string name="app_not_available">App ikke tilgængelig</string>
     <string name="storage_permission_denied">Kunne ikke få adgang til lager</string>
     <string name="export_db_email_subject">Launcher DB for region</string>
