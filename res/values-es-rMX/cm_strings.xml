@@ -16,27 +16,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <!-- Settings states -->
-  <!-- Folder titles -->
-  <!-- Wallpaper scroll effect -->
-  <!-- Dynamic Grid -->
-  <!-- Dialog -->
-  <!-- Home screen search bar -->
-  <!-- Larger icons -->
-  <!-- Icon labels -->
-  <!-- Protected apps -->
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Estilo del panel</string>
-  <string name="app_drawer_style_compact">Compacto</string>
-  <string name="app_drawer_style_sections">Secciones</string>
-  <string name="app_drawer_color">Color del panel</string>
-  <string name="app_drawer_color_dark">Oscuro</string>
-  <string name="app_drawer_color_light">Claro</string>
-  <string name="fast_scroller">Desplazamiento rápido</string>
-  <string name="fast_scroller_type">Tipo de desplazamiento rápido</string>
-  <string name="fast_scroller_type_horizontal">Horizontal</string>
-  <!-- Search Manager doesn't exist -->
-  <!-- App not available toast text -->
+    <string name="app_drawer_style">Estilo del panel</string>
+    <string name="app_drawer_style_compact">Compacto</string>
+    <string name="app_drawer_style_sections">Secciones</string>
+    <string name="app_drawer_color">Color del panel</string>
+    <string name="app_drawer_color_dark">Oscuro</string>
+    <string name="app_drawer_color_light">Claro</string>
+    <string name="fast_scroller">Desplazamiento rápido</string>
+    <string name="fast_scroller_type">Tipo de desplazamiento rápido</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
 </resources>

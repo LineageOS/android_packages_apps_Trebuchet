@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">NASTAVENÍ DOMOVSKÉ OBRAZOVKY</string>
-  <string name="drawer_settings">NASTAVENÍ SLOŽKY</string>
-  <string name="app_settings">NASTAVENÍ APL</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">Zap.</string>
-  <string name="setting_state_off">Vyp.</string>
-  <string name="setting_state_disabled">ZAKÁZÁNO</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Hry Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Posouvání tapety</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Velikost mřížky</string>
-  <string name="grid_size_comfortable">Komfortní</string>
-  <string name="grid_size_cozy">Pohodlná</string>
-  <string name="grid_size_condensed">Zůžená</string>
-  <string name="grid_size_custom">Vlastní (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Zvolte vlastní velikost</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Potvrdit</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Vyhledávací lišta</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Větší ikony</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Popisky ikon</string>
-  <string name="icon_labels_show">Zobrazit</string>
-  <string name="icon_labels_hide">Skrýt</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Chráněné aplikace</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Exportovat rozvržení</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Styl složky</string>
-  <string name="app_drawer_style_compact">Kompaktní</string>
-  <string name="app_drawer_style_sections">Sekce</string>
-  <string name="app_drawer_color">Barva složky</string>
-  <string name="app_drawer_color_dark">Tmavý</string>
-  <string name="app_drawer_color_light">Světlý</string>
-  <string name="fast_scroller">Rychlý posuvník</string>
-  <string name="fast_scroller_type">Typ rychlého posuvníku</string>
-  <string name="fast_scroller_type_horizontal">Horizontální</string>
-  <string name="fast_scroller_type_vertical">Vertikální</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Vyhledávací aktivita nenalezena!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Aplikace není k dispozici</string>
-  <string name="storage_permission_denied">Nelze získat přístup k úložišti</string>
-  <string name="export_db_email_subject">DB spouštěče pro oblast</string>
-  <string name="export_db_could_not">Nelze exportovat soubor DB</string>
+    <string name="home_screen_settings">NASTAVENÍ DOMOVSKÉ OBRAZOVKY</string>
+    <string name="drawer_settings">NASTAVENÍ SLOŽKY</string>
+    <string name="app_settings">NASTAVENÍ APL</string>
+    <string name="setting_state_on">Zap.</string>
+    <string name="setting_state_off">Vyp.</string>
+    <string name="setting_state_disabled">ZAKÁZÁNO</string>
+    <string name="play_folder_title">Hry Play</string>
+    <string name="scrolling_wallpaper">Posouvání tapety</string>
+    <string name="grid_size_text">Velikost mřížky</string>
+    <string name="grid_size_comfortable">Komfortní</string>
+    <string name="grid_size_cozy">Pohodlná</string>
+    <string name="grid_size_condensed">Zůžená</string>
+    <string name="grid_size_custom">Vlastní (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Zvolte vlastní velikost</string>
+    <string name="dialog_confirm">Potvrdit</string>
+    <string name="home_screen_search_text">Vyhledávací lišta</string>
+    <string name="larger_icons_text">Větší ikony</string>
+    <string name="icon_labels">Popisky ikon</string>
+    <string name="icon_labels_show">Zobrazit</string>
+    <string name="icon_labels_hide">Skrýt</string>
+    <string name="protected_app_settings">Chráněné aplikace</string>
+    <string name="export_workspace_layout">Exportovat rozvržení</string>
+    <string name="app_drawer_style">Styl složky</string>
+    <string name="app_drawer_style_compact">Kompaktní</string>
+    <string name="app_drawer_style_sections">Sekce</string>
+    <string name="app_drawer_color">Barva složky</string>
+    <string name="app_drawer_color_dark">Tmavý</string>
+    <string name="app_drawer_color_light">Světlý</string>
+    <string name="fast_scroller">Rychlý posuvník</string>
+    <string name="fast_scroller_type">Typ rychlého posuvníku</string>
+    <string name="fast_scroller_type_horizontal">Horizontální</string>
+    <string name="fast_scroller_type_vertical">Vertikální</string>
+    <string name="search_activity_not_found">Vyhledávací aktivita nenalezena!</string>
+    <string name="app_not_available">Aplikace není k dispozici</string>
+    <string name="storage_permission_denied">Nelze získat přístup k úložišti</string>
+    <string name="export_db_email_subject">DB spouštěče pro oblast</string>
+    <string name="export_db_could_not">Nelze exportovat soubor DB</string>
 </resources>

@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">CONFIGURAÇÕES DA TELA DE INÍCIO</string>
-  <string name="drawer_settings">CONFIGURAÇÕES DA GAVETA</string>
-  <string name="app_settings">CONFIGURAÇÕES DE APLICATIVO</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">LIG</string>
-  <string name="setting_state_off">DESL</string>
-  <string name="setting_state_disabled">DESATIVADO</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Reproduzir</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Rolar papel de parede</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Tamanho da grade</string>
-  <string name="grid_size_comfortable">Confortável</string>
-  <string name="grid_size_cozy">Aconchegante</string>
-  <string name="grid_size_condensed">Condensado</string>
-  <string name="grid_size_custom">Personalizado (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Selecione tamanho personalizado</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Confirmar</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Barra de pesquisa</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Ícones grandes</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Etiquetas de ícones</string>
-  <string name="icon_labels_show">Mostrar</string>
-  <string name="icon_labels_hide">Ocultar</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Aplicativos protegidos</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Exportar layout</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Estilo da gaveta</string>
-  <string name="app_drawer_style_compact">Compacto</string>
-  <string name="app_drawer_style_sections">Seções</string>
-  <string name="app_drawer_color">Cor da gaveta</string>
-  <string name="app_drawer_color_dark">Escuro</string>
-  <string name="app_drawer_color_light">Clara</string>
-  <string name="fast_scroller">Rolagem rápida</string>
-  <string name="fast_scroller_type">Tipo de rolagem rápida</string>
-  <string name="fast_scroller_type_horizontal">Horizontal</string>
-  <string name="fast_scroller_type_vertical">Vertical</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Uma atividade de pesquisa não pôde ser encontrada!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Aplicativo não disponível</string>
-  <string name="storage_permission_denied">Não foi possível acessar o armazenamento</string>
-  <string name="export_db_email_subject">Banco de dados do Launcher por região</string>
-  <string name="export_db_could_not">Não foi possível exportar o arquivo de banco de dados</string>
+    <string name="home_screen_settings">CONFIGURAÇÕES DA TELA DE INÍCIO</string>
+    <string name="drawer_settings">CONFIGURAÇÕES DA GAVETA</string>
+    <string name="app_settings">CONFIGURAÇÕES DE APLICATIVO</string>
+    <string name="setting_state_on">LIG</string>
+    <string name="setting_state_off">DESL</string>
+    <string name="setting_state_disabled">DESATIVADO</string>
+    <string name="play_folder_title">Reproduzir</string>
+    <string name="scrolling_wallpaper">Rolar papel de parede</string>
+    <string name="grid_size_text">Tamanho da grade</string>
+    <string name="grid_size_comfortable">Confortável</string>
+    <string name="grid_size_cozy">Aconchegante</string>
+    <string name="grid_size_condensed">Condensado</string>
+    <string name="grid_size_custom">Personalizado (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Selecione tamanho personalizado</string>
+    <string name="dialog_confirm">Confirmar</string>
+    <string name="home_screen_search_text">Barra de pesquisa</string>
+    <string name="larger_icons_text">Ícones grandes</string>
+    <string name="icon_labels">Etiquetas de ícones</string>
+    <string name="icon_labels_show">Mostrar</string>
+    <string name="icon_labels_hide">Ocultar</string>
+    <string name="protected_app_settings">Aplicativos protegidos</string>
+    <string name="export_workspace_layout">Exportar layout</string>
+    <string name="app_drawer_style">Estilo da gaveta</string>
+    <string name="app_drawer_style_compact">Compacto</string>
+    <string name="app_drawer_style_sections">Seções</string>
+    <string name="app_drawer_color">Cor da gaveta</string>
+    <string name="app_drawer_color_dark">Escuro</string>
+    <string name="app_drawer_color_light">Clara</string>
+    <string name="fast_scroller">Rolagem rápida</string>
+    <string name="fast_scroller_type">Tipo de rolagem rápida</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertical</string>
+    <string name="search_activity_not_found">Uma atividade de pesquisa não pôde ser encontrada!</string>
+    <string name="app_not_available">Aplicativo não disponível</string>
+    <string name="storage_permission_denied">Não foi possível acessar o armazenamento</string>
+    <string name="export_db_email_subject">Banco de dados do Launcher por região</string>
+    <string name="export_db_could_not">Não foi possível exportar o arquivo de banco de dados</string>
 </resources>

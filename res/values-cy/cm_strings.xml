@@ -16,18 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <!-- Settings states -->
-  <!-- Folder titles -->
-  <!-- Wallpaper scroll effect -->
-  <!-- Dynamic Grid -->
-  <!-- Dialog -->
-  <!-- Home screen search bar -->
-  <!-- Larger icons -->
-  <!-- Icon labels -->
-  <!-- Protected apps -->
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <!-- Search Manager doesn't exist -->
-  <!-- App not available toast text -->
+    <string name="home_screen_settings">GOSODIADAU\'R SGRIN GARTREF</string>
+    <string name="drawer_settings">GOSODIADAU DRÔR</string>
+    <string name="app_settings">GOSODIADAU AP</string>
+    <string name="setting_state_on">YMLAEN</string>
+    <string name="setting_state_off">I FFWRDD</string>
+    <string name="setting_state_disabled">ANALLUOGWYD</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Sgrolio papur wal</string>
+    <string name="grid_size_text">Maint grid</string>
+    <string name="grid_size_comfortable">Cyfforddus</string>
+    <string name="grid_size_cozy">Cysurus</string>
+    <string name="grid_size_condensed">Cyddwysedig</string>
+    <string name="grid_size_custom">Addasedig (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Dewis maint dy hun</string>
+    <string name="dialog_confirm">Cadarnhau</string>
+    <string name="home_screen_search_text">Bar chwilio</string>
+    <string name="larger_icons_text">Eiconau mwy</string>
+    <string name="icon_labels">Labeli eiconau</string>
+    <string name="icon_labels_show">Dangos</string>
+    <string name="icon_labels_hide">Cuddio</string>
+    <string name="protected_app_settings">Apiau wedi\'u gwarchod</string>
+    <string name="export_workspace_layout">Allforio\'r cynllun</string>
+    <string name="app_drawer_style">Arddull drôr</string>
+    <string name="app_drawer_style_compact">Cryno</string>
+    <string name="app_drawer_style_sections">Adrannau</string>
+    <string name="app_drawer_color">Lliw drôr</string>
+    <string name="app_drawer_color_dark">Tywyll</string>
+    <string name="app_drawer_color_light">Golau</string>
+    <string name="fast_scroller">Sgroliwr cyflym</string>
+    <string name="fast_scroller_type">Math o sgroliwr cyflym</string>
+    <string name="fast_scroller_type_horizontal">Llorwedol</string>
+    <string name="fast_scroller_type_vertical">Fertigol</string>
+    <string name="search_activity_not_found">Methwyd â chanfod gweithgaredd chwilio!</string>
+    <string name="app_not_available">Ap ddim ar gael</string>
+    <string name="storage_permission_denied">Methu â chael at y storfa</string>
+    <string name="export_db_email_subject">Lansiwr DB i\'r rhanbarth</string>
+    <string name="export_db_could_not">Methwyd ag allforio ffeil DB</string>
 </resources>

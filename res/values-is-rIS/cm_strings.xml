@@ -16,18 +16,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <!-- Settings states -->
-  <!-- Folder titles -->
-  <!-- Wallpaper scroll effect -->
-  <!-- Dynamic Grid -->
-  <!-- Dialog -->
-  <!-- Home screen search bar -->
-  <!-- Larger icons -->
-  <!-- Icon labels -->
-  <!-- Protected apps -->
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <!-- Search Manager doesn't exist -->
-  <!-- App not available toast text -->
+    <string name="storage_permission_denied">Get ekki opnað geymslurými</string>
 </resources>

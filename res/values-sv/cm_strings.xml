@@ -16,52 +16,39 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">HEMSKÄRMSINSTÄLLNINGAR</string>
-  <string name="drawer_settings">APPMENYINSTÄLLNINGAR</string>
-  <string name="app_settings">APPINSTÄLLNINGAR</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">PÅ</string>
-  <string name="setting_state_off">AV</string>
-  <string name="setting_state_disabled">INAKTIVERAD</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Spela</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Rulla bakgrundsbild</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Rutnätsstorlek</string>
-  <string name="grid_size_comfortable">Komfortabel</string>
-  <string name="grid_size_cozy">Mysig</string>
-  <string name="grid_size_condensed">Kondenserad</string>
-  <string name="grid_size_custom">Anpassad (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Välj anpassad storlek</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Bekräfta</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Sökfält</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Större ikoner</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Ikonetiketter</string>
-  <string name="icon_labels_show">Visa</string>
-  <string name="icon_labels_hide">Dölj</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Skyddade appar</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Exportera layout</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Stil på appmenyn</string>
-  <string name="app_drawer_style_compact">Kompakt</string>
-  <string name="app_drawer_style_sections">Sektioner</string>
-  <string name="app_drawer_color">Färg på appmenyn</string>
-  <string name="app_drawer_color_dark">Mörk</string>
-  <string name="app_drawer_color_light">Ljus</string>
-  <string name="fast_scroller">Snabbrullare</string>
-  <string name="fast_scroller_type">Typ av snabbrullare</string>
-  <string name="fast_scroller_type_horizontal">Horisontell</string>
-  <string name="fast_scroller_type_vertical">Vertikal</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Kunde inte hitta en sökaktivitet!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Appen är inte tillgänglig</string>
+    <string name="home_screen_settings">HEMSKÄRMSINSTÄLLNINGAR</string>
+    <string name="drawer_settings">APPMENYINSTÄLLNINGAR</string>
+    <string name="app_settings">APPINSTÄLLNINGAR</string>
+    <string name="setting_state_on">PÅ</string>
+    <string name="setting_state_off">AV</string>
+    <string name="setting_state_disabled">INAKTIVERAD</string>
+    <string name="play_folder_title">Spela</string>
+    <string name="scrolling_wallpaper">Rulla bakgrundsbild</string>
+    <string name="grid_size_text">Rutnätsstorlek</string>
+    <string name="grid_size_comfortable">Komfortabel</string>
+    <string name="grid_size_cozy">Mysig</string>
+    <string name="grid_size_condensed">Kondenserad</string>
+    <string name="grid_size_custom">Anpassad (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Välj anpassad storlek</string>
+    <string name="dialog_confirm">Bekräfta</string>
+    <string name="home_screen_search_text">Sökfält</string>
+    <string name="larger_icons_text">Större ikoner</string>
+    <string name="icon_labels">Ikonetiketter</string>
+    <string name="icon_labels_show">Visa</string>
+    <string name="icon_labels_hide">Dölj</string>
+    <string name="protected_app_settings">Skyddade appar</string>
+    <string name="export_workspace_layout">Exportera layout</string>
+    <string name="app_drawer_style">Stil på appmenyn</string>
+    <string name="app_drawer_style_compact">Kompakt</string>
+    <string name="app_drawer_style_sections">Sektioner</string>
+    <string name="app_drawer_color">Färg på appmenyn</string>
+    <string name="app_drawer_color_dark">Mörk</string>
+    <string name="app_drawer_color_light">Ljus</string>
+    <string name="fast_scroller">Snabbrullare</string>
+    <string name="fast_scroller_type">Typ av snabbrullare</string>
+    <string name="fast_scroller_type_horizontal">Horisontell</string>
+    <string name="fast_scroller_type_vertical">Vertikal</string>
+    <string name="search_activity_not_found">Kunde inte hitta en sökaktivitet!</string>
+    <string name="app_not_available">Appen är inte tillgänglig</string>
+    <string name="export_db_could_not">Kunde inte exportera DB fil</string>
 </resources>

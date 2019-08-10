@@ -16,41 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">ƏSAS EKRAN TƏNZİMLƏMƏLƏRİ</string>
-  <string name="drawer_settings">TƏTBİQETMƏ MENYUSU</string>
-  <string name="app_settings">TƏTBİQETMƏ TƏNZİMLƏMƏLƏRİ</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">AÇIQ</string>
-  <string name="setting_state_off">BAĞLI</string>
-  <string name="setting_state_disabled">LƏĞV EDİLDİ</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Divar kağızını sürüşdür</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Tor ölçüsü</string>
-  <string name="grid_size_comfortable">Geniş</string>
-  <string name="grid_size_cozy">Rahat</string>
-  <string name="grid_size_condensed">Sıx</string>
-  <string name="grid_size_custom">Özəl (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Xüsusi ölçü seçin</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Təsdiqlə</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Axtarış sətri</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Böyük nişanlar</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Nişan etiketləri</string>
-  <string name="icon_labels_show">Göstər</string>
-  <string name="icon_labels_hide">Gizlət</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Qorunan tətbiqetmələr</string>
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <string name="fast_scroller_type_vertical">Şaquli</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Axtarış fəaliyyəti tapılmadı!</string>
-  <!-- App not available toast text -->
+    <string name="home_screen_settings">ƏSAS EKRAN TƏNZİMLƏMƏLƏRİ</string>
+    <string name="drawer_settings">TƏTBİQETMƏ MENYUSU</string>
+    <string name="app_settings">TƏTBİQETMƏ TƏNZİMLƏMƏLƏRİ</string>
+    <string name="setting_state_on">AÇIQ</string>
+    <string name="setting_state_off">BAĞLI</string>
+    <string name="setting_state_disabled">SIRADAN ÇIXARILDI</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Divar kağızını sürüşdür</string>
+    <string name="grid_size_text">Tor ölçüsü</string>
+    <string name="grid_size_comfortable">Geniş</string>
+    <string name="grid_size_cozy">Rahat</string>
+    <string name="grid_size_condensed">Sıx</string>
+    <string name="grid_size_custom">Özəl (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Özəl ölçü seçin</string>
+    <string name="dialog_confirm">Təsdiqlə</string>
+    <string name="home_screen_search_text">Axtarış sətri</string>
+    <string name="larger_icons_text">Böyük nişanlar</string>
+    <string name="icon_labels">Nişan etiketləri</string>
+    <string name="icon_labels_show">Göstər</string>
+    <string name="icon_labels_hide">Gizlət</string>
+    <string name="protected_app_settings">Qorunan tətbiqetmələr</string>
+    <string name="export_workspace_layout">Düzümü köçür</string>
+    <string name="app_drawer_style">Siyirmə stili</string>
+    <string name="app_drawer_style_compact">Yığcam</string>
+    <string name="app_drawer_style_sections">Bölmələr</string>
+    <string name="app_drawer_color">Siyirmə rəngi</string>
+    <string name="app_drawer_color_dark">Tünd</string>
+    <string name="app_drawer_color_light">Açıq</string>
+    <string name="fast_scroller">Sürətli sürüşdürücü</string>
+    <string name="fast_scroller_type">Sürətli sürüşdürücü növü</string>
+    <string name="fast_scroller_type_horizontal">Üfüqi</string>
+    <string name="fast_scroller_type_vertical">Şaquli</string>
+    <string name="search_activity_not_found">Axtarış fəaliyyəti tapılmadı!</string>
+    <string name="app_not_available">Tətbiq mövcud deyil</string>
+    <string name="storage_permission_denied">Anbara müraciət edilə bilmir</string>
+    <string name="export_db_email_subject">Region üçün DB Başladıcı</string>
+    <string name="export_db_could_not">Verilənlər bazası faylı köçürülə bilmədi</string>
 </resources>

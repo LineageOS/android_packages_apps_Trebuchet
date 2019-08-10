@@ -16,50 +16,36 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">ಹೋಮ್ ಪರದೆ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-  <string name="drawer_settings">ಡ್ರಾ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-  <string name="app_settings">ಆಪ್ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">ಆನ್</string>
-  <string name="setting_state_off">ಆಫ್</string>
-  <string name="setting_state_disabled">ನಿಷ್ಕ್ರಿಯಗೊಂಡಿದೆ</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">ಪ್ಲೇ</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">ವಾಲ್‍ಪೇಪರ್ ಸ್ಕ್ರೋಲ್ ಮಾಡು</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">ಗ್ರಿಡ್ ಗಾತ್ರ</string>
-  <string name="grid_size_comfortable">ಆರಾಮದಾಯಕ</string>
-  <string name="grid_size_cozy">ಅನುಕೂಲಕರ</string>
-  <string name="grid_size_condensed">ಸಾಂದ್ರೀಕೃತ</string>
-  <string name="grid_size_custom">ಕಸ್ಟಮ್ (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">ಕಸ್ಟಮ್ ಗಾತ್ರ ಆಯ್ಕೆಮಾಡಿ</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">ಖಚಿತಪಡಿಸಿ</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">ಹುಡುಕುವ ಬಾರ್</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">ದೊಡ್ಡ ಐಕಾನ್ಸ್</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">ಐಕಾನ್ ಲೇಬಲ್ಸ್</string>
-  <string name="icon_labels_show">ಪ್ರದರ್ಶಿಸು</string>
-  <string name="icon_labels_hide">ಮರೆಮಾಡು</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">ಸಂರಕ್ಷಿತ ಆಪ್ಸ್</string>
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">ಡ್ರಾವರ್ ಶೈಲಿ‌</string>
-  <string name="app_drawer_style_compact">ಕಾಂಪ್ಯಾಕ್ಟ್‌</string>
-  <string name="app_drawer_style_sections">ವಿಭಾಗಗಳು</string>
-  <string name="app_drawer_color">ಡ್ರಾವರ್‌ ಬಣ್ಣ</string>
-  <string name="app_drawer_color_dark">ಗಾಢ ಹಿನ್ನೆಲೆ</string>
-  <string name="app_drawer_color_light">ಮಂದ ಬೆಳಕು</string>
-  <string name="fast_scroller">ಶೀಘ್ರ ಸ್ಕ್ರೋಲರ್</string>
-  <string name="fast_scroller_type">ಶೀಘ್ರ ಸ್ಕ್ರೋಲರ್ ವಿಧ</string>
-  <string name="fast_scroller_type_horizontal">ಲಂಬ</string>
-  <string name="fast_scroller_type_vertical">ಲಂಬ</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">ಶೋಧನೆ ಚಟುವಟಿಕೆ ಪತ್ತೆಯಾಗಲಿಲ್ಲ!</string>
-  <!-- App not available toast text -->
+    <string name="home_screen_settings">ಹೋಮ್ ಪರದೆ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
+    <string name="drawer_settings">ಡ್ರಾ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
+    <string name="app_settings">ಆಪ್ ಸೆಟ್ಟಿಂಗ್ಸ್</string>
+    <string name="setting_state_on">ಆನ್</string>
+    <string name="setting_state_off">ಆಫ್</string>
+    <string name="setting_state_disabled">ನಿಷ್ಕ್ರಿಯಗೊಂಡಿದೆ</string>
+    <string name="play_folder_title">ಪ್ಲೇ</string>
+    <string name="scrolling_wallpaper">ವಾಲ್‍ಪೇಪರ್ ಸ್ಕ್ರೋಲ್ ಮಾಡು</string>
+    <string name="grid_size_text">ಗ್ರಿಡ್ ಗಾತ್ರ</string>
+    <string name="grid_size_comfortable">ಆರಾಮದಾಯಕ</string>
+    <string name="grid_size_cozy">ಅನುಕೂಲಕರ</string>
+    <string name="grid_size_condensed">ಸಾಂದ್ರೀಕೃತ</string>
+    <string name="grid_size_custom">ಕಸ್ಟಮ್ (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">ಕಸ್ಟಮ್ ಗಾತ್ರ ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="dialog_confirm">ಖಚಿತಪಡಿಸಿ</string>
+    <string name="home_screen_search_text">ಹುಡುಕುವ ಬಾರ್</string>
+    <string name="larger_icons_text">ದೊಡ್ಡ ಐಕಾನ್ಸ್</string>
+    <string name="icon_labels">ಐಕಾನ್ ಲೇಬಲ್ಸ್</string>
+    <string name="icon_labels_show">ಪ್ರದರ್ಶಿಸು</string>
+    <string name="icon_labels_hide">ಮರೆಮಾಡು</string>
+    <string name="protected_app_settings">ಸಂರಕ್ಷಿತ ಆಪ್ಸ್</string>
+    <string name="app_drawer_style">ಡ್ರಾವರ್ ಶೈಲಿ‌</string>
+    <string name="app_drawer_style_compact">ಕಾಂಪ್ಯಾಕ್ಟ್‌</string>
+    <string name="app_drawer_style_sections">ವಿಭಾಗಗಳು</string>
+    <string name="app_drawer_color">ಡ್ರಾವರ್‌ ಬಣ್ಣ</string>
+    <string name="app_drawer_color_dark">ಗಾಢ ಹಿನ್ನೆಲೆ</string>
+    <string name="app_drawer_color_light">ಮಂದ ಬೆಳಕು</string>
+    <string name="fast_scroller">ಶೀಘ್ರ ಸ್ಕ್ರೋಲರ್</string>
+    <string name="fast_scroller_type">ಶೀಘ್ರ ಸ್ಕ್ರೋಲರ್ ವಿಧ</string>
+    <string name="fast_scroller_type_horizontal">ಲಂಬ</string>
+    <string name="fast_scroller_type_vertical">ಲಂಬ</string>
+    <string name="search_activity_not_found">ಶೋಧನೆ ಚಟುವಟಿಕೆ ಪತ್ತೆಯಾಗಲಿಲ್ಲ!</string>
 </resources>

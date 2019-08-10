@@ -16,50 +16,36 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">STARTSCHIERM-ASTELLUNGEN</string>
-  <string name="drawer_settings">ASTELLUNGE VUN DER APP-IWWERSIICHT</string>
-  <string name="app_settings">APP-ASTELLUNGEN</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">UN</string>
-  <string name="setting_state_off">AUS</string>
-  <string name="setting_state_disabled">DESAKTIVÉIEREN</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Hannergrondbild scrollen</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Gittergréisst</string>
-  <string name="grid_size_comfortable">Gemittlech</string>
-  <string name="grid_size_cozy">Heemlech</string>
-  <string name="grid_size_condensed">Schmuel</string>
-  <string name="grid_size_custom">Personaliséiert (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Personaliséiert Gréisst auswielen</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Bestätegen</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Sichkëscht</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Grouss Symboler</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Symbol-Beschrëftungen</string>
-  <string name="icon_labels_show">Uweisen</string>
-  <string name="icon_labels_hide">Verstoppen</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Geschützt Appen</string>
-  <!-- Developer settings -->
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Stil vun der der App-Iwwersiicht</string>
-  <string name="app_drawer_style_compact">Kompakt</string>
-  <string name="app_drawer_style_sections">Beräicher</string>
-  <string name="app_drawer_color">Faarf vun der der App-Iwwersiicht</string>
-  <string name="app_drawer_color_dark">Däischter</string>
-  <string name="app_drawer_color_light">Hell</string>
-  <string name="fast_scroller_type_horizontal">Horizontal</string>
-  <string name="fast_scroller_type_vertical">Vertikal</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Eng Sichaktivitéit konnt net fonnt ginn!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">App net disponibel</string>
-  <string name="storage_permission_denied">Kann net op de Späicher zougräifen</string>
+    <string name="home_screen_settings">STARTSCHIERM-ASTELLUNGEN</string>
+    <string name="drawer_settings">ASTELLUNGE VUN DER APP-IWWERSIICHT</string>
+    <string name="app_settings">APP-ASTELLUNGEN</string>
+    <string name="setting_state_on">UN</string>
+    <string name="setting_state_off">AUS</string>
+    <string name="setting_state_disabled">DESAKTIVÉIEREN</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Hannergrondbild scrollen</string>
+    <string name="grid_size_text">Gittergréisst</string>
+    <string name="grid_size_comfortable">Gemittlech</string>
+    <string name="grid_size_cozy">Heemlech</string>
+    <string name="grid_size_condensed">Schmuel</string>
+    <string name="grid_size_custom">Personaliséiert (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Personaliséiert Gréisst auswielen</string>
+    <string name="dialog_confirm">Bestätegen</string>
+    <string name="home_screen_search_text">Sichkëscht</string>
+    <string name="larger_icons_text">Grouss Symboler</string>
+    <string name="icon_labels">Symbol-Beschrëftungen</string>
+    <string name="icon_labels_show">Uweisen</string>
+    <string name="icon_labels_hide">Verstoppen</string>
+    <string name="protected_app_settings">Geschützt Appen</string>
+    <string name="app_drawer_style">Stil vun der der App-Iwwersiicht</string>
+    <string name="app_drawer_style_compact">Kompakt</string>
+    <string name="app_drawer_style_sections">Beräicher</string>
+    <string name="app_drawer_color">Faarf vun der der App-Iwwersiicht</string>
+    <string name="app_drawer_color_dark">Däischter</string>
+    <string name="app_drawer_color_light">Hell</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertikal</string>
+    <string name="search_activity_not_found">Eng Sichaktivitéit konnt net fonnt ginn!</string>
+    <string name="app_not_available">App net disponibel</string>
+    <string name="storage_permission_denied">Kann net op de Späicher zougräifen</string>
 </resources>

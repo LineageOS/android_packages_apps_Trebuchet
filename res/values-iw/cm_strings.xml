@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">הגדרות מסך הבית</string>
-  <string name="drawer_settings">הגדרות חלונית יישומים</string>
-  <string name="app_settings">הגדרות יישום</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">מופעל</string>
-  <string name="setting_state_off">כבוי</string>
-  <string name="setting_state_disabled">מושבת</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">גלילת טפט</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">גודל רשת</string>
-  <string name="grid_size_comfortable">נוח</string>
-  <string name="grid_size_cozy">נעים</string>
-  <string name="grid_size_condensed">מרוכז</string>
-  <string name="grid_size_custom">מותאם אישית (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">בחר גודל מותאם אישית</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">אישור</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">סרגל החיפוש</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">סמלים גדולים יותר</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">תוויות סמלים</string>
-  <string name="icon_labels_show">הצג</string>
-  <string name="icon_labels_hide">הסתר</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">יישומים מוגנים</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">ייצוא פריסה</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">סגנון חלונית יישומים</string>
-  <string name="app_drawer_style_compact">קומפקטי</string>
-  <string name="app_drawer_style_sections">חלקים</string>
-  <string name="app_drawer_color">צבע חלונית יישומים</string>
-  <string name="app_drawer_color_dark">כהה</string>
-  <string name="app_drawer_color_light">בהיר</string>
-  <string name="fast_scroller">גלילה מהירה</string>
-  <string name="fast_scroller_type">סוג גלילה מהירה</string>
-  <string name="fast_scroller_type_horizontal">אופקי</string>
-  <string name="fast_scroller_type_vertical">לאורך</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">לא ניתן היה למצוא פעולת חיפוש!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">יישום לא זמין</string>
-  <string name="storage_permission_denied">לא ניתן לגשת לאחסון</string>
-  <string name="export_db_email_subject">ייצא מסד נתונים עבור אזור</string>
-  <string name="export_db_could_not">לא ניתן לייצא את קובץ מסד הנתונים</string>
+    <string name="home_screen_settings">הגדרות מסך הבית</string>
+    <string name="drawer_settings">הגדרות חלונית יישומים</string>
+    <string name="app_settings">הגדרות יישום</string>
+    <string name="setting_state_on">מופעל</string>
+    <string name="setting_state_off">כבוי</string>
+    <string name="setting_state_disabled">מושבת</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">גלילת טפט</string>
+    <string name="grid_size_text">גודל רשת</string>
+    <string name="grid_size_comfortable">נוח</string>
+    <string name="grid_size_cozy">נעים</string>
+    <string name="grid_size_condensed">מרוכז</string>
+    <string name="grid_size_custom">מותאם אישית (<xliff:g id="rows">%1$d </xliff:g> \u00d7 <xliff:g id="columns">%2$d </xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">בחר גודל מותאם אישית</string>
+    <string name="dialog_confirm">אישור</string>
+    <string name="home_screen_search_text">סרגל החיפוש</string>
+    <string name="larger_icons_text">סמלים גדולים יותר</string>
+    <string name="icon_labels">תוויות סמלים</string>
+    <string name="icon_labels_show">הצג</string>
+    <string name="icon_labels_hide">הסתר</string>
+    <string name="protected_app_settings">יישומים מוגנים</string>
+    <string name="export_workspace_layout">ייצוא פריסה</string>
+    <string name="app_drawer_style">סגנון חלונית יישומים</string>
+    <string name="app_drawer_style_compact">קומפקטי</string>
+    <string name="app_drawer_style_sections">חלקים</string>
+    <string name="app_drawer_color">צבע חלונית יישומים</string>
+    <string name="app_drawer_color_dark">כהה</string>
+    <string name="app_drawer_color_light">בהיר</string>
+    <string name="fast_scroller">גלילה מהירה</string>
+    <string name="fast_scroller_type">סוג גלילה מהירה</string>
+    <string name="fast_scroller_type_horizontal">אופקי</string>
+    <string name="fast_scroller_type_vertical">לאורך</string>
+    <string name="search_activity_not_found">לא ניתן היה למצוא פעולת חיפוש!</string>
+    <string name="app_not_available">יישום לא זמין</string>
+    <string name="storage_permission_denied">לא ניתן לגשת לאחסון</string>
+    <string name="export_db_email_subject">ייצא מסד נתונים עבור אזור</string>
+    <string name="export_db_could_not">לא ניתן לייצא את קובץ מסד הנתונים</string>
 </resources>

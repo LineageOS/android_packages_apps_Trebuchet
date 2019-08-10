@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">INDSTILLINGER FOR STARTSKÆRM</string>
-  <string name="drawer_settings">INDSTILLINGER FOR OVERSIGT</string>
-  <string name="app_settings">APP-INDSTILLINGER</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">TIL</string>
-  <string name="setting_state_off">FRA</string>
-  <string name="setting_state_disabled">HANDICAPPET</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play-apps</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Rul baggrund</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Gitterstørrelse</string>
-  <string name="grid_size_comfortable">Behageligt</string>
-  <string name="grid_size_cozy">Hyggeligt</string>
-  <string name="grid_size_condensed">Sammentrængt</string>
-  <string name="grid_size_custom">Brugerdefineret (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Vælg brugerdefineret størrelse</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Bekræft</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Søgelinje</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Større ikoner</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Ikontekster</string>
-  <string name="icon_labels_show">Vis</string>
-  <string name="icon_labels_hide">Skjul</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Beskyttede apps</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Eksporter layout</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Oversigtsstil</string>
-  <string name="app_drawer_style_compact">Kompakt</string>
-  <string name="app_drawer_style_sections">Sektioner</string>
-  <string name="app_drawer_color">Oversigtsfarve</string>
-  <string name="app_drawer_color_dark">Mørk</string>
-  <string name="app_drawer_color_light">Lys</string>
-  <string name="fast_scroller">Hurtig scroller</string>
-  <string name="fast_scroller_type">Hurtig scrollertype</string>
-  <string name="fast_scroller_type_horizontal">Vandret</string>
-  <string name="fast_scroller_type_vertical">Lodret</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">En funktion til søgning findes ikke!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">App ikke tilgængelig</string>
-  <string name="storage_permission_denied">Kunne ikke få adgang til lager</string>
-  <string name="export_db_email_subject">Launcher DB for region</string>
-  <string name="export_db_could_not">Kunne ikke eksportere DB-fil</string>
+    <string name="home_screen_settings">INDSTILLINGER FOR STARTSKÆRM</string>
+    <string name="drawer_settings">INDSTILLINGER FOR OVERSIGT</string>
+    <string name="app_settings">APP-INDSTILLINGER</string>
+    <string name="setting_state_on">TIL</string>
+    <string name="setting_state_off">FRA</string>
+    <string name="setting_state_disabled">HANDICAPPET</string>
+    <string name="play_folder_title">Play-apps</string>
+    <string name="scrolling_wallpaper">Rul baggrund</string>
+    <string name="grid_size_text">Gitterstørrelse</string>
+    <string name="grid_size_comfortable">Behageligt</string>
+    <string name="grid_size_cozy">Hyggeligt</string>
+    <string name="grid_size_condensed">Sammentrængt</string>
+    <string name="grid_size_custom">Brugerdefineret (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Vælg brugerdefineret størrelse</string>
+    <string name="dialog_confirm">Bekræft</string>
+    <string name="home_screen_search_text">Søgebjælke</string>
+    <string name="larger_icons_text">Større ikoner</string>
+    <string name="icon_labels">Ikontekster</string>
+    <string name="icon_labels_show">Vis</string>
+    <string name="icon_labels_hide">Skjul</string>
+    <string name="protected_app_settings">Beskyttede apps</string>
+    <string name="export_workspace_layout">Eksporter layout</string>
+    <string name="app_drawer_style">Oversigtsstil</string>
+    <string name="app_drawer_style_compact">Kompakt</string>
+    <string name="app_drawer_style_sections">Sektioner</string>
+    <string name="app_drawer_color">Oversigtsfarve</string>
+    <string name="app_drawer_color_dark">Mørk</string>
+    <string name="app_drawer_color_light">Lys</string>
+    <string name="fast_scroller">Hurtig scroller</string>
+    <string name="fast_scroller_type">Hurtig scrollertype</string>
+    <string name="fast_scroller_type_horizontal">Vandret</string>
+    <string name="fast_scroller_type_vertical">Lodret</string>
+    <string name="search_activity_not_found">En søgningsaktivitet kunne ikke findes!</string>
+    <string name="app_not_available">App ikke tilgængelig</string>
+    <string name="storage_permission_denied">Kunne ikke få adgang til lager</string>
+    <string name="export_db_email_subject">Launcher DB for region</string>
+    <string name="export_db_could_not">Kunne ikke eksportere DB-fil</string>
 </resources>

@@ -16,55 +16,41 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Application name -->
-  <string name="home_screen_settings">DEFINIÇÕES DO ECRÃ INICIAL</string>
-  <string name="drawer_settings">DEFINIÇÕES DO PAINEL DE APLICAÇÕES</string>
-  <string name="app_settings">DEFINIÇÕES DA APLICAÇÃO</string>
-  <!-- Settings states -->
-  <string name="setting_state_on">LIGADO</string>
-  <string name="setting_state_off">DESLIGADO</string>
-  <string name="setting_state_disabled">DESATIVADO</string>
-  <!-- Folder titles -->
-  <string name="play_folder_title">Play</string>
-  <!-- Wallpaper scroll effect -->
-  <string name="scrolling_wallpaper">Deslizar imagem de fundo</string>
-  <!-- Dynamic Grid -->
-  <string name="grid_size_text">Tamanho da grelha</string>
-  <string name="grid_size_comfortable">Confortável</string>
-  <string name="grid_size_cozy">Cómodo</string>
-  <string name="grid_size_condensed">Condensado</string>
-  <string name="grid_size_custom">Personalizado (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
-  <string name="preferences_interface_homescreen_custom">Selecionar o tamanho personalizado</string>
-  <!-- Dialog -->
-  <string name="dialog_confirm">Confirmar</string>
-  <!-- Home screen search bar -->
-  <string name="home_screen_search_text">Barra de pesquisa</string>
-  <!-- Larger icons -->
-  <string name="larger_icons_text">Ícones grandes</string>
-  <!-- Icon labels -->
-  <string name="icon_labels">Legendas dos ícones</string>
-  <string name="icon_labels_show">Mostrar</string>
-  <string name="icon_labels_hide">Ocultar</string>
-  <!-- Protected apps -->
-  <string name="protected_app_settings">Aplicações protegidas</string>
-  <!-- Developer settings -->
-  <string name="export_workspace_layout">Exportar esquema</string>
-  <!-- Drawer settings -->
-  <string name="app_drawer_style">Estilo do painel de aplicações</string>
-  <string name="app_drawer_style_compact">Compacto</string>
-  <string name="app_drawer_style_sections">Secções</string>
-  <string name="app_drawer_color">Cor do painel de aplicações</string>
-  <string name="app_drawer_color_dark">Escuro</string>
-  <string name="app_drawer_color_light">Claro</string>
-  <string name="fast_scroller">Deslocamento rápido</string>
-  <string name="fast_scroller_type">Tipo de deslocamento rápido</string>
-  <string name="fast_scroller_type_horizontal">Horizontal</string>
-  <string name="fast_scroller_type_vertical">Vertical</string>
-  <!-- Search Manager doesn't exist -->
-  <string name="search_activity_not_found">Não foi encontrado nenhum gestor de pesquisas!</string>
-  <!-- App not available toast text -->
-  <string name="app_not_available">Aplicação não disponível</string>
-  <string name="storage_permission_denied">Não é possível aceder ao armazenamento</string>
-  <string name="export_db_email_subject">BD do iniciador por região</string>
-  <string name="export_db_could_not">Não foi possível exportar o ficheiro da BD</string>
+    <string name="home_screen_settings">DEFINIÇÕES DO ECRÃ INICIAL</string>
+    <string name="drawer_settings">DEFINIÇÕES DO PAINEL DE APLICAÇÕES</string>
+    <string name="app_settings">DEFINIÇÕES DA APLICAÇÃO</string>
+    <string name="setting_state_on">LIGADO</string>
+    <string name="setting_state_off">DESLIGADO</string>
+    <string name="setting_state_disabled">DESATIVADO</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Deslizar imagem de fundo</string>
+    <string name="grid_size_text">Tamanho da grelha</string>
+    <string name="grid_size_comfortable">Confortável</string>
+    <string name="grid_size_cozy">Cómodo</string>
+    <string name="grid_size_condensed">Condensado</string>
+    <string name="grid_size_custom">Personalizado (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Selecionar o tamanho personalizado</string>
+    <string name="dialog_confirm">Confirmar</string>
+    <string name="home_screen_search_text">Barra de pesquisa</string>
+    <string name="larger_icons_text">Ícones grandes</string>
+    <string name="icon_labels">Legendas dos ícones</string>
+    <string name="icon_labels_show">Mostrar</string>
+    <string name="icon_labels_hide">Ocultar</string>
+    <string name="protected_app_settings">Aplicações protegidas</string>
+    <string name="export_workspace_layout">Exportar esquema</string>
+    <string name="app_drawer_style">Estilo do painel de aplicações</string>
+    <string name="app_drawer_style_compact">Compacto</string>
+    <string name="app_drawer_style_sections">Secções</string>
+    <string name="app_drawer_color">Cor do painel de aplicações</string>
+    <string name="app_drawer_color_dark">Escuro</string>
+    <string name="app_drawer_color_light">Claro</string>
+    <string name="fast_scroller">Deslocamento rápido</string>
+    <string name="fast_scroller_type">Tipo de deslocamento rápido</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertical</string>
+    <string name="search_activity_not_found">Não foi encontrado nenhum gestor de pesquisas!</string>
+    <string name="app_not_available">Aplicação não disponível</string>
+    <string name="storage_permission_denied">Não é possível aceder ao armazenamento</string>
+    <string name="export_db_email_subject">BD do iniciador por região</string>
+    <string name="export_db_could_not">Não foi possível exportar o ficheiro da BD</string>
 </resources>
