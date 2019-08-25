@@ -40,4 +40,12 @@
     <string name="settings_icon_badging_desc_off">Při obdržení upozornění se nad ikonou nezobrazí bublina</string>
     <string name="play_folder_title">Přehrát</string>
     <string name="statusbar_expand">Posunutím dolů zobrazit oznámení</string>
+    <string name="trust_apps_manager_name">Skryté &amp; Chráněné aplikace</string>
+    <string name="trust_apps_auth_manager">Odemkněte pro nastavení skrytých a chráněných aplikací</string>
+    <string name="trust_apps_auth_open_app">Ověření pro otevření %1$s</string>
+    <string name="trust_apps_loading">Načítání\u2026</string>
+    <string name="trust_apps_no_lock_error">Pro omezení přístupu aplikace prosím nastavte zabezpečenou zamykací obrazovku</string>
+    <string name="trust_apps_help">Nápověda</string>
+    <string name="trust_apps_info_hidden">Skryté aplikace a jejich widgety se nezobrazí v seznamu aplikací</string>
+    <string name="trust_apps_info_protected">Chráněné aplikace vyžadují pro spuštění ze spouštěče ověření</string>
 </resources>
