@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48912b64_38b463ae",
+        "filename": "res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-10-06T12:00:19Z",
+      "side": 1,
+      "message": "Maybe we should change this to WallpaperPicker2, com.android.wallpaper",
+      "range": {
+        "startLine": 77,
+        "startChar": 65,
+        "endLine": 77,
+        "endChar": 92
+      },
+      "revId": "1fa9f8bd819549fa2a6051a6d356d5d06bb2f235",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
