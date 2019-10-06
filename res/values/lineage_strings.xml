@@ -16,4 +16,7 @@
 <resources>
     <!-- Application name -->
     <string name="lineageos_app_name" translatable="false">Trebuchet</string>
+
+    <!-- Folder titles -->
+    <string name="google_folder_title" translatable="false">Google</string>
 </resources>
