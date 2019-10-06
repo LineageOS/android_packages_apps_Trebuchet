@@ -22,6 +22,30 @@
       "revId": "1fa9f8bd819549fa2a6051a6d356d5d06bb2f235",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16860a8e_0c38493c",
+        "filename": "res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-10-06T13:26:16Z",
+      "side": 1,
+      "message": "What about https://github.com/LineageOS/android_packages_apps_Trebuchet/commit/4332fe6d0003587fe39df7bfc171375d4834126a ?",
+      "parentUuid": "48912b64_38b463ae",
+      "range": {
+        "startLine": 77,
+        "startChar": 65,
+        "endLine": 77,
+        "endChar": 92
+      },
+      "revId": "1fa9f8bd819549fa2a6051a6d356d5d06bb2f235",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
