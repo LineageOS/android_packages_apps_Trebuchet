@@ -74,7 +74,7 @@
     <string name="test_information_handler_class" translatable="false"></string>
 
     <!-- Package name of the default wallpaper picker. -->
-    <string name="wallpaper_picker_package" translatable="false"></string>
+    <string name="wallpaper_picker_package" translatable="false">com.android.wallpaper</string>
 
     <!-- Whitelisted package to retrieve packagename for badge. Can be empty. -->
     <string name="shortcutinfo_badgepkg_whitelist" translatable="false"></string>
