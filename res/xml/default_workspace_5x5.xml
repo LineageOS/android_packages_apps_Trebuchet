@@ -45,8 +45,7 @@
         launcher:screen="2"
         launcher:x="2"
         launcher:y="0" >
-        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MAPS;end" />
-        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MUSIC;end" />
+        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_CONTACTS;end" />
     </resolve>
 
     <resolve
@@ -54,8 +53,7 @@
         launcher:screen="3"
         launcher:x="3"
         launcher:y="0" >
-        <favorite
-            launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
+        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_BROWSER;end" />
         <favorite launcher:uri="http://www.example.com/" />
     </resolve>
 
@@ -78,7 +76,6 @@
         launcher:spanX="5"
         launcher:spanY="1" />
 
-
     <appwidget
         launcher:packageName="org.lineageos.lockclock"
         launcher:className="org.lineageos.lockclock.ClockWidgetProvider"
@@ -89,58 +86,51 @@
         launcher:spanY="2" />
 
     <!-- Google Folder -->
-    <folder launcher:screen="0" launcher:x="0" launcher:y="-1" launcher:title="@string/google_title">
+    <!-- Google, Chrome, Gmail, Maps, YouTube, (Drive), (Music), (Movies), Hangouts, Photos -->
+    <folder
+        launcher:title="@string/google_folder_title"
+        launcher:screen="0"
+        launcher:x="0"
+        launcher:y="4">
         <favorite
-            launcher:className="com.google.android.googlequicksearchbox.SearchActivity"
-            launcher:packageName="com.google.android.googlequicksearchbox" />
+            launcher:packageName="com.google.android.googlequicksearchbox"
+            launcher:className="com.google.android.googlequicksearchbox.SearchActivity"/>
         <favorite
-            launcher:className="com.google.android.gm.ConversationListActivityGmail"
-            launcher:packageName="com.google.android.gm" />
+            launcher:packageName="com.google.android.gm"
+            launcher:className="com.google.android.gm.ConversationListActivityGmail"/>
         <favorite
-            launcher:className="com.google.android.maps.MapsActivity"
-            launcher:packageName="com.google.android.apps.maps" />
+            launcher:packageName="com.google.android.apps.maps"
+            launcher:className="com.google.android.maps.MapsActivity"/>
         <favorite
-            launcher:className="com.google.android.youtube.app.honeycomb.Shell$HomeActivity"
-            launcher:packageName="com.google.android.youtube" />
+            launcher:packageName="com.google.android.youtube"
+            launcher:className="com.google.android.youtube.app.honeycomb.Shell$HomeActivity"/>
         <favorite
-            launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity"
-            launcher:packageName="com.google.android.apps.docs" />
+            launcher:packageName="com.google.android.apps.docs"
+            launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity"/>
         <favorite
-            launcher:className="com.android.music.activitymanagement.TopLevelActivity"
-            launcher:packageName="com.google.android.music" />
+            launcher:packageName="com.google.android.music"
+            launcher:className="com.android.music.activitymanagement.TopLevelActivity"/>
         <favorite
-            launcher:className="com.google.android.youtube.videos.EntryPoint"
-            launcher:packageName="com.google.android.videos" />
+            launcher:packageName="com.google.android.videos"
+            launcher:className="com.google.android.youtube.videos.EntryPoint"/>
         <favorite
-            launcher:className="com.google.android.apps.photos.home.HomeActivity"
-            launcher:packageName="com.google.android.apps.photos" />
-        <favorite
-            launcher:className="com.android.calendar.AllInOneActivity"
-            launcher:packageName="com.google.android.calendar" />
-        <favorite
-            launcher:className="com.google.android.keep.activities.BrowseActivity"
-            launcher:packageName="com.google.android.keep" />
+            launcher:packageName="com.google.android.apps.photos"
+            launcher:className="com.google.android.apps.photos.home.HomeActivity"/>
     </folder>
 
-    <resolve
+    <favorite
         launcher:screen="0"
         launcher:x="1"
-        launcher:y="-1" >
-        <favorite
-            launcher:className="com.google.android.apps.tachyon.MainActivity"
-            launcher:packageName="com.google.android.apps.tachyon" />
-    </resolve>
+        launcher:y="4"
+        launcher:packageName="com.google.android.apps.tachyon"
+        launcher:className="com.google.android.apps.tachyon.MainActivity"/>
 
-    <resolve
+    <favorite
         launcher:screen="0"
         launcher:x="4"
-        launcher:y="-1">
-        <favorite
-            launcher:packageName="com.android.vending"
-            launcher:className="com.android.vending.AssetBrowserActivity" />
-        <favorite launcher:uri="#Intent;action=android.intent.action.MAIN;category=android.intent.category.APP_MARKET;end" />
-        <favorite launcher:uri="market://details?id=com.android.launcher" />
-    </resolve>
+        launcher:y="4"
+        launcher:packageName="com.android.vending"
+        launcher:className="com.android.vending.AssetBrowserActivity"/>
 
     <!-- Screen 1 -->
     <appwidget
