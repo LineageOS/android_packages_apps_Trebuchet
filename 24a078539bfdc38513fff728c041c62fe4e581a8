@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2dae127c_1c2a2ae6",
+        "filename": "res/xml/launcher_preferences.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2019-11-01T10:25:53Z",
+      "side": 1,
+      "message": "another cl please",
+      "revId": "24a078539bfdc38513fff728c041c62fe4e581a8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
