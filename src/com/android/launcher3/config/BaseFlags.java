@@ -20,6 +20,7 @@ import static androidx.core.util.Preconditions.checkNotNull;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 
 import androidx.annotation.GuardedBy;
 import androidx.annotation.Keep;
@@ -52,7 +53,9 @@ public abstract class BaseFlags {
     }
 
     public static boolean showFlagTogglerUi(Context context) {
-        return Utilities.IS_DEBUG_DEVICE && Utilities.isDevelopersOptionsEnabled(context);
+        return Utilities.IS_DEBUG_DEVICE &&
+                Settings.Global.getInt(context.getApplicationContext().getContentResolver(),
+                        Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0;
     }
 
     public static final boolean IS_DOGFOOD_BUILD = false;
