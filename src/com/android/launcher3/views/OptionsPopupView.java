@@ -152,9 +152,9 @@ public class OptionsPopupView extends ArrowPopup
         RectF target = new RectF(x - halfSize, y - halfSize, x + halfSize, y + halfSize);
 
         ArrayList<OptionItem> options = new ArrayList<>();
-        int resString = Utilities.existsStyleWallpapers(launcher) ?
+        int resString = existsStyleWallpapers(launcher) ?
                 R.string.styles_wallpaper_button_text : R.string.wallpaper_button_text;
-        int resDrawable = Utilities.existsStyleWallpapers(launcher) ?
+        int resDrawable = existsStyleWallpapers(launcher) ?
                 R.drawable.ic_palette : R.drawable.ic_wallpaper;
         options.add(new OptionItem(resString, resDrawable,
                 ControlType.WALLPAPER_BUTTON, OptionsPopupView::startWallpaperPicker));
@@ -166,6 +166,14 @@ public class OptionsPopupView extends ArrowPopup
                 ControlType.SETTINGS_BUTTON, OptionsPopupView::startSettings));
 
         show(launcher, target, options);
+    }
+
+    private static boolean existsStyleWallpapers(Launcher launcher) {
+        Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER);
+        intent.setComponent(new ComponentName(launcher.getString(R.string.wallpaper_picker_package),
+                "com.android.customization.picker.CustomizationPickerActivity"));
+        ResolveInfo ri = launcher.getPackageManager().resolveActivity(intent, 0);
+        return ri != null;
     }
 
     public static boolean onWidgetsClicked(View view) {
@@ -204,7 +212,7 @@ public class OptionsPopupView extends ArrowPopup
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .putExtra(EXTRA_WALLPAPER_OFFSET,
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage());
-        if (!Utilities.existsStyleWallpapers(launcher)) {
+        if (!existsStyleWallpapers(launcher)) {
             intent.putExtra(EXTRA_WALLPAPER_FLAVOR, "wallpaper_only");
         } else {
             intent.putExtra(EXTRA_WALLPAPER_FLAVOR, "focus_wallpaper");
