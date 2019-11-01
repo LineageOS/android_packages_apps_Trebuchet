@@ -104,9 +104,9 @@ public class AppsSearchContainerLayout extends ExtendedEditText
         // Update the width to match the grid padding
         DeviceProfile dp = mLauncher.getDeviceProfile();
         int myRequestedWidth = getSize(widthMeasureSpec);
-        int rowWidth = myRequestedWidth - mAppsView.getActiveRecyclerView().getPaddingLeft()
-                - mAppsView.getActiveRecyclerView().getPaddingRight();
-
+        int leftRightPadding = dp.desiredWorkspaceLeftRightMarginPx
+                + dp.cellLayoutPaddingLeftRightPx;
+        int rowWidth = myRequestedWidth - leftRightPadding * 2;
         int cellWidth = DeviceProfile.calculateCellWidth(rowWidth, dp.inv.numHotseatIcons);
         int iconVisibleSize = Math.round(ICON_VISIBLE_AREA_FACTOR * dp.iconSizePx);
         int iconPadding = cellWidth - iconVisibleSize;
