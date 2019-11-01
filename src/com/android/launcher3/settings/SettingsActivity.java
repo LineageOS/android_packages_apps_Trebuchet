@@ -25,10 +25,6 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.DialogFragment;
 import android.app.Fragment;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -37,7 +33,6 @@ import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.graphics.GridOptionsProvider;
 import com.android.launcher3.lineage.LineageLauncherCallbacks;
 import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
@@ -55,8 +50,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * Settings activity for Launcher. Currently implements the following setting: Allow rotation
  */
 public class SettingsActivity extends Activity
-        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
-        SharedPreferences.OnSharedPreferenceChangeListener{
+        implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback {
 
     private static final String DEVELOPER_OPTIONS_KEY = "pref_developer_options";
     private static final String FLAGS_PREFERENCE_KEY = "flag_toggler";
@@ -69,8 +63,6 @@ public class SettingsActivity extends Activity
     public static final String EXTRA_SHOW_FRAGMENT_ARGS = ":settings:show_fragment_args";
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
-
-    public static final String GRID_OPTIONS_PREFERENCE_KEY = "pref_grid_options";
 
     public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
 
@@ -91,28 +83,6 @@ public class SettingsActivity extends Activity
             getFragmentManager().beginTransaction()
                     .replace(android.R.id.content, f)
                     .commit();
-        }
-        Utilities.getPrefs(getApplicationContext()).registerOnSharedPreferenceChangeListener(this);
-    }
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (GRID_OPTIONS_PREFERENCE_KEY.equals(key)) {
-
-            final ComponentName cn = new ComponentName(getApplicationContext(),
-                    GridOptionsProvider.class);
-            Context c = getApplicationContext();
-            int oldValue = c.getPackageManager().getComponentEnabledSetting(cn);
-            int newValue;
-            if (Utilities.getPrefs(c).getBoolean(GRID_OPTIONS_PREFERENCE_KEY, false)) {
-                newValue = PackageManager.COMPONENT_ENABLED_STATE_ENABLED;
-            } else {
-                newValue = PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
-            }
-
-            if (oldValue != newValue) {
-                c.getPackageManager().setComponentEnabledSetting(cn, newValue,
-                        PackageManager.DONT_KILL_APP);
-            }
         }
     }
 
@@ -240,11 +210,6 @@ public class SettingsActivity extends Activity
                 case KEY_MINUS_ONE:
                     return LineageUtils.hasPackageInstalled(getActivity(),
                             LineageLauncherCallbacks.SEARCH_PACKAGE);
-
-                case GRID_OPTIONS_PREFERENCE_KEY:
-                    return Utilities.isDevelopersOptionsEnabled(getContext()) &&
-                            Utilities.IS_DEBUG_DEVICE &&
-                            Utilities.existsStyleWallpapers(getContext());
             }
 
             return true;

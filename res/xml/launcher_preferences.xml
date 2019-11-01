@@ -50,12 +50,6 @@
         android:summary="@string/pref_show_google_now_summary"
         android:title="@string/title_show_google_app" />
 
-    <SwitchPreference
-        android:key="pref_grid_options"
-        android:title="Enable grid options"
-        android:defaultValue="false"
-        android:persistent="true" />
-
     <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
         android:persistent="false"
