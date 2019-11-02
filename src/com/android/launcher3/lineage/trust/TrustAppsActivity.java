@@ -18,11 +18,7 @@ package com.android.launcher3.lineage.trust;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -54,7 +50,6 @@ public class TrustAppsActivity extends Activity implements
         LoadTrustComponentsTask.Callback,
         UpdateItemTask.UpdateCallback {
 
-    private static final int REQUEST_AUTH_CODE = 92;
     private static final String KEY_TRUST_ONBOARDING = "pref_trust_onboarding";
 
     private RecyclerView mRecyclerView;
@@ -76,6 +71,7 @@ public class TrustAppsActivity extends Activity implements
         setContentView(R.layout.activity_hidden_apps);
         mRecyclerView = findViewById(R.id.hidden_apps_list);
         mLoadingView = findViewById(R.id.hidden_apps_loading);
+        mLoadingView.setVisibility(View.VISIBLE);
         mProgressBar = findViewById(R.id.hidden_apps_progress_bar);
 
         mAdapter = new TrustAppsAdapter(this);
@@ -85,20 +81,9 @@ public class TrustAppsActivity extends Activity implements
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);
 
-        authenticate();
-    }
+        showOnBoarding(false);
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == REQUEST_AUTH_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                showUi();
-            } else {
-                finish();
-            }
-        }
+        new LoadTrustComponentsTask(mDbHelper, getPackageManager(), this).execute();
     }
 
     @Override
@@ -150,36 +135,6 @@ public class TrustAppsActivity extends Activity implements
         mLoadingView.setVisibility(View.GONE);
         mRecyclerView.setVisibility(View.VISIBLE);
         mAdapter.update(result);
-    }
-
-    private void authenticate() {
-        KeyguardManager manager = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ?
-                getSystemService(KeyguardManager.class) :
-                (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
-        if (manager == null) {
-            throw new NullPointerException("No KeyguardManager found!");
-        }
-
-        String title = getString(R.string.trust_apps_manager_name);
-        String message = getString(R.string.trust_apps_auth_manager);
-        Intent intent = manager.createConfirmDeviceCredentialIntent(title, message);
-
-        if (intent != null) {
-            startActivityForResult(intent, REQUEST_AUTH_CODE);
-            return;
-        }
-
-        Toast.makeText(this, R.string.trust_apps_no_lock_error,
-                Toast.LENGTH_LONG).show();
-        finish();
-    }
-
-    private void showUi() {
-        mLoadingView.setVisibility(View.VISIBLE);
-
-        showOnBoarding(false);
-
-        new LoadTrustComponentsTask(mDbHelper, getPackageManager(), this).execute();
     }
 
     private void showOnBoarding(boolean forceShow) {
