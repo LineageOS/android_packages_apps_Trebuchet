@@ -24,6 +24,7 @@ import static com.android.launcher3.Launcher.REQUEST_BIND_PENDING_APPWIDGET;
 import static com.android.launcher3.Launcher.REQUEST_RECONFIGURE_APPWIDGET;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Process;
 import android.text.TextUtils;
@@ -230,7 +231,8 @@ public class ItemClickHandler {
         }
 
         TrustDatabaseHelper db = TrustDatabaseHelper.getInstance(launcher);
-        boolean isProtected = db.isPackageProtected(item.getTargetComponent().getPackageName());
+        ComponentName cn = item.getTargetComponent();
+        boolean isProtected = cn != null && db.isPackageProtected(cn.getPackageName());
 
         if (isProtected) {
             launcher.startActivitySafelyAuth(v, intent, item);
