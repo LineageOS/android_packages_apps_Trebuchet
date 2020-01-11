@@ -77,8 +77,8 @@
         launcher:spanY="1" />
 
     <appwidget
-        launcher:packageName="org.lineageos.lockclock"
-        launcher:className="org.lineageos.lockclock.ClockWidgetProvider"
+        launcher:packageName="com.android.deskclock"
+        launcher:className="com.android.alarmclock.DigitalAppWidgetProvider"
         launcher:screen="0"
         launcher:x="0"
         launcher:y="1"
