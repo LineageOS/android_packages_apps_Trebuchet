@@ -82,6 +82,8 @@ public class SettingsActivity extends Activity {
     private static final String KEY_GRID_SIZE = "pref_grid_size";
     private static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     private static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
+    public static final String KEY_DEFAULT_HOMESCREEN_ID = "pref_homescreen_default_screen_id";
+    public static final String KEY_WORKSPACE_PAGE_COUNT = "pref_workspace_page_count";
 
     public static final String KEY_WORKSPACE_EDIT = "pref_workspace_edit";
 
@@ -190,6 +192,10 @@ public class SettingsActivity extends Activity {
                 mGridPref.setSummary(mPrefs.getString(KEY_GRID_SIZE, getDefaultGridSize()));
             }
 
+            // set initial values for the default homescreen preference component.
+            updateDefaultHomescreenPreferenceEntries((ListPreference) homeGroup
+                    .findPreference(KEY_DEFAULT_HOMESCREEN_ID));
+
             Preference trustApps = drawerGroup.findPreference("pref_trust_apps");
             if (trustApps != null) {
                 trustApps.setOnPreferenceClickListener(preference -> {
@@ -215,6 +221,8 @@ public class SettingsActivity extends Activity {
             if (isAdded() && !mPreferenceHighlighted && !TextUtils.isEmpty(mPreferenceKey)) {
                 getView().postDelayed(this::highlightPreference, DELAY_HIGHLIGHT_DURATION_MILLIS);
             }
+            updateDefaultHomescreenPreferenceEntries(
+                    (ListPreference) findPreference(KEY_DEFAULT_HOMESCREEN_ID));
         }
 
         private void highlightPreference() {
@@ -275,6 +283,11 @@ public class SettingsActivity extends Activity {
                 case KEY_SHOW_DRAWER_LABELS:
                     mShouldRestart = true;
                     break;
+                case KEY_DEFAULT_HOMESCREEN_ID:
+                    ListPreference defaultHomescreenPreference =
+                            (ListPreference) findPreference(KEY_DEFAULT_HOMESCREEN_ID);
+                    defaultHomescreenPreference.setSummary(defaultHomescreenPreference.getEntry());
+                    break;
             }
         }
 
@@ -316,6 +329,20 @@ public class SettingsActivity extends Activity {
         private String getDefaultGridSize() {
             InvariantDeviceProfile profile = new InvariantDeviceProfile(getActivity());
             return LineageUtils.getGridValue(profile.numColumns, profile.numRows);
+        }
+
+        private void updateDefaultHomescreenPreferenceEntries(ListPreference preference) {
+            if (preference != null) {
+                int pageCount = mPrefs.getInt(SettingsActivity.KEY_WORKSPACE_PAGE_COUNT, 1);
+                String[] prefEntries = new String[pageCount];
+                for (int i = 1; i <= pageCount; i++) {
+                    prefEntries[i] = String.valueOf(i);
+                }
+
+                preference.setSummary(preference.getValue());
+                preference.setEntries(prefEntries);
+                preference.setEntryValues(prefEntries);
+            }
         }
 
         private void triggerRestart() {
