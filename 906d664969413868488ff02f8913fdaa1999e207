@@ -22,6 +22,30 @@
       "revId": "906d664969413868488ff02f8913fdaa1999e207",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a12ad069_57a35460",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T21:41:15Z",
+      "side": 1,
+      "message": "Yes, you are correct. I have applied your suggestion in Patch Set 7.",
+      "parentUuid": "3e3c761c_9087dd41",
+      "range": {
+        "startLine": 339,
+        "startChar": 20,
+        "endLine": 339,
+        "endChar": 33
+      },
+      "revId": "906d664969413868488ff02f8913fdaa1999e207",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
