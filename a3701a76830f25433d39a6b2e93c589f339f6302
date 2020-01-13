@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43b37b41_12c34842",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "over 100 chars, missing space after cast",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 196,
+        "endChar": 122
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73651cc7_e7985ab8",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "over 100 chars",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 113
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3f382b6_ab740fdb",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "over 100 chars",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 124
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4d77aa9_24fb32d7",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "\u003c\u003d pageCount",
+      "range": {
+        "startLine": 335,
+        "startChar": 31,
+        "endLine": 335,
+        "endChar": 47
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91471a94_eb9c3e07",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "I usually prefer to use String.valueOf()",
+      "range": {
+        "startLine": 336,
+        "startChar": 37,
+        "endLine": 336,
+        "endChar": 57
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "351711e6_346f74bd",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "over 100 chars",
+      "range": {
+        "startLine": 297,
+        "startChar": 16,
+        "endLine": 297,
+        "endChar": 109
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4798d4f0_78348b33",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3341,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:33:30Z",
+      "side": 1,
+      "message": "over 100 chars",
+      "range": {
+        "startLine": 3341,
+        "startChar": 0,
+        "endLine": 3341,
+        "endChar": 149
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
