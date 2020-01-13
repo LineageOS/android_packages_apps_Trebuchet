@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e3c761c_9087dd41",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 23281
+      },
+      "writtenOn": "2020-01-13T21:22:57Z",
+      "side": 1,
+      "message": "Still not ok\nI tested with my \"2 pages\" : it proposes to select 1 or 2 whereas it should propose 0 or 1 which is coherent with the fact default is 0 not 1.\n\nyou need to\n\nprefEntries[i] \u003d String.valueOf(i)",
+      "range": {
+        "startLine": 339,
+        "startChar": 20,
+        "endLine": 339,
+        "endChar": 33
+      },
+      "revId": "906d664969413868488ff02f8913fdaa1999e207",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
