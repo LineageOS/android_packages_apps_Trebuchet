@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "0b51ef06_aa219a7a",
+        "filename": "res/xml/launcher_preferences.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-13T12:34:29Z",
+      "side": 1,
+      "message": "move to lineage_strings.xml",
+      "range": {
+        "startLine": 69,
+        "startChar": 27,
+        "endLine": 69,
+        "endChar": 45
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43b37b41_12c34842",
         "filename": "src/com/android/launcher3/SettingsActivity.java",
         "patchSetId": 2
