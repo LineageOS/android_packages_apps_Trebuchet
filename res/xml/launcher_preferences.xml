@@ -63,6 +63,12 @@
             android:title="@string/statusbar_expand"
             android:defaultValue="true"
             android:persistent="true" />
+
+        <ListPreference
+            android:key="pref_homescreen_default_screen_id"
+            android:title="@string/default_homescreen"
+            android:defaultValue="0"
+            android:persistent="true" />
     </PreferenceCategory>
 
     <PreferenceCategory

@@ -65,6 +65,9 @@
     <!-- Expand statusbar -->
     <string name="statusbar_expand">Swipe down to show notifications</string>
 
+    <!-- Default Homescreen -->
+    <string name="default_homescreen">Default homescreen</string>
+
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">Hidden &amp; Protected apps</string>
     <string name="trust_apps_auth_manager">Unlock to manage the hidden and protected apps</string>
