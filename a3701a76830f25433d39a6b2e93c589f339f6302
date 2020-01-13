@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b18eeeec_f7bfc53e",
+        "filename": "res/xml/launcher_preferences.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "0b51ef06_aa219a7a",
+      "range": {
+        "startLine": 69,
+        "startChar": 27,
+        "endLine": 69,
+        "endChar": 45
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43b37b41_12c34842",
         "filename": "src/com/android/launcher3/SettingsActivity.java",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e469bb3_15c3ad81",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "43b37b41_12c34842",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 196,
+        "endChar": 122
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "78999d1c_9e48988f",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "73651cc7_e7985ab8",
+      "range": {
+        "startLine": 223,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 113
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f3f382b6_ab740fdb",
         "filename": "src/com/android/launcher3/SettingsActivity.java",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce2e060e_08c5ae73",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "f3f382b6_ab740fdb",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 124
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "be0dccdd_e0ca24b6",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Yes! Thanks\nFixed in Patch Set 3",
+      "parentUuid": "d4d77aa9_24fb32d7",
+      "range": {
+        "startLine": 335,
+        "startChar": 31,
+        "endLine": 335,
+        "endChar": 47
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "91471a94_eb9c3e07",
         "filename": "src/com/android/launcher3/SettingsActivity.java",
         "patchSetId": 2
@@ -137,6 +257,30 @@
       "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d052563_684515b4",
+        "filename": "src/com/android/launcher3/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Sounds good. Used String.valueOf() here and on what is now line 3345 of Workspace.java (com.android.launcher3.Workspace#moveToDefaultScreen)",
+      "parentUuid": "91471a94_eb9c3e07",
+      "range": {
+        "startLine": 336,
+        "startChar": 37,
+        "endLine": 336,
+        "endChar": 57
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "333558a9_f6b15e42",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "351711e6_346f74bd",
+      "range": {
+        "startLine": 297,
+        "startChar": 16,
+        "endLine": 297,
+        "endChar": 109
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4798d4f0_78348b33",
         "filename": "src/com/android/launcher3/Workspace.java",
         "patchSetId": 2
@@ -183,6 +351,30 @@
       "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08738d02_59db274d",
+        "filename": "src/com/android/launcher3/Workspace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3341,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T18:18:08Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 3",
+      "parentUuid": "4798d4f0_78348b33",
+      "range": {
+        "startLine": 3341,
+        "startChar": 0,
+        "endLine": 3341,
+        "endChar": 149
+      },
+      "revId": "a3701a76830f25433d39a6b2e93c589f339f6302",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
