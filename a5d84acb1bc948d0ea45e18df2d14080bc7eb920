@@ -187,6 +187,30 @@
       "revId": "a5d84acb1bc948d0ea45e18df2d14080bc7eb920",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08a014b2_1fd2f026",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 25158
+      },
+      "writtenOn": "2020-01-13T19:15:57Z",
+      "side": 1,
+      "message": "Fixed in Patch Set 5.",
+      "parentUuid": "3d617daa_c848a40d",
+      "range": {
+        "startLine": 69,
+        "startChar": 46,
+        "endLine": 69,
+        "endChar": 47
+      },
+      "revId": "a5d84acb1bc948d0ea45e18df2d14080bc7eb920",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
