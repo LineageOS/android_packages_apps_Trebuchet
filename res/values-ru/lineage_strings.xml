@@ -40,7 +40,7 @@
     <string name="settings_icon_badging_desc_off">При появлении уведомления над значком не будет отображаться пузырек</string>
     <string name="play_folder_title">Сервисы Play</string>
     <string name="statusbar_expand">Свайп вниз для показа уведомлений</string>
-    <string name="trust_apps_manager_name">Скрытые &amp; Защищенные приложения</string>
+    <string name="trust_apps_manager_name">Скрытые и защищенные приложения</string>
     <string name="trust_apps_auth_manager">Разблокируйте, для управления скрытыми и защищенными приложениями</string>
     <string name="trust_apps_auth_open_app">Авторизуйтесь, для открытия %1$s</string>
     <string name="trust_apps_loading">Загрузка\u2026</string>
