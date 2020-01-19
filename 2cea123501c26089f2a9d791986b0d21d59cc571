@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57777406_082f7d37",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-01-19T12:02:15Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 219,
+        "startChar": 24,
+        "endLine": 219,
+        "endChar": 119
+      },
+      "revId": "2cea123501c26089f2a9d791986b0d21d59cc571",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
