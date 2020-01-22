@@ -15,6 +15,7 @@
  */
 package com.android.launcher3.views;
 
+import static com.android.launcher3.InvariantDeviceProfile.LOCK_DESKTOP_KEY;
 import static com.android.launcher3.Utilities.EXTRA_WALLPAPER_FLAVOR;
 import static com.android.launcher3.Utilities.EXTRA_WALLPAPER_OFFSET;
 
@@ -22,6 +23,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
@@ -59,8 +61,11 @@ public class OptionsPopupView extends ArrowPopup
     private final ArrayMap<View, OptionItem> mItemMap = new ArrayMap<>();
     private RectF mTargetRect;
 
+    private static SharedPreferences prefs;
+
     public OptionsPopupView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
+        prefs = Utilities.getPrefs(context.getApplicationContext());
     }
 
     public OptionsPopupView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -179,7 +184,13 @@ public class OptionsPopupView extends ArrowPopup
     }
 
     public static boolean onWidgetsClicked(View view) {
-        return openWidgets(Launcher.getLauncher(view.getContext())) != null;
+        Launcher launcher = Launcher.getLauncher(view.getContext());
+        if (prefs.getBoolean(LOCK_DESKTOP_KEY, false)){
+            Toast.makeText(launcher, R.string.desktop_is_locked, Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+            return openWidgets(Launcher.getLauncher(view.getContext())) != null;
+        }
     }
 
     /** Returns WidgetsFullSheet that was opened, or null if nothing was opened. */
