@@ -15,12 +15,14 @@
  */
 package com.android.launcher3.views;
 
+import static com.android.launcher3.InvariantDeviceProfile.KEY_LOCK_DESKTOP;
 import static com.android.launcher3.Utilities.EXTRA_WALLPAPER_FLAVOR;
 import static com.android.launcher3.Utilities.EXTRA_WALLPAPER_OFFSET;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ResolveInfo;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -179,7 +181,13 @@ public class OptionsPopupView extends ArrowPopup
     }
 
     public static boolean onWidgetsClicked(View view) {
-        return openWidgets(Launcher.getLauncher(view.getContext())) != null;
+        Launcher launcher = Launcher.getLauncher(view.getContext());
+        SharedPreferences prefs = Utilities.getPrefs(launcher);
+        if (prefs.getBoolean(KEY_LOCK_DESKTOP, false)) {
+            Toast.makeText(launcher, R.string.desktop_is_locked, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return openWidgets(launcher) != null;
     }
 
     /** Returns WidgetsFullSheet that was opened, or null if nothing was opened. */

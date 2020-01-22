@@ -17,11 +17,13 @@
 package com.android.launcher3.dragndrop;
 
 import static com.android.launcher3.AbstractFloatingView.TYPE_DISCOVERY_BOUNCE;
+import static com.android.launcher3.InvariantDeviceProfile.KEY_LOCK_DESKTOP;
 import static com.android.launcher3.LauncherAnimUtils.SPRING_LOADED_EXIT_DELAY;
 import static com.android.launcher3.LauncherState.NORMAL;
 
 import android.animation.ValueAnimator;
 import android.content.ComponentName;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -40,6 +42,7 @@ import com.android.launcher3.DropTarget;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.WorkspaceItemInfo;
 import com.android.launcher3.accessibility.DragViewStateAnnouncer;
 import com.android.launcher3.testing.TestProtocol;
@@ -100,6 +103,8 @@ public class DragController implements DragDriver.EventListener, TouchController
 
     private boolean mIsInPreDrag;
 
+    private SharedPreferences mPrefs;
+
     /**
      * Interface to receive notifications when a drag starts or stops
      */
@@ -124,6 +129,7 @@ public class DragController implements DragDriver.EventListener, TouchController
     public DragController(Launcher launcher) {
         mLauncher = launcher;
         mFlingToDeleteHelper = new FlingToDeleteHelper(launcher);
+        mPrefs = Utilities.getPrefs(launcher.getApplicationContext());
     }
 
     /**
@@ -221,6 +227,9 @@ public class DragController implements DragDriver.EventListener, TouchController
     }
 
     private void callOnDragStart() {
+        if (mPrefs.getBoolean(KEY_LOCK_DESKTOP, false)) {
+            return;
+        }
         if (mOptions.preDragCondition != null) {
             mOptions.preDragCondition.onPreDragEnd(mDragObject, true /* dragStarted*/);
         }
@@ -527,6 +536,10 @@ public class DragController implements DragDriver.EventListener, TouchController
      * Call this from a drag source view.
      */
     public boolean onControllerTouchEvent(MotionEvent ev) {
+        if (mPrefs.getBoolean(KEY_LOCK_DESKTOP, false)) {
+            cancelDrag();
+            return false;
+        }
         if (mDragDriver == null || mOptions == null || mOptions.isAccessibleDrag) {
             return false;
         }
