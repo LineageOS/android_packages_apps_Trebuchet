@@ -1,11 +1,13 @@
 package com.android.launcher3.popup;
 
+import static com.android.launcher3.InvariantDeviceProfile.LOCK_DESKTOP_KEY;
 import static com.android.launcher3.userevent.nano.LauncherLogProto.Action;
 import static com.android.launcher3.userevent.nano.LauncherLogProto.ControlType;
 
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 import com.android.launcher3.WorkspaceItemInfo;
 import com.android.launcher3.model.WidgetItem;
 import com.android.launcher3.util.InstantAppResolver;
@@ -132,6 +135,12 @@ public abstract class SystemShortcut<T extends BaseDraggingActivity> extends Ite
         public View.OnClickListener getOnClickListener(final Launcher launcher,
                 final ItemInfo itemInfo) {
             if (itemInfo.getTargetComponent() == null) return null;
+
+            SharedPreferences prefs = Utilities.getPrefs(launcher.getApplicationContext());
+            if (prefs.getBoolean(LOCK_DESKTOP_KEY, false)) {
+                return null;
+            }
+
             final List<WidgetItem> widgets =
                     launcher.getPopupDataProvider().getWidgetsForPackageUser(new PackageUserKey(
                             itemInfo.getTargetComponent().getPackageName(), itemInfo.user));
