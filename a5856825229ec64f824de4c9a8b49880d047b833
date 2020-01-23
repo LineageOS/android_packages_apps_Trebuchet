@@ -16,6 +16,24 @@
       "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "683a97ce_2542ccf9",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2020-01-23T01:19:19Z",
+      "side": 1,
+      "message": "Nova Launcher calls it \u0027Lock layout\u0027 and has summary \u0027Prevent changes to home screen layout\u0027.",
+      "parentUuid": "c692fa69_f4f677e8",
+      "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
