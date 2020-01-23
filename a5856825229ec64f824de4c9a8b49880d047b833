@@ -70,6 +70,29 @@
       "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8793383_a97d0a41",
+        "filename": "src/com/android/launcher3/views/OptionsPopupView.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-01-23T11:40:39Z",
+      "side": 1,
+      "message": "sPrefs, since it\u0027s a static member variable. Or didn\u0027t you want to make it static?",
+      "range": {
+        "startLine": 64,
+        "startChar": 37,
+        "endLine": 64,
+        "endChar": 43
+      },
+      "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
