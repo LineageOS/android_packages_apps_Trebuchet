@@ -52,6 +52,24 @@
       "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "817c412c_6fd1fecf",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 25234
+      },
+      "writtenOn": "2020-01-23T01:47:04Z",
+      "side": 1,
+      "message": "I used \"desktop\" instead of \"home screen\" because of \u0027Show icon labels on desktop\u0027.",
+      "parentUuid": "208a910a_2cc0ac68",
+      "revId": "a5856825229ec64f824de4c9a8b49880d047b833",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
