@@ -38,6 +38,7 @@
     <!-- Hide labels -->
     <string name="desktop_show_labels">Show icon labels on desktop</string>
     <string name="drawer_show_labels">Show icon labels in drawer</string>
+    <string name="show_labels_landscape">Show icon labels in landscape mode</string>
 
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">Hidden &amp; Protected apps</string>

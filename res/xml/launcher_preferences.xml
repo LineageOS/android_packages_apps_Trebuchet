@@ -79,4 +79,10 @@
         android:title="@string/drawer_show_labels"
         android:defaultValue="true"
         android:persistent="true" />
+
+    <SwitchPreference
+        android:key="pref_show_labels_landscape"
+        android:title="@string/show_labels_landscape"
+        android:defaultValue="false"
+        android:persistent="true" />
 </androidx.preference.PreferenceScreen>

@@ -16,7 +16,10 @@
 
 package com.android.launcher3;
 
+import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_LABELS_LANDSCAPE;
+
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -137,6 +140,8 @@ public class DeviceProfile {
     public DotRenderer mDotRendererWorkSpace;
     public DotRenderer mDotRendererAllApps;
 
+    private SharedPreferences mPrefs;
+
     public DeviceProfile(Context context, InvariantDeviceProfile inv,
             InvariantDeviceProfile originalIDP, Point minSize, Point maxSize,
             int width, int height, boolean isLandscape, boolean isMultiWindowMode) {
@@ -170,6 +175,8 @@ public class DeviceProfile {
         // Some more constants
         transposeLayoutWithOrientation =
                 res.getBoolean(R.bool.hotseat_transpose_layout_with_orientation);
+
+        mPrefs = Utilities.getPrefs(context.getApplicationContext());
 
         context = getContext(context, isVerticalBarLayout()
                 ? Configuration.ORIENTATION_LANDSCAPE
@@ -362,8 +369,8 @@ public class DeviceProfile {
         allAppsCellHeightPx = getCellSize().y;
         allAppsCellWidthPx = allAppsIconSizePx + allAppsIconDrawablePaddingPx;
 
-        if (isVerticalBarLayout()) {
-            // Always hide the Workspace text with vertical bar layout.
+        if (isVerticalBarLayout() && !mPrefs.getBoolean(KEY_SHOW_LABELS_LANDSCAPE, false)) {
+            // Hide Workspace text with vertical bar layout if needed.
             adjustToHideWorkspaceLabels();
         }
 
