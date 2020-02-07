@@ -8,6 +8,9 @@ import android.hardware.biometrics.BiometricPrompt;
 import android.os.CancellationSignal;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.Toast;
+
+import com.android.launcher3.R;
 
 public class LineageUtils {
 
@@ -52,7 +55,8 @@ public class LineageUtils {
                     runnable -> handler.post(runnable),
                     authenticationCallback);
         } else {
-            successRunnable.run();
+            Toast.makeText(context, R.string.trust_apps_no_lock_error, Toast.LENGTH_LONG)
+                .show();
         }
     }
 
