@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9cdad40_73d72dc6",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2020-03-16T18:24:17Z",
+      "side": 1,
+      "message": "100 chars. Also why does this have to be edited?",
+      "revId": "7d6f254ff346c34d5fe073f2a799781c03a847e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
