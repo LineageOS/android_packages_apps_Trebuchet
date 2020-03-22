@@ -144,7 +144,7 @@ public class PackageInstallerCompatVL extends PackageInstallerCompat {
      * - A promise icon for the session has not already been created
      */
     private void tryQueuePromiseAppIcon(SessionInfo sessionInfo) {
-        if (Utilities.ATLEAST_OREO && FeatureFlags.PROMISE_APPS_NEW_INSTALLS.get()
+        if (Utilities.ATLEAST_OREO && FeatureFlags.PROMISE_APPS_NEW_INSTALLS
                 && SessionCommitReceiver.isEnabled(mAppContext)
                 && verify(sessionInfo) != null
                 && sessionInfo.getInstallReason() == PackageManager.INSTALL_REASON_USER
@@ -187,7 +187,7 @@ public class PackageInstallerCompatVL extends PackageInstallerCompat {
                 sendUpdate(PackageInstallInfo.fromState(success ? STATUS_INSTALLED : STATUS_FAILED,
                         packageName, key.mUser));
 
-                if (!success && FeatureFlags.PROMISE_APPS_NEW_INSTALLS.get()
+                if (!success && FeatureFlags.PROMISE_APPS_NEW_INSTALLS
                         && mPromiseIconIds.contains(sessionId)) {
                     LauncherAppState appState = LauncherAppState.getInstanceNoCreate();
                     if (appState != null) {

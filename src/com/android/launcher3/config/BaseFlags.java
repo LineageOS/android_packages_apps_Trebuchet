@@ -64,9 +64,7 @@ public abstract class BaseFlags {
     public static final boolean LAUNCHER3_PROMISE_APPS_IN_ALL_APPS = false;
 
     // When enabled a promise icon is added to the home screen when install session is active.
-    public static final TogglableFlag PROMISE_APPS_NEW_INSTALLS =
-            new TogglableFlag("PROMISE_APPS_NEW_INSTALLS", true,
-                    "Adds a promise icon to the home screen for new install sessions.");
+    public static final boolean PROMISE_APPS_NEW_INSTALLS = false;
 
     // Enable moving the QSB on the 0th screen of the workspace
     public static final boolean QSB_ON_FIRST_SCREEN = false;
