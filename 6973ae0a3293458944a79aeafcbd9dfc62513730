@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db96edc6_3655db20",
+        "filename": "src/com/android/launcher3/config/BaseFlags.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-03-29T14:47:14Z",
+      "side": 1,
+      "message": "Can you prefix it with \"LAUNCHER3_\" so to match the above boolean?",
+      "range": {
+        "startLine": 67,
+        "startChar": 32,
+        "endLine": 67,
+        "endChar": 57
+      },
+      "revId": "6973ae0a3293458944a79aeafcbd9dfc62513730",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
