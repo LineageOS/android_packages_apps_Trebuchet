@@ -37,6 +37,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.lineage.trust.db.TrustComponent;
 import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
@@ -74,7 +75,8 @@ public class TrustAppsActivity extends Activity implements
         mLoadingView.setVisibility(View.VISIBLE);
         mProgressBar = findViewById(R.id.hidden_apps_progress_bar);
 
-        mAdapter = new TrustAppsAdapter(this);
+        final boolean hasSecureKeyguard = LineageUtils.hasSecureKeyguard(this);
+        mAdapter = new TrustAppsAdapter(this, hasSecureKeyguard);
         mDbHelper = TrustDatabaseHelper.getInstance(this);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
