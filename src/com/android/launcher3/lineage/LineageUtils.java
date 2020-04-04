@@ -24,10 +24,7 @@ public class LineageUtils {
      *                        device security or if lock screen is unlocked
      */
     public static void showLockScreen(Context context, String title, Runnable successRunnable) {
-        final KeyguardManager keyguardManager = (KeyguardManager) context.getSystemService(
-                Context.KEYGUARD_SERVICE);
-
-        if (keyguardManager.isKeyguardSecure()) {
+        if (hasSecureKeyguard(context)) {
             final BiometricPrompt.AuthenticationCallback authenticationCallback =
                     new BiometricPrompt.AuthenticationCallback() {
                         @Override
@@ -45,6 +42,8 @@ public class LineageUtils {
             final BiometricPrompt.Builder builder = new BiometricPrompt.Builder(context)
                     .setTitle(title);
 
+            final KeyguardManager keyguardManager = context.getSystemService(KeyguardManager.class);
+
             if (keyguardManager.isDeviceSecure()) {
                 builder.setDeviceCredentialAllowed(true);
             }
@@ -55,9 +54,17 @@ public class LineageUtils {
                     runnable -> handler.post(runnable),
                     authenticationCallback);
         } else {
+            // Notify the user a secure keyguard is required for protected apps,
+            // but allow to set hidden apps
             Toast.makeText(context, R.string.trust_apps_no_lock_error, Toast.LENGTH_LONG)
                 .show();
+            successRunnable.run();
         }
+    }
+
+    public static boolean hasSecureKeyguard(Context context) {
+        final KeyguardManager keyguardManager = context.getSystemService(KeyguardManager.class);
+        return keyguardManager != null && keyguardManager.isKeyguardSecure();
     }
 
     public static boolean hasPackageInstalled(Context context, String pkgName) {
