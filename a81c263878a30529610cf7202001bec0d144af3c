@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8697eb35_5d0ce50d",
+        "filename": "res/xml/device_profiles.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 444
+      },
+      "writtenOn": "2020-04-07T22:16:36Z",
+      "side": 1,
+      "message": "Use 4 spaces in this and the rest of the grid-option lines.",
+      "revId": "a81c263878a30529610cf7202001bec0d144af3c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
