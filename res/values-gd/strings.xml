@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="work_folder_name">Obair</string>
+    <string name="long_press_shortcut_to_add">Suath ri ath-ghoirid ⁊ cùm sìos i airson a togail.</string>
+    <string name="long_accessible_way_to_add_shortcut">Thoir gnogag dhùbailte air ath-ghoirid ⁊ cùm sìos i airson a togail no gnìomhan gnàthaichte a ghabhail.</string>
+    <string name="all_apps_button_personal_label">Liosta nan aplacaidean pearsanta</string>
+    <string name="all_apps_button_work_label">Liosta de dh’aplacaidean na h-obrach</string>
+    <string name="uninstall_drop_target_label">Dì-stàlaich</string>
+    <string name="install_drop_target_label">Stàlaich</string>
+    <string name="gadget_setup_text">Suidheachadh</string>
+    <plurals name="dotted_app_label">
+        <item quantity="one"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, has <xliff:g id="notification_count" example="1">%2$d</xliff:g> bhrath</item>
+        <item quantity="two"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, has <xliff:g id="notification_count" example="1">%2$d</xliff:g> bhrath</item>
+        <item quantity="few"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, has <xliff:g id="notification_count" example="1">%2$d</xliff:g> brathan</item>
+        <item quantity="other"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, has <xliff:g id="notification_count" example="1">%2$d</xliff:g> brath</item>
+    </plurals>
+    <string name="wallpaper_button_text">Pàipearan-balla</string>
+    <string name="notification_dots_service_title">Seall puingean nam brathan</string>
+    <string name="abandoned_search">Lorg</string>
+    <string name="widgets_list">Liosta nan Widgets</string>
+    <string name="widgets_list_closed">Chaidh liosta nan Widgets a dhùnadh</string>
+    <string name="action_resize">Ath-mheudaich</string>
+    <string name="shortcuts_menu_with_notifications_description">Ath-ghoiridean is brathan
+    </string>
+    <string name="all_apps_personal_tab">Pearsanta</string>
+    <string name="all_apps_work_tab">Obair</string>
+    <string name="work_profile_toggle_label">Pròifil na h-obrach</string>
+    <string name="bottom_work_tab_user_education_title">Lorg aplacaidean na h-obrach an-seo</string>
+    <string name="bottom_work_tab_user_education_body">Tha bràiste ris gach aplacaid na h-obrach agus thèid a cumail tèarainte leis a’ bhuidheann agad. Gluais aplacaidean dhan sgrìn dachaigh agad gus an inntrigeadh nas fhasa.</string>
+    <string name="work_mode_on_label">Fo stiùireadh a’ bhuidhinn agad</string>
+    <string name="work_mode_off_label">Tha na brathan is aplacaidean dheth</string>
+    <string name="bottom_work_tab_user_education_close_button">Dùin</string>
+    <string name="bottom_work_tab_user_education_closed">Dùinte</string>
+</resources>
