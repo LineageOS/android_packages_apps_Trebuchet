@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c632ad46_00ea04bd",
+        "filename": "src/com/android/launcher3/lineage/LineageUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-01T20:12:04Z",
+      "side": 1,
+      "message": "context.getSystemService(KeyguardManager.class)",
+      "range": {
+        "startLine": 67,
+        "startChar": 48,
+        "endLine": 68,
+        "endChar": 41
+      },
+      "revId": "b8e1a531d9639610adfe1fc09fb8df2d1e2e6a78",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
