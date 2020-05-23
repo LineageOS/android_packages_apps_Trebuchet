@@ -30,6 +30,6 @@
     <string name="trust_apps_loading">Lade\u2026</string>
     <string name="trust_apps_no_lock_error">Stel in feilich beskoattelingsskerm yn om de tagong ta de apps te beheinen</string>
     <string name="trust_apps_help">Help</string>
-    <string name="trust_apps_info_hidden">Ferstoppe apps en harren widgets wurde net werjûn yn it app-oersjoch</string>
+    <string name="trust_apps_info_hidden">Ferstoppe apps en harren widgets wurde net toand yn it app-oersjoch</string>
     <string name="trust_apps_info_protected">Beskerme apps fereaskje autentikaasje om te starten fan de launcher út</string>
 </resources>

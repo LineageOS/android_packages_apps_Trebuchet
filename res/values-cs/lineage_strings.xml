@@ -23,6 +23,7 @@
     <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
+    <string name="show_labels_landscape">Zobrazit popisky ikon v režimu na šířku</string>
     <string name="trust_apps_manager_name">Skryté &amp; Chráněné aplikace</string>
     <string name="trust_apps_auth_manager">Odemkněte pro nastavení skrytých a chráněných aplikací</string>
     <string name="trust_apps_auth_open_app">Ověření pro otevření %1$s</string>

@@ -23,6 +23,7 @@
     <string name="settings_edit_widgets_error">Nuk është e mundur të shtohen vegla në dritaren kryesore</string>
     <string name="desktop_show_labels">Shfaq emërtimin e ikonave në ekran</string>
     <string name="drawer_show_labels">Shfaq emërtimin e ikonave në menu</string>
+    <string name="show_labels_landscape">Shfaq emërtimet e ikonave në metodën peisazh</string>
     <string name="trust_apps_manager_name">Programet e fshehura &amp; Mbrojtura</string>
     <string name="trust_apps_auth_manager">Zhbllokoje për të kontrolluar programet e fshehura dhe të siguruara</string>
     <string name="trust_apps_auth_open_app">Verifikohu për të hapur %1$s</string>
