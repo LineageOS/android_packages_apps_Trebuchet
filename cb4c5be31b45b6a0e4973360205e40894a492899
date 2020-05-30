@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55dd2fec_42fbdbdd",
+        "filename": "src/com/android/launcher3/lineage/LineageUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-05-30T14:30:54Z",
+      "side": 1,
+      "message": "Cast can be ditched.",
+      "range": {
+        "startLine": 66,
+        "startChar": 48,
+        "endLine": 66,
+        "endChar": 66
+      },
+      "revId": "cb4c5be31b45b6a0e4973360205e40894a492899",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
