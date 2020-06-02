@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bf1baff_385d684c",
+        "filename": "AndroidManifest-common.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-06-02T14:33:10Z",
+      "side": 1,
+      "message": "not sure about those others",
+      "revId": "35e5bb6f0a2654337c208efdee90b548f6175b2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a0bf5c6_1cbfd904",
+        "filename": "AndroidManifest-common.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-06-02T14:33:10Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be needed",
+      "revId": "35e5bb6f0a2654337c208efdee90b548f6175b2d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
