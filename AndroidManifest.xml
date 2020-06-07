@@ -93,6 +93,27 @@
         </activity>
 
         <!--
+        Main launcher activity for atv.
+        -->
+        <activity
+            android:name="com.android.launcher3.lineage.TvLineageLauncher"
+            android:launchMode="singleTask"
+            android:clearTaskOnLaunch="true"
+            android:stateNotNeeded="true"
+            android:screenOrientation="landscape"
+            android:taskAffinity=".TvLauncher"
+            android:excludeFromRecents="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
         The settings activity. When extending keep the intent filter present
         -->
         <activity
