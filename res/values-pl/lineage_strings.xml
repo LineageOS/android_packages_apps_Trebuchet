@@ -23,6 +23,7 @@
     <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
     <string name="desktop_show_labels">Pokaż etykiety ikon na pulpicie</string>
     <string name="drawer_show_labels">Pokaż etykiety ikon w szufladzie</string>
+    <string name="show_labels_landscape">Pokaż etykiety ikon w trybie poziomym</string>
     <string name="trust_apps_manager_name">Ukryte i chronione aplikacje</string>
     <string name="trust_apps_auth_manager">Odblokuj, aby zarządzać ukrytymi i chronionymi aplikacjami</string>
     <string name="trust_apps_auth_open_app">Uwierzytelnij, aby otworzyć %1$s</string>
