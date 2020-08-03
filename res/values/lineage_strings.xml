@@ -26,6 +26,11 @@
     <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">When you swipe left from main home screen</string>
 
+    <!-- Categories -->
+    <string name="settings_category_apps">Apps</string>
+    <string name="settings_category_desktop">Desktop</string>
+    <string name="settings_category_labels">Labels</string>
+
     <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Allow edit</string>
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
