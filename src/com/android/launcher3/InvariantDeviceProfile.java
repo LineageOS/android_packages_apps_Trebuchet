@@ -60,6 +60,8 @@ import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.LockedUserState;
+import com.android.launcher3.lineage.icon.IconPackStore;
+import com.android.launcher3.util.IntArray;
 import com.android.launcher3.util.MainThreadInitializedObject;
 import com.android.launcher3.util.Partner;
 import com.android.launcher3.util.WindowBounds;
@@ -98,6 +100,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_WORKSPACE_LOCK = "pref_workspace_lock";
+    public static final int CHANGE_FLAG_ICON_PARAMS = 1 << 1;
 
     // Constants that affects the interpolation curve between statically defined device profile
     // buckets.
@@ -134,6 +137,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numFolderColumns;
     public float[] iconSize;
     public float[] iconTextSize;
+    public String iconPack;
     public int iconBitmapSize;
     public int fillResIconDpi;
     public @DeviceType int deviceType;
@@ -388,6 +392,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             maxIconSize = Math.max(maxIconSize, iconSize[i]);
         }
         iconBitmapSize = ResourceUtils.pxFromDp(maxIconSize, metrics);
+        iconPack = new IconPackStore(context).getCurrent();
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
         iconTextSize = displayOption.textSizes;
@@ -493,6 +498,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     }
 
     private void onConfigChanged(Context context) {
+        // Config changes, what shall we do?
         Object[] oldState = toModelState();
 
         // Re-init grid
@@ -500,6 +506,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         initGrid(context, gridName);
 
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
+
         for (OnIDPChangeListener listener : mChangeListeners) {
             listener.onIdpChanged(modelPropsChanged);
         }
