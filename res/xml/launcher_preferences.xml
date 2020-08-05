@@ -51,6 +51,10 @@
             android:key="pref_trust_apps"
             android:title="@string/trust_apps_manager_name" />
 
+        <Preference
+            android:key="pref_icon_pack"
+            android:title="@string/icon_pack_title" />
+
         <com.android.launcher3.settings.NotificationDotsPreference
             android:key="pref_icon_badging"
             android:title="@string/notification_dots_title"
