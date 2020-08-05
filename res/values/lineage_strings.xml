@@ -53,7 +53,15 @@
     <string name="trust_apps_info_hidden">Hidden apps and their widgets are hidden from the drawer</string>
     <string name="trust_apps_info_protected">Protected apps require authentication to be opened from the launcher</string>
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
     <!-- App suggestions -->
     <string name="pref_suggestions_title">Suggestions</string>
     <string name="pref_suggestions_summary">For app drawer &amp; home screen suggestions</string>
+=======
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Icon pack</string>
+    <string name="icon_pack_default_label">Default</string>
+    <string name="icon_pack_add">Install more</string>
+    <string name="icon_pack_no_market">There\'s no available app store</string>
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
 </resources>

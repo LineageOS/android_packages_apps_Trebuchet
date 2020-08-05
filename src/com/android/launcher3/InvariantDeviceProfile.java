@@ -53,6 +53,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.annotation.XmlRes;
 import androidx.core.content.res.ResourcesCompat;
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
 import com.android.launcher3.icons.DotRenderer;
 import com.android.launcher3.model.DeviceGridState;
 import com.android.launcher3.provider.RestoreDbTask;
@@ -60,6 +61,14 @@ import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.LockedUserState;
+=======
+import com.android.launcher3.graphics.IconShape;
+import com.android.launcher3.lineage.icon.IconPackStore;
+import com.android.launcher3.util.ConfigMonitor;
+import com.android.launcher3.util.DefaultDisplay;
+import com.android.launcher3.util.DefaultDisplay.Info;
+import com.android.launcher3.util.IntArray;
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
 import com.android.launcher3.util.MainThreadInitializedObject;
 import com.android.launcher3.util.Partner;
 import com.android.launcher3.util.WindowBounds;
@@ -132,8 +141,15 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
      */
     public int numFolderRows;
     public int numFolderColumns;
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
     public float[] iconSize;
     public float[] iconTextSize;
+=======
+    public float iconSize;
+    public String iconPack;
+    public String iconShapePath;
+    public float landscapeIconSize;
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
     public int iconBitmapSize;
     public int fillResIconDpi;
     public @DeviceType int deviceType;
@@ -205,8 +221,32 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     private final ArrayList<OnIDPChangeListener> mChangeListeners = new ArrayList<>();
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
     @VisibleForTesting
     public InvariantDeviceProfile() { }
+=======
+    private InvariantDeviceProfile(InvariantDeviceProfile p) {
+        numRows = p.numRows;
+        numColumns = p.numColumns;
+        numFolderRows = p.numFolderRows;
+        numFolderColumns = p.numFolderColumns;
+        iconSize = p.iconSize;
+        iconPack = p.iconPack;
+        iconShapePath = p.iconShapePath;
+        landscapeIconSize = p.landscapeIconSize;
+        iconBitmapSize = p.iconBitmapSize;
+        iconTextSize = p.iconTextSize;
+        numHotseatIcons = p.numHotseatIcons;
+        numAllAppsColumns = p.numAllAppsColumns;
+        dbFile = p.dbFile;
+        allAppsIconSize = p.allAppsIconSize;
+        allAppsIconTextSize = p.allAppsIconTextSize;
+        defaultLayoutId = p.defaultLayoutId;
+        demoModeLayoutId = p.demoModeLayoutId;
+        mExtraAttrs = p.mExtraAttrs;
+        mOverlayMonitor = p.mOverlayMonitor;
+    }
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
 
     @TargetApi(23)
     private InvariantDeviceProfile(Context context) {
@@ -376,6 +416,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
         cellStyle = closestProfile.cellStyle;
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
         isScalable = closestProfile.isScalable;
         devicePaddingId = closestProfile.devicePaddingId;
         this.deviceType = deviceType;
@@ -388,6 +429,14 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             maxIconSize = Math.max(maxIconSize, iconSize[i]);
         }
         iconBitmapSize = ResourceUtils.pxFromDp(maxIconSize, metrics);
+=======
+        iconSize = displayOption.iconSize;
+        iconShapePath = getIconShapePath(context);
+        iconPack = new IconPackStore(context).getCurrent();
+        landscapeIconSize = displayOption.landscapeIconSize;
+        iconBitmapSize = ResourceUtils.pxFromDp(iconSize, displayInfo.metrics);
+        iconTextSize = displayOption.iconTextSize;
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
         iconTextSize = displayOption.textSizes;
@@ -499,7 +548,36 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         String gridName = getCurrentGridName(context);
         initGrid(context, gridName);
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
+=======
+        int changeFlags = 0;
+        if (numRows != oldProfile.numRows ||
+                numColumns != oldProfile.numColumns ||
+                numFolderColumns != oldProfile.numFolderColumns ||
+                numFolderRows != oldProfile.numFolderRows ||
+                numHotseatIcons != oldProfile.numHotseatIcons) {
+            changeFlags |= CHANGE_FLAG_GRID;
+        }
+
+        if (iconSize != oldProfile.iconSize || iconBitmapSize != oldProfile.iconBitmapSize ||
+                !iconShapePath.equals(oldProfile.iconShapePath) ||
+                !iconPack.equals(oldProfile.iconPack)) {
+            changeFlags |= CHANGE_FLAG_ICON_PARAMS;
+        }
+        if (!iconShapePath.equals(oldProfile.iconShapePath)) {
+            IconShape.init(context);
+        }
+
+        apply(context, changeFlags);
+    }
+
+    private void apply(Context context, int changeFlags) {
+        // Create a new config monitor
+        mConfigMonitor.unregister();
+        mConfigMonitor = new ConfigMonitor(context, this::onConfigChanged);
+
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
         for (OnIDPChangeListener listener : mChangeListeners) {
             listener.onIdpChanged(modelPropsChanged);
         }
