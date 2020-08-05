@@ -81,7 +81,7 @@ public class RecentsModel implements IconChangeListener, TaskStackChangeListener
     private final TaskStackChangeListeners mTaskStackChangeListeners;
 
     private RecentsModel(Context context) {
-        this(context, new IconProvider(context));
+        this(context, IconProvider.INSTANCE.get(context));
     }
 
     private RecentsModel(Context context, IconProvider iconProvider) {
@@ -89,9 +89,9 @@ public class RecentsModel implements IconChangeListener, TaskStackChangeListener
                 new RecentTasksList(MAIN_EXECUTOR,
                         context.getSystemService(KeyguardManager.class),
                         SystemUiProxy.INSTANCE.get(context)),
-                new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, iconProvider),
+                new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, IconProvider.INSTANCE.get(context)),
                 new TaskThumbnailCache(context, RECENTS_MODEL_EXECUTOR),
-                iconProvider,
+                IconProvider.INSTANCE.get(context),
                 TaskStackChangeListeners.getInstance());
     }
 
@@ -101,7 +101,7 @@ public class RecentsModel implements IconChangeListener, TaskStackChangeListener
             TaskStackChangeListeners taskStackChangeListeners) {
         mContext = context;
         mTaskList = taskList;
-        mIconCache = iconCache;
+        mIconCache = new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, IconProvider.INSTANCE.get(context));
         mIconCache.registerTaskVisualsChangeListener(this);
         mThumbnailCache = thumbnailCache;
         if (enableGridOnlyOverview()) {
@@ -122,7 +122,7 @@ public class RecentsModel implements IconChangeListener, TaskStackChangeListener
 
         mTaskStackChangeListeners = taskStackChangeListeners;
         mTaskStackChangeListeners.registerTaskStackListener(this);
-        iconProvider.registerIconChangeListener(this, MAIN_EXECUTOR.getHandler());
+        IconProvider.INSTANCE.get(context).registerIconChangeListener(this, MAIN_EXECUTOR.getHandler());
     }
 
     public TaskIconCache getIconCache() {
