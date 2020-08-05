@@ -42,6 +42,7 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.graphics.DrawableFactory;
 import com.android.launcher3.apppairs.AppPairIcon;
 import com.android.launcher3.apppairs.AppPairIconDrawingParams;
 import com.android.launcher3.apppairs.AppPairIconGraphic;
@@ -78,6 +79,7 @@ public class PreviewItemManager {
 
     private final Context mContext;
     private final FolderIcon mIcon;
+    private final DrawableFactory mDrawableFactory;
     @VisibleForTesting
     public final int mIconSize;
 
@@ -112,6 +114,7 @@ public class PreviewItemManager {
     public PreviewItemManager(FolderIcon icon) {
         mContext = icon.getContext();
         mIcon = icon;
+        mDrawableFactory = DrawableFactory.INSTANCE.get(mContext);
         mIconSize = ActivityContext.lookupContext(
                 mContext).getDeviceProfile().folderChildIconSizePx;
         mClipThreshold = Utilities.dpToPx(1f);
@@ -444,7 +447,7 @@ public class PreviewItemManager {
         if (item instanceof WorkspaceItemInfo wii) {
             if (wii.hasPromiseIconUi() || (wii.runtimeStatusFlags
                     & ItemInfoWithIcon.FLAG_SHOW_DOWNLOAD_PROGRESS_MASK) != 0) {
-                PreloadIconDrawable drawable = newPendingIcon(mContext, wii);
+                PreloadIconDrawable drawable = mDrawableFactory.newPendingIcon(mContext, wii);
                 p.drawable = drawable;
             } else {
                 p.drawable = wii.newIcon(mContext,
