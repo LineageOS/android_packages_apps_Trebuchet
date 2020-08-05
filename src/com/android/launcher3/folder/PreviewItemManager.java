@@ -42,9 +42,13 @@ import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.Utilities;
+<<<<<<< PATCH SET (16cb70 Launcher3: Add support for icon packs)
+import com.android.launcher3.graphics.DrawableFactory;
+=======
 import com.android.launcher3.apppairs.AppPairIcon;
 import com.android.launcher3.apppairs.AppPairIconDrawingParams;
 import com.android.launcher3.apppairs.AppPairIconGraphic;
+>>>>>>> BASE      (904a97 Merge cherrypicks of ['googleplex-android-review.googlesourc)
 import com.android.launcher3.graphics.PreloadIconDrawable;
 import com.android.launcher3.model.data.AppPairInfo;
 import com.android.launcher3.model.data.ItemInfo;
@@ -78,6 +82,7 @@ public class PreviewItemManager {
 
     private final Context mContext;
     private final FolderIcon mIcon;
+    private final DrawableFactory mDrawableFactory;
     @VisibleForTesting
     public final int mIconSize;
 
@@ -112,6 +117,7 @@ public class PreviewItemManager {
     public PreviewItemManager(FolderIcon icon) {
         mContext = icon.getContext();
         mIcon = icon;
+        mDrawableFactory = DrawableFactory.INSTANCE.get(mContext);
         mIconSize = ActivityContext.lookupContext(
                 mContext).getDeviceProfile().folderChildIconSizePx;
         mClipThreshold = Utilities.dpToPx(1f);
@@ -440,6 +446,16 @@ public class PreviewItemManager {
     }
 
     @VisibleForTesting
+<<<<<<< PATCH SET (16cb70 Launcher3: Add support for icon packs)
+    public void setDrawable(PreviewItemDrawingParams p, WorkspaceItemInfo item) {
+        if (item.hasPromiseIconUi() || (item.runtimeStatusFlags
+                & ItemInfoWithIcon.FLAG_SHOW_DOWNLOAD_PROGRESS_MASK) != 0) {
+            PreloadIconDrawable drawable = mDrawableFactory.newPendingIcon(mContext, item);
+            p.drawable = drawable;
+        } else {
+            p.drawable = item.newIcon(mContext,
+                    Themes.isThemedIconEnabled(mContext) ? FLAG_THEMED : 0);
+=======
     public void setDrawable(PreviewItemDrawingParams p, ItemInfo item) {
         if (item instanceof WorkspaceItemInfo wii) {
             if (wii.hasPromiseIconUi() || (wii.runtimeStatusFlags
@@ -456,6 +472,7 @@ public class PreviewItemManager {
                     new AppPairIconDrawingParams(mContext, DISPLAY_FOLDER);
             p.drawable = AppPairIconGraphic.composeDrawable(api, appPairParams);
             p.drawable.setBounds(0, 0, mIconSize, mIconSize);
+>>>>>>> BASE      (904a97 Merge cherrypicks of ['googleplex-android-review.googlesourc)
         }
 
         p.item = item;

@@ -83,18 +83,23 @@ public class RecentsModel implements RecentTasksDataSource, IconChangeListener,
     private final TaskStackChangeListeners mTaskStackChangeListeners;
 
     private RecentsModel(Context context) {
-        this(context, new IconProvider(context));
+        this(context, IconProvider.INSTANCE.get(context));
     }
 
     private RecentsModel(Context context, IconProvider iconProvider) {
         this(context,
                 new RecentTasksList(MAIN_EXECUTOR,
                         context.getSystemService(KeyguardManager.class),
+<<<<<<< PATCH SET (16cb70 Launcher3: Add support for icon packs)
+                        SystemUiProxy.INSTANCE.get(context)),
+                new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, IconProvider.INSTANCE.get(context)),
+=======
                         SystemUiProxy.INSTANCE.get(context),
                         TopTaskTracker.INSTANCE.get(context)),
                 new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, iconProvider),
+>>>>>>> BASE      (904a97 Merge cherrypicks of ['googleplex-android-review.googlesourc)
                 new TaskThumbnailCache(context, RECENTS_MODEL_EXECUTOR),
-                iconProvider,
+                IconProvider.INSTANCE.get(context),
                 TaskStackChangeListeners.getInstance());
     }
 
@@ -104,7 +109,7 @@ public class RecentsModel implements RecentTasksDataSource, IconChangeListener,
             TaskStackChangeListeners taskStackChangeListeners) {
         mContext = context;
         mTaskList = taskList;
-        mIconCache = iconCache;
+        mIconCache = new TaskIconCache(context, RECENTS_MODEL_EXECUTOR, IconProvider.INSTANCE.get(context));
         mIconCache.registerTaskVisualsChangeListener(this);
         mThumbnailCache = thumbnailCache;
         if (enableGridOnlyOverview()) {
@@ -125,7 +130,7 @@ public class RecentsModel implements RecentTasksDataSource, IconChangeListener,
 
         mTaskStackChangeListeners = taskStackChangeListeners;
         mTaskStackChangeListeners.registerTaskStackListener(this);
-        iconProvider.registerIconChangeListener(this, MAIN_EXECUTOR.getHandler());
+        IconProvider.INSTANCE.get(context).registerIconChangeListener(this, MAIN_EXECUTOR.getHandler());
     }
 
     public TaskIconCache getIconCache() {
