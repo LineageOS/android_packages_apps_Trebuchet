@@ -49,6 +49,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
 import com.android.launcher3.graphics.IconShape;
+import com.android.launcher3.lineage.icon.IconPackStore;
 import com.android.launcher3.util.ConfigMonitor;
 import com.android.launcher3.util.DefaultDisplay;
 import com.android.launcher3.util.DefaultDisplay.Info;
@@ -109,6 +110,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numFolderRows;
     public int numFolderColumns;
     public float iconSize;
+    public String iconPack;
     public String iconShapePath;
     public float landscapeIconSize;
     public int iconBitmapSize;
@@ -154,6 +156,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         numFolderRows = p.numFolderRows;
         numFolderColumns = p.numFolderColumns;
         iconSize = p.iconSize;
+        iconPack = p.iconPack;
         iconShapePath = p.iconShapePath;
         landscapeIconSize = p.landscapeIconSize;
         iconBitmapSize = p.iconBitmapSize;
@@ -277,6 +280,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
         iconSize = displayOption.iconSize;
         iconShapePath = getIconShapePath(context);
+        iconPack = new IconPackStore(context).getCurrent();
         landscapeIconSize = displayOption.landscapeIconSize;
         iconBitmapSize = ResourceUtils.pxFromDp(iconSize, displayInfo.metrics);
         iconTextSize = displayOption.iconTextSize;
@@ -376,7 +380,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         }
 
         if (iconSize != oldProfile.iconSize || iconBitmapSize != oldProfile.iconBitmapSize ||
-                !iconShapePath.equals(oldProfile.iconShapePath)) {
+                !iconShapePath.equals(oldProfile.iconShapePath) ||
+                !iconPack.equals(oldProfile.iconPack)) {
             changeFlags |= CHANGE_FLAG_ICON_PARAMS;
         }
         if (!iconShapePath.equals(oldProfile.iconShapePath)) {

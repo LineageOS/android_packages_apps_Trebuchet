@@ -38,6 +38,8 @@ import com.android.launcher3.icons.BitmapInfo.Extender;
 import com.android.launcher3.pm.UserCache;
 import com.android.launcher3.util.ComponentKey;
 import com.android.launcher3.util.SafeCloseable;
+import com.android.launcher3.lineage.icon.IconPack;
+import com.android.launcher3.lineage.icon.providers.IconPackProvider;
 
 import java.util.Calendar;
 import java.util.function.BiConsumer;
@@ -125,7 +127,10 @@ public class IconProvider {
                 && Process.myUserHandle().equals(user)) {
             icon = loadClockDrawable(0);
         }
-        return icon == null ? loader.apply(obj, param) : icon;
+        if (icon == null) {
+            icon = loader.apply(obj, param);
+        }
+        return getFromIconPack(icon, packageName);
     }
 
     private Drawable loadCalendarDrawable(int iconDpi) {
@@ -247,5 +252,15 @@ public class IconProvider {
         String cn = context.getString(resId);
         return TextUtils.isEmpty(cn) ? null : ComponentName.unflattenFromString(cn);
 
+    }
+
+    private Drawable getFromIconPack(Drawable icon, String packageName) {
+        final IconPack iconPack = IconPackProvider.loadAndGetIconPack(mContext);
+        if (iconPack == null) {
+            return icon;
+        }
+
+        final Drawable iconMask = iconPack.getIcon(packageName, null, "");
+        return iconMask == null ? icon : iconMask;
     }
 }
