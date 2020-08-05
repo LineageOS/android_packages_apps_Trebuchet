@@ -54,6 +54,7 @@ import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
 import com.android.launcher3.icons.FastBitmapDrawable;
+import com.android.launcher3.graphics.DrawableFactory;
 import com.android.launcher3.icons.IconCache.ItemInfoUpdateReceiver;
 import com.android.launcher3.model.data.ItemInfoWithIcon;
 import com.android.launcher3.model.data.LauncherAppWidgetInfo;
@@ -275,6 +276,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView
 
     @Override
     public void reapplyItemInfo(ItemInfoWithIcon info) {
+        DrawableFactory drawableFactory = DrawableFactory.INSTANCE.get(getContext());
         if (mCenterDrawable != null) {
             mCenterDrawable.setCallback(null);
             mCenterDrawable = null;
@@ -290,7 +292,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView
             //   3) App icon in the center with a setup icon on the top left corner.
             if (mDisabledForSafeMode) {
                 if (widgetCategoryIcon == null) {
-                    FastBitmapDrawable disabledIcon = info.newIcon(getContext());
+                    FastBitmapDrawable disabledIcon = drawableFactory.newIcon(getContext(), info);
                     disabledIcon.setIsDisabled(true);
                     mCenterDrawable = disabledIcon;
                 } else {
@@ -300,7 +302,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView
                 mSettingIconDrawable = null;
             } else if (isReadyForClickSetup()) {
                 mCenterDrawable = widgetCategoryIcon == null
-                        ? info.newIcon(getContext())
+                        ? drawableFactory.newIcon(getContext(), info)
                         : widgetCategoryIcon;
                 mSettingIconDrawable = getResources().getDrawable(R.drawable.ic_setting).mutate();
                 updateSettingColor(info.bitmap.color);
@@ -308,7 +310,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView
                 mDragFlags |= FLAG_DRAW_SETTINGS | FLAG_DRAW_LABEL;
             } else {
                 mCenterDrawable = widgetCategoryIcon == null
-                        ? newPendingIcon(getContext(), info)
+                        ? drawableFactory.newPendingIcon(getContext(), info)
                         : widgetCategoryIcon;
                 mSettingIconDrawable = null;
                 applyState();
