@@ -60,6 +60,12 @@ import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.LockedUserState;
+import com.android.launcher3.graphics.IconShape;
+import com.android.launcher3.lineage.icon.IconPackStore;
+import com.android.launcher3.util.ConfigMonitor;
+import com.android.launcher3.util.DefaultDisplay;
+import com.android.launcher3.util.DefaultDisplay.Info;
+import com.android.launcher3.util.IntArray;
 import com.android.launcher3.util.MainThreadInitializedObject;
 import com.android.launcher3.util.Partner;
 import com.android.launcher3.util.WindowBounds;
@@ -134,6 +140,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numFolderColumns;
     public float[] iconSize;
     public float[] iconTextSize;
+    public String iconPack;
     public int iconBitmapSize;
     public int fillResIconDpi;
     public @DeviceType int deviceType;
@@ -207,6 +214,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     @VisibleForTesting
     public InvariantDeviceProfile() { }
+    private InvariantDeviceProfile(InvariantDeviceProfile p) {
+        iconPack = p.iconPack;
+    }
 
     @TargetApi(23)
     private InvariantDeviceProfile(Context context) {
@@ -388,6 +398,12 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             maxIconSize = Math.max(maxIconSize, iconSize[i]);
         }
         iconBitmapSize = ResourceUtils.pxFromDp(maxIconSize, metrics);
+        iconSize = displayOption.iconSize;
+        iconShapePath = getIconShapePath(context);
+        iconPack = new IconPackStore(context).getCurrent();
+        landscapeIconSize = displayOption.landscapeIconSize;
+        iconBitmapSize = ResourceUtils.pxFromDp(iconSize, displayInfo.metrics);
+        iconTextSize = displayOption.iconTextSize;
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
         iconTextSize = displayOption.textSizes;
@@ -500,6 +516,19 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         initGrid(context, gridName);
 
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
+        int changeFlags = 0;
+        if (!iconPack.equals(oldProfile.iconPack)) {
+            changeFlags |= CHANGE_FLAG_ICON_PARAMS;
+        }
+
+        apply(context, changeFlags);
+    }
+
+    private void apply(Context context, int changeFlags) {
+        // Create a new config monitor
+        mConfigMonitor.unregister();
+        mConfigMonitor = new ConfigMonitor(context, this::onConfigChanged);
+
         for (OnIDPChangeListener listener : mChangeListeners) {
             listener.onIdpChanged(modelPropsChanged);
         }
