@@ -165,6 +165,7 @@ android_library {
         "com_android_wm_shell_flags_lib",
         "android.appwidget.flags-aconfig-java",
         "com.android.window.flags.window-aconfig-java",
+        "SettingsLib",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",

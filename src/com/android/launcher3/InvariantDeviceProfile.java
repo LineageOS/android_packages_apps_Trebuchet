@@ -50,6 +50,7 @@ import androidx.annotation.XmlRes;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.android.launcher3.config.FeatureFlags;
+import com.android.launcher3.customization.IconDatabase;
 import com.android.launcher3.icons.DotRenderer;
 import com.android.launcher3.logging.FileLog;
 import com.android.launcher3.model.DeviceGridState;
@@ -129,6 +130,7 @@ public class InvariantDeviceProfile implements SafeCloseable {
     public int[] numFolderColumns;
     public float[] iconSize;
     public float[] iconTextSize;
+    public String iconPack;
     public int iconBitmapSize;
     public int fillResIconDpi;
     public @DeviceType int deviceType;
@@ -331,6 +333,38 @@ public class InvariantDeviceProfile implements SafeCloseable {
         }
     }
 
+<<<<<<< PATCH SET (16cb70 Launcher3: Add support for icon packs)
+    private static @DeviceType int getDeviceType(Info displayInfo) {
+        int flagPhone = 1 << 0;
+        int flagTablet = 1 << 1;
+
+        int type = displayInfo.supportedBounds.stream()
+                .mapToInt(bounds -> displayInfo.isTablet(bounds) ? flagTablet : flagPhone)
+                .reduce(0, (a, b) -> a | b);
+        if (type == (flagPhone | flagTablet)) {
+            // device has profiles supporting both phone and table modes
+            return TYPE_MULTI_DISPLAY;
+        } else if (type == flagTablet) {
+            return TYPE_TABLET;
+        } else {
+            return TYPE_PHONE;
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+        switch (key) {
+            case KEY_ALLAPPS_THEMED_ICONS:
+            case KEY_SHOW_DESKTOP_LABELS:
+            case KEY_SHOW_DRAWER_LABELS:
+            case IconDatabase.KEY_ICON_PACK:
+                onConfigChanged(mContext);
+                break;
+        }
+    }
+
+=======
+>>>>>>> BASE      (904a97 Merge cherrypicks of ['googleplex-android-review.googlesourc)
     public static String getCurrentGridName(Context context) {
         return LauncherPrefs.get(context).get(GRID_NAME);
     }
@@ -404,6 +438,7 @@ public class InvariantDeviceProfile implements SafeCloseable {
         for (int i = 1; i < iconSize.length; i++) {
             maxIconSize = Math.max(maxIconSize, iconSize[i]);
         }
+        iconPack = IconDatabase.getGlobal(context);
         iconBitmapSize = ResourceUtils.pxFromDp(maxIconSize, metrics);
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
@@ -503,7 +538,7 @@ public class InvariantDeviceProfile implements SafeCloseable {
     private Object[] toModelState() {
         return new Object[]{
                 numColumns, numRows, numSearchContainerColumns, numDatabaseHotseatIcons,
-                iconBitmapSize, fillResIconDpi, numDatabaseAllAppsColumns, dbFile};
+                iconPack, iconBitmapSize, fillResIconDpi, numDatabaseAllAppsColumns, dbFile};
     }
 
     /** Updates IDP using the provided context. Notifies listeners of change. */
