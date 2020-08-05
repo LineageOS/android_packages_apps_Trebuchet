@@ -172,8 +172,12 @@ android_library {
         "com_android_wm_shell_flags_lib",
         "android.appwidget.flags-aconfig-java",
         "com.android.window.flags.window-aconfig-java",
+<<<<<<< PATCH SET (3e017c Launcher3: Add support for icon packs)
+        "SettingsLib",
+=======
         "libGoogleFeed",
         "org.lineageos.platform",
+>>>>>>> BASE      (4e1c46 Trebuchet: Let's keep 2-button nav alive for a little longer)
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
