@@ -188,6 +188,7 @@ android_library {
         "iconloader_base",
         "view_capture",
         "animationlib",
+        "SettingsLib",
         "libGoogleFeed",
     ],
     manifest: "AndroidManifest-common.xml",

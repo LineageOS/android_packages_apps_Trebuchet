@@ -58,6 +58,10 @@
         launcher:logIdOn="615"
         launcher:logIdOff="616" />
 
+    <Preference
+        android:key="pref_icon_pack"
+        android:title="@string/icon_pack_title" />
+
     <SwitchPreference
         android:defaultValue="true"
         android:key="pref_enable_minus_one"

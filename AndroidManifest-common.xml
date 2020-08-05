@@ -157,6 +157,14 @@
             </intent-filter>
         </activity>
 
+        <!-- Icon Pack -->
+        <activity
+            android:name="com.android.launcher3.icons.pack.IconPackSettingsActivity"
+            android:label="@string/icon_pack_title"
+            android:theme="@style/HomeSettings.Theme"
+            android:exported="true"
+            android:autoRemoveFromRecents="true"  />
+
         <provider
             android:name="com.android.launcher3.testing.TestInformationProvider"
             android:authorities="${packageName}.TestInfo"
