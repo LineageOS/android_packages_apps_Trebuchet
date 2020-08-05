@@ -54,6 +54,8 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@id/item_hidden_app_switch"
         android:layout_centerVertical="true"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
         android:layout_marginStart="88dp"
         android:layout_marginEnd="88dp" />
 </RelativeLayout>
