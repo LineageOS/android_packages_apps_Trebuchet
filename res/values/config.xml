@@ -62,7 +62,7 @@
 
     <!-- Various classes overriden by projects/build flavors. -->
     <string name="app_filter_class" translatable="false">com.android.launcher3.lineage.trust.HiddenAppsFilter</string>
-    <string name="icon_provider_class" translatable="false"></string>
+    <string name="icon_provider_class" translatable="false">com.android.launcher3.lineage.icon.providers.CustomIconProvider</string>
     <string name="drawable_factory_class" translatable="false"></string>
     <string name="user_event_dispatcher_class" translatable="false"></string>
     <string name="stats_log_manager_class" translatable="false"></string>

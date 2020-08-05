@@ -25,6 +25,8 @@ import android.os.UserHandle;
 
 import androidx.annotation.NonNull;
 
+import com.android.launcher3.lineage.icon.IconPackStore;
+
 /**
  * This class will be moved to androidx library. There shouldn't be any dependency outside
  * this package.
@@ -215,7 +217,9 @@ public class BaseIconFactory implements AutoCloseable {
         }
         float scale = 1f;
 
-        if (shrinkNonAdaptiveIcons && ATLEAST_OREO) {
+        final IconPackStore iconPackStore = new IconPackStore(mContext);
+        final boolean defaultIcons = iconPackStore.isUsingSystemIcons();
+        if (shrinkNonAdaptiveIcons && ATLEAST_OREO && defaultIcons) {
             if (mWrapperIcon == null) {
                 mWrapperIcon = mContext.getDrawable(R.drawable.adaptive_icon_drawable_wrapper)
                         .mutate();
