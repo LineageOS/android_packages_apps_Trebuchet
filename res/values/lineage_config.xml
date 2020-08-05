@@ -1,3 +1,38 @@
+<<<<<<< PATCH SET (3e017c Launcher3: Add support for icon packs)
+<<<<<<< PATCH SET (16cb70 Launcher3: Add support for icon packs)
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+
+    <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
+         returns duplicate labels for some reasons. -->
+    <bool name="config_appsListSortSections">false</bool>
+
+    <!-- Icon Packs -->
+    <!-- Themed icons -->
+    <string name="drawable_factory_class" translatable="false">com.android.launcher3.icons.ThirdPartyDrawableFactory</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.icons.pack.IconPackSettingsFragment</string>
+</resources>
+=======
+>>>>>>> BASE      (904a97 Merge cherrypicks of ['googleplex-android-review.googlesourc)
+=======
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2018 The LineageOS Project
 
@@ -21,3 +56,4 @@
          returns duplicate labels for some reasons. -->
     <bool name="config_appsListSortSections">false</bool>
 </resources>
+>>>>>>> BASE      (4e1c46 Trebuchet: Let's keep 2-button nav alive for a little longer)
