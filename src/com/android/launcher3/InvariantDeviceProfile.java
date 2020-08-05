@@ -60,6 +60,13 @@ import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.LockedUserState;
+=======
+import com.android.launcher3.graphics.IconShape;
+import com.android.launcher3.lineage.icon.IconPackStore;
+import com.android.launcher3.util.ConfigMonitor;
+import com.android.launcher3.util.DefaultDisplay;
+import com.android.launcher3.util.DefaultDisplay.Info;
+import com.android.launcher3.util.IntArray;
 import com.android.launcher3.util.MainThreadInitializedObject;
 import com.android.launcher3.util.Partner;
 import com.android.launcher3.util.WindowBounds;
@@ -134,6 +141,10 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numFolderColumns;
     public float[] iconSize;
     public float[] iconTextSize;
+    public float iconSize;
+    public String iconPack;
+    public String iconShapePath;
+    public float landscapeIconSize;
     public int iconBitmapSize;
     public int fillResIconDpi;
     public @DeviceType int deviceType;
@@ -207,6 +218,27 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     @VisibleForTesting
     public InvariantDeviceProfile() { }
+    private InvariantDeviceProfile(InvariantDeviceProfile p) {
+        numRows = p.numRows;
+        numColumns = p.numColumns;
+        numFolderRows = p.numFolderRows;
+        numFolderColumns = p.numFolderColumns;
+        iconSize = p.iconSize;
+        iconPack = p.iconPack;
+        iconShapePath = p.iconShapePath;
+        landscapeIconSize = p.landscapeIconSize;
+        iconBitmapSize = p.iconBitmapSize;
+        iconTextSize = p.iconTextSize;
+        numHotseatIcons = p.numHotseatIcons;
+        numAllAppsColumns = p.numAllAppsColumns;
+        dbFile = p.dbFile;
+        allAppsIconSize = p.allAppsIconSize;
+        allAppsIconTextSize = p.allAppsIconTextSize;
+        defaultLayoutId = p.defaultLayoutId;
+        demoModeLayoutId = p.demoModeLayoutId;
+        mExtraAttrs = p.mExtraAttrs;
+        mOverlayMonitor = p.mOverlayMonitor;
+    }
 
     @TargetApi(23)
     private InvariantDeviceProfile(Context context) {
@@ -388,6 +420,12 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             maxIconSize = Math.max(maxIconSize, iconSize[i]);
         }
         iconBitmapSize = ResourceUtils.pxFromDp(maxIconSize, metrics);
+        iconSize = displayOption.iconSize;
+        iconShapePath = getIconShapePath(context);
+        iconPack = new IconPackStore(context).getCurrent();
+        landscapeIconSize = displayOption.landscapeIconSize;
+        iconBitmapSize = ResourceUtils.pxFromDp(iconSize, displayInfo.metrics);
+        iconTextSize = displayOption.iconTextSize;
         fillResIconDpi = getLauncherIconDensity(iconBitmapSize);
 
         iconTextSize = displayOption.textSizes;
@@ -500,6 +538,32 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         initGrid(context, gridName);
 
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
+        int changeFlags = 0;
+        if (numRows != oldProfile.numRows ||
+                numColumns != oldProfile.numColumns ||
+                numFolderColumns != oldProfile.numFolderColumns ||
+                numFolderRows != oldProfile.numFolderRows ||
+                numHotseatIcons != oldProfile.numHotseatIcons) {
+            changeFlags |= CHANGE_FLAG_GRID;
+        }
+
+        if (iconSize != oldProfile.iconSize || iconBitmapSize != oldProfile.iconBitmapSize ||
+                !iconShapePath.equals(oldProfile.iconShapePath) ||
+                !iconPack.equals(oldProfile.iconPack)) {
+            changeFlags |= CHANGE_FLAG_ICON_PARAMS;
+        }
+        if (!iconShapePath.equals(oldProfile.iconShapePath)) {
+            IconShape.init(context);
+        }
+
+        apply(context, changeFlags);
+    }
+
+    private void apply(Context context, int changeFlags) {
+        // Create a new config monitor
+        mConfigMonitor.unregister();
+        mConfigMonitor = new ConfigMonitor(context, this::onConfigChanged);
+
         for (OnIDPChangeListener listener : mChangeListeners) {
             listener.onIdpChanged(modelPropsChanged);
         }

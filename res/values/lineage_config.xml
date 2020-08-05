@@ -17,7 +17,14 @@
 
     <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
 
+<<<<<<< HEAD   (f71ed2 Merge tag 'android-13.0.0_r71' of https://android.googlesour)
     <!-- Sort sections of apps list, in case AlphabeticIndex (of current locale)
          returns duplicate labels for some reasons. -->
     <bool name="config_appsListSortSections">false</bool>
+=======
+    <!-- Icon pack -->
+    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.lineage.icon.IconPackSettingsFragment</string>
+    <!-- Default icon pack package. Set to "android" to use default / original icons -->
+    <string name="icon_pack_default_pkg" translatable="false">android</string>
+>>>>>>> CHANGE (7f328b Launcher3: Add support for icon packs)
 </resources>
