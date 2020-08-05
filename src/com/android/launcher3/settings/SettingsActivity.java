@@ -25,6 +25,11 @@ import static com.android.launcher3.BuildConfig.IS_STUDIO_BUILD;
 import static com.android.launcher3.states.RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY;
 
 import android.app.Activity;
+<<<<<<< HEAD   (6caab8 Automatic translation import)
+=======
+import android.app.ActivityManager;
+import android.content.Context;
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -53,13 +58,22 @@ import com.android.launcher3.BuildConfig;
 import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.R;
 import com.android.launcher3.lineage.LineageUtils;
+import com.android.launcher3.lineage.icon.IconPackStore;
+import com.android.launcher3.lineage.icon.IconPackSettingsActivity;
 import com.android.launcher3.lineage.trust.TrustAppsActivity;
 import com.android.launcher3.model.WidgetsModel;
 import com.android.launcher3.states.RotationHelper;
 import com.android.launcher3.uioverrides.flags.DeveloperOptionsUI;
 import com.android.launcher3.util.DisplayController;
+<<<<<<< HEAD   (6caab8 Automatic translation import)
 import com.android.launcher3.util.Executors;
 import com.android.launcher3.util.SettingsCache;
+=======
+import com.android.launcher3.LauncherPrefs;
+
+import java.util.Collections;
+import java.util.List;
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
 
 /**
  * Settings activity for Launcher. Currently implements the following setting: Allow rotation
@@ -82,6 +96,15 @@ public class SettingsActivity extends FragmentActivity
     private static final int DELAY_HIGHLIGHT_DURATION_MILLIS = 600;
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
 
+<<<<<<< HEAD   (6caab8 Automatic translation import)
+=======
+    @VisibleForTesting
+    static final String EXTRA_FRAGMENT = ":settings:fragment";
+    @VisibleForTesting
+    static final String EXTRA_FRAGMENT_ARGS = ":settings:fragment_args";
+    public static final String KEY_ICON_PACK = "pref_icon_pack";
+
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
     private static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     private static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
     public static final String KEY_TRUST_APPS = "pref_trust_apps";
@@ -171,11 +194,15 @@ public class SettingsActivity extends FragmentActivity
      * This fragment shows the launcher preferences.
      */
     public static class LauncherSettingsFragment extends PreferenceFragmentCompat implements
+<<<<<<< HEAD   (6caab8 Automatic translation import)
             SettingsCache.OnChangeListener {
 
         protected boolean mDeveloperOptionsEnabled = false;
 
         private boolean mRestartOnResume = false;
+=======
+            SharedPreferences.OnSharedPreferenceChangeListener {
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
 
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
@@ -203,6 +230,20 @@ public class SettingsActivity extends FragmentActivity
             getPreferenceManager().setSharedPreferencesName(LauncherFiles.SHARED_PREFERENCES_KEY);
             setPreferencesFromResource(R.xml.launcher_preferences, rootKey);
 
+            updatePreferences();
+
+            LauncherPrefs.getPrefs(getContext())
+                    .registerOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onDestroyView () {
+            LauncherPrefs.getPrefs(getContext())
+                .unregisterOnSharedPreferenceChangeListener(this);
+            super.onDestroyView();
+        }
+
+        private void updatePreferences() {
             PreferenceScreen screen = getPreferenceScreen();
             for (int i = screen.getPreferenceCount() - 1; i >= 0; i--) {
                 Preference preference = screen.getPreference(i);
@@ -240,6 +281,22 @@ public class SettingsActivity extends FragmentActivity
             outState.putBoolean(SAVE_HIGHLIGHTED_KEY, mPreferenceHighlighted);
         }
 
+<<<<<<< HEAD   (6caab8 Automatic translation import)
+=======
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+            switch (key) {
+                case IconPackStore.KEY_ICON_PACK:
+                    updatePreferences();
+                    break;
+            }
+        }
+
+        protected String getParentKeyForPref(String key) {
+            return null;
+        }
+
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
         /**
          * Initializes a preference. This is called for every preference. Returning false here
          * will remove that preference from the list.
@@ -293,6 +350,9 @@ public class SettingsActivity extends FragmentActivity
 
                 case KEY_SUGGESTIONS:
                     return LineageUtils.isPackageEnabled(getActivity(), SUGGESTIONS_PACKAGE);
+                case KEY_ICON_PACK:
+                    setupIconPackPreference(preference);
+                    return true;
             }
 
             return true;
@@ -365,5 +425,28 @@ public class SettingsActivity extends FragmentActivity
                     list, position, screen.findPreference(mHighLightKey))
                     : null;
         }
+<<<<<<< HEAD   (6caab8 Automatic translation import)
+=======
+
+        private void requestAccessibilityFocus(@NonNull final RecyclerView rv) {
+            rv.post(() -> {
+                if (!rv.hasFocus() && rv.getChildCount() > 0) {
+                    rv.getChildAt(0)
+                            .performAccessibilityAction(ACTION_ACCESSIBILITY_FOCUS, null);
+                }
+            });
+        }
+
+        private void setupIconPackPreference(Preference preference) {
+            final Context context = getContext();
+            final String defaultLabel = context.getString(R.string.icon_pack_default_label);
+            final String pkgLabel = new IconPackStore(context).getCurrentLabel(defaultLabel);
+            preference.setSummary(pkgLabel);
+            preference.setOnPreferenceClickListener(p -> {
+                startActivity(new Intent(getActivity(), IconPackSettingsActivity.class));
+                return true;
+            });
+        }
+>>>>>>> CHANGE (8b087b Launcher3: Add support for icon packs)
     }
 }
