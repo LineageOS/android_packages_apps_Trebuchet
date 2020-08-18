@@ -58,18 +58,6 @@ public class TaskMenuView extends AbstractFloatingView {
 
     private static final Rect sTempRect = new Rect();
 
-    private final OnScaleUpdateListener mTaskViewIconScaleListener = new OnScaleUpdateListener() {
-        @Override
-        public void onScaleUpdate(float scale) {
-            final Drawable drawable = mTaskIcon.getDrawable();
-            if (drawable instanceof FastBitmapDrawable) {
-                if (scale != ((FastBitmapDrawable) drawable).getScale()) {
-                    mMenuIconDrawable.setScale(scale);
-                }
-            }
-        }
-    };
-
     private final OnScaleUpdateListener mMenuIconScaleListener = new OnScaleUpdateListener() {
         @Override
         public void onScaleUpdate(float scale) {
@@ -86,14 +74,10 @@ public class TaskMenuView extends AbstractFloatingView {
     private static final int REVEAL_OPEN_DURATION = 150;
     private static final int REVEAL_CLOSE_DURATION = 100;
 
-    private final float mThumbnailTopMargin;
     private BaseDraggingActivity mActivity;
-    private TextView mTaskName;
-    private IconView mTaskIcon;
     private AnimatorSet mOpenCloseAnimator;
     private TaskView mTaskView;
     private LinearLayout mOptionLayout;
-    private FastBitmapDrawable mMenuIconDrawable;
 
     public TaskMenuView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -103,14 +87,11 @@ public class TaskMenuView extends AbstractFloatingView {
         super(context, attrs, defStyleAttr);
 
         mActivity = BaseDraggingActivity.fromContext(context);
-        mThumbnailTopMargin = getResources().getDimension(R.dimen.task_thumbnail_top_margin);
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        mTaskName = findViewById(R.id.task_name);
-        mTaskIcon = findViewById(R.id.task_icon);
         mOptionLayout = findViewById(R.id.menu_option_layout);
     }
 
@@ -142,22 +123,13 @@ public class TaskMenuView extends AbstractFloatingView {
     }
 
     @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-
-        // Remove all scale listeners when menu is removed
-        mTaskView.getIconView().removeUpdateScaleListener(mTaskViewIconScaleListener);
-        mTaskIcon.removeUpdateScaleListener(mMenuIconScaleListener);
-    }
-
-    @Override
     protected boolean isOfType(int type) {
         return (type & TYPE_TASK_MENU) != 0;
     }
 
     public void setPosition(float x, float y) {
         setX(x);
-        setY(y + mThumbnailTopMargin);
+        setY(y);
     }
 
     public static TaskMenuView showForTask(TaskView taskView) {
@@ -180,23 +152,6 @@ public class TaskMenuView extends AbstractFloatingView {
     }
 
     private void addMenuOptions(TaskView taskView) {
-        Drawable icon = taskView.getTask().icon.getConstantState().newDrawable();
-        mTaskIcon.setDrawable(icon);
-        mTaskIcon.setOnClickListener(v -> close(true));
-        mTaskName.setText(TaskUtils.getTitle(getContext(), taskView.getTask()));
-        mTaskName.setOnClickListener(v -> close(true));
-
-        // Set the icons to match scale by listening to each other's changes
-        mMenuIconDrawable = icon instanceof FastBitmapDrawable ? (FastBitmapDrawable) icon : null;
-        taskView.getIconView().addUpdateScaleListener(mTaskViewIconScaleListener);
-        mTaskIcon.addUpdateScaleListener(mMenuIconScaleListener);
-
-        // Move the icon and text up half an icon size to lay over the TaskView
-        LinearLayout.LayoutParams params =
-                (LinearLayout.LayoutParams) mTaskIcon.getLayoutParams();
-        params.topMargin = (int) -mThumbnailTopMargin;
-        mTaskIcon.setLayoutParams(params);
-
         final BaseDraggingActivity activity = BaseDraggingActivity.fromContext(getContext());
         final List<TaskSystemShortcut> shortcuts =
                 TaskOverlayFactory.INSTANCE.get(getContext()).getEnabledShortcuts(taskView);
@@ -221,12 +176,11 @@ public class TaskMenuView extends AbstractFloatingView {
         mActivity.getDragLayer().getDescendantRectRelativeToSelf(taskView, sTempRect);
         Rect insets = mActivity.getDragLayer().getInsets();
         BaseDragLayer.LayoutParams params = (BaseDragLayer.LayoutParams) getLayoutParams();
-        params.width = taskView.getMeasuredWidth();
-        params.gravity = Gravity.START;
+        params.gravity = Gravity.END;
         setLayoutParams(params);
         setScaleX(taskView.getScaleX());
         setScaleY(taskView.getScaleY());
-        setPosition(sTempRect.left - insets.left, sTempRect.top - insets.top);
+        setY(sTempRect.top - insets.top);
     }
 
     private void animateOpen() {
@@ -274,9 +228,10 @@ public class TaskMenuView extends AbstractFloatingView {
     }
 
     private RoundedRectRevealOutlineProvider createOpenCloseOutlineProvider() {
+        final int width = getWidth();
         float radius = Themes.getDialogCornerRadius(getContext());
-        Rect fromRect = new Rect(0, 0, getWidth(), 0);
-        Rect toRect = new Rect(0, 0, getWidth(), getHeight());
+        Rect fromRect = new Rect(width, 0, width, 0);
+        Rect toRect = new Rect(0, 0, width, getHeight());
         return new RoundedRectRevealOutlineProvider(radius, radius, fromRect, toRect);
     }
 

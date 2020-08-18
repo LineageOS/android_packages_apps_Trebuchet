@@ -44,7 +44,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.launcher3.BaseDraggingActivity;
@@ -80,7 +82,7 @@ import java.util.function.Consumer;
 /**
  * A task in the Recents view.
  */
-public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
+public class TaskView extends LinearLayout implements PageCallbacks, Reusable {
 
     private static final String TAG = TaskView.class.getSimpleName();
 
@@ -151,7 +153,10 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
     private Task mTask;
     private TaskThumbnailView mSnapshotView;
     private TaskMenuView mMenuView;
+    private View mTaskInfoContainer;
     private IconView mIconView;
+    private TextView mNameView;
+    private ImageView mMenuIconView;
     private final DigitalWellBeingToast mDigitalWellBeingToast;
     private float mCurveScale;
     private float mFullscreenProgress;
@@ -223,7 +228,10 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
     protected void onFinishInflate() {
         super.onFinishInflate();
         mSnapshotView = findViewById(R.id.snapshot);
+        mTaskInfoContainer = findViewById(R.id.task_info_container);
         mIconView = findViewById(R.id.icon);
+        mNameView = findViewById(R.id.name);
+        mMenuIconView = findViewById(R.id.menu);
     }
 
     public TaskMenuView getMenuView() {
@@ -350,6 +358,8 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
             mIconLoadRequest = iconCache.updateIconInBackground(mTask,
                     (task) -> {
                         setIcon(task.icon);
+                        setName(task);
+                        setMenu(true);
                         if (ENABLE_QUICKSTEP_LIVE_TILE.get() && isRunningTask()) {
                             getRecentsView().updateLiveTileIcon(task.icon);
                         }
@@ -358,6 +368,8 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
         } else {
             mSnapshotView.setThumbnail(null, null);
             setIcon(null);
+            setName(null);
+            setMenu(false);
             // Reset the task thumbnail reference as well (it will be fetched from the cache or
             // reloaded next time we need it)
             mTask.thumbnail = null;
@@ -387,17 +399,24 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
     }
 
     private void setIcon(Drawable icon) {
-        if (icon != null) {
-            mIconView.setDrawable(icon);
-            mIconView.setOnClickListener(v -> showTaskMenu(Touch.TAP));
-            mIconView.setOnLongClickListener(v -> {
+        mIconView.setDrawable(icon);
+    }
+
+    private void setName(Task task) {
+        mNameView.setText(task == null ?
+                "" : TaskUtils.getTitle(getContext(), task));
+    }
+
+    private void setMenu(boolean enable) {
+        if (enable) {
+            mMenuIconView.setOnClickListener(v -> showTaskMenu(Touch.TAP));
+            mMenuIconView.setOnLongClickListener(v -> {
                 requestDisallowInterceptTouchEvent(true);
                 return showTaskMenu(Touch.LONGPRESS);
             });
         } else {
-            mIconView.setDrawable(null);
-            mIconView.setOnClickListener(null);
-            mIconView.setOnLongClickListener(null);
+            mMenuIconView.setOnClickListener(null);
+            mMenuIconView.setOnLongClickListener(null);
         }
     }
 
@@ -412,8 +431,7 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
         float upperClamp = invert ? 1 : iconScalePercentage;
         float scale = Interpolators.clampToProgress(FAST_OUT_SLOW_IN, lowerClamp, upperClamp)
                 .getInterpolation(progress);
-        mIconView.setScaleX(scale);
-        mIconView.setScaleY(scale);
+        mTaskInfoContainer.setAlpha(scale);
 
         mFooterVerticalOffset = 1.0f - scale;
         for (FooterWrapper footer : mFooters) {
@@ -499,7 +517,8 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
         }
 
         if (mMenuView != null) {
-            mMenuView.setPosition(getX() - getRecentsView().getScrollX(), getY());
+            mMenuView.setPosition(getX() - getRecentsView().getScrollX() +
+                    getWidth() - (int) mMenuView.getWidth(), getY());
             mMenuView.setScaleX(getScaleX());
             mMenuView.setScaleY(getScaleY());
         }
@@ -794,7 +813,7 @@ public class TaskView extends FrameLayout implements PageCallbacks, Reusable {
         }
         mFullscreenProgress = progress;
         boolean isFullscreen = mFullscreenProgress > 0;
-        mIconView.setVisibility(progress < 1 ? VISIBLE : INVISIBLE);
+        mTaskInfoContainer.setVisibility(progress < 1 ? VISIBLE : INVISIBLE);
         setClipChildren(!isFullscreen);
         setClipToPadding(!isFullscreen);
 
