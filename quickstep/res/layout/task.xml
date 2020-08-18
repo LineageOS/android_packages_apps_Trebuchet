@@ -18,20 +18,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:defaultFocusHighlightEnabled="false"
-    android:elevation="4dp"
+    android:orientation="vertical"
     android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/task_info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/task_thumbnail_icon_size"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:focusable="false">
+
+        <com.android.quickstep.views.IconView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/task_thumbnail_icon_size"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:layout_alignParentEnd="true"
+            android:importantForAccessibility="no"/>
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="@dimen/task_thumbnail_icon_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="6dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_task_menu" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_toStartOf="@id/icon"
+            android:layout_marginStart="@dimen/task_thumbnail_icon_size"
+            android:focusable="false"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="?attr/workspaceTextColor"
+            android:textSize="16sp"/>
+    </RelativeLayout>
 
     <com.android.quickstep.views.TaskThumbnailView
         android:id="@+id/snapshot"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/task_thumbnail_top_margin"/>
+        android:elevation="4dp" />
 
-    <com.android.quickstep.views.IconView
-        android:id="@+id/icon"
-        android:layout_width="@dimen/task_thumbnail_icon_size"
-        android:layout_height="@dimen/task_thumbnail_icon_size"
-        android:layout_gravity="top|center_horizontal"
-        android:focusable="false"
-        android:importantForAccessibility="no"/>
 </com.android.quickstep.views.TaskView>

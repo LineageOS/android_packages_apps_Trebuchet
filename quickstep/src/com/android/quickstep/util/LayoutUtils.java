@@ -105,6 +105,8 @@ public class LayoutUtils {
         }
 
         float topIconMargin = res.getDimension(R.dimen.task_thumbnail_top_margin);
+        // Add extra spacing for the icon + title
+        topIconMargin += res.getDimension(R.dimen.task_thumbnail_icon_size);
         float paddingVert = res.getDimension(R.dimen.task_card_vert_space);
 
         // Note this should be same as dp.availableWidthPx and dp.availableHeightPx unless
