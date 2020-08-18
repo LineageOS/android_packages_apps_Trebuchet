@@ -16,9 +16,9 @@
 
 <resources>
 
-    <dimen name="task_thumbnail_top_margin">24dp</dimen>
-    <dimen name="task_thumbnail_half_top_margin">12dp</dimen>
-    <dimen name="task_thumbnail_icon_size">48dp</dimen>
+    <dimen name="task_thumbnail_top_margin">44dp</dimen>
+    <dimen name="task_thumbnail_half_top_margin">22dp</dimen>
+    <dimen name="task_thumbnail_icon_size">36dp</dimen>
     <!-- For screens without rounded corners -->
     <dimen name="task_corner_radius_small">2dp</dimen>
 
@@ -53,6 +53,7 @@
          in various configurations -->
     <dimen name="task_card_vert_space">40dp</dimen>
     <dimen name="task_card_menu_option_vertical_padding">8dp</dimen>
+    <dimen name="task_card_menu_option_horizontal_padding">8dp</dimen>
     <dimen name="task_card_menu_shadow_height">3dp</dimen>
     <dimen name="task_card_menu_horizontal_padding">0dp</dimen>
     <dimen name="portrait_task_card_horz_space">136dp</dimen>

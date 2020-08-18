@@ -28,10 +28,10 @@
         <!-- Background -->
         <shape>
             <corners
-                android:topLeftRadius="?android:attr/dialogCornerRadius"
                 android:topRightRadius="?android:attr/dialogCornerRadius"
-                android:bottomLeftRadius="0dp"
-                android:bottomRightRadius="0dp" />
+                android:topLeftRadius="?android:attr/dialogCornerRadius"
+                android:bottomLeftRadius="?android:attr/dialogCornerRadius"
+                android:bottomRightRadius="?android:attr/dialogCornerRadius" />
             <solid android:color="?attr/popupColorPrimary" />
         </shape>
     </item>

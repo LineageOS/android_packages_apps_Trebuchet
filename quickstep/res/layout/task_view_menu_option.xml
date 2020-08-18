@@ -18,10 +18,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/TaskMenu.Option"
     android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:orientation="vertical"
+    android:layout_gravity="center_horizontal|start"
+    android:gravity="center"
+    android:orientation="horizontal"
     android:paddingTop="@dimen/task_card_menu_option_vertical_padding"
     android:paddingBottom="@dimen/task_card_menu_option_vertical_padding"
+    android:paddingStart="@dimen/task_card_menu_option_horizontal_padding"
+    android:paddingEnd="@dimen/task_card_menu_option_horizontal_padding"
     android:background="?android:attr/selectableItemBackground"
     android:theme="@style/PopupItem" >
 
@@ -29,22 +32,18 @@
       android:id="@+id/icon"
       android:layout_width="@dimen/system_shortcut_icon_size"
       android:layout_height="@dimen/system_shortcut_icon_size"
-      android:layout_marginTop="@dimen/system_shortcut_header_icon_padding"
-      android:layout_marginBottom="@dimen/deep_shortcut_drawable_padding"
-      android:layout_gravity="center_horizontal"
+      android:layout_margin="@dimen/deep_shortcut_drawable_padding"
       android:backgroundTint="?android:attr/textColorTertiary"/>
 
     <TextView
         style="@style/BaseIcon"
         android:id="@+id/text"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/popup_padding_end"
+        android:paddingEnd="@dimen/deep_shortcut_drawable_padding"
         android:textSize="12sp"
         android:textColor="?android:attr/textColorPrimary"
         android:fontFamily="sans-serif"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
         android:focusable="false" />
 
 </LinearLayout>
