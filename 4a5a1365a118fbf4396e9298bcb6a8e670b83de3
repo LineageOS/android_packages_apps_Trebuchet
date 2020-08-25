@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0020bf5c_07641284",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-08-25T10:52:09Z",
+      "side": 1,
+      "message": ".",
+      "revId": "4a5a1365a118fbf4396e9298bcb6a8e670b83de3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af2106f4_b2ac7f2a",
+        "filename": "src/com/android/launcher3/lineage/icon/IconPackHeaderPreference.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-08-25T10:52:09Z",
+      "side": 1,
+      "message": "this.icons \u003d {\n            (ImageView) holder.findViewById(R.id.pref_icon_a),\n            (ImageView) holder.findViewById(R.id.pref_icon_b),\n            (ImageView) holder.findViewById(R.id.pref_icon_c),\n            (ImageView) holder.findViewById(R.id.pref_icon_d)\n        };\nWill likely be optimized in a better way by compiler",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 32
+      },
+      "revId": "4a5a1365a118fbf4396e9298bcb6a8e670b83de3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9b16a0e_22ad2008",
+        "filename": "src/com/android/launcher3/lineage/settings/RadioSettingsFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-08-25T10:52:09Z",
+      "side": 1,
+      "message": "You might want to implement a Callback that is called whenever we want to update the prefs.\nThis way we can listen for installed/removed packages to update the pref list without re-entering the Fragment.",
+      "revId": "4a5a1365a118fbf4396e9298bcb6a8e670b83de3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
