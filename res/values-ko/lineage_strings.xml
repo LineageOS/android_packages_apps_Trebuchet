@@ -23,6 +23,7 @@
     <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
     <string name="desktop_show_labels">홈 화면에 아이콘 이름 표시</string>
     <string name="drawer_show_labels">앱 서랍에 아이콘 이름 표시</string>
+    <string name="show_labels_landscape">가로 모드에서 아이콘 라벨 표시</string>
     <string name="trust_apps_manager_name">숨겨지거나 보호된 앱</string>
     <string name="trust_apps_auth_manager">숨겨지거나 보호된 앱을 관리하려면 잠금을 해제하세요.</string>
     <string name="trust_apps_auth_open_app">인증하여 %1$s 열기</string>
