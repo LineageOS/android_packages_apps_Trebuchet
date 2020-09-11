@@ -15,8 +15,8 @@
 -->
 <resources>
     <string name="title_show_google_app">Pokaži Google aplikacijo</string>
-    <string name="msg_minus_one_on_left">Ko potegnete desno od glavnega domačega zaslona</string>
-    <string name="msg_minus_one_on_right">Ko potegnete levo od glavnega domačega zaslona</string>
+    <string name="msg_minus_one_on_left">Ko povlečete desno od glavnega domačega zaslona</string>
+    <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
     <string name="settings_edit_allow_title">Dovoli urejanje</string>
     <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_edit_allow_summary_off">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>

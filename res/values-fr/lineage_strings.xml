@@ -23,6 +23,7 @@
     <string name="settings_edit_widgets_error">Impossible d\'ajouter des widgets sur l\'écran d\'accueil</string>
     <string name="desktop_show_labels">Afficher le libellé des icônes sur le bureau</string>
     <string name="drawer_show_labels">Afficher le libellé des icônes dans le tiroir</string>
+    <string name="show_labels_landscape">Afficher le libellé des icônes en mode paysage</string>
     <string name="trust_apps_manager_name">Applications cachées &amp; protégées</string>
     <string name="trust_apps_auth_manager">Déverrouiller pour gérer les applications cachées et protégées</string>
     <string name="trust_apps_auth_open_app">S’authentifier pour ouvrir %1$s</string>
