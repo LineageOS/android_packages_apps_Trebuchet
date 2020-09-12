@@ -18,8 +18,8 @@
     <string name="settings_category_drawer">Nastavitve predala</string>
     <string name="settings_category_icons">Nastavitve ikon</string>
     <string name="title_show_google_app">Pokaži Google aplikacijo</string>
-    <string name="msg_minus_one_on_left">Ko potegnete desno od glavnega domačega zaslona</string>
-    <string name="msg_minus_one_on_right">Ko potegnete levo od glavnega domačega zaslona</string>
+    <string name="msg_minus_one_on_left">Ko povlečete desno od glavnega domačega zaslona</string>
+    <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
     <string name="icon_shape_square_name">Kvadrat</string>
     <string name="icon_shape_circle_name">Krog</string>
     <string name="icon_shape_squircle_name">Zaobljen kvadrat</string>
