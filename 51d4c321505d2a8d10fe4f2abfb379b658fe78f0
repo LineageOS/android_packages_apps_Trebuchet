@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7093d79_b4f7a0dc",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2020-09-19T20:44:34Z",
+      "side": 1,
+      "message": "Appears unused",
+      "revId": "51d4c321505d2a8d10fe4f2abfb379b658fe78f0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
