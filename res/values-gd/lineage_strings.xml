@@ -15,11 +15,20 @@
 -->
 <resources>
     <string name="title_show_google_app">Seall aplacaid Google</string>
+    <string name="msg_minus_one_on_left">Le grad-shlaighdeadh gu deas on phrìomh sgrìn dhachaigh</string>
+    <string name="msg_minus_one_on_right">Le grad-shlaighdeadh gu clì on phrìomh sgrìn dhachaigh</string>
     <string name="settings_edit_allow_title">Ceadaich deasachadh</string>
     <string name="settings_edit_allow_summary_on">Gabhaidh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
     <string name="settings_edit_allow_summary_off">Cha ghabh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
     <string name="settings_edit_widgets_error">Cha ghabh widgets a chur ris an sgrìn dhachaigh</string>
     <string name="desktop_show_labels">Seall leubailean nan ìomhaigheagan air an deasg</string>
     <string name="drawer_show_labels">Seall leubailean nan ìomhaigheagan san drathair</string>
+    <string name="trust_apps_manager_name">Aplacaidean falaichte ⁊ dìonta</string>
+    <string name="trust_apps_auth_manager">Thoir a’ ghlais dheth a stiùireadh nan aplacaidean falaichte ’s dìonta</string>
+    <string name="trust_apps_auth_open_app">Dearbh gus %1$s fhosgladh</string>
+    <string name="trust_apps_loading">’Ga luchdadh\u2026</string>
+    <string name="trust_apps_no_lock_error">Suidhich sgrìn-ghlasaidh thèarainte airson inntrigeadh aplacaidean a chuingeachadh</string>
     <string name="trust_apps_help">Cobhair</string>
+    <string name="trust_apps_info_hidden">Tha aplacaidean falaichte ’s na widgets aca ’gam falach on drathair</string>
+    <string name="trust_apps_info_protected">Iarraidh aplacaidean dìonta dearbhadh mus dèid am fosgladh on lòinsear</string>
 </resources>
