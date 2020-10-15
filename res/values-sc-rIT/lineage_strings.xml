@@ -14,11 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_edit_allow_title">Dopusti uređivanje</string>
-    <string name="settings_edit_allow_summary_on">Ikone i widgeti se mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
-    <string name="settings_edit_allow_summary_off">Ikone i widgeti se ne mogu dodavati, uklanjati i micati na početnom zaslonu.</string>
-    <string name="settings_edit_widgets_error">Nije moguće dodavati widgete na početni zaslon</string>
-    <string name="desktop_show_labels">Prikaži oznake ikona na radnoj površini</string>
-    <string name="drawer_show_labels">Prikaži oznake ikona u ladici</string>
-    <string name="icon_pack_title">Paket ikona</string>
+    <string name="icon_pack_title">Pachete de iconas</string>
 </resources>

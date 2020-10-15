@@ -23,4 +23,5 @@
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
+    <string name="icon_pack_title">Gói biểu tượng</string>
 </resources>

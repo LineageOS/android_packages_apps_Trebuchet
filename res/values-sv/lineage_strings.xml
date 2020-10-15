@@ -17,4 +17,5 @@
     <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
     <string name="trust_apps_loading">Laddar\u2026</string>
     <string name="trust_apps_help">Hjälp</string>
+    <string name="icon_pack_title">Ikonpaket</string>
 </resources>

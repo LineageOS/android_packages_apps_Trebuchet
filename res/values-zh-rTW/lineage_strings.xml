@@ -31,4 +31,5 @@
     <string name="trust_apps_help">說明</string>
     <string name="trust_apps_info_hidden">隱藏的應用程式及其小工具隱藏在清單中</string>
     <string name="trust_apps_info_protected">受保護的應用程式需要從啟動器開啟身份驗證</string>
+    <string name="icon_pack_title">圖示包</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Показать приложение Google</string>
     <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
     <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
+    <string name="settings_category_apps">Приложения</string>
+    <string name="settings_category_desktop">Компьютер</string>
+    <string name="settings_category_labels">Метки</string>
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
     <string name="settings_edit_allow_summary_on">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_allow_summary_off">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
@@ -32,4 +35,8 @@
     <string name="trust_apps_help">Помощь</string>
     <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты не отображаются в меню приложений</string>
     <string name="trust_apps_info_protected">Для открытия защищенных приложений из лаунчера требуется аутентификация</string>
+    <string name="icon_pack_title">Набор значков</string>
+    <string name="icon_pack_default_label">По умолчанию</string>
+    <string name="icon_pack_add">Установить еще</string>
+    <string name="icon_pack_no_market">Нет доступного магазина приложений</string>
 </resources>

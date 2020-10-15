@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Pomocník</string>
     <string name="trust_apps_info_hidden">Skryté aplikácie a ich widgety se nezobrazujú v zozname aplikácií</string>
     <string name="trust_apps_info_protected">Chránené aplikácie vyžadujú pre otvorenie zo spúšťača overenie</string>
+    <string name="icon_pack_title">Balíček ikon</string>
 </resources>

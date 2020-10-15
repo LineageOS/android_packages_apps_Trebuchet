@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Google uygulamasını göster</string>
     <string name="msg_minus_one_on_left">Ana ekrandan sağa kaydırdığınızda</string>
     <string name="msg_minus_one_on_right">Ana ekrandan sola kaydırdığınızda</string>
+    <string name="settings_category_apps">Uygulamalar</string>
+    <string name="settings_category_desktop">Ana ekran</string>
+    <string name="settings_category_labels">Etiketler</string>
     <string name="settings_edit_allow_title">Düzenlemeye izin ver</string>
     <string name="settings_edit_allow_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
     <string name="settings_edit_allow_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
@@ -32,4 +35,8 @@
     <string name="trust_apps_help">Yardım</string>
     <string name="trust_apps_info_hidden">Gizli uygulamalar ve widget\'ları uygulama menüsünde görünmeyecek</string>
     <string name="trust_apps_info_protected">Korunan uygulamaların başlatıcıdan açılması için kimlik doğrulama gerekir</string>
+    <string name="icon_pack_title">Simge paketi</string>
+    <string name="icon_pack_default_label">Varsayılan</string>
+    <string name="icon_pack_add">Daha fazla yükle</string>
+    <string name="icon_pack_no_market">Kullanılabilir uygulama mağazası yok</string>
 </resources>

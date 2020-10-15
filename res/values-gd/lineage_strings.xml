@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Cobhair</string>
     <string name="trust_apps_info_hidden">Tha aplacaidean falaichte ’s na widgets aca ’gam falach on drathair</string>
     <string name="trust_apps_info_protected">Iarraidh aplacaidean dìonta dearbhadh mus dèid am fosgladh on lòinsear</string>
+    <string name="icon_pack_title">Pacaid ìomhaigheagan</string>
 </resources>

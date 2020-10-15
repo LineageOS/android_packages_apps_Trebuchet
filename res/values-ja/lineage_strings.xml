@@ -31,4 +31,5 @@
     <string name="trust_apps_help">ヘルプ</string>
     <string name="trust_apps_info_hidden">非表示アプリとそのウィジェットはドロワーから非表示になります</string>
     <string name="trust_apps_info_protected">保護アプリはランチャーから開くのに認証が必要です</string>
+    <string name="icon_pack_title">アイコンパック</string>
 </resources>

@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Ohje</string>
     <string name="trust_apps_info_hidden">Piilotetut sovellukset ja niiden widgetit piilotetaan valikosta</string>
     <string name="trust_apps_info_protected">Suojatut sovellukset tarvitsevat todennuksen jotta ne voidaan avata</string>
+    <string name="icon_pack_title">Kuvakepaketti</string>
 </resources>

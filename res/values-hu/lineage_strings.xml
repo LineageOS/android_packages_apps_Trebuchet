@@ -17,6 +17,9 @@
     <string name="title_show_google_app">A Google-alkalmazás megjelenítése</string>
     <string name="msg_minus_one_on_left">Amikor a főképernyőn jobbra csúsztat</string>
     <string name="msg_minus_one_on_right">Amikor a főképernyőn balra csúsztat</string>
+    <string name="settings_category_apps">Alkalmazások</string>
+    <string name="settings_category_desktop">Főképernyő</string>
+    <string name="settings_category_labels">Feliratok</string>
     <string name="settings_edit_allow_title">Szerkesztés engedélyezése</string>
     <string name="settings_edit_allow_summary_on">A kezdőképernyőn engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
     <string name="settings_edit_allow_summary_off">A kezdőképernyőn nem engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
@@ -32,4 +35,8 @@
     <string name="trust_apps_help">Súgó</string>
     <string name="trust_apps_info_hidden">A rejtett alkalmazások és moduljaik az alkalmazásfiókban sem láthatóak</string>
     <string name="trust_apps_info_protected">Egy védett alkalmazás megnyitása a launcherből hitelesítést igényel</string>
+    <string name="icon_pack_title">Ikoncsomag</string>
+    <string name="icon_pack_default_label">Alapértelmezett</string>
+    <string name="icon_pack_add">Továbbiak telepítése</string>
+    <string name="icon_pack_no_market">Nincs elérhető alkalmazás az áruházban</string>
 </resources>

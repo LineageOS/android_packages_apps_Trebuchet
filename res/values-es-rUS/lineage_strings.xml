@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Ayuda</string>
     <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets se ocultan del cajón</string>
     <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren que la autenticación se abra desde el lanzador</string>
+    <string name="icon_pack_title">Paquete de iconos</string>
 </resources>

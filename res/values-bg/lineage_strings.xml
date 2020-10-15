@@ -32,4 +32,5 @@
     <string name="trust_apps_help">Помощ</string>
     <string name="trust_apps_info_hidden">Скритите приложения и техните приспособления са скрити от менюто</string>
     <string name="trust_apps_info_protected">Защитените приложения изискват парола, за да бъдат отворени от главното меню</string>
+    <string name="icon_pack_title">Пакет икони</string>
 </resources>

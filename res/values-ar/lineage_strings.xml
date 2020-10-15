@@ -31,4 +31,5 @@
     <string name="trust_apps_help">مساعدة</string>
     <string name="trust_apps_info_hidden">يتم إخفاء التطبيقات المخفية وعناصرها من الدرج</string>
     <string name="trust_apps_info_protected">تتطلب التطبيقات المحمية فتح المصادقة من المشغِّل</string>
+    <string name="icon_pack_title">حزمة الرموز</string>
 </resources>

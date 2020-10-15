@@ -20,4 +20,5 @@
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
+    <string name="icon_pack_title">Pack de iconos</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Amosar a aplicación Google Now</string>
     <string name="msg_minus_one_on_left">Cando deslizas cara á dereita dende a pantalla de inicio</string>
     <string name="msg_minus_one_on_right">Cando esvaras cara á esquerda dende a pantalla de inicio</string>
+    <string name="settings_category_apps">Aplicacións</string>
+    <string name="settings_category_desktop">Escritorio</string>
+    <string name="settings_category_labels">Etiquetas</string>
     <string name="settings_edit_allow_title">Permitir editar</string>
     <string name="settings_edit_allow_summary_on">Iconas e widgets pódense engadir, eliminar e mover na pantalla de inicio</string>
     <string name="settings_edit_allow_summary_off">Iconas e widgets no se poden engadir, eliminar e mover na pantalla de inicio</string>
@@ -32,4 +35,7 @@
     <string name="trust_apps_help">Axuda</string>
     <string name="trust_apps_info_hidden">As aplicacións ocultas e os seus widgets están ocultos na gabeta</string>
     <string name="trust_apps_info_protected">Requírese autenticación para abrir as aplicacións protexidas dende o lanzador</string>
+    <string name="icon_pack_title">Paquete de iconas</string>
+    <string name="icon_pack_default_label">Defecto</string>
+    <string name="icon_pack_add">Instalar máis</string>
 </resources>

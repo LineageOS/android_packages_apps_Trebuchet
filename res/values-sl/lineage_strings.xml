@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Pokaži Google aplikacijo</string>
     <string name="msg_minus_one_on_left">Ko povlečete desno od glavnega domačega zaslona</string>
     <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
+    <string name="settings_category_apps">Aplikacije</string>
+    <string name="settings_category_desktop">Namizje</string>
+    <string name="settings_category_labels">Oznake</string>
     <string name="settings_edit_allow_title">Dovoli urejanje</string>
     <string name="settings_edit_allow_summary_on">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_edit_allow_summary_off">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
@@ -32,4 +35,8 @@
     <string name="trust_apps_help">Pomoč</string>
     <string name="trust_apps_info_hidden">Skrite aplikacije in njihovi pripomočki so skriti iz predala</string>
     <string name="trust_apps_info_protected">Zaščitene aplikacije zahtevajo overitev za odpiranje iz zaganjalnika</string>
+    <string name="icon_pack_title">Paket ikon</string>
+    <string name="icon_pack_default_label">Privzeto</string>
+    <string name="icon_pack_add">Namesti več</string>
+    <string name="icon_pack_no_market">Na voljo ni nobene trgovine z aplikacijami</string>
 </resources>

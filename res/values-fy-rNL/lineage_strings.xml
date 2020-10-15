@@ -32,4 +32,5 @@
     <string name="trust_apps_help">Help</string>
     <string name="trust_apps_info_hidden">Ferstoppe apps en harren widgets wurde net toand yn it app-oersjoch</string>
     <string name="trust_apps_info_protected">Beskerme apps fereaskje autentikaasje om te starten fan de launcher út</string>
+    <string name="icon_pack_title">Piktogrampakket</string>
 </resources>

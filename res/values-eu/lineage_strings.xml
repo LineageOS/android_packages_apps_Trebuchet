@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Laguntza</string>
     <string name="trust_apps_info_hidden">Ezkutatutako aplikazioak eta bere trepetak ez dira tiraderan ikusten</string>
     <string name="trust_apps_info_protected">Babestutako aplikazioek autentifikazioa eskatzen dute abiarazletik irekitzeko</string>
+    <string name="icon_pack_title">Ikono multzoa</string>
 </resources>

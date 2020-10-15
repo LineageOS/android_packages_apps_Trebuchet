@@ -21,4 +21,5 @@
     <string name="settings_edit_widgets_error">Није могуће додати алатке на почетни екран</string>
     <string name="desktop_show_labels">Прикажи ознаке иконица на радној површини</string>
     <string name="drawer_show_labels">Прикажи ознаке иконица у фиоци</string>
+    <string name="icon_pack_title">Пакет иконица</string>
 </resources>

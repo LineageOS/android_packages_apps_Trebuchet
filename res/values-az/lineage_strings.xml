@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Google tətbiqini göstər</string>
     <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
     <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
+    <string name="settings_category_apps">Tətbiqlər</string>
+    <string name="settings_category_desktop">Əsas ekran</string>
+    <string name="settings_category_labels">Etiketlər</string>
     <string name="settings_edit_allow_title">Düzəlişə icazə ver</string>
     <string name="settings_edit_allow_summary_on">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilər</string>
     <string name="settings_edit_allow_summary_off">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilməz</string>
@@ -32,4 +35,8 @@
     <string name="trust_apps_help">Kömək</string>
     <string name="trust_apps_info_hidden">Gizli tətbiqlər və vidgetləri, tətbiqlər menyusunda görünməyəcək</string>
     <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik təsdiqləmə tələb olunur</string>
+    <string name="icon_pack_title">Nişan paketi</string>
+    <string name="icon_pack_default_label">İlkin</string>
+    <string name="icon_pack_add">Daha çox quraşdır</string>
+    <string name="icon_pack_no_market">Əlçatan tətbiq mağazası yoxdur</string>
 </resources>

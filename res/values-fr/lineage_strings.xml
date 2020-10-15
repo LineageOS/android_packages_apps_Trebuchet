@@ -32,4 +32,5 @@
     <string name="trust_apps_help">Aide</string>
     <string name="trust_apps_info_hidden">Les applications cachées et leurs widgets sont cachés du tiroir</string>
     <string name="trust_apps_info_protected">Les applications protégées nécessitent une authentification pour être ouvertes depuis le lanceur</string>
+    <string name="icon_pack_title">Pack d\'icônes</string>
 </resources>

@@ -31,4 +31,5 @@
     <string name="trust_apps_help">ಸಹಾಯ</string>
     <string name="trust_apps_info_hidden">ಅಡಗಿದ ಆಪ್ಗಳು ಮತ್ತು ಅವುಗಳ ಕಿಂಡಿಚೂಟಿಗಳು ಎಳೆಗೂಡಿಂದ ಮರೆಯಾಗಿವೆ</string>
     <string name="trust_apps_info_protected">ಸಂರಕ್ಷಿತ ಆಪ್ಗಳು ಏರುನೆಲೆಯಿಂದ ತೆರೆಯಲು ದೃಢೀಕರಣ ಅಗತ್ಯ</string>
+    <string name="icon_pack_title">ಚಿಹ್ನೆಗಳ ಘಂಟು</string>
 </resources>

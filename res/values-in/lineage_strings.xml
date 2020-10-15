@@ -27,4 +27,5 @@
     <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar aman untuk membatasi akses aplikasi</string>
     <string name="trust_apps_help">Bantuan</string>
     <string name="trust_apps_info_protected">Aplikasi yang dilindungi memerlukan otentikasi untuk dibuka dari peluncur</string>
+    <string name="icon_pack_title">Paket ikon</string>
 </resources>

@@ -32,4 +32,5 @@
     <string name="trust_apps_help">Pomoc</string>
     <string name="trust_apps_info_hidden">Ukryte aplikacje i ich widżety są ukryte z szuflady aplikacji</string>
     <string name="trust_apps_info_protected">Chronione aplikacje wymagają uwierzytelniania, aby mogły zostać uruchomione z poziomu ekranu głównego</string>
+    <string name="icon_pack_title">Paczka ikon</string>
 </resources>

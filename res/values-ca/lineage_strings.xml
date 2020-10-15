@@ -32,4 +32,5 @@
     <string name="trust_apps_help">Ajuda</string>
     <string name="trust_apps_info_hidden">Les aplicacions amagades i els seus widgets s\'amagaran del calaix</string>
     <string name="trust_apps_info_protected">Les aplicacions protegides requeriran autentificació per poder ser obertes des del llançador</string>
+    <string name="icon_pack_title">Paquet d\'icones</string>
 </resources>
