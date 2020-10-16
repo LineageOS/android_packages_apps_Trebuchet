@@ -18,6 +18,9 @@
     <string name="settings_category_drawer">Roghainnean an drathair</string>
     <string name="settings_category_icons">Roghainnean nan ìomhaigheagan</string>
     <string name="title_show_google_app">Seall aplacaid Google</string>
+    <string name="msg_minus_one_on_left">Le grad-shlaighdeadh gu deas on phrìomh sgrìn dhachaigh</string>
+    <string name="msg_minus_one_on_right">Le grad-shlaighdeadh gu clì on phrìomh sgrìn dhachaigh</string>
+    <string name="icon_shape_square_name">Ceàrnagach</string>
     <string name="icon_shape_circle_name">Cearcall</string>
     <string name="icon_shape_squircle_name">Ceàrnach bog</string>
     <string name="icon_shape_teardrop_name">Deur</string>
@@ -36,5 +39,12 @@
     <string name="settings_icon_badging_desc_off">Cha nochd builgean air an ìomhaigheag nuair a bhios brath ann</string>
     <string name="play_folder_title">Cluich</string>
     <string name="statusbar_expand">Grad-shlaighd sìos gus na brathan a shealltainn</string>
+    <string name="trust_apps_manager_name">Aplacaidean falaichte ⁊ dìonta</string>
+    <string name="trust_apps_auth_manager">Thoir a’ ghlais dheth a stiùireadh nan aplacaidean falaichte ’s dìonta</string>
+    <string name="trust_apps_auth_open_app">Dearbh gus %1$s fhosgladh</string>
+    <string name="trust_apps_loading">’Ga luchdadh\u2026</string>
+    <string name="trust_apps_no_lock_error">Suidhich sgrìn-ghlasaidh thèarainte airson inntrigeadh aplacaidean a chuingeachadh</string>
     <string name="trust_apps_help">Cobhair</string>
+    <string name="trust_apps_info_hidden">Tha aplacaidean falaichte ’s na widgets aca ’gam falach on drathair</string>
+    <string name="trust_apps_info_protected">Iarraidh aplacaidean dìonta dearbhadh mus dèid am fosgladh on lòinsear</string>
 </resources>

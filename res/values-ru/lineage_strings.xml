@@ -22,7 +22,7 @@
     <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
     <string name="icon_shape_square_name">Квадрат</string>
     <string name="icon_shape_circle_name">Круг</string>
-    <string name="icon_shape_squircle_name">Округлый квадрат</string>
+    <string name="icon_shape_squircle_name">Скругленный квадрат</string>
     <string name="icon_shape_teardrop_name">Каплевидная</string>
     <string name="grid_size_text">Размер сетки</string>
     <string name="grid_size_rows">Строки</string>
