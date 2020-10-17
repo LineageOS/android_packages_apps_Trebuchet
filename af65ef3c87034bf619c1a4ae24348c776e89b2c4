@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aad1dcbb_644a59d0",
+        "filename": "src/com/android/launcher3/provider/ImportDataTask.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-10-17T22:14:44Z",
+      "side": 1,
+      "message": "This.",
+      "revId": "af65ef3c87034bf619c1a4ae24348c776e89b2c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
