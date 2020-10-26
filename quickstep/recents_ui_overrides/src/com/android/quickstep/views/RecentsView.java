@@ -43,6 +43,7 @@ import static com.android.launcher3.userevent.nano.LauncherLogProto.Action.Touch
 import static com.android.launcher3.userevent.nano.LauncherLogProto.ControlType.CLEAR_ALL_BUTTON;
 import static com.android.launcher3.util.Executors.UI_HELPER_EXECUTOR;
 import static com.android.launcher3.util.SystemUiController.UI_STATE_OVERVIEW;
+import static com.android.quickstep.SysUINavigationMode.Mode.TWO_BUTTONS;
 import static com.android.quickstep.TaskUtils.checkCurrentOrManagedUserId;
 import static com.android.quickstep.views.OverviewActionsView.HIDDEN_GESTURE_RUNNING;
 import static com.android.quickstep.views.OverviewActionsView.HIDDEN_NON_ZERO_ROTATION;
@@ -85,6 +86,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -121,6 +123,7 @@ import com.android.launcher3.util.Themes;
 import com.android.launcher3.util.ViewPool;
 import com.android.quickstep.BaseActivityInterface;
 import com.android.quickstep.RecentsAnimationController;
+import com.android.quickstep.RecentsAnimationDeviceState;
 import com.android.quickstep.RecentsAnimationTargets;
 import com.android.quickstep.RecentsModel;
 import com.android.quickstep.RecentsModel.TaskVisualsChangeListener;
@@ -245,6 +248,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
             };
 
     protected RecentsOrientedState mOrientationState;
+    protected RecentsAnimationDeviceState mDeviceState;
     protected final BaseActivityInterface mSizeStrategy;
     protected RecentsAnimationController mRecentsAnimationController;
     protected RecentsAnimationTargets mRecentsAnimationTargets;
@@ -436,6 +440,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         mOrientationState = new RecentsOrientedState(
                 context, mSizeStrategy, this::animateRecentsRotationInPlace);
         mOrientationState.setRecentsRotation(mActivity.getDisplay().getRotation());
+        mDeviceState = new RecentsAnimationDeviceState(context);
 
         mFastFlingVelocity = getResources()
                 .getDimensionPixelSize(R.dimen.recents_fast_fling_velocity);
@@ -550,6 +555,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     public void init(OverviewActionsView actionsView) {
         mActionsView = actionsView;
         mActionsView.updateHiddenFlags(HIDDEN_NO_TASKS, getTaskViewCount() == 0);
+        mActionsView.findViewById(R.id.clear_all).setOnClickListener(this::dismissAllTasks);
     }
 
     @Override
@@ -674,7 +680,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
      * button fully visible, center page is Clear All button.
      */
     public boolean isClearAllHidden() {
-        return mClearAllButton.getAlpha() != 1f;
+        return mDeviceState.getNavMode() != TWO_BUTTONS || mClearAllButton.getAlpha() != 1f;
     }
 
     @Override
@@ -733,7 +739,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
                     } else {
                         updateDeadZoneRects();
                         final boolean clearAllButtonDeadZoneConsumed =
-                                mClearAllButton.getAlpha() == 1
+                                !isClearAllHidden()
                                         && mClearAllButtonDeadZoneRect.contains(x, y);
                         final boolean cameFromNavBar = (ev.getEdgeFlags() & EDGE_NAV_BAR) != 0;
                         if (!clearAllButtonDeadZoneConsumed && !cameFromNavBar
@@ -792,7 +798,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
             while (getTaskViewCount() > requiredTaskCount) {
                 removeView(getChildAt(getChildCount() - 1));
             }
-            if (requiredTaskCount > 0) {
+            if (mDeviceState.getNavMode() == TWO_BUTTONS && requiredTaskCount > 0) {
                 addView(mClearAllButton);
             }
         }
@@ -1199,7 +1205,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
             // Add an empty view for now until the task plan is loaded and applied
             final TaskView taskView = mTaskViewPool.getView();
             addView(taskView, mTaskViewStartIndex);
-            if (wasEmpty) {
+            if (mDeviceState.getNavMode() == TWO_BUTTONS && wasEmpty) {
                 addView(mClearAllButton);
             }
             // The temporary running task is only used for the duration between the start of the
