@@ -46,6 +46,30 @@
       "revId": "a81990bb07cd786a426777c1f44acad8aece7d0c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b4e0011_3f44fd74",
+        "filename": "src/com/android/launcher3/lineage/LineageUtils.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18205
+      },
+      "writtenOn": "2020-10-29T18:59:22Z",
+      "side": 1,
+      "message": "Not sure if we would want BIOMETRIC_WEAK\n\nhttps://developer.android.com/training/sign-in/biometric-auth\nhttps://source.android.com/compatibility/android-cdd#7_3_10_biometric_sensors",
+      "parentUuid": "7b14455c_5eff00b2",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 57
+      },
+      "revId": "a81990bb07cd786a426777c1f44acad8aece7d0c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
