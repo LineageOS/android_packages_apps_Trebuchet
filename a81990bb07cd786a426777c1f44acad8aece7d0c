@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9f29e91_fc283d65",
+        "filename": "src/com/android/launcher3/lineage/LineageUtils.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 18205
+      },
+      "writtenOn": "2020-10-29T18:54:23Z",
+      "side": 1,
+      "message": "builder.setAllowedAuthenticators(BIOMETRIC_STRONG | DEVICE_CREDENTIAL)",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 57
+      },
+      "revId": "a81990bb07cd786a426777c1f44acad8aece7d0c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
