@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Покажи Google апликацията</string>
     <string name="msg_minus_one_on_left">Когато плъзнете надясно от главното меню</string>
     <string name="msg_minus_one_on_right">Когато плъзнете наляво от главното меню</string>
+    <string name="settings_category_apps">Приложения</string>
+    <string name="settings_category_desktop">Десктоп</string>
+    <string name="settings_category_labels">Етикети</string>
     <string name="settings_edit_allow_title">Разреши редактиране</string>
     <string name="settings_edit_allow_summary_on">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
     <string name="settings_edit_allow_summary_off">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
@@ -33,4 +36,6 @@
     <string name="trust_apps_info_hidden">Скритите приложения и техните приспособления са скрити от менюто</string>
     <string name="trust_apps_info_protected">Защитените приложения изискват парола, за да бъдат отворени от главното меню</string>
     <string name="icon_pack_title">Пакет икони</string>
+    <string name="icon_pack_default_label">Стандартен</string>
+    <string name="icon_pack_add">Инсталиране на още</string>
 </resources>

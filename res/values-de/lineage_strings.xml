@@ -18,6 +18,7 @@
     <string name="msg_minus_one_on_left">Wenn Sie vom Hauptstartbildschirm aus nach rechts wischen</string>
     <string name="msg_minus_one_on_right">Wenn Sie vom Hauptstartbildschirm aus nach links wischen</string>
     <string name="settings_category_apps">Apps</string>
+    <string name="settings_category_desktop">Startbildschirm</string>
     <string name="settings_edit_allow_title">Bearbeiten zulassen</string>
     <string name="settings_edit_allow_summary_on">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_edit_allow_summary_off">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
@@ -36,4 +37,5 @@
     <string name="icon_pack_title">Symbolpaket</string>
     <string name="icon_pack_default_label">Standard</string>
     <string name="icon_pack_add">Weitere installieren</string>
+    <string name="icon_pack_no_market">Es ist kein App-Store verfügbar</string>
 </resources>

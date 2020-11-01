@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Zobrazit aplikaci Google</string>
     <string name="msg_minus_one_on_left">Při gestu tažení vpravo z hlavní domovské obrazovky</string>
     <string name="msg_minus_one_on_right">Při gestu tažení vlevo z hlavní domovské obrazovky</string>
+    <string name="settings_category_apps">Aplikace</string>
+    <string name="settings_category_desktop">Plocha</string>
+    <string name="settings_category_labels">Popisky</string>
     <string name="settings_edit_allow_title">Povolit úpravy</string>
     <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_allow_summary_off">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
@@ -33,4 +36,7 @@
     <string name="trust_apps_info_hidden">Skryté aplikace a jejich widgety se nezobrazí v seznamu aplikací</string>
     <string name="trust_apps_info_protected">Chráněné aplikace vyžadují pro spuštění ze spouštěče ověření</string>
     <string name="icon_pack_title">Balíček ikon</string>
+    <string name="icon_pack_default_label">Výchozí</string>
+    <string name="icon_pack_add">Instalovat další</string>
+    <string name="icon_pack_no_market">Není dostupný žádný obchod s aplikacemi</string>
 </resources>

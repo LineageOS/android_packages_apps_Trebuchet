@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
     <string name="msg_minus_one_on_left">Quan feu lliscar el dit cap a la dreta des de la pantalla principal d\'inici</string>
     <string name="msg_minus_one_on_right">Quan feu lliscar el dit cap a l\'esquerra des de la pantalla principal d\'inici</string>
+    <string name="settings_category_apps">Aplicacions</string>
+    <string name="settings_category_desktop">Escriptori</string>
+    <string name="settings_category_labels">Etiquetes</string>
     <string name="settings_edit_allow_title">Permet editar</string>
     <string name="settings_edit_allow_summary_on">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
     <string name="settings_edit_allow_summary_off">Les icones i els widgets no poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
@@ -33,4 +36,7 @@
     <string name="trust_apps_info_hidden">Les aplicacions amagades i els seus widgets s\'amagaran del calaix</string>
     <string name="trust_apps_info_protected">Les aplicacions protegides requeriran autentificació per poder ser obertes des del llançador</string>
     <string name="icon_pack_title">Paquet d\'icones</string>
+    <string name="icon_pack_default_label">Per defecte</string>
+    <string name="icon_pack_add">Instal·la més</string>
+    <string name="icon_pack_no_market">No hi ha cap botiga d\'aplicacions disponible</string>
 </resources>
