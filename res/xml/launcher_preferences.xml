@@ -69,6 +69,15 @@
         android:title="@string/trust_apps_manager_name" />
 
     <androidx.preference.PreferenceScreen
+        android:key="pref_suggestions"
+        android:title="@string/pref_suggestions_title"
+        android:summary="@string/pref_suggestions_summary"
+        android:persistent="false">
+
+        <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
+    </androidx.preference.PreferenceScreen>
+
+    <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
         android:persistent="false"
         android:title="@string/developer_options_title"
