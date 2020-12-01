@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Mostra l\'app Google</string>
     <string name="msg_minus_one_on_left">Quando scorri verso destra dalla schermata home</string>
     <string name="msg_minus_one_on_right">Quando scorri verso sinistra dalla schermata home</string>
+    <string name="settings_category_apps">App</string>
+    <string name="settings_category_desktop">Schermata principale</string>
+    <string name="settings_category_labels">Etichette</string>
     <string name="settings_edit_allow_title">Consenti modifiche</string>
     <string name="settings_edit_allow_summary_on">É possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
     <string name="settings_edit_allow_summary_off">Non é possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
@@ -33,4 +36,7 @@
     <string name="trust_apps_info_hidden">Le app nascoste e i loro widget sono nascosti dal drawer</string>
     <string name="trust_apps_info_protected">Le app protette richiedono l\'autenticazione per essere aperte dal launcher</string>
     <string name="icon_pack_title">Pacchetto icone</string>
+    <string name="icon_pack_default_label">Predefinito</string>
+    <string name="icon_pack_add">Installa altri</string>
+    <string name="icon_pack_no_market">Nessun app store disponibile</string>
 </resources>
