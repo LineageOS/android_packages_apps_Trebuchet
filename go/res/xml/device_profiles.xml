@@ -18,21 +18,21 @@
 <profiles xmlns:launcher="http://schemas.android.com/apk/res-auto" >
 
     <grid-option
-        launcher:name="4_by_4"
-        launcher:numRows="4"
+        launcher:name="4_by_5"
+        launcher:numRows="5"
         launcher:numColumns="4"
         launcher:numFolderRows="4"
         launcher:numFolderColumns="4"
-        launcher:numHotseatIcons="4"
+        launcher:numHotseatIcons="5"
         launcher:dbFile="launcher.db"
-        launcher:defaultLayoutId="@xml/default_workspace_4x4" >
+        launcher:defaultLayoutId="@xml/default_workspace_4x5" >
 
         <display-option
             launcher:name="Go Device"
             launcher:minWidthDps="296"
             launcher:minHeightDps="491.33"
-            launcher:iconImageSize="60"
-            launcher:iconTextSize="14.0"
+            launcher:iconImageSize="46"
+            launcher:iconTextSize="13.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
