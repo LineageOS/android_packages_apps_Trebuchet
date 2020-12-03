@@ -86,7 +86,7 @@
         launcher:spanY="2" />
 
     <!-- Google folder -->
-    <!-- Google, Gmail, Maps, YouTube, Drive, YouTube Music, Play Movies, Photos -->
+    <!-- Google, Gmail, Maps, YouTube, Drive, YouTube Music, Play Movies, Duo, Photos -->
     <folder
         launcher:title="@string/google_folder_title"
         launcher:screen="0"
@@ -114,16 +114,12 @@
             launcher:packageName="com.google.android.videos"
             launcher:className="com.google.android.youtube.videos.EntryPoint"/>
         <favorite
+            launcher:packageName="com.google.android.apps.tachyon"
+            launcher:className="com.google.android.apps.tachyon.MainActivity"/>
+        <favorite
             launcher:packageName="com.google.android.apps.photos"
             launcher:className="com.google.android.apps.photos.home.HomeActivity"/>
     </folder>
-
-    <favorite
-        launcher:screen="0"
-        launcher:x="1"
-        launcher:y="3"
-        launcher:packageName="com.google.android.apps.tachyon"
-        launcher:className="com.google.android.apps.tachyon.MainActivity"/>
 
     <favorite
         launcher:screen="0"
