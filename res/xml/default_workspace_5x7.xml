@@ -86,7 +86,7 @@
         launcher:spanY="2" />
 
     <!-- Google Folder -->
-    <!-- Google, Chrome, Gmail, Maps, YouTube, (Drive), (Music), (Movies), Hangouts, Photos -->
+    <!-- Google, Gmail, Maps, YouTube, Drive, YouTube Music, Play Movies, Photos -->
     <folder
         launcher:title="@string/google_folder_title"
         launcher:screen="0"
@@ -108,8 +108,8 @@
             launcher:packageName="com.google.android.apps.docs"
             launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity"/>
         <favorite
-            launcher:packageName="com.google.android.music"
-            launcher:className="com.android.music.activitymanagement.TopLevelActivity"/>
+            launcher:packageName="com.google.android.apps.youtube.music"
+            launcher:className="com.google.android.apps.youtube.music.activities.MusicActivity"/>
         <favorite
             launcher:packageName="com.google.android.videos"
             launcher:className="com.google.android.youtube.videos.EntryPoint"/>
