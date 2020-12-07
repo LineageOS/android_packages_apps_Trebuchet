@@ -15,5 +15,5 @@
 -->
 <resources>
 
-    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_left</string>
+    <string name="pref_show_google_now_summary" translatable="false">@string/msg_minus_one_on_right</string>
 </resources>
