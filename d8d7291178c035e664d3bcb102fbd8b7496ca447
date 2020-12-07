@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2dfae6dc_956037ed",
+        "filename": "res/values-ldrtl/lineage_config.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-12-07T13:47:36Z",
+      "side": 1,
+      "message": "Isn\u0027t this wrong? Shouldn\u0027t it be msg_minus_one_on_right?",
+      "range": {
+        "startLine": 18,
+        "startChar": 77,
+        "endLine": 18,
+        "endChar": 98
+      },
+      "revId": "d8d7291178c035e664d3bcb102fbd8b7496ca447",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
