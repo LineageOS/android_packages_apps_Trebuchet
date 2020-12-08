@@ -236,7 +236,7 @@ public final class LauncherActivityInterface extends
                     @Override
                     public void onStateTransitionComplete(LauncherState toState) {
                         // Are we going from Recents to Workspace?
-                        if (toState == LauncherState.NORMAL) {
+                        if (toState == LauncherState.NORMAL || toState == LauncherState.ALL_APPS) {
                             exitRunnable.run();
                             notifyRecentsOfOrientation(deviceState);
                             stateManager.removeStateListener(this);
