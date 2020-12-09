@@ -344,10 +344,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver, 
     public boolean onTouchEvent(MotionEvent event) {
         // ignore events if they happen in padding area
         if (event.getAction() == MotionEvent.ACTION_DOWN
-                && (event.getY() < getPaddingTop()
-                || event.getX() < getPaddingLeft()
-                || event.getY() > getHeight() - getPaddingBottom()
-                || event.getX() > getWidth() - getPaddingRight())) {
+                && shouldIgnoreTouchDown(event.getX(), event.getY())) {
             return false;
         }
         if (isLongClickable()) {
@@ -358,6 +355,16 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver, 
         } else {
             return super.onTouchEvent(event);
         }
+    }
+
+    /**
+     * Returns true if the touch down at the provided position be ignored
+     */
+    protected boolean shouldIgnoreTouchDown(float x, float y) {
+        return y < getPaddingTop()
+                || x < getPaddingLeft()
+                || y > getHeight() - getPaddingBottom()
+                || x > getWidth() - getPaddingRight();
     }
 
     void setStayPressed(boolean stayPressed) {
@@ -620,6 +627,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver, 
     @Override
     public void setIconVisible(boolean visible) {
         mIsIconVisible = visible;
+        if (!mIsIconVisible) {
+            resetIconScale();
+        }
         Drawable icon = visible ? mIcon : new ColorDrawable(Color.TRANSPARENT);
         applyCompoundDrawables(icon);
     }
@@ -759,11 +769,14 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver, 
 
     @Override
     public SafeCloseable prepareDrawDragView() {
-        if (getIcon() instanceof FastBitmapDrawable) {
-            FastBitmapDrawable icon = (FastBitmapDrawable) getIcon();
-            icon.setScale(1f);
-        }
+        resetIconScale();
         setForceHideDot(true);
         return () -> { };
+    }
+
+    private void resetIconScale() {
+        if (mIcon instanceof FastBitmapDrawable) {
+            ((FastBitmapDrawable) mIcon).setScale(1f);
+        }
     }
 }
