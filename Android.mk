@@ -267,7 +267,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := privapp_whitelist_com.android.launcher3-ext.xml
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT_ETC)/permissions
+LOCAL_MODULE_PATH := $(TARGET_OUT_SYSTEM_EXT_ETC)/permissions
 LOCAL_PRODUCT_MODULE := true
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
