@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Kuva Google\'i rakendus</string>
     <string name="msg_minus_one_on_left">Kui viipad põhiliselt avaekraanilt paremale</string>
     <string name="msg_minus_one_on_right">Kui viipad põhiliselt avaekraanilt vasakule</string>
+    <string name="settings_category_apps">Rakendused</string>
+    <string name="settings_category_desktop">Töölaud</string>
+    <string name="settings_category_labels">Sildid</string>
     <string name="settings_edit_allow_title">Luba redigeerimine</string>
     <string name="settings_edit_allow_summary_on">Avaekraani ikoone ja vidinaid saab lisada, eemaldada ja liigutada</string>
     <string name="settings_edit_allow_summary_off">Avaekraani ikoone ja vidinaid ei saa lisada, eemaldada ega liigutada</string>
@@ -33,4 +36,7 @@
     <string name="trust_apps_info_hidden">Peidetud rakendused ja nende vidinad on sahtlist peidetud</string>
     <string name="trust_apps_info_protected">Kaitstud rakendused vajavad käivitajast avamiseks autentimist</string>
     <string name="icon_pack_title">Ikoonipakk</string>
+    <string name="icon_pack_default_label">Vaikimisi</string>
+    <string name="icon_pack_add">Installi lisaks</string>
+    <string name="icon_pack_no_market">Rakendustepoodi pole saadaval</string>
 </resources>

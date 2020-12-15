@@ -38,4 +38,5 @@
     <string name="icon_pack_title">Пакет икони</string>
     <string name="icon_pack_default_label">Стандартен</string>
     <string name="icon_pack_add">Инсталиране на още</string>
+    <string name="icon_pack_no_market">Няма наличен магазин за приложения</string>
 </resources>
