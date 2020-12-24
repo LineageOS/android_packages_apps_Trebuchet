@@ -145,7 +145,7 @@ public final class FeatureFlags {
             "ENABLE_DEEP_SHORTCUT_ICON_CACHE", true, "R/W deep shortcut in IconCache");
 
     public static final BooleanFlag MULTI_DB_GRID_MIRATION_ALGO = getDebugFlag(
-            "MULTI_DB_GRID_MIRATION_ALGO", true, "Use the multi-db grid migration algorithm");
+            "MULTI_DB_GRID_MIRATION_ALGO", false, "Use the multi-db grid migration algorithm");
 
     public static final BooleanFlag ENABLE_THEMED_ICONS = getDebugFlag(
             "ENABLE_THEMED_ICONS", true, "Enable themed icons on workspace");
