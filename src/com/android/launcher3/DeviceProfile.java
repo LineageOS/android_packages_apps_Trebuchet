@@ -369,7 +369,7 @@ public class DeviceProfile {
         allAppsCellHeightPx = getCellSize().y;
         allAppsCellWidthPx = allAppsIconSizePx + allAppsIconDrawablePaddingPx;
 
-        if (isVerticalBarLayout() && !mPrefs.getBoolean(KEY_SHOW_LABELS_LANDSCAPE, false)) {
+        if (isVerticalBarLayout() && !mPrefs.getBoolean(KEY_SHOW_LABELS_LANDSCAPE, isTablet)) {
             // Hide Workspace text with vertical bar layout if needed.
             adjustToHideWorkspaceLabels();
         }
