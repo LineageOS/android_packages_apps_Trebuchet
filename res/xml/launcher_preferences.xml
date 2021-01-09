@@ -58,9 +58,63 @@
         android:summary="@string/pref_show_google_now_summary"
         android:title="@string/title_show_google_app" />
 
+<<<<<<< HEAD   (94afb1 Revert "Trebuchet: Add extra privapp permissions xml")
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
+=======
+        <Preference
+            android:key="pref_trust_apps"
+            android:title="@string/trust_apps_manager_name" />
+
+        <Preference
+            android:key="pref_icon_pack"
+            android:title="@string/icon_pack_title" />
+
+        <com.android.launcher3.settings.NotificationDotsPreference
+            android:key="pref_icon_badging"
+            android:title="@string/notification_dots_title"
+            android:persistent="false"
+            android:widgetLayout="@layout/notification_pref_warning" >
+            <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+                <!-- This extra highlights the "Allow notification dots" field in Notification settings -->
+                <extra
+                    android:name=":settings:fragment_args_key"
+                    android:value="notification_badging" />
+            </intent>
+        </com.android.launcher3.settings.NotificationDotsPreference>
+
+        <SwitchPreference
+            android:key="pref_add_icon_to_home"
+            android:title="@string/auto_add_shortcuts_label"
+            android:summary="@string/auto_add_shortcuts_description"
+            android:defaultValue="true"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_labels"
+        android:title="@string/settings_category_labels">
+
+        <SwitchPreference
+            android:key="pref_desktop_show_labels"
+            android:title="@string/desktop_show_labels"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="pref_drawer_show_labels"
+            android:title="@string/drawer_show_labels"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="pref_show_labels_landscape"
+            android:title="@string/show_labels_landscape"
+            android:defaultValue="@bool/is_tablet"
+            android:persistent="true" />
+    </PreferenceCategory>
+>>>>>>> CHANGE (d87640 Trebuchet: Show labels in landscape by default on tablets)
 
     <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
