@@ -83,6 +83,6 @@
     <SwitchPreference
         android:key="pref_show_labels_landscape"
         android:title="@string/show_labels_landscape"
-        android:defaultValue="false"
+        android:defaultValue="@bool/is_tablet"
         android:persistent="true" />
 </androidx.preference.PreferenceScreen>
