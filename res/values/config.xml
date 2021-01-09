@@ -2,6 +2,7 @@
     <!-- Miscellaneous -->
     <bool name="config_largeHeap">false</bool>
     <bool name="allow_rotation">false</bool>
+    <bool name="is_tablet">false</bool>
 
     <integer name="extracted_color_gradient_alpha">153</integer>
 

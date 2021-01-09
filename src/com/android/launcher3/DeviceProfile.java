@@ -172,8 +172,8 @@ public class DeviceProfile {
         // Constants from resources
         float swDPs = Utilities.dpiFromPx(
                 Math.min(info.smallestSize.x, info.smallestSize.y), info.metrics);
-        isTablet = swDPs >= TABLET_MIN_DPS;
-        isLargeTablet = swDPs >= LARGE_TABLET_MIN_DPS;
+        isTablet = (swDPs >= TABLET_MIN_DPS) || R.bool.is_tablet;
+        isLargeTablet = swDPs >= LARGE_TABLET_MIN_DPS && !isTablet;
         isPhone = !isTablet && !isLargeTablet;
         aspectRatio = ((float) Math.max(widthPx, heightPx)) / Math.min(widthPx, heightPx);
         boolean isTallDevice = Float.compare(aspectRatio, TALL_DEVICE_ASPECT_RATIO_THRESHOLD) >= 0;
@@ -388,7 +388,7 @@ public class DeviceProfile {
         }
         allAppsCellWidthPx = allAppsIconSizePx + allAppsIconDrawablePaddingPx;
 
-        if (isVerticalBarLayout() && !mPrefs.getBoolean(KEY_SHOW_LABELS_LANDSCAPE, false)) {
+        if (isVerticalBarLayout() && !mPrefs.getBoolean(KEY_SHOW_LABELS_LANDSCAPE, isTablet)) {
             // Hide Workspace text with vertical bar layout if needed.
             adjustToHideWorkspaceLabels();
         }
