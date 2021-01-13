@@ -490,6 +490,10 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver, 
         }
     }
 
+    public boolean shouldShowLabel() {
+        return mShouldShowLabel;
+    }
+
     public boolean shouldTextBeVisible() {
         // Text should be visible everywhere but the hotseat.
         Object tag = getParent() instanceof FolderIcon ? ((View) getParent()).getTag() : getTag();
