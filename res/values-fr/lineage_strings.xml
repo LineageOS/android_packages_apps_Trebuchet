@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Afficher l\'application Google</string>
     <string name="msg_minus_one_on_left">Lors d\'un balayage vers la droite sur l\'écran d\'accueil principal</string>
     <string name="msg_minus_one_on_right">Lors d\'un balayage vers la gauche sur l\'écran d\'accueil principal</string>
+    <string name="settings_category_apps">Applications</string>
+    <string name="settings_category_desktop">Écran d\'accueil</string>
+    <string name="settings_category_labels">Étiquettes</string>
     <string name="settings_edit_allow_title">Autoriser les modifications</string>
     <string name="settings_edit_allow_summary_on">Autoriser l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
     <string name="settings_edit_allow_summary_off">Empêcher l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
@@ -33,4 +36,7 @@
     <string name="trust_apps_info_hidden">Les applications cachées et leurs widgets sont cachés du tiroir</string>
     <string name="trust_apps_info_protected">Les applications protégées nécessitent une authentification pour être ouvertes depuis le lanceur</string>
     <string name="icon_pack_title">Pack d\'icônes</string>
+    <string name="icon_pack_default_label">Par défaut</string>
+    <string name="icon_pack_add">Installer plus</string>
+    <string name="icon_pack_no_market">Il n\'y a pas aucun magasin d\'applications disponible</string>
 </resources>
