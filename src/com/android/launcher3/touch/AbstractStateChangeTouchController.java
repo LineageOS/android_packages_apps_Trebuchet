@@ -395,6 +395,12 @@ public abstract class AbstractStateChangeTouchController
 
     @Override
     public void onDragEnd(float velocity) {
+        if (mCurrentAnimation == null) {
+            // When desktop can't be edited due to user config,
+            // we don't have / want to show drag animations
+            clearState();
+            return;
+        }
         boolean fling = mDetector.isFling(velocity);
         final int logAction = fling ? Touch.FLING : Touch.SWIPE;
 
