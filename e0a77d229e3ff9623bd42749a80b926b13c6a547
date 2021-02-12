@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db2287ed_ca03f3d3",
+        "filename": "src/com/android/launcher3/icons/IconProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-02-12T12:59:40Z",
+      "side": 1,
+      "message": "Maybe\n        icon \u003d getFromIconPack(packageName);\n        if (icon \u003d\u003d null) {\n            icon \u003d loader.apply(obj, param);\n        }\n        return icon;\n\nWe avoid moving the icon in memory once this way",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 50
+      },
+      "revId": "e0a77d229e3ff9623bd42749a80b926b13c6a547",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d47a0f2_c2426726",
+        "filename": "src/com/android/launcher3/icons/IconProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-02-12T12:59:40Z",
+      "side": 1,
+      "message": "final IconPack iconPack \u003d IconPackProvider.loadAndGetIconPack(mContext);\n        if (iconPack \u003d\u003d null) {\n            return null;\n        }\n\n        return iconPack.getIcon(packageName, null, \"\");",
+      "range": {
+        "startLine": 258,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 50
+      },
+      "revId": "e0a77d229e3ff9623bd42749a80b926b13c6a547",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
