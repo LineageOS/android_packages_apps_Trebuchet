@@ -154,6 +154,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.android.launcher3.lineage.icon.IconPackSettingsActivity"
+            android:label="@string/icon_pack_title"
+            android:theme="@android:style/Theme.DeviceDefault.Settings"
+            android:autoRemoveFromRecents="true"  />
 
         <provider
             android:name="com.android.launcher3.testing.TestInformationProvider"
