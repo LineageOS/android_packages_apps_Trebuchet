@@ -19,6 +19,7 @@
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda na tela inicial</string>
     <string name="settings_category_apps">Aplicativos</string>
     <string name="settings_category_desktop">Área de trabalho</string>
+    <string name="settings_category_labels">Rótulos</string>
     <string name="settings_edit_allow_title">Permitir edições</string>
     <string name="settings_edit_allow_summary_on">Ícones e widgets podem ser adicionados, removidos e movidos na tela inicial</string>
     <string name="settings_edit_allow_summary_off">Ícones e widgets não podem ser adicionados, removidos e movidos na tela inicial</string>
