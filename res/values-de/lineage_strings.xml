@@ -15,8 +15,8 @@
 -->
 <resources>
     <string name="title_show_google_app">Google App anzeigen</string>
-    <string name="msg_minus_one_on_left">Wenn Sie vom Hauptstartbildschirm aus nach rechts wischen</string>
-    <string name="msg_minus_one_on_right">Wenn Sie vom Hauptstartbildschirm aus nach links wischen</string>
+    <string name="msg_minus_one_on_left">Wenn du vom Hauptstartbildschirm aus nach rechts wischst</string>
+    <string name="msg_minus_one_on_right">Wenn du vom Hauptstartbildschirm aus nach links wischst</string>
     <string name="settings_edit_allow_title">Bearbeiten zulassen</string>
     <string name="settings_edit_allow_summary_on">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_edit_allow_summary_off">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
@@ -28,7 +28,7 @@
     <string name="trust_apps_auth_manager">Entsperren, um die versteckten und geschützten Apps zu verwalten</string>
     <string name="trust_apps_auth_open_app">Authentifizieren, um %1$s zu öffnen</string>
     <string name="trust_apps_loading">Wird geladen\u2026</string>
-    <string name="trust_apps_no_lock_error">Bitte richten Sie einen sicheren Sperrbildschirm ein, um den Zugriff auf die Apps zu beschränken</string>
+    <string name="trust_apps_no_lock_error">Bitte richte einen sicheren Sperrbildschirm ein, um den Zugriff auf die Apps zu beschränken</string>
     <string name="trust_apps_help">Hilfe</string>
     <string name="trust_apps_info_hidden">Versteckte Apps und ihre Widgets werden in der App-Übersicht nicht angezeigt</string>
     <string name="trust_apps_info_protected">Geschützte Apps erfordern eine Authentifizierung, um gestartet werden zu können</string>
