@@ -1631,7 +1631,16 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     /**
      * Called when a gesture from an app has finished, and an end target has been determined.
      */
-    public void onGestureEndTargetCalculated(GestureState.GestureEndTarget endTarget) {
+    public void onPrepareGestureEndAnimation(
+            @Nullable AnimatorSet animatorSet, GestureState.GestureEndTarget endTarget) {
+        if (mSizeStrategy.stateFromGestureEndTarget(endTarget)
+                .displayOverviewTasksAsGrid(mActivity.getDeviceProfile())) {
+            if (animatorSet == null) {
+                setGridProgress(1);
+            } else {
+                animatorSet.play(ObjectAnimator.ofFloat(this, RECENTS_GRID_PROGRESS, 1));
+            }
+        }
         mCurrentGestureEndTarget = endTarget;
         if (endTarget == GestureState.GestureEndTarget.NEW_TASK
                 || endTarget == GestureState.GestureEndTarget.LAST_TASK) {
@@ -2249,7 +2258,8 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         mPendingAnimation.addEndListener(new Consumer<Boolean>() {
             @Override
             public void accept(Boolean success) {
-                if (LIVE_TILE.get() && taskView.isRunningTask() && success) {
+                if (LIVE_TILE.get() && mEnableDrawingLiveTile && taskView.isRunningTask()
+                        && success) {
                     finishRecentsAnimation(true /* toHome */, () -> onEnd(success));
                 } else {
                     onEnd(success);
@@ -2347,7 +2357,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         return true;
     }
 
-    protected void runDismissAnimation(PendingAnimation pendingAnim) {
+    private void runDismissAnimation(PendingAnimation pendingAnim) {
         AnimatorPlaybackController controller = pendingAnim.createPlaybackController();
         controller.dispatchOnStart();
         controller.getAnimationPlayer().setInterpolator(FAST_OUT_SLOW_IN);
