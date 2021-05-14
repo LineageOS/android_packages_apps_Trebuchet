@@ -445,11 +445,10 @@ public final class LauncherInstrumentation {
 
             if (systemHealth != null) {
                 return message
-                        + ",\nperhaps linked to system health problems:\n<<<<<<<<<<<<<<<<<<\n"
+                        + ";\nPerhaps linked to system health problems:\n<<<<<<<<<<<<<<<<<<\n"
                         + systemHealth + "\n>>>>>>>>>>>>>>>>>>";
             }
         }
-
         return message;
     }
 
@@ -460,7 +459,7 @@ public final class LauncherInstrumentation {
             if (checkEvents) {
                 final String eventMismatch = eventChecker.verify(0, false);
                 if (eventMismatch != null) {
-                    message = message + ", having produced " + eventMismatch;
+                    message = message + ";\n" + eventMismatch;
                 }
             } else {
                 eventChecker.finishNoWait();
@@ -497,12 +496,13 @@ public final class LauncherInstrumentation {
     private void fail(String message) {
         checkForAnomaly();
         Assert.fail(formatSystemHealthMessage(formatErrorWithEvents(
-                "http://go/tapl : " + getContextDescription() + message
-                        + " (visible state: " + getVisibleStateMessage() + ")", true)));
+                "http://go/tapl test failure:\nOverview: " + getContextDescription()
+                        + " - visible state is " + getVisibleStateMessage()
+                        + ";\nDetails: " + message, true)));
     }
 
     private String getContextDescription() {
-        return mDiagnosticContext.isEmpty() ? "" : String.join(", ", mDiagnosticContext) + "; ";
+        return mDiagnosticContext.isEmpty() ? "" : String.join(", ", mDiagnosticContext);
     }
 
     void assertTrue(String message, boolean condition) {
@@ -1358,24 +1358,15 @@ public final class LauncherInstrumentation {
         getTestInfo(TestProtocol.REQUEST_DISABLE_DEBUG_TRACING);
     }
 
-    public int getTotalPssKb() {
+    public void forceGc() {
         // GC the system & sysui first before gc'ing launcher
         logShellCommand("cmd statusbar run-gc");
-        return getTestInfo(TestProtocol.REQUEST_TOTAL_PSS_KB).
-                getInt(TestProtocol.TEST_INFO_RESPONSE_FIELD);
+        getTestInfo(TestProtocol.REQUEST_FORCE_GC);
     }
 
     public Integer getPid() {
         final Bundle testInfo = getTestInfo(TestProtocol.REQUEST_PID);
         return testInfo != null ? testInfo.getInt(TestProtocol.TEST_INFO_RESPONSE_FIELD) : null;
-    }
-
-    public void produceJavaLeak() {
-        getTestInfo(TestProtocol.REQUEST_JAVA_LEAK);
-    }
-
-    public void produceNativeLeak() {
-        getTestInfo(TestProtocol.REQUEST_NATIVE_LEAK);
     }
 
     public void produceViewLeak() {

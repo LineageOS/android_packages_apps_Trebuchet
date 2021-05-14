@@ -111,7 +111,6 @@ import com.android.launcher3.PagedView;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.anim.AnimationSuccessListener;
-import com.android.launcher3.anim.AnimatorListeners;
 import com.android.launcher3.anim.AnimatorPlaybackController;
 import com.android.launcher3.anim.PendingAnimation;
 import com.android.launcher3.anim.SpringProperty;
@@ -121,6 +120,7 @@ import com.android.launcher3.icons.cache.HandlerRunnable;
 import com.android.launcher3.statehandlers.DepthController;
 import com.android.launcher3.statemanager.BaseState;
 import com.android.launcher3.statemanager.StatefulActivity;
+import com.android.launcher3.testing.TestProtocol;
 import com.android.launcher3.touch.OverScroll;
 import com.android.launcher3.touch.PagedOrientationHandler;
 import com.android.launcher3.util.DynamicResource;
@@ -1585,12 +1585,16 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         mLiveTileParams.setTargetSet(null);
         mLiveTileTaskViewSimulator.setDrawsBelowRecents(true);
 
-        unloadVisibleTaskData(TaskView.FLAG_UPDATE_ALL);
-        setCurrentPage(0);
-        LayoutUtils.setViewEnabled(mActionsView, true);
-        if (mOrientationState.setGestureActive(false)) {
-            updateOrientationHandler();
-        }
+        // These are relatively expensive and don't need to be done this frame (RecentsView isn't
+        // visible anyway), so defer by a frame to get off the critical path, e.g. app to home.
+        post(() -> {
+            unloadVisibleTaskData(TaskView.FLAG_UPDATE_ALL);
+            setCurrentPage(0);
+            LayoutUtils.setViewEnabled(mActionsView, true);
+            if (mOrientationState.setGestureActive(false)) {
+                updateOrientationHandler();
+            }
+        });
     }
 
     public int getRunningTaskId() {
@@ -1673,7 +1677,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             return;
         }
         AnimatorSet pa = setRecentsChangedOrientation(true);
-        pa.addListener(AnimatorListeners.forSuccessCallback(() -> {
+        pa.addListener(AnimationSuccessListener.forRunnable(() -> {
             setLayoutRotation(newRotation, mOrientationState.getDisplayRotation());
             mActivity.getDragLayer().recreateControllers();
             updateChildTaskOrientations();
