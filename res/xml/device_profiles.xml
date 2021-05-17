@@ -159,7 +159,7 @@
         launcher:numColumns="5"
         launcher:numFolderRows="5"
         launcher:numFolderColumns="4"
-        launcher:numHotseatIcons="6"
+        launcher:numHotseatIcons="5"
         launcher:dbFile="launcher_5_by_6.db"
         launcher:defaultLayoutId="@xml/default_workspace_5x6" >
 
