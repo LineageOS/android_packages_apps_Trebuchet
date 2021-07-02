@@ -52,4 +52,12 @@
     <!-- App suggestions -->
     <string name="pref_suggestions_title">Suggestions</string>
     <string name="pref_suggestions_summary">For app drawer &amp; home screen suggestions</string>
+
+    <!-- Pause app -->
+    <string name="pause">Pause</string>
+    <string name="pause_apps_dialog_title">Pause %1$s?</string>
+    <string name="pause_apps_dialog_message">Notifications for %1$s will be paused</string>
+    <string name="paused_apps_dialog_title">App paused</string>
+    <string name="paused_apps_dialog_message">%1$s was directly paused from the launcher</string>
+    <string name="paused_apps_drop_target_label">Pause app</string>
 </resources>
