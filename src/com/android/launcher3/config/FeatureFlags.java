@@ -144,9 +144,6 @@ public final class FeatureFlags {
     public static final BooleanFlag ENABLE_DEEP_SHORTCUT_ICON_CACHE = getDebugFlag(
             "ENABLE_DEEP_SHORTCUT_ICON_CACHE", true, "R/W deep shortcut in IconCache");
 
-    public static final BooleanFlag MULTI_DB_GRID_MIRATION_ALGO = getDebugFlag(
-            "MULTI_DB_GRID_MIRATION_ALGO", true, "Use the multi-db grid migration algorithm");
-
     public static final BooleanFlag ENABLE_THEMED_ICONS = getDebugFlag(
             "ENABLE_THEMED_ICONS", true, "Enable themed icons on workspace");
 
@@ -257,6 +254,10 @@ public final class FeatureFlags {
     public static final BooleanFlag WIDGETS_IN_LAUNCHER_PREVIEW = getDebugFlag(
             "WIDGETS_IN_LAUNCHER_PREVIEW", true,
             "Enables widgets in Launcher preview for the Wallpaper app.");
+
+    public static final BooleanFlag QUICK_WALLPAPER_PICKER = getDebugFlag(
+            "QUICK_WALLPAPER_PICKER", false,
+            "Shows quick wallpaper picker in long-press menu");
 
     public static void initialize(Context context) {
         synchronized (sDebugFlags) {
