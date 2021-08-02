@@ -276,8 +276,10 @@ public abstract class TaskViewTouchController<T extends BaseDraggingActivity>
         } else {
             mFlingBlockCheck.onEvent();
         }
-        mCurrentAnimation.setPlayFraction(Utilities.boundToRange(
-                totalDisplacement * mProgressMultiplier, 0, 1));
+        if (mCurrentAnimation != null) {
+            mCurrentAnimation.setPlayFraction(Utilities.boundToRange(
+                    totalDisplacement * mProgressMultiplier, 0, 1));
+        }
 
         if (ENABLE_QUICKSTEP_LIVE_TILE.get()) {
             if (mRecentsView.getCurrentPage() != 0 || isGoingUp) {
