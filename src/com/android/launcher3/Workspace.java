@@ -325,6 +325,11 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             setPageSpacing(Math.max(maxInsets, maxPadding));
         }
 
+        updateWorkspaceScreensPadding();
+    }
+
+    private void updateWorkspaceScreensPadding() {
+        DeviceProfile grid = mLauncher.getDeviceProfile();
         int paddingLeftRight = grid.cellLayoutPaddingLeftRightPx;
         int paddingBottom = grid.cellLayoutBottomPaddingPx;
 
@@ -621,10 +626,6 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         // created CellLayout.
         CellLayout newScreen = (CellLayout) LayoutInflater.from(getContext()).inflate(
                         R.layout.workspace_screen, this, false /* attachToRoot */);
-        DeviceProfile grid = mLauncher.getDeviceProfile();
-        int paddingLeftRight = grid.cellLayoutPaddingLeftRightPx;
-        int paddingBottom = grid.cellLayoutBottomPaddingPx;
-        newScreen.setPadding(paddingLeftRight, 0, paddingLeftRight, paddingBottom);
 
         mWorkspaceScreens.put(screenId, newScreen);
         mScreenOrder.add(insertIndex, screenId);
@@ -633,6 +634,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                 mLauncher.getStateManager().getState(), newScreen, insertIndex);
 
         updatePageScrollValues();
+        updateWorkspaceScreensPadding();
         return newScreen;
     }
 
@@ -1775,7 +1777,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
 
         boolean droppedOnOriginalCell = false;
 
-        int snapScreen = -1;
+        boolean snappedToNewPage = false;
         boolean resizeOnDrop = false;
         Runnable onCompleteRunnable = null;
         if (d.dragSource != this || mDragInfo == null) {
@@ -1857,11 +1859,14 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                 }
 
                 if (foundCell) {
-                    if (getScreenIdForPageIndex(mCurrentPage) != screenId && !hasMovedIntoHotseat) {
-                        snapScreen = getPageIndexForScreenId(screenId);
+                    int targetScreenIndex = getPageIndexForScreenId(screenId);
+                    int snapScreen = getLeftmostVisiblePageForIndex(targetScreenIndex);
+                    // On large screen devices two pages can be shown at the same time, and snap
+                    // isn't needed if the source and target screens appear at the same time
+                    if (snapScreen != mCurrentPage && !hasMovedIntoHotseat) {
                         snapToPage(snapScreen);
+                        snappedToNewPage = true;
                     }
-
                     final ItemInfo info = (ItemInfo) cell.getTag();
                     if (hasMovedLayouts) {
                         // Reparent the view
@@ -1953,7 +1958,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                             ANIMATE_INTO_POSITION_AND_DISAPPEAR;
                     animateWidgetDrop(info, parent, d.dragView, null, animationType, cell, false);
                 } else {
-                    int duration = snapScreen < 0 ? -1 : ADJACENT_SCREEN_DROP_DURATION;
+                    int duration = snappedToNewPage ? ADJACENT_SCREEN_DROP_DURATION : -1;
                     mLauncher.getDragLayer().animateViewIntoPosition(d.dragView, cell, duration,
                             this);
                 }
