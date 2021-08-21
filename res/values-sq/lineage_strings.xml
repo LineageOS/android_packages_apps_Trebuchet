@@ -33,4 +33,7 @@
     <string name="trust_apps_info_hidden">Aplikacionet e fshehura dhe mjetet e tyre fshihen nga dizenjuesi</string>
     <string name="trust_apps_info_protected">Aplikacionet e mbrojtura kushtëzojnë vërtetim nga hapja e menu -së</string>
     <string name="icon_pack_title">Paketë ikonash</string>
+    <string name="icon_pack_default_label">E paracaktuar</string>
+    <string name="icon_pack_add">Instaloni më shumë</string>
+    <string name="icon_pack_no_market">Nuk ka asnjë dyqan aplikacioni të disponueshëm</string>
 </resources>
