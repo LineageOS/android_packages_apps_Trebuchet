@@ -25,6 +25,7 @@ import static com.android.launcher3.util.SplitConfigurationOptions.STAGE_TYPE_MA
 
 import android.content.res.Resources;
 import android.graphics.Matrix;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -34,12 +35,14 @@ import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.util.SplitConfigurationOptions;
 import com.android.launcher3.util.SplitConfigurationOptions.SplitPositionOption;
 import com.android.launcher3.views.BaseDragLayer;
 
@@ -164,7 +167,7 @@ public class PortraitPagedViewHandler implements PagedOrientationHandler {
     @Override
     public int getSplitTaskViewDismissDirection(SplitPositionOption splitPosition,
             DeviceProfile dp) {
-        if (splitPosition.mStagePosition == STAGE_POSITION_TOP_OR_LEFT) {
+        if (splitPosition.stagePosition == STAGE_POSITION_TOP_OR_LEFT) {
             if (dp.isLandscape) {
                 // Left side
                 return SPLIT_TRANSLATE_PRIMARY_NEGATIVE;
@@ -172,12 +175,12 @@ public class PortraitPagedViewHandler implements PagedOrientationHandler {
                 // Top side
                 return SPLIT_TRANSLATE_SECONDARY_NEGATIVE;
             }
-        } else if (splitPosition.mStagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT) {
+        } else if (splitPosition.stagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT) {
             // We don't have a bottom option, so should be right
             return SPLIT_TRANSLATE_PRIMARY_POSITIVE;
         }
         throw new IllegalStateException("Invalid split stage position: " +
-                splitPosition.mStagePosition);
+                splitPosition.stagePosition);
     }
 
     @Override
@@ -422,7 +425,7 @@ public class PortraitPagedViewHandler implements PagedOrientationHandler {
         }
 
         // Now we rotate the portrait rect depending on what side we want pinned
-        boolean pinToRight = splitPositionOption.mStagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT;
+        boolean pinToRight = splitPositionOption.stagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT;
 
         int screenHeight = dp.heightPx;
         float postRotateScale = (float) screenHeight / width;
@@ -450,7 +453,7 @@ public class PortraitPagedViewHandler implements PagedOrientationHandler {
         }
 
         // Now we rotate the portrait rect depending on what side we want pinned
-        boolean pinToRight = initialSplitOption.mStagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT;
+        boolean pinToRight = initialSplitOption.stagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT;
         float postRotateScale = (float) screenHeight / screenWidth;
 
         mTmpMatrix.reset();
@@ -465,6 +468,77 @@ public class PortraitPagedViewHandler implements PagedOrientationHandler {
         mTmpRectF.set(out2);
         mTmpMatrix.mapRect(mTmpRectF);
         mTmpRectF.roundOut(out2);
+    }
+
+    @Override
+    public void setSplitTaskSwipeRect(DeviceProfile dp, Rect outRect,
+            SplitConfigurationOptions.StagedSplitBounds splitInfo, int desiredStagePosition) {
+        boolean isLandscape = dp.isLandscape;
+        float diff;
+        if (desiredStagePosition == SplitConfigurationOptions.STAGE_POSITION_TOP_OR_LEFT) {
+            if (isLandscape) {
+                diff = outRect.width() * (1f - splitInfo.leftTaskPercent);
+                outRect.right -= diff;
+            } else {
+                diff = outRect.height() * (1f - splitInfo.topTaskPercent);
+                outRect.bottom -= diff;
+            }
+        } else {
+            if (isLandscape) {
+                diff = outRect.width() * splitInfo.leftTaskPercent;
+                outRect.left += diff;
+            } else {
+                diff = outRect.height() * splitInfo.topTaskPercent;
+                outRect.top += diff;
+            }
+        }
+    }
+
+    @Override
+    public void setLeashSplitOffset(Point splitOffset, DeviceProfile dp,
+            SplitConfigurationOptions.StagedSplitBounds splitInfo, int desiredStagePosition) {
+        if (desiredStagePosition == STAGE_POSITION_BOTTOM_OR_RIGHT) {
+            if (dp.isLandscape) {
+                splitOffset.x = splitInfo.leftTopBounds.width() +
+                        splitInfo.dividerBounds.width() / 2;
+            } else {
+                splitOffset.y = splitInfo.leftTopBounds.height() +
+                        splitInfo.dividerBounds.height() / 2;
+            }
+        }
+    }
+
+    @Override
+    public void setGroupedTaskViewThumbnailBounds(View mSnapshotView, View mSnapshotView2,
+            View taskParent, SplitConfigurationOptions.StagedSplitBounds splitBoundsConfig,
+            DeviceProfile dp) {
+        int spaceAboveSnapshot = dp.overviewTaskThumbnailTopMarginPx;
+        int totalThumbnailHeight = taskParent.getHeight() - spaceAboveSnapshot;
+        int totalThumbnailWidth = taskParent.getWidth();
+        int dividerBar = (dp.isLandscape ?
+                splitBoundsConfig.dividerBounds.width() :
+                splitBoundsConfig.dividerBounds.height())
+                / 2;
+        ViewGroup.LayoutParams primaryLp = mSnapshotView.getLayoutParams();
+        ViewGroup.LayoutParams secondaryLp = mSnapshotView2.getLayoutParams();
+
+        if (dp.isLandscape) {
+            primaryLp.height = totalThumbnailHeight;
+            primaryLp.width = (int)(totalThumbnailWidth * splitBoundsConfig.leftTaskPercent);
+
+            secondaryLp.height = totalThumbnailHeight;
+            secondaryLp.width = totalThumbnailWidth - primaryLp.width - dividerBar;
+            mSnapshotView2.setTranslationX(primaryLp.width + dividerBar);
+            mSnapshotView2.setTranslationY(spaceAboveSnapshot);
+        } else {
+            primaryLp.width = totalThumbnailWidth;
+            primaryLp.height = (int)(totalThumbnailHeight * splitBoundsConfig.topTaskPercent);
+
+            secondaryLp.width = totalThumbnailWidth;
+            secondaryLp.height = totalThumbnailHeight - primaryLp.height - dividerBar;
+            mSnapshotView2.setTranslationY(primaryLp.height + spaceAboveSnapshot + dividerBar);
+            mSnapshotView2.setTranslationX(0);
+        }
     }
 
     @Override
