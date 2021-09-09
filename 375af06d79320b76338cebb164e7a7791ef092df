@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ac2c0de_046d1593",
+        "filename": "src/com/android/launcher3/model/FirstScreenBroadcast.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2021-09-09T20:24:08Z",
+      "side": 1,
+      "message": "Comment removed by: Luca Stefani; Reason: follow up fixes it.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "375af06d79320b76338cebb164e7a7791ef092df",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
