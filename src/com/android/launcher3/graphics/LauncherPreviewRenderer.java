@@ -324,7 +324,9 @@ public class LauncherPreviewRenderer extends ContextWrapper
     }
 
     private void inflateAndAddFolder(FolderInfo info) {
-        CellLayout screen = mWorkspaceScreens.get(info.screenId);
+        CellLayout screen = info.container == Favorites.CONTAINER_DESKTOP
+                ? mWorkspaceScreens.get(info.screenId)
+                : mHotseat;
         FolderIcon folderIcon = FolderIcon.inflateIcon(R.layout.folder_icon, this, screen,
                 info);
         addInScreenFromBind(folderIcon, info);
@@ -471,8 +473,8 @@ public class LauncherPreviewRenderer extends ContextWrapper
         // Add first page QSB
         if (FeatureFlags.QSB_ON_FIRST_SCREEN) {
             CellLayout firstScreen = mWorkspaceScreens.get(FIRST_SCREEN_ID);
-            View qsb = mHomeElementInflater.inflate(
-                    R.layout.search_container_workspace, firstScreen, false);
+            View qsb = mHomeElementInflater.inflate(R.layout.qsb_preview, firstScreen,
+                    false);
             CellLayout.LayoutParams lp =
                     new CellLayout.LayoutParams(0, 0, firstScreen.getCountX(), 1);
             lp.canReorder = false;

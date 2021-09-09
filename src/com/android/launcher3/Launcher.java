@@ -600,9 +600,11 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
 
     private void initDeviceProfile(InvariantDeviceProfile idp) {
         // Load configuration-specific DeviceProfile
-        mDeviceProfile = isInMultiWindowMode()
-                ? mDeviceProfile.getMultiWindowProfile(this, getMultiWindowDisplaySize())
-                : idp.getDeviceProfile(this);
+        mDeviceProfile = idp.getDeviceProfile(this);
+        if (isInMultiWindowMode()) {
+            mDeviceProfile = mDeviceProfile.getMultiWindowProfile(
+                    this, getMultiWindowDisplaySize());
+        }
 
         onDeviceProfileInitiated();
         mModelWriter = mModel.getWriter(getDeviceProfile().isVerticalBarLayout(), true, this);
@@ -2227,6 +2229,9 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
             ArrayList<ItemInfo> addAnimated) {
         // Add the new screens
         if (newScreens != null) {
+            // newScreens can contain an empty right panel that is already bound, but not known
+            // by BgDataModel.
+            newScreens.removeAllValues(mWorkspace.mScreenOrder);
             bindAddScreens(newScreens);
         }
 
