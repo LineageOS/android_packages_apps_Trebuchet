@@ -35,6 +35,7 @@ import static com.android.launcher3.anim.Interpolators.ACCEL;
 import static com.android.launcher3.anim.Interpolators.ACCEL_0_75;
 import static com.android.launcher3.anim.Interpolators.ACCEL_DEACCEL;
 import static com.android.launcher3.anim.Interpolators.FAST_OUT_SLOW_IN;
+import static com.android.launcher3.anim.Interpolators.FINAL_FRAME;
 import static com.android.launcher3.anim.Interpolators.LINEAR;
 import static com.android.launcher3.anim.Interpolators.clampToProgress;
 import static com.android.launcher3.config.FeatureFlags.ENABLE_QUICKSTEP_LIVE_TILE;
@@ -78,7 +79,9 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.os.UserHandle;
+import android.os.VibrationEffect;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -159,6 +162,7 @@ import com.android.quickstep.util.SplitSelectStateController;
 import com.android.quickstep.util.SurfaceTransactionApplier;
 import com.android.quickstep.util.TaskViewSimulator;
 import com.android.quickstep.util.TransformParams;
+import com.android.quickstep.util.VibratorWrapper;
 import com.android.systemui.plugins.ResourceProvider;
 import com.android.systemui.shared.recents.model.Task;
 import com.android.systemui.shared.recents.model.Task.TaskKey;
@@ -242,6 +246,12 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
                     return recentsView.mAdjacentPageHorizontalOffset;
                 }
             };
+
+    public static final int SCROLL_VIBRATION_PRIMITIVE =
+            Utilities.ATLEAST_S ? VibrationEffect.Composition.PRIMITIVE_LOW_TICK : -1;
+    public static final float SCROLL_VIBRATION_PRIMITIVE_SCALE = 0.6f;
+    public static final VibrationEffect SCROLL_VIBRATION_FALLBACK =
+            VibratorWrapper.EFFECT_TEXTURE_TICK;
 
     /**
      * Can be used to tint the color of the RecentsView to simulate a scrim that can views
@@ -396,6 +406,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
 
     protected final ACTIVITY_TYPE mActivity;
     private final float mFastFlingVelocity;
+    private final int mScrollHapticMinGapMillis;
     private final RecentsModel mModel;
     private final int mGridSideMargin;
     private final ClearAllButton mClearAllButton;
@@ -442,6 +453,7 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     private ObjectAnimator mTintingAnimator;
 
     private int mOverScrollShift = 0;
+    private long mScrollLastHapticTimestamp;
 
     /**
      * TODO: Call reloadIdNeeded in onTaskStackChanged.
@@ -628,6 +640,8 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
         final int rotation = mActivity.getDisplay().getRotation();
         mOrientationState.setRecentsRotation(rotation);
 
+        mScrollHapticMinGapMillis = getResources()
+                .getInteger(R.integer.recentsScrollHapticMinGapMillis);
         mFastFlingVelocity = getResources()
                 .getDimensionPixelSize(R.dimen.recents_fast_fling_velocity);
         mModel = RecentsModel.INSTANCE.get(context);
@@ -1224,6 +1238,25 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             if (extraScrollDuration > 0) {
                 mScroller.extendDuration(extraScrollDuration);
             }
+        }
+    }
+
+    @Override
+    protected void onEdgeAbsorbingScroll() {
+        vibrateForScroll();
+    }
+
+    @Override
+    protected void onScrollOverPageChanged() {
+        vibrateForScroll();
+    }
+
+    private void vibrateForScroll() {
+        long now = SystemClock.uptimeMillis();
+        if (now - mScrollLastHapticTimestamp > mScrollHapticMinGapMillis) {
+            mScrollLastHapticTimestamp = now;
+            VibratorWrapper.INSTANCE.get(mContext).vibrate(SCROLL_VIBRATION_PRIMITIVE,
+                    SCROLL_VIBRATION_PRIMITIVE_SCALE, SCROLL_VIBRATION_FALLBACK);
         }
     }
 
@@ -2001,9 +2034,6 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
     /**
      * Called only when a swipe-up gesture from an app has completed. Only called after
      * {@link #onGestureAnimationStart} and {@link #onGestureAnimationEnd()}.
-     *
-     * TODO(b/198310766) Need to also explicitly exit split screen if
-     *  the swipe up was to home
      */
     public void onSwipeUpAnimationSuccess() {
         animateUpTaskIconScale();
@@ -2592,10 +2622,13 @@ public abstract class RecentsView<ACTIVITY_TYPE extends StatefulActivity<STATE_T
             runActionOnRemoteHandles(remoteTargetHandle -> {
                 TransformParams params = remoteTargetHandle.getTransformParams();
                 anim.setFloat(params, TransformParams.TARGET_ALPHA, 0,
-                        clampToProgress(ACCEL, 0, 0.5f));
+                        clampToProgress(FINAL_FRAME, 0, 0.5f));
             });
         }
-        anim.setFloat(taskView, VIEW_ALPHA, 0, clampToProgress(ACCEL, 0, 0.5f));
+        boolean isTaskInBottomGridRow = showAsGrid() && !mTopRowIdSet.contains(
+                taskView.getTaskViewId()) && taskView.getTaskViewId() != mFocusedTaskViewId;
+        anim.setFloat(taskView, VIEW_ALPHA, 0,
+                clampToProgress(isTaskInBottomGridRow ? ACCEL : FINAL_FRAME, 0, 0.5f));
         FloatProperty<TaskView> secondaryViewTranslate =
                 taskView.getSecondaryDissmissTranslationProperty();
         int secondaryTaskDimension = mOrientationHandler.getSecondaryDimension(taskView);
