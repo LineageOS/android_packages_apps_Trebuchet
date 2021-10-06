@@ -359,4 +359,7 @@
     <dimen name="search_row_small_icon_size">32dp</dimen>
     <dimen name="padded_rounded_button_padding">8dp</dimen>
 
+<!-- For Themed icon support -->
+    <dimen name="theme_icon_size">24dp</dimen>
+
 </resources>
