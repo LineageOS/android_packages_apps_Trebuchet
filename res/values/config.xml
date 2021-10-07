@@ -87,7 +87,7 @@
 
     <!-- Default packages -->
     <string name="wallpaper_picker_package" translatable="false"></string>
-    <string name="local_colors_extraction_class" translatable="false"></string>
+    <string name="local_colors_extraction_class" translatable="false">com.android.launcher3.widget.LocalWallpaperColorsExtractor</string>
 
     <!-- Accessibility actions -->
     <item type="id" name="action_remove" />
