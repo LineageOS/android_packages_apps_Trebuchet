@@ -35,5 +35,5 @@
     <string name="icon_pack_title">Pack d\'icônes</string>
     <string name="icon_pack_default_label">Par défaut</string>
     <string name="icon_pack_add">Installer plus</string>
-    <string name="icon_pack_no_market">Il n\'y a pas aucun magasin d\'applications disponible</string>
+    <string name="icon_pack_no_market">Il n\'y a aucun magasin d\'applications disponible</string>
 </resources>
