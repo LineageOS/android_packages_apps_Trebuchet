@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2576520f_cbb967df",
+        "filename": "src/com/android/launcher3/allapps/search/AllAppsSearchBarController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-11-07T11:39:08Z",
+      "side": 1,
+      "message": "Unrelated change",
+      "revId": "fffd7415831d8db834b97aa12826232682bb9448",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
