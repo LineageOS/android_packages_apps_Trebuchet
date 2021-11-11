@@ -34,7 +34,7 @@
     <string name="widget_accessible_dims_format" msgid="3640149169885301790">"%1$d de largura por %2$d de altura"</string>
     <string name="add_item_request_drag_hint" msgid="5899764264480397019">"Toque e mantenha pressionado para mover manualmente"</string>
     <string name="place_automatically" msgid="8064208734425456485">"Adicionar automaticamente"</string>
-    <string name="all_apps_search_bar_hint" msgid="1390553134053255246">"Apps de pesquisa"</string>
+    <string name="all_apps_search_bar_hint" msgid="1390553134053255246">"Pesquisar apps"</string>
     <string name="all_apps_loading_message" msgid="5813968043155271636">"Carregando apps…"</string>
     <string name="all_apps_no_search_results" msgid="3200346862396363786">"Nenhum app encontrado que corresponda a \"<xliff:g id="QUERY">%1$s</xliff:g>\""</string>
     <string name="all_apps_search_market_message" msgid="1366263386197059176">"Pesquisar mais apps"</string>
