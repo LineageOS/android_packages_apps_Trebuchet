@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a48a8456_62bc2e10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27072
+      },
+      "writtenOn": "2021-11-17T15:00:54Z",
+      "side": 1,
+      "message": "It feels a bit weird with this change, it makes pressing the back button (or doing the back gesture) both dismisses the keyboard and clears the search/text field.\n\nThis also makes somewhat inconsistent user experience, the behavior every else where there is a text field and the keyboard is visible, pressing the back button (or doing the back gesture) only dismisses the keyboard and leaves the text field intact.",
+      "revId": "339c216c6a19ba2e28543e6e529b2689d759e970",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
