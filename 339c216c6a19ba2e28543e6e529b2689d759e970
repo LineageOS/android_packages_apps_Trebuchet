@@ -16,6 +16,24 @@
       "message": "It feels a bit weird with this change, it makes pressing the back button (or doing the back gesture) both dismisses the keyboard and clears the search/text field.\n\nThis also makes somewhat inconsistent user experience, the behavior every else where there is a text field and the keyboard is visible, pressing the back button (or doing the back gesture) only dismisses the keyboard and leaves the text field intact.",
       "revId": "339c216c6a19ba2e28543e6e529b2689d759e970",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cff89fe_34191a14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 21651
+      },
+      "writtenOn": "2021-11-17T17:14:31Z",
+      "side": 1,
+      "message": "I get your point, I tried to make it be: close keyboard -\u003e clear text \u0026 search result -\u003e hide all apps view. I couldn\u0027t find any proper way to see if keyboard is showing other than getSystemService(InputMethodManager.class).isActive();, which didn\u0027t work here as we still want the textbox being active (in order to capture more back key events).\nThis way it\u0027s still a bit better to allow back key do what it\u0027s supposed to.",
+      "parentUuid": "a48a8456_62bc2e10",
+      "revId": "339c216c6a19ba2e28543e6e529b2689d759e970",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
