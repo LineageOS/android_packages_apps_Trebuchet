@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8347973b_b7ccaf01",
+        "filename": "src/com/android/launcher3/touch/AbstractStateChangeTouchController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 23573
+      },
+      "writtenOn": "2021-11-20T20:08:39Z",
+      "side": 1,
+      "message": "I think we can\u0027t just return here. We should call onSwipeInteractionCompleted(mFromState, logAction) method before return and move this entire block to line 383",
+      "revId": "edebe84de9c8e1de4f611ed7e4695d18fa1c34b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
