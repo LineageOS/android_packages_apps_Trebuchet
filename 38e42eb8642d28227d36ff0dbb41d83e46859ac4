@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bec55d9d_3505bef5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 23573
+      },
+      "writtenOn": "2021-11-21T11:37:04Z",
+      "side": 1,
+      "message": "Verified on hammerhead. PatchSet 2 fixes issue found by Adi Wahono in the same change for lineage-17.1 branch. More details here: https://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/303685\n\nUnfortunately i can\u0027t test it on lineage-17.1, but i believe everything should work fine.",
+      "revId": "38e42eb8642d28227d36ff0dbb41d83e46859ac4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
