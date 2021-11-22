@@ -51,6 +51,24 @@
       "parentUuid": "bec55d9d_3505bef5",
       "revId": "38e42eb8642d28227d36ff0dbb41d83e46859ac4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "390e7b1a_d33901e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 23573
+      },
+      "writtenOn": "2021-11-22T11:44:52Z",
+      "side": 1,
+      "message": "Great! I have pushed an update for lineage-17.1 branch",
+      "parentUuid": "642acb4e_3c6aba73",
+      "revId": "38e42eb8642d28227d36ff0dbb41d83e46859ac4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
