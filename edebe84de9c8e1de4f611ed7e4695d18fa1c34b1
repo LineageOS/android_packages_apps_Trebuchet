@@ -34,6 +34,24 @@
       "parentUuid": "8347973b_b7ccaf01",
       "revId": "edebe84de9c8e1de4f611ed7e4695d18fa1c34b1",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9904b6c6_5db623cc",
+        "filename": "src/com/android/launcher3/touch/AbstractStateChangeTouchController.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 27072
+      },
+      "writtenOn": "2021-11-22T13:10:43Z",
+      "side": 1,
+      "message": "It works fine together with this commit:\n\nhttps://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/303686/",
+      "parentUuid": "4b0b2701_55c346f1",
+      "revId": "edebe84de9c8e1de4f611ed7e4695d18fa1c34b1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
