@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ca1b8e1_1df5edb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-11-27T18:03:55Z",
+      "side": 1,
+      "message": "While I appreciate contributions, please don\u0027t just upload on top of other\u0027s changes.\nMeanhile, I tried to tackle the issue another way: https://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/319511 - which should be the better approach",
+      "revId": "20615fedb1647b1269aec3014b90f533be40ddf2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
