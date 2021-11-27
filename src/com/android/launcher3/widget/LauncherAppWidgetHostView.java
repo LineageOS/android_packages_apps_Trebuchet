@@ -160,6 +160,7 @@ public class LauncherAppWidgetHostView extends NavigableAppWidgetHostView
 
     @Override
     public boolean onLongClick(View view) {
+        if (!Utilities.isWorkspaceEditAllowed(mLauncher.getApplicationContext())) return true;
         if (mIsScrollable) {
             DragLayer dragLayer = mLauncher.getDragLayer();
             dragLayer.requestDisallowInterceptTouchEvent(false);
