@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44a93976_2bf5a5da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27072
+      },
+      "writtenOn": "2021-12-03T10:56:48Z",
+      "side": 1,
+      "message": "It works, tested on WT88047.",
+      "revId": "6fbaff8c4f192cabca91853eb3e4a05eea1ec80c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
