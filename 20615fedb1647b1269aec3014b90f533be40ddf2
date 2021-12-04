@@ -16,6 +16,24 @@
       "message": "While I appreciate contributions, please don\u0027t just upload on top of other\u0027s changes.\nMeanhile, I tried to tackle the issue another way: https://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/319511 - which should be the better approach",
       "revId": "20615fedb1647b1269aec3014b90f533be40ddf2",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "229b94b4_84b03b7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 23573
+      },
+      "writtenOn": "2021-12-04T02:27:23Z",
+      "side": 1,
+      "message": "Sorry for that. Your another change looks a lot better and i guess this change (as well as similar change for lineage-18.1) could be abandoned.",
+      "parentUuid": "9ca1b8e1_1df5edb1",
+      "revId": "20615fedb1647b1269aec3014b90f533be40ddf2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
