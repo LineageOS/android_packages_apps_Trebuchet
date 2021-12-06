@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30819e5d_09b243c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-12-06T22:20:11Z",
+      "side": 1,
+      "message": "Tested on coral, can\u0027t move icons or resize/move widgets.",
+      "revId": "c0c9a8479e69c4be28955e69ef7ac90d3b689ec2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
