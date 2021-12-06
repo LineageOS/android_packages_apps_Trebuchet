@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffd9abb1_237e444c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2021-12-06T22:20:28Z",
+      "side": 1,
+      "message": "Tested on coral, can hide labels in both desktop and drawer",
+      "revId": "8759c341b8a2a8163f8d55a68bb6d8f2e3d84b4e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
