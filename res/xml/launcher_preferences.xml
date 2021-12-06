@@ -19,12 +19,12 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto">
 
     <SwitchPreference
-        android:defaultValue="true"
-        android:key="pref_workspace_edit"
+        android:defaultValue="false"
+        android:key="pref_workspace_lock"
         android:persistent="true"
-        android:title="@string/settings_edit_allow_title"
-        android:summaryOn="@string/settings_edit_allow_summary_on"
-        android:summaryOff="@string/settings_edit_allow_summary_off" />
+        android:title="@string/settings_lock_layout_title"
+        android:summaryOn="@string/settings_lock_layout_summary_on"
+        android:summaryOff="@string/settings_lock_layout_summary_off" />
 
     <com.android.launcher3.settings.NotificationDotsPreference
         android:key="pref_icon_badging"
