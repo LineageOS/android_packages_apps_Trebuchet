@@ -59,8 +59,8 @@ import com.android.launcher3.dragndrop.DraggableView;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.ItemInfoWithIcon;
 import com.android.launcher3.model.data.WorkspaceItemInfo;
+import com.android.launcher3.notification.NotificationContainer;
 import com.android.launcher3.notification.NotificationInfo;
-import com.android.launcher3.notification.NotificationItemView;
 import com.android.launcher3.notification.NotificationKeyData;
 import com.android.launcher3.popup.PopupDataProvider.PopupDataChangeListener;
 import com.android.launcher3.shortcuts.DeepShortcutView;
@@ -93,9 +93,8 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
     private final int mStartDragThreshold;
 
     private BubbleTextView mOriginalIcon;
-    private NotificationItemView mNotificationItemView;
     private int mNumNotifications;
-    private ViewGroup mNotificationContainer;
+    private NotificationContainer mNotificationContainer;
 
     private ViewGroup mWidgetContainer;
 
@@ -129,13 +128,21 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             mInterceptTouchDown.set(ev.getX(), ev.getY());
         }
-        if (mNotificationItemView != null
-                && mNotificationItemView.onInterceptTouchEvent(ev)) {
+        if (mNotificationContainer != null
+                && mNotificationContainer.onInterceptSwipeEvent(ev)) {
             return true;
         }
         // Stop sending touch events to deep shortcut views if user moved beyond touch slop.
         return squaredHypot(mInterceptTouchDown.x - ev.getX(), mInterceptTouchDown.y - ev.getY())
                 > squaredTouchSlop(getContext());
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        if (mNotificationContainer != null) {
+            return mNotificationContainer.onSwipeEvent(ev) || super.onTouchEvent(ev);
+        }
+        return super.onTouchEvent(ev);
     }
 
     @Override
@@ -173,8 +180,8 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
     @Override
     protected void setChildColor(View view, int color, AnimatorSet animatorSetOut) {
         super.setChildColor(view, color, animatorSetOut);
-        if (view.getId() == R.id.notification_container && mNotificationItemView != null) {
-            mNotificationItemView.updateBackgroundColor(color, animatorSetOut);
+        if (view.getId() == R.id.notification_container && mNotificationContainer != null) {
+            mNotificationContainer.updateBackgroundColor(color, animatorSetOut);
         }
     }
 
@@ -233,13 +240,6 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
                 mNotificationContainer);
     }
 
-    @Override
-    protected void onInflationComplete(boolean isReversed) {
-        if (isReversed && mNotificationItemView != null) {
-            mNotificationItemView.inverseGutterMargin();
-        }
-    }
-
     @TargetApi(Build.VERSION_CODES.P)
     public void populateAndShow(final BubbleTextView originalIcon, int shortcutCount,
             final List<NotificationKeyData> notificationKeys, List<SystemShortcut> systemShortcuts) {
@@ -262,9 +262,10 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
             if (mNotificationContainer == null) {
                 mNotificationContainer = findViewById(R.id.notification_container);
                 mNotificationContainer.setVisibility(VISIBLE);
+                mNotificationContainer.setPopupView(this);
+            } else {
+                mNotificationContainer.setVisibility(GONE);
             }
-            View.inflate(getContext(), R.layout.notification_content, mNotificationContainer);
-            mNotificationItemView = new NotificationItemView(this, mNotificationContainer);
             updateNotificationHeader();
         }
         int viewsToFlip = getChildCount();
@@ -274,10 +275,6 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
         }
         if (hasDeepShortcuts) {
             mDeepShortcutContainer.setVisibility(View.VISIBLE);
-
-            if (mNotificationItemView != null) {
-                mNotificationItemView.addGutter();
-            }
 
             for (int i = shortcutCount; i > 0; i--) {
                 DeepShortcutView v = inflateAndAdd(R.layout.deep_shortcut, mDeepShortcutContainer);
@@ -310,10 +307,6 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
         } else {
             mDeepShortcutContainer.setVisibility(View.GONE);
             if (!systemShortcuts.isEmpty()) {
-                if (mNotificationItemView != null) {
-                    mNotificationItemView.addGutter();
-                }
-
                 for (SystemShortcut shortcut : systemShortcuts) {
                     initializeSystemShortcut(R.layout.system_shortcut, this, shortcut);
                 }
@@ -356,13 +349,13 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
     }
 
     public void applyNotificationInfos(List<NotificationInfo> notificationInfos) {
-        if (mNotificationItemView != null) {
-            mNotificationItemView.applyNotificationInfos(notificationInfos);
+        if (mNotificationContainer != null) {
+            mNotificationContainer.applyNotificationInfos(notificationInfos);
         }
     }
 
     private void updateHiddenShortcuts() {
-        int allowedCount = mNotificationItemView != null
+        int allowedCount = mNotificationContainer != null
                 ? MAX_SHORTCUTS_IF_NOTIFICATIONS : MAX_SHORTCUTS;
 
         int total = mShortcuts.size();
@@ -448,8 +441,8 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
     private void updateNotificationHeader() {
         ItemInfoWithIcon itemInfo = (ItemInfoWithIcon) mOriginalIcon.getTag();
         DotInfo dotInfo = mLauncher.getDotInfoForItem(itemInfo);
-        if (mNotificationItemView != null && dotInfo != null) {
-            mNotificationItemView.updateHeader(dotInfo.getNotificationCount());
+        if (mNotificationContainer != null && dotInfo != null) {
+            mNotificationContainer.updateHeader(dotInfo.getNotificationCount());
         }
     }
 
@@ -591,20 +584,18 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
 
         @Override
         public void trimNotifications(Map<PackageUserKey, DotInfo> updatedDots) {
-            if (mNotificationItemView == null) {
+            if (mNotificationContainer == null) {
                 return;
             }
             ItemInfo originalInfo = (ItemInfo) mOriginalIcon.getTag();
             DotInfo dotInfo = updatedDots.get(PackageUserKey.fromItemInfo(originalInfo));
             if (dotInfo == null || dotInfo.getNotificationKeys().size() == 0) {
                 // No more notifications, remove the notification views and expand all shortcuts.
-                mNotificationItemView.removeAllViews();
-                mNotificationItemView = null;
                 mNotificationContainer.setVisibility(GONE);
                 updateHiddenShortcuts();
                 assignMarginsAndBackgrounds(PopupContainerWithArrow.this);
             } else {
-                mNotificationItemView.trimNotifications(
+                mNotificationContainer.trimNotifications(
                         NotificationKeyData.extractKeysOnly(dotInfo.getNotificationKeys()));
             }
         }
