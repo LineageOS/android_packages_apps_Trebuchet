@@ -33,6 +33,24 @@
       "message": "Also doesn\u0027t this require preference migration?",
       "revId": "8a5c3b6865fa04b2b864cec271a05017556c4d8e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53665c4d_4b81152a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-12-18T00:25:20Z",
+      "side": 1,
+      "message": "keeping the names would ofc only work for the summaries since i completely changed the title. keeping summaries would mean i\u0027d have to apply \"on\" string to\"off\" summary and vice-versa, which looks wrong. That\u0027s why I chose an unshipped branch to do so.\nTranslation is as easy as click an existing translation, crowdin sees that it has been translated previously, no matter the name. quick click and approve\nFor the migration: same applies, new branch. joey said to not bother with migration just for such a setting, which is why I didn\u0027t do that",
+      "parentUuid": "6ee5808a_d2ff5f48",
+      "revId": "8a5c3b6865fa04b2b864cec271a05017556c4d8e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
