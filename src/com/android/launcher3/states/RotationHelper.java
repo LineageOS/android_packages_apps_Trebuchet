@@ -97,15 +97,11 @@ public class RotationHelper implements OnSharedPreferenceChangeListener {
         mActivity = activity;
 
         // On large devices we do not handle auto-rotate differently.
-        mIgnoreAutoRotateSettings = mActivity.getResources().getBoolean(R.bool.allow_rotation);
-        if (!mIgnoreAutoRotateSettings) {
-            mSharedPrefs = Utilities.getPrefs(mActivity);
-            mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
-            mHomeRotationEnabled = mSharedPrefs.getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
-                    getAllowRotationDefaultValue());
-        } else {
-            mSharedPrefs = null;
-        }
+        mSharedPrefs = Utilities.getPrefs(mActivity);
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
+        mHomeRotationEnabled = mSharedPrefs.getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
+                getAllowRotationDefaultValue() ||
+                mActivity.getResources().getBoolean(R.bool.allow_rotation));
 
         mContentResolver = activity.getContentResolver();
     }
@@ -126,7 +122,8 @@ public class RotationHelper implements OnSharedPreferenceChangeListener {
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
         boolean wasRotationEnabled = mHomeRotationEnabled;
         mHomeRotationEnabled = mSharedPrefs.getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
-                getAllowRotationDefaultValue());
+                getAllowRotationDefaultValue() ||
+                mActivity.getResources().getBoolean(R.bool.allow_rotation));
         if (mHomeRotationEnabled != wasRotationEnabled) {
             notifyChange();
             updateAutoRotateSetting();
