@@ -230,12 +230,9 @@ public class SettingsActivity extends FragmentActivity
                     return Utilities.ATLEAST_OREO;
 
                 case ALLOW_ROTATION_PREFERENCE_KEY:
-                    if (getResources().getBoolean(R.bool.allow_rotation)) {
-                        // Launcher supports rotation by default. No need to show this setting.
-                        return false;
-                    }
                     // Initialize the UI once
-                    preference.setDefaultValue(getAllowRotationDefaultValue());
+                    preference.setDefaultValue(getAllowRotationDefaultValue() ||
+                            getResources().getBoolean(R.bool.allow_rotation));
                     return true;
 
                 case FLAGS_PREFERENCE_KEY:
