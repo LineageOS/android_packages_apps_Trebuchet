@@ -31,6 +31,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -62,6 +63,9 @@ import com.android.launcher3.util.SecureSettingsObserver;
 public class SettingsActivity extends FragmentActivity
         implements OnPreferenceStartFragmentCallback, OnPreferenceStartScreenCallback,
         SharedPreferences.OnSharedPreferenceChangeListener{
+
+    private static final String TAG = SettingsActivity.class.getSimpleName();
+    private static final boolean DEBUG = false;
 
     private static final String DEVELOPER_OPTIONS_KEY = "pref_developer_options";
     private static final String FLAGS_PREFERENCE_KEY = "flag_toggler";
@@ -230,12 +234,11 @@ public class SettingsActivity extends FragmentActivity
                     return Utilities.ATLEAST_OREO;
 
                 case ALLOW_ROTATION_PREFERENCE_KEY:
-                    if (getResources().getBoolean(R.bool.allow_rotation)) {
-                        // Launcher supports rotation by default. No need to show this setting.
-                        return false;
-                    }
                     // Initialize the UI once
-                    preference.setDefaultValue(getAllowRotationDefaultValue());
+                    if (DEBUG) Log.d(TAG, "allow_rotation = " +
+                            getResources().getBoolean(R.bool.allow_rotation));
+                    preference.setDefaultValue(getAllowRotationDefaultValue() ||
+                            getResources().getBoolean(R.bool.allow_rotation));
                     return true;
 
                 case FLAGS_PREFERENCE_KEY:
