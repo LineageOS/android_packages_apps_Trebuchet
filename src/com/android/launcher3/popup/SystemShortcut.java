@@ -134,7 +134,7 @@ public abstract class SystemShortcut<T extends BaseDraggingActivity> extends Ite
 
         @Override
         public void onClick(View view) {
-            if (!Utilities.isWorkspaceEditAllowed(mTarget.getApplicationContext())) return;
+            if (Utilities.isWorkspaceLocked(mTarget.getApplicationContext())) return;
             AbstractFloatingView.closeAllOpenViews(mTarget);
             WidgetsBottomSheet widgetsBottomSheet =
                     (WidgetsBottomSheet) mTarget.getLayoutInflater().inflate(
