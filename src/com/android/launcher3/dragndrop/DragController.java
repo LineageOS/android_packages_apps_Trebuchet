@@ -391,7 +391,7 @@ public abstract class DragController<T extends ActivityContext>
             return false;
         }
 
-        if (!Utilities.isWorkspaceEditAllowed(mActivity.getDragLayer().getContext())) {
+        if (Utilities.isWorkspaceEditLocked(mActivity.getDragLayer().getContext())) {
             cancelDrag();
             return false;
         }
