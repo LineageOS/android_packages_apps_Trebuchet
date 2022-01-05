@@ -650,7 +650,7 @@ public class PopupContainerWithArrow<T extends StatefulActivity<LauncherState>>
             // Return early if not the correct view
             if (!(v.getParent() instanceof DeepShortcutView)) return false;
             // Return early if workspace edit is disabled
-            if (!Utilities.isWorkspaceEditAllowed(mLauncher.getApplicationContext())) return false;
+            if (Utilities.isWorkspaceLocked(mLauncher.getApplicationContext())) return false;
 
             // Long clicked on a shortcut.
             DeepShortcutView sv = (DeepShortcutView) v.getParent();
