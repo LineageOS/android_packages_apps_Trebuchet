@@ -17,138 +17,277 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General -->
+    <!-- Application name -->
     <string name="app_name">Lòinsear3</string>
+    <!-- Work folder name -->
     <string name="work_folder_name">Obair</string>
+    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
     <string name="activity_not_found">Cha deach an aplacaid a stàladh.</string>
+    <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
     <string name="activity_not_available">Chan eil an aplacaid ri fhaighinn</string>
+    <!-- SafeMode shortcut error string -->
     <string name="safemode_shortcut_error">Bidh aplacaidean a chaidh a luchdadh a-nuas à comas sa mhodh thèarainte</string>
+    <!-- SafeMode widget error string -->
     <string name="safemode_widget_error">Bidh widgets à comas sa mhodh thèarainte</string>
+    <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
     <string name="shortcut_not_available">Chan eil ath-ghoirid ri fhaighinn</string>
+    <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
     <string name="home_screen">An sgrìn dachaigh</string>
+    <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
     <string name="custom_actions">Gnìomhan gnàthaichte</string>
+    <!-- Widgets -->
+    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
     <string name="long_press_widget_to_add">Suath ri widget ⁊ cùm sìos e airson a thogail.</string>
+    <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
     <string name="long_accessible_way_to_add">Thoir gnogag dhùbailte air widget ⁊ cùm sìos i airson a togail no gnìomhan gnàthaichte a ghabhail.</string>
+    <!-- The format string for the dimensions of a widget in the drawer -->
+    <!-- There is a special version of this format string for Farsi -->
     <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
     <string name="widget_accessible_dims_format">%1$d a leud ’s %2$d a dh’àirde</string>
+    <!-- Message to tell the user to press and hold a widget/icon to add it  -->
     <string name="add_item_request_drag_hint">Suath ris ⁊ cùm sìos airson a chur ann a làimh</string>
+    <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
     <string name="place_automatically">Cuir ris gu fèin-obrachail</string>
+    <!-- All Apps -->
+    <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
     <string name="all_apps_search_bar_hint">Lorg aplacaidean</string>
-    <string name="all_apps_loading_message">A’ luchdadh nan aplacaidean…</string>
+    <!-- Loading apps text. [CHAR_LIMIT=50] -->
+    <string name="all_apps_loading_message">A’ luchdadh nan aplacaidean&#8230;</string>
+    <!-- No-search-results text. [CHAR_LIMIT=50] -->
     <string name="all_apps_no_search_results">Cha do lorg sinn aplacaid le “<xliff:g id="query" example="Android">%1$s</xliff:g>%1$s”</string>
+    <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
     <string name="all_apps_search_market_message">Lorg barrachd aplacaidean</string>
+    <!-- Label for an icon representing any generic app. [CHAR_LIMIT=50] -->
     <string name="label_application">Aplacaid</string>
+    <!-- Popup items -->
+    <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
     <string name="notifications_header">Brathan</string>
+    <!-- Drag and drop -->
+    <!-- Message to tell the user to press and hold on a shortcut to add it [CHAR_LIMIT=50] -->
     <string name="long_press_shortcut_to_add">Suath ri ath-ghoirid ⁊ cùm sìos i airson a togail.</string>
+    <!-- Accessibility spoken hint message in deep shortcut menu, which allows user to add a shortcut. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=200] -->
     <string name="long_accessible_way_to_add_shortcut">Thoir gnogag dhùbailte air ath-ghoirid ⁊ cùm sìos i airson a togail no gnìomhan gnàthaichte a ghabhail.</string>
+    <!-- Error message when user has filled a home screen -->
     <string name="out_of_space">Tha an sgrìn dachaigh seo làn.</string>
+    <!-- Error message when user has filled the hotseat -->
     <string name="hotseat_out_of_space">Tha treidhe nan annsachdan làn</string>
+    <!-- All applications label -->
     <string name="all_apps_button_label">Liosta nan aplacaidean</string>
     <string name="all_apps_button_personal_label">Liosta nan aplacaidean pearsanta</string>
     <string name="all_apps_button_work_label">Liosta de dh’aplacaidean na h-obrach</string>
+    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
+         for accessibilty (spoken when the button gets focus). -->
     <string name="all_apps_home_button_label">Dachaigh</string>
+    <!-- Label for remove drop target (from the homescreen only).
+         May appear next to uninstall_drop_target_label [CHAR_LIMIT=20] -->
     <string name="remove_drop_target_label">Thoir air falbh</string>
+    <!-- Label for uninstall drop target (from the device).
+         May appear next to remove_drop_target_label [CHAR_LIMIT=20]-->
     <string name="uninstall_drop_target_label">Dì-stàlaich</string>
+    <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
     <string name="app_info_drop_target_label">Fiosrachadh mun aplacaid</string>
+    <!-- Label for install drop target. [CHAR_LIMIT=20] -->
     <string name="install_drop_target_label">Stàlaich</string>
+    <!-- Label for install dismiss prediction. -->
     <string name="dismiss_prediction_label">Na mol aplacaid</string>
+    <!-- Label for pinning predicted app. -->
     <string name="pin_prediction">Ro-innse a’ phrìneachaidh</string>
+    <!-- Permissions: -->
+    <!-- Permission short label -->
     <string name="permlab_install_shortcut">stàladh ath-ghoiridean</string>
+    <!-- Permission description -->
     <string name="permdesc_install_shortcut">Leigidh seo le aplacaid 
         ath-ghoiridean a chur ris às aonais gnìomh cleachdaiche.</string>
+    <!-- Permission short label -->
     <string name="permlab_read_settings">leughadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <!-- Permission description -->
     <string name="permdesc_read_settings">Leigidh seo leis an aplacaid 
         roghainnean is ath-ghoiridean na dachaigh a leughadh.</string>
+    <!-- Permission short label -->
     <string name="permlab_write_settings">sgrìobhadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <!-- Permission description -->
     <string name="permdesc_write_settings">Leigidh seo leis an aplacaid 
         roghainnean is ath-ghoiridean na dachaigh atharrachadh.</string>
+    <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
     <string name="msg_no_phone_permission">Chan fhaod <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> gairmean fòn a dhèanamh</string>
+    <!-- Widgets: -->
+    <!-- Text to show user in place of a gadget when we can't display it properly -->
     <string name="gadget_error_text">Duilgheadas le luchdadh a’ widget</string>
+    <!-- Text to show user in place of a gadget when it is not yet initialized. -->
     <string name="gadget_setup_text">Suidheachadh</string>
+    <!-- Text to inform the user that they can't uninstall a system application -->
     <string name="uninstall_system_app_text">Seo aplacaid an t-siostaim agus cha ghabh a dì-stàladh.</string>
+    <!-- Default folder title -->
     <string name="folder_hint_text">Deasaich an t-ainm</string>
+    <!-- Accessibility -->
+    <!-- The format string for when an app is temporarily disabled. -->
     <string name="disabled_app_label">Chaidh <xliff:g id="app_name" example="Messenger">%1$s</xliff:g> a chur à comas</string>
+    <!-- The format string for when an app has a notification dot (meaning it has associated notifications). -->
     <plurals name="dotted_app_label">
         <item quantity="one"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tha <xliff:g id="notification_count" example="1">%2$d</xliff:g> bhrath ann</item>
         <item quantity="two"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tha <xliff:g id="notification_count" example="1">%2$d</xliff:g> bhrath ann</item>
         <item quantity="few"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tha <xliff:g id="notification_count" example="1">%2$d</xliff:g> brathan ann</item>
         <item quantity="other"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tha <xliff:g id="notification_count" example="1">%2$d</xliff:g> brath ann</item>
     </plurals>
+    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
     <string name="default_scroll_format">Duilleag %1$d à %2$d</string>
+    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
     <string name="workspace_scroll_format">Sgrìn dachaigh %1$d à %2$d</string>
+    <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
     <string name="workspace_new_page">Duilleag ùr na sgrìn dachaigh</string>
+    <!-- Folder accessibility -->
+    <!-- The format string for when a folder is opened, speaks the dimensions -->
     <string name="folder_opened">Chaidh pasgan fhosgladh, <xliff:g id="width" example="5">%1$d</xliff:g> le <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <!-- Instruction that clicking outside will close folder -->
     <string name="folder_tap_to_close">Thoir gnogag air pasgan gus a dhùnadh</string>
+    <!-- Instruction that clicking outside will commit folder rename -->
     <string name="folder_tap_to_rename">Thoir gnogag air gus an t-ainm ùr a shàbhaladh</string>
+    <!-- Indication that folder closed -->
     <string name="folder_closed">Chaidh am pasgan a dhùnadh</string>
+    <!-- Folder renamed format -->
     <string name="folder_renamed">Chaidh ainm ùr <xliff:g id="name" example="Games">%1$s</xliff:g> a chur air a’ phasgan</string>
+    <!-- Folder name format when folder has less than 4 items -->
     <string name="folder_name_format_exact">Pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> nì</string>
+    <!-- Folder name format when folder has 4 or more items shown in preview-->
     <string name="folder_name_format_overflow">Pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> nì no a bharrachd</string>
+    <!-- Strings for the customization mode -->
+    <!-- Text for widget add button -->
     <string name="widget_button_text">Widgets</string>
+    <!-- Text for wallpaper change button -->
     <string name="wallpaper_button_text">Pàipearan-balla</string>
+    <!-- Text for wallpaper change button -->
     <string name="styles_wallpaper_button_text">Stoidhlichean ⁊ pàipearan-balla</string>
+    <!-- Text for settings button [CHAR LIMIT=20]-->
     <string name="settings_button_text">Roghainnean na dachaigh</string>
+    <!-- Message shown when a feature is disabled by the administrator -->
     <string name="msg_disabled_by_admin">Chaidh a chur à comas leis an rianaire agad</string>
+    <!-- Strings for settings -->
+    <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
     <string name="allow_rotation_title">Ceadaich cuairteachadh na sgrìn dachaigh</string>
+    <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
     <string name="allow_rotation_desc">Nuair bhios a fòn ’ga chuairteachadh</string>
+    <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
     <string name="notification_dots_title">Dotagan bratha</string>
+    <!-- Text to indicate that the system notification dots setting is on [CHAR LIMIT=100] -->
     <string name="notification_dots_desc_on">Air</string>
+    <!-- Text to indicate that the system notification dots setting is off [CHAR LIMIT=100] -->
     <string name="notification_dots_desc_off">Dheth</string>
+    <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
     <string name="title_missing_notification_access">Tha feum air inntrigeadh do bhrathan</string>
+    <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
     <string name="msg_missing_notification_access">Airson dotagan bratha a shealltainn, cuir air brathan aplacaid airson <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
     <string name="title_change_settings">Atharraich na roghainnean</string>
+    <!-- Summary for Notification dots setting. Tapping this will link enable/disable notification dots feature on the home screen. [CHAR LIMIT=50] -->
     <string name="notification_dots_service_title">Seall dotagan bratha</string>
+    <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=60] -->
     <string name="auto_add_shortcuts_label">Cuir ìomhaigheagan aplacaidean ris an sgrìn dachaigh</string>
+    <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
     <string name="auto_add_shortcuts_description">Do dh’aplacaidean ùra</string>
+    <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
     <string name="package_state_unknown">Chan eil fhios</string>
+    <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
     <string name="abandoned_clean_this">Thoir air falbh</string>
+    <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
     <string name="abandoned_search">Lorg</string>
+    <!-- Title for abandoned promise dialog. -->
     <string name="abandoned_promises_title">Cha deach an aplacaid seo a stàladh</string>
+    <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
+    The second "it" refers to the app. -->
     <string name="abandoned_promise_explanation">Cha deach an aplacaid a tha leis an ìomhaigheag seo a stàladh.
         ’S urrainn dhut a toirt air falbh no an aplacaid a lorg ’s a stàladh a làimh.
     </string>
+    <!-- Title for an app which is being downloaded. -->
     <string name="app_downloading_title">Tha <xliff:g id="name" example="Messenger">%1$s</xliff:g> ’ga luchdadh a-nuas, <xliff:g id="progress" example="30%">%2$s</xliff:g> deiseil</string>
+    <!-- Title for an app whose download has been started. -->
     <string name="app_waiting_download_title">Tha <xliff:g id="name" example="Messenger">%1$s</xliff:g> a’ feitheamh ri stàladh</string>
+    <!-- Strings for widgets & more in the popup container/bottom sheet -->
+    <!-- Title for a bottom sheet that shows widgets for a particular app -->
     <string name="widgets_bottom_sheet_title">Widgets <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <!-- Accessibility title for the popup containing a list of widgets. [CHAR_LIMIT=50] -->
     <string name="widgets_list">Liosta nan Widgets</string>
+    <!-- Text announced by accessibility when the popup containing the list of widgets is closed. [CHAR_LIMIT=100] -->
     <string name="widgets_list_closed">Chaidh liosta nan Widgets a dhùnadh</string>
+    <!-- Strings for accessibility actions -->
+    <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
     <string name="action_add_to_workspace">Cuir ris an sgrìn dachaigh</string>
+    <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
     <string name="action_move_here">Gluais an nì an-seo</string>
+    <!-- Accessibility confirmation for item added to workspace. -->
     <string name="item_added_to_workspace">Chaidh an nì a chur ris an sgrìn dachaigh</string>
+    <!-- Accessibility confirmation for item removed. [CHAR_LIMIT=50]-->
     <string name="item_removed">Chaidh an nì a thoirt air falbh</string>
+    <!-- Action shown in snackbar to undo item removal. [CHAR_LIMIT=20] -->
     <string name="undo">Neo-dhèan</string>
+    <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
     <string name="action_move">Gluais an nì</string>
+    <!-- Accessibility description to move item to empty cell. -->
     <string name="move_to_empty_cell">Gluais gu ràgh <xliff:g id="number" example="1">%1$s</xliff:g> colbh <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <!-- Accessibility description to move item inside a folder. -->
     <string name="move_to_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <!-- Accessibility description to move item to the hotseat. -->
     <string name="move_to_hotseat_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g> nan annsachdan</string>
+    <!-- Accessibility confirmation for item move. -->
     <string name="item_moved">Chaidh an nì a ghluasad</string>
+    <!-- Accessibility description to move item into an existing folder. -->
     <string name="add_to_folder">Cuir ri pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <!-- Accessibility description to move item into an existing folder containing an app. -->
     <string name="add_to_folder_with_app">Cuir ris a’ phasgan sa bheil <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <!-- Accessibility confirmation for item added to folder. -->
     <string name="added_to_folder">Chaidh an nì a chur ri pasgan</string>
+    <!-- Accessibility description to create folder with another item. -->
     <string name="create_folder_with">Cruthaich pasgan le: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <!-- Accessibility confirmation for folder created. -->
     <string name="folder_created">Chaidh am pasgan a chruthachadh</string>
+    <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
     <string name="action_move_to_workspace">Gluais dhan sgrìn dachaigh</string>
+    <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
     <string name="action_resize">Ath-mheudaich</string>
+    <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_width">Meudaich an leud</string>
+    <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_height">Meudaich an àirde</string>
+    <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_width">Lùghdaich an leud</string>
+    <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_height">Lùghdaich an àirde</string>
+    <!-- Accessibility confirmation for widget resize. -->
     <string name="widget_resized">Chaidh a’ widget ath-mheudachadh gu leud <xliff:g id="number" example="2">%1$s</xliff:g> ’s àirde <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
     <string name="action_deep_shortcut">Ath-ghoiridean</string>
+    <!-- Accessibility description when the context menu of a launcher icon that has notifications as well as shortcuts (providing quick access to app's actions). The "shortcuts" translation should be consistent with the one for action_deep_shortcut. [CHAR_LIMIT=50] -->
     <string name="shortcuts_menu_with_notifications_description">Ath-ghoiridean is brathan
     </string>
+    <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
     <string name="action_dismiss_notification">Leig seachad</string>
+    <!-- Content description for arrow tip close button. [CHAR LIMIT=NONE] -->
     <string name="accessibility_close">Dùin</string>
+    <!-- Accessibility confirmation for notification being dismissed. -->
     <string name="notification_dismissed">Chaidh am brath a leigeil seachad</string>
+    <!-- Label of tab to indicate personal apps -->
     <string name="all_apps_personal_tab">Pearsanta</string>
+    <!-- Label of tab to indicate work apps -->
     <string name="all_apps_work_tab">Obair</string>
+    <!-- This string is in the work profile tab when a user has All Apps open on their phone. This is a label for a toggle to turn the work profile on and off. "Work profile" means a separate profile on a user's phone that's specifically for their work apps and managed by their company. "Work" is used as an adjective.-->
     <string name="work_profile_toggle_label">Pròifil na h-obrach</string>
+    <!--- User onboarding title for personal apps -->
     <string name="work_profile_edu_personal_apps">Tha an dàta pearsanta fa leth ⁊ falaichte o aplacaidean na h-obrach</string>
+    <!--- User onboarding title for work profile apps -->
     <string name="work_profile_edu_work_apps">Chì an rianaire ICT agad aplacaidean ⁊ dàta na h-obrach</string>
+    <!-- Action label to proceed to the next work profile edu section-->
     <string name="work_profile_edu_next">Air adhart</string>
+    <!-- Action label to finish work profile edu-->
     <string name="work_profile_edu_accept">Tha mi agaibh</string>
+    <!--- heading shown when user opens work apps tab while work apps are paused -->
     <string name="work_apps_paused_title">Tha pròifil na h-obrach ’na stad</string>
+    <!--- body shown when user opens work apps tab while work apps are paused -->
     <string name="work_apps_paused_body">Chan urrainn do dh’aplacaidean na h-obrach brathan a chur thugad, am bataraidh a chleachdadh no d’ ionad inntrigeadh</string>
+    <!-- content description for paused work apps list -->
     <string name="work_apps_paused_content_description">Tha pròifil na h-obrach ’na stad. Chan urrainn do dh’aplacaidean na h-obrach brathan a chur thugad, am bataraidh a chleachdadh no d’ ionad inntrigeadh</string>
+    <!-- A tip shown pointing at work toggle -->
     <string name="work_switch_tip">Cuir aplacaidean is brathan na h-obrach ’nan stad</string>
+    <!-- Failed action error message: e.g. Failed: Pause -->
     <string name="remote_action_failed">Dh’fhàillig: <xliff:g id="what" example="Pause">%1$s</xliff:g></string>
 </resources>

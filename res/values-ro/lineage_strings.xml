@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Arată aplicația Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Când glisați dreapta din ecranul acasă principal</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Când glisați stânga din ecranul acasă principal</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Permite editare</string>
     <string name="settings_edit_allow_summary_on">Iconițele și widget-urile pot fi adăugate, eliminate sau mutate pe homescreen</string>
     <string name="settings_edit_allow_summary_off">Iconițele și widget-urile nu pot fi adăugate, eliminate sau mutate pe homescreen</string>
     <string name="settings_edit_widgets_error">Nu este posibil să adăugați widget-uri pe homescreen</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Arată etichetele pictogramelor de pe desktop</string>
     <string name="drawer_show_labels">Arată etichetele pictogramelor în sertarul cu aplicaţii</string>
     <string name="show_labels_landscape">Afișează etichetele iconițelor în modul peisaj</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Aplicații Ascunse &amp; Protejate</string>
     <string name="trust_apps_auth_manager">Deblocați pentru a gestiona aplicaţiile ascunse şi protejate</string>
     <string name="trust_apps_auth_open_app">Autentificați-vă pentru a deschide %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Ajutor</string>
     <string name="trust_apps_info_hidden">Aplicațiile ascunse și widget-urile lor sunt ascunse în sertar</string>
     <string name="trust_apps_info_protected">Aplicațiile protejate necesită autentificare pentru a fi deschise din launcher</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pachet de pictograme</string>
     <string name="icon_pack_default_label">Implicit</string>
     <string name="icon_pack_add">Instalează mai multe</string>

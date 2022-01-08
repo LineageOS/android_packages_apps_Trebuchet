@@ -14,11 +14,21 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Permitir edición</string>
     <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
+    <!-- Trust apps -->
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pack de iconos</string>
 </resources>

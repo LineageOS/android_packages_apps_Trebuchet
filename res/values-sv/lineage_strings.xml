@@ -14,8 +14,18 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Edit workspace -->
+    <!-- Folder titles -->
+    <!-- Hide labels -->
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
     <string name="trust_apps_loading">Laddar\u2026</string>
     <string name="trust_apps_help">Hjälp</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Ikonpaket</string>
 </resources>

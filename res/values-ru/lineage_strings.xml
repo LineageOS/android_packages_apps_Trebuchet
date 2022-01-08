@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Показать приложение Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Разрешить редактирование</string>
     <string name="settings_edit_allow_summary_on">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_allow_summary_off">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Отображать подписи значков на рабочем столе</string>
     <string name="drawer_show_labels">Отображать подписи значков в меню</string>
     <string name="show_labels_landscape">Показывать подписи значков в альбомном режиме</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Скрытые и защищенные приложения</string>
     <string name="trust_apps_auth_manager">Разблокируйте, для управления скрытыми и защищенными приложениями</string>
     <string name="trust_apps_auth_open_app">Авторизуйтесь, для открытия %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Помощь</string>
     <string name="trust_apps_info_hidden">Скрытые приложения и их виджеты не отображаются в меню приложений</string>
     <string name="trust_apps_info_protected">Для открытия защищенных приложений из лаунчера требуется аутентификация</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Набор значков</string>
     <string name="icon_pack_default_label">По умолчанию</string>
     <string name="icon_pack_add">Установить еще</string>

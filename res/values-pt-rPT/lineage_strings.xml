@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Mostrar aplicação Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ao deslizar para a direita no ecrã inicial</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda no ecrã inicial</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Permitir edições</string>
     <string name="settings_edit_allow_summary_on">Ícones e widgets podem ser adicionados, removidos e movidos no ecrã inicial</string>
     <string name="settings_edit_allow_summary_off">Ícones e widgets não podem ser adicionados, removidos e movidos no ecrã inicial</string>
     <string name="settings_edit_widgets_error">Não é possível adicionar widgets ao ecrã inicial</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
     <string name="drawer_show_labels">Mostrar as legendas dos ícones no painel de aplicações</string>
     <string name="show_labels_landscape">Mostrar legendas dos ícones no modo paisagem</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Aplicações Ocultas e Protegidas</string>
     <string name="trust_apps_auth_manager">Desbloquear para gerir as aplicações ocultas e protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Ajuda</string>
     <string name="trust_apps_info_hidden">As aplicações ocultas e os seus widgets estão escondidos da gaveta de aplicações</string>
     <string name="trust_apps_info_protected">Aplicações protegidas requerem autenticação para serem abertas a partir da gaveta de aplicações</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pacote de ícones</string>
     <string name="icon_pack_default_label">Padrão</string>
     <string name="icon_pack_add">Instalar mais</string>

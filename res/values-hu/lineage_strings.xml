@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">A Google-alkalmazás megjelenítése</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Amikor a főképernyőn jobbra csúsztat</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Amikor a főképernyőn balra csúsztat</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Szerkesztés engedélyezése</string>
     <string name="settings_edit_allow_summary_on">A kezdőképernyőn engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
     <string name="settings_edit_allow_summary_off">A kezdőképernyőn nem engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
     <string name="settings_edit_widgets_error">Nem lehetséges modulokat hozzáadni a kezdőképernyőhöz</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Ikonfeliratok megjelenítése az asztalon</string>
     <string name="drawer_show_labels">Ikonfeliratok megjelenítése az alkalmazásfiókban</string>
     <string name="show_labels_landscape">Fekvő módban is jelenítse meg az ikonfeliratokat</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Rejtett és védett alkalmazások</string>
     <string name="trust_apps_auth_manager">Feloldás a rejtett és védett alkalmazások kezeléséhez</string>
     <string name="trust_apps_auth_open_app">Hitelesítés a következő megnyitásához: %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Súgó</string>
     <string name="trust_apps_info_hidden">A rejtett alkalmazások és moduljaik az alkalmazásfiókban sem láthatóak</string>
     <string name="trust_apps_info_protected">Egy védett alkalmazás megnyitása a launcherből hitelesítést igényel</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Ikoncsomag</string>
     <string name="icon_pack_default_label">Alapértelmezett</string>
     <string name="icon_pack_add">Továbbiak telepítése</string>

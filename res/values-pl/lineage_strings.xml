@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Pokaż aplikację Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Gdy przesuniesz w prawo od ekranu głównego</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Gdy przesuniesz w lewo od ekranu głównego</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Zezwalaj na edycję</string>
     <string name="settings_edit_allow_summary_on">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_edit_allow_summary_off">Ikon i widżetów nie można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Pokaż etykiety ikon na pulpicie</string>
     <string name="drawer_show_labels">Pokaż etykiety ikon w szufladzie</string>
     <string name="show_labels_landscape">Pokaż etykiety ikon w trybie poziomym</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Ukryte i chronione aplikacje</string>
     <string name="trust_apps_auth_manager">Odblokuj, aby zarządzać ukrytymi i chronionymi aplikacjami</string>
     <string name="trust_apps_auth_open_app">Uwierzytelnij, aby otworzyć %1$s</string>
@@ -32,5 +41,6 @@
     <string name="trust_apps_help">Pomoc</string>
     <string name="trust_apps_info_hidden">Ukryte aplikacje i ich widżety są ukryte z szuflady aplikacji</string>
     <string name="trust_apps_info_protected">Chronione aplikacje wymagają uwierzytelniania, aby mogły zostać uruchomione z poziomu ekranu głównego</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Paczka ikon</string>
 </resources>

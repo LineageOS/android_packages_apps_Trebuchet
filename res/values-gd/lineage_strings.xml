@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Seall aplacaid Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Le grad-shlaighdeadh gu deas on phrìomh sgrìn dhachaigh</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Le grad-shlaighdeadh gu clì on phrìomh sgrìn dhachaigh</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Ceadaich deasachadh</string>
     <string name="settings_edit_allow_summary_on">Gabhaidh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
     <string name="settings_edit_allow_summary_off">Cha ghabh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
     <string name="settings_edit_widgets_error">Cha ghabh widgets a chur ris an sgrìn dhachaigh</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Seall leubailean nan ìomhaigheagan air an deasg</string>
     <string name="drawer_show_labels">Seall leubailean nan ìomhaigheagan san drathair</string>
     <string name="show_labels_landscape">Seall leubailean nan ìomhaigheagan ann am modh dreacha-tìre</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Aplacaidean falaichte ⁊ dìonta</string>
     <string name="trust_apps_auth_manager">Thoir a’ ghlais dheth a stiùireadh nan aplacaidean falaichte ’s dìonta</string>
     <string name="trust_apps_auth_open_app">Dearbh gus %1$s fhosgladh</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Cobhair</string>
     <string name="trust_apps_info_hidden">Tha aplacaidean falaichte ’s na widgets aca ’gam falach on drathair</string>
     <string name="trust_apps_info_protected">Iarraidh aplacaidean dìonta dearbhadh mus dèid am fosgladh on lòinsear</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pacaid ìomhaigheagan</string>
     <string name="icon_pack_default_label">Bun-roghainn</string>
     <string name="icon_pack_add">Stàlaich barrachd</string>

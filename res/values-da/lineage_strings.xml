@@ -14,9 +14,19 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Edit workspace -->
     <string name="settings_edit_widgets_error">Det er ikke muligt at tilføje widgets til hjemmeskærmen</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Skjulte &amp; Beskyttede apps</string>
     <string name="trust_apps_auth_manager">Oplås for at håndtere de skjulte og beskyttede apps</string>
     <string name="trust_apps_auth_open_app">Godkend for at åbne %1$s</string>
     <string name="trust_apps_info_protected">Beskyttede apps kræver godkendelse, for at blive åbnet fra starteren</string>
+    <!-- Icon pack -->
 </resources>

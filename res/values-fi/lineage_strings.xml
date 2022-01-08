@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Näytä Google-sovellus</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Kun pyyhkäiset oikealle pääkotinäytöltä</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Kun pyyhkäiset vasemmalle pääkotinäytöltä</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Salli muokkaaminen</string>
     <string name="settings_edit_allow_summary_on">Kuvakkeet ja widgetit voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_edit_allow_summary_off">Kuvakkeita ja widgettejä ei voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_edit_widgets_error">Kotinäytölle ei ole mahdollista lisätä widgettejä</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Näytä kuvakkeiden tekstit työpöydällä</string>
     <string name="drawer_show_labels">Näytä kuvakkeiden tekstit valikossa</string>
     <string name="show_labels_landscape">Piilota kuvakkeiden tekstit vaakatilassa</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Piilotetut &amp; suojatut sovellukset</string>
     <string name="trust_apps_auth_manager">Avaa hallitaksesi piilotettuja ja suojattuja sovelluksia</string>
     <string name="trust_apps_auth_open_app">Todenna avataksesi %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Ohje</string>
     <string name="trust_apps_info_hidden">Piilotetut sovellukset ja niiden widgetit piilotetaan valikosta</string>
     <string name="trust_apps_info_protected">Suojatut sovellukset tarvitsevat todennuksen jotta ne voidaan avata</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Kuvakepaketti</string>
     <string name="icon_pack_default_label">Oletus</string>
     <string name="icon_pack_add">Asenna lisää</string>

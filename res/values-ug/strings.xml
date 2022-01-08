@@ -17,6 +17,145 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Work folder name -->
     <string name="work_folder_name">ئىش</string>
+    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
+    <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
+    <!-- SafeMode shortcut error string -->
+    <!-- SafeMode widget error string -->
+    <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
+    <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
+    <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
+    <!-- Widgets -->
+    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
+    <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
+    <!-- The format string for the dimensions of a widget in the drawer -->
+    <!-- There is a special version of this format string for Farsi -->
+    <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
+    <!-- Message to tell the user to press and hold a widget/icon to add it  -->
+    <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
+    <!-- All Apps -->
+    <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
+    <!-- Loading apps text. [CHAR_LIMIT=50] -->
+    <!-- No-search-results text. [CHAR_LIMIT=50] -->
+    <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
+    <!-- Label for an icon representing any generic app. [CHAR_LIMIT=50] -->
+    <!-- Popup items -->
+    <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
+    <!-- Drag and drop -->
+    <!-- Message to tell the user to press and hold on a shortcut to add it [CHAR_LIMIT=50] -->
+    <!-- Accessibility spoken hint message in deep shortcut menu, which allows user to add a shortcut. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=200] -->
+    <!-- Error message when user has filled a home screen -->
+    <!-- Error message when user has filled the hotseat -->
+    <!-- All applications label -->
+    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
+         for accessibilty (spoken when the button gets focus). -->
+    <!-- Label for remove drop target (from the homescreen only).
+         May appear next to uninstall_drop_target_label [CHAR_LIMIT=20] -->
+    <!-- Label for uninstall drop target (from the device).
+         May appear next to remove_drop_target_label [CHAR_LIMIT=20]-->
+    <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
+    <!-- Label for install drop target. [CHAR_LIMIT=20] -->
+    <!-- Label for install dismiss prediction. -->
+    <!-- Label for pinning predicted app. -->
+    <!-- Permissions: -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Permission short label -->
+    <!-- Permission description -->
+    <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
+    <!-- Widgets: -->
+    <!-- Text to show user in place of a gadget when we can't display it properly -->
+    <!-- Text to show user in place of a gadget when it is not yet initialized. -->
+    <!-- Text to inform the user that they can't uninstall a system application -->
+    <!-- Default folder title -->
+    <!-- Accessibility -->
+    <!-- The format string for when an app is temporarily disabled. -->
+    <!-- The format string for when an app has a notification dot (meaning it has associated notifications). -->
+    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
+    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
+    <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
+    <!-- Folder accessibility -->
+    <!-- The format string for when a folder is opened, speaks the dimensions -->
+    <!-- Instruction that clicking outside will close folder -->
+    <!-- Instruction that clicking outside will commit folder rename -->
+    <!-- Indication that folder closed -->
+    <!-- Folder renamed format -->
+    <!-- Folder name format when folder has less than 4 items -->
+    <!-- Folder name format when folder has 4 or more items shown in preview-->
+    <!-- Strings for the customization mode -->
+    <!-- Text for widget add button -->
+    <!-- Text for wallpaper change button -->
+    <!-- Text for wallpaper change button -->
+    <!-- Text for settings button [CHAR LIMIT=20]-->
+    <!-- Message shown when a feature is disabled by the administrator -->
+    <!-- Strings for settings -->
+    <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
+    <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
+    <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
+    <!-- Text to indicate that the system notification dots setting is on [CHAR LIMIT=100] -->
+    <!-- Text to indicate that the system notification dots setting is off [CHAR LIMIT=100] -->
+    <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
+    <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
+    <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
+    <!-- Summary for Notification dots setting. Tapping this will link enable/disable notification dots feature on the home screen. [CHAR LIMIT=50] -->
+    <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=60] -->
+    <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
+    <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
+    <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
+    <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
+    <!-- Title for abandoned promise dialog. -->
+    <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
+    The second "it" refers to the app. -->
+    <!-- Title for an app which is being downloaded. -->
+    <!-- Title for an app whose download has been started. -->
+    <!-- Strings for widgets & more in the popup container/bottom sheet -->
+    <!-- Title for a bottom sheet that shows widgets for a particular app -->
+    <!-- Accessibility title for the popup containing a list of widgets. [CHAR_LIMIT=50] -->
+    <!-- Text announced by accessibility when the popup containing the list of widgets is closed. [CHAR_LIMIT=100] -->
+    <!-- Strings for accessibility actions -->
+    <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation for item added to workspace. -->
+    <!-- Accessibility confirmation for item removed. [CHAR_LIMIT=50]-->
+    <!-- Action shown in snackbar to undo item removal. [CHAR_LIMIT=20] -->
+    <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility description to move item to empty cell. -->
+    <!-- Accessibility description to move item inside a folder. -->
+    <!-- Accessibility description to move item to the hotseat. -->
+    <!-- Accessibility confirmation for item move. -->
+    <!-- Accessibility description to move item into an existing folder. -->
+    <!-- Accessibility description to move item into an existing folder containing an app. -->
+    <!-- Accessibility confirmation for item added to folder. -->
+    <!-- Accessibility description to create folder with another item. -->
+    <!-- Accessibility confirmation for folder created. -->
+    <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
+    <!-- Accessibility confirmation for widget resize. -->
+    <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Accessibility description when the context menu of a launcher icon that has notifications as well as shortcuts (providing quick access to app's actions). The "shortcuts" translation should be consistent with the one for action_deep_shortcut. [CHAR_LIMIT=50] -->
+    <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Content description for arrow tip close button. [CHAR LIMIT=NONE] -->
+    <!-- Accessibility confirmation for notification being dismissed. -->
+    <!-- Label of tab to indicate personal apps -->
+    <!-- Label of tab to indicate work apps -->
     <string name="all_apps_work_tab">ئىش</string>
+    <!-- This string is in the work profile tab when a user has All Apps open on their phone. This is a label for a toggle to turn the work profile on and off. "Work profile" means a separate profile on a user's phone that's specifically for their work apps and managed by their company. "Work" is used as an adjective.-->
+    <!--- User onboarding title for personal apps -->
+    <!--- User onboarding title for work profile apps -->
+    <!-- Action label to proceed to the next work profile edu section-->
+    <!-- Action label to finish work profile edu-->
+    <!--- heading shown when user opens work apps tab while work apps are paused -->
+    <!--- body shown when user opens work apps tab while work apps are paused -->
+    <!-- content description for paused work apps list -->
+    <!-- A tip shown pointing at work toggle -->
+    <!-- Failed action error message: e.g. Failed: Pause -->
 </resources>

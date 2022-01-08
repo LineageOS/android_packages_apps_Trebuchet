@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Zobraziť Google aplikácie</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Pri potiahnutí prstom vpravo na hlavnej obrazovke</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Pri potiahnutí prstom vľavo na hlavnej obrazovke</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Povoliť úpravy</string>
     <string name="settings_edit_allow_summary_on">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_edit_allow_summary_off">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
     <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
     <string name="show_labels_landscape">Zobraziť mwnovky ikon v režime na šírku</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Skryté &amp; chránené aplikácie</string>
     <string name="trust_apps_auth_manager">Pre správu skrytých a chránených aplikácií odomknite</string>
     <string name="trust_apps_auth_open_app">Pre otvorenie %1$s potvrďte svoju totožnosť</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Pomocník</string>
     <string name="trust_apps_info_hidden">Skryté aplikácie a ich widgety se nezobrazujú v zozname aplikácií</string>
     <string name="trust_apps_info_protected">Chránené aplikácie vyžadujú pre otvorenie zo spúšťača overenie</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Balíček ikon</string>
     <string name="icon_pack_default_label">Predvolené</string>
     <string name="icon_pack_add">Inštalovať ďalšie</string>

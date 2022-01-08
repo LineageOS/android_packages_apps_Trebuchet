@@ -14,8 +14,17 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Cuando deslizas a la derecha desde la pantalla de inicio</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Cuando deslizas a la izquierda desde la pantalla de inicio</string>
+    <!-- Edit workspace -->
+    <!-- Folder titles -->
+    <!-- Hide labels -->
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Aplicaciones ocultas y protegidas</string>
     <string name="trust_apps_auth_manager">Desbloquear para administrar las aplicaciones ocultas y protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
@@ -24,4 +33,5 @@
     <string name="trust_apps_help">Ayuda</string>
     <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets se ocultan del cajón</string>
     <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren autenticación para abrir desde el launcher</string>
+    <!-- Icon pack -->
 </resources>

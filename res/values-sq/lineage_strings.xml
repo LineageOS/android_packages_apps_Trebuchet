@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Shfaq Google app</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Kur rëshket djathtas nga faqja kryesore</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Kur rëshket majtas nga faqja kryesore</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Lejo redaktimin</string>
     <string name="settings_edit_allow_summary_on">Ikonat dhe veglat mund të shtohen, hiqen dhe zhvendosen në ekranin kryesor</string>
     <string name="settings_edit_allow_summary_off">Ikonat dhe veglat nuk mund të shtohen, hiqen dhe zhvendosen në ekranin kryesor</string>
     <string name="settings_edit_widgets_error">Nuk është e mundur të shtohen vegla në dritaren kryesore</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Shfaq emërtimin e ikonave në ekran</string>
     <string name="drawer_show_labels">Shfaq emërtimin e ikonave në menu</string>
     <string name="show_labels_landscape">Shfaq emërtimet e ikonave në metodën peisazh</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Programet e fshehura &amp; Mbrojtura</string>
     <string name="trust_apps_auth_manager">Zhbllokoje për të kontrolluar programet e fshehura dhe të siguruara</string>
     <string name="trust_apps_auth_open_app">Verifikohu për të hapur %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Ndihmë</string>
     <string name="trust_apps_info_hidden">Aplikacionet e fshehura dhe mjetet e tyre fshihen nga dizenjuesi</string>
     <string name="trust_apps_info_protected">Aplikacionet e mbrojtura kushtëzojnë vërtetim nga hapja e menu -së</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Paketë ikonash</string>
     <string name="icon_pack_default_label">E paracaktuar</string>
     <string name="icon_pack_add">Instaloni më shumë</string>

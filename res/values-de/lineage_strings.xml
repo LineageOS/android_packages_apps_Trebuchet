@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google App anzeigen</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Wenn du vom Hauptstartbildschirm aus nach rechts wischst</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Wenn du vom Hauptstartbildschirm aus nach links wischst</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Bearbeiten zulassen</string>
     <string name="settings_edit_allow_summary_on">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_edit_allow_summary_off">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
     <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
     <string name="show_labels_landscape">Symbolbeschriftungen im Querformat anzeigen</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Versteckte &amp; geschützte Apps</string>
     <string name="trust_apps_auth_manager">Entsperren, um die versteckten und geschützten Apps zu verwalten</string>
     <string name="trust_apps_auth_open_app">Authentifizieren, um %1$s zu öffnen</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Hilfe</string>
     <string name="trust_apps_info_hidden">Versteckte Apps und ihre Widgets werden in der App-Übersicht nicht angezeigt</string>
     <string name="trust_apps_info_protected">Geschützte Apps erfordern eine Authentifizierung, um gestartet werden zu können</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Symbolpaket</string>
     <string name="icon_pack_default_label">Standard</string>
     <string name="icon_pack_add">Weitere installieren</string>

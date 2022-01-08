@@ -14,14 +14,24 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Cho phép chỉnh sửa</string>
     <string name="settings_edit_allow_summary_on">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_allow_summary_off">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
+    <!-- Trust apps -->
+    <!-- Icon pack -->
     <string name="icon_pack_title">Gói biểu tượng</string>
 </resources>

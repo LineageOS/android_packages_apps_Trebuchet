@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">أظهر تطبيق Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">عند السحب لليمين من الشاشة الرئيسية الاساسية</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">عند السحب لليسار من الشاشة الرئيسية الأساسية</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">السماح بالتحرير</string>
     <string name="settings_edit_allow_summary_on">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_allow_summary_off">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
     <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
     <string name="show_labels_landscape">إظهار تسميات الأيقونات في الوضع الأفقي</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">التطبيقات المخفية و المحمية</string>
     <string name="trust_apps_auth_manager">إفتح لإدارة التطبيقات المخفية والمحمية</string>
     <string name="trust_apps_auth_open_app">المصادقة لفتح %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">مساعدة</string>
     <string name="trust_apps_info_hidden">يتم إخفاء التطبيقات المخفية وعناصرها من الدرج</string>
     <string name="trust_apps_info_protected">تتطلب التطبيقات المحمية فتح المصادقة من المشغِّل</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">حزمة الرموز</string>
     <string name="icon_pack_default_label">افتراضي</string>
     <string name="icon_pack_add">تثبيت المزيد</string>

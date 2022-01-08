@@ -14,15 +14,24 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Erakutsi Google aplikazioa</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Hasiera pantailatik hatza eskuinera pasatzean</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Hasiera pantailatik hatza ezkerrera pasatzean</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Baimendu editatzea</string>
     <string name="settings_edit_allow_summary_on">Ikonoak eta trepetak hasieran pantailan gehitu, kendu daitezke eta lekuz aldatu daitezke</string>
     <string name="settings_edit_allow_summary_off">Ezin daitezke ikonoak eta trepetak hasieran pantailan gehitu, kendu edo lekuz aldatu</string>
     <string name="settings_edit_widgets_error">Ezin dira trepetak hasiera pantailara gehitu</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Erakutsi ikonoen etiketa mahaigainean</string>
     <string name="drawer_show_labels">Erakutsi ikonoen etiketak tiraderan</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Ezkutatutako eta babestutako aplikazioak</string>
     <string name="trust_apps_auth_manager">Desblokeatu ezkutatutako eta babestutako aplikazioak kudeatzeko</string>
     <string name="trust_apps_auth_open_app">Identifikatu %1$s irekitzeko</string>
@@ -31,5 +40,6 @@
     <string name="trust_apps_help">Laguntza</string>
     <string name="trust_apps_info_hidden">Ezkutatutako aplikazioak eta bere trepetak ez dira tiraderan ikusten</string>
     <string name="trust_apps_info_protected">Babestutako aplikazioek autentifikazioa eskatzen dute abiarazletik irekitzeko</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Ikono multzoa</string>
 </resources>

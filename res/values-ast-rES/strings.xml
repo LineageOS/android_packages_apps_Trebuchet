@@ -17,91 +17,227 @@
 */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- General -->
+    <!-- Application name -->
     <string name="app_name">Launcher3</string>
+    <!-- Work folder name -->
     <string name="work_folder_name">Trabayu</string>
+    <!-- Displayed when user selects a shortcut for an app that was uninstalled [CHAR_LIMIT=none]-->
     <string name="activity_not_found">L\'aplicación nun ta instalada.</string>
+    <!-- Displayed when user selects a shortcut for an app that is current not available [CHAR_LIMIT=none]-->
     <string name="activity_not_available">L\'aplicación nun ta disponible</string>
+    <!-- SafeMode shortcut error string -->
     <string name="safemode_shortcut_error">L\'aplicación baxada ta desactivada nel mou seguru</string>
+    <!-- SafeMode widget error string -->
     <string name="safemode_widget_error">Los widgets tán desactivaos nel mou seguru</string>
+    <!-- Message shown when a shortcut is not available. It could have been temporarily disabled and may start working again after some time. -->
+    <!-- User visible name for the launcher/home screen. [CHAR_LIMIT=30] -->
+    <!-- Label for showing custom action list of a shortcut or widget. [CHAR_LIMIT=30] -->
+    <!-- Widgets -->
+    <!-- Message to tell the user to press and hold on a widget to add it [CHAR_LIMIT=50] -->
     <string name="long_press_widget_to_add">Ten primío pa coyer un widget.</string>
+    <!-- Accessibility spoken hint message in widget picker, which allows user to add a widget. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=100] -->
+    <!-- The format string for the dimensions of a widget in the drawer -->
+    <!-- There is a special version of this format string for Farsi -->
     <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <!-- Accessibility spoken message format for the dimensions of a widget in the drawer -->
+    <!-- Message to tell the user to press and hold a widget/icon to add it  -->
+    <!-- Button label to automatically add icon on home screen [CHAR_LIMIT=50] -->
+    <!-- All Apps -->
+    <!-- Search bar text in the apps view. [CHAR_LIMIT=50] -->
+    <!-- Loading apps text. [CHAR_LIMIT=50] -->
+    <!-- No-search-results text. [CHAR_LIMIT=50] -->
+    <!-- Label for the button which allows the user to get app search results. [CHAR_LIMIT=50] -->
+    <!-- Label for an icon representing any generic app. [CHAR_LIMIT=50] -->
+    <!-- Popup items -->
+    <!-- Text to display as the header above notifications. [CHAR_LIMIT=30] -->
+    <!-- Drag and drop -->
+    <!-- Message to tell the user to press and hold on a shortcut to add it [CHAR_LIMIT=50] -->
     <string name="long_press_shortcut_to_add">Ten primío &amp; pa coyer un atayu.</string>
+    <!-- Accessibility spoken hint message in deep shortcut menu, which allows user to add a shortcut. Custom action is the label for additional accessibility actions available in this mode [CHAR_LIMIT=200] -->
     <string name="long_accessible_way_to_add_shortcut">Calca dos vegaes &amp; pa escoyer un atayu o usar aiciones personalizaes.</string>
+    <!-- Error message when user has filled a home screen -->
     <string name="out_of_space">Nun queda espaciu na pantalla d\'aniciu.</string>
+    <!-- Error message when user has filled the hotseat -->
     <string name="hotseat_out_of_space">Nun queda espaciu na bandexa de Favoritos</string>
+    <!-- All applications label -->
     <string name="all_apps_button_personal_label">Llista d\'apps personales</string>
     <string name="all_apps_button_work_label">Llista d\'apps de trabayu</string>
+    <!-- Label for button in all applications label to go back home (to the workspace / desktop)
+         for accessibilty (spoken when the button gets focus). -->
     <string name="all_apps_home_button_label">Aniciu</string>
+    <!-- Label for remove drop target (from the homescreen only).
+         May appear next to uninstall_drop_target_label [CHAR_LIMIT=20] -->
     <string name="remove_drop_target_label">Desaniciar</string>
+    <!-- Label for uninstall drop target (from the device).
+         May appear next to remove_drop_target_label [CHAR_LIMIT=20]-->
     <string name="uninstall_drop_target_label">Desinstalar</string>
+    <!-- Label for app info drop target. [CHAR_LIMIT=20] -->
     <string name="app_info_drop_target_label">Información d\'aplicación</string>
+    <!-- Label for install drop target. [CHAR_LIMIT=20] -->
     <string name="install_drop_target_label">Instalar</string>
+    <!-- Label for install dismiss prediction. -->
+    <!-- Label for pinning predicted app. -->
+    <!-- Permissions: -->
+    <!-- Permission short label -->
     <string name="permlab_install_shortcut">instalar atayos</string>
+    <!-- Permission description -->
     <string name="permdesc_install_shortcut">Permite qu\'una aplicación amieste
         atayos ensin la intervención del usuariu.</string>
+    <!-- Permission short label -->
     <string name="permlab_read_settings">lleer axustes y atayos d\'Aniciu</string>
+    <!-- Permission description -->
     <string name="permdesc_read_settings">Permite que l\'aplicación llea los axustes
         y atayos n\'Aniciu.</string>
+    <!-- Permission short label -->
     <string name="permlab_write_settings">escribir atayos y axustes n\'Aniciu</string>
+    <!-- Permission description -->
     <string name="permdesc_write_settings">Permite que l\'aplicación camude los axustes
         y los atayos n\'Aniciu.</string>
+    <!-- Toast shown on clicking a direct call shortcut. [CHAR_LIMIT=80] -->
     <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> nun tien permisu pa facer llamaes telefóniques</string>
+    <!-- Widgets: -->
+    <!-- Text to show user in place of a gadget when we can't display it properly -->
     <string name="gadget_error_text">Problema cargando\'l widget</string>
+    <!-- Text to show user in place of a gadget when it is not yet initialized. -->
     <string name="gadget_setup_text">Configuración</string>
+    <!-- Text to inform the user that they can't uninstall a system application -->
     <string name="uninstall_system_app_text">Esta aplicación ye del sistema y nun pue desinstalase.</string>
+    <!-- Default folder title -->
+    <!-- Accessibility -->
+    <!-- The format string for when an app is temporarily disabled. -->
+    <!-- The format string for when an app has a notification dot (meaning it has associated notifications). -->
     <plurals name="dotted_app_label">
         <item quantity="one"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tienes <xliff:g id="notification_count" example="1">%2$d</xliff:g> avisu</item>
         <item quantity="other"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g>, tienes <xliff:g id="notification_count" example="1">%2$d</xliff:g> avisos</item>
     </plurals>
+    <!-- The format string for default page scroll text [CHAR_LIMIT=none] -->
     <string name="default_scroll_format">Páxina %1$d de %2$d</string>
+    <!-- The format string for Workspace page scroll text [CHAR_LIMIT=none] -->
     <string name="workspace_scroll_format">Pantalla d\'aniciu %1$d de %2$d</string>
+    <!-- Description for a new page on homescreen[CHAR_LIMIT=none] -->
+    <!-- Folder accessibility -->
+    <!-- The format string for when a folder is opened, speaks the dimensions -->
     <string name="folder_opened">Carpeta abierta, <xliff:g id="width" example="5">%1$d</xliff:g> por <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <!-- Instruction that clicking outside will close folder -->
+    <!-- Instruction that clicking outside will commit folder rename -->
+    <!-- Indication that folder closed -->
     <string name="folder_closed">Carpeta zarrada</string>
+    <!-- Folder renamed format -->
     <string name="folder_renamed">Renomóse la carpeta a <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <!-- Folder name format when folder has less than 4 items -->
+    <!-- Folder name format when folder has 4 or more items shown in preview-->
+    <!-- Strings for the customization mode -->
+    <!-- Text for widget add button -->
     <string name="widget_button_text">Widgets</string>
+    <!-- Text for wallpaper change button -->
     <string name="wallpaper_button_text">Fondos de pantalla</string>
+    <!-- Text for wallpaper change button -->
+    <!-- Text for settings button [CHAR LIMIT=20]-->
+    <!-- Message shown when a feature is disabled by the administrator -->
+    <!-- Strings for settings -->
+    <!-- Title for Allow Rotation setting. [CHAR LIMIT=50] -->
     <string name="allow_rotation_title">Permitir la rotación de la Pantalla d\'aniciu</string>
+    <!-- Text explaining when the home screen will get rotated. [CHAR LIMIT=100] -->
+    <!-- Title for Notification dots setting. Tapping this will link to the system Notifications settings screen where the user can turn off notification dots globally. [CHAR LIMIT=50] -->
     <string name="notification_dots_title">Puntos de notificación</string>
+    <!-- Text to indicate that the system notification dots setting is on [CHAR LIMIT=100] -->
+    <!-- Text to indicate that the system notification dots setting is off [CHAR LIMIT=100] -->
+    <!-- Title for the dialog shown when the app does not has notification access, explaining the requirement for notification access [CHAR LIMIT=50] -->
     <string name="title_missing_notification_access">Necesítase accesu a notificaciones</string>
+    <!-- Message explaining to the user that the notification access is required by the app for showing 'Notification dots' [CHAR LIMIT=NONE] -->
     <string name="msg_missing_notification_access">P\'amosar los Puntos de Notificación, encience l\'app de notificaciones pa <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <!-- Button text in the confirmation dialog which would take the user to the system settings [CHAR LIMIT=50] -->
     <string name="title_change_settings">Camudar axustes</string>
+    <!-- Summary for Notification dots setting. Tapping this will link enable/disable notification dots feature on the home screen. [CHAR LIMIT=50] -->
     <string name="notification_dots_service_title">Amosar puntos d\'avisos</string>
+    <!-- Label for the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=60] -->
+    <!-- Text description of the setting that allows the automatic placement of launcher shortcuts for applications and games installed on the device [CHAR LIMIT=NONE] -->
+    <!-- Label on an icon that references an uninstalled package, for which we have no information about when it might be installed. [CHAR_LIMIT=15] -->
     <string name="package_state_unknown">Desconozse</string>
+    <!-- Button for abandoned promises dialog, to removes this abandoned promise icon. -->
     <string name="abandoned_clean_this">Desaniciar</string>
+    <!-- Button for abandoned promise dialog, to search in the market for the missing package. -->
     <string name="abandoned_search">Guetar</string>
+    <!-- Title for abandoned promise dialog. -->
     <string name="abandoned_promises_title">Esta aplicación nun ta instalada</string>
+    <!-- Explanation for abandoned promise dialog. "The first 'it' refers to the shortcut icon.
+    The second "it" refers to the app. -->
     <string name="abandoned_promise_explanation">L\'aplicación d\'esti iconu nun ta instalada.
         Pues desanicialu o guetar l\'aplicación ya instalala a mano.
     </string>
+    <!-- Title for an app which is being downloaded. -->
+    <!-- Title for an app whose download has been started. -->
+    <!-- Strings for widgets & more in the popup container/bottom sheet -->
+    <!-- Title for a bottom sheet that shows widgets for a particular app -->
+    <!-- Accessibility title for the popup containing a list of widgets. [CHAR_LIMIT=50] -->
     <string name="widgets_list">Llista de widgets</string>
+    <!-- Text announced by accessibility when the popup containing the list of widgets is closed. [CHAR_LIMIT=100] -->
     <string name="widgets_list_closed">Llista de widgets zarrada</string>
+    <!-- Strings for accessibility actions -->
+    <!-- Accessibility action to add an app to workspace. [CHAR_LIMIT=30] -->
     <string name="action_add_to_workspace">Amestar a la pantalla d\'aniciu</string>
+    <!-- Accessibility action to move item to the current location. [CHAR_LIMIT=30] -->
     <string name="action_move_here">Mover l\'elementu equí</string>
+    <!-- Accessibility confirmation for item added to workspace. -->
     <string name="item_added_to_workspace">Amestóse l\'elementu a la pantalla d\'anciu</string>
+    <!-- Accessibility confirmation for item removed. [CHAR_LIMIT=50]-->
     <string name="item_removed">Desanicióse l\'elementu</string>
+    <!-- Action shown in snackbar to undo item removal. [CHAR_LIMIT=20] -->
+    <!-- Accessibility action to move an item on the workspace. [CHAR_LIMIT=30] -->
     <string name="action_move">Mover elementu</string>
+    <!-- Accessibility description to move item to empty cell. -->
     <string name="move_to_empty_cell">Mover a la filera <xliff:g id="number" example="1">%1$s</xliff:g> columna <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <!-- Accessibility description to move item inside a folder. -->
     <string name="move_to_position">Mover a la posición <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <!-- Accessibility description to move item to the hotseat. -->
     <string name="move_to_hotseat_position">Mover a la posición de favoritos <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <!-- Accessibility confirmation for item move. -->
     <string name="item_moved">Movióse l\'elementu</string>
+    <!-- Accessibility description to move item into an existing folder. -->
     <string name="add_to_folder">Amestar a la carpeta: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <!-- Accessibility description to move item into an existing folder containing an app. -->
     <string name="add_to_folder_with_app">Amestar a la carpeta con <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <!-- Accessibility confirmation for item added to folder. -->
     <string name="added_to_folder">Amestóse l\'elementu a la carpeta</string>
+    <!-- Accessibility description to create folder with another item. -->
     <string name="create_folder_with">Crear carpeta con: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <!-- Accessibility confirmation for folder created. -->
     <string name="folder_created">Creóse la carpeta</string>
+    <!-- Accessibility action to move an item from folder to workspace. [CHAR_LIMIT=30] -->
     <string name="action_move_to_workspace">Mover a la pantalla d\'aniciu</string>
+    <!-- Accessibility action to resize a widget. [CHAR_LIMIT=30] -->
     <string name="action_resize">Redimensionar</string>
+    <!-- Accessibility action to increase width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_width">Aumentar anchor</string>
+    <!-- Accessibility action to increase height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_increase_height">Aumentar altor</string>
+    <!-- Accessibility action to decrease width of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_width">Amenorgar anchor</string>
+    <!-- Accessibility action to decrease height of a widget. [CHAR_LIMIT=30] -->
     <string name="action_decrease_height">Amenorgar altor</string>
+    <!-- Accessibility confirmation for widget resize. -->
     <string name="widget_resized">Redimensionóse\'l widget al anchor <xliff:g id="number" example="2">%1$s</xliff:g> altor <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <!-- Accessibility action to show quick actions menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Accessibility description when the context menu of a launcher icon that has notifications as well as shortcuts (providing quick access to app's actions). The "shortcuts" translation should be consistent with the one for action_deep_shortcut. [CHAR_LIMIT=50] -->
     <string name="shortcuts_menu_with_notifications_description">Atayos y avisos    </string>
+    <!-- Accessibility action to dismiss a notification in the shortcuts menu for an icon. [CHAR_LIMIT=30] -->
+    <!-- Content description for arrow tip close button. [CHAR LIMIT=NONE] -->
     <string name="accessibility_close">Zarrar</string>
+    <!-- Accessibility confirmation for notification being dismissed. -->
+    <!-- Label of tab to indicate personal apps -->
     <string name="all_apps_personal_tab">Personal</string>
+    <!-- Label of tab to indicate work apps -->
     <string name="all_apps_work_tab">Trabayu</string>
-    <string name="work_profile_toggle_label">Perfil de trabayu</string>
-    <string name="work_profile_edu_personal_apps">Los datos personales sepártense y anúbrense de les aplicaciones del trabayu</string>
-    <string name="work_profile_edu_next">Siguiente</string>
-    <string name="work_apps_paused_title">El perfil de trabayu ta en posa</string>
+    <!-- This string is in the work profile tab when a user has All Apps open on their phone. This is a label for a toggle to turn the work profile on and off. "Work profile" means a separate profile on a user's phone that's specifically for their work apps and managed by their company. "Work" is used as an adjective.-->
+    <string name="work_profile_toggle_label">Perfil llaboral</string>
+    <!--- User onboarding title for personal apps -->
+    <!--- User onboarding title for work profile apps -->
+    <!-- Action label to proceed to the next work profile edu section-->
+    <!-- Action label to finish work profile edu-->
+    <!--- heading shown when user opens work apps tab while work apps are paused -->
+    <!--- body shown when user opens work apps tab while work apps are paused -->
+    <!-- content description for paused work apps list -->
+    <!-- A tip shown pointing at work toggle -->
+    <!-- Failed action error message: e.g. Failed: Pause -->
 </resources>

@@ -14,12 +14,22 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">הצג את חיפוש Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">אפשר עריכה</string>
     <string name="settings_edit_allow_summary_on">ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_edit_allow_summary_off">לא ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_edit_widgets_error">אין אפשרות להוסיף יישומונים למסך הבית</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">הצג תוויות סמלים במסך הבית</string>
     <string name="drawer_show_labels">הצג תוויות סמלים במגירת היישומים</string>
+    <!-- Trust apps -->
+    <!-- Icon pack -->
     <string name="icon_pack_title">חבילת סמלים</string>
 </resources>

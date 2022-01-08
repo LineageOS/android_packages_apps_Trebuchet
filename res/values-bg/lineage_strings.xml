@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Покажи Google апликацията</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Когато плъзнете надясно от главното меню</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Когато плъзнете наляво от главното меню</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Разреши редактиране</string>
     <string name="settings_edit_allow_summary_on">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
     <string name="settings_edit_allow_summary_off">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
     <string name="settings_edit_widgets_error">Невъзможно е да се добавят джаджи към началния екран</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Покажи етикетите на иконите на работния плот</string>
     <string name="drawer_show_labels">Покажи етикетите на иконите</string>
     <string name="show_labels_landscape">Покажи етикетите на иконите в хоризонтален режим </string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Скрити &amp; Защитени приложения</string>
     <string name="trust_apps_auth_manager">Отключете за да управлявате скритите и защитените приложения</string>
     <string name="trust_apps_auth_open_app">Попълнете правилно, за да отворите %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Помощ</string>
     <string name="trust_apps_info_hidden">Скритите приложения и техните приспособления са скрити от менюто</string>
     <string name="trust_apps_info_protected">Защитените приложения изискват парола, за да бъдат отворени от главното меню</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Пакет икони</string>
     <string name="icon_pack_default_label">Стандартен</string>
     <string name="icon_pack_add">Инсталиране на още</string>

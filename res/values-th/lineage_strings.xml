@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">แสดงแอป Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">เมื่อคุณปัดนิ้วไปทางขวาจากหน้าจอหลัก</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">เมื่อคุณปัดนิ้วไปทางซ้ายจากหน้าจอหลัก</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">อนุญาต</string>
     <string name="settings_edit_allow_summary_on">ไอคอนและวิดเจ็ต จะสามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_edit_allow_summary_off">ไอคอนและวิดเจ็ต จะไม่สามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_edit_widgets_error">ไม่สามารถที่จะเพิ่ม วิดเจ็ต บนหน้าจอหลักได้</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">แสดงชื่อไอคอนบนเดสก์ทอป</string>
     <string name="drawer_show_labels">แสดงชื่อไอคอนในลิ้นชัก</string>
     <string name="show_labels_landscape">แสดงชื่อไอคอนในรูปแบบแนวนอน</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">แอปที่ถูกซ่อน &amp; ป้องกัน</string>
     <string name="trust_apps_auth_manager">ปลดล็อคเพื่อจัดการแอปพลิเคชั่นที่ถูกซ่อน และป้องกัน</string>
     <string name="trust_apps_auth_open_app">ยืนยันตัวตนเพื่อเปิด %1$s</string>
@@ -32,5 +41,6 @@
     <string name="trust_apps_help">วิธีใช้</string>
     <string name="trust_apps_info_hidden">แอปที่ถูกซ่อนและ widget ของแอพนั้นถูกซ่อนจากตัวเลือกแอป</string>
     <string name="trust_apps_info_protected">แอปที่ได้รับการป้องกัน จะต้องได้รับการยืนยันเพื่อที่จะเปิดจากตัว launcher</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">ชุดไอคอน</string>
 </resources>

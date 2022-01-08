@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Toon Google app</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Wanneer je naar rechts veegt vanuit het startscherm</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Wanneer je naar links veegt vanuit het startscherm</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Bewerken toestaan</string>
     <string name="settings_edit_allow_summary_on">Iconen en widgets kunnen worden toegevoegd, verwijderd en verplaatst op het startscherm</string>
     <string name="settings_edit_allow_summary_off">Iconen en widgets kunnen niet worden toegevoegd, verwijderd en verplaatst op het startscherm</string>
     <string name="settings_edit_widgets_error">Het is niet mogelijk om widgets toe te voegen aan het startscherm</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Toon pictogramlabels op het bureaublad</string>
     <string name="drawer_show_labels">Pictogramlabels in app-overzicht weergeven</string>
     <string name="show_labels_landscape">Toon icoon labels in landschapsmodus</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Verborgen en Beveiligde apps</string>
     <string name="trust_apps_auth_manager">Ontgrendel om de verborgen en beschermde apps te beheren</string>
     <string name="trust_apps_auth_open_app">Verifieer om %1$s te openen</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Help</string>
     <string name="trust_apps_info_hidden">Verborgen apps en hun widgets worden niet weergegeven in het app-overzicht</string>
     <string name="trust_apps_info_protected">Beschermde apps vereisen authenticatie om te starten vanuit de launcher</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pictogrampakket</string>
     <string name="icon_pack_default_label">Standaard</string>
     <string name="icon_pack_add">Meer installeren</string>

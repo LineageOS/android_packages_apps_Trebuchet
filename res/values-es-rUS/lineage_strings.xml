@@ -14,15 +14,24 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Mostrar aplicación de Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Al deslizar a la derecha desde la pantalla principal</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Al deslizar a la izquierda desde la pantalla principal</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Permitir la edición</string>
     <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, quitar y mover en la pantalla de inicio</string>
     <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, quitar o mover en la pantalla de inicio</string>
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Aplicaciones ocultas y protegidas</string>
     <string name="trust_apps_auth_manager">Desbloquear para administrar las aplicaciones ocultas y protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
@@ -31,5 +40,6 @@
     <string name="trust_apps_help">Ayuda</string>
     <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets se ocultan del cajón</string>
     <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren que la autenticación se abra desde el lanzador</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Paquete de iconos</string>
 </resources>

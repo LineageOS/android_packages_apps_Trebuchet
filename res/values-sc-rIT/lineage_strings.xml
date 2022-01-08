@@ -14,5 +14,15 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <!-- Edit workspace -->
+    <!-- Folder titles -->
+    <!-- Hide labels -->
+    <!-- Trust apps -->
+    <!-- Icon pack -->
     <string name="icon_pack_title">Pachete de iconas</string>
 </resources>

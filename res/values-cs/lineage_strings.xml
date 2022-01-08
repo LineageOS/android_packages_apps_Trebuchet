@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Zobrazit aplikaci Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Při gestu tažení vpravo z hlavní domovské obrazovky</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Při gestu tažení vlevo z hlavní domovské obrazovky</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Povolit úpravy</string>
     <string name="settings_edit_allow_summary_on">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_allow_summary_off">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
     <string name="show_labels_landscape">Zobrazit popisky ikon v režimu na šířku</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Skryté &amp; Chráněné aplikace</string>
     <string name="trust_apps_auth_manager">Odemkněte pro nastavení skrytých a chráněných aplikací</string>
     <string name="trust_apps_auth_open_app">Ověření pro otevření %1$s</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Nápověda</string>
     <string name="trust_apps_info_hidden">Skryté aplikace a jejich widgety se nezobrazí v seznamu aplikací</string>
     <string name="trust_apps_info_protected">Chráněné aplikace vyžadují pro spuštění ze spouštěče ověření</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Balíček ikon</string>
     <string name="icon_pack_default_label">Výchozí</string>
     <string name="icon_pack_add">Instalovat další</string>

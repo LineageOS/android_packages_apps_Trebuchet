@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google-app toane</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Wannear\'t jo fan it startskerm út nei rjochts feie</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Wannear\'t jo fan it startskerm út nei links feie</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Bewurkjen tastean</string>
     <string name="settings_edit_allow_summary_on">Piktogrammen en widgets kinne tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
     <string name="settings_edit_allow_summary_off">Piktogrammen en widgets kinne net tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
     <string name="settings_edit_widgets_error">It is net mooglik om widgets ta te foegjen oan it startskerm</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Piktogramlabels op it startskerm toane</string>
     <string name="drawer_show_labels">Piktogramlabels yn it app-oersjoch toane</string>
     <string name="show_labels_landscape">Piktogramlabels yn modus lizzend toane</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Ferstoppe &amp; Befeilige apps</string>
     <string name="trust_apps_auth_manager">Untskoattelje om de ferstoppe en beskerme apps te behearen</string>
     <string name="trust_apps_auth_open_app">Ferifiearje om %1$s te iepenjen</string>
@@ -32,5 +41,6 @@
     <string name="trust_apps_help">Help</string>
     <string name="trust_apps_info_hidden">Ferstoppe apps en harren widgets wurde net toand yn it app-oersjoch</string>
     <string name="trust_apps_info_protected">Beskerme apps fereaskje autentikaasje om te starten fan de launcher út</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Piktogrampakket</string>
 </resources>

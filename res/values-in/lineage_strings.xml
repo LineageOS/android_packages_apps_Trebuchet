@@ -14,20 +14,30 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Tampilkan aplikasi Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Ketika Anda mengusap ke kanan dari layar utama</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Ketika Anda mengusap ke kiri dari layar utama</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Izinkan sunting</string>
     <string name="settings_edit_allow_summary_on">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_allow_summary_off">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
     <string name="drawer_show_labels">Sembunyikan label ikon di panel</string>
+    <!-- Trust apps -->
     <string name="trust_apps_auth_open_app">Autentikasi untuk membuka %1$s</string>
     <string name="trust_apps_loading">Memuat\u2026</string>
     <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar aman untuk membatasi akses aplikasi</string>
     <string name="trust_apps_help">Bantuan</string>
     <string name="trust_apps_info_protected">Aplikasi yang dilindungi memerlukan otentikasi untuk dibuka dari peluncur</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Paket ikon</string>
     <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Instal lebih banyak</string>

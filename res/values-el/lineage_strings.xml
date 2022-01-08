@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Εμφάνιση εφαρμογής Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Όταν σύρετε προς τα δεξιά από την κύρια αρχική οθόνη</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Όταν σύρετε προς τα αριστερά από την κύρια αρχική οθόνη</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Να επιτρέπεται η επεξεργασία</string>
     <string name="settings_edit_allow_summary_on">Εικονίδια και widget μπορούν να προστεθούν, να αφαιρεθούν και να μετακινηθούν στην αρχική οθόνη</string>
     <string name="settings_edit_allow_summary_off">Εικονίδια και widget δεν μπορούν να προστεθούν, να αφαιρεθούν και να μετακινηθούν στην αρχική οθόνη</string>
     <string name="settings_edit_widgets_error">Δεν είναι δυνατή η προσθήκη widget στην αρχική οθόνη</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Εμφάνιση ετικετών εικονιδίων στην επιφάνεια</string>
     <string name="drawer_show_labels">Εμφάνιση ετικετών εικονιδίων στο συρτάρι</string>
     <string name="show_labels_landscape">Εμφάνιση ετικετών εικονιδίων σε λειτουργία τοπίου</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Κρυφές &amp; προστατευόμενες εφαρμογές</string>
     <string name="trust_apps_auth_manager">Ξεκλειδώστε για να διαχειριστείτε τις κρυφές και προστατευόμενες εφαρμογές</string>
     <string name="trust_apps_auth_open_app">Απαιτείται έλεγχος ταυτότητας για να ανοίξετε το \"%1$s\"</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Βοήθεια</string>
     <string name="trust_apps_info_hidden">Οι κρυφές εφαρμογές και widgets τους αποκρύπτονται από το συρτάρι</string>
     <string name="trust_apps_info_protected">Οι προστατευόμενες εφαρμογές απαιτούν έλεγχο ταυτότητας για να ανοιχτούν από την αρχική σελίδα η το συρτάρι</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Πακέτο εικονιδίων</string>
     <string name="icon_pack_default_label">Προεπιλογή</string>
     <string name="icon_pack_add">Εγκατάσταση άλλων</string>

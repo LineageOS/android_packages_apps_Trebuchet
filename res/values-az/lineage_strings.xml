@@ -14,16 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Application name -->
+    <!-- Settings -->
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Google tətbiqini göstər</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
     <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
+    <!-- Edit workspace -->
     <string name="settings_edit_allow_title">Düzəlişə icazə ver</string>
     <string name="settings_edit_allow_summary_on">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilər</string>
     <string name="settings_edit_allow_summary_off">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilməz</string>
     <string name="settings_edit_widgets_error">Əsas ekrana vidget əlavə etmək mümkün deyil</string>
+    <!-- Folder titles -->
+    <!-- Hide labels -->
     <string name="desktop_show_labels">Masaüstündə nişan etiketlərini göstər</string>
     <string name="drawer_show_labels">Siyirmədə nişan etiketlərini göstər</string>
     <string name="show_labels_landscape">Mənzərə rejimində nişan etiketlərini göstər</string>
+    <!-- Trust apps -->
     <string name="trust_apps_manager_name">Gizli və Qorunan tətbiqlər</string>
     <string name="trust_apps_auth_manager">Gizli və qorunan tətbiqləri idarə etmək üçün kilidi açın</string>
     <string name="trust_apps_auth_open_app">%1$s tətbiqinin açılması üçün kimliyi təsdiqlə</string>
@@ -32,6 +41,7 @@
     <string name="trust_apps_help">Kömək</string>
     <string name="trust_apps_info_hidden">Gizli tətbiqlər və vidgetləri, tətbiqlər menyusunda görünməyəcək</string>
     <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik təsdiqləmə tələb olunur</string>
+    <!-- Icon pack -->
     <string name="icon_pack_title">Nişan paketi</string>
     <string name="icon_pack_default_label">İlkin</string>
     <string name="icon_pack_add">Daha çox quraşdır</string>
