@@ -26,11 +26,13 @@
     <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
     <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
     <string name="drawer_show_labels">Sembunyikan label ikon di panel</string>
+    <string name="trust_apps_auth_open_app">Autentikasi untuk membuka %1$s</string>
     <string name="trust_apps_loading">Memuat\u2026</string>
     <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar aman untuk membatasi akses aplikasi</string>
     <string name="trust_apps_help">Bantuan</string>
     <string name="trust_apps_info_protected">Aplikasi yang dilindungi memerlukan otentikasi untuk dibuka dari peluncur</string>
     <string name="icon_pack_title">Paket ikon</string>
+    <string name="icon_pack_default_label">Default</string>
     <string name="icon_pack_add">Instal lebih banyak</string>
     <string name="icon_pack_no_market">Tidak ada toko aplikasi yang tersedia</string>
 </resources>

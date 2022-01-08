@@ -17,12 +17,16 @@
     <string name="title_show_google_app">أظهر تطبيق Google</string>
     <string name="msg_minus_one_on_left">عند السحب لليمين من الشاشة الرئيسية الاساسية</string>
     <string name="msg_minus_one_on_right">عند السحب لليسار من الشاشة الرئيسية الأساسية</string>
+    <string name="settings_category_apps">تطبيقات</string>
+    <string name="settings_category_desktop">سطح المكتب</string>
+    <string name="settings_category_labels">المُسمّيات</string>
     <string name="settings_edit_allow_title">السماح بالتحرير</string>
     <string name="settings_edit_allow_summary_on">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_allow_summary_off">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
     <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
     <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
+    <string name="show_labels_landscape">إظهار تسميات الأيقونات في الوضع الأفقي</string>
     <string name="trust_apps_manager_name">التطبيقات المخفية و المحمية</string>
     <string name="trust_apps_auth_manager">إفتح لإدارة التطبيقات المخفية والمحمية</string>
     <string name="trust_apps_auth_open_app">المصادقة لفتح %1$s</string>
@@ -32,4 +36,7 @@
     <string name="trust_apps_info_hidden">يتم إخفاء التطبيقات المخفية وعناصرها من الدرج</string>
     <string name="trust_apps_info_protected">تتطلب التطبيقات المحمية فتح المصادقة من المشغِّل</string>
     <string name="icon_pack_title">حزمة الرموز</string>
+    <string name="icon_pack_default_label">افتراضي</string>
+    <string name="icon_pack_add">تثبيت المزيد</string>
+    <string name="icon_pack_no_market">لا يوجد متجر تطبيقات متاح</string>
 </resources>
