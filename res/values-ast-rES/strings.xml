@@ -100,8 +100,5 @@
     <string name="accessibility_close">Zarrar</string>
     <string name="all_apps_personal_tab">Personal</string>
     <string name="all_apps_work_tab">Trabayu</string>
-    <string name="work_profile_toggle_label">Perfil de trabayu</string>
-    <string name="work_profile_edu_personal_apps">Los datos personales sepártense y anúbrense de les aplicaciones del trabayu</string>
-    <string name="work_profile_edu_next">Siguiente</string>
-    <string name="work_apps_paused_title">El perfil de trabayu ta en posa</string>
+    <string name="work_profile_toggle_label">Perfil llaboral</string>
 </resources>
