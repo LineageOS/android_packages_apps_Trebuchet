@@ -16,6 +16,29 @@
       "message": "works fine and solves the problem, thx!",
       "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc2f5fed_56c2a59d",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-01-12T20:49:48Z",
+      "side": 1,
+      "message": "Why not just change the default to true?",
+      "range": {
+        "startLine": 862,
+        "startChar": 75,
+        "endLine": 862,
+        "endChar": 80
+      },
+      "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
