@@ -57,6 +57,30 @@
       "parentUuid": "cc2f5fed_56c2a59d",
       "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a026b22_dbd9815b",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-01-13T15:36:57Z",
+      "side": 1,
+      "message": "@han: no, he meant changing the marked \"false\" to \"true\"\n@mike: this would be wrong because the method would be named \"isWorkspaceEditAllowed\" and return \"true\" when the setting named KEY_WORKSPACE_LOCK indicates the opposite (and the actual setting would read \"Lock workspace\" and be switched ON but the code doing the opposite.\n\nThat being said, the least intrusive patch would indeed be the one you suggested yourself (@han) from the misunderstanding, adding the \"!\" in the return line. That way, less files changed while keeping the logic and naming correct. Though I also don\u0027t mind the current patch.\n\nFinally I want to add that I never tested the original patch this one fixes, so blame the reviewers ;)",
+      "parentUuid": "05d23d97_21738116",
+      "range": {
+        "startLine": 862,
+        "startChar": 75,
+        "endLine": 862,
+        "endChar": 80
+      },
+      "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
