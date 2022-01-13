@@ -39,6 +39,24 @@
       },
       "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05d23d97_21738116",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2022-01-13T10:49:32Z",
+      "side": 1,
+      "message": "You mean return !prefs? I want to correct naming as it is consistent with the commit which this commit fixes.",
+      "parentUuid": "cc2f5fed_56c2a59d",
+      "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
