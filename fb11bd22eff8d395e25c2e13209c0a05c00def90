@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45ddb14f_ed8eaeda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3917
+      },
+      "writtenOn": "2022-01-16T17:59:49Z",
+      "side": 1,
+      "message": "Developer options crash now as VALID_PREFERENCE_FRAGMENTS is empty and thus \nSettingsActivity -\u003e getPreferenceFragment throws IllegalArgumentException (\"Invalid fragment...\")",
+      "revId": "fb11bd22eff8d395e25c2e13209c0a05c00def90",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
