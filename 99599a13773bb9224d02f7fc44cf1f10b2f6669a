@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2605fd5f_dda4edaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3917
+      },
+      "writtenOn": "2022-01-16T17:11:03Z",
+      "side": 1,
+      "message": "This is adding a black bar covering the first row of apps (https://www.dropbox.com/s/023vurhn3pd6tvr/Screenshot_20220116-174138_Trebuchet.png?dl\u003d0)\n\n",
+      "revId": "99599a13773bb9224d02f7fc44cf1f10b2f6669a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
