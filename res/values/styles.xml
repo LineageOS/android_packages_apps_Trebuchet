@@ -42,6 +42,7 @@
         <item name="allAppsScrimColor">@color/materialColorSurfaceDim</item>
         <item name="allappsHeaderProtectionColor">@color/materialColorSurfaceContainerHighest</item>
         <item name="allAppsNavBarScrimColor">#66FFFFFF</item>
+        <item name="allAppsSearchTextColor">@color/widget_picker_search_text_color_light</item>
         <item name="popupColorPrimary">@color/popup_color_primary_light</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_light</item>
         <item name="popupColorTertiary">@color/popup_color_tertiary_light</item>
@@ -116,6 +117,7 @@
         <item name="allAppsScrimColor">@color/materialColorSurfaceDim</item>
         <item name="allappsHeaderProtectionColor">@color/materialColorSurfaceContainerLow</item>
         <item name="allAppsNavBarScrimColor">#80000000</item>
+        <item name="allAppsSearchTextColor">@color/widget_picker_search_text_color_dark</item>
         <item name="popupColorPrimary">@color/popup_color_primary_dark</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_dark</item>
         <item name="popupColorTertiary">@color/popup_color_tertiary_dark</item>
