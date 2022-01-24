@@ -81,6 +81,30 @@
       },
       "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c827acb2_99abb72f",
+        "filename": "src/com/android/launcher3/Utilities.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-01-24T09:59:54Z",
+      "side": 1,
+      "message": "I\u0027d rather opt for adding \"!\" in the return line so to avoid changing the public method name.",
+      "parentUuid": "8a026b22_dbd9815b",
+      "range": {
+        "startLine": 862,
+        "startChar": 75,
+        "endLine": 862,
+        "endChar": 80
+      },
+      "revId": "4f2709209c76f283ec0754fc9abdbdc61786320e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
