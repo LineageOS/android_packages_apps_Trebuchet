@@ -16,6 +16,23 @@
       "message": "Did you test, Nolen?",
       "revId": "e789f031e2528b3dca1b9e3b1057c1f55723ffe3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22232e0d_2809ceef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-01-25T21:03:45Z",
+      "side": 1,
+      "message": "Tested on emulator.\nSwitch OFF: Editing allowed\nSwitch ON: Editing not allowed",
+      "revId": "e789f031e2528b3dca1b9e3b1057c1f55723ffe3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
