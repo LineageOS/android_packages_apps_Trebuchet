@@ -859,6 +859,6 @@ public final class Utilities {
 
     public static boolean isWorkspaceEditAllowed(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_LOCK, false);
+        return !prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_LOCK, false);
     }
 }
