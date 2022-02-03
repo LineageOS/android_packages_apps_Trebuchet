@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61858b6f_c937c165",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-02-03T18:08:55Z",
+      "side": 1,
+      "message": "should this really be grid_control?",
+      "range": {
+        "startLine": 73,
+        "startChar": 46,
+        "endLine": 73,
+        "endChar": 58
+      },
+      "revId": "cb1bb0a3de30013c8e5fb86f2193fb2625d91559",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
