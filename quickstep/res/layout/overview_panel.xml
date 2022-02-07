@@ -29,4 +29,7 @@
         android:id="@+id/overview_actions_view"
         layout="@layout/overview_actions_container" />
 
+    <include
+        layout="@layout/meminfo" />
+
 </merge>

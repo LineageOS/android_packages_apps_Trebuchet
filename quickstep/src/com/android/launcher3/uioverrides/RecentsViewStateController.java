@@ -17,6 +17,7 @@ package com.android.launcher3.uioverrides;
 
 import static com.android.app.animation.Interpolators.LINEAR;
 import static com.android.launcher3.LauncherState.CLEAR_ALL_BUTTON;
+import static com.android.launcher3.LauncherState.MEMINFO;
 import static com.android.launcher3.LauncherState.OVERVIEW;
 import static com.android.launcher3.LauncherState.OVERVIEW_ACTIONS;
 import static com.android.launcher3.LauncherState.OVERVIEW_SPLIT_SELECT;
@@ -50,6 +51,7 @@ import com.android.quickstep.util.AnimUtils;
 import com.android.quickstep.util.SplitAnimationTimings;
 import com.android.quickstep.views.ClearAllButton;
 import com.android.quickstep.views.LauncherRecentsView;
+import com.android.quickstep.views.MemInfoView;
 import com.android.quickstep.views.RecentsView;
 
 /**
@@ -170,6 +172,9 @@ public final class RecentsViewStateController extends
         propertySetter.setFloat(mLauncher.getActionsView().getVisibilityAlpha(),
                 MULTI_PROPERTY_VALUE, overviewButtonAlpha, config.getInterpolator(
                         ANIM_OVERVIEW_ACTIONS_FADE, LINEAR));
+        float memInfoAlpha = state.areElementsVisible(mLauncher, MEMINFO) ? 1 : 0;
+        propertySetter.setFloat(mLauncher.getMemInfoView(), MemInfoView.STATE_CTRL_ALPHA,
+                memInfoAlpha, LINEAR);
     }
 
     @Override

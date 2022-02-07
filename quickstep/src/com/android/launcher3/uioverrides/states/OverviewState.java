@@ -108,7 +108,7 @@ public class OverviewState extends LauncherState {
 
     @Override
     public int getVisibleElements(Launcher launcher) {
-        int elements = OVERVIEW_ACTIONS;
+        int elements = OVERVIEW_ACTIONS | MEMINFO;
         DeviceProfile dp = launcher.getDeviceProfile();
         boolean showFloatingSearch;
         if (dp.isPhone) {
