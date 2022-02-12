@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_screen_settings">PARAMETRAT E EKRANIT HOME</string>
+    <string name="drawer_settings">PARAMETRAT E SIRTARIT</string>
+    <string name="app_settings">PARAMETRAT E APLIKACIONIT</string>
+    <string name="setting_state_on">AKTIV</string>
+    <string name="setting_state_off">INAKTIV</string>
+    <string name="setting_state_disabled">INAKTIV</string>
+    <string name="play_folder_title">Play</string>
+    <string name="scrolling_wallpaper">Lëvizni sfondin</string>
+    <string name="grid_size_text">Madhësia e rrjetit koordinativ</string>
+    <string name="grid_size_comfortable">E rehatshme</string>
+    <string name="grid_size_cozy">Komode</string>
+    <string name="grid_size_condensed">E kondensuar</string>
+    <string name="grid_size_custom">E personalizuar (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Zgjidh një madhësi të personalizuar</string>
+    <string name="dialog_confirm">Konfirmo</string>
+    <string name="home_screen_search_text">Shiriti i kërkimit</string>
+    <string name="larger_icons_text">Ikona më të mëdha</string>
+    <string name="icon_labels">Emërtimet e ikonave</string>
+    <string name="icon_labels_show">Trego</string>
+    <string name="icon_labels_hide">Fshih</string>
+    <string name="protected_app_settings">Aplikacionet e mbrojtura</string>
+    <string name="export_workspace_layout">Paraqitja e eksportit</string>
+    <string name="app_drawer_style">Stili i sirtarit</string>
+    <string name="app_drawer_style_compact">Kompakt</string>
+    <string name="app_drawer_style_sections">Me seksione</string>
+    <string name="app_drawer_color">Ngjyra e sirtarit</string>
+    <string name="app_drawer_color_dark">E errët</string>
+    <string name="app_drawer_color_light">E çelur</string>
+    <string name="fast_scroller">Lëvizës i shpejtë</string>
+    <string name="fast_scroller_type">Lloji i shpejtë i rrotulluesit</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertikal</string>
+    <string name="search_activity_not_found">Një aktivitet kërkimi nuk mund të gjendej!</string>
+    <string name="app_not_available">Aplikacioni nuk është i disponueshëm</string>
+    <string name="storage_permission_denied">Memoria nuk mund të aksesohet</string>
+    <string name="export_db_email_subject">Launcher DB për rajon</string>
+    <string name="export_db_could_not">Skedari DB nuk u eksportua dot</string>
+</resources>

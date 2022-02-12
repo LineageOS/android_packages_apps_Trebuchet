@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_screen_settings">AXUSTES DA PANTALLA DE INICIO</string>
+    <string name="drawer_settings">AXUSTES DO PANEL</string>
+    <string name="app_settings">AXUSTES DA APLICACIÓN</string>
+    <string name="setting_state_on">ACESO</string>
+    <string name="setting_state_off">APAGADO</string>
+    <string name="setting_state_disabled">DESACTIVADO</string>
+    <string name="play_folder_title">Reproducir</string>
+    <string name="scrolling_wallpaper">Desprazar o fondo de pantalla</string>
+    <string name="grid_size_text">Tamaño da grella</string>
+    <string name="grid_size_comfortable">Confortábel</string>
+    <string name="grid_size_cozy">Cómodo</string>
+    <string name="grid_size_condensed">Condensado</string>
+    <string name="grid_size_custom">Personalizado (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Seleccionar o tamaño personalizado</string>
+    <string name="dialog_confirm">Confirmar</string>
+    <string name="home_screen_search_text">Barra de busca</string>
+    <string name="larger_icons_text">Iconas grandes</string>
+    <string name="icon_labels">Etiquetas das iconas</string>
+    <string name="icon_labels_show">Amosar</string>
+    <string name="icon_labels_hide">Agochar</string>
+    <string name="protected_app_settings">Aplicacións protexidas</string>
+    <string name="export_workspace_layout">Exportar deseño</string>
+    <string name="app_drawer_style">Estilo do caixón</string>
+    <string name="app_drawer_style_compact">Compacto</string>
+    <string name="app_drawer_style_sections">Seccions</string>
+    <string name="app_drawer_color">Color do caixón</string>
+    <string name="app_drawer_color_dark">Escuro</string>
+    <string name="app_drawer_color_light">Claro</string>
+    <string name="fast_scroller">Desprazamento rápido</string>
+    <string name="fast_scroller_type">Tipo de desprazamento rápido</string>
+    <string name="fast_scroller_type_horizontal">Horizontal</string>
+    <string name="fast_scroller_type_vertical">Vertical</string>
+    <string name="search_activity_not_found">Non se atopou ningunha actividade de busca!</string>
+    <string name="app_not_available">Aplicación non dispoñíbel</string>
+    <string name="storage_permission_denied">Non é posible acceder ao almacenamento</string>
+    <string name="export_db_email_subject">DB do lanzador por rexión</string>
+    <string name="export_db_could_not">Non se puido exportar o ficheiro DB</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="home_screen_settings">ROGHAINNEAN na SGRÌN DACHAIGH</string>
+    <string name="drawer_settings">ROGHAINNEAN an DRATHAIR</string>
+    <string name="app_settings">ROGHAINNEAN na h-APLACAID</string>
+    <string name="setting_state_on">AIR</string>
+    <string name="setting_state_off">DHETH</string>
+    <string name="setting_state_disabled">À COMAS</string>
+    <string name="play_folder_title">Cluich</string>
+    <string name="scrolling_wallpaper">Sgrolaich am pàipear-balla</string>
+    <string name="grid_size_text">Meud a’ ghriod</string>
+    <string name="grid_size_comfortable">Cofhurtail</string>
+    <string name="grid_size_cozy">Tòiseil</string>
+    <string name="grid_size_condensed">Dlùth</string>
+    <string name="grid_size_custom">Gnàthaichte (<xliff:g id="rows">%1$d</xliff:g> \u00d7 <xliff:g id="columns">%2$d</xliff:g>)</string>
+    <string name="preferences_interface_homescreen_custom">Tagh meud gnàthaichte</string>
+    <string name="dialog_confirm">Dearbh</string>
+    <string name="home_screen_search_text">Bàr nan lorg</string>
+    <string name="larger_icons_text">Ìomhaigheagan nas motha</string>
+    <string name="icon_labels">Leubailean nan ìomhaigheagan</string>
+    <string name="icon_labels_show">Seall</string>
+    <string name="icon_labels_hide">Falaich</string>
+    <string name="protected_app_settings">Aplacaidean dìonta</string>
+    <string name="export_workspace_layout">Às-phortaich an co-dhealbhachd</string>
+    <string name="app_drawer_style">Stoidhle an drathair</string>
+    <string name="app_drawer_style_compact">Dùmhlaichte</string>
+    <string name="app_drawer_style_sections">Earrannan</string>
+    <string name="app_drawer_color">Dath an drathair</string>
+    <string name="app_drawer_color_dark">Dorcha</string>
+    <string name="app_drawer_color_light">Sorcha</string>
+    <string name="fast_scroller">Sgroladh luath</string>
+    <string name="fast_scroller_type">Seòrsa an sgrolaidh luaith</string>
+    <string name="fast_scroller_type_horizontal">Còmhnard</string>
+    <string name="fast_scroller_type_vertical">Inghearach</string>
+    <string name="search_activity_not_found">Cha do mhothaich sinn do lorg sam bith!</string>
+    <string name="app_not_available">Chan eil aplacaid ri fhaighinn</string>
+    <string name="storage_permission_denied">Cha ghabh an stòras inntrigeadh</string>
+    <string name="export_db_email_subject">Stòr-dàta an lòinseir airson na roinne-dùthcha</string>
+    <string name="export_db_could_not">Cha b’ urrainn dhuinn faidhle an stòir-dhàta às-phortadh</string>
+</resources>
