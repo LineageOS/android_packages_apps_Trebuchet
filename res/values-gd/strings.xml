@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Lòinsear3</string>
+    <string name="work_folder_name">Obair</string>
+    <string name="activity_not_found">Cha deach an aplacaid a stàladh.</string>
+    <string name="activity_not_available">Chan eil an aplacaid ri fhaighinn</string>
+    <string name="safemode_shortcut_error">Bidh aplacaidean a chaidh a luchdadh a-nuas à comas sa mhodh thèarainte</string>
+    <string name="safemode_widget_error">Bidh widgets à comas sa mhodh thèarainte</string>
+    <string name="toggle_weight_watcher">Seall a’ chuimhne</string>
+    <string name="long_press_widget_to_add">Suath ri widget ⁊ cùm sìos e airson a thogail.</string>
+    <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <string name="all_apps_search_bar_hint">Lorg aplacaidean</string>
+    <string name="all_apps_loading_message">A’ luchdadh nan aplacaidean…</string>
+    <string name="all_apps_no_search_results">Cha do lorg sinn aplacaid le “<xliff:g id="query" example="Android">%1$s</xliff:g>”</string>
+    <string name="all_apps_search_market_message">Tadhail air <xliff:g id="query" example="Play Store">%1$s</xliff:g></string>
+    <string name="out_of_space">Tha an sgrìn dachaigh seo làn.</string>
+    <string name="hotseat_out_of_space">Tha treidhe nan annsachdan làn</string>
+    <string name="all_apps_button_label">Aplacaidean</string>
+    <string name="all_apps_home_button_label">Dachaigh</string>
+    <string name="delete_target_label">Thoir air falbh</string>
+    <string name="delete_target_uninstall_label">Dì-stàlaich</string>
+    <string name="info_target_label">Mun aplacaid</string>
+    <string name="permlab_install_shortcut">stàladh ath-ghoiridean</string>
+    <string name="permdesc_install_shortcut">Leigidh seo le aplacaid 
+        ath-ghoiridean a chur ris às aonais gnìomh cleachdaiche.</string>
+    <string name="permlab_read_settings">leughadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <string name="permdesc_read_settings">Leigidh seo leis an aplacaid 
+        roghainnean is ath-ghoiridean na dachaigh a leughadh.</string>
+    <string name="permlab_write_settings">sgrìobhadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <string name="permdesc_write_settings">Leigidh seo leis an aplacaid 
+        roghainnean is ath-ghoiridean na dachaigh atharrachadh.</string>
+    <string name="msg_no_phone_permission">Chan fhaod <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> gairmean fòn a dhèanamh</string>
+    <string name="gadget_error_text">Duilgheadas le luchdadh a’ widget</string>
+    <string name="gadget_setup_text">Suidheachadh</string>
+    <string name="uninstall_system_app_text">Seo aplacaid an t-siostaim agus cha ghabh a dì-stàladh.</string>
+    <string name="folder_hint_text">Pasgan gun ainm</string>
+    <string name="default_scroll_format">Duilleag %1$d à %2$d</string>
+    <string name="workspace_scroll_format">Sgrìn dachaigh %1$d à %2$d</string>
+    <string name="first_run_cling_title">Fàilte</string>
+    <string name="migration_cling_title">Dèan lethbhreac de dh’ìomhaigheagan nan aplacaidean agad</string>
+    <string name="migration_cling_description">A bheil thu airson na h-ìomhaigheagan ’s na pasganan ion-phortadh o na seann sgrìnichean dachaigh agad?</string>
+    <string name="migration_cling_copy_apps">DÈAN LETHBHREAC DE na h-ÌOMHAIGHEAGAN</string>
+    <string name="migration_cling_use_default">TÒISICH ÀS ÙR</string>
+    <string name="workspace_cling_longpress_title">Pàipearanan-balla, widgets ⁊ roghainnean</string>
+    <string name="workspace_cling_longpress_description">Suath ris a’ chùlaibh ⁊ cùm sìos e airson a ghnàthachadh</string>
+    <string name="workspace_cling_longpress_dismiss">THA MI AGAIBH</string>
+    <string name="folder_opened">Chaidh pasgan fhosgladh, <xliff:g id="width" example="5">%1$d</xliff:g> le <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <string name="folder_tap_to_close">Suath ri pasgan gus a dhùnadh</string>
+    <string name="folder_tap_to_rename">Suath ris gus an t-ainm ùr a shàbhaladh</string>
+    <string name="folder_closed">Chaidh am pasgan a dhùnadh</string>
+    <string name="folder_renamed">Chaidh ainm ùr <xliff:g id="name" example="Games">%1$s</xliff:g> a chur air a’ phasgan</string>
+    <string name="folder_name_format">Pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="debug_memory_activity">* HPROF</string>
+    <string name="widget_button_text">Widgets</string>
+    <string name="wallpaper_button_text">Pàipearan-balla</string>
+    <string name="settings_button_text">Roghainnean</string>
+    <string name="allow_rotation_title">Ceadaich cuairteachadh</string>
+    <string name="package_state_unknown">Chan eil fhios</string>
+    <string name="abandoned_clean_this">Thoir air falbh</string>
+    <string name="abandoned_search">Lorg</string>
+    <string name="abandoned_promises_title">Cha deach an aplacaid seo a stàladh</string>
+    <string name="abandoned_promise_explanation">Cha deach an aplacaid a tha leis an ìomhaigheag seo a stàladh.
+        ’S urrainn dhut a toirt air falbh no an aplacaid a lorg ’s a stàladh a làimh.
+    </string>
+    <string name="action_add_to_workspace">Cuir ris an sgrìn dachaigh</string>
+    <string name="action_move_here">Gluais an nì an-seo</string>
+    <string name="item_added_to_workspace">Chaidh an nì a chur ris an sgrìn dachaigh</string>
+    <string name="item_removed">Chaidh an nì a thoirt air falbh</string>
+    <string name="action_move">Gluais an nì</string>
+    <string name="move_to_empty_cell">Gluais gu ràgh <xliff:g id="number" example="1">%1$s</xliff:g> colbh <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="move_to_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="move_to_hotseat_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g> nan annsachdan</string>
+    <string name="item_moved">Chaidh an nì a ghluasad</string>
+    <string name="add_to_folder">Cuir ri pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="add_to_folder_with_app">Cuir ris a’ phasgan sa bheil <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="added_to_folder">Chaidh an nì a chur ri pasgan</string>
+    <string name="create_folder_with">Cruthaich pasgan le: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <string name="folder_created">Chaidh am pasgan a chruthachadh</string>
+    <string name="action_move_to_workspace">Gluais dhan sgrìn dachaigh</string>
+    <string name="action_move_screen_left">Gluais an sgrìn dhan taobh chlì</string>
+    <string name="action_move_screen_right">Gluais an sgrìn dhan taobh deas</string>
+    <string name="screen_moved">Chaidh an sgrìn a ghluasad</string>
+    <string name="action_resize">Ath-mheudaich</string>
+    <string name="action_increase_width">Meudaich an leud</string>
+    <string name="action_increase_height">Meudaich an àirde</string>
+    <string name="action_decrease_width">Lùghdaich an leud</string>
+    <string name="action_decrease_height">Lùghdaich an àirde</string>
+    <string name="widget_resized">Chaidh a’ widget ath-mheudachadh gu leud <xliff:g id="number" example="2">%1$s</xliff:g> ’s àirde <xliff:g id="number" example="1">%2$s</xliff:g></string>
+</resources>
