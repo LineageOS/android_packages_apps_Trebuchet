@@ -14,37 +14,17 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_category_home">Axustes de pantalla d\'aniciu</string>
     <string name="settings_category_drawer">Axustes del caxón</string>
-    <string name="settings_category_icons">Axustes d\'iconos</string>
-    <string name="title_show_google_app">Amosar l\'aplicación Google Now</string>
-    <string name="msg_minus_one_on_left">Cuando esbaries faza la drecha dende la pantalla d\'iniciu</string>
-    <string name="msg_minus_one_on_right">Cuando esbaries faza la izquierda dende la pantalla d\'iniciu</string>
+    <string name="msg_minus_one_on_left">Cuando eslices a la derecha dende la pantalla d\'aniciu principal</string>
+    <string name="msg_minus_one_on_right">Cuando eslices a la esquierda dende la pantalla d\'aniciu principal</string>
     <string name="icon_shape_square_name">Cuadráu</string>
-    <string name="icon_shape_circle_name">Círculu</string>
-    <string name="icon_shape_squircle_name">Cuadráculu</string>
-    <string name="icon_shape_teardrop_name">Llárima</string>
-    <string name="grid_size_text">Tamañu del rexáu</string>
-    <string name="grid_size_rows">Fileres</string>
     <string name="grid_size_columns">Columnes</string>
-    <string name="grid_size_custom_positive">Afitar</string>
-    <string name="grid_size_custom_message">Esbilla\'l númberu personaliáu de columnes y fileres</string>
-    <string name="desktop_show_labels">Amosar etiquetes d\'iconos nel escritoriu</string>
-    <string name="drawer_show_labels">Amosar etiquetes d\'iconos nel caxón</string>
-    <string name="settings_edit_allow_title">Permitir editar</string>
-    <string name="settings_edit_allow_summary_on">Los icono y widgets pueden amestase, desaniciase y movese na pantalla principal</string>
-    <string name="settings_edit_allow_summary_off">Los icono y widgets pueden amestase, desaniciase y movese na pantalla principal</string>
-    <string name="settings_edit_widgets_error">Nun ye posible amestar widgets a la pantalla d\'aniciu</string>
-    <string name="settings_icon_badging_desc_on">Va amosase una burbuya enriba l\'iconu cuando heba avisos</string>
-    <string name="settings_icon_badging_desc_off">Nun va amosase una burbuya enriba l\'iconu cuando heba avisos</string>
-    <string name="play_folder_title">Reproducir</string>
-    <string name="statusbar_expand">Esliza haza abaxo p\'amosar los avisos</string>
-    <string name="trust_apps_manager_name">Aplicaciones anubríes &amp; protexíes</string>
-    <string name="trust_apps_auth_manager">Desbloquia pa xestionar les apliicaciones anubríes y protexíes</string>
-    <string name="trust_apps_auth_open_app">Autentícate p\'abrir %1$s</string>
+    <string name="trust_apps_manager_name">Aplicaciones anubríes y protexíes</string>
+    <string name="trust_apps_auth_manager">Desbloquia pa xestionar les aplicaciones anubríes y protexíes</string>
+    <string name="trust_apps_auth_open_app">Autentícate p\'abrir «%1$s»</string>
     <string name="trust_apps_loading">Cargando\u2026</string>
     <string name="trust_apps_no_lock_error">Configura una pantalla de bloquéu pa togar l\'accesu a les aplicaciones</string>
     <string name="trust_apps_help">Ayuda</string>
-    <string name="trust_apps_info_hidden">Les aplicaciones anubríes y los sos widgets van anubrise del caxón</string>
-    <string name="trust_apps_info_protected">Les aplicaciones protexíes riquen l\'autenticación pa abriles dende\'l llanzador</string>
+    <string name="trust_apps_info_hidden">Nel caxón, les aplicaciones anubríes y los sos widgets escuéndense</string>
+    <string name="trust_apps_info_protected">Les aplicaciones protexíes riquen l\'autenticación p\'abriles dende\'l llanzador</string>
 </resources>

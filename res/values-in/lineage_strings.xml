@@ -39,6 +39,7 @@
     <string name="settings_icon_badging_desc_off">Gelembung tidak akan ditampilkan di atas ikon ketika ada pemberitahuan</string>
     <string name="play_folder_title">Play</string>
     <string name="statusbar_expand">Usap ke bawah untuk menampilkan pemberitahuan</string>
+    <string name="trust_apps_auth_open_app">Autentikasi untuk membuka %1$s</string>
     <string name="trust_apps_loading">Memuat\u2026</string>
     <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar aman untuk membatasi akses aplikasi</string>
     <string name="trust_apps_help">Bantuan</string>

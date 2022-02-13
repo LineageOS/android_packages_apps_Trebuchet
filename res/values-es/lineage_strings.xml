@@ -35,4 +35,5 @@
     <string name="settings_icon_badging_desc_off">No aparecerá una burbuja encima del icono cuando haya una notificación</string>
     <string name="play_folder_title">Reproducir</string>
     <string name="statusbar_expand">Deslize hacia abajo para mostrar las notificaciones</string>
+    <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
 </resources>
