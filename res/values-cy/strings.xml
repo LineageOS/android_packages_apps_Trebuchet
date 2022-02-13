@@ -50,16 +50,19 @@
     <string name="uninstall_drop_target_label">Dadosod</string>
     <string name="app_info_drop_target_label">Gwybodaeth am yr ap</string>
     <string name="install_drop_target_label">Gosod</string>
+    <string name="dismiss_prediction_label">Peidio awgrymu ap</string>
+    <string name="pin_prediction">Pinio Rhagfynegiad</string>
     <string name="permlab_install_shortcut">gosod llwybrau byr</string>
-    <string name="permdesc_install_shortcut">Mae\'n caniatáu i ap ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
+    <string name="permdesc_install_shortcut">Mae\'n caniatáu ap i ychwanegu llwybrau byr heb ymyrraeth defnyddiwr.</string>
     <string name="permlab_read_settings">darllen llwybrau byr a gosodiadau Cartref</string>
-    <string name="permdesc_read_settings">Mae\'n caniatáu i\'r ap ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
+    <string name="permdesc_read_settings">Mae\'n caniatáu yr ap i ddarllen gosodiadau a llwybrau byr yn Cartref.</string>
     <string name="permlab_write_settings">ysgrifennu llwybrau byr a gosodiadau Cartref</string>
-    <string name="permdesc_write_settings">Mae\'n caniatáu i\'r ap newid y gosodiadau a llwybrau byr yn Cartref.</string>
+    <string name="permdesc_write_settings">Mae\'n caniatáu yr ap i newid y gosodiadau a llwybrau byr yn Cartref.</string>
     <string name="msg_no_phone_permission">Dyw <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> ddim yn cael gwneud galwadau.</string>
     <string name="gadget_error_text">Problem wrth lwytho\'r teclyn</string>
     <string name="gadget_setup_text">Gosod</string>
     <string name="uninstall_system_app_text">Mae hwn yn ap system a ni ellir ei ddadosod.</string>
+    <string name="folder_hint_text">Enw Ffolder</string>
     <string name="disabled_app_label">Analluogwyd <xliff:g id="app_name" example="Messenger">%1$s</xliff:g></string>
     <plurals name="dotted_app_label">
         <item quantity="zero">Mae gan <xliff:g id="app_name" example="Messenger">%1$s</xliff:g> <xliff:g id="notification_count" example="3">%2$d</xliff:g> hysbysiadau</item>
@@ -77,6 +80,8 @@
     <string name="folder_tap_to_rename">Tapia i gadw ailenwi</string>
     <string name="folder_closed">Caewyd y ffolder</string>
     <string name="folder_renamed">Ailenwyd y ffolder i <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="folder_name_format_exact">Ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> eitem</string>
+    <string name="folder_name_format_overflow">Ffolder: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> neu ragor o eitemau.</string>
     <string name="widget_button_text">Teclynnau</string>
     <string name="wallpaper_button_text">Papurau wal</string>
     <string name="styles_wallpaper_button_text">Arddulliau a phapurau wal</string>
@@ -91,6 +96,7 @@
     <string name="msg_missing_notification_access">I ddangos Dotiau Hysbysiadau, tro hysbysiadau apiau ymlaen ar gyfer <xliff:g id="name" example="My App">%1$s</xliff:g></string>
     <string name="title_change_settings">Newid gosodiadau</string>
     <string name="notification_dots_service_title">Dangos dotiau hysbysiadau</string>
+    <string name="auto_add_shortcuts_label">Ychwanegu eiconau apiau i\'r sgrin Gartref</string>
     <string name="auto_add_shortcuts_description">Ar gyfer apiau newydd</string>
     <string name="package_state_unknown">Anhysybys</string>
     <string name="abandoned_clean_this">Tynnu</string>
@@ -133,5 +139,13 @@ Mae\'n bosib i ti ei dynnu neu i chwilio am a gosod yr ap dy hun.    </string>
     <string name="all_apps_personal_tab">Personol</string>
     <string name="all_apps_work_tab">Gwaith</string>
     <string name="work_profile_toggle_label">Proffil gwaith</string>
+    <string name="work_profile_edu_personal_apps">Mae data personol ar wahân ac wedi\'i guddio rhag apiau gwaith.</string>
+    <string name="work_profile_edu_work_apps">Mae data ac apiau gwaith yn weladwy i dy weinyddwyr TG</string>
+    <string name="work_profile_edu_next">Nesaf</string>
+    <string name="work_profile_edu_accept">Deall yn iawn</string>
+    <string name="work_apps_paused_title">Proffil gwaith ar saib</string>
+    <string name="work_apps_paused_body">Ni all apiau gwaith anfon hysbysiadau, defnyddio dy fatri, na chanfod dy leoliad</string>
+    <string name="work_apps_paused_content_description">Mae\'r proffil gwaith ar saib. Ni all apiau gwaith anfon hysbysiadau, defnyddio dy fatri, na chanfod dy leoliad</string>
+    <string name="work_switch_tip">Rhoi apiau a hysbysiadau gwaith ar saib</string>
     <string name="remote_action_failed">Methiant: <xliff:g id="what" example="Pause">%1$s</xliff:g></string>
 </resources>

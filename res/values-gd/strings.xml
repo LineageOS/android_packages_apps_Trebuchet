@@ -48,7 +48,7 @@
     <string name="all_apps_home_button_label">Dachaigh</string>
     <string name="remove_drop_target_label">Thoir air falbh</string>
     <string name="uninstall_drop_target_label">Dì-stàlaich</string>
-    <string name="app_info_drop_target_label">Fiosrachadh mun aplacaid</string>
+    <string name="app_info_drop_target_label">Mun aplacaid</string>
     <string name="install_drop_target_label">Stàlaich</string>
     <string name="dismiss_prediction_label">Na mol aplacaid</string>
     <string name="pin_prediction">Ro-innse a’ phrìneachaidh</string>
@@ -89,7 +89,7 @@
     <string name="settings_button_text">Roghainnean na dachaigh</string>
     <string name="msg_disabled_by_admin">Chaidh a chur à comas leis an rianaire agad</string>
     <string name="allow_rotation_title">Ceadaich cuairteachadh na sgrìn dachaigh</string>
-    <string name="allow_rotation_desc">Nuair bhios a fòn ’ga chuairteachadh</string>
+    <string name="allow_rotation_desc">Nuair bhios am fòn ’ga chuairteachadh</string>
     <string name="notification_dots_title">Dotagan bratha</string>
     <string name="notification_dots_desc_on">Air</string>
     <string name="notification_dots_desc_off">Dheth</string>
