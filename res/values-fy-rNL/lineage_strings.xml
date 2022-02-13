@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="play_folder_title">Play</string>
+    <string name="statusbar_expand">Fei nei ûnder om de meldingen te toanen</string>
+    <string name="predictive_apps_title">Foarspelde apps</string>
+    <string name="predictive_apps_summary_on">Dyn favorite apps ferskine boppe oan it app-oersjoch</string>
+    <string name="predictive_apps_summary_off">Dyn favorite apps wurde net boppe oan it app-oersjoch werjûn</string>
+    <string name="grid_size_text">Rastergrutte</string>
+    <string name="grid_size_rows">Rigen</string>
+    <string name="grid_size_columns">Kolommen</string>
+    <string name="grid_size_custom_positive">Ynstelle</string>
+    <string name="grid_size_custom_message">Selektearje oanpaste oantallen kolommen en rigen</string>
+    <string name="desktop_show_labels">Piktogramlabels op it startskerm toane</string>
+    <string name="drawer_show_labels">Piktogramlabels yn it app-oersjoch toane</string>
+    <string name="app_edit_drop_target_label">Bewurkje</string>
+    <string name="icon_pack_title">Piktogrampakket</string>
+    <string name="icon_pack_picker">Piktogram selektearje</string>
+    <string name="icon_pack_picker_search">Piktogram sykje</string>
+    <string name="icon_pack_suggestions">Suggestjes</string>
+    <string name="icon_pack_all_icons">Alle piktogrammen</string>
+    <string name="icon_pack_reset">Opnij ynstelle</string>
+    <string name="icon_pack_system">Systeem (standert)</string>
+    <string name="icon_shape_super_ellipse_name">Superellips</string>
+    <string name="icon_shape_circle_name">Sirkel</string>
+    <string name="icon_shape_squircle_name">Squircle</string>
+    <string name="icon_shape_teardrop_name">Drip</string>
+    <string name="settings_category_home">Ynstellingen startskerm</string>
+    <string name="settings_category_drawer">Ynstellingen app-oersjoch</string>
+    <string name="settings_category_icons">Piktogramynstellingen</string>
+    <string name="settings_more">Mear</string>
+    <string name="settings_rotation_title">Skerm draaie</string>
+    <string name="settings_allow_rotation_desc">Tastean dat it haadskerm yn lizzende modus brûkt wurdt as it tastel draaid is</string>
+    <string name="settings_icon_shape">Piktogramfoarm</string>
+    <string name="settings_icon_badging_desc_on">Der ferskynt in ballon boppe it piktogram wannear der in melding is</string>
+    <string name="settings_icon_badging_desc_off">Der ferskynt gjin ballon boppe it piktogram wannear der in melding is</string>
+    <string name="settings_icon_force_adaptive_title">Adaptive piktogrammen forsearje</string>
+    <string name="settings_icon_force_adaptive_desc_on">Piktogrammen mei in oanpaste foarm wurde ynliste</string>
+    <string name="settings_icon_force_adaptive_desc_off">Piktogrammen mei in oanpaste foarm wurde net ynliste</string>
+    <string name="settings_edit_allow_title">Bewurkjen tastean</string>
+    <string name="settings_edit_allow_summary_on">Piktogrammen en widgets kinne tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
+    <string name="settings_edit_allow_summary_off">Piktogrammen en widgets kinne net tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
+    <string name="settings_edit_widgets_error">It is net mooglik om widgets ta te foegjen oan it startskerm</string>
+    <string name="title_show_google_app">Google-app toane</string>
+    <string name="msg_minus_one_on_left">Wannear\'t jo fan it startskerm út nei rjochts feie</string>
+    <string name="msg_minus_one_on_right">Wannear\'t jo fan it startskerm út nei links feie</string>
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Lòinsear3</string>
+    <string name="work_folder_name">Obair</string>
+    <string name="activity_not_found">Cha deach an aplacaid a stàladh.</string>
+    <string name="activity_not_available">Chan eil an aplacaid ri fhaighinn</string>
+    <string name="safemode_shortcut_error">Bidh aplacaidean a chaidh a luchdadh a-nuas à comas sa mhodh thèarainte</string>
+    <string name="safemode_widget_error">Bidh widgets à comas sa mhodh thèarainte</string>
+    <string name="shortcut_not_available">Chan eil ath-ghoirid ri fhaighinn</string>
+    <string name="home_screen">An sgrìn dachaigh</string>
+    <string name="custom_actions">Gnìomhan gnàthaichte</string>
+    <string name="long_press_widget_to_add">Suath ri widget ⁊ cùm sìos e airson a thogail.</string>
+    <string name="long_accessible_way_to_add">Thoir gnogag dhùbailte air widget ⁊ cùm sìos i airson a togail no gnìomhan gnàthaichte a ghabhail.</string>
+    <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <string name="widget_accessible_dims_format">%1$d a leud ’s %2$d a dh’àirde</string>
+    <string name="add_item_request_drag_hint">Suath ris ⁊ cùm sìos airson a chur ann a làimh</string>
+    <string name="place_automatically">Cuir ris gu fèin-obrachail</string>
+    <string name="all_apps_search_bar_hint">Lorg aplacaidean</string>
+    <string name="all_apps_loading_message">A’ luchdadh nan aplacaidean…</string>
+    <string name="all_apps_no_search_results">Cha do lorg sinn aplacaid le “<xliff:g id="query" example="Android">%1$s</xliff:g>%1$s”</string>
+    <string name="all_apps_search_market_message">Lorg barrachd aplacaidean</string>
+    <string name="notifications_header">Brathan</string>
+    <string name="out_of_space">Tha an sgrìn dachaigh seo làn.</string>
+    <string name="hotseat_out_of_space">Tha treidhe nan annsachdan làn</string>
+    <string name="all_apps_button_label">Liosta nan aplacaidean</string>
+    <string name="all_apps_home_button_label">Dachaigh</string>
+    <string name="remove_drop_target_label">Thoir air falbh</string>
+    <string name="uninstall_drop_target_label">Dì-stàlaich</string>
+    <string name="app_info_drop_target_label">Mun aplacaid</string>
+    <string name="permlab_install_shortcut">stàladh ath-ghoiridean</string>
+    <string name="permdesc_install_shortcut">Leigidh seo le aplacaid 
+        ath-ghoiridean a chur ris às aonais gnìomh cleachdaiche.</string>
+    <string name="permlab_read_settings">leughadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <string name="permdesc_read_settings">Leigidh seo leis an aplacaid 
+        roghainnean is ath-ghoiridean na dachaigh a leughadh.</string>
+    <string name="permlab_write_settings">sgrìobhadh roghainnean is ath-ghoiridean na dachaigh</string>
+    <string name="permdesc_write_settings">Leigidh seo leis an aplacaid 
+        roghainnean is ath-ghoiridean na dachaigh atharrachadh.</string>
+    <string name="msg_no_phone_permission">Chan fhaod <xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> gairmean fòn a dhèanamh</string>
+    <string name="gadget_error_text">Duilgheadas le luchdadh a’ widget</string>
+    <string name="gadget_setup_text">Suidheachadh</string>
+    <string name="uninstall_system_app_text">Seo aplacaid an t-siostaim agus cha ghabh a dì-stàladh.</string>
+    <string name="folder_hint_text">Pasgan gun ainm</string>
+    <string name="disabled_app_label">Chaidh <xliff:g id="app_name" example="Messenger">%1$s</xliff:g> a chur à comas</string>
+    <string name="default_scroll_format">Duilleag %1$d à %2$d</string>
+    <string name="workspace_scroll_format">Sgrìn dachaigh %1$d à %2$d</string>
+    <string name="workspace_new_page">Duilleag ùr na sgrìn dachaigh</string>
+    <string name="folder_opened">Chaidh pasgan fhosgladh, <xliff:g id="width" example="5">%1$d</xliff:g> le <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <string name="folder_tap_to_close">Thoir gnogag air pasgan gus a dhùnadh</string>
+    <string name="folder_tap_to_rename">Thoir gnogag air gus an t-ainm ùr a shàbhaladh</string>
+    <string name="folder_closed">Chaidh am pasgan a dhùnadh</string>
+    <string name="folder_renamed">Chaidh ainm ùr <xliff:g id="name" example="Games">%1$s</xliff:g> a chur air a’ phasgan</string>
+    <string name="folder_name_format">Pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="widget_button_text">Widgets</string>
+    <string name="wallpaper_button_text">Pàipearan-balla</string>
+    <string name="settings_button_text">Roghainnean na dachaigh</string>
+    <string name="msg_disabled_by_admin">Chaidh a chur à comas leis an rianaire agad</string>
+    <string name="accessibility_action_overview">Foir-shealladh</string>
+    <string name="allow_rotation_title">Ceadaich cuairteachadh na sgrìn dachaigh</string>
+    <string name="allow_rotation_desc">Nuair bhios am fòn ’ga chuairteachadh</string>
+    <string name="allow_rotation_blocked_desc">Cha cheadaich roghainn làithreach an taisbeanaidh cuairteachadh</string>
+    <string name="icon_badging_title">Dotagan bratha</string>
+    <string name="icon_badging_desc_on">Air</string>
+    <string name="icon_badging_desc_off">Dheth</string>
+    <string name="title_missing_notification_access">Tha feum air inntrigeadh do bhrathan</string>
+    <string name="msg_missing_notification_access">Airson dotagan bratha a shealltainn, cuir air brathan aplacaid airson <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <string name="title_change_settings">Atharraich na roghainnean</string>
+    <string name="auto_add_shortcuts_label">Cuir ìomhaigheag ris an sgrìn dachaigh</string>
+    <string name="auto_add_shortcuts_description">Do dh’aplacaidean ùra</string>
+    <string name="icon_shape_override_label">Atharraich cruth na h-ìomhaigheige</string>
+    <string name="icon_shape_system_default">Cleachd roghainn bhunaiteach an t-siostaim</string>
+    <string name="icon_shape_square">Ceàrnagach</string>
+    <string name="icon_shape_squircle">Ceàrnach bog</string>
+    <string name="icon_shape_circle">Cearcall</string>
+    <string name="icon_shape_teardrop">Deur</string>
+    <string name="icon_shape_override_progress">Ag atharrachadh cruth na h-ìomhaigheige</string>
+    <string name="package_state_unknown">Chan eil fhios</string>
+    <string name="abandoned_clean_this">Thoir air falbh</string>
+    <string name="abandoned_search">Lorg</string>
+    <string name="abandoned_promises_title">Cha deach an aplacaid seo a stàladh</string>
+    <string name="abandoned_promise_explanation">Cha deach an aplacaid a tha leis an ìomhaigheag seo a stàladh.
+        ’S urrainn dhut a toirt air falbh no an aplacaid a lorg ’s a stàladh a làimh.
+    </string>
+    <string name="app_downloading_title">Tha <xliff:g id="name" example="Messenger">%1$s</xliff:g> ’ga luchdadh a-nuas, <xliff:g id="progress" example="30%">%2$s</xliff:g> deiseil</string>
+    <string name="app_waiting_download_title">Tha <xliff:g id="name" example="Messenger">%1$s</xliff:g> a’ feitheamh ri stàladh</string>
+    <string name="widgets_bottom_sheet_title">Widgets <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="action_add_to_workspace">Cuir ris an sgrìn dachaigh</string>
+    <string name="action_move_here">Gluais an nì an-seo</string>
+    <string name="item_added_to_workspace">Chaidh an nì a chur ris an sgrìn dachaigh</string>
+    <string name="item_removed">Chaidh an nì a thoirt air falbh</string>
+    <string name="action_move">Gluais an nì</string>
+    <string name="move_to_empty_cell">Gluais gu ràgh <xliff:g id="number" example="1">%1$s</xliff:g> colbh <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="move_to_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="move_to_hotseat_position">Gluais gu ionad <xliff:g id="number" example="1">%1$s</xliff:g> nan annsachdan</string>
+    <string name="item_moved">Chaidh an nì a ghluasad</string>
+    <string name="add_to_folder">Cuir ri pasgan: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="add_to_folder_with_app">Cuir ris a’ phasgan sa bheil <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="added_to_folder">Chaidh an nì a chur ri pasgan</string>
+    <string name="create_folder_with">Cruthaich pasgan le: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <string name="folder_created">Chaidh am pasgan a chruthachadh</string>
+    <string name="action_move_to_workspace">Gluais dhan sgrìn dachaigh</string>
+    <string name="action_move_screen_left">Gluais an sgrìn dhan taobh chlì</string>
+    <string name="action_move_screen_right">Gluais an sgrìn dhan taobh deas</string>
+    <string name="screen_moved">Chaidh an sgrìn a ghluasad</string>
+    <string name="action_resize">Ath-mheudaich</string>
+    <string name="action_increase_width">Meudaich an leud</string>
+    <string name="action_increase_height">Meudaich an àirde</string>
+    <string name="action_decrease_width">Lùghdaich an leud</string>
+    <string name="action_decrease_height">Lùghdaich an àirde</string>
+    <string name="widget_resized">Chaidh a’ widget ath-mheudachadh gu leud <xliff:g id="number" example="2">%1$s</xliff:g> ’s àirde <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="action_deep_shortcut">Ath-ghoiridean</string>
+    <string name="shortcuts_menu_description"><xliff:g id="number_of_shortcuts" example="3">%1$d</xliff:g> ath-ghoirid(ean) dha <xliff:g id="app_name" example="Messenger">%2$s</xliff:g></string>
+    <string name="shortcuts_menu_with_notifications_description"><xliff:g id="number_of_shortcuts" example="3">%1$d</xliff:g> ath-ghoirid(ean) is <xliff:g id="number_of_notifications" example="3">%2$d</xliff:g> brath(an) dha <xliff:g id="app_name" example="Messenger">%3$s</xliff:g></string>
+    <string name="action_dismiss_notification">Leig seachad</string>
+    <string name="notification_dismissed">Chaidh am brath a leigeil seachad</string>
+</resources>
