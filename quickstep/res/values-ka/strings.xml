@@ -25,11 +25,12 @@
     <string name="accessibility_app_usage_settings" msgid="6312864233673544149">"აპების გამოყენების პარამეტრები"</string>
     <string name="recents_clear_all" msgid="5328176793634888831">"ყველას გასუფთავება"</string>
     <string name="accessibility_recent_apps" msgid="4058661986695117371">"ბოლოდროინდელი აპები"</string>
+    <!-- no translation found for task_view_closed (9170038230110856166) -->
+    <skip />
     <string name="task_contents_description_with_remaining_time" msgid="4479688746574672685">"<xliff:g id="TASK_DESCRIPTION">%1$s</xliff:g>, <xliff:g id="REMAINING_TIME">%2$s</xliff:g>"</string>
     <string name="shorter_duration_less_than_one_minute" msgid="4722015666335015336">"&lt; 1 წუთი"</string>
     <string name="time_left_for_app" msgid="3111996412933644358">"დღეს დარჩენილია <xliff:g id="TIME">%1$s</xliff:g>"</string>
     <string name="title_app_suggestions" msgid="4185902664111965088">"აპის შემოთავაზებები"</string>
-    <string name="all_apps_label" msgid="8542784161730910663">"ყველა აპი"</string>
     <string name="all_apps_prediction_tip" msgid="2672336544844936186">"თქვენი პროგნოზირებული აპები"</string>
     <string name="hotseat_edu_title_migrate" msgid="306578144424489980">"მიიღეთ აპის შეთავაზებები მთავარი ეკრანის ქვედა რიგში"</string>
     <string name="hotseat_edu_title_migrate_landscape" msgid="3633942953997845243">"მიიღეთ აპების შემოთავაზებები მთავარი ეკრანის რჩეულების მწკრივში"</string>
@@ -79,9 +80,22 @@
     <string name="allset_navigation_settings" msgid="4713404605961476027"><annotation id="link">"სისტემის ნავიგაციის პარამეტრები"</annotation></string>
     <string name="action_share" msgid="2648470652637092375">"გაზიარება"</string>
     <string name="action_screenshot" msgid="8171125848358142917">"ეკრანის ანაბეჭდი"</string>
+    <string name="action_split" msgid="2098009717623550676">"გაყოფა"</string>
+    <string name="toast_split_select_app" msgid="5453865907322018352">"შეეხეთ სხვა აპს ეკრანის გასაყოფად"</string>
+    <string name="toast_split_app_unsupported" msgid="3271526028981899666">"ეკრანის გაყოფა არ არის მხარდაჭერილი აპის მიერ."</string>
     <string name="blocked_by_policy" msgid="2071401072261365546">"ეს მოქმედება არ არის დაშვებული აპის ან თქვენი ორგანიზაციის მიერ"</string>
     <string name="skip_tutorial_dialog_title" msgid="2725643161260038458">"გსურთ, გამოტოვოთ ნავიგაციის სახელმძღვანელო?"</string>
     <string name="skip_tutorial_dialog_subtitle" msgid="544063326241955662">"ამის მოგვიანებით პოვნა <xliff:g id="NAME">%1$s</xliff:g> აპში შეგიძლიათ"</string>
     <string name="gesture_tutorial_action_button_label_cancel" msgid="3809842569351264108">"გაუქმება"</string>
     <string name="gesture_tutorial_action_button_label_skip" msgid="394452764989751960">"გამოტოვება"</string>
+    <string name="accessibility_rotate_button" msgid="4771825231336502943">"ეკრანის შეტრიალება"</string>
+    <string name="taskbar_edu_opened" msgid="3950252793551919129">"ამოცანების ზოლის სასწავლო არე გამოჩნდა"</string>
+    <string name="taskbar_edu_closed" msgid="126643734478892862">"ამოცანების ზოლის სასწავლო არე დაიხურა"</string>
+    <string name="taskbar_edu_switch_apps" msgid="6942863327845784813">"აპების გადასართავად გამოიყენეთ ამოცანათა ზოლი"</string>
+    <string name="taskbar_edu_splitscreen" msgid="2663361731630346489">"გადაათრიეთ კიდეზე ორი აპის ერთდოულად გამოსაყენებლად"</string>
+    <string name="taskbar_edu_stashing" msgid="5212374387411764031">"ხანგრძლივად შეეხეთ ამოცანების ზოლის დასამალად"</string>
+    <string name="taskbar_edu_next" msgid="4007618274426775841">"შემდეგი"</string>
+    <string name="taskbar_edu_previous" msgid="459202320127201702">"უკან"</string>
+    <string name="taskbar_edu_close" msgid="887022990168191073">"დახურვა"</string>
+    <string name="taskbar_edu_done" msgid="6880178093977704569">"მზადაა"</string>
 </resources>

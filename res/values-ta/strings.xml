@@ -28,6 +28,10 @@
     <string name="shortcut_not_available" msgid="2536503539825726397">"ஷார்ட்கட் இல்லை"</string>
     <string name="home_screen" msgid="5629429142036709174">"முகப்பு"</string>
     <string name="recent_task_option_split_screen" msgid="6690461455618725183">"திரைப் பிரிப்பு"</string>
+    <string name="split_screen_position_top" msgid="1504965011158689649">"மேற்புறமாகப் பிரி"</string>
+    <string name="split_screen_position_left" msgid="7537793098851830883">"இடதுபுறமாகப் பிரி"</string>
+    <string name="split_screen_position_right" msgid="1569377524925193369">"வலதுபுறமாகப் பிரி"</string>
+    <string name="split_app_info_accessibility" msgid="5475288491241414932">"%1$sக்கான ஆப்ஸ் தகவல்கள்"</string>
     <string name="long_press_widget_to_add" msgid="3587712543577675817">"விட்ஜெட்டை நகர்த்தத் தொட்டுப் பிடிக்கவும்."</string>
     <string name="long_accessible_way_to_add" msgid="2733588281439571974">"விட்ஜெட்டை நகர்த்த இருமுறை தட்டிப் பிடிக்கவும் அல்லது பிரத்தியேகச் செயல்களைப் பயன்படுத்தவும்."</string>
     <string name="widget_dims_format" msgid="2370757736025621599">"%1$d × %2$d"</string>
@@ -36,14 +40,8 @@
     <string name="add_item_request_drag_hint" msgid="5653291305078645405">"முகப்புத் திரைக்கு விட்ஜெட்டை நகர்த்த அதைத் தொட்டுப் பிடிக்கவும்"</string>
     <string name="add_to_home_screen" msgid="8631549138215492708">"முகப்புத் திரையில் சேர்"</string>
     <string name="added_to_home_screen_accessibility_text" msgid="4451545765448884415">"<xliff:g id="WIDGET_NAME">%1$s</xliff:g> விட்ஜெட் முகப்புத் திரையில் சேர்க்கப்பட்டது"</string>
-    <plurals name="widgets_count" formatted="false" msgid="656794749266073027">
-      <item quantity="other"><xliff:g id="WIDGETS_COUNT_1">%1$d</xliff:g> விட்ஜெட்டுகள்</item>
-      <item quantity="one"><xliff:g id="WIDGETS_COUNT_0">%1$d</xliff:g> விட்ஜெட்</item>
-    </plurals>
-    <plurals name="shortcuts_count" formatted="false" msgid="8080294865447938455">
-      <item quantity="other"><xliff:g id="SHORTCUTS_COUNT_1">%1$d</xliff:g> ஷார்ட்கட்கள்</item>
-      <item quantity="one"><xliff:g id="SHORTCUTS_COUNT_0">%1$d</xliff:g> ஷார்ட்கட்</item>
-    </plurals>
+    <string name="widgets_count" msgid="6467746476364652096">"{count,plural, =1{# விட்ஜெட்}other{# விட்ஜெட்டுகள்}}"</string>
+    <string name="shortcuts_count" msgid="8471715556199592381">"{count,plural, =1{# ஷார்ட்கட்}other{# ஷார்ட்கட்கள்}}"</string>
     <string name="widgets_and_shortcuts_count" msgid="7209136747878365116">"<xliff:g id="WIDGETS_COUNT">%1$s</xliff:g>, <xliff:g id="SHORTCUTS_COUNT">%2$s</xliff:g>"</string>
     <string name="widget_button_text" msgid="2880537293434387943">"விட்ஜெட்கள்"</string>
     <string name="widgets_full_sheet_search_bar_hint" msgid="8484659090860596457">"தேடுக"</string>
@@ -58,11 +56,12 @@
     <string name="reconfigurable_widget_education_tip" msgid="6336962690888067057">"விட்ஜெட் அமைப்புகளை மாற்றத் தட்டவும்"</string>
     <string name="widget_education_close_button" msgid="8676165703104836580">"சரி"</string>
     <string name="widget_reconfigure_button_content_description" msgid="8811472721881205250">"விட்ஜெட் அமைப்புகளை மாற்றும்"</string>
-    <string name="all_apps_search_bar_hint" msgid="1390553134053255246">"பயன்பாடுகளில் தேடுக"</string>
+    <string name="all_apps_search_bar_hint" msgid="1390553134053255246">"ஆப்ஸில் தேடுக"</string>
     <string name="all_apps_loading_message" msgid="5813968043155271636">"ஆப்ஸை ஏற்றுகிறது…"</string>
     <string name="all_apps_no_search_results" msgid="3200346862396363786">"\"<xliff:g id="QUERY">%1$s</xliff:g>\" உடன் பொருந்தும் ஆப்ஸ் இல்லை"</string>
     <string name="all_apps_search_market_message" msgid="1366263386197059176">"கூடுதல் பயன்பாடுகளைத் தேடு"</string>
     <string name="label_application" msgid="8531721983832654978">"ஆப்ஸ்"</string>
+    <string name="all_apps_label" msgid="5015784846527570951">"அனைத்து ஆப்ஸும்"</string>
     <string name="notifications_header" msgid="1404149926117359025">"அறிவிப்புகள்"</string>
     <string name="long_press_shortcut_to_add" msgid="5405328730817637737">"ஷார்ட்கட்டை நகர்த்தத் தொட்டுப் பிடிக்கவும்."</string>
     <string name="long_accessible_way_to_add_shortcut" msgid="2199537273817090740">"ஷார்ட்கட்டை நகர்த்த இருமுறை தட்டிப் பிடிக்கவும் அல்லது பிரத்தியேகச் செயல்களைப் பயன்படுத்தவும்."</string>
@@ -91,10 +90,7 @@
     <string name="uninstall_system_app_text" msgid="4172046090762920660">"இது அமைப்பு ஆப்ஸ் என்பதால் நிறுவல் நீக்கம் செய்ய முடியாது."</string>
     <string name="folder_hint_text" msgid="5174843001373488816">"பெயரைத் திருத்துதல்"</string>
     <string name="disabled_app_label" msgid="6673129024321402780">"<xliff:g id="APP_NAME">%1$s</xliff:g> முடக்கப்பட்டது"</string>
-    <plurals name="dotted_app_label" formatted="false" msgid="5194538107138265416">
-      <item quantity="other"><xliff:g id="APP_NAME_2">%1$s</xliff:g> ஆப்ஸில் <xliff:g id="NOTIFICATION_COUNT_3">%2$d</xliff:g> அறிவிப்புகள் வந்துள்ளன</item>
-      <item quantity="one"><xliff:g id="APP_NAME_0">%1$s</xliff:g> ஆப்ஸில் <xliff:g id="NOTIFICATION_COUNT_1">%2$d</xliff:g> அறிவிப்பு வந்துள்ளது</item>
-    </plurals>
+    <string name="dotted_app_label" msgid="1704091277755818896">"{count,plural,offset:1 =1{{app_name} ஆப்ஸில் # அறிவிப்பு வந்துள்ளது}other{{app_name} ஆப்ஸில் # அறிவிப்புகள் வந்துள்ளன}}"</string>
     <string name="default_scroll_format" msgid="7475544710230993317">"பக்கம் %1$d / %2$d"</string>
     <string name="workspace_scroll_format" msgid="8458889198184077399">"முகப்புத் திரை %1$d of %2$d"</string>
     <string name="workspace_new_page" msgid="257366611030256142">"புதிய முகப்புத் திரை பக்கம்"</string>

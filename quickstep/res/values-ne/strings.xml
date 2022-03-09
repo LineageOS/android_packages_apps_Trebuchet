@@ -25,11 +25,12 @@
     <string name="accessibility_app_usage_settings" msgid="6312864233673544149">"एपको उपयोगका सेटिङहरू"</string>
     <string name="recents_clear_all" msgid="5328176793634888831">"सबै मेटाउनुहोस्"</string>
     <string name="accessibility_recent_apps" msgid="4058661986695117371">"हालसालैका एपहरू"</string>
+    <!-- no translation found for task_view_closed (9170038230110856166) -->
+    <skip />
     <string name="task_contents_description_with_remaining_time" msgid="4479688746574672685">"<xliff:g id="TASK_DESCRIPTION">%1$s</xliff:g>, <xliff:g id="REMAINING_TIME">%2$s</xliff:g>"</string>
     <string name="shorter_duration_less_than_one_minute" msgid="4722015666335015336">"&lt; १ मिनेट"</string>
     <string name="time_left_for_app" msgid="3111996412933644358">"आज: <xliff:g id="TIME">%1$s</xliff:g> बाँकी"</string>
     <string name="title_app_suggestions" msgid="4185902664111965088">"एपसम्बन्धी सुझावहरू"</string>
-    <string name="all_apps_label" msgid="8542784161730910663">"सबै एपहरू"</string>
     <string name="all_apps_prediction_tip" msgid="2672336544844936186">"तपाईंलाई चाहिने एपहरू"</string>
     <string name="hotseat_edu_title_migrate" msgid="306578144424489980">"आफ्नो होम स्क्रिनको पुछारको रोमा एपसम्बन्धी सिफारिस प्राप्त गर्नुहोस्"</string>
     <string name="hotseat_edu_title_migrate_landscape" msgid="3633942953997845243">"आफ्नो होम स्क्रिनको मन पर्ने नामक पङ्क्तिमा एपसम्बन्धी सिफारिस प्राप्त गर्नुहोस्"</string>
@@ -79,9 +80,22 @@
     <string name="allset_navigation_settings" msgid="4713404605961476027"><annotation id="link">"सिस्टम नेभिगेसनसम्बन्धी सेटिङ"</annotation></string>
     <string name="action_share" msgid="2648470652637092375">"सेयर गर्नुहोस्"</string>
     <string name="action_screenshot" msgid="8171125848358142917">"स्क्रिनसट"</string>
+    <string name="action_split" msgid="2098009717623550676">"स्प्लिट गर्नुहोस्"</string>
+    <string name="toast_split_select_app" msgid="5453865907322018352">"स्प्लिटक्रिन प्रयोग गर्न अर्को एपमा ट्याप गर्नुहोस्"</string>
+    <string name="toast_split_app_unsupported" msgid="3271526028981899666">"यो एपको स्क्रिन विभाजन गर्न मिल्दैन।"</string>
     <string name="blocked_by_policy" msgid="2071401072261365546">"यो एप वा तपाईंको सङ्गठनले यो कारबाही गर्ने अनुमति दिँदैन"</string>
     <string name="skip_tutorial_dialog_title" msgid="2725643161260038458">"नेभिगेसन ट्युटोरियल स्किप गर्ने हो?"</string>
     <string name="skip_tutorial_dialog_subtitle" msgid="544063326241955662">"तपाईं पछि <xliff:g id="NAME">%1$s</xliff:g> नामक एपमा गई यो ट्युटोरियल भेट्टाउन सक्नुहुन्छ"</string>
     <string name="gesture_tutorial_action_button_label_cancel" msgid="3809842569351264108">"रद्द गर्नुहोस्"</string>
     <string name="gesture_tutorial_action_button_label_skip" msgid="394452764989751960">"स्किप गर्नु…"</string>
+    <string name="accessibility_rotate_button" msgid="4771825231336502943">"स्क्रिन घुमाउनुहोस्"</string>
+    <string name="taskbar_edu_opened" msgid="3950252793551919129">"टास्कबार एजुकेसन देखिएको छ"</string>
+    <string name="taskbar_edu_closed" msgid="126643734478892862">"टास्कबार एजुकेसन बन्द गरिएको छ"</string>
+    <string name="taskbar_edu_switch_apps" msgid="6942863327845784813">"एउटा एपबाट अर्को एपमा जान टास्कबार प्रयोग गर्नुहोस्"</string>
+    <string name="taskbar_edu_splitscreen" msgid="2663361731630346489">"टास्कबार छेउतिर ड्र्याग गरेर एकै पटक दुई वटा एप चलाउनुहोस्"</string>
+    <string name="taskbar_edu_stashing" msgid="5212374387411764031">"टास्कबार लुकाउन टास्कबार थिचिराख्नुहोस्"</string>
+    <string name="taskbar_edu_next" msgid="4007618274426775841">"अर्को"</string>
+    <string name="taskbar_edu_previous" msgid="459202320127201702">"पछाडि"</string>
+    <string name="taskbar_edu_close" msgid="887022990168191073">"बन्द गर्नुहोस्"</string>
+    <string name="taskbar_edu_done" msgid="6880178093977704569">"सम्पन्न भयो"</string>
 </resources>

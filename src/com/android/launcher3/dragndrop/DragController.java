@@ -22,6 +22,7 @@ import android.content.ComponentName;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -35,6 +36,7 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.logging.InstanceId;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.WorkspaceItemInfo;
+import com.android.launcher3.testing.TestProtocol;
 import com.android.launcher3.util.ItemInfoMatcher;
 import com.android.launcher3.util.TouchController;
 import com.android.launcher3.views.ActivityContext;
@@ -75,7 +77,7 @@ public abstract class DragController<T extends ActivityContext>
     /** Coordinate for last touch event **/
     protected final Point mLastTouch = new Point();
 
-    private final Point mTmpPoint = new Point();
+    protected final Point mTmpPoint = new Point();
 
     protected DropTarget.DragObject mDragObject;
 
@@ -147,6 +149,9 @@ public abstract class DragController<T extends ActivityContext>
             float initialDragViewScale,
             float dragViewScaleOnDrop,
             DragOptions options) {
+        if (TestProtocol.sDebugTracing) {
+            Log.d(TestProtocol.NO_DROP_TARGET, "4");
+        }
         return startDrag(drawable, /* view= */ null, originalView, dragLayerX, dragLayerY,
                 source, dragInfo, dragOffset, dragRegion, initialDragViewScale, dragViewScaleOnDrop,
                 options);
@@ -204,6 +209,9 @@ public abstract class DragController<T extends ActivityContext>
             DragOptions options);
 
     protected void callOnDragStart() {
+        if (TestProtocol.sDebugTracing) {
+            Log.d(TestProtocol.NO_DROP_TARGET, "6");
+        }
         if (mOptions.preDragCondition != null) {
             mOptions.preDragCondition.onPreDragEnd(mDragObject, true /* dragStarted*/);
         }
@@ -318,7 +326,7 @@ public abstract class DragController<T extends ActivityContext>
         mDragObject.dragView.animateTo(mMotionDown.x, mMotionDown.y, onCompleteRunnable, duration);
     }
 
-    private void callOnDragEnd() {
+    protected void callOnDragEnd() {
         if (mIsInPreDrag && mOptions.preDragCondition != null) {
             mOptions.preDragCondition.onPreDragEnd(mDragObject, false /* dragStarted*/);
         }
@@ -344,7 +352,7 @@ public abstract class DragController<T extends ActivityContext>
     /**
      * Clamps the position to the drag layer bounds.
      */
-    private Point getClampedDragLayerPos(float x, float y) {
+    protected Point getClampedDragLayerPos(float x, float y) {
         mActivity.getDragLayer().getLocalVisibleRect(mRectTemp);
         mTmpPoint.x = (int) Math.max(mRectTemp.left, Math.min(x, mRectTemp.right - 1));
         mTmpPoint.y = (int) Math.max(mRectTemp.top, Math.min(y, mRectTemp.bottom - 1));
@@ -396,7 +404,7 @@ public abstract class DragController<T extends ActivityContext>
             return false;
         }
 
-        Point dragLayerPos = getClampedDragLayerPos(ev.getX(), ev.getY());
+        Point dragLayerPos = getClampedDragLayerPos(getX(ev), getY(ev));
         mLastTouch.set(dragLayerPos.x,  dragLayerPos.y);
         if (ev.getAction() == MotionEvent.ACTION_DOWN) {
             // Remember location of down touch
@@ -407,6 +415,14 @@ public abstract class DragController<T extends ActivityContext>
             mLastTouchClassification = ev.getClassification();
         }
         return mDragDriver != null && mDragDriver.onInterceptTouchEvent(ev);
+    }
+
+    protected float getX(MotionEvent ev) {
+        return ev.getX();
+    }
+
+    protected float getY(MotionEvent ev) {
+        return ev.getY();
     }
 
     /**
