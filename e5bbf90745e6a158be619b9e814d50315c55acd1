@@ -93,6 +93,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be9a50f7_3bc48783",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T17:31:15Z",
+      "side": 1,
+      "message": "This method is needed because getResources() is not allowed in a static method. The compiler complains that the existing public static method can\u0027t get the system resources as it isn\u0027t required to have an instance. Because other parts of the code might depend on calling getAllowRotationDefaultValue() without instantiating the RotationHelper class, I can\u0027t simply replace that method with this one.",
+      "parentUuid": "ee0b98b3_0835ba30",
+      "range": {
+        "startLine": 65,
+        "startChar": 20,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1972702d_0cbc2d38",
