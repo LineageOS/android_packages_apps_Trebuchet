@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fa0b37b_ac5383bc",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T21:18:47Z",
+      "side": 0,
+      "message": "Remove the logging stuff.",
+      "revId": "4185a0e6ea08a5fb8caaa554e653c7174a28bb6f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
