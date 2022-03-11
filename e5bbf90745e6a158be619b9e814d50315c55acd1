@@ -24,6 +24,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b71f7053_2c46ceed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": "I changed the message to more clearly state that the setting is hidden based on the default value",
+      "parentUuid": "a2373b37_fb0534d4",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 13
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "644a086c_bd456ad0",
@@ -47,6 +71,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3f7571c_297c6a90",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": ".",
+      "parentUuid": "644a086c_bd456ad0",
+      "range": {
+        "startLine": 240,
+        "startChar": 47,
+        "endLine": 241,
+        "endChar": 76
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "771d2daa_1e2bde0d",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-02-09T12:15:41Z",
       "side": 1,
       "message": "It would be more clean (less edits) if you rename this method (and make it private) to something isRotationAllowed.",
+      "range": {
+        "startLine": 56,
+        "startChar": 26,
+        "endLine": 56,
+        "endChar": 54
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c85a2d_e9a7c5fd",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": ".",
+      "parentUuid": "771d2daa_1e2bde0d",
       "range": {
         "startLine": 56,
         "startChar": 26,
@@ -164,6 +236,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c73ba22_6c9e2b0b",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": ".",
+      "parentUuid": "1972702d_0cbc2d38",
+      "range": {
+        "startLine": 66,
+        "startChar": 15,
+        "endLine": 66,
+        "endChar": 43
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6485c1af_9bd45f02",
@@ -187,6 +283,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c8b79c8_467a16be",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": ".",
+      "parentUuid": "6485c1af_9bd45f02",
+      "range": {
+        "startLine": 108,
+        "startChar": 16,
+        "endLine": 108,
+        "endChar": 39
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e0a76be_5e1e397b",
@@ -200,6 +320,30 @@
       "writtenOn": "2022-02-09T12:15:41Z",
       "side": 1,
       "message": "Restore getAllowRotationDefaultValue",
+      "range": {
+        "startLine": 129,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 39
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd8c350d_aab5b2c4",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 16914
+      },
+      "writtenOn": "2022-03-11T19:03:57Z",
+      "side": 1,
+      "message": ".",
+      "parentUuid": "0e0a76be_5e1e397b",
       "range": {
         "startLine": 129,
         "startChar": 16,
