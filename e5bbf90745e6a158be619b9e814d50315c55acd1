@@ -117,6 +117,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2702bc4_a43f9c93",
+        "filename": "src/com/android/launcher3/states/RotationHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-03-11T17:47:01Z",
+      "side": 1,
+      "message": "In that case just rename it to isRotationAllowed",
+      "parentUuid": "be9a50f7_3bc48783",
+      "range": {
+        "startLine": 65,
+        "startChar": 20,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "e5bbf90745e6a158be619b9e814d50315c55acd1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1972702d_0cbc2d38",
