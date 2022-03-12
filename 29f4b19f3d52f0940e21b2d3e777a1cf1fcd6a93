@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e03ff2f9_c11b4bb6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 20370
+      },
+      "writtenOn": "2022-03-12T20:48:18Z",
+      "side": 1,
+      "message": "while picking topic 12L the build fails\n```\npackages/apps/Trebuchet/src/com/android/launcher3/widget/LocalWallpaperColorsExtractor.java:209: error: method onColorsChanged in interface Listener cannot be applied to given types;\n            listener.onColorsChanged(area, generateColorsOverride(colors));\n                    ^\n  required: SparseIntArray\n  found: RectF,SparseIntArray\n  reason: actual and formal argument lists differ in length\n```",
+      "revId": "29f4b19f3d52f0940e21b2d3e777a1cf1fcd6a93",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
