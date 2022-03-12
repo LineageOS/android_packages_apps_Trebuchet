@@ -22,6 +22,30 @@
       },
       "revId": "cb1bb0a3de30013c8e5fb86f2193fb2625d91559",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3500b0f_1218a072",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-03-12T22:57:46Z",
+      "side": 1,
+      "message": "Yes, that\u0027s where icon code lives",
+      "parentUuid": "61858b6f_c937c165",
+      "range": {
+        "startLine": 73,
+        "startChar": 46,
+        "endLine": 73,
+        "endChar": 58
+      },
+      "revId": "cb1bb0a3de30013c8e5fb86f2193fb2625d91559",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
