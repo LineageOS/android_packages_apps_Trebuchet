@@ -16,6 +16,23 @@
       "message": "while picking topic 12L the build fails\n```\npackages/apps/Trebuchet/src/com/android/launcher3/widget/LocalWallpaperColorsExtractor.java:209: error: method onColorsChanged in interface Listener cannot be applied to given types;\n            listener.onColorsChanged(area, generateColorsOverride(colors));\n                    ^\n  required: SparseIntArray\n  found: RectF,SparseIntArray\n  reason: actual and formal argument lists differ in length\n```",
       "revId": "29f4b19f3d52f0940e21b2d3e777a1cf1fcd6a93",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fea14d6c_e0a0103b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13559
+      },
+      "writtenOn": "2022-03-13T06:41:48Z",
+      "side": 1,
+      "message": "I am missing something or its still not supported in 12l https://android.googlesource.com/platform/packages/apps/Launcher3/+/refs/tags/android-12.1.0_r1/res/values/config.xml#90",
+      "revId": "29f4b19f3d52f0940e21b2d3e777a1cf1fcd6a93",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
