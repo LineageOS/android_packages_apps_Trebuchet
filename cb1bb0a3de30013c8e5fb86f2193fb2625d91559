@@ -46,6 +46,30 @@
       },
       "revId": "cb1bb0a3de30013c8e5fb86f2193fb2625d91559",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "032c1144_ef5df8b9",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2022-03-13T18:18:11Z",
+      "side": 1,
+      "message": "ah, you are right. i mixed that up with something else, thanks!",
+      "parentUuid": "b3500b0f_1218a072",
+      "range": {
+        "startLine": 73,
+        "startChar": 46,
+        "endLine": 73,
+        "endChar": 58
+      },
+      "revId": "cb1bb0a3de30013c8e5fb86f2193fb2625d91559",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
