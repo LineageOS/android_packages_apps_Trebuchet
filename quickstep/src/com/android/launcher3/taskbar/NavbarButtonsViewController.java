@@ -22,6 +22,7 @@ import static com.android.launcher3.taskbar.TaskbarNavButtonController.BUTTON_HO
 import static com.android.launcher3.taskbar.TaskbarNavButtonController.BUTTON_IME_SWITCH;
 import static com.android.launcher3.taskbar.TaskbarNavButtonController.BUTTON_RECENTS;
 import static com.android.launcher3.taskbar.TaskbarViewController.ALPHA_INDEX_KEYGUARD;
+import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_A11Y_BUTTON_CLICKABLE;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_A11Y_BUTTON_LONG_CLICKABLE;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_BACK_DISABLED;
@@ -38,13 +39,16 @@ import android.animation.ObjectAnimator;
 import android.annotation.DrawableRes;
 import android.annotation.IdRes;
 import android.annotation.LayoutRes;
+import android.content.ContentResolver;
 import android.content.pm.ActivityInfo.Config;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.database.ContentObserver;
 import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.Region.Op;
 import android.graphics.drawable.AnimatedVectorDrawable;
+import android.provider.Settings;
 import android.util.Property;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -91,6 +95,8 @@ public class NavbarButtonsViewController {
 
     private static final int MASK_IME_SWITCHER_VISIBLE = FLAG_SWITCHER_SUPPORTED | FLAG_IME_VISIBLE;
 
+    private static final String NAV_BAR_INVERSE = "sysui_nav_bar_inverse";
+
     private final ArrayList<StatePropertyHolder> mPropertyHolders = new ArrayList<>();
     private final ArrayList<ImageView> mAllButtons = new ArrayList<>();
     private int mState;
@@ -119,6 +125,8 @@ public class NavbarButtonsViewController {
 
     private final Rect mFloatingRotationButtonBounds = new Rect();
 
+    private boolean mInverseLayout;
+
     // Initialized in init.
     private TaskbarControllers mControllers;
     private View mA11yButton;
@@ -135,6 +143,18 @@ public class NavbarButtonsViewController {
 
         mLightIconColor = context.getColor(R.color.taskbar_nav_icon_light_color);
         mDarkIconColor = context.getColor(R.color.taskbar_nav_icon_dark_color);
+
+        final ContentResolver resolver = context.getContentResolver();
+        mInverseLayout = Settings.Secure.getInt(resolver, NAV_BAR_INVERSE, 0) == 1;
+        final ContentObserver observer = new ContentObserver(MAIN_EXECUTOR.getHandler()) {
+            @Override
+            public void onChange(boolean selfChange) {
+                mInverseLayout = Settings.Secure.getInt(resolver, NAV_BAR_INVERSE, 0) == 1;
+                updateLayoutInversion();
+            }
+        };
+        resolver.registerContentObserver(Settings.Secure.getUriFor(NAV_BAR_INVERSE),
+                false /* notifyForDescendents */, observer);
     }
 
     /**
@@ -242,6 +262,7 @@ public class NavbarButtonsViewController {
         }
 
         applyState();
+        updateLayoutInversion();
         mPropertyHolders.forEach(StatePropertyHolder::endAnimation);
     }
 
@@ -322,6 +343,26 @@ public class NavbarButtonsViewController {
             boolean a11yLongClickable =
                     (sysUiStateFlags & SYSUI_STATE_A11Y_BUTTON_LONG_CLICKABLE) != 0;
             mA11yButton.setLongClickable(a11yLongClickable);
+        }
+    }
+
+    private void updateLayoutInversion() {
+        FrameLayout.LayoutParams navButtonsLayoutParams = (FrameLayout.LayoutParams)
+                mNavButtonContainer.getLayoutParams();
+        if (mInverseLayout) {
+            Configuration config = mContext.getResources().getConfiguration();
+            if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+                mNavButtonsView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+                navButtonsLayoutParams.setMarginStart(navButtonsLayoutParams.getMarginEnd());
+                navButtonsLayoutParams.gravity = Gravity.END;
+            } else {
+                mNavButtonsView.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+                navButtonsLayoutParams.setMarginStart(navButtonsLayoutParams.getMarginEnd());
+                navButtonsLayoutParams.gravity = Gravity.START;
+            }
+        } else {
+            mNavButtonsView.setLayoutDirection(View.LAYOUT_DIRECTION_INHERIT);
+            navButtonsLayoutParams.gravity = Gravity.END;
         }
     }
 
