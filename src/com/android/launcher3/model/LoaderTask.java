@@ -16,6 +16,7 @@
 
 package com.android.launcher3.model;
 
+import static com.android.launcher3.config.FeatureFlags.MULTI_DB_GRID_MIRATION_ALGO;
 import static com.android.launcher3.model.BgDataModel.Callbacks.FLAG_HAS_SHORTCUT_PERMISSION;
 import static com.android.launcher3.model.BgDataModel.Callbacks.FLAG_QUIET_MODE_CHANGE_PERMISSION;
 import static com.android.launcher3.model.BgDataModel.Callbacks.FLAG_QUIET_MODE_ENABLED;
@@ -82,6 +83,7 @@ import com.android.launcher3.model.data.WorkspaceItemInfo;
 import com.android.launcher3.pm.InstallSessionHelper;
 import com.android.launcher3.pm.PackageInstallInfo;
 import com.android.launcher3.pm.UserCache;
+import com.android.launcher3.provider.ImportDataTask;
 import com.android.launcher3.qsb.QsbContainerView;
 import com.android.launcher3.shortcuts.ShortcutKey;
 import com.android.launcher3.shortcuts.ShortcutRequest;
@@ -355,7 +357,16 @@ public class LoaderTask implements Runnable {
         final WidgetManagerHelper widgetHelper = new WidgetManagerHelper(context);
 
         boolean clearDb = false;
-        if (!GridSizeMigrationTaskV2.migrateGridIfNeeded(context)) {
+        try {
+            ImportDataTask.performImportIfPossible(context);
+        } catch (Exception e) {
+            // Migration failed. Clear workspace.
+            clearDb = true;
+        }
+
+        if (!clearDb && (MULTI_DB_GRID_MIRATION_ALGO.get()
+                ? !GridSizeMigrationTaskV2.migrateGridIfNeeded(context)
+                : !GridSizeMigrationTask.migrateGridIfNeeded(context))) {
             // Migration failed. Clear workspace.
             clearDb = true;
         }

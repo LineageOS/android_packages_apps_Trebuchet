@@ -16,6 +16,7 @@
 
 package com.android.launcher3.graphics;
 
+import static com.android.launcher3.config.FeatureFlags.MULTI_DB_GRID_MIRATION_ALGO;
 import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
 
@@ -45,6 +46,7 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.Workspace;
 import com.android.launcher3.graphics.LauncherPreviewRenderer.PreviewContext;
 import com.android.launcher3.model.BgDataModel;
+import com.android.launcher3.model.GridSizeMigrationTask;
 import com.android.launcher3.model.GridSizeMigrationTaskV2;
 import com.android.launcher3.model.LoaderTask;
 import com.android.launcher3.model.ModelDelegate;
@@ -193,10 +195,16 @@ public class PreviewSurfaceRenderer {
 
     @WorkerThread
     private boolean doGridMigrationIfNecessary() {
-        if (!GridSizeMigrationTaskV2.needsToMigrate(mContext, mIdp)) {
+        boolean needsToMigrate =
+                MULTI_DB_GRID_MIRATION_ALGO.get()
+                        ? GridSizeMigrationTaskV2.needsToMigrate(mContext, mIdp)
+                        : GridSizeMigrationTask.needsToMigrate(mContext, mIdp);
+        if (!needsToMigrate) {
             return false;
         }
-        return GridSizeMigrationTaskV2.migrateGridIfNeeded(mContext, mIdp);
+        return MULTI_DB_GRID_MIRATION_ALGO.get()
+                ? GridSizeMigrationTaskV2.migrateGridIfNeeded(mContext, mIdp)
+                : GridSizeMigrationTask.migrateGridIfNeeded(mContext, mIdp);
     }
 
     @UiThread
