@@ -99,7 +99,7 @@ public class OverviewState extends LauncherState {
 
     @Override
     public int getVisibleElements(Launcher launcher) {
-        return CLEAR_ALL_BUTTON | OVERVIEW_ACTIONS;
+        return OVERVIEW_ACTIONS;
     }
 
     @Override
