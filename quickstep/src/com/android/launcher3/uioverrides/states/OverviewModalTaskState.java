@@ -46,7 +46,7 @@ public class OverviewModalTaskState extends OverviewState {
 
     @Override
     public int getVisibleElements(Launcher launcher) {
-        return OVERVIEW_ACTIONS | CLEAR_ALL_BUTTON;
+        return OVERVIEW_ACTIONS;
     }
 
     @Override
