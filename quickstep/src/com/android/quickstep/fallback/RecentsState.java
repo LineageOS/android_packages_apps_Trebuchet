@@ -106,7 +106,7 @@ public class RecentsState implements BaseState<RecentsState> {
      * For this state, whether clear all button should be shown.
      */
     public boolean hasClearAllButton() {
-        return hasFlag(FLAG_CLEAR_ALL_BUTTON);
+        return false;
     }
 
     /**
