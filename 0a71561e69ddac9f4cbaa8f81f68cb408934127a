@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d801258_69557807",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11866
+      },
+      "writtenOn": "2022-03-15T14:20:28Z",
+      "side": 1,
+      "message": "causes issues with keyguard on 19.1 where it would appear second time after device has already been unlocked",
+      "revId": "0a71561e69ddac9f4cbaa8f81f68cb408934127a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
