@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7277cfd6_8fd91bdb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2022-03-16T19:59:31Z",
+      "side": 1,
+      "message": "I would like more verbiage in the commit message as to why it\u0027s a problem that it\u0027s hidden. Code is fine, given that the codebase sucks",
+      "revId": "04ecd0bf671a706df6f0597d04543b1eccae79a4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
