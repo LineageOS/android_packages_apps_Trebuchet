@@ -45,6 +45,7 @@ import androidx.annotation.NonNull;
 
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.InvariantDeviceProfile;
+import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.testing.TestProtocol;
 import com.android.launcher3.touch.PagedOrientationHandler;
@@ -291,7 +292,8 @@ public class RecentsOrientedState implements
     }
 
     private void updateHomeRotationSetting() {
-        boolean homeRotationEnabled = mSharedPrefs.getBoolean(ALLOW_ROTATION_PREFERENCE_KEY, false);
+        boolean homeRotationEnabled = mSharedPrefs.getBoolean(ALLOW_ROTATION_PREFERENCE_KEY,
+                mContext.getResources().getBoolean(R.bool.allow_rotation));
         setFlag(FLAG_HOME_ROTATION_ALLOWED_IN_PREFS, homeRotationEnabled);
         SystemUiProxy.INSTANCE.get(mContext).setHomeRotationEnabled(homeRotationEnabled);
     }

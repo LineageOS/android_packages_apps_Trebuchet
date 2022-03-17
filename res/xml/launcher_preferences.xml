@@ -53,7 +53,7 @@
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
         android:summary="@string/allow_rotation_desc"
-        android:defaultValue="false"
+        android:defaultValue="@bool/allow_rotation"
         android:persistent="true"
         launcher:logIdOn="615"
         launcher:logIdOff="616" />
