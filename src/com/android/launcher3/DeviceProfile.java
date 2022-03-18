@@ -274,6 +274,9 @@ public class DeviceProfile {
                 && FeatureFlags.ENABLE_TASKBAR.get();
         if (isTaskbarPresent) {
             taskbarSize = res.getDimensionPixelSize(R.dimen.taskbar_size);
+            if (taskbarSize == 0) {
+                isTaskbarPresent = false;
+            }
         }
 
         edgeMarginPx = res.getDimensionPixelSize(R.dimen.dynamic_grid_edge_margin);
