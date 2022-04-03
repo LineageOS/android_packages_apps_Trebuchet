@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Avaekraani ikoone ja vidinaid ei saa lisada, eemaldada ega liigutada</string>
     <string name="settings_lock_layout_summary_off">Avaekraani ikoone ja vidinaid saab lisada, eemaldada ja liigutada</string>
     <string name="settings_edit_widgets_error">Vidinate lisamine avaekraanile pole võimalik</string>
+    <string name="title_show_google_app">Kuva Google\'i rakendus</string>
+    <string name="msg_minus_one_on_left">Kui viipad põhiliselt avaekraanilt paremale</string>
+    <string name="msg_minus_one_on_right">Kui viipad põhiliselt avaekraanilt vasakule</string>
     <string name="desktop_show_labels">Näita töölaual ikoonisilte</string>
     <string name="drawer_show_labels">Näita sahtlis ikoonisilte</string>
 </resources>

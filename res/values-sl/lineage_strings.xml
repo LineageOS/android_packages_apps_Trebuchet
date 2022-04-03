@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">Ikon in pripomočkov ni mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_lock_layout_summary_off">Ikone in pripomočke je mogoče dodajati, odstranjevati ali premikati na domačem zaslonu</string>
     <string name="settings_edit_widgets_error">Dodajanje pripomočkov na domači zaslon ni mogoče</string>
+    <string name="title_show_google_app">Pokaži Google aplikacijo</string>
+    <string name="msg_minus_one_on_left">Ko povlečete desno od glavnega domačega zaslona</string>
+    <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
     <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
     <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
 </resources>

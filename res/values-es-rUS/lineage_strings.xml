@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Los iconos y widgets no se pueden añadir, quitar o mover en la pantalla de inicio</string>
     <string name="settings_lock_layout_summary_off">Los iconos y widgets se pueden añadir, quitar y mover en la pantalla de inicio</string>
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
+    <string name="title_show_google_app">Mostrar aplicación de Google</string>
+    <string name="msg_minus_one_on_left">Al deslizar a la derecha desde la pantalla principal</string>
+    <string name="msg_minus_one_on_right">Al deslizar a la izquierda desde la pantalla principal</string>
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
 </resources>

@@ -14,7 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Bloquiar la distribución</string>
+    <string name="settings_lock_layout_summary_on">Na pantalla d\'aniciu, los iconos y los widgets nun se puen amestar, quitar o mover</string>
+    <string name="settings_lock_layout_summary_off">Na pantalla d\'aniciu, los iconos y los widgets puen amestase, quitase o movese</string>
     <string name="settings_edit_widgets_error">Nun ye posible amestar widgets a la pantalla d\'aniciu</string>
+    <string name="title_show_google_app">Amosar l\'aplicación «Google»</string>
+    <string name="msg_minus_one_on_left">Cuando eslices a la derecha dende la pantalla d\'aniciu principal</string>
+    <string name="msg_minus_one_on_right">Cuando eslices a la esquierda dende la pantalla d\'aniciu principal</string>
     <string name="desktop_show_labels">Amosar les etiquetes de los iconos nel escritoriu</string>
     <string name="drawer_show_labels">Amosar les etiquetes de los iconos nel caxón</string>
 </resources>

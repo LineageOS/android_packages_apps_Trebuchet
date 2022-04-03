@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Bloquear esquema</string>
     <string name="settings_lock_layout_summary_on">Ícones e widgets não podem ser adicionados, removidos e movidos no ecrã inicial</string>
     <string name="settings_lock_layout_summary_off">Ícones e widgets podem ser adicionados, removidos e movidos no ecrã inicial</string>
     <string name="settings_edit_widgets_error">Não é possível adicionar widgets ao ecrã inicial</string>
+    <string name="title_show_google_app">Mostrar aplicação Google</string>
+    <string name="msg_minus_one_on_left">Ao deslizar para a direita no ecrã inicial</string>
+    <string name="msg_minus_one_on_right">Ao deslizar para a esquerda no ecrã inicial</string>
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
     <string name="drawer_show_labels">Mostrar as legendas dos ícones no painel de aplicações</string>
 </resources>

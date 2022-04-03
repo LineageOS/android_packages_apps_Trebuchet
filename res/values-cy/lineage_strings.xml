@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Gosodiad y clo</string>
     <string name="settings_lock_layout_summary_on">Ni ellir ychwanegu, tynnu na symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_lock_layout_summary_off">Gellir ychwanegu, tynnu a symud eiconau a theclynnau ar y sgrin gartref</string>
     <string name="settings_edit_widgets_error">Nid yw\'n bosib ychwanegu teclynnau i\'r sgrin gartref</string>
+    <string name="title_show_google_app">Dangos ap Google</string>
+    <string name="msg_minus_one_on_left">Pan rwyt yn llusgo i\'r dde o\'r brif sgrin gartref</string>
+    <string name="msg_minus_one_on_right">Pan rwyt yn llusgo i\'r chwith o\'r brif sgrin gartref</string>
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
 </resources>

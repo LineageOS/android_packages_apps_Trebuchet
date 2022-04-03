@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">잠금 레이아웃</string>
     <string name="settings_lock_layout_summary_on">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
     <string name="settings_lock_layout_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 있도록 허용합니다.</string>
     <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
+    <string name="title_show_google_app">Google 앱 표시</string>
+    <string name="msg_minus_one_on_left">메인 홈 화면에서 오른쪽으로 스와이프할 때</string>
+    <string name="msg_minus_one_on_right">메인 홈 화면에서 왼쪽으로 스와이프할 때</string>
     <string name="desktop_show_labels">홈 화면에 아이콘 이름 표시</string>
     <string name="drawer_show_labels">앱 서랍에 아이콘 이름 표시</string>
 </resources>

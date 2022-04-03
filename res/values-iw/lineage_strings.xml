@@ -17,6 +17,7 @@
     <string name="settings_lock_layout_summary_on">לא ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_lock_layout_summary_off">ניתן להוסיף, להסיר ולהזיז סמלים ויישומונים על מסך הבית</string>
     <string name="settings_edit_widgets_error">אין אפשרות להוסיף יישומונים למסך הבית</string>
+    <string name="title_show_google_app">הצג את חיפוש Google</string>
     <string name="desktop_show_labels">הצג תוויות סמלים במסך הבית</string>
     <string name="drawer_show_labels">הצג תוויות סמלים במגירת היישומים</string>
 </resources>

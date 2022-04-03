@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Bloquear disposición</string>
     <string name="settings_lock_layout_summary_on">Iconas e widgets no se poden engadir, eliminar e mover na pantalla de inicio</string>
     <string name="settings_lock_layout_summary_off">Iconas e widgets pódense engadir, eliminar e mover na pantalla de inicio</string>
     <string name="settings_edit_widgets_error">Non é posíbel engadir widgets á pantalla de inicio</string>
+    <string name="title_show_google_app">Amosar a aplicación Google Now</string>
+    <string name="msg_minus_one_on_left">Cando deslizas cara á dereita dende a pantalla de inicio</string>
+    <string name="msg_minus_one_on_right">Cando esvaras cara á esquerda dende a pantalla de inicio</string>
     <string name="desktop_show_labels">Amosar as etiquetas das iconas no escritorio</string>
     <string name="drawer_show_labels">Amosar as etiquetas das iconas na gabeta</string>
 </resources>

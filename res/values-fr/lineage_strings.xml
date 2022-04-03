@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Empêcher l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
     <string name="settings_lock_layout_summary_off">Autoriser l\'ajout, la suppression ou le déplacement d\'icônes et de widgets sur l\'écran d\'accueil</string>
     <string name="settings_edit_widgets_error">Impossible d\'ajouter des widgets sur l\'écran d\'accueil</string>
+    <string name="title_show_google_app">Afficher l\'application Google</string>
+    <string name="msg_minus_one_on_left">Lors d\'un balayage vers la droite sur l\'écran d\'accueil principal</string>
+    <string name="msg_minus_one_on_right">Lors d\'un balayage vers la gauche sur l\'écran d\'accueil principal</string>
     <string name="desktop_show_labels">Afficher le libellé des icônes sur le bureau</string>
     <string name="drawer_show_labels">Afficher le libellé des icônes dans le tiroir</string>
 </resources>

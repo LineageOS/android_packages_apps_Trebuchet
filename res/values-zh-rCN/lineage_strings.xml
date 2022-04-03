@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">不能在桌面上添加、删除和移动图标以及小部件</string>
     <string name="settings_lock_layout_summary_off">可以在桌面上添加、删除和移动图标以及小部件</string>
     <string name="settings_edit_widgets_error">无法将小部件添加到主屏幕中</string>
+    <string name="title_show_google_app">显示 Google 应用</string>
+    <string name="msg_minus_one_on_left">当您从主屏幕向右滑动时</string>
+    <string name="msg_minus_one_on_right">当您从主屏幕向左滑动时</string>
     <string name="desktop_show_labels">在桌面上显示图标标签</string>
     <string name="drawer_show_labels">在抽屉里显示图标标签</string>
 </resources>

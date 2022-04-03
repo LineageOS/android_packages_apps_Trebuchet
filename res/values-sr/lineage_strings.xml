@@ -17,6 +17,7 @@
     <string name="settings_lock_layout_summary_on">Онемогућено додавање, уклањање и размештање икона и алатки на почетном екрану</string>
     <string name="settings_lock_layout_summary_off">Омогући додавање, уклањање и размештање икона и алатки на почетном екрану</string>
     <string name="settings_edit_widgets_error">Није могуће додати алатке на почетни екран</string>
+    <string name="title_show_google_app">Прикажи Google апликацију</string>
     <string name="desktop_show_labels">Прикажи ознаке иконица на радној површини</string>
     <string name="drawer_show_labels">Прикажи ознаке иконица у фиоци</string>
 </resources>

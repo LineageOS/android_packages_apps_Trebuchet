@@ -14,7 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">განლაგების ჩაკეტვა</string>
     <string name="settings_lock_layout_summary_on">მთავარ ეკრანზე ვერ მოხერხდება ხატულებისა და ვიჯეტების დამატება, მოცილება ან გადაადგილება</string>
     <string name="settings_lock_layout_summary_off">მთავარ ეკრანზე შესაძლებელია ხატულებისა და ვიჯეტების დამატება, მოცილება ან გადაადგილება</string>
     <string name="settings_edit_widgets_error">მთავარ ეკრანზე ვერ მოხერხდება ვიჯეტების დამატება</string>
+    <string name="title_show_google_app">Google-აპის გამოჩენა</string>
+    <string name="msg_minus_one_on_left">მთავარ ეკრანზე თითის მარჯვნივ გადასმისას</string>
+    <string name="msg_minus_one_on_right">მთავარ ეკრანზე თითის მარცხნივ გადასმისას</string>
+    <string name="desktop_show_labels">ხატულებზე წარწერების ჩვენება ეკრანზე</string>
+    <string name="drawer_show_labels">ხატულებზე წარწერების ჩვენება მენიუში</string>
 </resources>

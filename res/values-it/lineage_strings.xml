@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Blocca layout</string>
     <string name="settings_lock_layout_summary_on">Non é possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
     <string name="settings_lock_layout_summary_off">É possibile aggiungere, rimuovere e spostare icone e widget nella schermata home</string>
     <string name="settings_edit_widgets_error">Non é possibile aggiungere widget alla schermata home</string>
+    <string name="title_show_google_app">Mostra l\'app Google</string>
+    <string name="msg_minus_one_on_left">Quando scorri verso destra dalla schermata home</string>
+    <string name="msg_minus_one_on_right">Quando scorri verso sinistra dalla schermata home</string>
     <string name="desktop_show_labels">Mostra nomi icone nella schermata home</string>
     <string name="drawer_show_labels">Mostra nomi icone nel drawer</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">ತವರುಪರದೆಯ ಮೇಲೆ ಚಿಹ್ನೆಗಳು ಮತ್ತು ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಕೆ, ತೆಗೆಯುವಿಕೆ ಮತ್ತು ಸ್ಥಳಾಂತರ ಆಗುವುದಿಲ್ಲ</string>
     <string name="settings_lock_layout_summary_off">ಮುಖ್ಯ ಪರದೆಯ ಮೇಲೆ ಚಿಹ್ನೆಗಳು ಮತ್ತು ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಕೆ, ತೆಗೆಯುವಿಕೆ ಮತ್ತು ಸ್ಥಳಾಂತರ ಮಾಡಬಹುದು</string>
     <string name="settings_edit_widgets_error">ತವರು ಪರದೆಗೆ ಕಿಂಡಿಚೂಟಿಗಳನ್ನು ಸೇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="title_show_google_app">ಗೂಗಲ್ ಆಪ್ ತೋರಿಸು</string>
+    <string name="msg_minus_one_on_left">ತವರು ಪರದೆಯಿಂದ ನೀವು ಬಲಕ್ಕೆ ಸೆಳೆದಾಗ</string>
+    <string name="msg_minus_one_on_right">ತವರು ಪರದೆಯಿಂದ ನೀವು ಎಡಕ್ಕೆ ಸೆಳೆದಾಗ</string>
     <string name="desktop_show_labels">ಮುಖ್ಯ ಪರದೆಯಲ್ಲಿ ಚಿಹ್ನೆಗಳ ಹೆಸರುಗಳನ್ನು ತೋರಿಸು</string>
     <string name="drawer_show_labels">ಎಳೆಗೂಡಲ್ಲಿ ಚಿಹ್ನೆಗಳ ಹೆಸರನ್ನು ತೋರಿಸು</string>
 </resources>

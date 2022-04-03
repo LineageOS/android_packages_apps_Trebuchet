@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">Iconen en widgets kunnen niet worden toegevoegd, verwijderd en verplaatst op het startscherm</string>
     <string name="settings_lock_layout_summary_off">Iconen en widgets kunnen worden toegevoegd, verwijderd en verplaatst op het startscherm</string>
     <string name="settings_edit_widgets_error">Het is niet mogelijk om widgets toe te voegen aan het startscherm</string>
+    <string name="title_show_google_app">Toon Google app</string>
+    <string name="msg_minus_one_on_left">Wanneer je naar rechts veegt vanuit het startscherm</string>
+    <string name="msg_minus_one_on_right">Wanneer je naar links veegt vanuit het startscherm</string>
     <string name="desktop_show_labels">Toon pictogramlabels op het bureaublad</string>
     <string name="drawer_show_labels">Pictogramlabels in app-overzicht weergeven</string>
 </resources>

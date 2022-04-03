@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Kuvakkeita ja widgettejä ei voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_lock_layout_summary_off">Kuvakkeet ja widgetit voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_edit_widgets_error">Kotinäytölle ei ole mahdollista lisätä widgettejä</string>
+    <string name="title_show_google_app">Näytä Google-sovellus</string>
+    <string name="msg_minus_one_on_left">Kun pyyhkäiset oikealle pääkotinäytöltä</string>
+    <string name="msg_minus_one_on_right">Kun pyyhkäiset vasemmalle pääkotinäytöltä</string>
     <string name="desktop_show_labels">Näytä kuvakkeiden tekstit työpöydällä</string>
     <string name="drawer_show_labels">Näytä kuvakkeiden tekstit valikossa</string>
 </resources>

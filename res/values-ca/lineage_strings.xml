@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">Les icones i els widgets no poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
     <string name="settings_lock_layout_summary_off">Les icones i els widgets poden ser afegits, eliminats i moguts a la pantalla d\'inici</string>
     <string name="settings_edit_widgets_error">No es possible afegir widgets a la pantalla d\'inici</string>
+    <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
+    <string name="msg_minus_one_on_left">Quan feu lliscar el dit cap a la dreta des de la pantalla principal d\'inici</string>
+    <string name="msg_minus_one_on_right">Quan feu lliscar el dit cap a l\'esquerra des de la pantalla principal d\'inici</string>
     <string name="desktop_show_labels">Mostra les etiquetes de les icones a l\'escriptori</string>
     <string name="drawer_show_labels">Mostra les etiquetes de les icones al calaix</string>
 </resources>

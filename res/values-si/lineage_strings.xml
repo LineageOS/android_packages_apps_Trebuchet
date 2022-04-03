@@ -14,9 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_lock_layout_summary_on">Ikoner og widgets kan ikke tilføjes, fjernes og flyttes på hjemmeskærmen</string>
-    <string name="settings_lock_layout_summary_off">Ikoner og widgets kan tilføjes, fjernes og flyttes på hjemmeskærmen</string>
-    <string name="settings_edit_widgets_error">Det er ikke muligt at tilføje widgets til hjemmeskærmen</string>
-    <string name="desktop_show_labels">Vis ikontekst på startskærmen</string>
-    <string name="drawer_show_labels">Vis ikontekst i skuffen</string>
+    <string name="settings_lock_layout_title">පිරිසැලසුම අගුළුලන්න</string>
 </resources>

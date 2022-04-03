@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">ไอคอนและวิดเจ็ต จะไม่สามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_lock_layout_summary_off">ไอคอนและวิดเจ็ต จะสามารถถูก เพิ่ม ลบ และ ย้ายบนหน้าจอหลัก</string>
     <string name="settings_edit_widgets_error">ไม่สามารถที่จะเพิ่ม วิดเจ็ต บนหน้าจอหลักได้</string>
+    <string name="title_show_google_app">แสดงแอป Google</string>
+    <string name="msg_minus_one_on_left">เมื่อคุณปัดนิ้วไปทางขวาจากหน้าจอหลัก</string>
+    <string name="msg_minus_one_on_right">เมื่อคุณปัดนิ้วไปทางซ้ายจากหน้าจอหลัก</string>
     <string name="desktop_show_labels">แสดงชื่อไอคอนบนเดสก์ทอป</string>
     <string name="drawer_show_labels">แสดงชื่อไอคอนในลิ้นชัก</string>
 </resources>

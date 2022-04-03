@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">Ikonat dhe veglat nuk mund të shtohen, hiqen dhe zhvendosen në ekranin kryesor</string>
     <string name="settings_lock_layout_summary_off">Ikonat dhe veglat mund të shtohen, hiqen dhe zhvendosen në ekranin kryesor</string>
     <string name="settings_edit_widgets_error">Nuk është e mundur të shtohen vegla në dritaren kryesore</string>
+    <string name="title_show_google_app">Shfaq Google app</string>
+    <string name="msg_minus_one_on_left">Kur rëshket djathtas nga faqja kryesore</string>
+    <string name="msg_minus_one_on_right">Kur rëshket majtas nga faqja kryesore</string>
     <string name="desktop_show_labels">Shfaq emërtimin e ikonave në ekran</string>
     <string name="drawer_show_labels">Shfaq emërtimin e ikonave në menu</string>
 </resources>

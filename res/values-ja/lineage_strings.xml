@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">アイコンやウィジェットの追加、削除や移動を許可しません</string>
     <string name="settings_lock_layout_summary_off">アイコンやウィジェットの追加、削除や移動を許可します</string>
     <string name="settings_edit_widgets_error">ウィジェットをホーム画面に追加できません</string>
+    <string name="title_show_google_app">Google アプリを表示</string>
+    <string name="msg_minus_one_on_left">メインホーム画面から右にスワイプする時</string>
+    <string name="msg_minus_one_on_right">メインホーム画面から左にスワイプする時</string>
     <string name="desktop_show_labels">デスクトップ上でアイコンラベルを表示</string>
     <string name="drawer_show_labels">ドロワーでアイコンラベルを表示</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Ezin daitezke ikonoak eta trepetak hasieran pantailan gehitu, kendu edo lekuz aldatu</string>
     <string name="settings_lock_layout_summary_off">Ikonoak eta trepetak hasieran pantailan gehitu, kendu daitezke eta lekuz aldatu daitezke</string>
     <string name="settings_edit_widgets_error">Ezin dira trepetak hasiera pantailara gehitu</string>
+    <string name="title_show_google_app">Erakutsi Google aplikazioa</string>
+    <string name="msg_minus_one_on_left">Hasiera pantailatik hatza eskuinera pasatzean</string>
+    <string name="msg_minus_one_on_right">Hasiera pantailatik hatza ezkerrera pasatzean</string>
     <string name="desktop_show_labels">Erakutsi ikonoen etiketa mahaigainean</string>
     <string name="drawer_show_labels">Erakutsi ikonoen etiketak tiraderan</string>
 </resources>

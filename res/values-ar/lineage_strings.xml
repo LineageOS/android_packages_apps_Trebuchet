@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_lock_layout_summary_off">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
+    <string name="title_show_google_app">أظهر تطبيق Google</string>
+    <string name="msg_minus_one_on_left">عند السحب لليمين من الشاشة الرئيسية الاساسية</string>
+    <string name="msg_minus_one_on_right">عند السحب لليسار من الشاشة الرئيسية الأساسية</string>
     <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
     <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
 </resources>

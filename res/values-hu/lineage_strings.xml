@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Elrendezés-zárolás</string>
     <string name="settings_lock_layout_summary_on">A kezdőképernyőn nem engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
     <string name="settings_lock_layout_summary_off">A kezdőképernyőn engedélyezett az ikon- és modulhozzáadás, eltávolítás és mozgatás</string>
     <string name="settings_edit_widgets_error">Nem lehetséges modulokat hozzáadni a kezdőképernyőhöz</string>
+    <string name="title_show_google_app">A Google-alkalmazás megjelenítése</string>
+    <string name="msg_minus_one_on_left">Amikor a főképernyőn jobbra csúsztat</string>
+    <string name="msg_minus_one_on_right">Amikor a főképernyőn balra csúsztat</string>
     <string name="desktop_show_labels">Ikonfeliratok megjelenítése az asztalon</string>
     <string name="drawer_show_labels">Ikonfeliratok megjelenítése az alkalmazásfiókban</string>
 </resources>

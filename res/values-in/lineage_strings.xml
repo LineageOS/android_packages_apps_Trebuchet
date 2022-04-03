@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_lock_layout_summary_off">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
+    <string name="title_show_google_app">Tampilkan aplikasi Google</string>
+    <string name="msg_minus_one_on_left">Ketika Anda mengusap ke kanan dari layar utama</string>
+    <string name="msg_minus_one_on_right">Ketika Anda mengusap ke kiri dari layar utama</string>
     <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
     <string name="drawer_show_labels">Sembunyikan label ikon di panel</string>
 </resources>

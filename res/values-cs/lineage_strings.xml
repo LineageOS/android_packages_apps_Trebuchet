@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Ikony a widgety nelze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_lock_layout_summary_off">Ikony a widgety lze přidat, odebrat a přesunout na domovské obrazovce</string>
     <string name="settings_edit_widgets_error">Nelze přidat widgety na domovskou obrazovku</string>
+    <string name="title_show_google_app">Zobrazit aplikaci Google</string>
+    <string name="msg_minus_one_on_left">Při gestu tažení vpravo z hlavní domovské obrazovky</string>
+    <string name="msg_minus_one_on_right">Při gestu tažení vlevo z hlavní domovské obrazovky</string>
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
 </resources>

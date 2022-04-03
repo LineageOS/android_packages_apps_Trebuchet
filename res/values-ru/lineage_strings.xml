@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Блокировка макета</string>
     <string name="settings_lock_layout_summary_on">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_lock_layout_summary_off">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
     <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
+    <string name="title_show_google_app">Показать приложение Google</string>
+    <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
+    <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
     <string name="desktop_show_labels">Отображать подписи значков на рабочем столе</string>
     <string name="drawer_show_labels">Отображать подписи значков в меню</string>
 </resources>

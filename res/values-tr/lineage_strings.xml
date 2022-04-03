@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
     <string name="settings_lock_layout_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
     <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>
+    <string name="title_show_google_app">Google uygulamasını göster</string>
+    <string name="msg_minus_one_on_left">Ana ekrandan sağa kaydırdığınızda</string>
+    <string name="msg_minus_one_on_right">Ana ekrandan sola kaydırdığınızda</string>
     <string name="desktop_show_labels">Ana ekranda simge etiketlerini göster</string>
     <string name="drawer_show_labels">Çekmecede simge etiketlerini göster</string>
 </resources>

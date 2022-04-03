@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Layout sperren</string>
     <string name="settings_lock_layout_summary_on">Symbole und Widgets können nicht auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_lock_layout_summary_off">Symbole und Widgets können auf dem Startbildschirm hinzugefügt, entfernt und verschoben werden</string>
     <string name="settings_edit_widgets_error">Es ist nicht möglich, Widgets zum Startbildschirm hinzuzufügen</string>
+    <string name="title_show_google_app">Google App anzeigen</string>
+    <string name="msg_minus_one_on_left">Wenn du vom Hauptstartbildschirm aus nach rechts wischst</string>
+    <string name="msg_minus_one_on_right">Wenn du vom Hauptstartbildschirm aus nach links wischst</string>
     <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
     <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
 </resources>

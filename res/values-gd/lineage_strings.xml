@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Co-dhealbhachd na glaise</string>
     <string name="settings_lock_layout_summary_on">Cha ghabh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
-    <string name="settings_lock_layout_summary_off">Gabhaidh ìomhaigheagan is widgets a deasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
+    <string name="settings_lock_layout_summary_off">Gabhaidh ìomhaigheagan is widgets a dheasachadh, a thoirt air falbh ’s a ghluasad air an sgrìn dhachaigh</string>
     <string name="settings_edit_widgets_error">Cha ghabh widgets a chur ris an sgrìn dhachaigh</string>
+    <string name="title_show_google_app">Seall aplacaid Google</string>
+    <string name="msg_minus_one_on_left">Le grad-shlaighdeadh gu deas on phrìomh sgrìn dhachaigh</string>
+    <string name="msg_minus_one_on_right">Le grad-shlaighdeadh gu clì on phrìomh sgrìn dhachaigh</string>
     <string name="desktop_show_labels">Seall leubailean nan ìomhaigheagan air an deasg</string>
     <string name="drawer_show_labels">Seall leubailean nan ìomhaigheagan san drathair</string>
 </resources>

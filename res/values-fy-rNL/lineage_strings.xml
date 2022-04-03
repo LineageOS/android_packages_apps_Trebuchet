@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Piktogrammen en widgets kinne net tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
     <string name="settings_lock_layout_summary_off">Piktogrammen en widgets kinne tafoege, fuortsmiten en ferpleatst wurde op it startskerm</string>
     <string name="settings_edit_widgets_error">It is net mooglik om widgets ta te foegjen oan it startskerm</string>
+    <string name="title_show_google_app">Google-app toane</string>
+    <string name="msg_minus_one_on_left">Wannear\'t jo fan it startskerm út nei rjochts feie</string>
+    <string name="msg_minus_one_on_right">Wannear\'t jo fan it startskerm út nei links feie</string>
     <string name="desktop_show_labels">Piktogramlabels op it startskerm toane</string>
     <string name="drawer_show_labels">Piktogramlabels yn it app-oersjoch toane</string>
 </resources>

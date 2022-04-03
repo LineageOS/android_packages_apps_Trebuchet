@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Khóa bố cục</string>
     <string name="settings_lock_layout_summary_on">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_lock_layout_summary_off">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
+    <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
+    <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
+    <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
 </resources>

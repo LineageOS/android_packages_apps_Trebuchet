@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Оформление на заключването</string>
     <string name="settings_lock_layout_summary_on">Икони и джаджи не могат да бъдат добавяни, премахвани и местени на началния екран</string>
     <string name="settings_lock_layout_summary_off">Икони и джаджи могат да бъдат добавяни, премахвани и местени на началния екран</string>
     <string name="settings_edit_widgets_error">Невъзможно е да се добавят джаджи към началния екран</string>
+    <string name="title_show_google_app">Покажи Google апликацията</string>
+    <string name="msg_minus_one_on_left">Когато плъзнете надясно от главното меню</string>
+    <string name="msg_minus_one_on_right">Когато плъзнете наляво от главното меню</string>
     <string name="desktop_show_labels">Покажи етикетите на иконите на работния плот</string>
     <string name="drawer_show_labels">Покажи етикетите на иконите</string>
 </resources>

@@ -17,6 +17,9 @@
     <string name="settings_lock_layout_summary_on">Ikony a miniaplikácie nie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_lock_layout_summary_off">Ikony a miniaplikácie je možné pridať, odstrániť a presunúť na domovskú obrazovku</string>
     <string name="settings_edit_widgets_error">Na úvodnú obrazovku nie je možné pridať miniaplikácie</string>
+    <string name="title_show_google_app">Zobraziť Google aplikácie</string>
+    <string name="msg_minus_one_on_left">Pri potiahnutí prstom vpravo na hlavnej obrazovke</string>
+    <string name="msg_minus_one_on_right">Pri potiahnutí prstom vľavo na hlavnej obrazovke</string>
     <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
     <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
 </resources>

@@ -18,6 +18,9 @@
     <string name="settings_lock_layout_summary_on">Iconițele și widget-urile nu pot fi adăugate, eliminate sau mutate pe homescreen</string>
     <string name="settings_lock_layout_summary_off">Iconițele și widget-urile pot fi adăugate, eliminate sau mutate pe homescreen</string>
     <string name="settings_edit_widgets_error">Nu este posibil să adăugați widget-uri pe homescreen</string>
+    <string name="title_show_google_app">Arată aplicația Google</string>
+    <string name="msg_minus_one_on_left">Când glisați dreapta din ecranul acasă principal</string>
+    <string name="msg_minus_one_on_right">Când glisați stânga din ecranul acasă principal</string>
     <string name="desktop_show_labels">Arată etichetele pictogramelor de pe desktop</string>
     <string name="drawer_show_labels">Arată etichetele pictogramelor în sertarul cu aplicaţii</string>
 </resources>

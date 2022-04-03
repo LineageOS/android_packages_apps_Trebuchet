@@ -14,9 +14,13 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Kilid düzülüşü</string>
     <string name="settings_lock_layout_summary_on">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilməz</string>
     <string name="settings_lock_layout_summary_off">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilər</string>
     <string name="settings_edit_widgets_error">Əsas ekrana vidget əlavə etmək mümkün deyil</string>
+    <string name="title_show_google_app">Google tətbiqini göstər</string>
+    <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
+    <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
     <string name="desktop_show_labels">Masaüstündə nişan etiketlərini göstər</string>
     <string name="drawer_show_labels">Siyirmədə nişan etiketlərini göstər</string>
 </resources>
