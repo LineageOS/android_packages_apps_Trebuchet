@@ -173,6 +173,7 @@ android_library {
         "android.appwidget.flags-aconfig-java",
         "com.android.window.flags.window-aconfig-java",
         "libGoogleFeed",
+        "org.lineageos.platform",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
