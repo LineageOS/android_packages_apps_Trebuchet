@@ -72,6 +72,8 @@ import com.android.launcher3.util.ResourceHelper;
 import com.android.launcher3.util.WindowBounds;
 import com.android.launcher3.util.window.WindowManagerProxy;
 
+import lineageos.providers.LineageSettings;
+
 import java.io.PrintWriter;
 import java.util.Locale;
 import java.util.function.Consumer;
@@ -353,8 +355,10 @@ public class DeviceProfile {
         isTablet = info.isTablet(windowBounds);
         isPhone = !isTablet;
         isTwoPanels = isTablet && isMultiDisplay;
-        isTaskbarPresent = (isTablet || (enableTinyTaskbar() && isGestureMode))
-                && WindowManagerProxy.INSTANCE.get(context).isTaskbarDrawnInProcess();
+        boolean isTaskBarEnabled = LineageSettings.System.getInt(context.getContentResolver(),
+                LineageSettings.System.ENABLE_TASKBAR,
+                (isTablet || (enableTinyTaskbar() && isGestureMode)) ? 1 : 0) == 1;
+        isTaskbarPresent = isTaskBarEnabled && ApiWrapper.TASKBAR_DRAWN_IN_PROCESS;
 
         // Some more constants.
         context = getContext(context, info, isVerticalBarLayout() || (isTablet && isLandscape)
