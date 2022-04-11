@@ -69,6 +69,8 @@ import com.android.systemui.shared.system.QuickStepContract;
 import com.android.systemui.unfold.UnfoldTransitionProgressProvider;
 import com.android.systemui.unfold.util.ScopedUnfoldTransitionProgressProvider;
 
+import lineageos.providers.LineageSettings;
+
 import java.io.PrintWriter;
 import java.util.StringJoiner;
 
@@ -104,6 +106,9 @@ public class TaskbarManager {
     private static final Uri NAV_BAR_KIDS_MODE = Settings.Secure.getUriFor(
             Settings.Secure.NAV_BAR_KIDS_MODE);
 
+    private static final Uri ENABLE_TASKBAR_URI = LineageSettings.System.getUriFor(
+            LineageSettings.System.ENABLE_TASKBAR);
+
     private final Context mContext;
     private final TaskbarNavButtonController mNavButtonController;
     private final ComponentCallbacks mComponentCallbacks;
@@ -132,6 +137,7 @@ public class TaskbarManager {
      */
     private final OnIDPChangeListener mIdpChangeListener = c -> recreateTaskbar();
     private final SettingsCache.OnChangeListener mOnSettingsChangeListener = c -> recreateTaskbar();
+    private final SettingsCache.OnChangeListener mEnableTaskBarListener;
 
     private boolean mUserUnlocked = false;
 
@@ -266,6 +272,18 @@ public class TaskbarManager {
                 .register(USER_SETUP_COMPLETE_URI, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mContext)
                 .register(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
+        mEnableTaskBarListener = c -> {
+            // Create the illusion of this taking effect immediately
+            // Also needed because TaskbarManager inits before SystemUiProxy on start
+            boolean enabled = LineageSettings.System.getInt(mContext.getContentResolver(),
+                    LineageSettings.System.ENABLE_TASKBAR, 0) == 1;
+            SystemUiProxy.INSTANCE.get(mContext).setTaskbarEnabled(enabled);
+
+            // Restart launcher
+            System.exit(0);
+        };
+        SettingsCache.INSTANCE.get(mContext)
+                .register(ENABLE_TASKBAR_URI, mEnableTaskBarListener);
         Log.d(TASKBAR_NOT_DESTROYED_TAG, "registering component callbacks from constructor.");
         mContext.registerComponentCallbacks(mComponentCallbacks);
         mShutdownReceiver.register(mContext, Intent.ACTION_SHUTDOWN);
@@ -419,9 +437,10 @@ public class TaskbarManager {
                 + " [dp != null (i.e. mUserUnlocked)]=" + (dp != null)
                 + " FLAG_HIDE_NAVBAR_WINDOW=" + FLAG_HIDE_NAVBAR_WINDOW
                 + " dp.isTaskbarPresent=" + (dp == null ? "null" : dp.isTaskbarPresent));
+            SystemUiProxy sysui = SystemUiProxy.INSTANCE.get(mContext);
+            sysui.setTaskbarEnabled(isTaskbarEnabled);
             if (!isTaskbarEnabled) {
-                SystemUiProxy.INSTANCE.get(mContext)
-                    .notifyTaskbarStatus(/* visible */ false, /* stashed */ false);
+                sysui.notifyTaskbarStatus(/* visible */ false, /* stashed */ false);
                 return;
             }
 
