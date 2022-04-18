@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c198a073_e3bb7345",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-04-18T11:57:25Z",
+      "side": 1,
+      "message": "I\u0027m not sure whether I should squash this with the previous cherry-pick commit from 18.1.",
+      "revId": "c6870d57c10b582837f892a9f17be0747cc5324b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
