@@ -16,6 +16,23 @@
       "message": "I\u0027m not sure whether I should squash this with the previous cherry-pick commit from 18.1.",
       "revId": "c6870d57c10b582837f892a9f17be0747cc5324b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aad599d_5868d50a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-04-18T13:06:47Z",
+      "side": 1,
+      "message": "We usually squash changes that are only used to make a cherry picked patch work again on a new branch into the original patch - both patches don\u0027t work standalone",
+      "revId": "c6870d57c10b582837f892a9f17be0747cc5324b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
