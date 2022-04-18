@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -13,6 +14,10 @@ import java.util.stream.Collectors;
 public class AppFilter {
 
     private final Set<ComponentName> mFilteredComponents;
+
+    public AppFilter() {
+        mFilteredComponents = Collections.<ComponentName>emptySet();
+    }
 
     public AppFilter(Context context) {
         mFilteredComponents = Arrays.stream(

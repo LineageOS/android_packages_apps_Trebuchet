@@ -342,9 +342,9 @@ public class ItemClickHandler {
         boolean isProtected = cn != null && db.isPackageProtected(cn.getPackageName());
 
         if (isProtected) {
-            launcher.startActivitySafelyAuth(v, intent, item, sourceContainer);
+            launcher.startActivitySafelyAuth(v, intent, item);
         } else {
-            launcher.startActivitySafely(v, intent, item, sourceContainer);
+            launcher.startActivitySafely(v, intent, item);
         }
     }
 }
