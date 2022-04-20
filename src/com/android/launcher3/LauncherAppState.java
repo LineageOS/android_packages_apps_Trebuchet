@@ -21,6 +21,8 @@ import static com.android.launcher3.config.FeatureFlags.ENABLE_THEMED_ICONS;
 import static com.android.launcher3.util.Executors.MODEL_EXECUTOR;
 import static com.android.launcher3.util.SettingsCache.NOTIFICATION_BADGING_URI;
 
+import android.app.WallpaperColors;
+import android.app.WallpaperManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -50,6 +52,9 @@ import com.android.launcher3.util.SimpleBroadcastReceiver;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.widget.custom.CustomWidgetManager;
 
+import java.util.TimerTask;
+import java.util.Timer;
+
 public class LauncherAppState implements SafeCloseable {
 
     public static final String ACTION_FORCE_ROLOAD = "force-reload-launcher";
@@ -65,6 +70,7 @@ public class LauncherAppState implements SafeCloseable {
     private final IconCache mIconCache;
     private final InvariantDeviceProfile mInvariantDeviceProfile;
     private final RunnableList mOnTerminateCallback = new RunnableList();
+    private final WallpaperManager mWallpaperManager;
 
     public static LauncherAppState getInstance(final Context context) {
         return INSTANCE.get(context);
@@ -132,6 +138,10 @@ public class LauncherAppState implements SafeCloseable {
         onNotificationSettingsChanged(settingsCache.getValue(NOTIFICATION_BADGING_URI));
         mOnTerminateCallback.add(() ->
                 settingsCache.unregister(NOTIFICATION_BADGING_URI, notificationLister));
+
+        if (mWallpaperManager.isWallpaperSupported()) {
+            mWallpaperManager.addOnColorsChangedListener(observer, null /* handler */);
+        }
     }
 
     public LauncherAppState(Context context, @Nullable String iconCacheFileName) {
@@ -143,6 +153,7 @@ public class LauncherAppState implements SafeCloseable {
                 iconCacheFileName, mIconProvider);
         mModel = new LauncherModel(context, this, mIconCache, new AppFilter(mContext),
                 iconCacheFileName != null);
+        mWallpaperManager = context.getSystemService(WallpaperManager.class);
         mOnTerminateCallback.add(mIconCache::close);
     }
 
@@ -195,7 +206,8 @@ public class LauncherAppState implements SafeCloseable {
     }
 
     private class IconObserver
-            implements IconProvider.IconChangeListener, OnSharedPreferenceChangeListener {
+            implements IconProvider.IconChangeListener, OnSharedPreferenceChangeListener,
+                WallpaperManager.OnColorsChangedListener {
 
         @Override
         public void onAppIconChanged(String packageName, UserHandle user) {
@@ -222,6 +234,16 @@ public class LauncherAppState implements SafeCloseable {
                 mIconProvider.setIconThemeSupported(Themes.isThemedIconEnabled(mContext));
                 verifyIconChanged();
             }
+        }
+
+        @Override
+        public void onColorsChanged(WallpaperColors colors, int which) {
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    refreshAndReloadLauncher();
+                }
+            }, 1000);
         }
     }
 }
