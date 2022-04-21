@@ -16,6 +16,24 @@
       "message": "that just removed last patchset changes",
       "revId": "e4ebbc93dac63034907be9e7a96b9b3ca2ea27fc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2f8da2d_f73ff4da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18590
+      },
+      "writtenOn": "2022-04-21T19:51:23Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "14cc4c36_3c3eb30d",
+      "revId": "e4ebbc93dac63034907be9e7a96b9b3ca2ea27fc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
