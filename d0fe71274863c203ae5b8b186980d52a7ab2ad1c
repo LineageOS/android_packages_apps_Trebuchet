@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "add9f94e_49088763",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-04-30T12:21:45Z",
+      "side": 1,
+      "message": "I see this way AppFilter will continue to work.",
+      "parentUuid": "e3285d46_2a08b664",
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb334858_c0290fe5",
@@ -35,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "809cdfe2_dfc11078",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-04-30T12:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb334858_c0290fe5",
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "895115c1_49e5ac32",
@@ -48,6 +84,30 @@
       "writtenOn": "2022-04-30T11:02:22Z",
       "side": 1,
       "message": "might be worth calling the super method\nreturn !mDbHelper.isPackageHidden(app.getPackageName()) \u0026\u0026 super.shouldShowApp(app);",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 64
+      },
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "247513b9_38eb7a9f",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 28935
+      },
+      "writtenOn": "2022-04-30T12:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "895115c1_49e5ac32",
       "range": {
         "startLine": 38,
         "startChar": 0,
