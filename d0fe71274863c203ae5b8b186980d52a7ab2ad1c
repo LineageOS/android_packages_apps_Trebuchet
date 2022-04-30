@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3285d46_2a08b664",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-30T11:02:22Z",
+      "side": 1,
+      "message": "This way you avoid touching AppFilter",
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb334858_c0290fe5",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-30T11:02:22Z",
+      "side": 1,
+      "message": "Call the super method\nsuper(context)\nThis will setup the mFilteredComponents",
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "895115c1_49e5ac32",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-04-30T11:02:22Z",
+      "side": 1,
+      "message": "might be worth calling the super method\nreturn !mDbHelper.isPackageHidden(app.getPackageName()) \u0026\u0026 super.shouldShowApp(app);",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 64
+      },
+      "revId": "d0fe71274863c203ae5b8b186980d52a7ab2ad1c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
