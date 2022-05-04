@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88885195_dc6a2059",
+        "filename": "AndroidManifest-common.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Bogus spaces.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 4
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a5e445c_18775480",
+        "filename": "src/com/android/launcher3/lineage/trust/LoadTrustComponentsTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Wrong indentation.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 28
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba98977e_20b7af81",
+        "filename": "src/com/android/launcher3/lineage/trust/TrustAppsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Move to the top.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 0
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca2792e1_66c73f21",
+        "filename": "src/com/android/launcher3/lineage/trust/UpdateItemTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Wrong indentation.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 19
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6abeac4_5627d1b6",
+        "filename": "src/com/android/launcher3/lineage/trust/db/TrustDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 81,
+        "startChar": 11,
+        "endLine": 81,
+        "endChar": 102
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e579c99b_d2320fa6",
+        "filename": "src/com/android/launcher3/lineage/trust/db/TrustDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 107,
+        "startChar": 12,
+        "endLine": 107,
+        "endChar": 102
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfcc6603_3fd9a913",
+        "filename": "src/com/android/launcher3/lineage/trust/db/TrustDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 164,
+        "startChar": 8,
+        "endLine": 164,
+        "endChar": 118
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ead13e1c_0c60902c",
+        "filename": "src/com/android/launcher3/lineage/trust/db/TrustDatabaseHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-05-04T15:49:42Z",
+      "side": 1,
+      "message": "Over 100 chars.",
+      "range": {
+        "startLine": 182,
+        "startChar": 8,
+        "endLine": 182,
+        "endChar": 121
+      },
+      "revId": "a440811d7f97b7e55ac30cf5d6301e103dc3a3e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
