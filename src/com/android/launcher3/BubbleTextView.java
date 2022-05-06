@@ -1059,7 +1059,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
                 Locale.getDefault());
         HashMap<String, Object> args = new HashMap();
         args.put("app_name", appName);
-        args.put("count", notificationCount);
+        args.put("count", notificationCount + 1);
         return icuCountFormat.format(args);
     }
 }
