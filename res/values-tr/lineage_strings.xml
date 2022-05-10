@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Kilit düzeni</string>
     <string name="settings_lock_layout_summary_on">Simgeleri ve widget\'lar ana ekrandan eklenemez, kaldırılamaz ve taşınamaz</string>
     <string name="settings_lock_layout_summary_off">Simgeleri ve widget\'lar ana ekrandan eklenebilir, kaldırılabilir ve taşınabilir</string>
     <string name="settings_edit_widgets_error">Ana ekrana widget eklemek mümkün değildir</string>

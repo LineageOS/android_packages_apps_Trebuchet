@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Kunci layout</string>
     <string name="settings_lock_layout_summary_on">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_lock_layout_summary_off">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
     <string name="settings_edit_widgets_error">Tidak mungkin untuk menambah widget di layar utama</string>
