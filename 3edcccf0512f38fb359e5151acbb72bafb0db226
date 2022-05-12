@@ -34,6 +34,24 @@
       "parentUuid": "e4fe230c_409b8300",
       "revId": "3edcccf0512f38fb359e5151acbb72bafb0db226",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89970163_d64c4196",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-05-12T15:24:25Z",
+      "side": 1,
+      "message": "Well, then this info needs to go into the commit message",
+      "parentUuid": "d26f360f_9cf4a8e0",
+      "revId": "3edcccf0512f38fb359e5151acbb72bafb0db226",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
