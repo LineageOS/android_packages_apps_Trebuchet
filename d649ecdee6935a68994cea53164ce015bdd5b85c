@@ -16,6 +16,24 @@
       "message": "it can be \"max(notifications, 1)\" instead?",
       "revId": "d649ecdee6935a68994cea53164ce015bdd5b85c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "554ab32c_b5e39879",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18074
+      },
+      "writtenOn": "2022-05-21T11:03:02Z",
+      "side": 1,
+      "message": "sorry, I\u0027m not a java expert at all, so I don\u0027t know which one would be better, however, I don\u0027t see the declaration of the notifications variable in the BubbleTextView class.",
+      "parentUuid": "efcab73a_03765af6",
+      "revId": "d649ecdee6935a68994cea53164ce015bdd5b85c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
