@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_lock_layout_title">잠금 레이아웃</string>
+    <string name="settings_lock_layout_title">레이아웃 잠금</string>
     <string name="settings_lock_layout_summary_on">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 없습니다.</string>
     <string name="settings_lock_layout_summary_off">아이콘과 위젯을 홈 화면에 추가하거나 제거, 이동할 수 있도록 허용합니다.</string>
     <string name="settings_edit_widgets_error">홈 화면에 위젯을 추가할 수 없습니다.</string>
