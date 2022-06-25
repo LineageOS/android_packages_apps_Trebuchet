@@ -16,6 +16,24 @@
       "message": "Should also remove 1 icon from dock if changing no. of hotseat icons for 4_by_5\n\nhttps://github.com/LineageOS/android_packages_apps_Trebuchet/blob/a2e1387f6c2b89adfd3ec6abbcc52d988be866dc/res/xml/default_workspace_4x5.xml#L60",
       "revId": "a2e1387f6c2b89adfd3ec6abbcc52d988be866dc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4a7039b_eb1ae1cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-06-25T04:19:46Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4de6cbf6_3951fce3",
+      "revId": "a2e1387f6c2b89adfd3ec6abbcc52d988be866dc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
