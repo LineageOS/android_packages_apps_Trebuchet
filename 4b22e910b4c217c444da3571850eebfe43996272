@@ -33,6 +33,46 @@
       "message": "Hi Michael,\n\ncould you please review this CL?",
       "revId": "4b22e910b4c217c444da3571850eebfe43996272",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c966354d_e25944af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-06-27T12:22:57Z",
+      "side": 1,
+      "message": "super nitpick, will merge once resolved",
+      "revId": "4b22e910b4c217c444da3571850eebfe43996272",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fc8bebe_8a96d4d1",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2022-06-27T12:22:57Z",
+      "side": 1,
+      "message": "useless, super call will crash before reaching this check",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 9
+      },
+      "revId": "4b22e910b4c217c444da3571850eebfe43996272",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
