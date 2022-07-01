@@ -73,6 +73,30 @@
       },
       "revId": "4b22e910b4c217c444da3571850eebfe43996272",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b057979_0941ea7a",
+        "filename": "src/com/android/launcher3/lineage/trust/HiddenAppsFilter.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 31009
+      },
+      "writtenOn": "2022-07-01T09:25:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fc8bebe_8a96d4d1",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 9
+      },
+      "revId": "4b22e910b4c217c444da3571850eebfe43996272",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
