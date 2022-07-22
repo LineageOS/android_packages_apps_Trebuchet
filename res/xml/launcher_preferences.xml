@@ -85,6 +85,13 @@
         android:persistent="true" />
 
     <SwitchPreference
+        android:key="pref_recents_meminfo"
+        android:title="@string/recents_meminfo_title"
+        android:defaultValue="false"
+        android:persistent="true"
+        launcher:iconSpaceReserved="false" />
+
+    <SwitchPreference
         android:key="pref_desktop_show_labels"
         android:title="@string/desktop_show_labels"
         android:defaultValue="true"

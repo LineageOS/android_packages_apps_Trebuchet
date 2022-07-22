@@ -34,6 +34,7 @@ import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.util.MultiValueAlpha;
 import com.android.launcher3.util.NavigationMode;
 import com.android.launcher3.R;
+import com.android.launcher3.Utilities;
 
 import java.lang.Runnable;
 import java.math.BigDecimal;
@@ -87,6 +88,11 @@ public class MemInfoView extends TextView {
      * influenced by more factors, leading to unstable behavior. */
     @Override
     public void setVisibility(int visibility) {
+        if (visibility == VISIBLE) {
+            boolean showMeminfo = Utilities.isShowMeminfo(getContext());
+            if (!showMeminfo) visibility = GONE;
+        }
+
         super.setVisibility(visibility);
 
         if (visibility == VISIBLE)
