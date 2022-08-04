@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,4 +23,12 @@
     <string name="msg_minus_one_on_right">Pan rwyt yn llusgo i\'r chwith o\'r brif sgrin gartref</string>
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
+    <string name="trust_apps_manager_name">Apiau Cudd ac wedi\'u Gwarchod</string>
+    <string name="trust_apps_auth_manager">Datglo i reoli apiau cudd ac apiau wedi\'u gwarchod</string>
+    <string name="trust_apps_auth_open_app">Dilysu i agor %1$s</string>
+    <string name="trust_apps_loading">Yn llwytho\u2026</string>
+    <string name="trust_apps_no_lock_error">Gosoda sgrin cloi ddiogel i rwystro mynediad at apiau</string>
+    <string name="trust_apps_help">Cymorth</string>
+    <string name="trust_apps_info_hidden">Mae apiau cudd a\'u teclynnau wedi\'u cuddio o\'r drôr</string>
+    <string name="trust_apps_info_protected">Mae ar apiau wedi\'u gwarchod angen dilysiad er mwyn eu hagor o\'r lansiwr</string>
 </resources>

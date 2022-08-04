@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,4 +19,8 @@
     <string name="settings_lock_layout_summary_off">Можна додавати, вилучати й посувати значки та віджети на головному екрані</string>
     <string name="desktop_show_labels">Підписувати значки стільниці</string>
     <string name="drawer_show_labels">Підписувати значки меню</string>
+    <string name="trust_apps_manager_name">Сховати чи захистити застосунки</string>
+    <string name="trust_apps_auth_manager">Розблокуйте, щоб керувати схованими й захищеними застосунками</string>
+    <string name="trust_apps_info_hidden">Схованих застосунків і віджетів не видно в меню</string>
+    <string name="trust_apps_info_protected">Захищені застосунки запитують пароль при запуску</string>
 </resources>

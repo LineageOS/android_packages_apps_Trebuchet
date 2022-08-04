@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,4 +23,12 @@
     <string name="msg_minus_one_on_right">Kur rëshket majtas nga faqja kryesore</string>
     <string name="desktop_show_labels">Shfaq emërtimin e ikonave në ekran</string>
     <string name="drawer_show_labels">Shfaq emërtimin e ikonave në menu</string>
+    <string name="trust_apps_manager_name">Programet e fshehura &amp; Mbrojtura</string>
+    <string name="trust_apps_auth_manager">Zhbllokoje për të kontrolluar programet e fshehura dhe të siguruara</string>
+    <string name="trust_apps_auth_open_app">Verifikohu për të hapur %1$s</string>
+    <string name="trust_apps_loading">Duke u ngarkuar\u2026</string>
+    <string name="trust_apps_no_lock_error">Ju lutem vendosni një bllokim ekrani të sigurtë për të kufizuar aplikacionet</string>
+    <string name="trust_apps_help">Ndihmë</string>
+    <string name="trust_apps_info_hidden">Aplikacionet e fshehura dhe mjetet e tyre fshihen nga dizenjuesi</string>
+    <string name="trust_apps_info_protected">Aplikacionet e mbrojtura kushtëzojnë vërtetim nga hapja e menu -së</string>
 </resources>

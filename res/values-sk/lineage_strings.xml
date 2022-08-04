@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -22,4 +22,12 @@
     <string name="msg_minus_one_on_right">Pri potiahnutí prstom vľavo na hlavnej obrazovke</string>
     <string name="desktop_show_labels">Zobraziť menovky ikon na pracovnej ploche</string>
     <string name="drawer_show_labels">Zobraziť menovky ikon v ponuke</string>
+    <string name="trust_apps_manager_name">Skryté &amp; chránené aplikácie</string>
+    <string name="trust_apps_auth_manager">Pre správu skrytých a chránených aplikácií odomknite</string>
+    <string name="trust_apps_auth_open_app">Pre otvorenie %1$s potvrďte svoju totožnosť</string>
+    <string name="trust_apps_loading">Nahrávanie\u2026</string>
+    <string name="trust_apps_no_lock_error">Prosím nastavte zabezpečenie obrazovky aby ste mohli spravovať prístup k aplikáciám</string>
+    <string name="trust_apps_help">Pomocník</string>
+    <string name="trust_apps_info_hidden">Skryté aplikácie a ich widgety se nezobrazujú v zozname aplikácií</string>
+    <string name="trust_apps_info_protected">Chránené aplikácie vyžadujú pre otvorenie zo spúšťača overenie</string>
 </resources>

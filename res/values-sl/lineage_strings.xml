@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2018-2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,4 +23,12 @@
     <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
     <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
     <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
+    <string name="trust_apps_manager_name">Skrite in zaščitene aplikacije</string>
+    <string name="trust_apps_auth_manager">Odklenite za upravljanje skritih in zaščitenih aplikacij</string>
+    <string name="trust_apps_auth_open_app">Overite za odprtje %1$s</string>
+    <string name="trust_apps_loading">Nalaganje \u2026</string>
+    <string name="trust_apps_no_lock_error">Nastavite varni zaklenjen zaslon, da omejite dostop do aplikacij</string>
+    <string name="trust_apps_help">Pomoč</string>
+    <string name="trust_apps_info_hidden">Skrite aplikacije in njihovi pripomočki so skriti iz predala</string>
+    <string name="trust_apps_info_protected">Zaščitene aplikacije zahtevajo overitev za odpiranje iz zaganjalnika</string>
 </resources>

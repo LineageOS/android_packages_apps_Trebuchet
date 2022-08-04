@@ -14,5 +14,6 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_lock_layout_title">පිරිසැලසුම අගුළුලන්න</string>
+    <string name="trust_apps_loading">Asali\u2026</string>
+    <string name="trust_apps_help">Tallelt</string>
 </resources>
