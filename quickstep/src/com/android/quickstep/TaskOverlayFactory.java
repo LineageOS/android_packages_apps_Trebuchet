@@ -29,6 +29,7 @@ import android.graphics.Insets;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.os.Build;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
@@ -136,9 +137,10 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
         ActivityManager activityManager =
                 (ActivityManager) taskView.getContext().getSystemService(Context.ACTIVITY_SERVICE);
         boolean isLockTaskMode = activityManager.isInLockTaskMode();
+        boolean windowAnimationsDisabled = areWindowAnimationsDisabled(taskView.getContext());
 
         if (taskViewHasMultipleTasks || notEnoughTasksToSplit || isLockTaskMode ||
-                (isFocusedTask && isTaskInExpectedScrollPosition)) {
+                (isFocusedTask && isTaskInExpectedScrollPosition) || windowAnimationsDisabled) {
             return;
         }
 
@@ -147,6 +149,11 @@ public class TaskOverlayFactory implements ResourceBasedOverride {
         for (SplitPositionOption option : positions) {
             outShortcuts.add(new SplitSelectSystemShortcut(activity, taskView, option));
         }
+    }
+
+    private static boolean areWindowAnimationsDisabled(Context context) {
+        return Settings.Global.getFloat(context.getContentResolver(),
+                Settings.Global.WINDOW_ANIMATION_SCALE, 1f) == 0f;
     }
 
     public TaskOverlay createOverlay(TaskThumbnailView thumbnailView) {
