@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5047d91c_a518b2f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2022-08-31T05:52:34Z",
+      "side": 1,
+      "message": "we should remove this part to avoid breaking launcher3. https://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/331251",
+      "revId": "0243672a4681d42ea7db23fed9dfc13ff7d2ac9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
