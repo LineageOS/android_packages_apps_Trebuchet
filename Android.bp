@@ -176,6 +176,10 @@ android_app {
     overrides: [
         "Home",
         "Launcher2",
+        "Launcher3",
+        "Launcher3Go",
+        "Launcher3QuickStep",
+        "QuickSearchBox",
     ],
     required: ["privapp_whitelist_com.android.launcher3"],
 
