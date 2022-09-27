@@ -38,7 +38,7 @@ LOCAL_MIN_SDK_VERSION := 26
 LOCAL_PACKAGE_NAME := TrebuchetGo
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep Launcher3Go
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep Launcher3Go QuickSearchBox
 LOCAL_REQUIRED_MODULES := privapp_whitelist_com.android.launcher3
 
 LOCAL_FULL_LIBS_MANIFEST_FILES := \
@@ -72,7 +72,7 @@ endif
 LOCAL_PACKAGE_NAME := TrebuchetQuickStep
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep QuickSearchBox
 LOCAL_REQUIRED_MODULES := privapp_whitelist_com.android.launcher3
 
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/quickstep/res
@@ -126,7 +126,7 @@ LOCAL_PROGUARD_ENABLED := full
 LOCAL_PACKAGE_NAME := TrebuchetQuickStepGo
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep Launcher3QuickStepGo
+LOCAL_OVERRIDES_PACKAGES := Home Launcher2 Launcher3 Launcher3QuickStep Launcher3QuickStepGo QuickSearchBox
 LOCAL_REQUIRED_MODULES := privapp_whitelist_com.android.launcher3
 
 LOCAL_FULL_LIBS_MANIFEST_FILES := \
