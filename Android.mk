@@ -142,6 +142,36 @@ LOCAL_LICENSE_PACKAGE_NAME := Android Launcher3
 LOCAL_NOTICE_FILE := build/soong/licenses/LICENSE
 include $(BUILD_PACKAGE)
 
+#
+# Build rule for Launcher3 stub packages.
+#
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Launcher3
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SRC_FILES := /dev/null
+LOCAL_CERTIFICATE := PRESIGNED
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Launcher3Go
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SRC_FILES := /dev/null
+LOCAL_CERTIFICATE := PRESIGNED
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Launcher3QuickStep
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := APPS
+LOCAL_UNINSTALLABLE_MODULE := true
+LOCAL_SRC_FILES := /dev/null
+LOCAL_CERTIFICATE := PRESIGNED
+include $(BUILD_PREBUILT)
 
 # ==================================================
 include $(call all-makefiles-under,$(LOCAL_PATH))
