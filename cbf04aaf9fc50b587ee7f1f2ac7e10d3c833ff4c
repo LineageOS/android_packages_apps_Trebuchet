@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4c92dd2_c93adebf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2022-09-30T04:37:11Z",
+      "side": 1,
+      "message": "Verified building foster and foster_tab",
+      "revId": "cbf04aaf9fc50b587ee7f1f2ac7e10d3c833ff4c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
