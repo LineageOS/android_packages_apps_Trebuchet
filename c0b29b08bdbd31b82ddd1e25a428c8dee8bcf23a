@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f680225_aa7f9280",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2022-10-19T00:53:07Z",
+      "side": 1,
+      "message": "Mike was concerned that there was a conflict on \"resize any widget\" commits, he resolved it but wanted verification, tested a static widget from audipo app, and was able to make it way too small to use (1x1), so yes - it works.",
+      "revId": "c0b29b08bdbd31b82ddd1e25a428c8dee8bcf23a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
