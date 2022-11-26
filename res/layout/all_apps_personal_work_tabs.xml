@@ -36,6 +36,7 @@
         android:layout_weight="1"
         android:background="@drawable/all_apps_tabs_background"
         android:text="@string/all_apps_personal_tab"
+        android:textAllCaps="false"
         android:textColor="@color/all_apps_tab_text"
         android:textSize="14sp"
         style="?android:attr/borderlessButtonStyle" />
@@ -48,6 +49,7 @@
         android:layout_weight="1"
         android:background="@drawable/all_apps_tabs_background"
         android:text="@string/all_apps_work_tab"
+        android:textAllCaps="false"
         android:textColor="@color/all_apps_tab_text"
         android:textSize="14sp"
         style="?android:attr/borderlessButtonStyle" />
