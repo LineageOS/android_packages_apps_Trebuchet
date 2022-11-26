@@ -83,6 +83,8 @@ public class FloatingHeaderView extends LinearLayout implements
     // These two values are necessary to ensure that the header protection is drawn correctly.
     private final int mHeaderTopAdjustment;
     private final int mHeaderBottomAdjustment;
+    private final int mHeaderPillHeight;
+    private final int mHeaderTopMargin;
     private final boolean mHeaderProtectionSupported;
 
     protected ViewGroup mTabLayout;
@@ -124,6 +126,10 @@ public class FloatingHeaderView extends LinearLayout implements
                 R.bool.config_header_protection_supported)
                 // TODO(b/208599118) Support header protection for bottom sheet.
                 && !ActivityContext.lookupContext(context).getDeviceProfile().isTablet;
+        mHeaderPillHeight = context.getResources()
+                .getDimensionPixelSize(R.dimen.all_apps_header_pill_height);
+        mHeaderTopMargin = context.getResources()
+                .getDimensionPixelSize(R.dimen.all_apps_header_top_margin);
     }
 
     @Override
@@ -444,6 +450,7 @@ public class FloatingHeaderView extends LinearLayout implements
         if (mTabsHidden || !mHeaderCollapsed) {
             return 0;
         }
-        return Math.max(getHeight() - getPaddingTop() + mTranslationY, 0);
+        return Math.max(mHeaderPillHeight - getPaddingTop() + mHeaderTopMargin
+                + mTranslationY, 0);
     }
 }
