@@ -48,9 +48,12 @@ import android.view.Display;
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.content.res.ResourcesCompat;
 
+import com.android.launcher3.icons.DotRenderer;
 import com.android.launcher3.model.DeviceGridState;
 import com.android.launcher3.provider.RestoreDbTask;
+import com.android.launcher3.testing.shared.ResourceUtils;
 import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.IntArray;
@@ -63,8 +66,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -81,7 +82,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({TYPE_PHONE, TYPE_MULTI_DISPLAY, TYPE_TABLET})
-    public @interface DeviceType{}
+    public @interface DeviceType {}
+
     public static final int TYPE_PHONE = 0;
     public static final int TYPE_MULTI_DISPLAY = 1;
     public static final int TYPE_TABLET = 2;
@@ -131,8 +133,11 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public PointF[] minCellSize;
 
     public PointF[] borderSpaces;
-    public float folderBorderSpace;
-    public float[] hotseatBorderSpaces;
+    public int inlineNavButtonsEndSpacing;
+
+    public PointF folderBorderSpaces;
+    public PointF folderCellSize;
+    public float folderTopPadding;
 
     public float[] horizontalMargin;
 
@@ -149,11 +154,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numShownHotseatIcons;
 
     /**
-     * Number of icons inside the hotseat area when using 3 buttons navigation.
-     */
-    public int numShrunkenHotseatIcons;
-
-    /**
      * Number of icons inside the hotseat area that is stored in the database. This is greater than
      * or equal to numnShownHotseatIcons, allowing for a seamless transition between two hotseat
      * sizes that share the same DB.
@@ -161,6 +161,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public int numDatabaseHotseatIcons;
 
     public int[] hotseatColumnSpan;
+    public float[] hotseatBarBottomSpace;
+    public float[] hotseatQsbSpace;
 
     /**
      * Number of columns in the all apps list.
@@ -177,7 +179,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public String dbFile;
     public int defaultLayoutId;
     int demoModeLayoutId;
-    boolean[] inlineQsb = new boolean[COUNT_SIZES];
+    public boolean[] inlineQsb = new boolean[COUNT_SIZES];
 
     /**
      * An immutable list of supported profiles.
@@ -246,7 +248,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                         /*allowDisabledGrid=*/false),
                 defaultDeviceType);
 
-        Info myInfo = new Info(context, display);
+        Context displayContext = context.createDisplayContext(display);
+        Info myInfo = new Info(displayContext);
         @DeviceType int deviceType = getDeviceType(myInfo);
         DisplayOption myDisplayOption = invDistWeightedInterpolate(
                 myInfo,
@@ -266,8 +269,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         System.arraycopy(defaultDisplayOption.minCellSize, 0, result.minCellSize, 0,
                 COUNT_SIZES);
         System.arraycopy(defaultDisplayOption.borderSpaces, 0, result.borderSpaces, 0,
-                COUNT_SIZES);
-        System.arraycopy(defaultDisplayOption.inlineQsb, 0, result.inlineQsb, 0,
                 COUNT_SIZES);
 
         initGrid(context, myInfo, result, deviceType);
@@ -355,6 +356,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         devicePaddingId = closestProfile.devicePaddingId;
         this.deviceType = deviceType;
 
+        inlineNavButtonsEndSpacing = closestProfile.inlineNavButtonsEndSpacing;
+
         mExtraAttrs = closestProfile.extraAttrs;
 
         iconSize = displayOption.iconSizes;
@@ -370,16 +373,19 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         minCellSize = displayOption.minCellSize;
 
         borderSpaces = displayOption.borderSpaces;
-        folderBorderSpace = displayOption.folderBorderSpace;
+
+        folderBorderSpaces = displayOption.folderBorderSpaces;
+        folderCellSize = displayOption.folderCellSize;
+        folderTopPadding = displayOption.folderTopPadding;
 
         horizontalMargin = displayOption.horizontalMargin;
 
         numShownHotseatIcons = closestProfile.numHotseatIcons;
-        numShrunkenHotseatIcons = closestProfile.numShrunkenHotseatIcons;
         numDatabaseHotseatIcons = deviceType == TYPE_MULTI_DISPLAY
                 ? closestProfile.numDatabaseHotseatIcons : closestProfile.numHotseatIcons;
         hotseatColumnSpan = closestProfile.hotseatColumnSpan;
-        hotseatBorderSpaces = displayOption.hotseatBorderSpaces;
+        hotseatBarBottomSpace = displayOption.hotseatBarBottomSpace;
+        hotseatQsbSpace = displayOption.hotseatQsbSpace;
 
         numAllAppsColumns = closestProfile.numAllAppsColumns;
         numDatabaseAllAppsColumns = deviceType == TYPE_MULTI_DISPLAY
@@ -398,7 +404,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             devicePaddings = new DevicePaddings(context, devicePaddingId);
         }
 
-        inlineQsb = displayOption.inlineQsb;
+        inlineQsb = closestProfile.inlineQsb;
 
         // If the partner customization apk contains any grid overrides, apply them
         // Supported overrides: numRows, numColumns, iconSize
@@ -406,10 +412,12 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
         final List<DeviceProfile> localSupportedProfiles = new ArrayList<>();
         defaultWallpaperSize = new Point(displayInfo.currentSize);
+        SparseArray<DotRenderer> dotRendererCache = new SparseArray<>();
         for (WindowBounds bounds : displayInfo.supportedBounds) {
             localSupportedProfiles.add(new DeviceProfile.Builder(context, this, displayInfo)
                     .setUseTwoPanels(deviceType == TYPE_MULTI_DISPLAY)
                     .setWindowBounds(bounds)
+                    .setDotRendererCache(dotRendererCache)
                     .build());
 
             // Wallpaper size should be the maximum of the all possible sizes Launcher expects
@@ -652,18 +660,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         float screenHeight = config.screenHeightDp * res.getDisplayMetrics().density;
         int rotation = WindowManagerProxy.INSTANCE.get(context).getRotation(context);
 
-        if (Utilities.IS_DEBUG_DEVICE) {
-            StringWriter stringWriter = new StringWriter();
-            PrintWriter printWriter = new PrintWriter(stringWriter);
-            DisplayController.INSTANCE.get(context).dump(printWriter);
-            printWriter.flush();
-            Log.d("b/231312158", "getDeviceProfile -"
-                            + "\nconfig: " + config
-                            + "\ndisplayMetrics: " + res.getDisplayMetrics()
-                            + "\nrotation: " + rotation
-                            + "\n" + stringWriter.toString(),
-                    new Exception());
-        }
         return getBestMatch(screenWidth, screenHeight, rotation);
     }
 
@@ -744,6 +740,12 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         private static final int DEVICE_CATEGORY_ALL =
                 DEVICE_CATEGORY_PHONE | DEVICE_CATEGORY_TABLET | DEVICE_CATEGORY_MULTI_DISPLAY;
 
+        private static final int INLINE_QSB_FOR_PORTRAIT = 1 << 0;
+        private static final int INLINE_QSB_FOR_LANDSCAPE = 1 << 1;
+        private static final int INLINE_QSB_FOR_TWO_PANEL_PORTRAIT = 1 << 2;
+        private static final int INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE = 1 << 3;
+        private static final int DONT_INLINE_QSB = 0;
+
         public final String name;
         public final int numRows;
         public final int numColumns;
@@ -756,10 +758,13 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         private final int numAllAppsColumns;
         private final int numDatabaseAllAppsColumns;
         private final int numHotseatIcons;
-        private final int numShrunkenHotseatIcons;
         private final int numDatabaseHotseatIcons;
+
         private final int[] hotseatColumnSpan = new int[COUNT_SIZES];
 
+        private final boolean[] inlineQsb = new boolean[COUNT_SIZES];
+
+        private int inlineNavButtonsEndSpacing;
         private final String dbFile;
 
         private final int defaultLayoutId;
@@ -794,10 +799,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
             numHotseatIcons = a.getInt(
                     R.styleable.GridDisplayOption_numHotseatIcons, numColumns);
-            numShrunkenHotseatIcons = a.getInt(
-                    R.styleable.GridDisplayOption_numShrunkenHotseatIcons, numHotseatIcons / 2);
             numDatabaseHotseatIcons = a.getInt(
                     R.styleable.GridDisplayOption_numExtendedHotseatIcons, 2 * numHotseatIcons);
+
             hotseatColumnSpan[INDEX_DEFAULT] = a.getInt(
                     R.styleable.GridDisplayOption_hotseatColumnSpan, numColumns);
             hotseatColumnSpan[INDEX_LANDSCAPE] = a.getInt(
@@ -809,6 +813,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                     R.styleable.GridDisplayOption_hotseatColumnSpanTwoPanelPortrait,
                     numColumns);
 
+            inlineNavButtonsEndSpacing =
+                    a.getResourceId(R.styleable.GridDisplayOption_inlineNavButtonsEndSpacing,
+                    R.dimen.taskbar_button_margin_default);
             numFolderRows = a.getInt(
                     R.styleable.GridDisplayOption_numFolderRows, numRows);
             numFolderColumns = a.getInt(
@@ -829,6 +836,19 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                         && ((deviceCategory & DEVICE_CATEGORY_MULTI_DISPLAY)
                             == DEVICE_CATEGORY_MULTI_DISPLAY));
 
+            int inlineForRotation = a.getInt(R.styleable.GridDisplayOption_inlineQsb,
+                    DONT_INLINE_QSB);
+            inlineQsb[INDEX_DEFAULT] =
+                    (inlineForRotation & INLINE_QSB_FOR_PORTRAIT) == INLINE_QSB_FOR_PORTRAIT;
+            inlineQsb[INDEX_LANDSCAPE] =
+                    (inlineForRotation & INLINE_QSB_FOR_LANDSCAPE) == INLINE_QSB_FOR_LANDSCAPE;
+            inlineQsb[INDEX_TWO_PANEL_PORTRAIT] =
+                    (inlineForRotation & INLINE_QSB_FOR_TWO_PANEL_PORTRAIT)
+                            == INLINE_QSB_FOR_TWO_PANEL_PORTRAIT;
+            inlineQsb[INDEX_TWO_PANEL_LANDSCAPE] =
+                    (inlineForRotation & INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE)
+                            == INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE;
+
             a.recycle();
             extraAttrs = Themes.createValueMap(context, attrs,
                     IntArray.wrap(R.styleable.GridDisplayOption));
@@ -837,26 +857,22 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     @VisibleForTesting
     static final class DisplayOption {
-        private static final int INLINE_QSB_FOR_PORTRAIT = 1 << 0;
-        private static final int INLINE_QSB_FOR_LANDSCAPE = 1 << 1;
-        private static final int INLINE_QSB_FOR_TWO_PANEL_PORTRAIT = 1 << 2;
-        private static final int INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE = 1 << 3;
-        private static final int DONT_INLINE_QSB = 0;
-
         public final GridOption grid;
 
         private final float minWidthDps;
         private final float minHeightDps;
         private final boolean canBeDefault;
-        private final boolean[] inlineQsb = new boolean[COUNT_SIZES];
 
         private final PointF[] minCellSize = new PointF[COUNT_SIZES];
 
-        private float folderBorderSpace;
+        private final PointF folderCellSize;
+        private final PointF folderBorderSpaces;
+        private float folderTopPadding;
+
         private final PointF[] borderSpaces = new PointF[COUNT_SIZES];
         private final float[] horizontalMargin = new float[COUNT_SIZES];
-        //TODO(http://b/228998082) remove this when 3 button spaces are fixed
-        private final float[] hotseatBorderSpaces = new float[COUNT_SIZES];
+        private final float[] hotseatBarBottomSpace = new float[COUNT_SIZES];
+        private final float[] hotseatQsbSpace = new float[COUNT_SIZES];
 
         private final float[] iconSizes = new float[COUNT_SIZES];
         private final float[] textSizes = new float[COUNT_SIZES];
@@ -875,19 +891,6 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             minHeightDps = a.getFloat(R.styleable.ProfileDisplayOption_minHeightDps, 0);
 
             canBeDefault = a.getBoolean(R.styleable.ProfileDisplayOption_canBeDefault, false);
-
-            int inlineForRotation = a.getInt(R.styleable.ProfileDisplayOption_inlineQsb,
-                    DONT_INLINE_QSB);
-            inlineQsb[INDEX_DEFAULT] =
-                    (inlineForRotation & INLINE_QSB_FOR_PORTRAIT) == INLINE_QSB_FOR_PORTRAIT;
-            inlineQsb[INDEX_LANDSCAPE] =
-                    (inlineForRotation & INLINE_QSB_FOR_LANDSCAPE) == INLINE_QSB_FOR_LANDSCAPE;
-            inlineQsb[INDEX_TWO_PANEL_PORTRAIT] =
-                    (inlineForRotation & INLINE_QSB_FOR_TWO_PANEL_PORTRAIT)
-                            == INLINE_QSB_FOR_TWO_PANEL_PORTRAIT;
-            inlineQsb[INDEX_TWO_PANEL_LANDSCAPE] =
-                    (inlineForRotation & INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE)
-                            == INLINE_QSB_FOR_TWO_PANEL_LANDSCAPE;
 
             float x;
             float y;
@@ -948,7 +951,20 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                     borderSpaceTwoPanelLandscape);
             borderSpaces[INDEX_TWO_PANEL_LANDSCAPE] = new PointF(x, y);
 
-            folderBorderSpace = borderSpace;
+            x = a.getFloat(R.styleable.ProfileDisplayOption_folderCellWidth,
+                    minCellSize[INDEX_DEFAULT].x);
+            y = a.getFloat(R.styleable.ProfileDisplayOption_folderCellHeight,
+                    minCellSize[INDEX_DEFAULT].y);
+            folderCellSize = new PointF(x, y);
+
+            float folderBorderSpace = a.getFloat(R.styleable.ProfileDisplayOption_folderBorderSpace,
+                    borderSpace);
+
+            x = y = folderBorderSpace;
+            folderBorderSpaces = new PointF(x, y);
+
+            folderTopPadding = a.getFloat(R.styleable.ProfileDisplayOption_folderTopPadding,
+                    folderBorderSpaces.y);
 
             x = a.getFloat(R.styleable.ProfileDisplayOption_allAppsCellWidth,
                     minCellSize[INDEX_DEFAULT].x);
@@ -1028,7 +1044,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
             allAppsIconSizes[INDEX_DEFAULT] = a.getFloat(
                     R.styleable.ProfileDisplayOption_allAppsIconSize, iconSizes[INDEX_DEFAULT]);
-            allAppsIconSizes[INDEX_LANDSCAPE] = allAppsIconSizes[INDEX_DEFAULT];
+            allAppsIconSizes[INDEX_LANDSCAPE] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_allAppsIconSizeLandscape,
+                    iconSizes[INDEX_DEFAULT]);
             allAppsIconSizes[INDEX_TWO_PANEL_PORTRAIT] = a.getFloat(
                     R.styleable.ProfileDisplayOption_allAppsIconSizeTwoPanelPortrait,
                     allAppsIconSizes[INDEX_DEFAULT]);
@@ -1070,17 +1088,33 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                     R.styleable.ProfileDisplayOption_horizontalMarginTwoPanelPortrait,
                     horizontalMargin[INDEX_DEFAULT]);
 
-            hotseatBorderSpaces[INDEX_DEFAULT] = a.getFloat(
-                    R.styleable.ProfileDisplayOption_hotseatBorderSpace, borderSpace);
-            hotseatBorderSpaces[INDEX_LANDSCAPE] = a.getFloat(
-                    R.styleable.ProfileDisplayOption_hotseatBorderSpaceLandscape,
-                    hotseatBorderSpaces[INDEX_DEFAULT]);
-            hotseatBorderSpaces[INDEX_TWO_PANEL_LANDSCAPE] = a.getFloat(
-                    R.styleable.ProfileDisplayOption_hotseatBorderSpaceTwoPanelLandscape,
-                    hotseatBorderSpaces[INDEX_DEFAULT]);
-            hotseatBorderSpaces[INDEX_TWO_PANEL_PORTRAIT] = a.getFloat(
-                    R.styleable.ProfileDisplayOption_hotseatBorderSpaceTwoPanelPortrait,
-                    hotseatBorderSpaces[INDEX_DEFAULT]);
+            hotseatBarBottomSpace[INDEX_DEFAULT] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatBarBottomSpace,
+                    ResourcesCompat.getFloat(context.getResources(),
+                            R.dimen.hotseat_bar_bottom_space_default));
+            hotseatBarBottomSpace[INDEX_LANDSCAPE] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatBarBottomSpaceLandscape,
+                    hotseatBarBottomSpace[INDEX_DEFAULT]);
+            hotseatBarBottomSpace[INDEX_TWO_PANEL_LANDSCAPE] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatBarBottomSpaceTwoPanelLandscape,
+                    hotseatBarBottomSpace[INDEX_DEFAULT]);
+            hotseatBarBottomSpace[INDEX_TWO_PANEL_PORTRAIT] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatBarBottomSpaceTwoPanelPortrait,
+                    hotseatBarBottomSpace[INDEX_DEFAULT]);
+
+            hotseatQsbSpace[INDEX_DEFAULT] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatQsbSpace,
+                    ResourcesCompat.getFloat(context.getResources(),
+                            R.dimen.hotseat_qsb_space_default));
+            hotseatQsbSpace[INDEX_LANDSCAPE] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatQsbSpaceLandscape,
+                    hotseatQsbSpace[INDEX_DEFAULT]);
+            hotseatQsbSpace[INDEX_TWO_PANEL_LANDSCAPE] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatQsbSpaceTwoPanelLandscape,
+                    hotseatQsbSpace[INDEX_DEFAULT]);
+            hotseatQsbSpace[INDEX_TWO_PANEL_PORTRAIT] = a.getFloat(
+                    R.styleable.ProfileDisplayOption_hotseatQsbSpaceTwoPanelPortrait,
+                    hotseatQsbSpace[INDEX_DEFAULT]);
 
             a.recycle();
         }
@@ -1103,8 +1137,10 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                 allAppsIconSizes[i] = 0;
                 allAppsIconTextSizes[i] = 0;
                 allAppsBorderSpaces[i] = new PointF();
-                inlineQsb[i] = false;
             }
+            folderBorderSpaces = new PointF();
+            folderCellSize = new PointF();
+            folderTopPadding = 0f;
         }
 
         private DisplayOption multiply(float w) {
@@ -1116,7 +1152,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                 minCellSize[i].x *= w;
                 minCellSize[i].y *= w;
                 horizontalMargin[i] *= w;
-                hotseatBorderSpaces[i] *= w;
+                hotseatBarBottomSpace[i] *= w;
+                hotseatQsbSpace[i] *= w;
                 allAppsCellSize[i].x *= w;
                 allAppsCellSize[i].y *= w;
                 allAppsIconSizes[i] *= w;
@@ -1124,8 +1161,11 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                 allAppsBorderSpaces[i].x *= w;
                 allAppsBorderSpaces[i].y *= w;
             }
-
-            folderBorderSpace *= w;
+            folderBorderSpaces.x *= w;
+            folderBorderSpaces.y *= w;
+            folderCellSize.x *= w;
+            folderCellSize.y *= w;
+            folderTopPadding *= w;
 
             return this;
         }
@@ -1139,17 +1179,20 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                 minCellSize[i].x += p.minCellSize[i].x;
                 minCellSize[i].y += p.minCellSize[i].y;
                 horizontalMargin[i] += p.horizontalMargin[i];
-                hotseatBorderSpaces[i] += p.hotseatBorderSpaces[i];
+                hotseatBarBottomSpace[i] += p.hotseatBarBottomSpace[i];
+                hotseatQsbSpace[i] += p.hotseatQsbSpace[i];
                 allAppsCellSize[i].x += p.allAppsCellSize[i].x;
                 allAppsCellSize[i].y += p.allAppsCellSize[i].y;
                 allAppsIconSizes[i] += p.allAppsIconSizes[i];
                 allAppsIconTextSizes[i] += p.allAppsIconTextSizes[i];
                 allAppsBorderSpaces[i].x += p.allAppsBorderSpaces[i].x;
                 allAppsBorderSpaces[i].y += p.allAppsBorderSpaces[i].y;
-                inlineQsb[i] |= p.inlineQsb[i];
             }
-
-            folderBorderSpace += p.folderBorderSpace;
+            folderBorderSpaces.x += p.folderBorderSpaces.x;
+            folderBorderSpaces.y += p.folderBorderSpaces.y;
+            folderCellSize.x += p.folderCellSize.x;
+            folderCellSize.y += p.folderCellSize.y;
+            folderTopPadding += p.folderTopPadding;
 
             return this;
         }

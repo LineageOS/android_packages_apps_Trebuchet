@@ -59,7 +59,6 @@
     <string name="all_apps_search_bar_hint" msgid="1390553134053255246">"खोजसम्बन्धी एपहरू"</string>
     <string name="all_apps_loading_message" msgid="5813968043155271636">"एपहरू लोड गर्दै…"</string>
     <string name="all_apps_no_search_results" msgid="3200346862396363786">"\"<xliff:g id="QUERY">%1$s</xliff:g>\" सँग मिल्दो कुनै एप भेटिएन"</string>
-    <string name="all_apps_search_market_message" msgid="1366263386197059176">"थप एपहरू खोज्नुहोस्"</string>
     <string name="label_application" msgid="8531721983832654978">"एप"</string>
     <string name="all_apps_label" msgid="5015784846527570951">"सबै एप"</string>
     <string name="notifications_header" msgid="1404149926117359025">"सूचनाहरू"</string>
@@ -75,7 +74,7 @@
     <string name="uninstall_drop_target_label" msgid="4722034217958379417">"अनइन्स्टल गर्नुहोस्"</string>
     <string name="app_info_drop_target_label" msgid="692894985365717661">"एपसम्बन्धी जानकारी"</string>
     <string name="install_drop_target_label" msgid="2539096853673231757">"स्थापना गर्नुहोस्"</string>
-    <string name="dismiss_prediction_label" msgid="3357562989568808658">"यो एप सिफारिस नगरियोस्"</string>
+    <string name="dismiss_prediction_label" msgid="3357562989568808658">"एप सिफारिस नगरियोस्"</string>
     <string name="pin_prediction" msgid="4196423321649756498">"सिफारिस गरिएको एप पिन गर्नुहोस्"</string>
     <string name="permlab_install_shortcut" msgid="5632423390354674437">"सर्टकट स्थापना गर्नेहोस्"</string>
     <string name="permdesc_install_shortcut" msgid="923466509822011139">"प्रयोगकर्ताको हस्तक्षेप बिना एउटा एपलाई सर्टकटमा थप्नको लागि अनुमति दिनुहोस्।"</string>
@@ -137,7 +136,7 @@
     <string name="item_removed" msgid="851119963877842327">"वस्तु हटाइयो"</string>
     <string name="undo" msgid="4151576204245173321">"अन्डू गर्नुहोस्"</string>
     <string name="action_move" msgid="4339390619886385032">"वस्तु सार्नुहोस्"</string>
-    <string name="move_to_empty_cell" msgid="2833711483015685619">"पङ्क्ति <xliff:g id="NUMBER_0">%1$s</xliff:g> स्तम्भ <xliff:g id="NUMBER_1">%2$s</xliff:g> मा सार्नुहोस्"</string>
+    <string name="move_to_empty_cell_description" msgid="5254852678218206889">"यो वस्तु सारेर <xliff:g id="STRING">%3$s</xliff:g> मा रहेको रो <xliff:g id="NUMBER_0">%1$s</xliff:g> कोलम <xliff:g id="NUMBER_1">%2$s</xliff:g> मा लैजानुहोस्"</string>
     <string name="move_to_position" msgid="6750008980455459790">"स्थिति <xliff:g id="NUMBER">%1$s</xliff:g> मा सार्नुहोस्"</string>
     <string name="move_to_hotseat_position" msgid="6295412897075147808">"मन पर्ने स्थिति <xliff:g id="NUMBER">%1$s</xliff:g> मा सार्नुहोस्"</string>
     <string name="item_moved" msgid="4606538322571412879">"वस्तु सारियो"</string>
