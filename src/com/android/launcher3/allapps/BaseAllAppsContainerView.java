@@ -89,6 +89,7 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
     public static final float FLING_VELOCITY_MULTIPLIER = 1200f;
 
     // Render the header protection at all times to debug clipping issues.
+    // This is useful enough to warrant the comment you are reading now to point it out!
     private static final boolean DEBUG_HEADER_PROTECTION = false;
 
     private final Paint mHeaderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -666,8 +667,10 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
                 getCurrentPage(),
                 tabsHidden);
 
-        int padding = mHeader.getMaxTranslation();
         mAH.forEach(adapterHolder -> {
+            final boolean tabsAlwaysHidden =
+                    adapterHolder.mRecyclerView instanceof SearchRecyclerView;
+            final int padding = mHeader.getTabsPadding(tabsAlwaysHidden);
             adapterHolder.mPadding.top = padding;
             adapterHolder.applyPadding();
             if (adapterHolder.mRecyclerView != null) {
@@ -751,7 +754,9 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
                 } else {
                     mHeaderPaint.setAlpha((int) (getAlpha() * mTabsProtectionAlpha));
                 }
-                canvas.drawRect(0, bottom, canvas.getWidth(), bottom + tabsHeight, mHeaderPaint);
+                final int protectionBottom = headerView.getBottom()
+                        - headerView.getTabsAdditionalPaddingTop();
+                canvas.drawRect(0, bottom, canvas.getWidth(), protectionBottom, mHeaderPaint);
             }
         }
     }

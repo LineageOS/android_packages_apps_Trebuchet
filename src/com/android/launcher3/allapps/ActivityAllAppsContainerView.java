@@ -282,13 +282,15 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         }
 
         RelativeLayout.LayoutParams layoutParams = (LayoutParams) v.getLayoutParams();
-        layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.search_container_all_apps);
+        layoutParams.addRule(RelativeLayout.BELOW, R.id.search_container_all_apps);
 
-        int topMargin = getContext().getResources().getDimensionPixelSize(
-                R.dimen.all_apps_header_top_margin);
+        int topMargin = -getContext().getResources().getDimensionPixelSize(
+                R.dimen.all_apps_search_bar_bottom_margin);
         if (includeTabsMargin) {
             topMargin += getContext().getResources().getDimensionPixelSize(
-                    R.dimen.all_apps_header_pill_height);
+                    R.dimen.all_apps_header_pill_height)
+                    + getContext().getResources().getDimensionPixelSize(
+                    R.dimen.all_apps_tabs_margin_top);
         }
         layoutParams.topMargin = topMargin;
     }
