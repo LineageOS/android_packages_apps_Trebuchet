@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "63deecaf_c5cd969a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2022-12-10T16:24:14Z",
+      "side": 1,
+      "message": "For the record, I can\u0027t reproduce your issue at all with this exact patch (and no others) atop a standard AOSP build, on Pixel 4a (5G). I wonder what is causing this. I couldn\u0027t figure out how to reproduce it. What is your device? (I am not building LineageOS currently so I cannot test there.)",
+      "parentUuid": "584b757b_4b8e5944",
+      "revId": "b62d134124a004769bc566845d6b2ed6babc5998",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "49419152_98e26795",
         "filename": "src/com/android/launcher3/allapps/FloatingHeaderView.java",
         "patchSetId": 1
@@ -49,6 +67,24 @@
       "writtenOn": "2022-12-10T14:17:52Z",
       "side": 1,
       "message": "I wonder if LineageOS does something different with floating rows (i.e., actually *has* any floating rows that appear above the tabs, as on stock?). Any of the floating rows-related lines here could be related to the giant gap above the tabs in the screenshot which causes them to float on top of app icons.",
+      "revId": "b62d134124a004769bc566845d6b2ed6babc5998",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91abc074_4b3e9e40",
+        "filename": "src/com/android/launcher3/allapps/FloatingHeaderView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2022-12-10T16:24:14Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be it, from some manual manipulation of values. `getTabsPadding` affects the padding below the tabs, not above.",
+      "parentUuid": "49419152_98e26795",
       "revId": "b62d134124a004769bc566845d6b2ed6babc5998",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
