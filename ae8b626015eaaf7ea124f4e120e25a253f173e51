@@ -16,6 +16,23 @@
       "message": "Uploaded to AOSP: https://android-review.googlesource.com/c/platform/packages/apps/Launcher3/+/2337905",
       "revId": "ae8b626015eaaf7ea124f4e120e25a253f173e51",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ca7e36d_6aac9bd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2022-12-10T14:14:17Z",
+      "side": 1,
+      "message": "Let me know if this doesn\u0027t line up with what you\u0027re seeing:\n- Scroll down a little in your all apps list, and observe that the gray header protection rectangle is overdrawn and appears underneath the app icons. (Of course, in your screenshots, there is clearly a bigger problem being shown; that, I am not sure about.)\n- Next: Do a search from the all apps list, leave the search, and then look at your all apps list again, and scroll down a little. Notice that the tabs get scrunched toward the search bar when you scroll, and indeed might be underneath it again. This was another issue that the other patch addresses (but apparently not properly here).",
+      "revId": "ae8b626015eaaf7ea124f4e120e25a253f173e51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
