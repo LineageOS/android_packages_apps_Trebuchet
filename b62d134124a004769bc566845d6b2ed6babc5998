@@ -16,6 +16,24 @@
       "message": "How was this tested exactly? This is broken... https://imgur.com/a/z2U7L1K",
       "revId": "b62d134124a004769bc566845d6b2ed6babc5998",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "584b757b_4b8e5944",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31604
+      },
+      "writtenOn": "2022-12-10T13:25:42Z",
+      "side": 1,
+      "message": "Thanks for the screenshot. The padding and margin values might be sensitive to prior commits or other OS-dependent things. :( I tested it on CalyxOS using the tests in the commit message. No problems on a couple of devices (no such gap as shown in the screenshot here).",
+      "parentUuid": "d5cdfa6d_cdd6120f",
+      "revId": "b62d134124a004769bc566845d6b2ed6babc5998",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
