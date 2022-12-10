@@ -99,7 +99,6 @@ public class FloatingHeaderView extends LinearLayout implements
 
     protected boolean mTabsHidden;
     protected int mMaxTranslation;
-    protected int mTabsPadding;
 
     // Whether the header has been scrolled off-screen.
     private boolean mHeaderCollapsed;
@@ -263,8 +262,6 @@ public class FloatingHeaderView extends LinearLayout implements
                 rvType == AdapterHolder.MAIN ? mMainRV
                 : rvType == AdapterHolder.WORK ? mWorkRV : mSearchRV;
         mCurrentRV.addOnScrollListener(mOnScrollListener);
-
-        updateExpectedHeight();
     }
 
     private void updateExpectedHeight() {
@@ -275,26 +272,8 @@ public class FloatingHeaderView extends LinearLayout implements
         }
         mMaxTranslation += mFloatingRowsHeight;
         if (!mTabsHidden) {
-            mTabsPadding = mTabsAdditionalPaddingBottom
+            mMaxTranslation += mTabsAdditionalPaddingBottom
                     + getResources().getDimensionPixelSize(R.dimen.all_apps_tabs_margin_top);
-            // We don't need to add the padding for floating rows if there aren't any.
-            // Doing so causes the personal/work tabs to shift unnecessarily when scrolling.
-            if (mFloatingRowsHeight > 0) {
-                mMaxTranslation += mTabsPadding;
-            }
-        }
-    }
-
-    int getTabsPadding(boolean tabsAlwaysHidden) {
-        final boolean tabsHidden = tabsAlwaysHidden || mTabsHidden;
-        if (!tabsHidden && mFloatingRowsHeight == 0) {
-            return 0;
-        } else if (mTabsPadding == 0 && (tabsHidden || mFloatingRowsCollapsed)) {
-            return getResources().getDimensionPixelSize(R.dimen.all_apps_search_bar_bottom_padding);
-        } else if (mTabsPadding > 0 && tabsHidden) {
-            return mTabsPadding + getPaddingTop();
-        } else {
-            return mTabsPadding;
         }
     }
 
