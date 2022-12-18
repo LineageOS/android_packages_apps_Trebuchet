@@ -529,9 +529,26 @@ public class LoaderTask implements Runnable {
                                     // Add the icon on the workspace anyway.
                                     allowMissingTarget = true;
                                 } else {
-                                    // Do not wait for external media load anymore.
-                                    c.markDeleted("Invalid package removed: " + targetPkg);
-                                    continue;
+                                    // Migrate Camera2 shortcut
+                                    if ("com.android.camera2".equals(targetPkg)) {
+                                        // Gracefully try to find a fallback activity.
+                                        intent = pmHelper.getAppLaunchIntent(
+                                                "org.lineageos.aperture", c.user);
+                                        if (intent != null) {
+                                            c.updater().put(
+                                                    LauncherSettings.Favorites.INTENT,
+                                                    intent.toUri(0)).commit();
+                                            c.markRestored();
+                                            cn = intent.getComponent();
+                                            validTarget = true;
+                                        }
+                                    }
+
+                                    if (!validTarget) {
+                                        // Do not wait for external media load anymore.
+                                        c.markDeleted("Invalid package removed: " + targetPkg);
+                                        continue;
+                                    }
                                 }
                             }
 
