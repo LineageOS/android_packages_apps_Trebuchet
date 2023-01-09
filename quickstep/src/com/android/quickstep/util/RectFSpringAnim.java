@@ -282,10 +282,6 @@ public class RectFSpringAnim extends ReleaseCheck {
                 mRectScaleAnim.skipToEnd();
             }
         }
-        mRectXAnimEnded = true;
-        mRectYAnimEnded = true;
-        mRectScaleAnimEnded = true;
-        maybeOnEnd();
     }
 
     private boolean isEnded() {
