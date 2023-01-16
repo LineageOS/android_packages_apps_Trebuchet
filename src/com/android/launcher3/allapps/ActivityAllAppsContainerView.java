@@ -45,7 +45,8 @@ import java.util.ArrayList;
 public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         & DeviceProfileListenable> extends BaseAllAppsContainerView<T> {
 
-    private static final long DEFAULT_SEARCH_TRANSITION_DURATION_MS = 300;
+    // As of this writing, search transition does not seem to work properly, so set duration to 0.
+    private static final long DEFAULT_SEARCH_TRANSITION_DURATION_MS = 0;
 
     // Used to animate Search results out and A-Z apps in, or vice-versa.
     private final SearchTransitionController mSearchTransitionController;
