@@ -225,7 +225,6 @@ public class FloatingHeaderView extends LinearLayout implements
         for (FloatingHeaderRow row : mAllRows) {
             row.setup(this, mAllRows, tabsHidden);
         }
-        updateExpectedHeight();
 
         mTabsHidden = tabsHidden;
         maybeSetTabVisibility(VISIBLE);
@@ -251,6 +250,8 @@ public class FloatingHeaderView extends LinearLayout implements
                 : rvType == AdapterHolder.WORK ? mWorkRV : mSearchRV;
         mCurrentRV.addOnScrollListener(mOnScrollListener);
         maybeSetTabVisibility(rvType == AdapterHolder.SEARCH ? GONE : VISIBLE);
+
+        updateExpectedHeight();
     }
 
     /** Update tab visibility to the given state, only if tabs are active (work profile exists). */
@@ -265,10 +266,7 @@ public class FloatingHeaderView extends LinearLayout implements
             return;
         }
         mMaxTranslation += mFloatingRowsHeight;
-        if (!mTabsHidden) {
-            mMaxTranslation += mTabsAdditionalPaddingBottom
-                    + getResources().getDimensionPixelSize(R.dimen.all_apps_tabs_margin_top);
-        }
+        // No need for mMaxTranslation to be any taller now that we align below the header.
     }
 
     int getMaxTranslation() {
