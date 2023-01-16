@@ -700,13 +700,22 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 tabsHidden);
 
         int padding = mHeader.getMaxTranslation();
-        mAH.forEach(adapterHolder -> {
-            adapterHolder.mPadding.top = padding;
+        for (int i = 0; i < mAH.size(); i++) {
+            final AdapterHolder adapterHolder = mAH.get(i);
+            // Search and other adapters need to be handled a bit differently; otherwise, when
+            // when leaving search, the All Apps view may be noticeably shifted downward because
+            // its padding was unnecessarily impacted, and never restored, upon entering search.
+            if (i != AdapterHolder.SEARCH && !tabsHidden && mHeader.getFloatingRowsHeight() == 0) {
+                // Only the Search adapter needs padding when there are tabs but no floating rows.
+                adapterHolder.mPadding.top = 0;
+            } else {
+                adapterHolder.mPadding.top = padding;
+            }
             adapterHolder.applyPadding();
             if (adapterHolder.mRecyclerView != null) {
                 adapterHolder.mRecyclerView.scrollToTop();
             }
-        });
+        }
 
         removeCustomRules(mHeader);
         if (!isSearchSupported()) {
@@ -816,13 +825,15 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         }
 
         RelativeLayout.LayoutParams layoutParams = (LayoutParams) v.getLayoutParams();
-        layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.search_container_all_apps);
+        layoutParams.addRule(RelativeLayout.BELOW, R.id.search_container_all_apps);
 
         int topMargin = getContext().getResources().getDimensionPixelSize(
-                R.dimen.all_apps_header_top_margin);
+                R.dimen.all_apps_search_bar_bottom_adjustment);
         if (includeTabsMargin) {
             topMargin += getContext().getResources().getDimensionPixelSize(
-                    R.dimen.all_apps_header_pill_height);
+                    R.dimen.all_apps_header_pill_height)
+                    + getContext().getResources().getDimensionPixelSize(
+                    R.dimen.all_apps_tabs_margin_top);
         }
         layoutParams.topMargin = topMargin;
     }
@@ -850,6 +861,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         layoutParams.removeRule(RelativeLayout.ABOVE);
         layoutParams.removeRule(RelativeLayout.ALIGN_TOP);
         layoutParams.removeRule(RelativeLayout.ALIGN_PARENT_TOP);
+        layoutParams.removeRule(RelativeLayout.BELOW);
     }
 
     protected BaseAllAppsAdapter<T> createAdapter(AlphabeticalAppsList<T> appsList) {
