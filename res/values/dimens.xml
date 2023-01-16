@@ -101,7 +101,12 @@
     <dimen name="all_apps_search_bar_field_height">48dp</dimen>
     <!-- all_apps_search_bar_field_height / 2 -->
     <dimen name="all_apps_search_bar_content_overlap">24dp</dimen>
-    <dimen name="all_apps_search_bar_bottom_padding">30dp</dimen>
+    <!-- affects padding above apps lists when tabs and floating header rows are not visible -->
+    <!-- (always affects padding above search results) -->
+    <dimen name="all_apps_search_bar_bottom_padding">24dp</dimen>
+    <!-- margin adjustment for layout relative to bottom of search container -->
+    <!-- if the search container is obscuring things, try adjusting this -->
+    <dimen name="all_apps_search_bar_bottom_adjustment">-6dp</dimen>
     <dimen name="all_apps_empty_search_message_top_offset">40dp</dimen>
     <dimen name="all_apps_header_pill_height">48dp</dimen>
     <dimen name="all_apps_header_pill_corner_radius">12dp</dimen>
@@ -111,7 +116,10 @@
     <dimen name="all_apps_header_top_padding">36dp</dimen>
     <!-- Additional top padding to add when Floating Searchbar is enabled. -->
     <dimen name="all_apps_additional_top_padding_floating_search">16dp</dimen>
-    <dimen name="all_apps_header_bottom_padding">14dp</dimen>
+    <!-- influences header protection drawn height below personal/work tabs -->
+    <!-- if app icons are appearing above the protection rectangle, or if they are shifted below
+         it and cropped at the top, try adjusting this -->
+    <dimen name="all_apps_header_bottom_padding">10dp</dimen>
     <dimen name="all_apps_header_top_adjustment">6dp</dimen>
     <dimen name="all_apps_header_bottom_adjustment">4dp</dimen>
     <dimen name="all_apps_work_profile_tab_footer_top_padding">16dp</dimen>
