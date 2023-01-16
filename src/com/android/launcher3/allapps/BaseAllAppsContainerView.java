@@ -89,6 +89,7 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
     public static final float FLING_VELOCITY_MULTIPLIER = 1200f;
 
     // Render the header protection at all times to debug clipping issues.
+    // This is useful enough to warrant the comment you are reading now to point it out!
     private static final boolean DEBUG_HEADER_PROTECTION = false;
 
     private final Paint mHeaderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -667,13 +668,22 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
                 tabsHidden);
 
         int padding = mHeader.getMaxTranslation();
-        mAH.forEach(adapterHolder -> {
-            adapterHolder.mPadding.top = padding;
+        for (int i = 0; i < mAH.size(); i++) {
+            final AdapterHolder adapterHolder = mAH.get(i);
+            // Search and other adapters need to be handled a bit differently; otherwise, when
+            // when leaving search, the All Apps view may be noticeably shifted downward because
+            // its padding was unnecessarily impacted, and never restored, upon entering search.
+            if (i != AdapterHolder.SEARCH && !tabsHidden && mHeader.getFloatingRowsHeight() == 0) {
+                // Only the Search adapter needs padding when there are tabs but no floating rows.
+                adapterHolder.mPadding.top = 0;
+            } else {
+                adapterHolder.mPadding.top = padding;
+            }
             adapterHolder.applyPadding();
             if (adapterHolder.mRecyclerView != null) {
                 adapterHolder.mRecyclerView.scrollToTop();
             }
-        });
+        }
     }
 
     public boolean isHeaderVisible() {
