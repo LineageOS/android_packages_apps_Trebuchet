@@ -529,6 +529,13 @@ public abstract class BaseAllAppsContainerView<T extends Context & ActivityConte
         mAllAppsStore.registerIconContainer(mAH.get(AdapterHolder.SEARCH).mRecyclerView);
     }
 
+    protected void setScrollbarVisibility(boolean visible) {
+        final RecyclerViewFastScroller scrollbar = getScrollBar();
+        if (scrollbar != null) {
+            scrollbar.setVisibility(visible ? VISIBLE : GONE);
+        }
+    }
+
     protected void updateSearchResultsVisibility() {
         if (isSearching()) {
             getSearchRecyclerView().setVisibility(VISIBLE);
