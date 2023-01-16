@@ -114,6 +114,7 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
             // Fade out the button to pause work apps.
             mWorkManager.onActivePageChanged(SEARCH);
         }
+        setScrollbarVisibility(!goingToSearch);
         mSearchTransitionController.animateToSearchState(goingToSearch, durationMs,
                 /* onEndRunnable = */ () -> {
                     mIsSearching = goingToSearch;
