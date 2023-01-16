@@ -33,6 +33,24 @@
       "message": "I\u0027ll build Lineage, and if someone can tell me how to obtain everything I need to reproduce the problem that this revert is intended to fix, I\u0027ll fix it for real.",
       "revId": "5c84a0ce223bd2cf926acdd05b995558698c2084",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "703728e1_fd48bf5d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-01-16T13:49:12Z",
+      "side": 1,
+      "message": "You will need to run a build with GMS that includes AiAiPredictionService:\n\n\u003e  \u003cstring name\u003d\"config_defaultAppPredictionService\"\u003ecom.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiPredictionService\u003c/string\u003e",
+      "parentUuid": "cdfc4eee_5a8917a8",
+      "revId": "5c84a0ce223bd2cf926acdd05b995558698c2084",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
