@@ -38,6 +38,7 @@ import com.android.launcher3.Utilities;
 
 import java.lang.Runnable;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class MemInfoView extends TextView {
 
@@ -130,10 +131,10 @@ public class MemInfoView extends TextView {
         BigDecimal rawVal = new BigDecimal(valueMiB);
 
         if (alignToGB)
-            return rawVal.divide(GB2MB, 0, BigDecimal.ROUND_UP) + " GB";
+            return rawVal.divide(GB2MB, 0, RoundingMode.UP) + " GB";
 
         if (valueMiB > UNIT_CONVERT_THRESHOLD)
-            return rawVal.divide(GB2MB, 1, BigDecimal.ROUND_HALF_UP) + " GB";
+            return rawVal.divide(GB2MB, 1, RoundingMode.HALF_UP) + " GB";
         else
             return rawVal + " MB";
     }
