@@ -31,4 +31,6 @@
     <string name="trust_apps_help">დახმარება</string>
     <string name="trust_apps_info_hidden">დამალული აპები და ვიჯეტები დამალულია მენიუში</string>
     <string name="trust_apps_info_protected">დაცული აპები საჭიროებს ვინაობის დამოწმებას გამშვებიდან გახსნითვის</string>
+    <string name="pref_suggestions_title">შემოთავაზებები</string>
+    <string name="pref_suggestions_summary">შემოთავაზებები აპების მენიუსა და მთავარ ეკრანზე</string>
 </resources>

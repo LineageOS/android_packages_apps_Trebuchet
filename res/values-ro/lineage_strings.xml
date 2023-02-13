@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Ajutor</string>
     <string name="trust_apps_info_hidden">Aplicațiile ascunse și widget-urile lor sunt ascunse în sertar</string>
     <string name="trust_apps_info_protected">Aplicațiile protejate necesită autentificare pentru a fi deschise din launcher</string>
+    <string name="pref_suggestions_title">Sugestii</string>
+    <string name="pref_suggestions_summary">Pentru toate aplicațiile &amp; sugestiile pentru ecranul de pornire</string>
 </resources>

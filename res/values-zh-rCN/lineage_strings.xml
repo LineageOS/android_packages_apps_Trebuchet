@@ -31,4 +31,6 @@
     <string name="trust_apps_help">帮助</string>
     <string name="trust_apps_info_hidden">从抽屉中隐藏应用和其小部件</string>
     <string name="trust_apps_info_protected">需要经过认证才能从启动器打开受保护的应用</string>
+    <string name="pref_suggestions_title">建议</string>
+    <string name="pref_suggestions_summary">对于应用抽屉 &amp; 主屏幕的建议</string>
 </resources>

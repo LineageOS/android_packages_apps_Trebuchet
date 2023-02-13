@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Βοήθεια</string>
     <string name="trust_apps_info_hidden">Οι κρυφές εφαρμογές και widgets τους αποκρύπτονται από το συρτάρι</string>
     <string name="trust_apps_info_protected">Οι προστατευόμενες εφαρμογές απαιτούν έλεγχο ταυτότητας για να ανοιχτούν από την αρχική σελίδα η το συρτάρι</string>
+    <string name="pref_suggestions_title">Προτάσεις</string>
+    <string name="pref_suggestions_summary">Εμφάνιση προτεινόμενων εφαρμογών στο συρτάρι &amp; την αρχική οθόνη</string>
 </resources>
