@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83c7b32c_b39dbb48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-25T11:45:02Z",
+      "side": 1,
+      "message": "PS2: Fixed the stuff I saw directly: unrelated code changes, missing newlines in drawable and the removal of one FLAG removal in BackgroundAppState (it was removed from the visible elements there, no need to not do so anymore)",
+      "revId": "bf60300229f85910a71330a3b86a47cdd11dd5c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
