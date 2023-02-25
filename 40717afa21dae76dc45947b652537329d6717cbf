@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc933c88_fc4af27c",
+        "filename": "res/values/lineage_config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-02-25T11:32:31Z",
+      "side": 1,
+      "message": "this is the wrong file for all these strings, should be lineage_strings.xml",
+      "revId": "40717afa21dae76dc45947b652537329d6717cbf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
