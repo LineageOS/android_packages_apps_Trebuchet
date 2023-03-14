@@ -201,7 +201,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
                 == View.LAYOUT_DIRECTION_RTL);
         DeviceProfile grid = mActivity.getDeviceProfile();
 
-        SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
 
         mDisplay = a.getInteger(R.styleable.BubbleTextView_iconDisplay, DISPLAY_WORKSPACE);
         final int defaultIconSize;
