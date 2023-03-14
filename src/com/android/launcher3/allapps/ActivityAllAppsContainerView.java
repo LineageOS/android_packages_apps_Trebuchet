@@ -27,13 +27,11 @@ import android.widget.RelativeLayout;
 import androidx.core.graphics.ColorUtils;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.launcher3.DeviceProfile.DeviceProfileListenable;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.allapps.BaseAllAppsAdapter.AdapterItem;
-import com.android.launcher3.allapps.search.SearchAdapterProvider;
 import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.views.AppLauncher;
+import com.android.launcher3.views.ActivityContext;
 
 import java.util.ArrayList;
 
@@ -42,8 +40,8 @@ import java.util.ArrayList;
  *
  * @param <T> Type of context inflating all apps.
  */
-public class ActivityAllAppsContainerView<T extends Context & AppLauncher
-        & DeviceProfileListenable> extends BaseAllAppsContainerView<T> {
+public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
+        extends BaseAllAppsContainerView<T> {
 
     // As of this writing, search transition does not seem to work properly, so set duration to 0.
     private static final long DEFAULT_SEARCH_TRANSITION_DURATION_MS = 0;
@@ -51,12 +49,6 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
     // Used to animate Search results out and A-Z apps in, or vice-versa.
     private final SearchTransitionController mSearchTransitionController;
 
-    protected SearchUiManager mSearchUiManager;
-    /**
-     * View that defines the search box. Result is rendered inside the recycler view defined in the
-     * base class.
-     */
-    private View mSearchContainer;
     /** {@code true} when rendered view is in search state instead of the scroll state. */
     private boolean mIsSearching;
     private boolean mRebindAdaptersAfterSearchAnimation;
@@ -73,6 +65,12 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         super(context, attrs, defStyleAttr);
 
         mSearchTransitionController = new SearchTransitionController(this);
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        mSearchUiManager.initializeSearch(this);
     }
 
     public SearchUiManager getSearchUiManager() {
@@ -101,6 +99,16 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         if (results != null) {
             animateToSearchState(true);
         }
+    }
+
+    /**
+     * Sets results list for search.
+     *
+     * @param searchResultCode indicates if the result is final or intermediate for a given query
+     *                         since we can get search results from multiple sources.
+     */
+    public void setSearchResults(ArrayList<AdapterItem> results, int searchResultCode) {
+        setSearchResults(results);
     }
 
     private void animateToSearchState(boolean goingToSearch) {
@@ -136,11 +144,6 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
     }
 
     @Override
-    protected final SearchAdapterProvider<?> createMainAdapterProvider() {
-        return mActivityContext.createSearchAdapterProvider(this);
-    }
-
-    @Override
     public boolean shouldContainerScroll(MotionEvent ev) {
         // IF the MotionEvent is inside the search box, and the container keeps on receiving
         // touch input, container should move down.
@@ -157,14 +160,6 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         mSearchUiManager.resetSearch();
         // Animate to A-Z with 0 time to reset the animation with proper state management.
         animateToSearchState(false, 0);
-    }
-
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        mSearchContainer = findViewById(R.id.search_container_all_apps);
-        mSearchUiManager = (SearchUiManager) mSearchContainer;
-        mSearchUiManager.initializeSearch(this);
     }
 
     @Override
@@ -220,7 +215,9 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
 
         removeCustomRules(rvContainer);
         removeCustomRules(getSearchRecyclerView());
-        if (FeatureFlags.ENABLE_FLOATING_SEARCH_BAR.get()) {
+        if (!isSearchSupported()) {
+            layoutWithoutSearchContainer(rvContainer, showTabs);
+        } else if (FeatureFlags.ENABLE_FLOATING_SEARCH_BAR.get()) {
             alignParentTop(rvContainer, showTabs);
             alignParentTop(getSearchRecyclerView(), /* tabs= */ false);
             layoutAboveSearchContainer(rvContainer);
@@ -270,29 +267,19 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
                 (int) (mSearchContainer.getAlpha() * 255));
     }
 
-    @Override
-    public int getHeaderBottom() {
-        if (FeatureFlags.ENABLE_FLOATING_SEARCH_BAR.get()) {
-            return super.getHeaderBottom();
-        }
-        return super.getHeaderBottom() + mSearchContainer.getBottom();
-    }
-
     private void layoutBelowSearchContainer(View v, boolean includeTabsMargin) {
         if (!(v.getLayoutParams() instanceof RelativeLayout.LayoutParams)) {
             return;
         }
 
         RelativeLayout.LayoutParams layoutParams = (LayoutParams) v.getLayoutParams();
-        layoutParams.addRule(RelativeLayout.BELOW, R.id.search_container_all_apps);
+        layoutParams.addRule(RelativeLayout.ALIGN_TOP, R.id.search_container_all_apps);
 
         int topMargin = getContext().getResources().getDimensionPixelSize(
-                R.dimen.all_apps_search_bar_bottom_adjustment);
+                R.dimen.all_apps_header_top_margin);
         if (includeTabsMargin) {
             topMargin += getContext().getResources().getDimensionPixelSize(
-                    R.dimen.all_apps_header_pill_height)
-                    + getContext().getResources().getDimensionPixelSize(
-                    R.dimen.all_apps_tabs_margin_top);
+                    R.dimen.all_apps_header_pill_height);
         }
         layoutParams.topMargin = topMargin;
     }
@@ -316,7 +303,7 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         layoutParams.topMargin =
                 includeTabsMargin
                         ? getContext().getResources().getDimensionPixelSize(
-                                R.dimen.all_apps_header_pill_height)
+                        R.dimen.all_apps_header_pill_height)
                         : 0;
     }
 
@@ -329,7 +316,6 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
         layoutParams.removeRule(RelativeLayout.ABOVE);
         layoutParams.removeRule(RelativeLayout.ALIGN_TOP);
         layoutParams.removeRule(RelativeLayout.ALIGN_PARENT_TOP);
-        layoutParams.removeRule(RelativeLayout.BELOW);
     }
 
     @Override
@@ -337,5 +323,28 @@ public class ActivityAllAppsContainerView<T extends Context & AppLauncher
             BaseAdapterProvider[] adapterProviders) {
         return new AllAppsGridAdapter<>(mActivityContext, getLayoutInflater(), appsList,
                 adapterProviders);
+    }
+
+    // TODO(b/216683257): Remove when Taskbar All Apps supports search.
+    protected boolean isSearchSupported() {
+        return true;
+    }
+
+    private void layoutWithoutSearchContainer(View v, boolean includeTabsMargin) {
+        if (!(v.getLayoutParams() instanceof RelativeLayout.LayoutParams)) {
+            return;
+        }
+
+        RelativeLayout.LayoutParams layoutParams = (LayoutParams) v.getLayoutParams();
+        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        layoutParams.topMargin = getContext().getResources().getDimensionPixelSize(includeTabsMargin
+                ? R.dimen.all_apps_header_pill_height
+                : R.dimen.all_apps_header_top_margin);
+    }
+
+    @Override
+    public boolean isInAllApps() {
+        // TODO: Make this abstract
+        return true;
     }
 }

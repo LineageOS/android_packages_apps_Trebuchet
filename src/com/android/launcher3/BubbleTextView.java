@@ -201,7 +201,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
                 == View.LAYOUT_DIRECTION_RTL);
         DeviceProfile grid = mActivity.getDeviceProfile();
 
-        SharedPreferences prefs = Utilities.getPrefs(context.getApplicationContext());
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
 
         mDisplay = a.getInteger(R.styleable.BubbleTextView_iconDisplay, DISPLAY_WORKSPACE);
         final int defaultIconSize;
@@ -626,15 +626,16 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
      * Get the icon bounds on the view depending on the layout type.
      */
     public void getIconBounds(int iconSize, Rect outBounds) {
-        Utilities.setRectToViewCenter(this, iconSize, outBounds);
+        outBounds.set(0, 0, iconSize, iconSize);
         if (mLayoutHorizontal) {
+            int top = (getHeight() - iconSize) / 2;
             if (mIsRtl) {
-                outBounds.offsetTo(getWidth() - iconSize - getPaddingRight(), outBounds.top);
+                outBounds.offsetTo(getWidth() - iconSize - getPaddingRight(), top);
             } else {
-                outBounds.offsetTo(getPaddingLeft(), outBounds.top);
+                outBounds.offsetTo(getPaddingLeft(), top);
             }
         } else {
-            outBounds.offsetTo(outBounds.left, getPaddingTop());
+            outBounds.offset((getWidth() - iconSize) / 2, getPaddingTop());
         }
     }
 
@@ -963,6 +964,11 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
 
     public int getIconSize() {
         return mIconSize;
+    }
+
+    public boolean isDisplaySearchResult() {
+        return mDisplay == DISPLAY_SEARCH_RESULT ||
+                mDisplay == DISPLAY_SEARCH_RESULT_SMALL;
     }
 
     private void updateTranslation() {
