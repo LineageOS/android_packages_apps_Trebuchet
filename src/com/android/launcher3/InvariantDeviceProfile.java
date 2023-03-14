@@ -212,7 +212,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     private InvariantDeviceProfile(Context context) {
         mContext = context;
 
-        SharedPreferences prefs = Utilities.getPrefs(context);
+        SharedPreferences prefs = LauncherPrefs.getPrefs(context);
         prefs.registerOnSharedPreferenceChangeListener(this);
         String gridName = getCurrentGridName(context);
         String newGridName = initGrid(context, gridName);
