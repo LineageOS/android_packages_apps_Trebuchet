@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Yardım</string>
     <string name="trust_apps_info_hidden">Gizli uygulamalar ve widget\'ları uygulama menüsünde görünmeyecek</string>
     <string name="trust_apps_info_protected">Korunan uygulamaların başlatıcıdan açılması için kimlik doğrulama gerekir</string>
+    <string name="pref_suggestions_title">Öneriler</string>
+    <string name="pref_suggestions_summary">Uygulama çekmecesi ve ana ekran önerileri için</string>
 </resources>

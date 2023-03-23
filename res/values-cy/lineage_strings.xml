@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Cymorth</string>
     <string name="trust_apps_info_hidden">Mae apiau cudd a\'u teclynnau wedi\'u cuddio o\'r drôr</string>
     <string name="trust_apps_info_protected">Mae ar apiau wedi\'u gwarchod angen dilysiad er mwyn eu hagor o\'r lansiwr</string>
+    <string name="pref_suggestions_title">Awgrymiadau</string>
+    <string name="pref_suggestions_summary">Ar gyfer drôr apiau ac awgrymiadau sgrin gartref</string>
 </resources>

@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Google-აპის გამოჩენა</string>
     <string name="msg_minus_one_on_left">მთავარ ეკრანზე თითის მარჯვნივ გადასმისას</string>
     <string name="msg_minus_one_on_right">მთავარ ეკრანზე თითის მარცხნივ გადასმისას</string>
+    <string name="pref_themed_icons_title">გაფორმების ხატულები მენიუში</string>
+    <string name="pref_themed_icons_summary">გაფორმების შესაბამისი ხატულები მთავარ ეკრანზე</string>
     <string name="desktop_show_labels">ხატულებზე წარწერების ჩვენება ეკრანზე</string>
     <string name="drawer_show_labels">ხატულებზე წარწერების ჩვენება მენიუში</string>
     <string name="trust_apps_manager_name">დამალული და დაცული აპები</string>

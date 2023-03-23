@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Arată aplicația Google</string>
     <string name="msg_minus_one_on_left">Când glisați dreapta din ecranul acasă principal</string>
     <string name="msg_minus_one_on_right">Când glisați stânga din ecranul acasă principal</string>
+    <string name="pref_themed_icons_title">Utilizează iconițe cu temă în sertarul cu aplicații</string>
+    <string name="pref_themed_icons_summary">Urmărește iconițele cu temă utilizate pe ecranul principal</string>
     <string name="desktop_show_labels">Arată etichetele pictogramelor de pe desktop</string>
     <string name="drawer_show_labels">Arată etichetele pictogramelor în sertarul cu aplicaţii</string>
     <string name="trust_apps_manager_name">Aplicații Ascunse &amp; Protejate</string>

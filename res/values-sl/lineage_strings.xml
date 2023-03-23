@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Pokaži Google aplikacijo</string>
     <string name="msg_minus_one_on_left">Ko povlečete desno od glavnega domačega zaslona</string>
     <string name="msg_minus_one_on_right">Ko povlečete levo od glavnega domačega zaslona</string>
+    <string name="pref_themed_icons_title">Uporabi temske ikone v predalu</string>
+    <string name="pref_themed_icons_summary">Sledi temskim ikonam na domačem zaslonu</string>
     <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
     <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
     <string name="trust_apps_manager_name">Skrite in zaščitene aplikacije</string>
@@ -31,4 +33,6 @@
     <string name="trust_apps_help">Pomoč</string>
     <string name="trust_apps_info_hidden">Skrite aplikacije in njihovi pripomočki so skriti iz predala</string>
     <string name="trust_apps_info_protected">Zaščitene aplikacije zahtevajo overitev za odpiranje iz zaganjalnika</string>
+    <string name="pref_suggestions_title">Predlogi</string>
+    <string name="pref_suggestions_summary">Za predloge predala aplikacij in domačega zaslona</string>
 </resources>

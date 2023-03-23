@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Ndihmë</string>
     <string name="trust_apps_info_hidden">Aplikacionet e fshehura dhe mjetet e tyre fshihen nga dizenjuesi</string>
     <string name="trust_apps_info_protected">Aplikacionet e mbrojtura kushtëzojnë vërtetim nga hapja e menu -së</string>
+    <string name="pref_suggestions_title">Sugjerimet</string>
+    <string name="pref_suggestions_summary">Për sirtarin e aplikacioneve &amp; sugjerime për ekranin bazë</string>
 </resources>

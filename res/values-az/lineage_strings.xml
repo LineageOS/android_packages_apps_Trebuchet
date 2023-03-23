@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Kömək</string>
     <string name="trust_apps_info_hidden">Gizli tətbiqlər və vidgetləri, tətbiqlər menyusunda görünməyəcək</string>
     <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik təsdiqləmə tələb olunur</string>
+    <string name="pref_suggestions_title">Təkliflər</string>
+    <string name="pref_suggestions_summary">Tətbiq siyirməsi və əsas ekran təklifləri üçün</string>
 </resources>

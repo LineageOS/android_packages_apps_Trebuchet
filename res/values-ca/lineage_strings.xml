@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Mostra l\'aplicació de Google</string>
     <string name="msg_minus_one_on_left">Quan feu lliscar el dit cap a la dreta des de la pantalla principal d\'inici</string>
     <string name="msg_minus_one_on_right">Quan feu lliscar el dit cap a l\'esquerra des de la pantalla principal d\'inici</string>
+    <string name="pref_themed_icons_title">Utilitza icones temàtiques al calaix</string>
+    <string name="pref_themed_icons_summary">Segueix les icones temàtiques utilitzades a la pantalla d\'inici</string>
     <string name="desktop_show_labels">Mostra les etiquetes de les icones a l\'escriptori</string>
     <string name="drawer_show_labels">Mostra les etiquetes de les icones al calaix</string>
     <string name="trust_apps_manager_name">Aplicacions amagades i protegides</string>
@@ -31,4 +33,6 @@
     <string name="trust_apps_help">Ajuda</string>
     <string name="trust_apps_info_hidden">Les aplicacions amagades i els seus widgets s\'amagaran del calaix</string>
     <string name="trust_apps_info_protected">Les aplicacions protegides requeriran autentificació per poder ser obertes des del llançador</string>
+    <string name="pref_suggestions_title">Suggeriments</string>
+    <string name="pref_suggestions_summary">Per obtenir suggeriments sobre el calaix d\'aplicacions i la pantalla d\'inici</string>
 </resources>

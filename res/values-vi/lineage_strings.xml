@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
     <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
     <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
+    <string name="pref_themed_icons_title">Sử dụng các biểu tượng theo chủ đề trong ngăn kéo</string>
+    <string name="pref_themed_icons_summary">Làm theo các biểu tượng theo chủ đề được sử dụng trên màn hình chính</string>
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
     <string name="trust_apps_manager_name">Ứng dụng được Ẩn &amp; Bảo vệ</string>

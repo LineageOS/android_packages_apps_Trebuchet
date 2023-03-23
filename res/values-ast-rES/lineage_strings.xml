@@ -31,4 +31,6 @@
     <string name="trust_apps_help">Ayuda</string>
     <string name="trust_apps_info_hidden">Nel caxón, les aplicaciones anubríes y los sos widgets escuéndense</string>
     <string name="trust_apps_info_protected">Les aplicaciones protexíes riquen l\'autenticación p\'abriles dende\'l llanzador</string>
+    <string name="pref_suggestions_title">Suxerencies</string>
+    <string name="pref_suggestions_summary">Pa consiguir suxerencies nel caxón d\'aplicaciones y na pantalla d\'aniciu</string>
 </resources>

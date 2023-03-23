@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Εμφάνιση εφαρμογής Google</string>
     <string name="msg_minus_one_on_left">Όταν σύρετε προς τα δεξιά από την κύρια αρχική οθόνη</string>
     <string name="msg_minus_one_on_right">Όταν σύρετε προς τα αριστερά από την κύρια αρχική οθόνη</string>
+    <string name="pref_themed_icons_title">Χρήση θεματικών εικονιδίων στο συρτάρι εφαρμογών</string>
+    <string name="pref_themed_icons_summary">Ακολουθήστε τα θεματικά εικονίδια που χρησιμοποιούνται στην αρχική οθόνη</string>
     <string name="desktop_show_labels">Εμφάνιση ετικετών εικονιδίων στην επιφάνεια</string>
     <string name="drawer_show_labels">Εμφάνιση ετικετών εικονιδίων στο συρτάρι</string>
     <string name="trust_apps_manager_name">Κρυφές &amp; προστατευόμενες εφαρμογές</string>
