@@ -35,6 +35,8 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.PointF;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -60,6 +62,7 @@ import com.android.quickstep.TaskAnimationManager;
 import com.android.quickstep.util.CachedEventDispatcher;
 import com.android.quickstep.util.MotionPauseDetector;
 import com.android.quickstep.util.NavBarPosition;
+import com.android.systemui.shared.system.ActivityManagerWrapper;
 import com.android.systemui.shared.system.InputChannelCompat.InputEventReceiver;
 import com.android.systemui.shared.system.InputMonitorCompat;
 
@@ -121,6 +124,12 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
     // The callback called upon finishing the recents transition if it was force-canceled
     private Runnable mForceFinishRecentsTransitionCallback;
 
+    private Handler mMainThreadHandler;
+    private Runnable mCancelRecentsAnimationRunnable = () -> {
+        ActivityManagerWrapper.getInstance().cancelRecentsAnimation(
+                true /* restoreHomeStackPosition */);
+    };
+
     public OtherActivityInputConsumer(Context base, RecentsAnimationDeviceState deviceState,
             TaskAnimationManager taskAnimationManager, GestureState gestureState,
             boolean isDeferredDownTarget, Consumer<OtherActivityInputConsumer> onCompleteCallback,
@@ -131,6 +140,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
         mNavBarPosition = mDeviceState.getNavBarPosition();
         mTaskAnimationManager = taskAnimationManager;
         mGestureState = gestureState;
+        mMainThreadHandler = new Handler(Looper.getMainLooper());
         mHandlerFactory = handlerFactory;
 
         mMotionPauseDetector = new MotionPauseDetector(base, false,
@@ -459,6 +469,15 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
             }
             onConsumerAboutToBeSwitched();
             onInteractionGestureFinished();
+
+            // Cancel the recents animation if SysUI happens to handle UP before we have a chance
+            // to start the recents animation. In addition, workaround for b/126336729 by delaying
+            // the cancel of the animation for a period, in case SysUI is slow to handle UP and we
+            // handle DOWN & UP and move the home stack before SysUI can start the activity
+            mMainThreadHandler.removeCallbacks(mCancelRecentsAnimationRunnable);
+            if (!mDeviceState.isFullyGesturalNavMode()) {
+                mMainThreadHandler.postDelayed(mCancelRecentsAnimationRunnable, 100);
+            }
         }
         cleanupAfterGesture();
         TraceHelper.INSTANCE.endSection();
@@ -480,6 +499,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
     @Override
     public void onConsumerAboutToBeSwitched() {
         Preconditions.assertUIThread();
+        mMainThreadHandler.removeCallbacks(mCancelRecentsAnimationRunnable);
         if (mInteractionHandler != null) {
             // The consumer is being switched while we are active. Set up the shared state to be
             // used by the next animation

@@ -24,6 +24,7 @@ import static com.android.launcher3.util.DisplayController.CHANGE_NAVIGATION_MOD
 import static com.android.launcher3.util.DisplayController.CHANGE_ROTATION;
 import static com.android.launcher3.util.NavigationMode.NO_BUTTON;
 import static com.android.launcher3.util.NavigationMode.THREE_BUTTONS;
+import static com.android.launcher3.util.NavigationMode.TWO_BUTTONS;
 import static com.android.launcher3.util.SettingsCache.ONE_HANDED_ENABLED;
 import static com.android.launcher3.util.SettingsCache.ONE_HANDED_SWIPE_BOTTOM_TO_NOTIFICATION_ENABLED;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_A11Y_BUTTON_CLICKABLE;
@@ -313,6 +314,13 @@ public class RecentsAnimationDeviceState implements DisplayInfoChangeListener, E
      */
     public boolean isGesturalNavMode() {
         return mMode.hasGestures;
+    }
+
+    /**
+     * @return whether the current nav mode is 2-button-based.
+     */
+    public boolean isTwoButtonNavMode() {
+        return mMode == TWO_BUTTONS;
     }
 
     /**
