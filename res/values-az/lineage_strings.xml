@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Google tətbiqini göstər</string>
     <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
     <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
+    <string name="pref_themed_icons_title">Siyirmədə temalı nişanları istifadə et</string>
+    <string name="pref_themed_icons_summary">Əsas ekranda istifadə edilən temalı nişanları izlə</string>
     <string name="desktop_show_labels">Masaüstündə nişan etiketlərini göstər</string>
     <string name="drawer_show_labels">Siyirmədə nişan etiketlərini göstər</string>
     <string name="trust_apps_manager_name">Gizli və Qorunan tətbiqlər</string>
