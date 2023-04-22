@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Shfaq Google app</string>
     <string name="msg_minus_one_on_left">Kur rëshket djathtas nga faqja kryesore</string>
     <string name="msg_minus_one_on_right">Kur rëshket majtas nga faqja kryesore</string>
+    <string name="pref_themed_icons_title">Përdorni ikonat me temë në sirtar</string>
+    <string name="pref_themed_icons_summary">Ndiqni ikonat me temë të përdorura në ekranin bazë</string>
     <string name="desktop_show_labels">Shfaq emërtimin e ikonave në ekran</string>
     <string name="drawer_show_labels">Shfaq emërtimin e ikonave në menu</string>
     <string name="trust_apps_manager_name">Programet e fshehura &amp; Mbrojtura</string>
