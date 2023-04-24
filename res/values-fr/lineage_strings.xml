@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Afficher l\'application Google</string>
     <string name="msg_minus_one_on_left">Lors d\'un balayage vers la droite sur l\'écran d\'accueil principal</string>
     <string name="msg_minus_one_on_right">Lors d\'un balayage vers la gauche sur l\'écran d\'accueil principal</string>
+    <string name="pref_themed_icons_title">Utiliser les icônes stylisées dans le tiroir d\'applications</string>
+    <string name="pref_themed_icons_summary">Suivre le style des icônes utilisé sur l\'écran d\'accueil</string>
     <string name="desktop_show_labels">Afficher le libellé des icônes sur le bureau</string>
     <string name="drawer_show_labels">Afficher le libellé des icônes dans le tiroir</string>
     <string name="trust_apps_manager_name">Applications cachées &amp; protégées</string>
