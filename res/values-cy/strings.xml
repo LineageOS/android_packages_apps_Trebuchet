@@ -27,7 +27,7 @@
     <string name="home_screen">Sgrin gartref</string>
     <string name="custom_actions">Gweithredoedd addasu</string>
     <string name="long_press_widget_to_add">Cyffyrdda a dal dy fys ar declyn i\'w symud.</string>
-    <string name="long_accessible_way_to_add">Rho dariad dwbl a dal dy gyffwrdd i godi teclyn i fyny neu ddefnyddio gweithredoedd addasu.</string>
+    <string name="long_accessible_way_to_add">Rho dariad dwbl a dal dy gyffwrdd i godi teclyn i fyny neu defnyddio gweithredoedd addasu.</string>
     <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
     <string name="widget_accessible_dims_format">%1$d o led, %2$d o uchder</string>
     <string name="add_item_request_drag_hint">Cyffyrdda a dal i\'w osod â llaw</string>
@@ -39,7 +39,7 @@
     <string name="label_application">Ap</string>
     <string name="notifications_header">Hysbysiadau</string>
     <string name="long_press_shortcut_to_add">Cyffyrdda a dal dy gyffwrdd i godi llwybr byr i fyny.</string>
-    <string name="long_accessible_way_to_add_shortcut">Rho dariad dwbl a dal dy gyffwrdd i godi llwybr byr i fyny neu ddefnyddio gweithredoedd addasu.</string>
+    <string name="long_accessible_way_to_add_shortcut">Rho dariad dwbl a dal dy gyffwrdd i godi llwybr byr i fyny neu defnyddio gweithredoedd addasu.</string>
     <string name="out_of_space">Does dim rhagor o le ar y sgrin gartref hon.</string>
     <string name="hotseat_out_of_space">Does dim rhagor o le yn y blwch ffefrynnau</string>
     <string name="all_apps_button_label">Rhestr apiau</string>
@@ -109,7 +109,7 @@ Mae\'n bosib i ti ei dynnu neu i chwilio am a gosod yr ap dy hun.    </string>
     <string name="widgets_bottom_sheet_title">Teclynnau <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
     <string name="widgets_list">Rhestr teclynnau</string>
     <string name="widgets_list_closed">Rhestr teclynnau wedi\'i chau</string>
-    <string name="action_add_to_workspace">Ychwanegu i\'r sgrin Gartref</string>
+    <string name="action_add_to_workspace">Ychwanegu i\'r sgrin gartref</string>
     <string name="action_move_here">Symud yr eitem yma</string>
     <string name="item_added_to_workspace">Ychwanegwyd yr item i\'r sgrin gartref</string>
     <string name="item_removed">Tynnwyd yr eitem</string>

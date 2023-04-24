@@ -23,5 +23,17 @@
     <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
     <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
     <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
+    <string name="show_labels_landscape">Hiển thị tên ứng dụng khi xoay ngang</string>
+    <string name="trust_apps_manager_name">Ứng dụng được Ẩn &amp; Bảo vệ</string>
+    <string name="trust_apps_auth_manager">Mở khóa để quản lý các ứng dụng ẩn và được bảo vệ</string>
+    <string name="trust_apps_auth_open_app">Xác thực để mở %1$s</string>
+    <string name="trust_apps_loading">Đang tải\u2026</string>
+    <string name="trust_apps_no_lock_error">Vui lòng thiết lập màn hình khóa an toàn để hạn chế quyền truy cập ứng dụng</string>
+    <string name="trust_apps_help">Trợ giúp</string>
+    <string name="trust_apps_info_hidden">Các ứng dụng ẩn và các tiện ích con của chúng được ẩn khỏi drawer</string>
+    <string name="trust_apps_info_protected">Các ứng dụng được bảo vệ yêu cầu xác thực để được mở từ trình khởi chạy</string>
     <string name="icon_pack_title">Gói biểu tượng</string>
+    <string name="icon_pack_default_label">Mặc định</string>
+    <string name="icon_pack_add">Cài thêm</string>
+    <string name="icon_pack_no_market">Không có cửa hàng ứng dụng có sẵn</string>
 </resources>

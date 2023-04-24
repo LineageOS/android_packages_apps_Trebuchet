@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notifications_header">Avisos</string>
+    <string name="folder_name_format_exact">Carpeta: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> elementos</string>
+    <string name="folder_name_format_overflow">Carpeta: <xliff:g id="name" example="Games">%1$s</xliff:g>, <xliff:g id="size" example="2">%2$d</xliff:g> ó más elementos</string>
+    <string name="work_profile_edu_work_apps">L\'alministrador de TI pue ver les aplicaciones y los datos del perfil llaboral</string>
+    <string name="work_profile_edu_next">Siguiente</string>
+    <string name="work_profile_edu_accept">Entendílo</string>
+    <string name="work_apps_paused_title">El perfil llaboral ta en posa</string>
+    <string name="work_apps_paused_body">Les aplicaciones d\'esti perfil nun puen unviate avisos, usar la batería o acceder a la llocalización</string>
+    <string name="work_apps_paused_content_description">El perfil llaboral ta en posa. Les aplicaciones d\'esti perfil nun puen unviate avisos, usar la batería o acceder a la to llocalización</string>
+</resources>
