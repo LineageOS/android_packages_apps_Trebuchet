@@ -33,4 +33,6 @@
     <string name="trust_apps_help">Trợ giúp</string>
     <string name="trust_apps_info_hidden">Các ứng dụng ẩn và các tiện ích con của chúng được ẩn khỏi drawer</string>
     <string name="trust_apps_info_protected">Các ứng dụng được bảo vệ yêu cầu xác thực để được mở từ trình khởi chạy</string>
+    <string name="pref_suggestions_title">Đề xuất</string>
+    <string name="pref_suggestions_summary">Đề xuất cho ngăn ứng dụng &amp;  màn hình chính</string>
 </resources>
