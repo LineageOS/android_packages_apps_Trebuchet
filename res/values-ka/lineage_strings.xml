@@ -14,8 +14,26 @@
      limitations under the License.
 -->
 <resources>
-    <string name="settings_edit_allow_title">ჩასწორების დაშვება</string>
+    <string name="title_show_google_app">Google-აპის გამოჩენა</string>
+    <string name="msg_minus_one_on_left">მთავარ ეკრანზე თითის მარჯვნივ გადასმისას</string>
+    <string name="msg_minus_one_on_right">მთავარ ეკრანზე თითის მარცხნივ გადასმისას</string>
+    <string name="settings_edit_allow_title">ჩასწორების ნებართვა</string>
     <string name="settings_edit_allow_summary_on">მთავარ ეკრანზე შესაძლებელია ხატულებისა და ვიჯეტების დამატება, მოცილება ან გადაადგილება</string>
     <string name="settings_edit_allow_summary_off">მთავარ ეკრანზე ვერ მოხერხდება ხატულებისა და ვიჯეტების დამატება, მოცილება ან გადაადგილება</string>
     <string name="settings_edit_widgets_error">მთავარ ეკრანზე ვერ მოხერხდება ვიჯეტების დამატება</string>
+    <string name="desktop_show_labels">ხატულებზე წარწერების ჩვენება ეკრანზე</string>
+    <string name="drawer_show_labels">ხატულებზე წარწერების ჩვენება მენიუში</string>
+    <string name="show_labels_landscape">ხატულებზე წარწერების ჩვენება თარაზულ მდგომარეობაში</string>
+    <string name="trust_apps_manager_name">დამალული და დაცული აპები</string>
+    <string name="trust_apps_auth_manager">დამალული და დაცული აპების გახსნა სამართავად</string>
+    <string name="trust_apps_auth_open_app">დამოწმება, რომ გაიხსნას %1$s</string>
+    <string name="trust_apps_loading">იტვირთება\u2026</string>
+    <string name="trust_apps_no_lock_error">გთხოვთ, დააყენოთ ჩამკეტი ეკრანი, აპთან წვდომის შესაზღუდად</string>
+    <string name="trust_apps_help">დახმარება</string>
+    <string name="trust_apps_info_hidden">დამალული აპები და ვიჯეტები დამალულია მენიუში</string>
+    <string name="trust_apps_info_protected">დაცული აპები საჭიროებს ვინაობის დამოწმებას გამშვებიდან გახსნითვის</string>
+    <string name="icon_pack_title">ხატულების ნაკრები</string>
+    <string name="icon_pack_default_label">ნაგულისხმევი</string>
+    <string name="icon_pack_add">სხვების დაყენება</string>
+    <string name="icon_pack_no_market">მაღაზია არაა ხელმისაწვდომი</string>
 </resources>
