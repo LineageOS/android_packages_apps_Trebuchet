@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">Bloche la disposizion</string>
+    <string name="settings_lock_layout_summary_on">Nol è pussibil zontâ, gjavâ e spostâ iconis e widgets su la schermade di inizi</string>
+    <string name="settings_lock_layout_summary_off">Al è pussibil zontâ, gjavâ e spostâ iconis e widgets su la schermade di inizi</string>
+    <string name="settings_edit_widgets_error">Nol è pussibil zontâ widgets ae schermade di inizi</string>
+    <string name="title_show_google_app">Mostre la aplicazion Google</string>
+    <string name="msg_minus_one_on_left">Cuant che, de schermade di inizi, tu scoris viers diestre</string>
+    <string name="msg_minus_one_on_right">Cuant che, de schermade di inizi, tu scoris viers çampe</string>
+    <string name="desktop_show_labels">Mostre lis etichetis des iconis te schermade di inizi</string>
+    <string name="drawer_show_labels">Mostre lis etichetis des iconis tal scansel</string>
+    <string name="trust_apps_manager_name">Aplicazions protetis &amp; platadis</string>
+    <string name="trust_apps_auth_manager">Sbloche par gjestî lis aplicazions protetis e platadis</string>
+    <string name="trust_apps_auth_open_app">Autentichiti par vierzi %1$s</string>
+    <string name="trust_apps_loading">Daûr a cjariâ\u2026</string>
+    <string name="trust_apps_no_lock_error">Stabilìs une schermade di bloc sigure par limitâ l\'acès ae aplicazion</string>
+    <string name="trust_apps_help">Jutori</string>
+    <string name="trust_apps_info_hidden">Lis aplicazions platadis e i lôr widgets a son platâts dal scansel</string>
+    <string name="trust_apps_info_protected">Lis aplicazions protetis a domandin la autenticazion par jessi viertis dal inviadôr</string>
+</resources>
