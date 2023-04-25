@@ -33,6 +33,24 @@
       "message": "Breaks going to recents view from app drawer in full gesture mode.",
       "revId": "289a47abdd94dc91123bea29c1f2deb52ee1484d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7efb2242_c9160455",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 24262
+      },
+      "writtenOn": "2023-04-25T04:51:49Z",
+      "side": 1,
+      "message": "I locally reverted this patch and cannot enter recents from app drawer anyway, are you sure this patch specifically broke it?",
+      "parentUuid": "720db2c0_32064d48",
+      "revId": "289a47abdd94dc91123bea29c1f2deb52ee1484d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
