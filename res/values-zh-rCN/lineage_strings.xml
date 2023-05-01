@@ -22,6 +22,7 @@
     <string name="msg_minus_one_on_left">当您从主屏幕向右滑动时</string>
     <string name="msg_minus_one_on_right">当您从主屏幕向左滑动时</string>
     <string name="pref_themed_icons_title">在抽屉内应用带主题的图标</string>
+    <string name="pref_themed_icons_summary">依照主屏幕上使用的主题图标</string>
     <string name="desktop_show_labels">在桌面上显示图标标签</string>
     <string name="drawer_show_labels">在抽屉里显示图标标签</string>
     <string name="trust_apps_manager_name">隐藏和保护应用</string>
