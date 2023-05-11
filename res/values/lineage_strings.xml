@@ -35,6 +35,10 @@
     <!-- Folder titles -->
     <string name="google_folder_title" translatable="false">Google</string>
 
+    <!-- Force monochrome icons -->
+    <string name="pref_force_monochrome_themed_icons_title">Force themed icons</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Generate themed icons for apps that do not have one (requires re-toggling of themed icons)</string>
+
     <!-- All apps themed icons -->
     <string name="pref_themed_icons_title">Use themed icons in drawer</string>
     <string name="pref_themed_icons_summary">Follow themed icons used on home screen</string>
