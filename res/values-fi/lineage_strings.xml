@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Lukitse asettelu</string>
     <string name="settings_lock_layout_summary_on">Kuvakkeita ja widgettejä ei voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_lock_layout_summary_off">Kuvakkeet ja widgetit voi lisätä, poistaa tai siirtää kotinäytöllä</string>
     <string name="settings_edit_widgets_error">Kotinäytölle ei ole mahdollista lisätä widgettejä</string>

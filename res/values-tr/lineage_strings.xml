@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Google uygulamasını göster</string>
     <string name="msg_minus_one_on_left">Ana ekrandan sağa kaydırdığınızda</string>
     <string name="msg_minus_one_on_right">Ana ekrandan sola kaydırdığınızda</string>
+    <string name="pref_themed_icons_title">Çekmecede temalı simgeler uygula</string>
+    <string name="pref_themed_icons_summary">Ana ekranda kullanılan temalı simgeleri takip edin</string>
     <string name="desktop_show_labels">Ana ekranda simge etiketlerini göster</string>
     <string name="drawer_show_labels">Çekmecede simge etiketlerini göster</string>
     <string name="trust_apps_manager_name">Gizli ve Korunan uygulamalar</string>
