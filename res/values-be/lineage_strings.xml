@@ -15,4 +15,5 @@
 -->
 <resources>
     <string name="settings_edit_widgets_error">Немагчыма дадаць віджэты на галоўны экран</string>
+    <string name="pref_suggestions_title">Прапановы</string>
 </resources>

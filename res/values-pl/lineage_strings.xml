@@ -14,12 +14,15 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Zablokuj układ</string>
     <string name="settings_lock_layout_summary_on">Ikon i widżetów nie można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_lock_layout_summary_off">Ikony i widżety można dodawać, usuwać i przenosić na ekranie głównym</string>
     <string name="settings_edit_widgets_error">Nie można dodać widżetów do ekranu głównego</string>
     <string name="title_show_google_app">Pokaż aplikację Google</string>
     <string name="msg_minus_one_on_left">Gdy przesuniesz w prawo od ekranu głównego</string>
     <string name="msg_minus_one_on_right">Gdy przesuniesz w lewo od ekranu głównego</string>
+    <string name="pref_themed_icons_title">Użyj ikon motywu w szufladzie aplikacji</string>
+    <string name="pref_themed_icons_summary">Zgodnie z ikonami motywu na ekranie głównym</string>
     <string name="desktop_show_labels">Pokaż etykiety ikon na pulpicie</string>
     <string name="drawer_show_labels">Pokaż etykiety ikon w szufladzie</string>
     <string name="trust_apps_manager_name">Ukryte i chronione aplikacje</string>
@@ -30,4 +33,6 @@
     <string name="trust_apps_help">Pomoc</string>
     <string name="trust_apps_info_hidden">Ukryte aplikacje i ich widżety są ukryte z szuflady aplikacji</string>
     <string name="trust_apps_info_protected">Chronione aplikacje wymagają uwierzytelniania, aby mogły zostać uruchomione z poziomu ekranu głównego</string>
+    <string name="pref_suggestions_title">Sugestie</string>
+    <string name="pref_suggestions_summary">Dla wskazówek szuflady aplikacji i ekranu głównego</string>
 </resources>

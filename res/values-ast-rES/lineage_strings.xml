@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Amosar l\'aplicación «Google»</string>
     <string name="msg_minus_one_on_left">Cuando eslices a la derecha dende la pantalla d\'aniciu principal</string>
     <string name="msg_minus_one_on_right">Cuando eslices a la esquierda dende la pantalla d\'aniciu principal</string>
+    <string name="pref_themed_icons_title">Usar iconos temáticos nel caxón</string>
+    <string name="pref_themed_icons_summary">Sigue los iconos temáticos que s\'usen na pantalla d\'aniciu</string>
     <string name="desktop_show_labels">Amosar les etiquetes de los iconos nel escritoriu</string>
     <string name="drawer_show_labels">Amosar les etiquetes de los iconos nel caxón</string>
     <string name="trust_apps_manager_name">Aplicaciones anubríes y protexíes</string>
