@@ -22,7 +22,7 @@
     <string name="msg_minus_one_on_left">Ao deslizar para a direita no ecrã inicial</string>
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda no ecrã inicial</string>
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
-    <string name="drawer_show_labels">Mostrar as legendas dos ícones no painel de aplicações</string>
+    <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de aplicações</string>
     <string name="trust_apps_manager_name">Aplicações Ocultas e Protegidas</string>
     <string name="trust_apps_auth_manager">Desbloquear para gerir as aplicações ocultas e protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
