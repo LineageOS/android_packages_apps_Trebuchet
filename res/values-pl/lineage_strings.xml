@@ -33,4 +33,7 @@
     <string name="trust_apps_info_hidden">Ukryte aplikacje i ich widżety są ukryte z szuflady aplikacji</string>
     <string name="trust_apps_info_protected">Chronione aplikacje wymagają uwierzytelniania, aby mogły zostać uruchomione z poziomu ekranu głównego</string>
     <string name="icon_pack_title">Paczka ikon</string>
+    <string name="icon_pack_default_label">Domyślny</string>
+    <string name="icon_pack_add">Zainstaluj więcej</string>
+    <string name="icon_pack_no_market">Brak dostępnego sklepu z aplikacjami</string>
 </resources>

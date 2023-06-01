@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="title_show_google_app">Birta Google-forrit</string>
+    <string name="msg_minus_one_on_left">Þegar þú strýkur til hægri af aðal-heimaskjánum</string>
+    <string name="msg_minus_one_on_right">Þegar þú strýkur til vinstri af aðal-heimaskjánum</string>
+    <string name="settings_edit_allow_title">Leyfa breytingar</string>
+    <string name="settings_edit_allow_summary_on">Táknmyndum og viðmótshlutum er hægt að bæta við, færa eða fjarlægja á heimaskjá</string>
+    <string name="settings_edit_allow_summary_off">Táknmyndum og viðmótshlutum er ekki hægt að bæta við, færa eða fjarlægja á heimaskjá</string>
+    <string name="settings_edit_widgets_error">Það er ekki hægt að bæta viðmótshlutum á heimaskjáinn</string>
+    <string name="desktop_show_labels">Birta skýringar táknmynda á skjáborði</string>
+    <string name="drawer_show_labels">Birta skýringar táknmynda í leiðsagnarsleða</string>
+    <string name="show_labels_landscape">Birta merkingar táknmynda lárétt</string>
+    <string name="trust_apps_manager_name">Falin og varin forrit</string>
+    <string name="trust_apps_auth_manager">Aflæsa til að sýsla með falin og vernduð forrit</string>
+    <string name="trust_apps_auth_open_app">Auðkenndu til að opna %1$s</string>
+    <string name="trust_apps_loading">Hleð inn\u2026</string>
+    <string name="trust_apps_no_lock_error">Settu upp öruggan læsiskjá til að takmarka aðgang forrits</string>
+    <string name="trust_apps_help">Hjálp</string>
+    <string name="trust_apps_info_hidden">Falin forrit og viðmótshlutar þeirra eru falin frá leiðsagnarsleðanum</string>
+    <string name="trust_apps_info_protected">Vernduð forrit krefjast auðkenningar ef opna á þau úr ræsinum</string>
+    <string name="icon_pack_title">Táknmyndapakki</string>
+    <string name="icon_pack_default_label">Sjálfgefið</string>
+    <string name="icon_pack_add">Setja inn meira</string>
+    <string name="icon_pack_no_market">Það er engin tiltæk forritaverslun</string>
+</resources>
