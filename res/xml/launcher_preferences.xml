@@ -77,12 +77,6 @@
         <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
     </androidx.preference.PreferenceScreen>
 
-    <androidx.preference.PreferenceScreen
-        android:key="pref_developer_options"
-        android:persistent="false"
-        android:title="@string/developer_options_title"
-        android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
-
     <SwitchPreference
         android:key="pref_allapps_themed_icons"
         android:title="@string/pref_themed_icons_title"
