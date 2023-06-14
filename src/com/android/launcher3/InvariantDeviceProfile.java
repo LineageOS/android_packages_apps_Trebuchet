@@ -497,7 +497,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
         // Re-init grid
         String gridName = getCurrentGridName(context);
-        initGrid(context, Utilities.getPrefs(context).getString(KEY_IDP_GRID_NAME, gridName));
+        initGrid(context, gridName);
 
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
         for (OnIDPChangeListener listener : mChangeListeners) {
