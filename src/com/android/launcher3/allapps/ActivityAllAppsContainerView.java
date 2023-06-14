@@ -597,13 +597,22 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
                 tabsHidden);
 
         int padding = mHeader.getMaxTranslation();
-        mAH.forEach(adapterHolder -> {
-            adapterHolder.mPadding.top = padding;
+        for (int i = 0; i < mAH.size(); i++) {
+            final AdapterHolder adapterHolder = mAH.get(i);
+            // Search and other adapters need to be handled a bit differently; otherwise, when
+            // when leaving search, the All Apps view may be noticeably shifted downward because
+            // its padding was unnecessarily impacted, and never restored, upon entering search.
+            if (i != AdapterHolder.SEARCH && !tabsHidden && mHeader.getFloatingRowsHeight() == 0) {
+                // Only the Search adapter needs padding when there are tabs but no floating rows.
+                adapterHolder.mPadding.top = 0;
+            } else {
+                adapterHolder.mPadding.top = padding;
+            }
             adapterHolder.applyPadding();
             if (adapterHolder.mRecyclerView != null) {
                 adapterHolder.mRecyclerView.scrollToTop();
             }
-        });
+        }
 
         removeCustomRules(mHeader);
         if (!isSearchSupported()) {
