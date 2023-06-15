@@ -14,6 +14,12 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_edit_allow_title">Дазволіць рэдагаванне</string>
     <string name="settings_edit_widgets_error">Немагчыма дадаць віджэты на галоўны экран</string>
+    <string name="trust_apps_auth_open_app">Аўтарызуйцеся для адкрыцця %1$s</string>
+    <string name="trust_apps_loading">Загрузка\u2026</string>
+    <string name="trust_apps_help">Дапамога</string>
+    <string name="icon_pack_title">Набор значкоў</string>
     <string name="icon_pack_default_label">Прадвызначана</string>
+    <string name="icon_pack_add">Усталяваць яшчэ</string>
 </resources>
