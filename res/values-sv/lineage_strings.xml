@@ -14,7 +14,12 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_edit_widgets_error">Det går inte att lägga till widgetar på hemskärmen</string>
+    <string name="pref_themed_icons_title">Använd temaikoner i appskärmen</string>
+    <string name="pref_themed_icons_summary">Följ temaikoner som används på hemskärmen</string>
     <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
     <string name="trust_apps_loading">Laddar\u2026</string>
     <string name="trust_apps_help">Hjälp</string>
+    <string name="pref_suggestions_title">Förslag</string>
+    <string name="pref_suggestions_summary">För förslag på app- &amp; hemskärmen</string>
 </resources>

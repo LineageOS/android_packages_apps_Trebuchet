@@ -14,12 +14,15 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">قفل التخطيط</string>
     <string name="settings_lock_layout_summary_on">لا يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_lock_layout_summary_off">يمكن إضافة الرموز والأدوات وإزالتها ونقلها على الشاشة الرئيسية</string>
     <string name="settings_edit_widgets_error">لا يمكن إضافة الأدوات إلى الشاشة الرئيسية</string>
     <string name="title_show_google_app">أظهر تطبيق Google</string>
     <string name="msg_minus_one_on_left">عند السحب لليمين من الشاشة الرئيسية الاساسية</string>
     <string name="msg_minus_one_on_right">عند السحب لليسار من الشاشة الرئيسية الأساسية</string>
+    <string name="pref_themed_icons_title">استخدام أيقونات مخصصة في درج التطبيقات</string>
+    <string name="pref_themed_icons_summary">اتبع الأيونات المنسقة المستخدمة على الشاشة الرئيسية</string>
     <string name="desktop_show_labels">إظهار التسميات على سطح المكتب</string>
     <string name="drawer_show_labels">إظهار التسميات في الدرج</string>
     <string name="trust_apps_manager_name">التطبيقات المخفية و المحمية</string>
@@ -30,4 +33,6 @@
     <string name="trust_apps_help">مساعدة</string>
     <string name="trust_apps_info_hidden">يتم إخفاء التطبيقات المخفية وعناصرها من الدرج</string>
     <string name="trust_apps_info_protected">تتطلب التطبيقات المحمية فتح المصادقة من المشغِّل</string>
+    <string name="pref_suggestions_title">الاقتراحات</string>
+    <string name="pref_suggestions_summary">لدرج التطبيقات &amp; اقتراحات الشاشة الرئيسية</string>
 </resources>

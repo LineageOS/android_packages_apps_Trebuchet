@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Google 앱 표시</string>
     <string name="msg_minus_one_on_left">메인 홈 화면에서 오른쪽으로 스와이프할 때</string>
     <string name="msg_minus_one_on_right">메인 홈 화면에서 왼쪽으로 스와이프할 때</string>
+    <string name="pref_themed_icons_title">앱 서랍에 테마가 적용된 아이콘 사용</string>
+    <string name="pref_themed_icons_summary">홈 화면에 사용하는, 테마가 적용된 아이콘 사용</string>
     <string name="desktop_show_labels">홈 화면에 아이콘 이름 표시</string>
     <string name="drawer_show_labels">앱 서랍에 아이콘 이름 표시</string>
     <string name="trust_apps_manager_name">숨겨지거나 보호된 앱</string>
@@ -31,4 +33,6 @@
     <string name="trust_apps_help">도움말</string>
     <string name="trust_apps_info_hidden">숨겨진 앱과 해당 앱의 위젯은 앱 서랍에서 숨겨집니다.</string>
     <string name="trust_apps_info_protected">보호된 앱을 실행기에서 열려면 인증이 필요합니다.</string>
+    <string name="pref_suggestions_title">제안</string>
+    <string name="pref_suggestions_summary">앱 서랍 및 홈 화면 제안</string>
 </resources>
