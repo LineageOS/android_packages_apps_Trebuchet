@@ -15,4 +15,7 @@
 -->
 <resources>
     <string name="settings_edit_widgets_error">Немагчыма дадаць віджэты на галоўны экран</string>
+    <string name="trust_apps_auth_open_app">Аўтарызуйцеся для адкрыцця %1$s</string>
+    <string name="trust_apps_loading">Загрузка\u2026</string>
+    <string name="trust_apps_help">Дапамога</string>
 </resources>
