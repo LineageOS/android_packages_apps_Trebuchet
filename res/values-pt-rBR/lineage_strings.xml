@@ -31,4 +31,5 @@
     <string name="trust_apps_help">Ajuda</string>
     <string name="trust_apps_info_hidden">Os aplicativos ocultos e os seus widgets estão ocultos na gaveta</string>
     <string name="trust_apps_info_protected">Os aplicativos protegidos requerem autenticação para serem executados</string>
+    <string name="pref_suggestions_title">Sugestões</string>
 </resources>

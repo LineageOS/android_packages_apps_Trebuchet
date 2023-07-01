@@ -19,10 +19,15 @@
     <string name="settings_lock_layout_summary_off">Ikoner og widgets kan tilføjes, fjernes og flyttes på hjemmeskærmen</string>
     <string name="settings_edit_widgets_error">Det er ikke muligt at tilføje widgets til hjemmeskærmen</string>
     <string name="title_show_google_app">Vis Google app</string>
+    <string name="pref_themed_icons_title">Brug tematiserede ikoner i skuffen</string>
+    <string name="pref_themed_icons_summary">Følg temaikoner, der bruges på startskærmen</string>
     <string name="desktop_show_labels">Vis ikontekst på startskærmen</string>
     <string name="drawer_show_labels">Vis ikontekst i skuffen</string>
     <string name="trust_apps_manager_name">Skjulte &amp; Beskyttede apps</string>
     <string name="trust_apps_auth_manager">Oplås for at håndtere de skjulte og beskyttede apps</string>
     <string name="trust_apps_auth_open_app">Godkend for at åbne %1$s</string>
+    <string name="trust_apps_help">Hjælp</string>
     <string name="trust_apps_info_protected">Beskyttede apps kræver godkendelse, for at blive åbnet fra starteren</string>
+    <string name="pref_suggestions_title">Forslag</string>
+    <string name="pref_suggestions_summary">For til app-skuffe &amp; startskærms forslag</string>
 </resources>
