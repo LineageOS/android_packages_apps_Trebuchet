@@ -39,6 +39,10 @@
     <string name="pref_themed_icons_title">Use themed icons in drawer</string>
     <string name="pref_themed_icons_summary">Follow themed icons used on home screen</string>
 
+    <!-- Force monocrome icons -->
+    <string name="pref_force_mono_icons_title">Force monochrome icons</string>
+    <string name="pref_force_mono_icons_summary">Force monochrome icons for apps that don\'t support them natively</string>
+
     <!-- Hide labels -->
     <string name="desktop_show_labels">Show icon labels on desktop</string>
     <string name="drawer_show_labels">Show icon labels in drawer</string>

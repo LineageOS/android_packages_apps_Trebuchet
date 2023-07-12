@@ -85,6 +85,13 @@
         android:persistent="true" />
 
     <SwitchPreference
+        android:key="pref_force_mono_icons"
+        android:title="@string/pref_force_mono_icons_title"
+        android:summary="@string/pref_force_mono_icons_summary"
+        android:defaultValue="false"
+        android:persistent="true" />
+
+    <SwitchPreference
         android:key="pref_desktop_show_labels"
         android:title="@string/desktop_show_labels"
         android:defaultValue="true"
