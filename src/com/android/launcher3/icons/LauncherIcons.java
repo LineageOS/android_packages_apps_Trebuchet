@@ -98,7 +98,8 @@ public class LauncherIcons extends BaseIconFactory implements AutoCloseable {
     @Override
     protected Drawable getMonochromeDrawable(Drawable base) {
         Drawable mono = super.getMonochromeDrawable(base);
-        if (mono != null || !ENABLE_FORCED_MONO_ICON.get()) {
+        if (mono != null || (!ENABLE_FORCED_MONO_ICON.get() &&
+            !InvariantDeviceProfile.mPrefForceMonoIcons)) {
             return mono;
         }
         if (mMonochromeIconFactory == null) {
