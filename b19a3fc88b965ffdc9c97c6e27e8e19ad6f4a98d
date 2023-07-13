@@ -16,6 +16,24 @@
       "message": "100 chars",
       "revId": "b19a3fc88b965ffdc9c97c6e27e8e19ad6f4a98d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42fb18f1_28c709d0",
+        "filename": "src/com/android/launcher3/icons/LauncherIcons.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 18106
+      },
+      "writtenOn": "2023-07-13T15:33:40Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "dd7e5d87_e551e763",
+      "revId": "b19a3fc88b965ffdc9c97c6e27e8e19ad6f4a98d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
