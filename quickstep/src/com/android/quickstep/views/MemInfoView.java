@@ -16,6 +16,7 @@
 
 package com.android.quickstep.views;
 
+import static com.android.launcher3.util.NavigationMode.TWO_BUTTONS;
 import static com.android.launcher3.util.NavigationMode.THREE_BUTTONS;
 
 import android.app.ActivityManager;
@@ -118,8 +119,10 @@ public class MemInfoView extends TextView {
         LayoutParams lp = (LayoutParams)getLayoutParams();
         int bottomMargin;
 
-        if (mode == THREE_BUTTONS)
+        if (!mDp.isTaskbarPresent && ((mode == THREE_BUTTONS) || (mode == TWO_BUTTONS)))
             bottomMargin = mDp.memInfoMarginThreeButtonPx;
+        else if (mDp.isTaskbarPresent && !((mode == THREE_BUTTONS) || (mode == TWO_BUTTONS)))
+            bottomMargin = mDp.memInfoMarginTransientTaskbarPx;
         else
             bottomMargin = mDp.memInfoMarginGesturePx;
 
