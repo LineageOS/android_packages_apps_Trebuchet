@@ -14,12 +14,15 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">鎖定佈局</string>
     <string name="settings_lock_layout_summary_on">圖示和小工具無法在主畫面上新增、刪除和移動</string>
     <string name="settings_lock_layout_summary_off">圖示和小工具可以在主畫面上新增、刪除和移動</string>
     <string name="settings_edit_widgets_error">無法將小工具新增至主畫面</string>
     <string name="title_show_google_app">顯示 Google 應用程式</string>
     <string name="msg_minus_one_on_left">當在主畫面向右滑動時</string>
     <string name="msg_minus_one_on_right">當在主畫面向左滑動時</string>
+    <string name="pref_themed_icons_title">套用主題圖示到導覽匣</string>
+    <string name="pref_themed_icons_summary">跟隨在主畫面上使用的主題圖示</string>
     <string name="desktop_show_labels">在桌面上顯示圖示標籤</string>
     <string name="drawer_show_labels">在清單中顯示圖示標籤</string>
     <string name="trust_apps_manager_name">隱藏與受保護應用程式</string>
@@ -30,4 +33,6 @@
     <string name="trust_apps_help">說明</string>
     <string name="trust_apps_info_hidden">隱藏的應用程式及其小工具隱藏在清單中</string>
     <string name="trust_apps_info_protected">受保護的應用程式需要從啟動器開啟身份驗證</string>
+    <string name="pref_suggestions_title">建議</string>
+    <string name="pref_suggestions_summary">適用於應用程式導覽匣和主畫面的建議</string>
 </resources>
