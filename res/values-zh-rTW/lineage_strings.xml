@@ -14,6 +14,7 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">鎖定佈局</string>
     <string name="settings_lock_layout_summary_on">圖示和小工具無法在主畫面上新增、刪除和移動</string>
     <string name="settings_lock_layout_summary_off">圖示和小工具可以在主畫面上新增、刪除和移動</string>
     <string name="settings_edit_widgets_error">無法將小工具新增至主畫面</string>
