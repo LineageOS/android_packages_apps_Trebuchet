@@ -49,6 +49,7 @@ import android.view.Display;
 import androidx.annotation.DimenRes;
 import androidx.annotation.IntDef;
 import androidx.annotation.StyleRes;
+import com.android.launcher3.lineage.icon.IconPackStore;
 import androidx.annotation.VisibleForTesting;
 import androidx.annotation.XmlRes;
 import androidx.core.content.res.ResourcesCompat;
@@ -132,6 +133,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
      */
     public int numFolderRows;
     public int numFolderColumns;
+    public String iconPack;
     public float[] iconSize;
     public float[] iconTextSize;
     public int iconBitmapSize;
@@ -216,6 +218,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         prefs.registerOnSharedPreferenceChangeListener(this);
         String gridName = getCurrentGridName(context);
         String newGridName = initGrid(context, gridName);
+        iconPack = p.iconPack;
         if (!newGridName.equals(gridName)) {
             LauncherPrefs.get(context).put(GRID_NAME, newGridName);
         }
@@ -365,6 +368,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         GridOption closestProfile = displayOption.grid;
         numRows = closestProfile.numRows;
         numColumns = closestProfile.numColumns;
+        iconPack = new IconPackStore(context).getCurrent();
         numSearchContainerColumns = closestProfile.numSearchContainerColumns;
         dbFile = closestProfile.dbFile;
         defaultLayoutId = closestProfile.defaultLayoutId;
@@ -502,6 +506,9 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         boolean modelPropsChanged = !Arrays.equals(oldState, toModelState());
         for (OnIDPChangeListener listener : mChangeListeners) {
             listener.onIdpChanged(modelPropsChanged);
+        }
+        if (!iconPack.equals(oldProfile.iconPack)) {
+            changeFlags |= CHANGE_FLAG_ICON_PARAMS;
         }
     }
 
