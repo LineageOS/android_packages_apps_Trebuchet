@@ -35,6 +35,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0565a465_b237eb6f",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a233b611_dcef43bc",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12d506d5_1d44a26d",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-08-29T10:07:23Z",
       "side": 1,
       "message": "missing newline",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12e1058d_80e034b6",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12d506d5_1d44a26d",
       "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -69,6 +105,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90b74d6b_9ce1794c",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14cabf94_c665ab8c",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de9e4e91_1b6628d5",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-08-29T10:07:23Z",
       "side": 1,
       "message": "whitespaces",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2562271_451dd849",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de9e4e91_1b6628d5",
       "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -103,6 +175,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "72d58c43_653ea41f",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd10bba5_3aaeb40e",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dbaedd6e_6a699d96",
@@ -116,6 +206,24 @@
       "writtenOn": "2023-08-29T10:07:23Z",
       "side": 1,
       "message": "missing newline",
+      "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c8899d4_0e3ceb45",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-29T11:35:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbaedd6e_6a699d96",
       "revId": "7864c61d325cd59544ef41452e9b6fd08688598c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
