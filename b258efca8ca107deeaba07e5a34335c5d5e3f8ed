@@ -34,6 +34,24 @@
       "parentUuid": "13b232ef_dfeaf7be",
       "revId": "b258efca8ca107deeaba07e5a34335c5d5e3f8ed",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc49b0c0_0c26b499",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-08-29T19:41:25Z",
+      "side": 1,
+      "message": "you take the original git metadata - and git commit --amend --author\u003d\"the author \u003cemail\u003e\" --date\u003d\"the date\" - this info is found in the original patch.\n\nAs for change ID, you\u0027d just copy-paste the original commit message.\n\nAlternatively you could just pick the original patch, checkout all file from HEAD, then copy your changes in.",
+      "parentUuid": "a0efb337_0dc39cce",
+      "revId": "b258efca8ca107deeaba07e5a34335c5d5e3f8ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
