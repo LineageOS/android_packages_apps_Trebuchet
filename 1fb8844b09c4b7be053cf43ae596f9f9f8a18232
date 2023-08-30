@@ -87,6 +87,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3cf5c83_d888d2ba",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "59350863_cbf20c37",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 61
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0cb52a35_72d84a6a",
@@ -100,6 +124,30 @@
       "writtenOn": "2023-08-30T16:58:06Z",
       "side": 1,
       "message": "Here!",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "418b5d96_87ca1f43",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "0cb52a35_72d84a6a",
       "range": {
         "startLine": 144,
         "startChar": 0,
@@ -133,6 +181,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abdd8ab1_43e1f4df",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "a959c22d_84230fc8",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 250,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6294b5e_4c00b516",
@@ -146,6 +218,30 @@
       "writtenOn": "2023-08-30T16:58:06Z",
       "side": 1,
       "message": "Here!",
+      "range": {
+        "startLine": 419,
+        "startChar": 0,
+        "endLine": 440,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ee2b845_2e653986",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b6294b5e_4c00b516",
       "range": {
         "startLine": 419,
         "startChar": 0,
@@ -179,6 +275,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e40e7c55_6bb8a453",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "c15f325a_c93096f2",
+      "range": {
+        "startLine": 551,
+        "startChar": 0,
+        "endLine": 581,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e31cee7a_34464ae2",
@@ -192,6 +312,24 @@
       "writtenOn": "2023-08-30T16:58:06Z",
       "side": 1,
       "message": "Here too!",
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a96943f3_52d557e5",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "e31cee7a_34464ae2",
       "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -219,6 +357,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "509b3c13_8cd038c3",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "5e21507a_563b3899",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a33a7cc4_6e0b6580",
@@ -232,6 +394,24 @@
       "writtenOn": "2023-08-30T16:58:06Z",
       "side": 1,
       "message": "Here!",
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64c8eafb_3cab5a30",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "a33a7cc4_6e0b6580",
       "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
@@ -259,6 +439,30 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f1be9ae_31436ccb",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "89279f95_47ea93dc",
+      "range": {
+        "startLine": 352,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 61
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b281f1d1_e10adbfc",
@@ -272,6 +476,30 @@
       "writtenOn": "2023-08-30T16:58:06Z",
       "side": 1,
       "message": "Here.",
+      "range": {
+        "startLine": 423,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fbbc429_8dbd00cc",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T17:09:16Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b281f1d1_e10adbfc",
       "range": {
         "startLine": 423,
         "startChar": 0,
