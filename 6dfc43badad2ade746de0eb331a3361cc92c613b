@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cead3902_f3961614",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-08-30T09:38:54Z",
+      "side": 1,
+      "message": "icon loader files:https://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/365396",
+      "revId": "6dfc43badad2ade746de0eb331a3361cc92c613b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
