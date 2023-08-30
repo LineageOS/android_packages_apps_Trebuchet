@@ -1,0 +1,285 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbcd76cd_1cec36df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Please resolve all the conflicts in the following comments",
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6de7352_76625409",
+        "filename": "res/values/lineage_config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 61
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a2dd09b_65306154",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59350863_cbf20c37",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "here!",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 61
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cb52a35_72d84a6a",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 153,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a959c22d_84230fc8",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here.",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 250,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6294b5e_4c00b516",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "range": {
+        "startLine": 419,
+        "startChar": 0,
+        "endLine": 440,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c15f325a_c93096f2",
+        "filename": "src/com/android/launcher3/InvariantDeviceProfile.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "range": {
+        "startLine": 551,
+        "startChar": 0,
+        "endLine": 581,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e31cee7a_34464ae2",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here too!",
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e21507a_563b3899",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "here :D",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a33a7cc4_6e0b6580",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here!",
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89279f95_47ea93dc",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here.",
+      "range": {
+        "startLine": 352,
+        "startChar": 0,
+        "endLine": 356,
+        "endChar": 61
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b281f1d1_e10adbfc",
+        "filename": "src/com/android/launcher3/settings/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 32928
+      },
+      "writtenOn": "2023-08-30T16:58:06Z",
+      "side": 1,
+      "message": "Here.",
+      "range": {
+        "startLine": 423,
+        "startChar": 0,
+        "endLine": 446,
+        "endChar": 0
+      },
+      "revId": "1fb8844b09c4b7be053cf43ae596f9f9f8a18232",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
