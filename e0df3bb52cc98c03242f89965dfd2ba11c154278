@@ -54,6 +54,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d071ea6_d8cc48f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-06T18:42:04Z",
+      "side": 1,
+      "message": "The problem that was preventing PS4 from building might have been fixed in the latest PS",
+      "parentUuid": "93e7485a_4499c67f",
+      "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21bb006a_c27901a7",
