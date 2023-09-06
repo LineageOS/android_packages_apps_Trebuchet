@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "93e7485a_4499c67f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-09-06T17:28:48Z",
+      "side": 1,
+      "message": "PS4 had so many conflicts it was impossible that it built, thus I am telling you to get familiar with what the votes actually mean. This wasn\u0027t about current patchset, which I didn\u0027t try",
+      "parentUuid": "de762074_507438b5",
+      "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21bb006a_c27901a7",
         "filename": "src/com/android/launcher3/lineage/icon/LineageIconFactory.java",
         "patchSetId": 13
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "I have no idea why it is there",
       "parentUuid": "21bb006a_c27901a7",
+      "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbb240c3_9a64a1df",
+        "filename": "src/com/android/launcher3/lineage/icon/LineageIconFactory.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-09-06T17:28:48Z",
+      "side": 1,
+      "message": "I\u0027m not asking you about details of the implementation when you\u0027re not the author, but part of picking stuff is only adding and adapting the code that\u0027s needed to achieve that. if you chose to pick the empty class it surely is required to keep the functionality? if not -\u003e remove",
+      "parentUuid": "48fdecc7_10186ffd",
       "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
