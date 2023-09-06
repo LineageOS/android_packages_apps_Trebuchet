@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48fdecc7_10186ffd",
+        "filename": "src/com/android/launcher3/lineage/icon/LineageIconFactory.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-06T16:51:50Z",
+      "side": 1,
+      "message": "I have no idea why it is there",
+      "parentUuid": "21bb006a_c27901a7",
+      "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "097c69b0_ab801fed",
         "filename": "src/com/android/launcher3/utils/ConfigMonitor.java",
         "patchSetId": 13
@@ -48,6 +66,24 @@
       "writtenOn": "2023-09-06T16:48:44Z",
       "side": 1,
       "message": "missing newline at end",
+      "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59565ecd_1674ee52",
+        "filename": "src/com/android/launcher3/utils/ConfigMonitor.java",
+        "patchSetId": 13
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-06T16:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "097c69b0_ab801fed",
       "revId": "e0df3bb52cc98c03242f89965dfd2ba11c154278",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
