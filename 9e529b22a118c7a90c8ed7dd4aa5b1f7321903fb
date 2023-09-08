@@ -16,6 +16,23 @@
       "message": "fixed duplicate trust apps key in SettingsActivity.java",
       "revId": "9e529b22a118c7a90c8ed7dd4aa5b1f7321903fb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "541b0162_32a8cd40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-08T08:27:54Z",
+      "side": 1,
+      "message": "this needs this modified iconloaderlib patch: https://review.lineageos.org/c/LineageOS/android_frameworks_libs_systemui/+/365403 to build",
+      "revId": "9e529b22a118c7a90c8ed7dd4aa5b1f7321903fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
