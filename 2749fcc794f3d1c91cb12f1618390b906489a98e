@@ -178,6 +178,24 @@
       "parentUuid": "a29a6d38_9bb5d0c6",
       "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7505ef0_d0d723d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29732
+      },
+      "writtenOn": "2023-09-11T15:39:40Z",
+      "side": 1,
+      "message": "No, i dont have lineage synced, but I have successfully built after cherry-picking the 18.1 patch and fixing conflicts myself, haven\u0027t tested yet though.",
+      "parentUuid": "b166a4ef_5d758a65",
+      "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
