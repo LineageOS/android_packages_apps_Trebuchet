@@ -142,6 +142,24 @@
       "parentUuid": "fda8b12e_0649b7f2",
       "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a29a6d38_9bb5d0c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29732
+      },
+      "writtenOn": "2023-09-11T14:03:39Z",
+      "side": 1,
+      "message": "A bunch of other errors now:\n```\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:3: error: cannot find symbol\nimport static android.content.pm.SuspendDialogInfo.BUTTON_ACTION_UNSUSPEND;\n                                ^\n  symbol:   class SuspendDialogInfo\n  location: package android.content.pm\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:3: error: static import only from classes and interfaces\nimport static android.content.pm.SuspendDialogInfo.BUTTON_ACTION_UNSUSPEND;\n^\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:10: error: cannot find symbol\nimport android.app.AppGlobals;\n                  ^\n  symbol:   class AppGlobals\n  location: package android.app\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:14: error: cannot find symbol\nimport android.content.pm.SuspendDialogInfo;\n                         ^\n  symbol:   class SuspendDialogInfo\n  location: package android.content.pm\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:266: error: cannot find symbol\n            super(R.drawable.ic_hourglass, R.string.paused_apps_drop_target_label, target,\n                            ^\n  symbol:   variable ic_hourglass\n  location: class drawable\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:286: error: cannot find symbol\n                                AppGlobals.getPackageManager().setPackagesSuspendedAsUser(\n                                ^\n  symbol: variable AppGlobals\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:293: error: cannot find symbol\n                                                .setNeutralButtonAction(BUTTON_ACTION_UNSUSPEND)\n                                                                        ^\n  symbol: variable BUTTON_ACTION_UNSUSPEND\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:290: error: package SuspendDialogInfo does not exist\n                                        new SuspendDialogInfo.Builder()\n                                                             ^\npackages/apps/Launcher3/src/com/android/launcher3/popup/SystemShortcut.java:295: error: cannot find symbol\n                                        mItemInfo.user.getIdentifier());\n                                                      ^\n  symbol:   method getIdentifier()\n  location: variable user of type UserHandle\npackages/apps/Launcher3/src/com/android/launcher3/utils/ConfigMonitor.java:73: error: incompatible types: ConfigMonitor cannot be converted to BroadcastReceiver\n            mContext.unregisterReceiver(this);\n                                        ^\npackages/apps/Launcher3/src/com/android/launcher3/lineage/icon/IconPackSettingsActivity.java:55: error: cannot find symbol\n                getString(R.string.icon_pack_settings_class), null);\n                                  ^\n  symbol:   variable icon_pack_settings_class\n  location: class string\npackages/apps/Launcher3/src/com/android/launcher3/lineage/icon/IconPackSettingsActivity.java:89: error: cannot find symbol\n        return startFragment(getString(R.string.icon_pack_settings_class),\n                                               ^\n  symbol:   variable icon_pack_settings_class\n  location: class string\npackages/apps/Launcher3/src/com/android/launcher3/touch/WorkspaceTouchListener.java:227: error: cannot find symbol\n            mPm.goToSleep(event.getEventTime());\n               ^\n  symbol:   method goToSleep(long)\n  location: variable mPm of type PowerManager\nNote: Some messages have been simplified; recompile with -Xdiags:verbose to get full output\n13 errors\n```\n\nI have started to look into this more on my own trying to cherry pick the 18.1 commit and I see some stuff that maybe should be done differently you have: e.g. `ConfigMonitor` which, looking at the commit message where it was deleted, was replaced with something else.",
+      "parentUuid": "245dfdf5_7e9e968a",
+      "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
