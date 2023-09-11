@@ -106,6 +106,24 @@
       "parentUuid": "0366da0c_5bd775ec",
       "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fda8b12e_0649b7f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29732
+      },
+      "writtenOn": "2023-09-11T12:01:28Z",
+      "side": 1,
+      "message": "Yes, it was. You can fix it by passing it into the apply method by parameter. Also there\u0027s this error with one method from BroadcastReceiver not being implemented:\n\n```\npackages/apps/Launcher3/src/com/android/launcher3/utils/ConfigMonitor.java:39: error: ConfigMonitor is not abstract and does not override abstract method onReceive(Context,Intent) in BroadcastReceiver\npublic class ConfigMonitor extends BroadcastReceiver implements\n       ^\n```",
+      "parentUuid": "0c021f46_6ba4ccce",
+      "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
