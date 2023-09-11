@@ -88,6 +88,24 @@
       "parentUuid": "8035cbc4_395d3ea2",
       "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c021f46_6ba4ccce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-11T09:48:40Z",
+      "side": 1,
+      "message": "try it now but the lineage_config.xml is required and the error \"packages/apps/Launcher3/src/com/android/launcher3/InvariantDeviceProfile.java:518: error: cannot find symbol                                              listener.onIdpChanged(modelPropsChanged);                                                                                                                           ^                                                                                                             symbol:   variable modelPropsChanged                                                                                                          location: class InvariantDeviceProfile\" was not caused by me",
+      "parentUuid": "0366da0c_5bd775ec",
+      "revId": "2749fcc794f3d1c91cb12f1618390b906489a98e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
