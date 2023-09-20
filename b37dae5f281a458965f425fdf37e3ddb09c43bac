@@ -52,6 +52,24 @@
       "parentUuid": "570350af_47f779ab",
       "revId": "b37dae5f281a458965f425fdf37e3ddb09c43bac",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aafce94_d8fd752b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-09-20T12:24:26Z",
+      "side": 1,
+      "message": "true but I am working on a way to use invariantdeviceprofile initgrid function to try to refresh the launcher. I was thinking of using the function that the icon shape setting uses but icon shape was moved to themepicker.",
+      "parentUuid": "0216c194_ac978647",
+      "revId": "b37dae5f281a458965f425fdf37e3ddb09c43bac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
