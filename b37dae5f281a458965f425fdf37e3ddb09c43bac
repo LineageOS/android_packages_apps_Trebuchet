@@ -34,6 +34,24 @@
       "parentUuid": "b8e199ec_dd90f18b",
       "revId": "b37dae5f281a458965f425fdf37e3ddb09c43bac",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0216c194_ac978647",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29732
+      },
+      "writtenOn": "2023-09-20T10:02:49Z",
+      "side": 1,
+      "message": "Looking into the removal of ConfigMonitor, this commit message seems useful:\n\n```\ncommit 35c7b19fa8938c222411d40dad9723f683d1d29f\nAuthor: Sunny Goyal \u003csunnygoyal@google.com\u003e\nDate:   Tue Apr 20 16:51:10 2021 -0700\n\n    Using WindowContext for listening to configuration changes\n\n    Pre-S: Continue to use config-changed broadcast for configuration changes\n    and display-changed event for rotation changes\n    S+: Use WindowContext#componentCallbacks for config and rotation changes, and\n    continue to use display listener for frame-rate changes\n\n    Bug: 179308296\n    Test: Manual and presubmit\n    Change-Id: I533e69068b5fa6c052a02759ef309dd075ee6a4b\n```",
+      "parentUuid": "570350af_47f779ab",
+      "revId": "b37dae5f281a458965f425fdf37e3ddb09c43bac",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
