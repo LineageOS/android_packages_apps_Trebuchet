@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Zobrazit aplikaci Google</string>
     <string name="msg_minus_one_on_left">Při gestu tažení vpravo z hlavní domovské obrazovky</string>
     <string name="msg_minus_one_on_right">Při gestu tažení vlevo z hlavní domovské obrazovky</string>
+    <string name="pref_themed_icons_title">Použít ikony motivů v menu aplikací</string>
+    <string name="pref_themed_icons_summary">Následovat motiv ikon používaných na domovské obrazovce</string>
     <string name="desktop_show_labels">Zobrazit popisky ikon na ploše</string>
     <string name="drawer_show_labels">Zobrazit popisky ikon v menu aplikací</string>
     <string name="trust_apps_manager_name">Skryté &amp; Chráněné aplikace</string>
@@ -31,4 +33,6 @@
     <string name="trust_apps_help">Nápověda</string>
     <string name="trust_apps_info_hidden">Skryté aplikace a jejich widgety se nezobrazí v seznamu aplikací</string>
     <string name="trust_apps_info_protected">Chráněné aplikace vyžadují pro spuštění ze spouštěče ověření</string>
+    <string name="pref_suggestions_title">Doporučení</string>
+    <string name="pref_suggestions_summary">Pro seznam aplikací a doporučení na domovské obrazovce</string>
 </resources>
