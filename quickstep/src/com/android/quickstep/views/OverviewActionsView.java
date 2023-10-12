@@ -16,6 +16,7 @@
 
 package com.android.quickstep.views;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Rect;
@@ -269,14 +270,16 @@ public class OverviewActionsView<T extends OverlayUICallbacks> extends FrameLayo
     private void updateForIsTablet() {
         assert mDp != null;
         // Update flags to see if split button should be hidden.
-        updateSplitButtonHiddenFlags(FLAG_SMALL_SCREEN_HIDE_SPLIT, !mDp.isTablet);
+        updateSplitButtonHiddenFlags(FLAG_SMALL_SCREEN_HIDE_SPLIT, !mDp.isTablet ||
+                getContext().getSystemService(ActivityManager.class).isLowRamDevice());
         updateActionButtonsVisibility();
     }
 
     private void updateActionButtonsVisibility() {
         assert mDp != null;
         boolean showSingleTaskActions = !mIsGroupedTask;
-        boolean showGroupActions = mIsGroupedTask && mDp.isTablet && mCanSaveAppPair;
+        boolean showGroupActions = mIsGroupedTask && mDp.isTablet && mCanSaveAppPair &&
+                !getContext().getSystemService(ActivityManager.class).isLowRamDevice();
         Log.d(TAG, "updateActionButtonsVisibility() called: showSingleTaskActions = ["
                 + showSingleTaskActions + "], showGroupActions = [" + showGroupActions + "]");
         getActionsAlphas().get(INDEX_GROUPED_ALPHA).setValue(showSingleTaskActions ? 1 : 0);
