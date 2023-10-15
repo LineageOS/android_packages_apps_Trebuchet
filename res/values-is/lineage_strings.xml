@@ -21,6 +21,8 @@
     <string name="title_show_google_app">Birta Google-forrit</string>
     <string name="msg_minus_one_on_left">Þegar þú strýkur til hægri af aðal-heimaskjánum</string>
     <string name="msg_minus_one_on_right">Þegar þú strýkur til vinstri af aðal-heimaskjánum</string>
+    <string name="pref_themed_icons_title">Nota þemaðar táknmyndir í leiðsagnarsleða</string>
+    <string name="pref_themed_icons_summary">Fylgja þemuðum táknmyndum sem notaðar eru á heimaskjá</string>
     <string name="desktop_show_labels">Birta skýringar táknmynda á skjáborði</string>
     <string name="drawer_show_labels">Birta skýringar táknmynda í leiðsagnarsleða</string>
     <string name="trust_apps_manager_name">Falin og varin forrit</string>
@@ -32,4 +34,5 @@
     <string name="trust_apps_info_hidden">Falin forrit og viðmótshlutar þeirra eru falin frá leiðsagnarsleðanum</string>
     <string name="trust_apps_info_protected">Vernduð forrit krefjast auðkenningar ef opna á þau úr ræsinum</string>
     <string name="pref_suggestions_title">Tillögur</string>
+    <string name="pref_suggestions_summary">Fyrir tillögur á forritasleða og heimaskjá</string>
 </resources>

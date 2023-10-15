@@ -27,12 +27,12 @@
     <string name="drawer_show_labels">Siyirmədə nişan etiketlərini göstər</string>
     <string name="trust_apps_manager_name">Gizli və Qorunan tətbiqlər</string>
     <string name="trust_apps_auth_manager">Gizli və qorunan tətbiqləri idarə etmək üçün kilidi açın</string>
-    <string name="trust_apps_auth_open_app">%1$s tətbiqinin açılması üçün kimliyi təsdiqlə</string>
+    <string name="trust_apps_auth_open_app">%1$s açmaq üçün kimliyi doğrula</string>
     <string name="trust_apps_loading">Yüklənir\u2026</string>
-    <string name="trust_apps_no_lock_error">Tətbiq müraciətini məhdudlaşdırmaq üçün zəhmət olmasa təhlükəsiz bir kilid ekranı tənzimləyin</string>
+    <string name="trust_apps_no_lock_error">Tətbiq müraciətini məhdudlaşdırmaq üçün lütfən güvənli bir kilid ekranı ayarlayın</string>
     <string name="trust_apps_help">Kömək</string>
     <string name="trust_apps_info_hidden">Gizli tətbiqlər və vidgetləri, tətbiqlər menyusunda görünməyəcək</string>
-    <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik təsdiqləmə tələb olunur</string>
+    <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik doğrulama tələb olunur</string>
     <string name="pref_suggestions_title">Təkliflər</string>
     <string name="pref_suggestions_summary">Tətbiq siyirməsi və əsas ekran təklifləri üçün</string>
 </resources>
