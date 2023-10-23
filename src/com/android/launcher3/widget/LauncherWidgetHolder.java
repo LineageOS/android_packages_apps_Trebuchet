@@ -19,6 +19,7 @@ import static android.app.Activity.RESULT_CANCELED;
 
 import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 
+import android.app.ActivityOptions;
 import android.appwidget.AppWidgetHost;
 import android.appwidget.AppWidgetHostView;
 import android.appwidget.AppWidgetManager;
@@ -44,6 +45,7 @@ import com.android.launcher3.model.WidgetsModel;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.testing.TestLogging;
 import com.android.launcher3.testing.shared.TestProtocol;
+import com.android.launcher3.util.ActivityOptionsWrapper;
 import com.android.launcher3.util.ResourceBasedOverride;
 import com.android.launcher3.widget.custom.CustomWidgetManager;
 
@@ -267,18 +269,31 @@ public class LauncherWidgetHolder {
                 () -> activity.onActivityResult(requestCode, RESULT_CANCELED, null));
     }
 
+    private Bundle getDefaultConfigurationActivityOptions() {
+        // Must allow background activity start for U.
+        return ActivityOptions.makeBasic()
+                .setPendingIntentBackgroundActivityStartMode(
+                        ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED).toBundle();
+    }
+
     /**
      * Returns an {@link android.app.ActivityOptions} bundle from the {code activity} for launching
-     * the configuration of the {@code widgetId} app widget, or null of options cannot be produced.
+     * the configuration of the {@code widgetId} app widget, or default configuration options
+     * if they cannot be produced.
      */
-    @Nullable
+    @NonNull
     protected Bundle getConfigurationActivityOptions(@NonNull BaseDraggingActivity activity,
             int widgetId) {
         LauncherAppWidgetHostView view = mViews.get(widgetId);
-        if (view == null) return null;
+        if (view == null) return getDefaultConfigurationActivityOptions();
         Object tag = view.getTag();
-        if (!(tag instanceof ItemInfo)) return null;
-        Bundle bundle = activity.getActivityLaunchOptions(view, (ItemInfo) tag).toBundle();
+        if (!(tag instanceof ItemInfo)) return getDefaultConfigurationActivityOptions();
+        ActivityOptionsWrapper activityOptionsWrapper =
+                activity.getActivityLaunchOptions(view, (ItemInfo) tag);
+        // Must allow background activity start for U.
+        activityOptionsWrapper.options.setPendingIntentBackgroundActivityStartMode(
+                ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED);
+        Bundle bundle = activityOptionsWrapper.toBundle();
         bundle.putInt(KEY_SPLASH_SCREEN_STYLE, SPLASH_SCREEN_STYLE_EMPTY);
         return bundle;
     }
