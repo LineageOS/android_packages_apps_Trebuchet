@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51f95162_464bd0bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2023-10-27T18:14:40Z",
+      "side": 1,
+      "message": "* maybe * it\u0027s AOSP bug\n\nhttps://github.com/crdroidx/android_frameworks_base/commit/44b61ba570de0c66c3b89d834e3f9e46b5dbc127",
+      "revId": "38955facf4106f09627066c7597910d73a7b177e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
