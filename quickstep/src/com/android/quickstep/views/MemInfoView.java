@@ -24,6 +24,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.format.Formatter;
 import android.util.AttributeSet;
 import android.util.FloatProperty;
 import android.view.Gravity;
@@ -74,12 +75,18 @@ public class MemInfoView extends TextView {
 
     private String mMemInfoText;
 
+    private ActivityManager.MemoryInfo memInfo;
+
+    private Context mContext;
+
     public MemInfoView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        mContext = context;
         mAlpha = new MultiValueAlpha(this, 2);
         mAlpha.setUpdateVisibility(true);
         mActivityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        memInfo = new ActivityManager.MemoryInfo();
         mHandler = new Handler(Looper.getMainLooper());
         mWorker = new MemInfoWorker();
 
@@ -132,24 +139,6 @@ public class MemInfoView extends TextView {
         lp.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
     }
 
-    private String unitConvert(long valueMiB, boolean alignToGB) {
-        BigDecimal rawVal = new BigDecimal(valueMiB);
-
-        if (alignToGB)
-            return rawVal.divide(GB2MB, 0, RoundingMode.UP) + " GB";
-
-        if (valueMiB > UNIT_CONVERT_THRESHOLD)
-            return rawVal.divide(GB2MB, 1, RoundingMode.HALF_UP) + " GB";
-        else
-            return rawVal + " MB";
-    }
-
-    private void updateMemInfoText(long availMemMiB, long totalMemMiB) {
-        String text = String.format(mMemInfoText,
-            unitConvert(availMemMiB, false), unitConvert(totalMemMiB, true));
-        setText(text);
-    }
-
     public void setListener(Context context) {
         setOnClickListener(view -> {
             Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -162,12 +151,13 @@ public class MemInfoView extends TextView {
     private class MemInfoWorker implements Runnable {
         @Override
         public void run() {
-            ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
             mActivityManager.getMemoryInfo(memInfo);
-            long availMemMiB = memInfo.availMem / (1024 * 1024);
-            long totalMemMiB = memInfo.totalMem / (1024 * 1024);
-            updateMemInfoText(availMemMiB, totalMemMiB);
-
+            String availResult = Formatter.formatShortFileSize(mContext,
+                    (long) memInfo.availMem);
+            String totalResult = Formatter.formatShortFileSize(mContext,
+                    (long) memInfo.totalMem);
+            String text = String.format(mMemInfoText, availResult, totalResult);
+            setText(text);
             mHandler.postDelayed(this, 1000);
         }
     }
