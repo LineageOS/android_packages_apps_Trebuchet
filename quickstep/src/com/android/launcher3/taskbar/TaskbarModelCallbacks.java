@@ -57,7 +57,7 @@ public class TaskbarModelCallbacks implements
     private final TaskbarView mContainer;
 
     // Initialized in init.
-    protected TaskbarControllers mControllers;
+    private TaskbarControllers mControllers;
 
     // Used to defer any UI updates during the SUW unstash animation.
     private boolean mDeferUpdatesForSUW;

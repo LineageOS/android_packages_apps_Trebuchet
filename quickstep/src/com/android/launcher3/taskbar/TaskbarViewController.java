@@ -136,8 +136,7 @@ public class TaskbarViewController implements TaskbarControllers.LoggableTaskbar
         mTaskbarView = taskbarView;
         mTaskbarIconAlpha = new MultiValueAlpha(mTaskbarView, NUM_ALPHA_CHANNELS);
         mTaskbarIconAlpha.setUpdateVisibility(true);
-        mModelCallbacks = TaskbarModelCallbacksFactory.newInstance(mActivity)
-                .create(mActivity, mTaskbarView);
+        mModelCallbacks = new TaskbarModelCallbacks(activity, mTaskbarView);
         mTaskbarBottomMargin = activity.getDeviceProfile().taskbarBottomMargin;
         mStashedHandleHeight = activity.getResources()
                 .getDimensionPixelSize(R.dimen.taskbar_stashed_handle_height);

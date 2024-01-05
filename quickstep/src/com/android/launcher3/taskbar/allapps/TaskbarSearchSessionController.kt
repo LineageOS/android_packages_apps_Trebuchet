@@ -39,9 +39,6 @@ open class TaskbarSearchSessionController : ResourceBasedOverride, AllAppsTransi
     /** Updates the predicted items shown in the zero-state. */
     open fun setZeroStatePredictedItems(items: List<ItemInfo>) = Unit
 
-    /** Updates the search suggestions shown in the zero-state. */
-    open fun setZeroStateSearchSuggestions(items: List<ItemInfo>) = Unit
-
     override fun onAllAppsTransitionStart(toAllApps: Boolean) = Unit
 
     override fun onAllAppsTransitionEnd(toAllApps: Boolean) = Unit
