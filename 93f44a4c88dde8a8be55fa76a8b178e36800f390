@@ -16,6 +16,24 @@
       "message": "Sent to AOSP as well, should this be rebased on the other chain?",
       "revId": "93f44a4c88dde8a8be55fa76a8b178e36800f390",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28e7ecd5_b967e65c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-01-27T15:06:15Z",
+      "side": 1,
+      "message": "nvm, ignore the comment regarding the chain",
+      "parentUuid": "90e9b10a_9b0bf6ef",
+      "revId": "93f44a4c88dde8a8be55fa76a8b178e36800f390",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
