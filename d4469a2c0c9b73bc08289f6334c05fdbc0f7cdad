@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21c1c4b9_0e79038b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2024-01-27T04:38:46Z",
+      "side": 1,
+      "message": "Personal opinion: I don\u0027t like it btw",
+      "revId": "d4469a2c0c9b73bc08289f6334c05fdbc0f7cdad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
