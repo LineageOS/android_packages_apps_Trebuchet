@@ -16,6 +16,23 @@
       "message": "Personal opinion: I don\u0027t like it btw",
       "revId": "d4469a2c0c9b73bc08289f6334c05fdbc0f7cdad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "738111b9_850dc926",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-01-31T16:00:50Z",
+      "side": 1,
+      "message": "The general opinion is to skip this.",
+      "revId": "d4469a2c0c9b73bc08289f6334c05fdbc0f7cdad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
