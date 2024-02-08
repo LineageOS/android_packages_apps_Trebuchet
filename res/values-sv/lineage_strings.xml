@@ -14,8 +14,16 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_category_apps">Appar</string>
+    <string name="settings_category_desktop">Skrivbord</string>
+    <string name="settings_category_labels">Etiketter</string>
+    <string name="settings_edit_allow_title">Tillåt ändringar</string>
+    <string name="settings_edit_widgets_error">Det går inte att lägga till widgetar på hemskärmen</string>
     <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
     <string name="trust_apps_loading">Laddar\u2026</string>
     <string name="trust_apps_help">Hjälp</string>
     <string name="icon_pack_title">Ikonpaket</string>
+    <string name="icon_pack_default_label">Standard</string>
+    <string name="icon_pack_add">Installera fler</string>
+    <string name="icon_pack_no_market">Det finns ingen app-butik tillgänglig</string>
 </resources>

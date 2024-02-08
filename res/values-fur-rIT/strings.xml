@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Launcher3</string>
+    <string name="work_folder_name">Lavôr</string>
+    <string name="activity_not_found">La aplicazion no je instalade.</string>
+    <string name="activity_not_available">La aplicazion no je disponibile</string>
+    <string name="safemode_shortcut_error">La aplicazion discjariade e je disativade inte modalitât sigure</string>
+    <string name="safemode_widget_error">I widgets a son disativâts in modalitât sigure</string>
+    <string name="shortcut_not_available">La scurte no je disponibile</string>
+    <string name="home_screen">Schermade di Inizi</string>
+    <string name="custom_actions">Azions personalizadis</string>
+    <string name="long_press_widget_to_add">Tocje e ten fracât par cjapâ sù un widget.</string>
+    <string name="long_accessible_way_to_add">Tocje dôs volti e ten fracât par cjapâ sù un widget o par doprâ azions personalizadis.</string>
+    <string name="widget_dims_format">%1$d \u00d7 %2$d</string>
+    <string name="widget_accessible_dims_format">%1$d di largjece par %2$d di altece</string>
+    <string name="add_item_request_drag_hint">Tocje e ten fracât par plaçâ a man</string>
+    <string name="place_automatically">Zonte in automatic</string>
+    <string name="all_apps_search_bar_hint">Cîr tes aplicazions</string>
+    <string name="all_apps_loading_message">Cjariament des aplicazions…</string>
+    <string name="all_apps_no_search_results">Nissune aplicazion cjatade che a corispuint a <xliff:g id="query" example="Android">%1$s</xliff:g></string>
+    <string name="all_apps_search_market_message">Cîr altris aplicazions</string>
+    <string name="label_application">Aplicazion</string>
+    <string name="notifications_header">Notifichis</string>
+    <string name="long_press_shortcut_to_add">Tocje e ten fracât par cjapâ sù une scurte.</string>
+    <string name="long_accessible_way_to_add_shortcut">Tocje dôs voltis e ten fracât par sielzi une scurte o par doprâ azions personalizadis.</string>
+    <string name="out_of_space">Nol è plui spazi su cheste schermade di Inizi.</string>
+    <string name="hotseat_out_of_space">Nol è plui spazi te sbare dai Preferîts</string>
+    <string name="all_apps_button_label">Liste di aplicazions</string>
+    <string name="all_apps_button_personal_label">Liste di aplicazions personâls</string>
+    <string name="all_apps_button_work_label">Liste di aplicazions di lavôr</string>
+    <string name="all_apps_home_button_label">Inizi</string>
+    <string name="remove_drop_target_label">Gjave</string>
+    <string name="uninstall_drop_target_label">Disinstale</string>
+    <string name="app_info_drop_target_label">Infos aplicazion</string>
+    <string name="install_drop_target_label">Instale</string>
+    <string name="permlab_install_shortcut">instalâ scurtis</string>
+    <string name="permdesc_install_shortcut">Al permet a une aplicazion di zontâ
+        scurtis cence l\'intervent dal utent.</string>
+    <string name="permlab_read_settings">lei lis impostazions e lis scurtis di Inizi</string>
+    <string name="permdesc_read_settings">Al permet ae aplicazion di lei lis impostazions e
+        lis scurtis in Inizi.</string>
+    <string name="permlab_write_settings">scrivi lis impostazions e lis scurtis di Inizi</string>
+    <string name="permdesc_write_settings">Al permet ae aplicazion di cambiâ lis impostazions e
+        lis scurtis in Inizi.</string>
+    <string name="msg_no_phone_permission"><xliff:g id="app_name" example="Launcher3">%1$s</xliff:g> nol è consintût par fâ clamadis telefonichis</string>
+    <string name="gadget_error_text">Probleme tal cjariâ il widget</string>
+    <string name="gadget_setup_text">Configurazion</string>
+    <string name="uninstall_system_app_text">Cheste e je une aplicazion di sisteme e nol è pussibil disinstalâle.</string>
+    <string name="folder_hint_text">Cartele cence non</string>
+    <string name="disabled_app_label"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g> disativât</string>
+    <plurals name="dotted_app_label">
+        <item quantity="one"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g> al à <xliff:g id="notification_count" example="1">%2$d</xliff:g> notifiche</item>
+        <item quantity="other"><xliff:g id="app_name" example="Messenger">%1$s</xliff:g> al à <xliff:g id="notification_count" example="3">%2$d</xliff:g> notifichis</item>
+    </plurals>
+    <string name="default_scroll_format">Pagjine %1$d di %2$d</string>
+    <string name="workspace_scroll_format">Schermade di Inizi %1$d di %2$d</string>
+    <string name="workspace_new_page">Gnove pagjine de schermade iniziâl</string>
+    <string name="folder_opened">Cartele vierte, <xliff:g id="width" example="5">%1$d</xliff:g> par <xliff:g id="height" example="3">%2$d</xliff:g></string>
+    <string name="folder_tap_to_close">Tocje par sierâ la cartele</string>
+    <string name="folder_tap_to_rename">Tocje par salvâ il non cambiât</string>
+    <string name="folder_closed">Cartele sierade</string>
+    <string name="folder_renamed">Non de cartele cambiât in <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="folder_name_format">Cartele: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="widget_button_text">Widgets</string>
+    <string name="wallpaper_button_text">Fonts</string>
+    <string name="styles_wallpaper_button_text">Stîi e fonts</string>
+    <string name="settings_button_text">Impostazions Inizi</string>
+    <string name="msg_disabled_by_admin">Disativât dal to aministradôr</string>
+    <string name="allow_rotation_title">Permet la rotazion de schermade di Inizi</string>
+    <string name="allow_rotation_desc">Cuant che il telefon al è voltât</string>
+    <string name="notification_dots_title">Indicadôrs di notifiche</string>
+    <string name="notification_dots_desc_on">On</string>
+    <string name="notification_dots_desc_off">Off</string>
+    <string name="title_missing_notification_access">Acès aes notifichis necessari</string>
+    <string name="msg_missing_notification_access">Par mostrâ i indicadôrs di notifiche, ative lis notifichis de aplicazion par <xliff:g id="name" example="My App">%1$s</xliff:g></string>
+    <string name="title_change_settings">Cambie impostazions</string>
+    <string name="notification_dots_service_title">Mostre indicadôrs di notifiche</string>
+    <string name="auto_add_shortcuts_label">Zonte lis iconis te schermade di Inizi</string>
+    <string name="auto_add_shortcuts_description">Pes gnovis aplicazions</string>
+    <string name="package_state_unknown">No cognossût</string>
+    <string name="abandoned_clean_this">Gjave</string>
+    <string name="abandoned_search">Cîr</string>
+    <string name="abandoned_promises_title">Cheste aplicazion no je instalade</string>
+    <string name="abandoned_promise_explanation">La aplicazion par cheste icone no je instalade.
+        Tu puedis gjavâle o cirî la aplicazion e instalâle a man.
+    </string>
+    <string name="app_downloading_title">Daûr a discjariâ <xliff:g id="name" example="Messenger">%1$s</xliff:g>, <xliff:g id="progress" example="30%">%2$s</xliff:g> completât</string>
+    <string name="app_waiting_download_title"><xliff:g id="name" example="Messenger">%1$s</xliff:g> in spiete pe instalazion</string>
+    <string name="widgets_bottom_sheet_title">Widgets di <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="widgets_list">Liste dai widgets</string>
+    <string name="widgets_list_closed">Liste dai widgets sierade</string>
+    <string name="action_add_to_workspace">Zonte ae schermade di Inizi</string>
+    <string name="action_move_here">Sposte l\'element achì</string>
+    <string name="item_added_to_workspace">Element zontât ae schermade iniziâl</string>
+    <string name="item_removed">Element gjavât</string>
+    <string name="undo">Anule</string>
+    <string name="action_move">Sposte element</string>
+    <string name="move_to_empty_cell">Sposte a rie <xliff:g id="number" example="1">%1$s</xliff:g> colone <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="move_to_position">Sposte ae posizion <xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="move_to_hotseat_position">Sposte ae posizion <xliff:g id="number" example="1">%1$s</xliff:g> dai preferîts</string>
+    <string name="item_moved">Element spostât</string>
+    <string name="add_to_folder">Zonte ae cartele: <xliff:g id="name" example="Games">%1$s</xliff:g></string>
+    <string name="add_to_folder_with_app">Zonte ae cartele cun <xliff:g id="name" example="Messenger">%1$s</xliff:g></string>
+    <string name="added_to_folder">Element zontât ae cartele</string>
+    <string name="create_folder_with">Cree cartele cun: <xliff:g id="name" example="Game">%1$s</xliff:g></string>
+    <string name="folder_created">Cartele creade</string>
+    <string name="action_move_to_workspace">Sposte ae schermade di Inizi</string>
+    <string name="action_resize">Ridimensione</string>
+    <string name="action_increase_width">Aumente largjece</string>
+    <string name="action_increase_height">Aumente altece</string>
+    <string name="action_decrease_width">Diminuìs largjece</string>
+    <string name="action_decrease_height">Diminuìs altece</string>
+    <string name="widget_resized">Widget ridimensionât ae largjece <xliff:g id="number" example="2">%1$s</xliff:g>, altece <xliff:g id="number" example="1">%2$s</xliff:g></string>
+    <string name="action_deep_shortcut">Scurtis</string>
+    <string name="shortcuts_menu_with_notifications_description">Scurtis e notifichis
+    </string>
+    <string name="action_dismiss_notification">Scarte</string>
+    <string name="notification_dismissed">Notifiche scartade</string>
+    <string name="all_apps_personal_tab">Personâls</string>
+    <string name="all_apps_work_tab">Lavôr</string>
+    <string name="work_profile_toggle_label">Profîl di lavôr</string>
+    <string name="bottom_work_tab_user_education_title">Chi tu cjatis lis aplicazions di lavôr</string>
+    <string name="bottom_work_tab_user_education_body">Ogni aplicazion di lavôr e je segnade cuntun badge e e ven tignude sigure de tô organizazion. Sposte lis aplicazions te tô schermade di Inizi par acedi cun plui facilitât.</string>
+    <string name="work_mode_on_label">Gjestît de to organizazion</string>
+    <string name="work_mode_off_label">Lis notifichis e lis aplicazions no son ativis</string>
+    <string name="bottom_work_tab_user_education_close_button">Siere</string>
+    <string name="bottom_work_tab_user_education_closed">Sierade</string>
+    <string name="remote_action_failed">Azion falide: <xliff:g id="what" example="Pause">%1$s</xliff:g></string>
+</resources>

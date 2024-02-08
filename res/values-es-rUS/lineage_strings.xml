@@ -17,6 +17,9 @@
     <string name="title_show_google_app">Mostrar aplicación de Google</string>
     <string name="msg_minus_one_on_left">Al deslizar a la derecha desde la pantalla principal</string>
     <string name="msg_minus_one_on_right">Al deslizar a la izquierda desde la pantalla principal</string>
+    <string name="settings_category_apps">Aplicaciones</string>
+    <string name="settings_category_desktop">Escritorio</string>
+    <string name="settings_category_labels">Etiquetas</string>
     <string name="settings_edit_allow_title">Permitir la edición</string>
     <string name="settings_edit_allow_summary_on">Los iconos y widgets se pueden añadir, quitar y mover en la pantalla de inicio</string>
     <string name="settings_edit_allow_summary_off">Los iconos y widgets no se pueden añadir, quitar o mover en la pantalla de inicio</string>
@@ -32,4 +35,6 @@
     <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets se ocultan del cajón</string>
     <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren que la autenticación se abra desde el lanzador</string>
     <string name="icon_pack_title">Paquete de iconos</string>
+    <string name="icon_pack_default_label">Predefinido</string>
+    <string name="icon_pack_add">Instalar más</string>
 </resources>
