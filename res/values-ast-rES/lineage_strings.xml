@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">Bloquiar la distribución</string>
+    <string name="settings_lock_layout_summary_on">Na pantalla d\'aniciu, los iconos y los widgets nun se puen amestar, quitar o mover</string>
+    <string name="settings_lock_layout_summary_off">Na pantalla d\'aniciu, los iconos y los widgets puen amestase, quitase o movese</string>
+    <string name="settings_edit_widgets_error">Nun ye posible amestar widgets a la pantalla d\'aniciu</string>
+    <string name="title_show_google_app">Amosar l\'aplicación «Google»</string>
+    <string name="msg_minus_one_on_left">Cuando eslices a la derecha dende la pantalla d\'aniciu principal</string>
+    <string name="msg_minus_one_on_right">Cuando eslices a la esquierda dende la pantalla d\'aniciu principal</string>
+    <string name="pref_themed_icons_title">Usar iconos temáticos nel caxón</string>
+    <string name="pref_themed_icons_summary">Sigue los iconos temáticos que s\'usen na pantalla d\'aniciu</string>
+    <string name="desktop_show_labels">Amosar les etiquetes de los iconos nel escritoriu</string>
+    <string name="drawer_show_labels">Amosar les etiquetes de los iconos nel caxón</string>
+    <string name="trust_apps_manager_name">Aplicaciones anubríes y protexíes</string>
+    <string name="trust_apps_auth_manager">Desbloquia pa xestionar les aplicaciones anubríes y protexíes</string>
+    <string name="trust_apps_auth_open_app">Autentícate p\'abrir «%1$s»</string>
+    <string name="trust_apps_loading">Cargando\u2026</string>
+    <string name="trust_apps_no_lock_error">Configura una pantalla de bloquéu pa togar l\'accesu a les aplicaciones</string>
+    <string name="trust_apps_help">Ayuda</string>
+    <string name="trust_apps_info_hidden">Nel caxón, les aplicaciones anubríes y los sos widgets escuéndense</string>
+    <string name="trust_apps_info_protected">Les aplicaciones protexíes riquen l\'autenticación p\'abriles dende\'l llanzador</string>
+    <string name="pref_suggestions_title">Suxerencies</string>
+    <string name="pref_suggestions_summary">Pa consiguir suxerencies nel caxón d\'aplicaciones y na pantalla d\'aniciu</string>
+</resources>

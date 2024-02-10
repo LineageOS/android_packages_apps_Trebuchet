@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">Khóa bố cục</string>
+    <string name="settings_lock_layout_summary_on">Các biểu tượng và tiện ích con không thể được thêm, xóa và di chuyển trên màn hình chính</string>
+    <string name="settings_lock_layout_summary_off">Các biểu tượng và tiện ích con có thể được thêm, xóa và di chuyển trên màn hình chính</string>
+    <string name="settings_edit_widgets_error">Không thể thêm tiện ích con vào màn hình chính</string>
+    <string name="title_show_google_app">Hiển thị ứng dụng Google</string>
+    <string name="msg_minus_one_on_left">Khi bạn trượt sang phải từ màn hình chính</string>
+    <string name="msg_minus_one_on_right">Khi bạn trượt sang trái từ màn hình chính</string>
+    <string name="pref_themed_icons_title">Sử dụng các biểu tượng theo chủ đề trong ngăn kéo</string>
+    <string name="pref_themed_icons_summary">Làm theo các biểu tượng theo chủ đề được sử dụng trên màn hình chính</string>
+    <string name="desktop_show_labels">Hiển thị nhãn biểu tượng trên bàn làm việc</string>
+    <string name="drawer_show_labels">Hiển thị nhãn biểu tượng trong ngăn kéo</string>
+    <string name="trust_apps_manager_name">Ứng dụng được Ẩn &amp; Bảo vệ</string>
+    <string name="trust_apps_auth_manager">Mở khóa để quản lý các ứng dụng ẩn và được bảo vệ</string>
+    <string name="trust_apps_auth_open_app">Xác thực để mở %1$s</string>
+    <string name="trust_apps_loading">Đang tải\u2026</string>
+    <string name="trust_apps_no_lock_error">Vui lòng thiết lập màn hình khóa an toàn để hạn chế quyền truy cập ứng dụng</string>
+    <string name="trust_apps_help">Trợ giúp</string>
+    <string name="trust_apps_info_hidden">Các ứng dụng ẩn và các tiện ích con của chúng được ẩn khỏi ngăn kéo</string>
+    <string name="trust_apps_info_protected">Các ứng dụng được bảo vệ yêu cầu xác thực để được mở từ trình khởi chạy</string>
+    <string name="pref_suggestions_title">Đề xuất</string>
+    <string name="pref_suggestions_summary">Đề xuất cho ngăn ứng dụng &amp;  màn hình chính</string>
+</resources>
