@@ -29,10 +29,10 @@
     <string name="trust_apps_auth_manager">დამალული და დაცული აპების გახსნა სამართავად</string>
     <string name="trust_apps_auth_open_app">დამოწმება, რომ გაიხსნას %1$s</string>
     <string name="trust_apps_loading">იტვირთება\u2026</string>
-    <string name="trust_apps_no_lock_error">გთხოვთ, დააყენოთ ჩამკეტი ეკრანი, აპთან წვდომის შესაზღუდად</string>
+    <string name="trust_apps_no_lock_error">გთხოვთ, დააყენოთ ჩამკეტი ეკრანი აპთან წვდომის შესაზღუდად</string>
     <string name="trust_apps_help">დახმარება</string>
-    <string name="trust_apps_info_hidden">დამალული აპები და ვიჯეტები დამალულია მენიუში</string>
-    <string name="trust_apps_info_protected">დაცული აპები საჭიროებს ვინაობის დამოწმებას გამშვებიდან გახსნითვის</string>
+    <string name="trust_apps_info_hidden">დამალული აპები და მათი ნაწილები არ გამოჩნდება მენიუში</string>
+    <string name="trust_apps_info_protected">დაცული აპები მოითხოვს ვინაობის დამოწმებას გამშვებიდან გახსნითვის</string>
     <string name="pref_suggestions_title">შემოთავაზებები</string>
     <string name="pref_suggestions_summary">შემოთავაზებები აპების მენიუსა და მთავარ ეკრანზე</string>
 </resources>
