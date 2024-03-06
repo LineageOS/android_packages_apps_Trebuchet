@@ -476,18 +476,6 @@ public class SystemUiProxy implements ISystemUiProxy {
     }
 
     @Override
-    public void setTaskbarEnabled(boolean enabled) {
-        if (mSystemUiProxy != null) {
-            try {
-                mSystemUiProxy.setTaskbarEnabled(enabled);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Failed call setTaskbarEnabled with arg: " +
-                        enabled, e);
-            }
-        }
-    }
-
-    @Override
     public void notifyTaskbarStatus(boolean visible, boolean stashed) {
         if (mSystemUiProxy != null) {
             try {
