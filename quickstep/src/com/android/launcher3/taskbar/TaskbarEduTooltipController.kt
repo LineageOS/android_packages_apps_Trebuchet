@@ -29,8 +29,10 @@ import androidx.core.view.updateLayoutParams
 import com.airbnb.lottie.LottieAnimationView
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
+import com.android.launcher3.config.FeatureFlags.enableTaskbarPinningEdu
 import com.android.launcher3.taskbar.TaskbarAutohideSuspendController.FLAG_AUTOHIDE_SUSPEND_EDU_OPEN
 import com.android.launcher3.taskbar.TaskbarControllers.LoggableTaskbarController
+import com.android.launcher3.taskbar.TaskbarManager.isPhoneMode
 import com.android.launcher3.util.DisplayController
 import com.android.launcher3.util.OnboardingPrefs.TASKBAR_EDU_TOOLTIP_STEP
 import com.android.quickstep.util.LottieAnimationColorUtils
@@ -40,16 +42,19 @@ import java.io.PrintWriter
 const val TOOLTIP_STEP_SWIPE = 0
 /** Second EDU step for explaining Taskbar functionality when unstashed. */
 const val TOOLTIP_STEP_FEATURES = 1
+/** Third EDU step for explaining Taskbar pinning. */
+const val TOOLTIP_STEP_PINNING = 2
+
 /**
  * EDU is completed.
  *
  * This value should match the maximum count for [TASKBAR_EDU_TOOLTIP_STEP].
  */
-const val TOOLTIP_STEP_NONE = 2
+const val TOOLTIP_STEP_NONE = 3
 
 /** Current step in the tooltip EDU flow. */
 @Retention(AnnotationRetention.SOURCE)
-@IntDef(TOOLTIP_STEP_SWIPE, TOOLTIP_STEP_FEATURES, TOOLTIP_STEP_NONE)
+@IntDef(TOOLTIP_STEP_SWIPE, TOOLTIP_STEP_FEATURES, TOOLTIP_STEP_PINNING, TOOLTIP_STEP_NONE)
 annotation class TaskbarEduTooltipStep
 
 /** Controls stepping through the Taskbar tooltip EDU. */
@@ -57,7 +62,7 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
     LoggableTaskbarController {
 
     private val isTooltipEnabled: Boolean
-        get() = !Utilities.isRunningInTestHarness()
+        get() = !Utilities.isRunningInTestHarness() && !isPhoneMode(activityContext.deviceProfile)
     private val isOpen: Boolean
         get() = tooltip?.isOpen ?: false
     val isBeforeTooltipFeaturesStep: Boolean
@@ -67,11 +72,10 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
     @TaskbarEduTooltipStep
     var tooltipStep: Int
         get() {
-            return activityContext.onboardingPrefs?.getCount(TASKBAR_EDU_TOOLTIP_STEP)
-                ?: TOOLTIP_STEP_NONE
+            return TASKBAR_EDU_TOOLTIP_STEP.get(activityContext)
         }
         private set(step) {
-            activityContext.onboardingPrefs?.setEventCount(step, TASKBAR_EDU_TOOLTIP_STEP)
+            TASKBAR_EDU_TOOLTIP_STEP.set(step, activityContext)
         }
 
     private var tooltip: TaskbarEduTooltip? = null
@@ -93,7 +97,7 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
         tooltipStep = TOOLTIP_STEP_FEATURES
         inflateTooltip(R.layout.taskbar_edu_swipe)
         tooltip?.run {
-            findViewById<LottieAnimationView>(R.id.swipe_animation).supportLightTheme()
+            requireViewById<LottieAnimationView>(R.id.swipe_animation).supportLightTheme()
             show()
         }
     }
@@ -112,21 +116,21 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
         tooltipStep = TOOLTIP_STEP_NONE
         inflateTooltip(R.layout.taskbar_edu_features)
         tooltip?.run {
-            val splitscreenAnim = findViewById<LottieAnimationView>(R.id.splitscreen_animation)
-            val suggestionsAnim = findViewById<LottieAnimationView>(R.id.suggestions_animation)
-            val settingsAnim = findViewById<LottieAnimationView>(R.id.settings_animation)
-            val settingsEdu = findViewById<View>(R.id.settings_edu)
+            val splitscreenAnim = requireViewById<LottieAnimationView>(R.id.splitscreen_animation)
+            val suggestionsAnim = requireViewById<LottieAnimationView>(R.id.suggestions_animation)
+            val pinningAnim = requireViewById<LottieAnimationView>(R.id.pinning_animation)
+            val pinningEdu = requireViewById<View>(R.id.pinning_edu)
             splitscreenAnim.supportLightTheme()
             suggestionsAnim.supportLightTheme()
-            settingsAnim.supportLightTheme()
+            pinningAnim.supportLightTheme()
             if (DisplayController.isTransientTaskbar(activityContext)) {
                 splitscreenAnim.setAnimation(R.raw.taskbar_edu_splitscreen_transient)
                 suggestionsAnim.setAnimation(R.raw.taskbar_edu_suggestions_transient)
-                settingsEdu.visibility = GONE
+                pinningEdu.visibility = if (enableTaskbarPinningEdu()) VISIBLE else GONE
             } else {
                 splitscreenAnim.setAnimation(R.raw.taskbar_edu_splitscreen_persistent)
                 suggestionsAnim.setAnimation(R.raw.taskbar_edu_suggestions_persistent)
-                settingsEdu.visibility = VISIBLE
+                pinningEdu.visibility = GONE
             }
 
             // Set up layout parameters.
@@ -135,13 +139,16 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
                 if (DisplayController.isTransientTaskbar(activityContext)) {
                     width =
                         resources.getDimensionPixelSize(
-                            R.dimen.taskbar_edu_features_tooltip_width_transient
+                            if (enableTaskbarPinningEdu())
+                                R.dimen.taskbar_edu_features_tooltip_width_with_three_features
+                            else R.dimen.taskbar_edu_features_tooltip_width_with_two_features
                         )
+
                     bottomMargin += activityContext.deviceProfile.taskbarHeight
                 } else {
                     width =
                         resources.getDimensionPixelSize(
-                            R.dimen.taskbar_edu_features_tooltip_width_persistent
+                            R.dimen.taskbar_edu_features_tooltip_width_with_two_features
                         )
                 }
             }
@@ -186,7 +193,7 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
     private fun createAccessibilityDelegate() =
         object : View.AccessibilityDelegate() {
             override fun performAccessibilityAction(
-                host: View?,
+                host: View,
                 action: Int,
                 args: Bundle?
             ): Boolean {
@@ -197,22 +204,22 @@ class TaskbarEduTooltipController(val activityContext: TaskbarActivityContext) :
                 return super.performAccessibilityAction(host, action, args)
             }
 
-            override fun onPopulateAccessibilityEvent(host: View?, event: AccessibilityEvent?) {
+            override fun onPopulateAccessibilityEvent(host: View, event: AccessibilityEvent) {
                 super.onPopulateAccessibilityEvent(host, event)
-                if (event?.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-                    event.text?.add(host?.context?.getText(R.string.taskbar_edu_a11y_title))
+                if (event.eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+                    event.text.add(host.context?.getText(R.string.taskbar_edu_a11y_title))
                 }
             }
 
             override fun onInitializeAccessibilityNodeInfo(
-                host: View?,
-                info: AccessibilityNodeInfo?
+                host: View,
+                info: AccessibilityNodeInfo
             ) {
                 super.onInitializeAccessibilityNodeInfo(host, info)
-                info?.addAction(
+                info.addAction(
                     AccessibilityNodeInfo.AccessibilityAction(
                         R.id.close,
-                        host?.context?.getText(R.string.taskbar_edu_close)
+                        host.context?.getText(R.string.taskbar_edu_close)
                     )
                 )
             }
@@ -251,5 +258,5 @@ private fun LottieAnimationView.supportLightTheme() {
         return
     }
 
-    LottieAnimationColorUtils.updateColors(this, DARK_TO_LIGHT_COLORS, context.theme)
+    LottieAnimationColorUtils.updateToColorResources(this, DARK_TO_LIGHT_COLORS, context.theme)
 }

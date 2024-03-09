@@ -42,7 +42,6 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
-import android.view.ViewConfiguration;
 
 import androidx.annotation.UiThread;
 
@@ -128,6 +127,9 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
     // Might be displacement in X or Y, depending on the direction we are swiping from the nav bar.
     private float mStartDisplacement;
 
+    // The callback called upon finishing the recents transition if it was force-canceled
+    private Runnable mForceFinishRecentsTransitionCallback;
+
     private Handler mMainThreadHandler;
     private Runnable mCancelRecentsAnimationRunnable = () -> {
         ActivityManagerWrapper.getInstance().cancelRecentsAnimation(
@@ -161,7 +163,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
         boolean continuingPreviousGesture = mTaskAnimationManager.isRecentsAnimationRunning();
         mIsDeferredDownTarget = !continuingPreviousGesture && isDeferredDownTarget;
 
-        mTouchSlop = ViewConfiguration.get(this).getScaledTouchSlop();
+        mTouchSlop = mDeviceState.getTouchSlop();
         mSquaredTouchSlop = mDeviceState.getSquaredTouchSlop();
 
         mPassedPilferInputSlop = mPassedWindowMoveSlop = continuingPreviousGesture;
@@ -421,6 +423,14 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
     }
 
     /**
+     * Returns whether this input consumer has started touch tracking (if touch tracking is not
+     * deferred).
+     */
+    public boolean hasStartedTouchTracking() {
+        return mInteractionHandler != null;
+    }
+
+    /**
      * Called when the gesture has ended. Does not correlate to the completion of the interaction as
      * the animation can still be running.
      */
@@ -454,7 +464,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
                     // animateToProgress so we have to manually finish here. In the case of
                     // ACTION_CANCEL, someone else may be doing something so finish synchronously.
                     mTaskAnimationManager.finishRunningRecentsAnimation(false /* toHome */,
-                            isCanceled /* forceFinish */);
+                            isCanceled /* forceFinish */, mForceFinishRecentsTransitionCallback);
                 } else {
                     // The animation hasn't started yet, so insert a replacement handler into the
                     // callbacks which immediately finishes the animation after it starts.
@@ -530,6 +540,14 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
     @Override
     public boolean allowInterceptByParent() {
         return !mPassedPilferInputSlop;
+    }
+
+    /**
+     * Sets a callback to be called when the recents transition is force-canceled by another input
+     * consumer being made active.
+     */
+    public void setForceFinishRecentsTransitionCallback(Runnable r) {
+        mForceFinishRecentsTransitionCallback = r;
     }
 
     /**

@@ -83,6 +83,7 @@ import java.util.Map;
  * for the gestural system navigation.
  */
 public class AllSetActivity extends Activity {
+    private static final String TAG = "AllSetActivity";
 
     private static final String LOG_TAG = "AllSetActivity";
     private static final String URI_SYSTEM_NAVIGATION_SETTING =
@@ -183,7 +184,7 @@ public class AllSetActivity extends Activity {
         mAnimatedBackground.setAnimation(resources.openRawResource(R.raw.all_set_page_bg),
                 null);
 
-        LottieAnimationColorUtils.updateColors(
+        LottieAnimationColorUtils.updateToColorResources(
                 mAnimatedBackground,
                 Map.of(LOTTIE_PRIMARY_COLOR_TOKEN, R.color.all_set_bg_primary,
                         LOTTIE_TERTIARY_COLOR_TOKEN, R.color.all_set_bg_tertiary),
@@ -374,7 +375,7 @@ public class AllSetActivity extends Activity {
         @Override
         public boolean performAccessibilityAction(View host, int action, Bundle args) {
             if (action == AccessibilityAction.ACTION_CLICK.getId()) {
-                startHomeIntentSafely(AllSetActivity.this, null);
+                startHomeIntentSafely(AllSetActivity.this, null, TAG);
                 finish();
                 return true;
             }
