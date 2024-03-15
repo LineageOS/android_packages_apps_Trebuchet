@@ -15,6 +15,8 @@
 -->
 <resources>
     <string name="settings_lock_layout_title">Закріпити композицію</string>
+    <string name="settings_lock_layout_summary_on">Не можна додавати, вилучати чи посувати значки чи віджети на головному екрані</string>
+    <string name="settings_lock_layout_summary_off">Можна додавати, вилучати й посувати значки та віджети на головному екрані</string>
     <string name="desktop_show_labels">Підписувати значки стільниці</string>
     <string name="drawer_show_labels">Підписувати значки меню</string>
     <string name="trust_apps_manager_name">Сховати чи захистити застосунки</string>
