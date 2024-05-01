@@ -15,23 +15,23 @@
 -->
 <resources>
     <string name="settings_lock_layout_title">Kilid düzülüşü</string>
-    <string name="settings_lock_layout_summary_on">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilməz</string>
-    <string name="settings_lock_layout_summary_off">Nişanlar və vidgetlər əsas ekranda əlavə edilə, çıxarıla və ya köçürülə bilər</string>
-    <string name="settings_edit_widgets_error">Əsas ekrana vidget əlavə etmək mümkün deyil</string>
+    <string name="settings_lock_layout_summary_on">İkonlar və vicetlər əsas ekranda əlavə edilə, çıxarıla və ya daşına bilməz</string>
+    <string name="settings_lock_layout_summary_off">İkonlar və vicetlər əsas ekranda əlavə edilə, çıxarıla və ya daşına bilər</string>
+    <string name="settings_edit_widgets_error">Əsas ekrana vicet əlavə etmək mümkün deyil</string>
     <string name="title_show_google_app">Google tətbiqini göstər</string>
     <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
     <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
-    <string name="pref_themed_icons_title">Siyirmədə temalı nişanları istifadə et</string>
-    <string name="pref_themed_icons_summary">Əsas ekranda istifadə edilən temalı nişanları izlə</string>
-    <string name="desktop_show_labels">Masaüstündə nişan etiketlərini göstər</string>
-    <string name="drawer_show_labels">Siyirmədə nişan etiketlərini göstər</string>
+    <string name="pref_themed_icons_title">Siyirmədə temalı ikonları istifadə et</string>
+    <string name="pref_themed_icons_summary">Əsas ekranda istifadə edilən temalı ikonları izlə</string>
+    <string name="desktop_show_labels">Masaüstündə ikon etiketlərini göstər</string>
+    <string name="drawer_show_labels">Siyirmədə ikon etiketlərini göstər</string>
     <string name="trust_apps_manager_name">Gizli və Qorunan tətbiqlər</string>
     <string name="trust_apps_auth_manager">Gizli və qorunan tətbiqləri idarə etmək üçün kilidi açın</string>
     <string name="trust_apps_auth_open_app">%1$s açmaq üçün kimliyi doğrula</string>
     <string name="trust_apps_loading">Yüklənir\u2026</string>
     <string name="trust_apps_no_lock_error">Tətbiq müraciətini məhdudlaşdırmaq üçün lütfən güvənli bir kilid ekranı ayarlayın</string>
     <string name="trust_apps_help">Kömək</string>
-    <string name="trust_apps_info_hidden">Gizli tətbiqlər və vidgetləri, tətbiqlər menyusunda görünməyəcək</string>
+    <string name="trust_apps_info_hidden">Gizli tətbiqlər və vicetləri, siyirmədə gizlədilir</string>
     <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik doğrulama tələb olunur</string>
     <string name="pref_suggestions_title">Təkliflər</string>
     <string name="pref_suggestions_summary">Tətbiq siyirməsi və əsas ekran təklifləri üçün</string>

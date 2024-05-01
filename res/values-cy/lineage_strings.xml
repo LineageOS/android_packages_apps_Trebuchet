@@ -21,6 +21,7 @@
     <string name="title_show_google_app">Dangos ap Google</string>
     <string name="msg_minus_one_on_left">Pan rwyt yn llusgo i\'r dde o\'r brif sgrin gartref</string>
     <string name="msg_minus_one_on_right">Pan rwyt yn llusgo i\'r chwith o\'r brif sgrin gartref</string>
+    <string name="pref_themed_icons_title">Defnyddio eiconau â thema yn y drôr</string>
     <string name="pref_themed_icons_summary">Dilyn eiconau â thema a ddefnyddiwyd ar y sgrin gartref</string>
     <string name="desktop_show_labels">Dangos labeli eiconau ar y sgrin gartref</string>
     <string name="drawer_show_labels">Dangos labeli eiconau yn y drôr</string>
