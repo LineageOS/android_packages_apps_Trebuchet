@@ -21,6 +21,8 @@
     <string name="title_show_google_app">A Google-alkalmazás megjelenítése</string>
     <string name="msg_minus_one_on_left">Amikor a főképernyőn jobbra csúsztat</string>
     <string name="msg_minus_one_on_right">Amikor a főképernyőn balra csúsztat</string>
+    <string name="pref_themed_icons_title">A témázott ikonok használata az alkalmazásfiókban</string>
+    <string name="pref_themed_icons_summary">A kezdőképernyőn használt témázott ikonokhoz igazodik</string>
     <string name="desktop_show_labels">Ikonfeliratok megjelenítése az asztalon</string>
     <string name="drawer_show_labels">Ikonfeliratok megjelenítése az alkalmazásfiókban</string>
     <string name="trust_apps_manager_name">Rejtett és védett alkalmazások</string>
@@ -31,4 +33,6 @@
     <string name="trust_apps_help">Súgó</string>
     <string name="trust_apps_info_hidden">A rejtett alkalmazások és moduljaik az alkalmazásfiókban sem láthatóak</string>
     <string name="trust_apps_info_protected">Egy védett alkalmazás megnyitása a launcherből hitelesítést igényel</string>
+    <string name="pref_suggestions_title">Javaslatok</string>
+    <string name="pref_suggestions_summary">Javaslatok a Kezdőképernyőhöz és az Alkalmazásfiókhoz</string>
 </resources>
