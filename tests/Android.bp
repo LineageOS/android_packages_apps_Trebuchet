@@ -259,6 +259,6 @@ android_robolectric_test {
         "android.test.mock",
         "truth",
     ],
-    instrumentation_for: "Launcher3",
+    instrumentation_for: "Trebuchet",
     upstream: true,
 }
