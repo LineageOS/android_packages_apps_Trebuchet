@@ -31,12 +31,10 @@ import static com.android.launcher3.util.Executors.MAIN_EXECUTOR;
 import static com.android.launcher3.util.VelocityUtils.PX_PER_MS;
 import static com.android.quickstep.util.ActiveGestureLog.INTENT_EXTRA_LOG_TRACE_ID;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.PointF;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
@@ -74,7 +72,6 @@ import java.util.function.Consumer;
 /**
  * Input consumer for handling events originating from an activity other than Launcher
  */
-@TargetApi(Build.VERSION_CODES.P)
 public class OtherActivityInputConsumer extends ContextWrapper implements InputConsumer {
 
     public static final String DOWN_EVT = "OtherActivityInputConsumer.DOWN";
@@ -167,6 +164,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
         mSquaredTouchSlop = mDeviceState.getSquaredTouchSlop();
 
         mPassedPilferInputSlop = mPassedWindowMoveSlop = continuingPreviousGesture;
+        mStartDisplacement = continuingPreviousGesture ? 0 : -mTouchSlop;
         mDisableHorizontalSwipe = !mPassedPilferInputSlop && disableHorizontalSwipe;
         mRotationTouchHelper = mDeviceState.getRotationTouchHelper();
     }
@@ -293,7 +291,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
                         if (mGestureState.isTrackpadGesture() || Math.abs(displacement)
                                 > mTouchSlop) {
                             mPassedWindowMoveSlop = true;
-                            mStartDisplacement = Math.min(displacement, -mTouchSlop);
+                            mStartDisplacement = -mTouchSlop;
                         }
                     }
                 }
@@ -349,7 +347,7 @@ public class OtherActivityInputConsumer extends ContextWrapper implements InputC
                         }
                         if (!mPassedWindowMoveSlop) {
                             mPassedWindowMoveSlop = true;
-                            mStartDisplacement = Math.min(displacement, -mTouchSlop);
+                            mStartDisplacement = -mTouchSlop;
                         }
                         notifyGestureStarted(isLikelyToStartNewTask);
                     }

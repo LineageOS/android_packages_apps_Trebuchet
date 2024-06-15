@@ -177,6 +177,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
      * Number of columns in the all apps list.
      */
     public int numAllAppsColumns;
+    public int numAllAppsRowsForCellHeightCalculation;
     public int numDatabaseAllAppsColumns;
     public @StyleRes int allAppsStyle;
 
@@ -260,7 +261,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
     public InvariantDeviceProfile(Context context, String gridName) {
         String newName = initGrid(context, gridName);
         if (newName == null || !newName.equals(gridName)) {
-            throw new IllegalArgumentException("Unknown grid name");
+            throw new IllegalArgumentException("Unknown grid name: " + gridName);
         }
     }
 
@@ -417,6 +418,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         workspaceCellSpecsTwoPanelId = closestProfile.mWorkspaceCellSpecsTwoPanelId;
         allAppsCellSpecsId = closestProfile.mAllAppsCellSpecsId;
         allAppsCellSpecsTwoPanelId = closestProfile.mAllAppsCellSpecsTwoPanelId;
+        numAllAppsRowsForCellHeightCalculation =
+                closestProfile.mNumAllAppsRowsForCellHeightCalculation;
         this.deviceType = deviceType;
 
         inlineNavButtonsEndSpacing = closestProfile.inlineNavButtonsEndSpacing;
@@ -447,6 +450,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
         allAppsStyle = closestProfile.allAppsStyle;
 
         numAllAppsColumns = closestProfile.numAllAppsColumns;
+
         numDatabaseAllAppsColumns = deviceType == TYPE_MULTI_DISPLAY
                 ? closestProfile.numDatabaseAllAppsColumns : closestProfile.numAllAppsColumns;
 
@@ -845,6 +849,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
         private final @StyleRes int allAppsStyle;
         private final int numAllAppsColumns;
+        private final int mNumAllAppsRowsForCellHeightCalculation;
         private final int numDatabaseAllAppsColumns;
         private final int numHotseatIcons;
         private final int numDatabaseHotseatIcons;
@@ -967,34 +972,37 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                         R.styleable.GridDisplayOption_workspaceSpecsId, INVALID_RESOURCE_HANDLE);
                 mWorkspaceSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_workspaceSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mWorkspaceSpecsId);
                 mAllAppsSpecsId = a.getResourceId(
                         R.styleable.GridDisplayOption_allAppsSpecsId, INVALID_RESOURCE_HANDLE);
                 mAllAppsSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_allAppsSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mAllAppsSpecsId);
                 mFolderSpecsId = a.getResourceId(
                         R.styleable.GridDisplayOption_folderSpecsId, INVALID_RESOURCE_HANDLE);
                 mFolderSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_folderSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mFolderSpecsId);
                 mHotseatSpecsId = a.getResourceId(
                         R.styleable.GridDisplayOption_hotseatSpecsId, INVALID_RESOURCE_HANDLE);
                 mHotseatSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_hotseatSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mHotseatSpecsId);
                 mWorkspaceCellSpecsId = a.getResourceId(
                         R.styleable.GridDisplayOption_workspaceCellSpecsId,
                         INVALID_RESOURCE_HANDLE);
                 mWorkspaceCellSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_workspaceCellSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mWorkspaceCellSpecsId);
                 mAllAppsCellSpecsId = a.getResourceId(
                         R.styleable.GridDisplayOption_allAppsCellSpecsId,
                         INVALID_RESOURCE_HANDLE);
                 mAllAppsCellSpecsTwoPanelId = a.getResourceId(
                         R.styleable.GridDisplayOption_allAppsCellSpecsTwoPanelId,
-                        INVALID_RESOURCE_HANDLE);
+                        mAllAppsCellSpecsId);
+                mNumAllAppsRowsForCellHeightCalculation = a.getInt(
+                        R.styleable.GridDisplayOption_numAllAppsRowsForCellHeightCalculation,
+                        numRows);
             } else {
                 mWorkspaceSpecsId = INVALID_RESOURCE_HANDLE;
                 mWorkspaceSpecsTwoPanelId = INVALID_RESOURCE_HANDLE;
@@ -1008,6 +1016,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
                 mWorkspaceCellSpecsTwoPanelId = INVALID_RESOURCE_HANDLE;
                 mAllAppsCellSpecsId = INVALID_RESOURCE_HANDLE;
                 mAllAppsCellSpecsTwoPanelId = INVALID_RESOURCE_HANDLE;
+                mNumAllAppsRowsForCellHeightCalculation = numRows;
             }
 
             int inlineForRotation = a.getInt(R.styleable.GridDisplayOption_inlineQsb,

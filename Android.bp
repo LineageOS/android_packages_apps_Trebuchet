@@ -23,42 +23,66 @@ min_launcher3_sdk_version = "26"
 // All sources are split so they can be reused in many other libraries/apps in other folders
 filegroup {
     name: "launcher-src",
-    srcs: [ "src/**/*.java", "src/**/*.kt" ],
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-quickstep-src",
-    srcs: [ "quickstep/src/**/*.java", "quickstep/src/**/*.kt" ],
+    srcs: [
+        "quickstep/src/**/*.java",
+        "quickstep/src/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-go-src",
-    srcs: [ "go/src/**/*.java", "go/src/**/*.kt" ],
+    srcs: [
+        "go/src/**/*.java",
+        "go/src/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-go-quickstep-src",
-    srcs: [ "go/quickstep/src/**/*.java", "go/quickstep/src/**/*.kt" ],
+    srcs: [
+        "go/quickstep/src/**/*.java",
+        "go/quickstep/src/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-src_shortcuts_overrides",
-    srcs: [ "src_shortcuts_overrides/**/*.java", "src_shortcuts_overrides/**/*.kt" ],
+    srcs: [
+        "src_shortcuts_overrides/**/*.java",
+        "src_shortcuts_overrides/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-src_ui_overrides",
-    srcs: [ "src_ui_overrides/**/*.java", "src_ui_overrides/**/*.kt" ],
+    srcs: [
+        "src_ui_overrides/**/*.java",
+        "src_ui_overrides/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-ext_tests",
-    srcs: [ "ext_tests/**/*.java", "ext_tests/**/*.kt" ],
+    srcs: [
+        "ext_tests/**/*.java",
+        "ext_tests/**/*.kt",
+    ],
 }
 
 filegroup {
     name: "launcher-quickstep-ext_tests",
-    srcs: [ "quickstep/ext_tests/**/*.java", "quickstep/ext_tests/**/*.kt" ],
+    srcs: [
+        "quickstep/ext_tests/**/*.java",
+        "quickstep/ext_tests/**/*.kt",
+    ],
 }
 
 // Proguard files for Launcher3
@@ -84,8 +108,9 @@ android_library {
     ],
     srcs: [
         "tests/tapl/**/*.java",
+        "tests/tapl/**/*.kt",
     ],
-    resource_dirs: [ ],
+    resource_dirs: [],
     manifest: "tests/tapl/AndroidManifest.xml",
     platform_apis: true,
 }
@@ -99,7 +124,7 @@ java_library_static {
     sdk_version: "current",
     proto: {
         type: "lite",
-        local_include_dirs:[
+        local_include_dirs: [
             "protos",
             "protos_overrides",
         ],
@@ -115,14 +140,14 @@ java_library_static {
     sdk_version: "current",
     proto: {
         type: "lite",
-        local_include_dirs:[
+        local_include_dirs: [
             "quickstep/protos_overrides",
         ],
     },
     static_libs: [
-      "libprotobuf-java-lite",
-      "launcher_log_protos_lite"
-      ],
+        "libprotobuf-java-lite",
+        "launcher_log_protos_lite",
+    ],
 }
 
 java_library {
@@ -146,7 +171,7 @@ java_import {
 // Library with all the dependencies for building Launcher3
 android_library {
     name: "Launcher3ResLib",
-    srcs: [ ],
+    srcs: [],
     resource_dirs: ["res"],
     static_libs: [
         "LauncherPluginLib",
@@ -158,6 +183,7 @@ android_library {
         "androidx.preference_preference",
         "androidx.slice_slice-view",
         "androidx.cardview_cardview",
+        "androidx.window_window",
         "com.google.android.material_material",
         "iconloader_base",
         "view_capture",
@@ -168,7 +194,7 @@ android_library {
     sdk_version: "current",
     min_sdk_version: min_launcher3_sdk_version,
     lint: {
-        baseline_filename: "lint-baseline-res-lib.xml",
+        baseline_filename: "lint-baseline2.xml",
     },
 }
 
@@ -185,13 +211,15 @@ android_library {
         "animationlib",
         "com_android_launcher3_flags_lib",
         "com_android_wm_shell_flags_lib",
+        "android.appwidget.flags-aconfig-java",
+        "com.android.window.flags.window-aconfig-java",
         "org.lineageos.platform"
     ],
     sdk_version: "current",
     min_sdk_version: min_launcher3_sdk_version,
     manifest: "AndroidManifest-common.xml",
     lint: {
-        baseline_filename: "lint-baseline-common-deps-lib.xml",
+        baseline_filename: "lint-baseline2.xml",
     },
 }
 
@@ -239,14 +267,14 @@ android_app {
         "AndroidManifest-common.xml",
     ],
     lint: {
-        baseline_filename: "lint-baseline-launcher3.xml",
+        baseline_filename: "lint-baseline.xml",
     },
 }
 
 // Library with all the dependencies for building quickstep
 android_library {
     name: "QuickstepResLib",
-    srcs: [ ],
+    srcs: [],
     resource_dirs: [
         "quickstep/res",
     ],
@@ -264,7 +292,6 @@ android_library {
     manifest: "quickstep/AndroidManifest.xml",
     min_sdk_version: "current",
 }
-
 
 // Library with all the dependencies for building Launcher Go
 android_library {
@@ -295,9 +322,8 @@ android_library {
         "AndroidManifest-common.xml",
     ],
     min_sdk_version: "current",
-    lint: {
-        baseline_filename: "lint-baseline-go-res-lib.xml",
-    },
+    // TODO(b/319712088): re-enable use_resource_processor
+    use_resource_processor: false,
 }
 
 // Build rule for Quickstep library
@@ -326,9 +352,8 @@ android_library {
     manifest: "quickstep/AndroidManifest.xml",
     platform_apis: true,
     min_sdk_version: "current",
-    lint: {
-        baseline_filename: "lint-baseline-launcher3.xml",
-    },
+    // TODO(b/319712088): re-enable use_resource_processor
+    use_resource_processor: false,
 }
 
 // Build rule for Launcher3 Go app for Android Go devices.
@@ -372,7 +397,7 @@ android_app {
     manifest: "go/AndroidManifest.xml",
     jacoco: {
         include_filter: ["com.android.launcher3.*"],
-    }
+    },
 
 }
 
@@ -410,7 +435,7 @@ android_app {
     manifest: "quickstep/AndroidManifest.xml",
     jacoco: {
         include_filter: ["com.android.launcher3.*"],
-    }
+    },
 
 }
 
@@ -428,7 +453,7 @@ android_app {
     min_sdk_version: "current",
     target_sdk_version: "current",
 
-    srcs: [ ],
+    srcs: [],
 
     resource_dirs: [
         "go/quickstep/res",
@@ -462,7 +487,6 @@ android_app {
     manifest: "quickstep/AndroidManifest.xml",
     jacoco: {
         include_filter: ["com.android.launcher3.*"],
-    }
+    },
 
 }
-

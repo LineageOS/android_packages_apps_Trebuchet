@@ -22,9 +22,9 @@ import static com.android.launcher3.Flags.enableCursorHoverStates;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_ALLAPPS_THEMED_ICONS;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_DESKTOP_LABELS;
 import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_DRAWER_LABELS;
-import static com.android.launcher3.config.FeatureFlags.ENABLE_ICON_LABEL_AUTO_SCALING;
 import static com.android.launcher3.graphics.PreloadIconDrawable.newPendingIcon;
 import static com.android.launcher3.icons.BitmapInfo.FLAG_NO_BADGE;
+import static com.android.launcher3.icons.BitmapInfo.FLAG_SKIP_USER_BADGE;
 import static com.android.launcher3.icons.BitmapInfo.FLAG_THEMED;
 import static com.android.launcher3.icons.GraphicsUtils.setColorAlphaBound;
 import static com.android.launcher3.model.data.ItemInfoWithIcon.FLAG_INCREMENTAL_DOWNLOAD_ACTIVE;
@@ -73,13 +73,13 @@ import com.android.launcher3.icons.DotRenderer;
 import com.android.launcher3.icons.FastBitmapDrawable;
 import com.android.launcher3.icons.IconCache.ItemInfoUpdateReceiver;
 import com.android.launcher3.icons.PlaceHolderIconDrawable;
-import com.android.launcher3.icons.cache.HandlerRunnable;
 import com.android.launcher3.model.data.AppInfo;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.model.data.ItemInfoWithIcon;
 import com.android.launcher3.model.data.WorkspaceItemInfo;
 import com.android.launcher3.popup.PopupContainerWithArrow;
 import com.android.launcher3.search.StringMatcherUtility;
+import com.android.launcher3.util.CancellableTask;
 import com.android.launcher3.util.IntArray;
 import com.android.launcher3.util.MultiTranslateDelegate;
 import com.android.launcher3.util.SafeCloseable;
@@ -168,6 +168,8 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     @ViewDebug.ExportedProperty(category = "launcher")
     private boolean mHideBadge = false;
     @ViewDebug.ExportedProperty(category = "launcher")
+    private boolean mSkipUserBadge = false;
+    @ViewDebug.ExportedProperty(category = "launcher")
     private boolean mIsIconVisible = true;
     @ViewDebug.ExportedProperty(category = "launcher")
     private int mTextColor;
@@ -195,7 +197,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     private boolean mShouldShowLabel;
     private boolean mThemeAllAppsIcons;
 
-    private HandlerRunnable mIconLoadRequest;
+    private CancellableTask mIconLoadRequest;
 
     private boolean mEnableIconUpdateAnimation = false;
 
@@ -218,6 +220,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         mIsRtl = (getResources().getConfiguration().getLayoutDirection()
                 == View.LAYOUT_DIRECTION_RTL);
         mDeviceProfile = mActivity.getDeviceProfile();
+        mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
 
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
 
@@ -257,7 +260,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             mShouldShowLabel = prefs.getBoolean(KEY_SHOW_DESKTOP_LABELS, true);
         }
 
-        mCenterVertically = a.getBoolean(R.styleable.BubbleTextView_centerVertically, false);
 
         mIconSize = a.getDimensionPixelSize(R.styleable.BubbleTextView_iconSizeOverride,
                 defaultIconSize);
@@ -284,6 +286,10 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         mHideBadge = hideBadge;
     }
 
+    public void setSkipUserBadge(boolean skipUserBadge) {
+        mSkipUserBadge = skipUserBadge;
+    }
+
     /**
      * Resets the view so it can be recycled.
      */
@@ -295,15 +301,19 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         mDotParams.scale = 0f;
         mForceHideDot = false;
         setBackground(null);
-        if (FeatureFlags.enableTwolineAllapps() || FeatureFlags.ENABLE_TWOLINE_DEVICESEARCH.get()) {
-            setMaxLines(1);
-        }
 
         setTag(null);
         if (mIconLoadRequest != null) {
             mIconLoadRequest.cancel();
             mIconLoadRequest = null;
         }
+        // Reset any shifty arrangements in case animation is disrupted.
+        setPivotY(0);
+        setAlpha(1);
+        setScaleY(1);
+        setTranslationY(0);
+        setMaxLines(1);
+        setVisibility(VISIBLE);
     }
 
     private void cancelDotScaleAnim() {
@@ -413,6 +423,9 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         if (mHideBadge || mDisplay == DISPLAY_SEARCH_RESULT_SMALL) {
             flags |= FLAG_NO_BADGE;
         }
+        if (mSkipUserBadge) {
+            flags |= FLAG_SKIP_USER_BADGE;
+        }
         FastBitmapDrawable iconDrawable = info.newIcon(getContext(), flags);
         mDotParams.appColor = iconDrawable.getIconColor();
         mDotParams.dotColor = Themes.getAttrColor(getContext(), R.attr.notificationDotColor);
@@ -428,11 +441,12 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     }
 
     /**
-     *  Only if actual text can be displayed in two line, the {@code true} value will be effective.
+     * Only if actual text can be displayed in two line, the {@code true} value will be effective.
      */
     protected boolean shouldUseTwoLine() {
-        return (FeatureFlags.enableTwolineAllapps() && isCurrentLanguageEnglish())
-                && (mDisplay == DISPLAY_ALL_APPS || mDisplay == DISPLAY_PREDICTION_ROW);
+        return isCurrentLanguageEnglish() && (mDisplay == DISPLAY_ALL_APPS
+                || mDisplay == DISPLAY_PREDICTION_ROW) && (Flags.enableTwolineToggle()
+                && LauncherPrefs.ENABLE_TWOLINE_ALLAPPS_TOGGLE.get(getContext()));
     }
 
     protected boolean isCurrentLanguageEnglish() {
@@ -566,9 +580,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     }
 
     private void checkForEllipsis() {
-        if (!ENABLE_ICON_LABEL_AUTO_SCALING.get()) {
-            return;
-        }
         float width = getWidth() - getCompoundPaddingLeft() - getCompoundPaddingRight();
         if (width <= 0) {
             return;
@@ -589,12 +600,12 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
 
     /**
      * Find the appropriate text spacing to display the provided text
-     * @param paint the paint used by the text view
-     * @param text the text to display
-     * @param allowedWidthPx available space to render the text
-     * @param minSpacingEm minimum spacing allowed between characters
-     * @return the final textSpacing value
      *
+     * @param paint          the paint used by the text view
+     * @param text           the text to display
+     * @param allowedWidthPx available space to render the text
+     * @param minSpacingEm   minimum spacing allowed between characters
+     * @return the final textSpacing value
      * @see #setLetterSpacing(float)
      */
     private float findBestSpacingValue(TextPaint paint, String text, float allowedWidthPx,
@@ -826,13 +837,13 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
      * iterating through the list of break points and determining if the strings between the break
      * points can fit within the line it is in. We will show the modified string if there is enough
      * horizontal and vertical space, otherwise this method will just return the original string.
-     *  Example assuming each character takes up one spot:
-     *  title = "Battery Stats", breakpoint = [6], stringPtr = 0, limitedWidth = 7
-     *  We get the current word -> from sublist(0, breakpoint[i]+1) so sublist (0,7) -> Battery,
-     *  now stringPtr = 7 then from sublist(7) the current string is " Stats" and the runningWidth
-     *  at this point exceeds limitedWidth and so we put " Stats" onto the next line (after checking
-     *  if the first char is a SPACE, we trim to append "Stats". So resulting string would be
-     *  "Battery\nStats"
+     * Example assuming each character takes up one spot:
+     * title = "Battery Stats", breakpoint = [6], stringPtr = 0, limitedWidth = 7
+     * We get the current word -> from sublist(0, breakpoint[i]+1) so sublist (0,7) -> Battery,
+     * now stringPtr = 7 then from sublist(7) the current string is " Stats" and the runningWidth
+     * at this point exceeds limitedWidth and so we put " Stats" onto the next line (after checking
+     * if the first char is a SPACE, we trim to append "Stats". So resulting string would be
+     * "Battery\nStats"
      */
     public static CharSequence modifyTitleToSupportMultiLine(int limitedWidth, int limitedHeight,
             CharSequence title, TextPaint paint, IntArray breakPoints, float spacingMultiplier,
@@ -844,28 +855,27 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         float currentWordWidth, runningWidth = 0;
         CharSequence currentWord;
         StringBuilder newString = new StringBuilder();
-        // TODO: Remove when ENABLE_ICON_LABEL_AUTO_SCALING feature flag is being cleaned up.
         paint.setLetterSpacing(MIN_LETTER_SPACING);
         int stringPtr = 0;
-        for (int i = 0; i < breakPoints.size()+1; i++) {
+        for (int i = 0; i < breakPoints.size() + 1; i++) {
             if (i < breakPoints.size()) {
-                currentWord = title.subSequence(stringPtr, breakPoints.get(i)+1);
+                currentWord = title.subSequence(stringPtr, breakPoints.get(i) + 1);
             } else {
                 // last word from recent breakpoint until the end of the string
                 currentWord = title.subSequence(stringPtr, title.length());
             }
-            currentWordWidth = paint.measureText(currentWord,0, currentWord.length());
+            currentWordWidth = paint.measureText(currentWord, 0, currentWord.length());
             runningWidth += currentWordWidth;
             if (runningWidth <= limitedWidth) {
                 newString.append(currentWord);
             } else {
-                if (i != 0)  {
+                if (i != 0) {
                     // If putting word onto a new line, make sure there is no space or new line
                     // character in the beginning of the current word and just put in the rest of
                     // the characters.
                     CharSequence lastCharacters = title.subSequence(stringPtr, title.length());
                     int beginningLetterType =
-                            Character.getType(Character.codePointAt(lastCharacters,0));
+                            Character.getType(Character.codePointAt(lastCharacters, 0));
                     if (beginningLetterType == Character.SPACE_SEPARATOR
                             || beginningLetterType == Character.LINE_SEPARATOR) {
                         lastCharacters = lastCharacters.length() > 1
@@ -886,7 +896,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
                 // no need to look forward into the string if we've already finished processing
                 break;
             }
-            stringPtr = breakPoints.get(i)+1;
+            stringPtr = breakPoints.get(i) + 1;
         }
         return newString.toString();
     }
@@ -947,7 +957,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             if (mIcon instanceof PreloadIconDrawable) {
                 preloadIconDrawable = (PreloadIconDrawable) mIcon;
                 preloadIconDrawable.setLevel(progressLevel);
-                preloadIconDrawable.setIsDisabled(info.getProgressLevel() == 0);
+                preloadIconDrawable.setIsDisabled(isIconDisabled(info));
             } else {
                 preloadIconDrawable = makePreloadIcon();
                 setIcon(preloadIconDrawable);
@@ -972,8 +982,16 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         final PreloadIconDrawable preloadDrawable = newPendingIcon(getContext(), info);
 
         preloadDrawable.setLevel(progressLevel);
-        preloadDrawable.setIsDisabled(info.getProgressLevel() == 0);
+        preloadDrawable.setIsDisabled(isIconDisabled(info));
         return preloadDrawable;
+    }
+
+    /**
+     * Returns true to grey the icon if the icon is either suspended or if the icon is pending
+     * download
+     */
+    public boolean isIconDisabled(ItemInfoWithIcon info) {
+        return info.isDisabled() || info.isPendingDownload();
     }
 
     public void applyDotState(ItemInfo itemInfo, boolean animate) {
@@ -1013,19 +1031,21 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     }
 
     private void setDownloadStateContentDescription(ItemInfoWithIcon info, int progressLevel) {
-        if ((info.runtimeStatusFlags & ItemInfoWithIcon.FLAG_SHOW_DOWNLOAD_PROGRESS_MASK)
+        if ((info.runtimeStatusFlags & ItemInfoWithIcon.FLAG_ARCHIVED) != 0 && progressLevel == 0) {
+            setContentDescription(getContext().getString(R.string.app_archived_title, info.title));
+        } else if ((info.runtimeStatusFlags & ItemInfoWithIcon.FLAG_SHOW_DOWNLOAD_PROGRESS_MASK)
                 != 0) {
             String percentageString = NumberFormat.getPercentInstance()
                     .format(progressLevel * 0.01);
             if ((info.runtimeStatusFlags & FLAG_INSTALL_SESSION_ACTIVE) != 0) {
                 setContentDescription(getContext()
                         .getString(
-                            R.string.app_installing_title, info.title, percentageString));
+                                R.string.app_installing_title, info.title, percentageString));
             } else if ((info.runtimeStatusFlags
                     & FLAG_INCREMENTAL_DOWNLOAD_ACTIVE) != 0) {
                 setContentDescription(getContext()
                         .getString(
-                            R.string.app_downloading_title, info.title, percentageString));
+                                R.string.app_downloading_title, info.title, percentageString));
             }
         }
     }
@@ -1192,7 +1212,8 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
     public SafeCloseable prepareDrawDragView() {
         resetIconScale();
         setForceHideDot(true);
-        return () -> { };
+        return () -> {
+        };
     }
 
     private void resetIconScale() {

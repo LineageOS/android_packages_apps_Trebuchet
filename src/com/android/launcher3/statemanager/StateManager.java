@@ -38,10 +38,11 @@ import com.android.launcher3.anim.PendingAnimation;
 import com.android.launcher3.states.StateAnimationConfig;
 import com.android.launcher3.states.StateAnimationConfig.AnimationFlags;
 import com.android.launcher3.states.StateAnimationConfig.AnimationPropertyFlags;
-import com.android.launcher3.testing.shared.TestProtocol;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * Class to manage transitions between different states for a StatefulActivity based on different
@@ -50,6 +51,8 @@ import java.util.ArrayList;
 public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
 
     public static final String TAG = "StateManager";
+    // b/279059025
+    private static final boolean DEBUG = true;
 
     private final AnimationState mConfig = new AnimationState();
     private final Handler mUiHandler;
@@ -156,6 +159,13 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
     /**
      * @see #goToState(STATE_TYPE, boolean, AnimatorListener)
      */
+    public void goToState(STATE_TYPE state, AnimatorListener listener) {
+        goToState(state, shouldAnimateStateChange(), listener);
+    }
+
+    /**
+     * @see #goToState(STATE_TYPE, boolean, AnimatorListener)
+     */
     public void goToState(STATE_TYPE state, boolean animated) {
         goToState(state, animated, 0, null);
     }
@@ -165,7 +175,7 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
      *
      * @param animated false if the state should change immediately without any animation,
      *                true otherwise
-     * @paras onCompleteRunnable any action to perform at the end of the transition, of null.
+     * @param listener any action to perform at the end of the transition, or null.
      */
     public void goToState(STATE_TYPE state, boolean animated, AnimatorListener listener) {
         goToState(state, animated, 0, listener);
@@ -229,7 +239,18 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
 
     private void goToState(
             STATE_TYPE state, boolean animated, long delay, AnimatorListener listener) {
-        Log.d(TestProtocol.OVERVIEW_OVER_HOME, "go to state " + state);
+        if (DEBUG) {
+            String stackTrace = Log.getStackTraceString(new Exception("tracing state transition"));
+            String truncatedTrace =
+                    Arrays.stream(stackTrace.split("\\n"))
+                            .limit(5)
+                            .skip(1) // Removes the line "java.lang.Exception: tracing state
+                            // transition"
+                            .filter(traceLine -> !traceLine.contains("StateManager.goToState"))
+                            .collect(Collectors.joining("\n"));
+            Log.d(TAG, "goToState - fromState: " + mState + ", toState: " + state
+                    + ", partial trace:\n" + truncatedTrace);
+        }
 
         animated &= areAnimatorsEnabled();
         if (mActivity.isInState(state)) {
@@ -314,6 +335,20 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
      */
     public AnimatorSet createAtomicAnimation(
             STATE_TYPE fromState, STATE_TYPE toState, StateAnimationConfig config) {
+        if (DEBUG) {
+            String stackTrace = Log.getStackTraceString(new Exception("tracing state transition"));
+            String truncatedTrace =
+                    Arrays.stream(stackTrace.split("\\n"))
+                            .limit(5)
+                            .skip(1) // Removes the line "java.lang.Exception: tracing state
+                            // transition"
+                            .filter(traceLine -> !traceLine.contains(
+                                    "StateManager.createAtomicAnimation"))
+                            .collect(Collectors.joining("\n"));
+            Log.d(TAG, "createAtomicAnimation - fromState: " + fromState + ", toState: " + toState
+                    + ", partial trace:\n" + truncatedTrace);
+        }
+
         PendingAnimation builder = new PendingAnimation(config.duration);
         prepareForAtomicAnimation(fromState, toState, config);
 
@@ -385,8 +420,9 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
         mState = state;
         mActivity.onStateSetStart(mState);
 
-        Log.d(TestProtocol.OVERVIEW_OVER_HOME, "Notifying listeners for state transition start"
-                + " to state: " + state.toString());
+        if (DEBUG) {
+            Log.d(TAG, "onStateTransitionStart - state: " + state);
+        }
         for (int i = mListeners.size() - 1; i >= 0; i--) {
             mListeners.get(i).onStateTransitionStart(state);
         }
@@ -404,8 +440,9 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
             setRestState(null);
         }
 
-        Log.d(TestProtocol.OVERVIEW_OVER_HOME, "Notifying " + mListeners.size() + " listeners "
-                + "for end transition for state: " + state.toString());
+        if (DEBUG) {
+            Log.d(TAG, "onStateTransitionEnd - state: " + state);
+        }
         for (int i = mListeners.size() - 1; i >= 0; i--) {
             mListeners.get(i).onStateTransitionComplete(state);
         }
@@ -443,7 +480,9 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
      * Cancels the current animation.
      */
     public void cancelAnimation() {
-        Log.d(TestProtocol.OVERVIEW_OVER_HOME, "current animation cancelled");
+        if (DEBUG && mConfig.currentAnimation != null) {
+            Log.d(TAG, "cancelAnimation - with ongoing animation");
+        }
         mConfig.reset();
         // It could happen that a new animation is set as a result of an endListener on the
         // existing animation.
@@ -475,7 +514,6 @@ public class StateManager<STATE_TYPE extends BaseState<STATE_TYPE>> {
      * @param toState The state we are animating towards.
      */
     public void setCurrentAnimation(AnimatorSet anim, STATE_TYPE toState) {
-        Log.d(TestProtocol.OVERVIEW_OVER_HOME, "setting animation to " + toState.toString());
         cancelAnimation();
         setCurrentAnimation(anim);
         anim.addListener(createStateAnimationListener(toState));

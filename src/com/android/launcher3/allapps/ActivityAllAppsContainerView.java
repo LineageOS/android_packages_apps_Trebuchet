@@ -80,6 +80,7 @@ import com.android.launcher3.allapps.search.AllAppsSearchUiDelegate;
 import com.android.launcher3.allapps.search.SearchAdapterProvider;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.keyboard.FocusedItemDecorator;
+import com.android.launcher3.keyboard.ViewGroupFocusHelper;
 import com.android.launcher3.model.StringCache;
 import com.android.launcher3.model.data.ItemInfo;
 import com.android.launcher3.pm.UserCache;
@@ -126,6 +127,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
     public static final float PULL_MULTIPLIER = .02f;
     public static final float FLING_VELOCITY_MULTIPLIER = 1200f;
     protected static final String BUNDLE_KEY_CURRENT_PAGE = "launcher.allapps.current_page";
+    private static final int SCROLL_TO_BOTTOM_DURATION = 500;
     // As of this writing, search transition does not seem to work properly, so set duration to 0.
     private static final long DEFAULT_SEARCH_TRANSITION_DURATION_MS = 0;
     // Render the header protection at all times to debug clipping issues.
@@ -261,7 +263,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         mMainAdapterProvider = mSearchUiDelegate.createMainAdapterProvider();
         if (Flags.enablePrivateSpace()) {
             mPrivateSpaceHeaderViewController =
-                    new PrivateSpaceHeaderViewController(mPrivateProfileManager);
+                    new PrivateSpaceHeaderViewController(this, mPrivateProfileManager);
         }
 
         mAH.set(AdapterHolder.MAIN, new AdapterHolder(AdapterHolder.MAIN,
@@ -517,7 +519,7 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
             // Switch to the main tab
             switchToTab(ActivityAllAppsContainerView.AdapterHolder.MAIN);
             // Scroll to bottom
-            getActiveRecyclerView().scrollToBottomWithMotion();
+            getActiveRecyclerView().scrollToBottomWithMotion(SCROLL_TO_BOTTOM_DURATION);
         });
     }
 
@@ -995,6 +997,11 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         return mWorkManager;
     }
 
+    /** Returns whether Private Profile has been setup. */
+    public boolean hasPrivateProfile() {
+        return mHasPrivateApps;
+    }
+
     @Override
     public void onDeviceProfileChanged(DeviceProfile dp) {
         for (AdapterHolder holder : mAH) {
@@ -1166,13 +1173,16 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         applyAdapterSideAndBottomPaddings(grid);
 
         MarginLayoutParams mlp = (MarginLayoutParams) getLayoutParams();
-        mlp.leftMargin = insets.left;
-        mlp.rightMargin = insets.right;
+        // Ignore left/right insets on tablet because we are already centered in-screen.
+        if (grid.isTablet) {
+            mlp.leftMargin = mlp.rightMargin = 0;
+        } else {
+            mlp.leftMargin = insets.left;
+            mlp.rightMargin = insets.right;
+        }
         setLayoutParams(mlp);
 
-        if (grid.isVerticalBarLayout() && !FeatureFlags.enableResponsiveWorkspace()) {
-            setPadding(grid.workspacePadding.left, 0, grid.workspacePadding.right, 0);
-        } else {
+        if (!grid.isVerticalBarLayout() || FeatureFlags.enableResponsiveWorkspace()) {
             int topPadding = grid.allAppsPadding.top;
             if (isSearchBarFloating() && !grid.isTablet) {
                 topPadding += getResources().getDimensionPixelSize(
@@ -1334,6 +1344,10 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         return isSearching()
                 ? SEARCH
                 : mViewPager == null ? AdapterHolder.MAIN : mViewPager.getNextPage();
+    }
+
+    public PrivateProfileManager getPrivateProfileManager() {
+        return mPrivateProfileManager;
     }
 
     /**
@@ -1544,7 +1558,11 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
             // No animations will occur when changes occur to the items in this RecyclerView.
             mRecyclerView.setItemAnimator(null);
             onInitializeRecyclerView(mRecyclerView);
-            FocusedItemDecorator focusedItemDecorator = new FocusedItemDecorator(mRecyclerView);
+            // Use ViewGroupFocusHelper for SearchRecyclerView to draw focus outline for the
+            // buttons in the view (e.g. query builder button and setting button)
+            FocusedItemDecorator focusedItemDecorator = isSearch() ? new FocusedItemDecorator(
+                    new ViewGroupFocusHelper(mRecyclerView)) : new FocusedItemDecorator(
+                    mRecyclerView);
             mRecyclerView.addItemDecoration(focusedItemDecorator);
             mOnFocusChangeListener = focusedItemDecorator.getFocusListener();
             mAdapter.setIconFocusListener(mOnFocusChangeListener);
