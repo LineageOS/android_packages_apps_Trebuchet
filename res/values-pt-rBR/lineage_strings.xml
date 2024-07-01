@@ -21,18 +21,18 @@
     <string name="title_show_google_app">Mostrar app do Google</string>
     <string name="msg_minus_one_on_left">Ao deslizar para a direita na tela inicial</string>
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda na tela inicial</string>
-    <string name="pref_themed_icons_title">Usar ícones com tema na gaveta de aplicativos</string>
+    <string name="pref_themed_icons_title">Usar ícones com tema na gaveta de apps</string>
     <string name="pref_themed_icons_summary">Usar os mesmos ícones com tema da tela de início</string>
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
-    <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de aplicativos</string>
-    <string name="trust_apps_manager_name">Aplicativos ocultos e protegidos</string>
-    <string name="trust_apps_auth_manager">Desbloquear para gerenciar os aplicativos ocultos e protegidos</string>
+    <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de apps</string>
+    <string name="trust_apps_manager_name">Apps ocultos e protegidos</string>
+    <string name="trust_apps_auth_manager">Desbloquear para gerenciar os apps ocultos e protegidos</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
     <string name="trust_apps_loading">Carregando\u2026</string>
-    <string name="trust_apps_no_lock_error">Configure uma tela de bloqueio para restringir o acesso aos aplicativos</string>
+    <string name="trust_apps_no_lock_error">Configure uma tela de bloqueio para restringir o acesso aos apps</string>
     <string name="trust_apps_help">Ajuda</string>
-    <string name="trust_apps_info_hidden">Os aplicativos ocultos e os seus widgets estão ocultos na gaveta</string>
-    <string name="trust_apps_info_protected">Os aplicativos protegidos requerem autenticação para serem executados</string>
+    <string name="trust_apps_info_hidden">Os apps ocultos e os seus widgets estão ocultos na gaveta</string>
+    <string name="trust_apps_info_protected">Os apps protegidos requerem autenticação para serem executados</string>
     <string name="pref_suggestions_title">Sugestões</string>
-    <string name="pref_suggestions_summary">Para sugestões na gaveta de aplicativos &amp; tela inicial</string>
+    <string name="pref_suggestions_summary">Para sugestões na gaveta de apps &amp; tela inicial</string>
 </resources>
