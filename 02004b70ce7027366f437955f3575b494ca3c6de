@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8425708e_b56381c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-08-21T08:28:50Z",
+      "side": 1,
+      "message": "Now, I know you likely did it in good faith, but I know you removed some of the original code copyright, some files has lineage, some had shift.\nMaybe more I missed.\n\nBring those back please.",
+      "revId": "02004b70ce7027366f437955f3575b494ca3c6de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
