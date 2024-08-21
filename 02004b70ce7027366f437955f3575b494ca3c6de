@@ -16,6 +16,24 @@
       "message": "Now, I know you likely did it in good faith, but I know you removed some of the original code copyright, some files has lineage, some had shift.\nMaybe more I missed.\n\nBring those back please.",
       "revId": "02004b70ce7027366f437955f3575b494ca3c6de",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adbc8356_db7862df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2024-08-21T09:21:00Z",
+      "side": 1,
+      "message": "ok, I am just doing that now. the reason why the copyright was changed was because I also (tried to) commit this to AOSP and the licences needed to be changed for that. sorry.",
+      "parentUuid": "8425708e_b56381c7",
+      "revId": "02004b70ce7027366f437955f3575b494ca3c6de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
