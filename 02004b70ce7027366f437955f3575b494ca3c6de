@@ -34,6 +34,24 @@
       "parentUuid": "8425708e_b56381c7",
       "revId": "02004b70ce7027366f437955f3575b494ca3c6de",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5104481_5f4c7267",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-08-21T09:26:41Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure it didn\u0027t, non AOSP copyright code can land in AOSP (as long as license is ok)",
+      "parentUuid": "adbc8356_db7862df",
+      "revId": "02004b70ce7027366f437955f3575b494ca3c6de",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
