@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e6702b2_6f2d93a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2024-08-23T11:24:39Z",
+      "side": 1,
+      "message": "it looks like this could work, can somebody test this and https://review.lineageos.org/c/LineageOS/android_frameworks_libs_systemui/+/399806 together please",
+      "revId": "adcf9bc8a0913aff1efeb4fab93194ca5e56592e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
