@@ -68,6 +68,24 @@
       "message": "https://drive.google.com/file/d/1QAjjhVr9N8n3Jm_OgAY7hbdM-BWYk8Ne/view?usp\u003dsharing",
       "revId": "4858c5a9a55d8fe494fa7c0ca9fd19f8ccdb1404",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be3f00ed_8b38347b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2024-08-25T11:08:59Z",
+      "side": 1,
+      "message": "have you tried clean building android (clean building is where you delete the out folder before building)",
+      "parentUuid": "a732cd31_30be6185",
+      "revId": "4858c5a9a55d8fe494fa7c0ca9fd19f8ccdb1404",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
