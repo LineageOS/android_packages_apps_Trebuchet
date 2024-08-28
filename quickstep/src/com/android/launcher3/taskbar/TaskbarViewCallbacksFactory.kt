@@ -22,7 +22,10 @@ import com.android.launcher3.util.ResourceBasedOverride
 import com.android.launcher3.util.ResourceBasedOverride.Overrides
 
 /** Creates [TaskbarViewCallbacks] instances. */
-open class TaskbarViewCallbacksFactory : ResourceBasedOverride {
+// We must have constructors with and without context for Overrides.getObject
+open class TaskbarViewCallbacksFactory @JvmOverloads constructor(
+    context: Context? = null
+) : ResourceBasedOverride {
 
     open fun create(
         activity: TaskbarActivityContext,
