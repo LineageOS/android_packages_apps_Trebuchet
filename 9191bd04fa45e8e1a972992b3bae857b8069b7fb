@@ -16,6 +16,23 @@
       "message": "Verified on quill_tab, launcher crash no longer shows in logs.",
       "revId": "9191bd04fa45e8e1a972992b3bae857b8069b7fb",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38aa5e00_e24f7293",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-09-06T12:35:51Z",
+      "side": 1,
+      "message": "late, but I also get this error only now?",
+      "revId": "9191bd04fa45e8e1a972992b3bae857b8069b7fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
