@@ -14,10 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Bloquear disposición</string>
     <string name="settings_lock_layout_summary_on">Los iconos y widgets no se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_lock_layout_summary_off">Los iconos y widgets se pueden añadir, eliminar y mover en la pantalla principal</string>
     <string name="settings_edit_widgets_error">Imposible añadir widgets a la pantalla de inicio</string>
+    <string name="title_show_google_app">Mostrar aplicación de Google</string>
+    <string name="msg_minus_one_on_left">Cuando deslizas a la derecha desde la pantalla de inicio</string>
+    <string name="msg_minus_one_on_right">Cuando deslizas a la izquierda desde la pantalla de inicio</string>
+    <string name="pref_themed_icons_title">Usar iconos temáticos en el cajón</string>
+    <string name="pref_themed_icons_summary">Seguir iconos temáticos usados en la pantalla de inicio</string>
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
+    <string name="trust_apps_manager_name">Aplicaciones ocultas y protegidas</string>
+    <string name="trust_apps_auth_manager">Desbloquear para administrar las aplicaciones ocultas y protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>
+    <string name="trust_apps_loading">Cargando\u2026</string>
+    <string name="trust_apps_no_lock_error">Por favor, configura una pantalla de bloqueo segura para restringir el acceso a las aplicaciones</string>
+    <string name="trust_apps_help">Ayuda</string>
+    <string name="trust_apps_info_hidden">Las aplicaciones ocultas y sus widgets están ocultos del lanzador de aplicaciones</string>
+    <string name="trust_apps_info_protected">Las aplicaciones protegidas requieren autenticación para ser abiertas desde el lanzador de aplicaciones</string>
+    <string name="pref_suggestions_title">Sugerencias</string>
+    <string name="pref_suggestions_summary">Para el cajón de aplicaciones y sugerencias de la pantalla de inicio</string>
 </resources>
