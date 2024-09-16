@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a80c2421_acb59939",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2024-09-16T03:27:48Z",
+      "side": 1,
+      "message": "This should probably be squashed into the referenced commit. And potentially update the change on the aosp gerrit too, since it appears to have been completely ghosted.",
+      "revId": "9fb3903224791f4496849f71b78baf4f83239a48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
