@@ -74,7 +74,7 @@ public class SettingsChangeLogger implements
 
     private static final String TAG = "SettingsChangeLogger";
     private static final String ROOT_TAG = "androidx.preference.PreferenceScreen";
-    private static final String BOOLEAN_PREF = "SwitchPreference";
+    private static final String BOOLEAN_PREF = "SwitchPreferenceCompat";
 
     private final Context mContext;
     private final ArrayMap<String, LoggablePref> mLoggablePrefs;
