@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b1a2af_6e686748",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2024-10-02T05:07:26Z",
+      "side": 1,
+      "message": "Please stop adding reviewers without the code being complete or actually compiling, This has been going on for months, the commit is being moved between branches and the code keeps changing to the point that nobody wants to bother actually reviewing this commit.\n\nContributions are always welcome but not at the expense of maintainers\u0027 time.",
+      "revId": "df2f893117ab65aa72ea592f8778099fa377cba8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7d5056f_c1910fc5",
