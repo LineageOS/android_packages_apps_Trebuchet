@@ -21,8 +21,8 @@
     <string name="title_show_google_app">Mostrar aplicación de Google</string>
     <string name="msg_minus_one_on_left">Cuando deslizas a la derecha desde la pantalla de inicio</string>
     <string name="msg_minus_one_on_right">Cuando deslizas a la izquierda desde la pantalla de inicio</string>
-    <string name="pref_themed_icons_title">Usar iconos temáticos en el cajón</string>
-    <string name="pref_themed_icons_summary">Seguir iconos temáticos usados en la pantalla de inicio</string>
+    <string name="pref_themed_icons_title">Usar iconos con tema en el cajón</string>
+    <string name="pref_themed_icons_summary">Seguir iconos con tema usados en la pantalla de inicio</string>
     <string name="desktop_show_labels">Mostrar etiquetas de iconos en el escritorio</string>
     <string name="drawer_show_labels">Mostrar etiquetas de iconos en el cajón</string>
     <string name="trust_apps_manager_name">Aplicaciones ocultas y protegidas</string>
