@@ -228,7 +228,6 @@ public class FloatingHeaderView extends LinearLayout implements
 
         mTabsHidden = tabsHidden;
         maybeSetTabVisibility(VISIBLE);
-        updateExpectedHeight();
         mMainRV = mainRV;
         mWorkRV = workRV;
         mSearchRV = searchRV;
