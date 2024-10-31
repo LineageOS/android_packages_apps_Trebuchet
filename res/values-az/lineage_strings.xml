@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">Kilid düzülüşü</string>
+    <string name="settings_lock_layout_summary_on">İkonlar və vicetlər əsas ekranda əlavə edilə, çıxarıla və ya daşına bilməz</string>
+    <string name="settings_lock_layout_summary_off">İkonlar və vicetlər əsas ekranda əlavə edilə, çıxarıla və ya daşına bilər</string>
+    <string name="settings_edit_widgets_error">Əsas ekrana vicet əlavə etmək mümkün deyil</string>
+    <string name="title_show_google_app">Google tətbiqini göstər</string>
+    <string name="msg_minus_one_on_left">Əsas ekrandan sağa sürüşdürəndə</string>
+    <string name="msg_minus_one_on_right">Əsas ekrandan sola sürüşdürəndə</string>
+    <string name="pref_themed_icons_title">Siyirmədə temalı ikonları istifadə et</string>
+    <string name="pref_themed_icons_summary">Əsas ekranda istifadə edilən temalı ikonları izlə</string>
+    <string name="desktop_show_labels">Masaüstündə ikon etiketlərini göstər</string>
+    <string name="drawer_show_labels">Siyirmədə ikon etiketlərini göstər</string>
+    <string name="trust_apps_manager_name">Gizli və Qorunan tətbiqlər</string>
+    <string name="trust_apps_auth_manager">Gizli və qorunan tətbiqləri idarə etmək üçün kilidi açın</string>
+    <string name="trust_apps_auth_open_app">%1$s açmaq üçün kimliyi doğrula</string>
+    <string name="trust_apps_loading">Yüklənir\u2026</string>
+    <string name="trust_apps_no_lock_error">Tətbiq müraciətini məhdudlaşdırmaq üçün lütfən güvənli bir kilid ekranı ayarlayın</string>
+    <string name="trust_apps_help">Kömək</string>
+    <string name="trust_apps_info_hidden">Gizli tətbiqlər və vicetləri, siyirmədə gizlədilir</string>
+    <string name="trust_apps_info_protected">Qorunan tətbiqlərin başladıcıdan açılması üçün kimlik doğrulama tələb olunur</string>
+    <string name="pref_suggestions_title">Təkliflər</string>
+    <string name="pref_suggestions_summary">Tətbiq siyirməsi və əsas ekran təklifləri üçün</string>
+</resources>
