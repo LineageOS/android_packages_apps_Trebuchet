@@ -124,8 +124,8 @@
     </resolve>
 
     <favorite
-        launcher:packageName="org.lineageos.eleven"
-        launcher:className="org.lineageos.eleven.ui.activities.HomeActivity"
+        launcher:packageName="org.lineageos.twelve"
+        launcher:className="org.lineageos.twelve.MainActivity"
         launcher:screen="1"
         launcher:x="2"
         launcher:y="-1" />
