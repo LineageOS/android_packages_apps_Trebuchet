@@ -130,13 +130,13 @@
 
     <!-- Screen 1 -->
     <appwidget
-        launcher:packageName="org.lineageos.eleven"
-        launcher:className="org.lineageos.eleven.appwidgets.AppWidgetLarge"
+        launcher:packageName="org.lineageos.twelve"
+        launcher:className="org.lineageos.twelve.ui.widgets.NowPlayingAppWidgetProvider"
         launcher:screen="1"
         launcher:x="0"
         launcher:y="0"
         launcher:spanX="5"
-        launcher:spanY="2" />
+        launcher:spanY="1" />
 
     <resolve
         launcher:screen="1"
@@ -155,8 +155,8 @@
     </resolve>
 
     <favorite
-        launcher:packageName="org.lineageos.eleven"
-        launcher:className="org.lineageos.eleven.ui.activities.HomeActivity"
+        launcher:packageName="org.lineageos.twelve"
+        launcher:className="org.lineageos.twelve.MainActivity"
         launcher:screen="1"
         launcher:x="2"
         launcher:y="-1" />
