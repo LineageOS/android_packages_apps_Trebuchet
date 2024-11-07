@@ -87,7 +87,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
     private final View mRoot;
     private final BaseDraggingActivity mActivity;
-    private final boolean mHideSysUiScrim;
+    private static final boolean mHideSysUiScrim = true;
     private boolean mSkipScrimAnimationForTest = false;
 
     private boolean mAnimateScrimOnNextDraw = false;
@@ -101,7 +101,7 @@ public class SysUiScrim implements View.OnAttachStateChangeListener {
 
         mTopMaskHeight = ResourceUtils.pxFromDp(TOP_MASK_HEIGHT_DP, dm);
         mBottomMaskHeight = ResourceUtils.pxFromDp(BOTTOM_MASK_HEIGHT_DP, dm);
-        mHideSysUiScrim = Themes.getAttrBoolean(view.getContext(), R.attr.isWorkspaceDarkText);
+        //mHideSysUiScrim = Themes.getAttrBoolean(view.getContext(), R.attr.isWorkspaceDarkText);
 
         mTopMaskBitmap = mHideSysUiScrim ? null : createDitheredAlphaMask(mTopMaskHeight,
                 new int[]{0x3DFFFFFF, 0x0AFFFFFF, 0x00FFFFFF},
