@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import android.os.Build;
 
 import androidx.annotation.NonNull;
 
+import com.android.launcher3.AppFilter;
 import com.android.launcher3.lineage.trust.db.TrustComponent;
 import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
@@ -39,13 +40,18 @@ public class LoadTrustComponentsTask extends AsyncTask<Void, Integer, List<Trust
     private PackageManager mPackageManager;
 
     @NonNull
+    private AppFilter mAppFilter;
+
+    @NonNull
     private Callback mCallback;
 
     LoadTrustComponentsTask(@NonNull TrustDatabaseHelper dbHelper,
             @NonNull PackageManager packageManager,
+            @NonNull AppFilter appFilter,
             @NonNull Callback callback) {
         mDbHelper = dbHelper;
         mPackageManager = packageManager;
+        mAppFilter = appFilter;
         mCallback = callback;
     }
 
@@ -62,6 +68,11 @@ public class LoadTrustComponentsTask extends AsyncTask<Void, Integer, List<Trust
         int numPackages = apps.size();
         for (int i = 0; i < numPackages; i++) {
             ResolveInfo app = apps.get(i);
+
+            if (!mAppFilter.shouldShowApp(app.activityInfo.getComponentName())) {
+                continue;
+            }
+
             try {
                 String pkgName = app.activityInfo.packageName;
                 String label = mPackageManager.getApplicationLabel(
