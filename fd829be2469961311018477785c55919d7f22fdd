@@ -34,6 +34,24 @@
       "parentUuid": "487c71bb_f023b743",
       "revId": "fd829be2469961311018477785c55919d7f22fdd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f04f224d_85549034",
+        "filename": "src/com/android/launcher3/AppFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-22T13:25:05Z",
+      "side": 1,
+      "message": "you pass it via the LoadTrustComponentsTask ctor",
+      "parentUuid": "845bd964_34a69553",
+      "revId": "fd829be2469961311018477785c55919d7f22fdd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
