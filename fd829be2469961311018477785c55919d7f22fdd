@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "487c71bb_f023b743",
+        "filename": "src/com/android/launcher3/AppFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-11-22T12:02:12Z",
+      "side": 1,
+      "message": "nak, create an instance of it",
+      "revId": "fd829be2469961311018477785c55919d7f22fdd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
