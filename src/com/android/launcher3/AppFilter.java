@@ -12,16 +12,20 @@ import java.util.stream.Collectors;
  */
 public class AppFilter {
 
-    private final Set<ComponentName> mFilteredComponents;
+    private static Set<ComponentName> sFilteredComponents;
 
     public AppFilter(Context context) {
-        mFilteredComponents = Arrays.stream(
+        sFilteredComponents = Arrays.stream(
                 context.getResources().getStringArray(R.array.filtered_components))
                 .map(ComponentName::unflattenFromString)
                 .collect(Collectors.toSet());
     }
 
     public boolean shouldShowApp(ComponentName app) {
-        return !mFilteredComponents.contains(app);
+        return !sFilteredComponents.contains(app);
+    }
+
+    public static Set<ComponentName> getFilteredComponents() {
+        return sFilteredComponents;
     }
 }
