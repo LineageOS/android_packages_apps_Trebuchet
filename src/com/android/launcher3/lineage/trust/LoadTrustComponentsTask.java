@@ -24,6 +24,7 @@ import android.os.Build;
 
 import androidx.annotation.NonNull;
 
+import com.android.launcher3.AppFilter;
 import com.android.launcher3.lineage.trust.db.TrustComponent;
 import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
 
@@ -62,6 +63,11 @@ public class LoadTrustComponentsTask extends AsyncTask<Void, Integer, List<Trust
         int numPackages = apps.size();
         for (int i = 0; i < numPackages; i++) {
             ResolveInfo app = apps.get(i);
+
+            if (AppFilter.getFilteredComponents().contains(app.activityInfo.getComponentName())) {
+                continue;
+            }
+
             try {
                 String pkgName = app.activityInfo.packageName;
                 String label = mPackageManager.getApplicationLabel(
