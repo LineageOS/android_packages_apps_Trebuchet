@@ -16,6 +16,24 @@
       "message": "nak, create an instance of it",
       "revId": "fd829be2469961311018477785c55919d7f22fdd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "845bd964_34a69553",
+        "filename": "src/com/android/launcher3/AppFilter.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-11-22T13:19:42Z",
+      "side": 1,
+      "message": "But how, I need to access it from a static context?",
+      "parentUuid": "487c71bb_f023b743",
+      "revId": "fd829be2469961311018477785c55919d7f22fdd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
