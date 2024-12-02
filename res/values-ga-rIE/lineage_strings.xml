@@ -14,10 +14,25 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Glas an Leagan Amach</string>
+    <string name="settings_lock_layout_summary_on">Ní féidir deilbhíní agus giuirléidí a chur leis, a bhaint agus a bhogadh ar an scáileán baile</string>
+    <string name="settings_lock_layout_summary_off">Is féidir deilbhíní agus giuirléidí a chur leis, a bhaint agus a bhogadh ar an scáileán baile</string>
+    <string name="settings_edit_widgets_error">Ní féidir giuirléidí a chur leis an scáileán baile</string>
+    <string name="title_show_google_app">Taispeáin aip Google</string>
     <string name="msg_minus_one_on_left">Nuair a svaidhpeálann tú ar dheis ón bpríomhscáileán baile</string>
     <string name="msg_minus_one_on_right">Nuair a svaidhpeálann tú ar chlé ón bpríomhscáileán baile</string>
     <string name="pref_themed_icons_title">Úsáid iocóin téamáithe sa tarraingt</string>
     <string name="pref_themed_icons_summary">Lean na deilbhíní téamaí a úsáidtear ar an scáileán baile</string>
+    <string name="desktop_show_labels">Taispeáin lipéid deilbhín ar an deasc</string>
+    <string name="drawer_show_labels">Taispeáin lipéid deilbhín sa tarraiceán</string>
+    <string name="trust_apps_manager_name">i bhfolach &amp; Aipeanna cosanta</string>
+    <string name="trust_apps_auth_manager">Díghlasáil chun na haipeanna folaithe agus cosanta a bhainistiú</string>
+    <string name="trust_apps_auth_open_app">Fíordheimhnigh %1$s a oscailt</string>
+    <string name="trust_apps_loading">Ag lódáil\u2026</string>
+    <string name="trust_apps_no_lock_error">Socraigh le do thoil scáileán glas slán chun rochtain aipe a shrianadh</string>
+    <string name="trust_apps_help">Cabhrú</string>
+    <string name="trust_apps_info_hidden">Tá aippeanna i bhfolach agus a gcuid giuirléidí i bhfolach ón tarraiceán</string>
+    <string name="trust_apps_info_protected">Teastaíonn fíordheimhniú ó fheidhmchláir chosanta a oscailt ón tosaitheoir</string>
     <string name="pref_suggestions_title">Moltaí</string>
     <string name="pref_suggestions_summary">Le haghaidh tarraiceán aip &amp; moltaí scáileán baile</string>
 </resources>
