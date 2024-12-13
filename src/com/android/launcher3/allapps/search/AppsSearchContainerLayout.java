@@ -23,6 +23,7 @@ import static com.android.launcher3.Utilities.prefixTextWithIcon;
 import static com.android.launcher3.icons.IconNormalizer.ICON_VISIBLE_AREA_FACTOR;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
@@ -39,8 +40,10 @@ import com.android.launcher3.R;
 import com.android.launcher3.allapps.ActivityAllAppsContainerView;
 import com.android.launcher3.allapps.AllAppsStore;
 import com.android.launcher3.allapps.BaseAllAppsAdapter.AdapterItem;
+import com.android.launcher3.allapps.PrivateProfileManager;
 import com.android.launcher3.allapps.SearchUiManager;
 import com.android.launcher3.search.SearchCallback;
+import com.android.launcher3.util.ApiWrapper;
 import com.android.launcher3.views.ActivityContext;
 
 import java.util.ArrayList;
@@ -170,6 +173,10 @@ public class AppsSearchContainerLayout extends ExtendedEditText
 
     @Override
     public void onSearchResult(String query, ArrayList<AdapterItem> items) {
+        if (query.equalsIgnoreCase(getContext().getString(R.string.private_space_label))) {
+            privateSpaceQuery();
+            return;
+        }
         if (items != null) {
             mAppsView.setSearchResults(items);
         }
@@ -194,5 +201,18 @@ public class AppsSearchContainerLayout extends ExtendedEditText
     @Override
     public ExtendedEditText getEditText() {
         return this;
+    }
+
+    private void privateSpaceQuery() {
+        PrivateProfileManager privateProfileManager = mAppsView.getPrivateProfileManager();
+        if (privateProfileManager.isPrivateSpaceHidden()) {
+            privateProfileManager.setQuietMode(false);
+        } else if (!mAppsView.hasPrivateProfile()) {
+            final Intent privateSpaceSettingsIntent =
+                    ApiWrapper.INSTANCE.get(getContext()).getPrivateSpaceSettingsIntent();
+            if (privateSpaceSettingsIntent != null) {
+                mLauncher.startActivitySafely(mAppsView, privateSpaceSettingsIntent, null);
+            }
+        }
     }
 }
