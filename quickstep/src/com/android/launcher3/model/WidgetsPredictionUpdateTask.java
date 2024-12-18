@@ -90,11 +90,13 @@ public final class WidgetsPredictionUpdateTask implements ModelUpdateTask {
             WidgetRecommendationCategoryProvider categoryProvider =
                     WidgetRecommendationCategoryProvider.newInstance(context);
             items = servicePredictedItems.stream()
+                    .filter(it -> it.widgetInfo != null)
                     .map(it -> new PendingAddWidgetInfo(it.widgetInfo, CONTAINER_WIDGETS_PREDICTION,
                             categoryProvider.getWidgetRecommendationCategory(context, it)))
                     .collect(Collectors.toList());
         } else {
             items = servicePredictedItems.stream()
+                    .filter(it -> it.widgetInfo != null)
                     .map(it -> new PendingAddWidgetInfo(it.widgetInfo,
                             CONTAINER_WIDGETS_PREDICTION)).collect(
                             Collectors.toList());
