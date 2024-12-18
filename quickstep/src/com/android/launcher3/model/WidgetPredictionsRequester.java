@@ -205,12 +205,16 @@ public class WidgetPredictionsRequester {
             WidgetRecommendationCategoryProvider categoryProvider =
                     WidgetRecommendationCategoryProvider.newInstance(mContext);
             items = widgetItems.stream()
+                    .filter(it -> it.widgetInfo != null)
                     .map(it -> new PendingAddWidgetInfo(it.widgetInfo, CONTAINER_WIDGETS_PREDICTION,
                             categoryProvider.getWidgetRecommendationCategory(mContext, it)))
                     .collect(Collectors.toList());
         } else {
-            items = widgetItems.stream().map(it -> new PendingAddWidgetInfo(it.widgetInfo,
-                    CONTAINER_WIDGETS_PREDICTION)).collect(Collectors.toList());
+            items = widgetItems.stream()
+                    .filter(it -> it.widgetInfo != null)
+                    .map(it -> new PendingAddWidgetInfo(it.widgetInfo,
+                            CONTAINER_WIDGETS_PREDICTION))
+                    .collect(Collectors.toList());
         }
         return items;
     }
