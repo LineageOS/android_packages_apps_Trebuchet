@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64e27ed5_b44c0758",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2024-12-30T08:26:04Z",
+      "side": 1,
+      "message": "This resolves one of the sysui crashes that has been seen on tegra mobile targets since 21. Verified on foster_tab and quill_tab.",
+      "revId": "8498dd6d2a461f8231d21718a199e4f05b3a50b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
