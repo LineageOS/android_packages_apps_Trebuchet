@@ -16,6 +16,24 @@
       "message": "Is there a reason not to squash this right away?",
       "revId": "a73e54c84788bb24fb8ab88dbcf3e22b93d9cc40",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e069cc6_eaf48ad3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 26672
+      },
+      "writtenOn": "2025-01-20T20:52:35Z",
+      "side": 1,
+      "message": "done\nhttps://review.lineageos.org/c/LineageOS/android_packages_apps_Trebuchet/+/416248",
+      "parentUuid": "00b4961b_cae163f5",
+      "revId": "a73e54c84788bb24fb8ab88dbcf3e22b93d9cc40",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
