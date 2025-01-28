@@ -97,6 +97,7 @@ public class InvariantDeviceProfile implements SafeCloseable, OnSharedPreference
     private static final float ICON_SIZE_DEFINED_IN_APP_DP = 48;
 
     public static final String KEY_ALLAPPS_THEMED_ICONS = "pref_allapps_themed_icons";
+    public static final String KEY_DRAWER_OPEN_KEYBOARD = "pref_drawer_open_keyboard";
     public static final String KEY_SHOW_DESKTOP_LABELS = "pref_desktop_show_labels";
     public static final String KEY_SHOW_DRAWER_LABELS = "pref_drawer_show_labels";
     public static final String KEY_WORKSPACE_LOCK = "pref_workspace_lock";
@@ -348,6 +349,7 @@ public class InvariantDeviceProfile implements SafeCloseable, OnSharedPreference
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         switch (key) {
             case KEY_ALLAPPS_THEMED_ICONS:
+            case KEY_DRAWER_OPEN_KEYBOARD:
             case KEY_SHOW_DESKTOP_LABELS:
             case KEY_SHOW_DRAWER_LABELS:
                 onConfigChanged(mContext);
