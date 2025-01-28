@@ -96,4 +96,11 @@
         android:defaultValue="true"
         android:persistent="true" />
 
+    <SwitchPreferenceCompat
+        android:key="pref_drawer_show_keyboard"
+        android:title="@string/drawer_open_keyboard_title"
+        android:summary="@string/drawer_open_keyboard_summary"
+        android:defaultValue="false"
+        android:persistent="true" />
+
 </androidx.preference.PreferenceScreen>

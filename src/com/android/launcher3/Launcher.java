@@ -68,6 +68,7 @@ import static com.android.launcher3.LauncherState.NO_OFFSET;
 import static com.android.launcher3.LauncherState.NO_SCALE;
 import static com.android.launcher3.LauncherState.SPRING_LOADED;
 import static com.android.launcher3.Utilities.postAsyncCallback;
+import static com.android.launcher3.InvariantDeviceProfile.KEY_SHOW_DRAWER_KEYBOARD;
 import static com.android.launcher3.config.FeatureFlags.FOLDABLE_SINGLE_PAGE;
 import static com.android.launcher3.config.FeatureFlags.MULTI_SELECT_EDIT_MODE;
 import static com.android.launcher3.folder.FolderGridOrganizer.createFolderGridOrganizer;
@@ -1273,6 +1274,11 @@ public class Launcher extends StatefulActivity<LauncherState>
             getAppsView().reset(false);
             getAllAppsExitEvent().ifPresent(getStatsLogManager().logger()::log);
             mAllAppsSessionLogId = null;
+        } else if (state == ALL_APPS) {
+            //Open keyboard if KEY_SHOW_DRAWER_KEYBOARD setting is enabled
+            if(mSharedPrefs.getBoolean(KEY_SHOW_DRAWER_KEYBOARD, false)) {
+                getAppsView().getSearchUiManager().focusSearchField();
+            }
         }
 
         // Set screen title for Talkback
