@@ -43,6 +43,10 @@
     <string name="desktop_show_labels">Show icon labels on desktop</string>
     <string name="drawer_show_labels">Show icon labels in drawer</string>
 
+    <!-- Open keyboard -->
+    <string name="drawer_open_keyboard_title">Swipe to start search</string>
+    <string name="drawer_open_keyboard_summary">Open keyboard whenever app drawer becomes visible</string>
+
     <!-- Trust apps -->
     <string name="trust_apps_manager_name">Hidden &amp; Protected apps</string>
     <string name="trust_apps_auth_manager">Unlock to manage the hidden and protected apps</string>
