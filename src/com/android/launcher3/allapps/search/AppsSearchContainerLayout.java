@@ -86,6 +86,8 @@ public class AppsSearchContainerLayout extends ExtendedEditText
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         mAppsView.getAppsStore().addUpdateListener(this);
+
+        mSearchBarController.focusSearchField();
     }
 
     @Override
@@ -142,6 +144,11 @@ public class AppsSearchContainerLayout extends ExtendedEditText
     @Override
     public void resetSearch() {
         mSearchBarController.reset();
+    }
+
+    @Override
+    public void focusSearchField() {
+        mSearchBarController.focusSearchField();
     }
 
     @Override
