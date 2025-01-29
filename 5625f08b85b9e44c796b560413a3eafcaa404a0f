@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9d468385_8613ad35",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T14:53:50Z",
+      "side": 1,
+      "message": "you mean we should move to this copy? or this is just for reference?",
+      "parentUuid": "35f717a7_7bf05d41",
+      "revId": "5625f08b85b9e44c796b560413a3eafcaa404a0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "98779aca_84cb8d12",
         "filename": "res/values/lineage_strings.xml",
         "patchSetId": 9
