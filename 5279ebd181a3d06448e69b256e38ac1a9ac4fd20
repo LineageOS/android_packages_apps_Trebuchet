@@ -16,6 +16,24 @@
       "message": "this works, idk if i like the setting name tho. Also, keyboard doesn\u0027t get closed if you close the drawer, but that\u0027s not new.",
       "revId": "5279ebd181a3d06448e69b256e38ac1a9ac4fd20",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bce250f_ba008201",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T02:08:40Z",
+      "side": 1,
+      "message": "Changed the setting title and added subtitle. I think it is better now. If you have any suggestion for the name please let me know.\n\nAlso addressed the keyboard issue.",
+      "parentUuid": "3d0bf7c3_356f8368",
+      "revId": "5279ebd181a3d06448e69b256e38ac1a9ac4fd20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
