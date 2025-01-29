@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c937e0a_35f4da9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T00:06:40Z",
+      "side": 1,
+      "message": "Hi folks, this is my first contribution — hope I’m doing everything correctly! I recently switched from Stock to LineageOS on my Pixel 5, and I really missed this feature, so I decided to add it myself.",
+      "revId": "412d9ae7cc022e7b3bae8252f345f89d78c04746",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
