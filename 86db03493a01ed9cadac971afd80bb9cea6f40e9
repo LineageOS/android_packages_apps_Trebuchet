@@ -16,6 +16,24 @@
       "message": "does that sound good?",
       "revId": "86db03493a01ed9cadac971afd80bb9cea6f40e9",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16c8a5fd_089e580f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T16:15:57Z",
+      "side": 1,
+      "message": "LGTM",
+      "parentUuid": "162bc2a2_23ac4fce",
+      "revId": "86db03493a01ed9cadac971afd80bb9cea6f40e9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
