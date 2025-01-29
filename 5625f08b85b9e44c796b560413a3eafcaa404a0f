@@ -53,6 +53,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a85c1c4_c0672c8e",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T22:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d468385_8613ad35",
+      "revId": "5625f08b85b9e44c796b560413a3eafcaa404a0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98779aca_84cb8d12",
@@ -66,6 +84,24 @@
       "writtenOn": "2025-01-29T11:03:49Z",
       "side": 1,
       "message": "stock pixel: Always show keyboard after swiping up on your home screen to search",
+      "revId": "5625f08b85b9e44c796b560413a3eafcaa404a0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "569f2da0_ed367c9e",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T22:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98779aca_84cb8d12",
       "revId": "5625f08b85b9e44c796b560413a3eafcaa404a0f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
