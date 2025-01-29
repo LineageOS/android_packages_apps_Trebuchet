@@ -16,6 +16,24 @@
       "message": "you reverted all my changes ;9",
       "revId": "d0c7e66273524de1e87787176984a9e40d60b1f8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd6f9d7c_2b684122",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34795
+      },
+      "writtenOn": "2025-01-29T10:57:40Z",
+      "side": 1,
+      "message": "sorry, my bad. looked at your comment but didn\u0027t noticed the patch. Thanks",
+      "parentUuid": "5f6932b4_6363b033",
+      "revId": "d0c7e66273524de1e87787176984a9e40d60b1f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
