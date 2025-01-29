@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d0bf7c3_356f8368",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-01-29T00:41:29Z",
+      "side": 1,
+      "message": "this works, idk if i like the setting name tho. Also, keyboard doesn\u0027t get closed if you close the drawer, but that\u0027s not new.",
+      "revId": "5279ebd181a3d06448e69b256e38ac1a9ac4fd20",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
