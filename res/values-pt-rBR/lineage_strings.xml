@@ -21,10 +21,10 @@
     <string name="title_show_google_app">Mostrar app do Google</string>
     <string name="msg_minus_one_on_left">Ao deslizar para a direita na tela inicial</string>
     <string name="msg_minus_one_on_right">Ao deslizar para a esquerda na tela inicial</string>
-    <string name="pref_themed_icons_title">Usar ícones com tema na gaveta de apps</string>
+    <string name="pref_themed_icons_title">Tematizar ícones da gaveta de apps</string>
     <string name="pref_themed_icons_summary">Usar os mesmos ícones com tema da tela de início</string>
-    <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
-    <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de apps</string>
+    <string name="desktop_show_labels">Mostrar legendas na área de trabalho</string>
+    <string name="drawer_show_labels">Mostrar legendas na gaveta de apps</string>
     <string name="trust_apps_manager_name">Apps ocultos e protegidos</string>
     <string name="trust_apps_auth_manager">Desbloquear para gerenciar os apps ocultos e protegidos</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>

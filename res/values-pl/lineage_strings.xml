@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Zgodnie z ikonami motywu na ekranie głównym</string>
     <string name="desktop_show_labels">Pokaż etykiety ikon na pulpicie</string>
     <string name="drawer_show_labels">Pokaż etykiety ikon w szufladzie</string>
+    <string name="drawer_open_keyboard_title">Przesuń, aby rozpocząć wyszukiwanie</string>
+    <string name="drawer_open_keyboard_summary">Otwieraj klawiaturę, gdy szuflada aplikacji staje się widoczna</string>
     <string name="trust_apps_manager_name">Ukryte i chronione aplikacje</string>
     <string name="trust_apps_auth_manager">Odblokuj, aby zarządzać ukrytymi i chronionymi aplikacjami</string>
     <string name="trust_apps_auth_open_app">Uwierzytelnij, aby otworzyć %1$s</string>

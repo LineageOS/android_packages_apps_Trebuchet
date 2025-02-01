@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Urmărește iconițele cu temă utilizate pe ecranul principal</string>
     <string name="desktop_show_labels">Arată etichetele pictogramelor de pe desktop</string>
     <string name="drawer_show_labels">Arată etichetele pictogramelor în sertarul cu aplicaţii</string>
+    <string name="drawer_open_keyboard_title">Glisați pentru a începe căutarea</string>
+    <string name="drawer_open_keyboard_summary">Deschide tastatura ori de câte ori sertarul de aplicații devine vizibil</string>
     <string name="trust_apps_manager_name">Aplicații Ascunse &amp; Protejate</string>
     <string name="trust_apps_auth_manager">Deblocați pentru a gestiona aplicaţiile ascunse şi protejate</string>
     <string name="trust_apps_auth_open_app">Autentificați-vă pentru a deschide %1$s</string>

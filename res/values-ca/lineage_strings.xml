@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Segueix les icones temàtiques utilitzades a la pantalla d\'inici</string>
     <string name="desktop_show_labels">Mostra les etiquetes de les icones a l\'escriptori</string>
     <string name="drawer_show_labels">Mostra les etiquetes de les icones al calaix</string>
+    <string name="drawer_open_keyboard_title">Llisca per iniciar la cerca</string>
+    <string name="drawer_open_keyboard_summary">Obre el teclat sempre que el calaix d\'aplicacions sigui visible</string>
     <string name="trust_apps_manager_name">Aplicacions amagades i protegides</string>
     <string name="trust_apps_auth_manager">Desbloqueja per gestionar les aplicacions amagades i protegides</string>
     <string name="trust_apps_auth_open_app">Autentifica per obrir %1$s</string>

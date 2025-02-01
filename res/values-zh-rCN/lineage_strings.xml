@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">依照主屏幕上使用的主题图标</string>
     <string name="desktop_show_labels">在桌面上显示图标标签</string>
     <string name="drawer_show_labels">在抽屉里显示图标标签</string>
+    <string name="drawer_open_keyboard_title">滑动以开始搜索</string>
+    <string name="drawer_open_keyboard_summary">当应用抽屉可见时打开键盘</string>
     <string name="trust_apps_manager_name">隐藏和保护应用</string>
     <string name="trust_apps_auth_manager">解锁以管理隐藏和受保护的应用</string>
     <string name="trust_apps_auth_open_app">认证以打开 %1$s</string>

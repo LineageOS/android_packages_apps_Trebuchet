@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Segui lo stile delle icone utilizzato nella schermata home</string>
     <string name="desktop_show_labels">Mostra nomi icone nella schermata home</string>
     <string name="drawer_show_labels">Mostra nomi icone nel drawer</string>
+    <string name="drawer_open_keyboard_title">Scorri per iniziare la ricerca</string>
+    <string name="drawer_open_keyboard_summary">Mostra la tastiera ogni volta che il menù delle applicazioni diventa visibile</string>
     <string name="trust_apps_manager_name">App protette &amp; nascoste</string>
     <string name="trust_apps_auth_manager">Sblocca per gestire le app protette e nascoste</string>
     <string name="trust_apps_auth_open_app">Autenticati per aprire %1$s</string>

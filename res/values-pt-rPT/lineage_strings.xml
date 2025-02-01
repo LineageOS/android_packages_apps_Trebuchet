@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Usar o mesmo estilo dos ícones da Página Inicial</string>
     <string name="desktop_show_labels">Mostrar as legendas dos ícones na área de trabalho</string>
     <string name="drawer_show_labels">Mostrar as legendas dos ícones na gaveta de aplicações</string>
+    <string name="drawer_open_keyboard_title">Deslize para iniciar a pesquisa</string>
+    <string name="drawer_open_keyboard_summary">Abrir o teclado sempre que a gaveta de aplicações se tornar visível</string>
     <string name="trust_apps_manager_name">Aplicações Ocultas e Protegidas</string>
     <string name="trust_apps_auth_manager">Desbloquear para gerir as aplicações ocultas e protegidas</string>
     <string name="trust_apps_auth_open_app">Autenticar para abrir %1$s</string>

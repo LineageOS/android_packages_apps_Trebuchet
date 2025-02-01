@@ -20,4 +20,6 @@
     <string name="title_show_google_app">הצג את חיפוש Google</string>
     <string name="desktop_show_labels">הצג תוויות סמלים במסך הבית</string>
     <string name="drawer_show_labels">הצג תוויות סמלים במגירת היישומים</string>
+    <string name="drawer_open_keyboard_title">החלקה לתחילת חיפוש</string>
+    <string name="drawer_open_keyboard_summary">הפעל מקלדת, כשמגירת האפליקציה מוצגת</string>
 </resources>

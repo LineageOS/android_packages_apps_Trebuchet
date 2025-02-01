@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Sledi temskim ikonam na domačem zaslonu</string>
     <string name="desktop_show_labels">Prikaži oznake ikon na namizju</string>
     <string name="drawer_show_labels">Prikaži oznake ikon v predalu</string>
+    <string name="drawer_open_keyboard_title">Poteg za začetek iskanja</string>
+    <string name="drawer_open_keyboard_summary">Odpri tipkovnico kadar koli predal aplikacij postane viden</string>
     <string name="trust_apps_manager_name">Skrite in zaščitene aplikacije</string>
     <string name="trust_apps_auth_manager">Odklenite za upravljanje skritih in zaščitenih aplikacij</string>
     <string name="trust_apps_auth_open_app">Overite za odprtje %1$s</string>

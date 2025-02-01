@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">ホーム画面で使われるテーマのアイコンを使用します</string>
     <string name="desktop_show_labels">デスクトップ上でアイコンラベルを表示</string>
     <string name="drawer_show_labels">ドロワーでアイコンラベルを表示</string>
+    <string name="drawer_open_keyboard_title">スワイプして検索を開始</string>
+    <string name="drawer_open_keyboard_summary">アプリドロワーを表示したときキーボードを開きます</string>
     <string name="trust_apps_manager_name">非表示 &amp; 保護アプリ</string>
     <string name="trust_apps_auth_manager">ロック解除して非表示と保護アプリを管理する</string>
     <string name="trust_apps_auth_open_app">認証して %1$s を開く</string>

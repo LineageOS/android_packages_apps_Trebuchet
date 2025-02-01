@@ -14,7 +14,9 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">Lås-layout</string>
     <string name="settings_edit_widgets_error">Det går inte att lägga till widgetar på hemskärmen</string>
+    <string name="title_show_google_app">Visa Google-appen</string>
     <string name="pref_themed_icons_title">Använd temaikoner i appskärmen</string>
     <string name="pref_themed_icons_summary">Följ temaikoner som används på hemskärmen</string>
     <string name="trust_apps_manager_name">Gömda &amp; Skyddade appar</string>
