@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Lean na deilbhíní téamaí a úsáidtear ar an scáileán baile</string>
     <string name="desktop_show_labels">Taispeáin lipéid deilbhín ar an deasc</string>
     <string name="drawer_show_labels">Taispeáin lipéid deilbhín sa tarraiceán</string>
+    <string name="drawer_open_keyboard_title">Svaidhpeáil chun cuardach a thosú</string>
+    <string name="drawer_open_keyboard_summary">Méarchlár oscailte nuair a bhíonn tarraiceán app le feiceáil</string>
     <string name="trust_apps_manager_name">i bhfolach &amp; Aipeanna cosanta</string>
     <string name="trust_apps_auth_manager">Díghlasáil chun na haipeanna folaithe agus cosanta a bhainistiú</string>
     <string name="trust_apps_auth_open_app">Fíordheimhnigh %1$s a oscailt</string>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">قفل چیدمان</string>
+    <string name="settings_lock_layout_summary_on">نمادها و ابزارک ها نمی توانند اضافه شوند، برداشته شوند و در صفحه اصلی منتقل شوند</string>
+    <string name="settings_lock_layout_summary_off">نمادها و ابزارک ها را می توان اضافه، حذف و بر روی صفحه اصلی منتقل کرد</string>
+    <string name="settings_edit_widgets_error">افزودن ابزارک به صفحه اصلی امکان‌پذیر نیست</string>
+    <string name="title_show_google_app">نمایش برنامه گوگل</string>
+    <string name="msg_minus_one_on_left">هنگام کشیدن سمت راست از صفحه اصلی</string>
+    <string name="msg_minus_one_on_right">هنگام کشیدن سمت چپ از صفحه اصلی</string>
+    <string name="pref_themed_icons_title">از نمادهای طرح در کشو استفاده کنید</string>
+    <string name="pref_themed_icons_summary">نمادهای مورد استفاده در صفحه اصلی را دنبال کنید</string>
+    <string name="desktop_show_labels">نشان دادن نام برنامه ها در خانه</string>
+    <string name="drawer_show_labels">نشان دادن نام نمادها در کشوی برنامه</string>
+    <string name="drawer_open_keyboard_title">برای شروع جستجو انگشت خود را بکشید</string>
+    <string name="drawer_open_keyboard_summary">هر زمان که کشوی برنامه نمایان شد، صفحه کلید را باز کنید</string>
+    <string name="trust_apps_manager_name">برنامه‌های پنهان &amp; محافظت شده</string>
+    <string name="trust_apps_auth_manager">برای مدیریت برنامه‌های پنهان و محافظت شده قفل را باز کنید</string>
+    <string name="trust_apps_auth_open_app">احراز هویت برای باز کردن %1$s</string>
+    <string name="trust_apps_loading">در حال بارگذاری\u2026</string>
+    <string name="trust_apps_no_lock_error">لطفا یک قفل برای کنترل برنامه‌های پنهان و محافظت شده بگذارید</string>
+    <string name="trust_apps_help">راهنما</string>
+    <string name="trust_apps_info_hidden">برنامه‌های مخفی و ابزارک هایشان از فهرست برنامه ها پنهان می‌شود</string>
+    <string name="trust_apps_info_protected">برای باز کردن برنامه‌های محافظت شده از صفحه اصلی نیاز به احراز هویت می‌باشد</string>
+    <string name="pref_suggestions_title">پیشنهادات</string>
+    <string name="pref_suggestions_summary">برای کشوی برنامه &amp; پیشنهادهای صفحه اصلی</string>
+</resources>

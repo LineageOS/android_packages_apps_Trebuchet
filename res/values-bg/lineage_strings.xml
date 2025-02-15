@@ -23,6 +23,8 @@
     <string name="msg_minus_one_on_right">Когато плъзнете наляво от главното меню</string>
     <string name="desktop_show_labels">Покажи етикетите на иконите на работния плот</string>
     <string name="drawer_show_labels">Покажи етикетите на иконите</string>
+    <string name="drawer_open_keyboard_title">Плъзни настрани, за да започнеш търсене</string>
+    <string name="drawer_open_keyboard_summary">Показвай клавиатурата винаги когато списъкът с приложения е видим</string>
     <string name="trust_apps_manager_name">Скрити &amp; Защитени приложения</string>
     <string name="trust_apps_auth_manager">Отключете за да управлявате скритите и защитените приложения</string>
     <string name="trust_apps_auth_open_app">Попълнете правилно, за да отворите %1$s</string>
