@@ -464,7 +464,7 @@ public class TaskbarActivityContext extends BaseTaskbarContext {
 
     /** Returns {@code true} iff a tiny version of taskbar is shown on phone. */
     public boolean isTinyTaskbar() {
-        return enableTinyTaskbar() && mDeviceProfile.isPhone && mDeviceProfile.isTaskbarPresent;
+        return mDeviceProfile.isPhone && mDeviceProfile.isTaskbarPresent;
     }
 
     /**

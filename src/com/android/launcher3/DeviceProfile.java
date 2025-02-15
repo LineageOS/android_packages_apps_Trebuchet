@@ -462,7 +462,8 @@ public class DeviceProfile {
         int transientTaskbarHeight =
                 Math.round((transientTaskbarIconSize * ICON_VISIBLE_AREA_FACTOR)
                         + (2 * res.getDimensionPixelSize(R.dimen.transient_taskbar_padding)));
-        mTransientTaskbarClaimedSpace = transientTaskbarHeight + 2 * transientTaskbarBottomMargin;
+        //mTransientTaskbarClaimedSpace = transientTaskbarHeight + 2 * transientTaskbarBottomMargin;
+        mTransientTaskbarClaimedSpace = transientTaskbarHeight + transientTaskbarBottomMargin;
 
         if (!isTaskbarPresent) {
             taskbarIconSize = taskbarHeight = stashedTaskbarHeight = taskbarBottomMargin = 0;
@@ -1875,7 +1876,7 @@ public class DeviceProfile {
                 hotseatBarPadding.set(mHotseatBarWorkspaceSpacePx, paddingTop,
                         mInsets.right + mHotseatBarEdgePaddingPx, paddingBottom);
             }
-        } else if (isTaskbarPresent) {
+        } else if (isTaskbarPresent && !isPhone) {
             // Center the QSB vertically with hotseat
             int hotseatBarBottomPadding = getHotseatBarBottomPadding();
             int hotseatBarTopPadding =
@@ -1913,6 +1914,11 @@ public class DeviceProfile {
                     sideSpacing,
                     getHotseatBarBottomPadding());
         } else {
+            // Center the QSB vertically with hotseat
+            int hotseatBarBottomPadding = getHotseatBarBottomPadding();
+            int hotseatBarTopPadding =
+                    hotseatBarSizePx - hotseatBarBottomPadding - hotseatCellHeightPx;
+
             // We want the edges of the hotseat to line up with the edges of the workspace, but the
             // icons in the hotseat are a different size, and so don't line up perfectly. To account
             // for this, we pad the left and right of the hotseat with half of the difference of a
@@ -1923,10 +1929,10 @@ public class DeviceProfile {
             hotseatBarPadding.set(
                     hotseatAdjustment + workspacePadding.left + cellLayoutPaddingPx.left
                             + mInsets.left,
-                    0,
+                    hotseatBarTopPadding,
                     hotseatAdjustment + workspacePadding.right + cellLayoutPaddingPx.right
                             + mInsets.right,
-                    getHotseatBarBottomPadding());
+                    hotseatBarBottomPadding);
         }
         return hotseatBarPadding;
     }
