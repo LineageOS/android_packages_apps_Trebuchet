@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Gleiche Symboldesigns wie auf dem Startbildschirm verwenden</string>
     <string name="desktop_show_labels">Symbolbeschriftungen auf dem Startbildschirm anzeigen</string>
     <string name="drawer_show_labels">Symbolbeschriftungen in der App-Übersicht anzeigen</string>
+    <string name="drawer_open_keyboard_title">Wischen zum Starten der Suche</string>
+    <string name="drawer_open_keyboard_summary">Tastatur immer öffnen, sobald die App-Übersicht sichtbar ist</string>
     <string name="trust_apps_manager_name">Versteckte &amp; geschützte Apps</string>
     <string name="trust_apps_auth_manager">Entsperren, um die versteckten und geschützten Apps zu verwalten</string>
     <string name="trust_apps_auth_open_app">Authentifizieren, um %1$s zu öffnen</string>
