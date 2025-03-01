@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Va daûr dal stîl des iconis doprât te schermade di inizi</string>
     <string name="desktop_show_labels">Mostre lis etichetis des iconis te schermade di inizi</string>
     <string name="drawer_show_labels">Mostre lis etichetis des iconis tal scansel</string>
+    <string name="drawer_open_keyboard_title">Scor par scomençâ la ricercje</string>
+    <string name="drawer_open_keyboard_summary">Vierç la tastiere ogni volte che il scansel des aplicazions al devente visibil</string>
     <string name="trust_apps_manager_name">Aplicazions protetis &amp; platadis</string>
     <string name="trust_apps_auth_manager">Sbloche par gjestî lis aplicazions protetis e platadis</string>
     <string name="trust_apps_auth_open_app">Autentichiti par vierzi %1$s</string>
