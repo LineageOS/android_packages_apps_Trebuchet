@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Ακολουθήστε τα θεματικά εικονίδια που χρησιμοποιούνται στην αρχική οθόνη</string>
     <string name="desktop_show_labels">Εμφάνιση ετικετών εικονιδίων στην επιφάνεια</string>
     <string name="drawer_show_labels">Εμφάνιση ετικετών εικονιδίων στο συρτάρι</string>
+    <string name="drawer_open_keyboard_title">Σύρετε για έναρξη αναζήτησης</string>
+    <string name="drawer_open_keyboard_summary">Άνοιγμα πληκτρολογίου κάθε φορά που το συρτάρι εφαρμογών γίνεται ορατό</string>
     <string name="trust_apps_manager_name">Κρυφές &amp; προστατευόμενες εφαρμογές</string>
     <string name="trust_apps_auth_manager">Ξεκλειδώστε για να διαχειριστείτε τις κρυφές και προστατευόμενες εφαρμογές</string>
     <string name="trust_apps_auth_open_app">Απαιτείται έλεγχος ταυτότητας για να ανοίξετε το \"%1$s\"</string>
