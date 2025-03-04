@@ -70,6 +70,30 @@
       },
       "revId": "250b4d3368fe15a3a6505915ef5aaa28f207f154",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a36738dd_da09679e",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 34926
+      },
+      "writtenOn": "2025-03-04T17:56:42Z",
+      "side": 1,
+      "message": "How about this?",
+      "parentUuid": "5d65c92b_63a345dd",
+      "range": {
+        "startLine": 66,
+        "startChar": 113,
+        "endLine": 66,
+        "endChar": 151
+      },
+      "revId": "250b4d3368fe15a3a6505915ef5aaa28f207f154",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
