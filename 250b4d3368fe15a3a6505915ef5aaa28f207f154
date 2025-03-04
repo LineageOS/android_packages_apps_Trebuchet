@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b9a9e03_ec2e6fa4",
+        "filename": "res/values/lineage_strings.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-04T10:55:05Z",
+      "side": 1,
+      "message": "having user tap another pref twice isn\u0027t really acceptable...",
+      "range": {
+        "startLine": 66,
+        "startChar": 113,
+        "endLine": 66,
+        "endChar": 151
+      },
+      "revId": "250b4d3368fe15a3a6505915ef5aaa28f207f154",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
