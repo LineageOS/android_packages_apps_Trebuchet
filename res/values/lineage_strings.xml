@@ -36,8 +36,8 @@
     <string name="google_folder_title" translatable="false">Google</string>
 
     <!-- All apps themed icons -->
-    <string name="pref_themed_icons_title">Use themed icons in drawer</string>
-    <string name="pref_themed_icons_summary">Follow themed icons used on home screen</string>
+    <string name="pref_themed_icons_title">Use themed icons</string>
+    <string name="pref_themed_icons_summary">Follow and generate themed icon for apps that do not have one (requires re-toggling of themed icons)</string>
 
     <!-- Hide labels -->
     <string name="desktop_show_labels">Show icon labels on desktop</string>
