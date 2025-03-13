@@ -208,7 +208,7 @@ public class TaskbarNavButtonController implements TaskbarControllers.LoggableTa
         switch (buttonType) {
             case BUTTON_HOME:
                 logEvent(LAUNCHER_TASKBAR_HOME_BUTTON_LONGPRESS);
-                onLongPressHome();
+                mSystemUiProxy.injectLongPress(KeyEvent.KEYCODE_HOME);
                 return true;
             case BUTTON_A11Y:
                 logEvent(LAUNCHER_TASKBAR_A11Y_BUTTON_LONGPRESS);
@@ -216,11 +216,15 @@ public class TaskbarNavButtonController implements TaskbarControllers.LoggableTa
                 return true;
             case BUTTON_BACK:
                 logEvent(LAUNCHER_TASKBAR_BACK_BUTTON_LONGPRESS);
-                backRecentsLongpress(buttonType);
+                if (!backRecentsLongpress(buttonType)) {
+                    mSystemUiProxy.injectLongPress(KeyEvent.KEYCODE_BACK);
+                }
                 return true;
             case BUTTON_RECENTS:
                 logEvent(LAUNCHER_TASKBAR_OVERVIEW_BUTTON_LONGPRESS);
-                backRecentsLongpress(buttonType);
+                if (!backRecentsLongpress(buttonType)) {
+                    mSystemUiProxy.injectLongPress(KeyEvent.KEYCODE_APP_SWITCH);
+                }
                 return true;
             case BUTTON_IME_SWITCH:
                 if (Flags.imeSwitcherRevamp()) {
