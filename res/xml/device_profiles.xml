@@ -292,6 +292,8 @@
             launcher:allAppsBorderSpaceLandscape="16"
             launcher:hotseatBarBottomSpace="76"
             launcher:hotseatBarBottomSpaceLandscape="40"
+            launcher:startAlignTaskbar="true"
+            launcher:startAlignTaskbarLandscape="false"
             launcher:canBeDefault="true" />
 
     </grid-option>
