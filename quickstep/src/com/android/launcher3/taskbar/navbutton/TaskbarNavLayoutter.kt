@@ -26,6 +26,8 @@ import android.widget.LinearLayout
 import android.widget.Space
 import com.android.launcher3.R
 import com.android.launcher3.taskbar.TaskbarActivityContext
+import com.android.launcher3.taskbar.TaskbarManager.NAV_BAR_INVERSE
+import com.android.launcher3.util.SettingsCache
 
 /** Layoutter for rendering task bar in large screen, both in 3-button and gesture nav mode. */
 class TaskbarNavLayoutter(
@@ -77,6 +79,20 @@ class TaskbarNavLayoutter(
         }
         navButtonContainer.orientation = LinearLayout.HORIZONTAL
         navButtonContainer.layoutParams = navButtonParams
+
+        if (backButton != null && homeButton != null && recentsButton != null) {
+            navButtonContainer.removeAllViews()
+
+            if (SettingsCache.INSTANCE.get(context).getValue(NAV_BAR_INVERSE, 0)) {
+                navButtonContainer.addView(recentsButton)
+                navButtonContainer.addView(homeButton)
+                navButtonContainer.addView(backButton)
+            } else {
+                navButtonContainer.addView(backButton)
+                navButtonContainer.addView(homeButton)
+                navButtonContainer.addView(recentsButton)
+            }
+        }
 
         // Add the spaces in between the nav buttons
         val spaceInBetween = resources.getDimensionPixelSize(R.dimen.taskbar_button_space_inbetween)
