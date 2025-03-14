@@ -75,6 +75,8 @@ import android.graphics.drawable.RotateDrawable;
 import android.inputmethodservice.InputMethodService;
 import android.os.Handler;
 import android.util.Property;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.KeyEvent;
@@ -484,10 +486,6 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
                             recentsCoords, false);
                     return recentsCoords;
                 }, new Handler());
-        mRecentsButton.setOnClickListener(v -> {
-            navButtonController.onButtonClick(BUTTON_RECENTS, v);
-            mHitboxExtender.onRecentsButtonClicked();
-        });
         mPropertyHolders.add(new StatePropertyHolder(mRecentsButton,
                 flags -> (flags & FLAG_KEYGUARD_VISIBLE) == 0 && (flags & FLAG_DISABLE_RECENTS) == 0
                         && !mContext.isNavBarKidsModeActive() && !mContext.isGestureNav()));
@@ -854,10 +852,20 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
             // set up special touch listener for back button to support predictive back
             setBackButtonTouchListener(buttonView, navButtonController);
         } else {
-            buttonView.setOnClickListener(view ->
-                    navButtonController.onButtonClick(buttonType, view));
             buttonView.setOnLongClickListener(view ->
                     navButtonController.onButtonLongClick(buttonType, view));
+
+            GestureDetector gestureDetector = new GestureDetector(mContext,
+                    new ButtonGestureListener(
+                            () -> {
+                                navButtonController.onButtonClick(buttonType, buttonView);
+                                if (buttonType == BUTTON_RECENTS) {
+                                    mHitboxExtender.onRecentsButtonClicked();
+                                }
+                            },
+                            () -> navButtonController.onButtonDoubleClick(buttonType, buttonView)
+                    ));
+            buttonView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
         }
         return buttonView;
     }
@@ -1412,6 +1420,28 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
             if (mAnimator.isRunning()) {
                 mAnimator.end();
             }
+        }
+    }
+
+    private class ButtonGestureListener extends GestureDetector.SimpleOnGestureListener {
+        private final Runnable mOnClick;
+        private final Runnable mOnDoubleClick;
+
+        public ButtonGestureListener(Runnable onClick, Runnable onDoubleClick) {
+            mOnClick = onClick;
+            mOnDoubleClick = onDoubleClick;
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            mOnClick.run();
+            return false;
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            mOnDoubleClick.run();
+            return false;
         }
     }
 }
