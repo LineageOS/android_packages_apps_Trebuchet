@@ -115,6 +115,9 @@ public class TaskbarManager {
     private static final Uri NAV_BAR_KIDS_MODE = Settings.Secure.getUriFor(
             Settings.Secure.NAV_BAR_KIDS_MODE);
 
+    public static final Uri NAV_BAR_INVERSE = Settings.Secure.getUriFor(
+            "sysui_nav_bar_inverse");
+
     private static final Uri ENABLE_TASKBAR_URI = LineageSettings.System.getUriFor(
             LineageSettings.System.ENABLE_TASKBAR);
 
@@ -255,6 +258,8 @@ public class TaskbarManager {
                 .register(USER_SETUP_COMPLETE_URI, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mWindowContext)
                 .register(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
+        SettingsCache.INSTANCE.get(mWindowContext)
+                .register(NAV_BAR_INVERSE, mOnSettingsChangeListener);
         mEnableTaskBarListener = c -> {
             // Create the illusion of this taking effect immediately
             // Also needed because TaskbarManager inits before SystemUiProxy on start
@@ -740,6 +745,8 @@ public class TaskbarManager {
                 .unregister(USER_SETUP_COMPLETE_URI, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mWindowContext)
                 .unregister(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
+        SettingsCache.INSTANCE.get(mWindowContext)
+                .unregister(NAV_BAR_INVERSE, mOnSettingsChangeListener);
         Log.d(TASKBAR_NOT_DESTROYED_TAG, "unregistering component callbacks from destroy().");
         mWindowContext.unregisterComponentCallbacks(mDefaultComponentCallbacks);
         mShutdownReceiver.unregisterReceiverSafely(mWindowContext);

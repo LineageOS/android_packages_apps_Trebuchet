@@ -24,6 +24,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Space
 import com.android.launcher3.R
+import com.android.launcher3.taskbar.TaskbarManager.NAV_BAR_INVERSE
+import com.android.launcher3.util.SettingsCache
 
 class PhoneSeascapeNavLayoutter(
     resources: Resources,
@@ -46,9 +48,15 @@ class PhoneSeascapeNavLayoutter(
 
     override fun addThreeButtons() {
         // Flip ordering of back and recents buttons
-        navButtonContainer.addView(backButton)
-        navButtonContainer.addView(homeButton)
-        navButtonContainer.addView(recentsButton)
+        if (SettingsCache.INSTANCE.get(homeButton!!.context).getValue(NAV_BAR_INVERSE, 0)) {
+            navButtonContainer.addView(recentsButton)
+            navButtonContainer.addView(homeButton)
+            navButtonContainer.addView(backButton)
+        } else {
+            navButtonContainer.addView(backButton)
+            navButtonContainer.addView(homeButton)
+            navButtonContainer.addView(recentsButton)
+        }
     }
 
     override fun repositionContextualButtons(buttonSize: Int) {
