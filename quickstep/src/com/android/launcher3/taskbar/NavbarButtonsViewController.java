@@ -75,6 +75,8 @@ import android.graphics.drawable.RotateDrawable;
 import android.inputmethodservice.InputMethodService;
 import android.os.Handler;
 import android.util.Property;
+import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.KeyEvent;
@@ -854,10 +856,20 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
             // set up special touch listener for back button to support predictive back
             setBackButtonTouchListener(buttonView, navButtonController);
         } else {
-            buttonView.setOnClickListener(view ->
-                    navButtonController.onButtonClick(buttonType, view));
             buttonView.setOnLongClickListener(view ->
                     navButtonController.onButtonLongClick(buttonType, view));
+
+            if (buttonType == BUTTON_HOME) {
+                GestureDetector gestureDetector = new GestureDetector(mContext,
+                        new ButtonGestureListener(
+                                () -> navButtonController.onButtonClick(buttonType, buttonView),
+                                () -> navButtonController.onButtonDoubleClick(buttonType, buttonView)
+                        ));
+                buttonView.setOnTouchListener((v, event) -> gestureDetector.onTouchEvent(event));
+            } else {
+                buttonView.setOnClickListener(view ->
+                        navButtonController.onButtonClick(buttonType, view));
+            }
         }
         return buttonView;
     }
@@ -1412,6 +1424,28 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
             if (mAnimator.isRunning()) {
                 mAnimator.end();
             }
+        }
+    }
+
+    private class ButtonGestureListener extends GestureDetector.SimpleOnGestureListener {
+        private final Runnable mOnClick;
+        private final Runnable mOnDoubleClick;
+
+        public ButtonGestureListener(Runnable onClick, Runnable onDoubleClick) {
+            mOnClick = onClick;
+            mOnDoubleClick = onDoubleClick;
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            mOnClick.run();
+            return false;
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            mOnDoubleClick.run();
+            return false;
         }
     }
 }
