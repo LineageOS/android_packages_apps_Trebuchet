@@ -408,7 +408,6 @@ android_library {
         "jsr330",
         "com_android_systemui_shared_flags_lib",
         "libGoogleFeed",
-        "org.lineageos.platform",
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
