@@ -81,6 +81,8 @@ import com.android.systemui.shared.system.QuickStepContract.SystemUiStateFlags;
 import com.android.systemui.unfold.UnfoldTransitionProgressProvider;
 import com.android.systemui.unfold.util.ScopedUnfoldTransitionProgressProvider;
 
+import lineageos.providers.LineageSettings;
+
 import java.io.PrintWriter;
 import java.util.StringJoiner;
 
@@ -115,6 +117,9 @@ public class TaskbarManager {
 
     public static final Uri NAV_BAR_INVERSE = Settings.Secure.getUriFor(
             "sysui_nav_bar_inverse");
+
+    public static final Uri ENABLE_TASKBAR = LineageSettings.System.getUriFor(
+            LineageSettings.System.ENABLE_TASKBAR);
 
     private final Context mWindowContext;
     private final @Nullable Context mNavigationBarPanelContext;
@@ -161,6 +166,7 @@ public class TaskbarManager {
         }
     }
     private final SettingsCache.OnChangeListener mOnSettingsChangeListener = c -> recreateTaskbar();
+    private final SettingsCache.OnChangeListener mOnTaskBarChangeListener = c -> System.exit(0);
 
     private boolean mUserUnlocked = false;
 
@@ -254,6 +260,8 @@ public class TaskbarManager {
                 .register(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mWindowContext)
                 .register(NAV_BAR_INVERSE, mOnSettingsChangeListener);
+        SettingsCache.INSTANCE.get(mWindowContext)
+                .register(ENABLE_TASKBAR, mOnTaskBarChangeListener);
         Log.d(TASKBAR_NOT_DESTROYED_TAG, "registering component callbacks from constructor.");
         mWindowContext.registerComponentCallbacks(mDefaultComponentCallbacks);
         mShutdownReceiver.register(mWindowContext, Intent.ACTION_SHUTDOWN);
@@ -728,6 +736,8 @@ public class TaskbarManager {
                 .unregister(NAV_BAR_KIDS_MODE, mOnSettingsChangeListener);
         SettingsCache.INSTANCE.get(mWindowContext)
                 .unregister(NAV_BAR_INVERSE, mOnSettingsChangeListener);
+        SettingsCache.INSTANCE.get(mWindowContext)
+                .unregister(ENABLE_TASKBAR, mOnTaskBarChangeListener);
         Log.d(TASKBAR_NOT_DESTROYED_TAG, "unregistering component callbacks from destroy().");
         mWindowContext.unregisterComponentCallbacks(mDefaultComponentCallbacks);
         mShutdownReceiver.unregisterReceiverSafely(mWindowContext);
