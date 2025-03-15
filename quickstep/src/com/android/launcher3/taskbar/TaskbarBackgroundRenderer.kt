@@ -28,9 +28,11 @@ import com.android.launcher3.Utilities
 import com.android.launcher3.Utilities.mapRange
 import com.android.launcher3.Utilities.mapToRange
 import com.android.launcher3.icons.GraphicsUtils.setColorAlphaBound
+import com.android.launcher3.taskbar.TaskbarManager.NAVIGATION_BAR_HINT
 import com.android.launcher3.taskbar.TaskbarPinningController.Companion.PINNING_PERSISTENT
 import com.android.launcher3.taskbar.TaskbarPinningController.Companion.PINNING_TRANSIENT
 import com.android.launcher3.util.DisplayController
+import com.android.launcher3.util.SettingsCache
 import kotlin.math.min
 
 /** Helps draw the taskbar background, made up of a rectangle plus two inverted rounded corners. */
@@ -78,7 +80,11 @@ class TaskbarBackgroundRenderer(private val context: TaskbarActivityContext) {
         context.resources.getDimensionPixelSize(R.dimen.taskbar_stashed_handle_width)
 
     private val stashedHandleHeight =
-        context.resources.getDimensionPixelSize(R.dimen.taskbar_stashed_handle_height)
+        if (SettingsCache.INSTANCE.get(context).getValue(NAVIGATION_BAR_HINT, 1)) {
+            context.resources.getDimensionPixelSize(R.dimen.taskbar_stashed_handle_height)
+        } else {
+            0
+        }
 
     init {
         paint.color = context.getColor(R.color.taskbar_background)
@@ -212,6 +218,7 @@ class TaskbarBackgroundRenderer(private val context: TaskbarActivityContext) {
             if (isAnimatingPinning) maxPersistentTaskbarHeight else stashedHandleHeight.toFloat()
         val newBackgroundHeight =
             mapRange(progress, backgroundHeightWhileAnimating, maxTransientTaskbarHeight)
+        if (newBackgroundHeight == 0f) return
         val fullWidth = transientBackgroundBounds.width()
         val animationWidth = context.currentTaskbarWidth
         val backgroundWidthWhileAnimating =
