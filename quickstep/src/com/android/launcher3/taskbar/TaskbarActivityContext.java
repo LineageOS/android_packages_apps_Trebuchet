@@ -38,6 +38,7 @@ import static com.android.launcher3.logging.StatsLogManager.LauncherEvent.LAUNCH
 import static com.android.launcher3.taskbar.TaskbarAutohideSuspendController.FLAG_AUTOHIDE_SUSPEND_DRAGGING;
 import static com.android.launcher3.taskbar.TaskbarAutohideSuspendController.FLAG_AUTOHIDE_SUSPEND_FULLSCREEN;
 import static com.android.launcher3.taskbar.TaskbarManager.ENABLE_TASKBAR;
+import static com.android.launcher3.taskbar.TaskbarManager.NAVIGATION_BAR_HINT;
 import static com.android.launcher3.taskbar.TaskbarStashController.SHOULD_BUBBLES_FOLLOW_DEFAULT_VALUE;
 import static com.android.launcher3.testing.shared.ResourceUtils.getBoolByName;
 import static com.android.launcher3.util.Executors.UI_HELPER_EXECUTOR;
@@ -1170,6 +1171,10 @@ public class TaskbarActivityContext extends BaseTaskbarContext {
      */
     public int getDefaultTaskbarWindowSize() {
         Resources resources = getResources();
+
+        if (isGestureNav() && !SettingsCache.INSTANCE.get(this).getValue(NAVIGATION_BAR_HINT, 1)) {
+            return 0;
+        }
 
         if (isPhoneMode()) {
             return isThreeButtonNav() ?
