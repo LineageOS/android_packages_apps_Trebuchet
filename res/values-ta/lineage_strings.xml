@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="settings_lock_layout_title">தளவமைப்பைப் பூட்டுக</string>
+    <string name="settings_lock_layout_summary_on">முகப்புத் திரையில் படவுருகள், இடுக்கைகள் ஆகியவற்றைச் சேர்க்கவோ, அகற்றவோ, நகர்த்தவோ முடியாது</string>
+    <string name="settings_lock_layout_summary_off">முகப்புத் திரையில் படவுருகள், இடுக்கைகள் ஆகியவற்றைச் சேர்க்கவோ, அகற்றவோ, நகர்த்தவோ முடியும்</string>
+    <string name="settings_edit_widgets_error">முகப்புத் திரையில் இடுக்கைகளைச் சேர்க்க முடியாது</string>
+    <string name="title_show_google_app">கூகுள் செயலியைக் காட்டுக</string>
+    <string name="msg_minus_one_on_left">முதன்மை முகப்புத்திரையிலிருந்து வலப்புறமாகத் தேய்க்கும்போது</string>
+    <string name="msg_minus_one_on_right">முதன்மை முகப்புத்திரையிலிருந்து இடப்புறமாகத் தேய்க்கும்போது</string>
+    <string name="pref_themed_icons_title">செயலி இழுவையில் கருப்பொருள் படவுருகளைப் பயன்படுத்துக</string>
+    <string name="pref_themed_icons_summary">முகப்புத் திரையில் பயன்படுத்தப்படும் கருப்பொருள் படவுருகளைப் பின்தொடர்க</string>
+    <string name="desktop_show_labels">பணித்தளத்தில் படவுரு குறிப்பிகளைக் காட்டுக</string>
+    <string name="drawer_show_labels">செயலி இழுவையில் படவுருக் குறிப்பிகளைக் காட்டுக</string>
+    <string name="trust_apps_manager_name">மறைக்கப்பட்ட செயலிகளும், பாதுகாக்கப்பட்ட செயலிகளும்</string>
+    <string name="trust_apps_auth_manager">மறைக்கப்பட்ட செயலிகளையும், பாதுகாக்கப்பட்ட செயலிகளையும் நிர்வகிக்கப் பூட்டுவிடுவிக்க</string>
+    <string name="trust_apps_auth_open_app">%1$s என்பதைத் திறக்க உறுதிப்படுத்துக </string>
+    <string name="trust_apps_loading">ஏற்றுகிறது\u2026</string>
+    <string name="trust_apps_no_lock_error">செயலி அணுகலைக் கட்டுப்படுத்த பாதுகாப்பான பூட்டுத் திரையை அமைக்கவும்</string>
+    <string name="trust_apps_help">உதவி</string>
+    <string name="trust_apps_info_hidden">மறைக்கப்பட்ட செயலிகளும் அவற்றின் இடுக்கைகளும் செயலி இழுவையிலிருந்து மறைக்கப்பட்டுள்ளன.</string>
+    <string name="trust_apps_info_protected">பாதுகாக்கப்பட்ட செயலிகள் தொடங்கியிலிருந்து திறக்கப்பட உறுதிப்படுத்த வேண்டும்</string>
+    <string name="pref_suggestions_title">பரிந்துரைகள்</string>
+    <string name="pref_suggestions_summary">செயலி இழுவைக்கும், முகப்புத்திரைப் பரிந்துரைகளுக்கும்</string>
+</resources>
