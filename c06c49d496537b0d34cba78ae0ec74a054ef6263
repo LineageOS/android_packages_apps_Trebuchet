@@ -16,6 +16,24 @@
       "message": "isTaskbarPresent in DeviceProfile.",
       "revId": "c06c49d496537b0d34cba78ae0ec74a054ef6263",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7ee9d3e_0161a0e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-16T17:43:46Z",
+      "side": 1,
+      "message": "go ahead and try it on your tablet.",
+      "parentUuid": "d38d01de_fa5f30b6",
+      "revId": "c06c49d496537b0d34cba78ae0ec74a054ef6263",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
