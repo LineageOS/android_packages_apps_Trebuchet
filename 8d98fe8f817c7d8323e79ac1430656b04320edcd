@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1edc731_d1f226f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2025-03-16T17:42:34Z",
+      "side": 1,
+      "message": "The frame is still visible. Not sure how to hide it.. \n\nSetting is navbar height to 0 in systemui doesnt work either.",
+      "revId": "8d98fe8f817c7d8323e79ac1430656b04320edcd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
