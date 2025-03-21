@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b8a362e_cfd2769b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2025-03-21T18:01:07Z",
+      "side": 1,
+      "message": "Missing ! TaskbarActivityContext.java with SettingsCache.INSTANCE.get(this).getValue(NAVIGATION_BAR_HINT, 1) ?",
+      "revId": "a9045461de6ac7fec4cc3ec8c9d9aa7692f037be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
