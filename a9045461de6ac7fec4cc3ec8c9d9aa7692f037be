@@ -70,6 +70,24 @@
       "parentUuid": "da0a4aff_25eaf514",
       "revId": "a9045461de6ac7fec4cc3ec8c9d9aa7692f037be",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10730b14_ac0d4666",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2025-03-21T18:08:44Z",
+      "side": 1,
+      "message": "you can edit the commit with webui if that resolves it.",
+      "parentUuid": "c8939860_8ec25692",
+      "revId": "a9045461de6ac7fec4cc3ec8c9d9aa7692f037be",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
