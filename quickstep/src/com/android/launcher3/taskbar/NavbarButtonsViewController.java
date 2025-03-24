@@ -959,12 +959,14 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
             int phoneOrPortraitSetupMargin = resources.getDimensionPixelSize(
                     R.dimen.taskbar_contextual_button_suw_margin);
             navButtonsLayoutParams.setMarginStart(phoneOrPortraitSetupMargin);
-            navButtonsLayoutParams.bottomMargin = !deviceProfile.isLandscape
-                    ? 0
-                    : phoneOrPortraitSetupMargin - (resources.getDimensionPixelSize(
-                            R.dimen.taskbar_nav_buttons_size) / 2);
-            navButtonsViewLayoutParams.height = resources.getDimensionPixelSize(
-                    R.dimen.taskbar_contextual_button_suw_height);
+            if (!mContext.isPhoneButtonNavMode()) {
+                navButtonsLayoutParams.bottomMargin = !deviceProfile.isLandscape
+                        ? 0
+                        : phoneOrPortraitSetupMargin - (resources.getDimensionPixelSize(
+                                R.dimen.taskbar_nav_buttons_size) / 2);
+                navButtonsViewLayoutParams.height = resources.getDimensionPixelSize(
+                        R.dimen.taskbar_contextual_button_suw_height);
+            }
         }
         mNavButtonsView.setLayoutParams(navButtonsViewLayoutParams);
         mNavButtonContainer.setLayoutParams(navButtonsLayoutParams);
