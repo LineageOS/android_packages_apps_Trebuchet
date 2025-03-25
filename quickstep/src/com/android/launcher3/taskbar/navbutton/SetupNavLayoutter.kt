@@ -61,7 +61,6 @@ class SetupNavLayoutter(
 
         navButtonsLayoutParams.marginEnd = 0
         navButtonsLayoutParams.gravity = Gravity.START
-        context.setTaskbarWindowSize(context.setupWindowSize)
 
         // If SUW is on a large screen device that is landscape (or has a square aspect
         // ratio) the back button has to be placed accordingly
@@ -72,10 +71,6 @@ class SetupNavLayoutter(
         ) {
             navButtonsLayoutParams.marginStart =
                 resources.getDimensionPixelSize(R.dimen.taskbar_back_button_suw_start_margin)
-            navButtonsViewLayoutParams.bottomMargin =
-                resources.getDimensionPixelSize(R.dimen.taskbar_back_button_suw_bottom_margin)
-            navButtonsLayoutParams.height =
-                resources.getDimensionPixelSize(R.dimen.taskbar_back_button_suw_height)
         } else {
             adjustForSetupInPhoneMode(
                 navButtonsLayoutParams,

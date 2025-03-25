@@ -281,17 +281,11 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
         DeviceProfile deviceProfile = mContext.getDeviceProfile();
         Resources resources = mContext.getResources();
 
-        int setupSize = mControllers.taskbarActivityContext.getSetupWindowSize();
         Point p = DimensionUtils.getTaskbarPhoneDimensions(deviceProfile, resources,
                 mContext.isPhoneMode(), mContext.isGestureNav());
         ViewGroup.LayoutParams navButtonsViewLayoutParams = mNavButtonsView.getLayoutParams();
         navButtonsViewLayoutParams.width = p.x;
-        if (!mContext.isUserSetupComplete()) {
-            // Setup mode in phone mode uses gesture nav.
-            navButtonsViewLayoutParams.height = setupSize;
-        } else {
-            navButtonsViewLayoutParams.height = p.y;
-        }
+        navButtonsViewLayoutParams.height = p.y;
         mNavButtonsView.setLayoutParams(navButtonsViewLayoutParams);
 
         mIsImeRenderingNavButtons =
@@ -941,8 +935,6 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
 
         navButtonsLayoutParams.setMarginEnd(0);
         navButtonsLayoutParams.gravity = Gravity.START;
-        mControllers.taskbarActivityContext.setTaskbarWindowSize(
-                mControllers.taskbarActivityContext.getSetupWindowSize());
 
         // If SUW is on a large screen device that is landscape (or has a square aspect
         // ratio) the back button has to be placed accordingly
@@ -951,22 +943,10 @@ public class NavbarButtonsViewController implements TaskbarControllers.LoggableT
                 && deviceProfile.aspectRatio < SQUARE_ASPECT_RATIO_UPPER_BOUND)) {
             navButtonsLayoutParams.setMarginStart(
                     resources.getDimensionPixelSize(R.dimen.taskbar_back_button_suw_start_margin));
-            navButtonsViewLayoutParams.bottomMargin = resources.getDimensionPixelSize(
-                    R.dimen.taskbar_back_button_suw_bottom_margin);
-            navButtonsLayoutParams.height = resources.getDimensionPixelSize(
-                    R.dimen.taskbar_back_button_suw_height);
         } else {
             int phoneOrPortraitSetupMargin = resources.getDimensionPixelSize(
                     R.dimen.taskbar_contextual_button_suw_margin);
             navButtonsLayoutParams.setMarginStart(phoneOrPortraitSetupMargin);
-            if (!mContext.isPhoneButtonNavMode()) {
-                navButtonsLayoutParams.bottomMargin = !deviceProfile.isLandscape
-                        ? 0
-                        : phoneOrPortraitSetupMargin - (resources.getDimensionPixelSize(
-                                R.dimen.taskbar_nav_buttons_size) / 2);
-                navButtonsViewLayoutParams.height = resources.getDimensionPixelSize(
-                        R.dimen.taskbar_contextual_button_suw_height);
-            }
         }
         mNavButtonsView.setLayoutParams(navButtonsViewLayoutParams);
         mNavButtonContainer.setLayoutParams(navButtonsLayoutParams);

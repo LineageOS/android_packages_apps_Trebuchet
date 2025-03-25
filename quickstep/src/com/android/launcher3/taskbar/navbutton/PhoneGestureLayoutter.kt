@@ -60,7 +60,6 @@ class PhoneGestureLayoutter(
 
             navButtonsLayoutParams.marginEnd = 0
             navButtonsLayoutParams.gravity = Gravity.START
-            context.setTaskbarWindowSize(context.setupWindowSize)
 
             adjustForSetupInPhoneMode(
                 navButtonsLayoutParams,
