@@ -764,7 +764,15 @@ public class TaskbarManager {
         }
     }
 
+    boolean hasNavigationBar() {
+        return mActivity.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+    }
+
     private void addTaskbarRootViewToWindow(int displayId) {
+        if (!hasNavigationBar()) {
+            return;
+        }
         TaskbarActivityContext taskbar = getTaskbarForDisplay(displayId);
         if (enableTaskbarNoRecreate() && !mAddedWindow && taskbar != null) {
             mWindowManager.addView(getTaskbarRootLayoutForDisplay(displayId),
