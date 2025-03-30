@@ -602,6 +602,14 @@ android_app {
 
 }
 
+phony {
+    name: "Launcher3QuickStep",
+    required: [
+        "TrebuchetQuickStep",
+    ],
+}
+
+
 // Build rule for Launcher3 Go app with quickstep for Android Go devices.
 // Note that the following two rules are exactly same, and should
 // eventually be merged into a single target
