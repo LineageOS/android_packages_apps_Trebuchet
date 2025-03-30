@@ -115,13 +115,13 @@ open class PhoneLandscapeNavLayoutter(
     open fun addThreeButtons() {
         // Swap recents and back button
         if (SettingsCache.INSTANCE.get(homeButton!!.context).getValue(NAV_BAR_INVERSE, 0)) {
-            navButtonContainer.addView(recentsButton)
-            navButtonContainer.addView(homeButton)
             navButtonContainer.addView(backButton)
+            navButtonContainer.addView(homeButton)
+            navButtonContainer.addView(recentsButton)
         } else {
-            navButtonContainer.addView(backButton)
-            navButtonContainer.addView(homeButton)
             navButtonContainer.addView(recentsButton)
+            navButtonContainer.addView(homeButton)
+            navButtonContainer.addView(backButton)
         }
     }
 
