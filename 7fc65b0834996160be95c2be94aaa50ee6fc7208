@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33895297_17795de7",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2025-04-04T16:57:46Z",
+      "side": 1,
+      "message": "this looks off\nlibs: [\"org.lineageos.platform\"] should automatically pick the proper one to be used",
+      "range": {
+        "startLine": 381,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 6
+      },
+      "revId": "7fc65b0834996160be95c2be94aaa50ee6fc7208",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
