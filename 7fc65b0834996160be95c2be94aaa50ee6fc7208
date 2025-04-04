@@ -22,6 +22,30 @@
       },
       "revId": "7fc65b0834996160be95c2be94aaa50ee6fc7208",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0872f279_338c636b",
+        "filename": "Android.bp",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2025-04-04T17:15:42Z",
+      "side": 1,
+      "message": "Does not build and tells me to use impl or stub variants.\n\nI compile tested all the different variations before uploading and this one is compiling and running 😊",
+      "parentUuid": "33895297_17795de7",
+      "range": {
+        "startLine": 381,
+        "startChar": 0,
+        "endLine": 386,
+        "endChar": 6
+      },
+      "revId": "7fc65b0834996160be95c2be94aaa50ee6fc7208",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
