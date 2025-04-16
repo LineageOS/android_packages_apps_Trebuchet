@@ -78,7 +78,7 @@ class NavButtonLayoutFactory {
             val isPhoneGestureMode = phoneMode && !isThreeButtonNav
             return when {
                 isPhoneNavMode -> {
-                    if (!deviceProfile.isLandscape) {
+                    if (!deviceProfile.isLandscape || deviceProfile.isTaskbarPresent) {
                         navButtonsView.setIsVertical(false)
                         PhonePortraitNavLayoutter(
                             resources,

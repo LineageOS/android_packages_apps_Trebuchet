@@ -647,7 +647,7 @@ public class TaskbarActivityContext extends BaseTaskbarContext {
             WindowManager.LayoutParams lp =
                     createDefaultWindowLayoutParams(windowType,
                             TaskbarActivityContext.WINDOW_TITLE);
-            if (isPhoneButtonNavMode()) {
+            if (isPhoneButtonNavMode() && !mDeviceProfile.isTaskbarPresent) {
                 populatePhoneButtonNavModeWindowLayoutParams(rot, lp);
             }
             windowLayoutParams.paramsForRotation[rot] = lp;
