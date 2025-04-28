@@ -161,7 +161,7 @@ public class TaskbarNavButtonController implements TaskbarControllers.LoggableTa
                 logEvent(LAUNCHER_TASKBAR_HOME_BUTTON_TAP);
                 mContextualEduStatsManager.updateEduStats(/* isTrackpadGesture= */ false,
                         GestureType.HOME);
-                navigateHome();
+                mSystemUiProxy.injectPress(KeyEvent.KEYCODE_HOME);
                 break;
             case BUTTON_RECENTS:
                 logEvent(LAUNCHER_TASKBAR_OVERVIEW_BUTTON_TAP);
@@ -182,16 +182,6 @@ public class TaskbarNavButtonController implements TaskbarControllers.LoggableTa
                 break;
             case BUTTON_NOTIFICATIONS:
                 showNotifications();
-                break;
-        }
-    }
-
-    public void onButtonDoubleClick(@TaskbarButton int buttonType, View view) {
-        // Provide the same haptic feedback that the system offers for virtual keys.
-        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
-        switch (buttonType) {
-            case BUTTON_HOME:
-                mSystemUiProxy.injectDoublePress(KeyEvent.KEYCODE_HOME);
                 break;
         }
     }

@@ -235,12 +235,12 @@ public class SystemUiProxy implements ISystemUiProxy, NavHandle {
     }
 
     @Override
-    public void injectDoublePress(int keyCode) {
+    public void injectPress(int keyCode) {
         if (mSystemUiProxy != null) {
             try {
-                mSystemUiProxy.injectDoublePress(keyCode);
+                mSystemUiProxy.injectPress(keyCode);
             } catch (RemoteException e) {
-                Log.w(TAG, "Failed call injectDoublePress", e);
+                Log.w(TAG, "Failed call injectPress", e);
             }
         }
     }
