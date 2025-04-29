@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Ana ekranda kullanılan temalı simgeleri takip edin</string>
     <string name="desktop_show_labels">Ana ekranda simge etiketlerini göster</string>
     <string name="drawer_show_labels">Çekmecede simge etiketlerini göster</string>
+    <string name="drawer_open_keyboard_title">Aramaya başlamak için kaydır</string>
+    <string name="drawer_open_keyboard_summary">Uygulama çekmecesi göründüğünde klavye açılsın</string>
     <string name="trust_apps_manager_name">Gizli ve Korunan uygulamalar</string>
     <string name="trust_apps_auth_manager">Gizli ve korunan uygulamaları yönetmek için kilidi açın</string>
     <string name="trust_apps_auth_open_app">%1$s uygulamasının açılması için kimlik doğrula</string>
