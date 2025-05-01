@@ -25,6 +25,8 @@
     <string name="pref_themed_icons_summary">Sigue los iconos temáticos que s\'usen na pantalla d\'aniciu</string>
     <string name="desktop_show_labels">Amosar les etiquetes de los iconos nel escritoriu</string>
     <string name="drawer_show_labels">Amosar les etiquetes de los iconos nel caxón</string>
+    <string name="drawer_open_keyboard_title">Eslizar p\'aniciar la busca</string>
+    <string name="drawer_open_keyboard_summary">Abre\'l tecláu siempre que\'l caxón d\'aplicaciones seya visible</string>
     <string name="trust_apps_manager_name">Aplicaciones anubríes y protexíes</string>
     <string name="trust_apps_auth_manager">Desbloquia pa xestionar les aplicaciones anubríes y protexíes</string>
     <string name="trust_apps_auth_open_app">Autentícate p\'abrir «%1$s»</string>
