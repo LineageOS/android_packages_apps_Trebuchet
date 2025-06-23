@@ -293,7 +293,7 @@
             launcher:hotseatBarBottomSpace="76"
             launcher:hotseatBarBottomSpaceLandscape="40"
             launcher:startAlignTaskbar="true"
-            launcher:startAlignTaskbarLandscape="false"
+            launcher:startAlignTaskbarLandscape="true"
             launcher:canBeDefault="true" />
 
     </grid-option>
