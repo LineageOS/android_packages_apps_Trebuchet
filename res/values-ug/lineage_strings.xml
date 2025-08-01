@@ -14,6 +14,27 @@
      limitations under the License.
 -->
 <resources>
+    <string name="settings_lock_layout_title">قۇلۇپ جايلاشتۇرۇش</string>
+    <string name="settings_lock_layout_summary_on">باش ئېكرانغا سىنبەلگە ۋە ئەپچە قوشقىلى، چىقىرىۋەتكىلى ۋە يۆتكىگىلى بولمايدۇ</string>
+    <string name="settings_lock_layout_summary_off">باش ئېكرانغا سىنبەلگە ۋە ئەپچە قوشقىلى، چىقىرىۋەتكىلى ۋە يۆتكىگىلى بولىدۇ</string>
+    <string name="settings_edit_widgets_error">باش ئېكرانغا ئەپچە قوشقىلى بولمايدۇ</string>
+    <string name="title_show_google_app">Google ئەپنى كۆرسەت</string>
+    <string name="msg_minus_one_on_left">ئاساسىي باش ئېكراندىن ئوڭغا سۈرگەندە</string>
+    <string name="msg_minus_one_on_right">ئاساسىي باش ئېكراندىن سولغا سۈرگەندە</string>
+    <string name="pref_themed_icons_title">تارتمىدا ئۆرنەك سىنبەلگىسىنى ئىشلىتىدۇ</string>
+    <string name="pref_themed_icons_summary">باش ئېكراندا ئىشلىتىۋاتقان ئۆرنەكنىڭ سىنبەلگىسىگە ئەگىشىدۇ</string>
+    <string name="desktop_show_labels">ئۈستەل يۈزىدە سىنبەلگە بەلگىسىنى كۆرسىتىدۇ</string>
+    <string name="drawer_show_labels">تارتمىدا سىنبەلگە بەلگىسىنى كۆرسىتىدۇ</string>
     <string name="drawer_open_keyboard_title">سىيرىلسا ئىزدەشنى باشلايدۇ</string>
     <string name="drawer_open_keyboard_summary">ئەپ تارتمىسى كۆرۈنسە ھەرپتاختىنى ئاچىدۇ</string>
+    <string name="trust_apps_manager_name">يوشۇرۇن ۋە قوغدالغان ئەپ</string>
+    <string name="trust_apps_auth_manager">يوشۇرۇن ۋە قوغدالغان ئەپنى باشقۇرۇش ئۈچۈن قۇلۇپ ئېچىش كېرەك</string>
+    <string name="trust_apps_auth_open_app">%1$s ئېچىشتا دەلىللىنىدۇ</string>
+    <string name="trust_apps_loading">يۈكلەۋاتىدۇ\u2026</string>
+    <string name="trust_apps_no_lock_error">ئەپنىڭ زىيارەت قىلىشىنى چەكلەش ئۈچۈن بىخەتەر قۇلۇپ ئېكرانى تەڭشەڭ</string>
+    <string name="trust_apps_help">ياردەم</string>
+    <string name="trust_apps_info_hidden">يوشۇرۇن ئەپ ۋە ئۇنىڭ ئەپچەلىرى تارتمىدىن يوشۇرۇلغان</string>
+    <string name="trust_apps_info_protected">قوغدالغان ئەپنى قوزغاتقۇچتىن ئېچىشتا دەلىللەشنى تەلەپ قىلىدۇ</string>
+    <string name="pref_suggestions_title">تەۋسىيە</string>
+    <string name="pref_suggestions_summary">ئەپ تارتما ۋە باش ئېكراننىڭ تەۋسىيەسى</string>
 </resources>
