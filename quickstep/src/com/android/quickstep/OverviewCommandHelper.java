@@ -26,6 +26,7 @@ import android.graphics.PointF;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.view.View;
+import android.view.KeyEvent;
 
 import androidx.annotation.BinderThread;
 import androidx.annotation.Nullable;
@@ -70,6 +71,7 @@ public class OverviewCommandHelper {
     private final TouchInteractionService mService;
     private final OverviewComponentObserver mOverviewComponentObserver;
     private final TaskAnimationManager mTaskAnimationManager;
+    private final SystemUiProxy mSystemUiProxy;
     private final ArrayList<CommandInfo> mPendingCommands = new ArrayList<>();
 
     /**
@@ -89,10 +91,12 @@ public class OverviewCommandHelper {
 
     public OverviewCommandHelper(TouchInteractionService service,
             OverviewComponentObserver observer,
-            TaskAnimationManager taskAnimationManager) {
+            TaskAnimationManager taskAnimationManager,
+            SystemUiProxy systemUiProxy) {
         mService = service;
         mOverviewComponentObserver = observer;
         mTaskAnimationManager = taskAnimationManager;
+        mSystemUiProxy = systemUiProxy;
     }
 
     /**
@@ -232,6 +236,7 @@ public class OverviewCommandHelper {
                             "OverviewCommandHelper.executeCommand(TYPE_HOME)");
                     mService.startActivity(mOverviewComponentObserver.getHomeIntent());
                     return true;
+<<<<<<< HEAD   (af0e0a0674259ac6dc2b9e6fbb1fbf3fbee1fd73 Automatic translation import)
                 case TYPE_SHOW:
                     // When Recents is not currently visible, the command's type is TYPE_SHOW
                     // when overview is triggered via the keyboard overview button or Action+Tab
@@ -241,6 +246,21 @@ public class OverviewCommandHelper {
                     break;
                 default:
                     // continue below to handle displaying Recents.
+=======
+                }
+                mTaskFocusIndexOverride = uiController.launchFocusedTask();
+                if (mTaskFocusIndexOverride == -1) {
+                    return true;
+                }
+            }
+            if (cmd.type == TYPE_KEYBOARD_INPUT && allowQuickSwitch) {
+                uiController.openQuickSwitchView();
+                return true;
+            }
+            if (cmd.type == TYPE_HOME) {
+                mSystemUiProxy.onKeyEvent(KeyEvent.KEYCODE_HOME);
+                return true;
+>>>>>>> CHANGE (3560be863c92063c9659bf727af7b60e5b9890c2 Send KEYCODE_HOME for home button instead of startActivity d)
             }
         } else {
             createdRecentsView = visibleRecentsView;
