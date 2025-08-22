@@ -211,6 +211,17 @@ public class SystemUiProxy implements ISystemUiProxy, NavHandle {
     }
 
     @Override
+    public void onKeyEvent(int keycode) {
+        if (mSystemUiProxy != null) {
+            try {
+                mSystemUiProxy.onKeyEvent(keycode);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Failed call onKeyEvent", e);
+            }
+        }
+    }
+
+    @Override
     public void onImeSwitcherPressed() {
         if (mSystemUiProxy != null) {
             try {
