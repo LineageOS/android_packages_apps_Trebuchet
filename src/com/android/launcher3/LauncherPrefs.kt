@@ -148,7 +148,7 @@ abstract class LauncherPrefs : SafeCloseable {
         @JvmField
         val ALLOW_ROTATION =
             backedUpItem(RotationHelper.ALLOW_ROTATION_PREFERENCE_KEY, Boolean::class.java) {
-                RotationHelper.getAllowRotationDefaultValue(DisplayController.INSTANCE.get(it).info)
+                RotationHelper.getAllowRotationDefaultValue(it, DisplayController.INSTANCE.get(it).info)
             }
 
         @JvmField

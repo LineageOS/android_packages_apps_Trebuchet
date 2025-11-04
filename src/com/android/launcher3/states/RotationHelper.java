@@ -37,6 +37,7 @@ import com.android.launcher3.BaseActivity;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.LauncherPrefChangeListener;
 import com.android.launcher3.LauncherPrefs;
+import com.android.launcher3.R;
 import com.android.launcher3.util.ContextTracker;
 import com.android.launcher3.util.DisplayController;
 
@@ -52,7 +53,13 @@ public class RotationHelper implements LauncherPrefChangeListener,
     /**
      * Returns the default value of {@link #ALLOW_ROTATION_PREFERENCE_KEY} preference.
      */
-    public static boolean getAllowRotationDefaultValue(DisplayController.Info info) {
+    public static boolean getAllowRotationDefaultValue(Context context,
+            DisplayController.Info info) {
+
+        if (context.getResources().getBoolean(R.bool.config_allowRotation)) {
+            return true;
+        }
+
         // If the device's pixel density was scaled (usually via settings for A11y), use the
         // original dimensions to determine if rotation is allowed of not.
         float originalSmallestWidth = dpiFromPx(Math.min(info.currentSize.x, info.currentSize.y),
