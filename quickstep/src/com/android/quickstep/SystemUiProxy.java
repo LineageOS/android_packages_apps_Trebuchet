@@ -246,17 +246,6 @@ public class SystemUiProxy implements ISystemUiProxy, NavHandle {
     }
 
     @Override
-    public void injectPress(int keyCode) {
-        if (mSystemUiProxy != null) {
-            try {
-                mSystemUiProxy.injectPress(keyCode);
-            } catch (RemoteException e) {
-                Log.w(TAG, "Failed call injectPress", e);
-            }
-        }
-    }
-
-    @Override
     public void onImeSwitcherPressed() {
         if (mSystemUiProxy != null) {
             try {

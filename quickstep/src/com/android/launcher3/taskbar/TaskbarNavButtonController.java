@@ -161,7 +161,7 @@ public class TaskbarNavButtonController implements TaskbarControllers.LoggableTa
                 logEvent(LAUNCHER_TASKBAR_HOME_BUTTON_TAP);
                 mContextualEduStatsManager.updateEduStats(/* isTrackpadGesture= */ false,
                         GestureType.HOME);
-                mSystemUiProxy.injectPress(KeyEvent.KEYCODE_HOME);
+                mSystemUiProxy.onKeyEvent(KeyEvent.KEYCODE_HOME);
                 break;
             case BUTTON_RECENTS:
                 logEvent(LAUNCHER_TASKBAR_OVERVIEW_BUTTON_TAP);
