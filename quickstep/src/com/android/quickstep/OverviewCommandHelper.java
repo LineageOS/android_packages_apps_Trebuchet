@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.graphics.PointF;
 import android.os.SystemClock;
 import android.os.Trace;
-import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.annotation.BinderThread;
@@ -231,11 +230,15 @@ public class OverviewCommandHelper {
                         mKeyboardTaskFocusIndex = 0;
                         break;
                     }
-                case TYPE_HOME:
-                    ActiveGestureLog.INSTANCE.addLog(
-                            "OverviewCommandHelper.executeCommand(TYPE_HOME)");
-                    mSystemUiProxy.onKeyEvent(KeyEvent.KEYCODE_HOME);
+                case TYPE_HOME: {
+                    String reason = "OverviewCommandHelper.executeCommand(TYPE_HOME)";
+                    ActiveGestureLog.INSTANCE.addLog(reason);
+                    // ISystemUiProxy.onKeyEvent() was removed upstream; go home the same
+                    // way FallbackSwipeHandler does when there's no live Activity/RecentsView
+                    // to call startHome() on directly.
+                    OverviewComponentObserver.startHomeIntentSafely(mService, null, reason);
                     return true;
+                }
                 case TYPE_SHOW:
                     // When Recents is not currently visible, the command's type is TYPE_SHOW
                     // when overview is triggered via the keyboard overview button or Action+Tab
