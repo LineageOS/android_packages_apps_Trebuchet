@@ -16,6 +16,23 @@
       "message": "what? trebuchet builds just fine on 21.0, we have daily CI tests.",
       "revId": "404e93e89e911ad48f0863d6c219fe148401f87f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc4913e9_41cd2174",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2026-09-08T07:08:46Z",
+      "side": 1,
+      "message": "use your own words when replying to people.",
+      "revId": "404e93e89e911ad48f0863d6c219fe148401f87f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
